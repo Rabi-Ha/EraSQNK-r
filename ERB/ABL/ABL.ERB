@@ -217,8 +217,8 @@ CASEELSE
 		PRINTL  
 	ENDIF
 
-	PRINTL [100] ＣＶＡＢＭ 감각의 자동 레벨업（소질 획득하지 않음）
-	PRINTL [200] 불필요한 구슬을 경험치로 전환 한다
+	PRINTL [100] ＣＶＡＢＭ 감각의 자동 레벨업
+	PRINTL [200] 불필요한 구슬을 경험치로 전환
 	PRINTL [999] 능력치업 종료
 ENDSELECT
 
@@ -247,7 +247,8 @@ CASE 999
 	RETURN 1
 CASE 100
 	CALL AUTO_LVUP
-	PRINTFORMW 자동레벨업을 완료했습니다.
+	PRINTFORM 자동레벨업을 완료했습니다.
+	PRINTFORMW (소질은 획득하지 않습니다.)
 CASE 200
 	CALL JUEL_TO_EXP, 10000
 ENDSELECT
