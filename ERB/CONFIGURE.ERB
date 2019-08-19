@@ -472,6 +472,12 @@ CASE "구상による地の文ＯＦＦ"
 	SIF TARGET && TCVAR:24
 		RETURNF 1
 
+;주차플레이 관련
+CASE "주차날짜리셋"
+	RETURNF FLAG:284
+CASE "주차능력계승"
+	RETURNF FLAG:285
+
 ;이하は항목ONOFFボタン。キャラメイク中は例外的に全部表示させる
 CASE "항목：搾精ランキング"
 	SIF COND("キャラメイク中")
@@ -770,8 +776,10 @@ CASE "システム＆이벤트全般"
 	PRINTFORML  [20] \@ CONFIG("쇼타메이드") ? ○ # －\@ 쇼타도 다방에서 일 시킨다
 	PRINTFORML  [21] \@ CONFIG("성희롱금지") ? ○ # －\@ 주인이 선택지 없이 성희롱 등을 하는 것을 금지한다
 	PRINTFORML  [22] \@ CONFIG("蓄精") ? ○ # －\@ 하룻밤 개방 이벤트 등으로 보온병에 정액을 축적할 수 있도록 한다.
+	PRINTFORML  [23] \@ CONFIG("주차날짜리셋") ? ○ # －\@ 새 주차를 시작할때 날짜를 리셋
+	PRINTFORML  [24] \@ CONFIG("주차능력계승") ? ○ # －\@ 새 주차를 시작할때 능력을 계승
 	PRINTFORML [100] 돌아간다
-	CALL INPUT_SELECT, 23, 100
+	CALL INPUT_SELECT, 25, 100
 	SELECTCASE RESULT
 	CASE 100
 		RETURN 0
@@ -821,6 +829,10 @@ CASE "システム＆이벤트全般"
 		CALL SETCONFIG, "성희롱금지"
 	CASE 22
 		CALL SETCONFIG, "蓄精"
+	CASE 23
+		CALL SETCONFIG, "주차날짜리셋"
+	CASE 24
+		CALL SETCONFIG, "주차능력계승"
 	ENDSELECT
 	ARGS = システム＆이벤트全般
 	RESTART
@@ -1994,6 +2006,25 @@ CASE "蓄精"
 		PRINTFORMW 하루밤 개방등의 일부 이벤트에서 보온병에 정액을 모으는 선택지가 나오게 됩니다.
 	ELSE
 		PRINTFORMW 조교 중에만 보온병에 정액을 모으는 선택지가 등장합니다.
+	ENDIF
+
+CASE "주차날짜리셋"
+	INVERTBIT FLAG:284, 0
+	IF CONFIG(ARGS)
+		PRINTFORMW 새 주차를 시작할때 1일차로 합니다
+	ELSE
+		PRINTFORM 새 주차를 시작해도 일차를 리셋하지 않습니다
+		PRINTFORMW 계절과 날짜같은 게임 내부의 시간은 리셋됩니다
+	ENDIF
+
+CASE "주차능력계승"
+	INVERTBIT FLAG:285, 0
+	IF CONFIG(ARGS)
+		PRINTFORML 새 주차를 시작할 때 얻었던 소질을 계승합니다
+		PRINTFORMW 너무 강해지지 않게 주의하세요
+	ELSE
+		PRINTFORML 새 주차를 시작할 때 얻었던 소질을 버립니다.
+		PRINTFORMW 주차플레이특전에서 받은 소질만 적용됩니다
 	ENDIF
 
 CASE "유두の상세설정"

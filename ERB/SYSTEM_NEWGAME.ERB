@@ -1247,62 +1247,72 @@ FLAG:6 = 1
 SETBIT FLAG:11, 1
 SETBIT FLAG:11, 2
 ;날짜などリセット…はしない
-;DAY = 1
+SIF CONFIG("주차날짜리셋")
+	DAY = 1
 TIME = 0
 FLAG:872 = 0
 FLAG:873 = 0
 
-;前回보너스の終了
-SIF GETBIT(FLAG:33, 0)
-	TALENT:MASTER:조합지식 = 0
-SIF GETBIT(FLAG:33, 1)
-	TALENT:MASTER:치료 = 0
-IF GETBIT(FLAG:33, 2)
-	TALENT:MASTER:마법사 = 0
-	;魔法忘れるのはやめた
-	;FOR LCOUNT, 230, 260
-	;	TALENT:MASTER:LCOUNT = 0
-	;NEXT
+IF !(CONFIG("주차능력계승"))
+	;前回보너스の終了
+	SIF GETBIT(FLAG:33, 0)
+		TALENT:MASTER:조합지식 = 0
+	SIF GETBIT(FLAG:33, 1)
+		TALENT:MASTER:치료 = 0
+	IF GETBIT(FLAG:33, 2)
+		TALENT:MASTER:마법사 = 0
+		;魔法忘れるのはやめた
+		;FOR LCOUNT, 230, 260
+		;	TALENT:MASTER:LCOUNT = 0
+		;NEXT
+	ENDIF
+	SIF GETBIT(FLAG:33, 3)
+		TALENT:MASTER:드라군 = 0
+	SIF GETBIT(FLAG:33, 4)
+		TALENT:MASTER:가창기능 = 0
+	SIF GETBIT(FLAG:33, 5)
+		TALENT:MASTER:매혹 = 0
+	SIF GETBIT(FLAG:33, 6)
+		TALENT:MASTER:매력 = 0
+	SIF GETBIT(FLAG:33, 7)
+		TALENT:MASTER:조루 = 0
+	SIF GETBIT(FLAG:33, 8)
+		TALENT:MASTER:지루 = 0
+	SIF GETBIT(FLAG:33, 9)
+		TALENT:MASTER:백발백중 = 0
+	SIF GETBIT(FLAG:33, 10)
+		TALENT:MASTER:바늘다루기 = 0
+	SIF GETBIT(FLAG:33, 11)
+		TALENT:MASTER:소환천재（天才） = 0
+	SIF GETBIT(FLAG:33, 12)
+		TALENT:MASTER:소환천재（天災） = 0
+	SIF GETBIT(FLAG:33, 13)
+		TALENT:MASTER:용의혈통 = 0
+	SIF GETBIT(FLAG:33, 14)
+		TALENT:MASTER:구현 = 0
+	SIF GETBIT(FLAG:33, 15)
+		TALENT:MASTER:현명함 = 0
+
+	SIF GETBIT(FLAG:33, 30)
+		TALENT:MASTER:혀놀림 = CSVTALENT(NO:MASTER, 180, 0)
+	SIF GETBIT(FLAG:33, 31)
+		TALENT:MASTER:손가락놀림 = CSVTALENT(NO:MASTER, 181, 0)
+	SIF GETBIT(FLAG:33, 32)
+		TALENT:MASTER:발놀림 = CSVTALENT(NO:MASTER, 182, 0)
+	SIF GETBIT(FLAG:33, 33)
+		TALENT:MASTER:허리놀림 = CSVTALENT(NO:MASTER, 183, 0)
+	SIF GETBIT(FLAG:33, 34)
+		TALENT:MASTER:마유 = CSVTALENT(NO:MASTER, 184, 0)
+
+	FLAG:33 = 0
+ELSE
+	PRINTFORMW 설정한 대로, 얻었던 능력을 계승합니다.
+	FOR LCOUNT, 50, 55
+		CLEARBIT FLAG:33, LCOUNT
+	NEXT
+
+	;레벨포인트얻는플래그리셋
 ENDIF
-SIF GETBIT(FLAG:33, 3)
-	TALENT:MASTER:드라군 = 0
-SIF GETBIT(FLAG:33, 4)
-	TALENT:MASTER:가창기능 = 0
-SIF GETBIT(FLAG:33, 5)
-	TALENT:MASTER:매혹 = 0
-SIF GETBIT(FLAG:33, 6)
-	TALENT:MASTER:매력 = 0
-SIF GETBIT(FLAG:33, 7)
-	TALENT:MASTER:조루 = 0
-SIF GETBIT(FLAG:33, 8)
-	TALENT:MASTER:지루 = 0
-SIF GETBIT(FLAG:33, 9)
-	TALENT:MASTER:백발백중 = 0
-SIF GETBIT(FLAG:33, 10)
-	TALENT:MASTER:바늘다루기 = 0
-SIF GETBIT(FLAG:33, 11)
-	TALENT:MASTER:소환천재（天才） = 0
-SIF GETBIT(FLAG:33, 12)
-	TALENT:MASTER:소환천재（天災） = 0
-SIF GETBIT(FLAG:33, 13)
-	TALENT:MASTER:용의혈통 = 0
-SIF GETBIT(FLAG:33, 14)
-	TALENT:MASTER:구현 = 0
-SIF GETBIT(FLAG:33, 15)
-	TALENT:MASTER:현명함 = 0
-
-SIF GETBIT(FLAG:33, 30)
-	TALENT:MASTER:혀놀림 = CSVTALENT(NO:MASTER, 180, 0)
-SIF GETBIT(FLAG:33, 31)
-	TALENT:MASTER:손가락놀림 = CSVTALENT(NO:MASTER, 181, 0)
-SIF GETBIT(FLAG:33, 32)
-	TALENT:MASTER:발놀림 = CSVTALENT(NO:MASTER, 182, 0)
-SIF GETBIT(FLAG:33, 33)
-	TALENT:MASTER:허리놀림 = CSVTALENT(NO:MASTER, 183, 0)
-SIF GETBIT(FLAG:33, 34)
-	TALENT:MASTER:마유 = CSVTALENT(NO:MASTER, 184, 0)
-
-FLAG:33 = 0
 ;레벨리미터解除
 FLAG:247 = 0
 
@@ -1424,7 +1434,7 @@ VARSET TCVAR:ARG:0
 ;PCを선택式にしてみる
 ;-------------------------------------------------
 @START_CHARA_SELECT
-PRINTL 플레이어를선택해 주세요
+PRINTL 플레이어를 선택해 주세요
 ;周回플래그がある場合
 IF FLAG:4
 	PRINTL 
@@ -1515,9 +1525,9 @@ PRINTFORML [ 0] 변경하지 않음
 MEMO_LINECOUNT = LINECOUNT
 REDRAW 0
 PRINTFORML 
-PRINTFORML 계약이 끝난 몽마를 {1 + TFLAG:0}인만 수중에 남길 수 있습니다. 
+PRINTFORML 계약이 끝난 몽마를 {1 + TFLAG:0}인 계승할 수 있습니다. 
 PRINTFORML （선택된 캐릭터의 호감도는 최대 2500이 \@ TALENT:MASTER:상사상애 ? 되고, 소질：%TALENTNAME:211%등을 잃게 # \@됩니다）
-PRINTFORML （또한, 자동으로 서약상태가 되어 다음주차에서 매각할 수 없습니다）
+PRINTFORML （또한, 자동으로 서약상태가 되어 다음 주차에서 매각할 수 없습니다）
 PRINT 다음 중에서 선택해주세요. 선택된 캐릭터는 이름 오른쪽에 
 CALL HEARTMARK
 PRINTL 가 붙습니다
@@ -1582,89 +1592,89 @@ PRINTFORML
 PRINTFORML 클리어 캐릭터의 종류와 주차횟수에 따라, 특전을 얻을 수 있습니다. 
 PRINTFORML 아래에서 선택해 주세요：{ARG}포인트 남음
 PRINTFORML 
-IF TALENT:MASTER:조합지식 == 0
+IF TALENT:MASTER:조합지식 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [ 0] \@ GETBIT(FLAG:33, 0) ? ○ # －\@ 조합지식 （특수 아이템, 미약강화 등） ３Ｐ
 	IS_SELECT:0 = 3
 ENDIF
-IF TALENT:MASTER:치료 == 0
+IF TALENT:MASTER:치료 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [ 1] \@ GETBIT(FLAG:33, 1) ? ○ # －\@ 치료 （시간에 따른 체력회복ＵＰ） ３Ｐ
 	IS_SELECT:1 = 3
 ENDIF
-IF TALENT:MASTER:마법사 == 0
+IF TALENT:MASTER:마법사 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [ 2] \@ GETBIT(FLAG:33, 2) ? ○ # －\@ 마법사   ６Ｐ
 	IS_SELECT:2 = 6
 ENDIF
-IF TALENT:MASTER:드라군 == 0
+IF TALENT:MASTER:드라군 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [ 3] \@ GETBIT(FLAG:33, 3) ? ○ # －\@ 용과 나 （용간사용가능） ５Ｐ
 	IS_SELECT:3 = 5
 ENDIF
-IF TALENT:MASTER:가창기능 == 0
+IF TALENT:MASTER:가창기능 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [ 4] \@ GETBIT(FLAG:33, 4) ? ○ # －\@ 가창기능   ４Ｐ
 	IS_SELECT:4 = 4
 ENDIF
 ;매력のほぼ上位
-IF TALENT:MASTER:매혹 == 0
+IF TALENT:MASTER:매혹 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [ 5] \@ GETBIT(FLAG:33, 5) ? ○ # －\@ 매혹 （호감도ＵＰ,반감감소등） ４Ｐ
 	IS_SELECT:5 = 4
 ENDIF
-IF TALENT:MASTER:매력 == 0
+IF TALENT:MASTER:매력 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [ 6] \@ GETBIT(FLAG:33, 6) ? ○ # －\@ 매력 （호감도ＵＰ） ３Ｐ
 	IS_SELECT:6 = 3
 ENDIF
-IF TALENT:MASTER:조루 == 0 && PENIS(MASTER)
+IF TALENT:MASTER:조루 == 0 && PENIS(MASTER) || CONFIG("주차능력계승") && PENIS(MASTER)
 	PRINTFORML  [ 7] \@ GETBIT(FLAG:33, 7) ? ○ # －\@ 조루 ２Ｐ
 	IS_SELECT:7 = 2
 ENDIF
-IF TALENT:MASTER:지루 == 0 && PENIS(MASTER)
+IF TALENT:MASTER:지루 == 0 && PENIS(MASTER) || CONFIG("주차능력계승") && PENIS(MASTER)
 	PRINTFORML  [ 8] \@ GETBIT(FLAG:33, 8) ? ○ # －\@ 지루 ２Ｐ
 	IS_SELECT:8 = 2
 ENDIF
-IF TALENT:MASTER:백발백중 == 0 && PENIS(MASTER) && CONFIG("임신패치")
+IF TALENT:MASTER:백발백중 == 0 && PENIS(MASTER) && CONFIG("임신패치") || CONFIG("주차능력계승") && PENIS(MASTER) && CONFIG("임신패치")
 	PRINTFORML  [ 9] \@ GETBIT(FLAG:33, 9) ? ○ # －\@ 백발백중 （확실히임신시킵니다） ３Ｐ
 	IS_SELECT:9 = 3
 ENDIF
-IF TALENT:MASTER:바늘다루기 == 0
+IF TALENT:MASTER:바늘다루기 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [10] \@ GETBIT(FLAG:33, 10) ? ○ # －\@ 바늘다루기 （바늘의 효과ＵＰ） ２Ｐ
 	IS_SELECT:10 = 2
 ENDIF
-IF TALENT:MASTER:소환천재（天才） == 0
-	PRINTFORML  [11] \@ GETBIT(FLAG:33, 11) ? ○ # －\@ 소환천재（천재）（소환사고 조작가능）   10Ｐ
+IF TALENT:MASTER:소환천재（天才） == 0 || CONFIG("주차능력계승")
+	PRINTFORML  [11] \@ GETBIT(FLAG:33, 11) ? ○ # －\@ 소환천재（天才）（소환사고 조작가능）   10Ｐ
 	IS_SELECT:11 = 10
 ENDIF
-IF TALENT:MASTER:소환천재（天災） == 0
-	PRINTFORML  [12] \@ GETBIT(FLAG:33, 12) ? ○ # －\@ 소환천재（천재지변）（소환사고율100％! ）    ５Ｐ
+IF TALENT:MASTER:소환천재（天災） == 0 || CONFIG("주차능력계승")
+	PRINTFORML  [12] \@ GETBIT(FLAG:33, 12) ? ○ # －\@ 소환천재（天災）（소환사고율100％! ）    ５Ｐ
 	IS_SELECT:12 = 5
 ENDIF
-IF TALENT:MASTER:용의혈통 == 0
+IF TALENT:MASTER:용의혈통 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [13] \@ GETBIT(FLAG:33, 13) ? ○ # －\@ 용의혈통 （정력ＵＰ등）   ６Ｐ
 	IS_SELECT:13 = 6
 ENDIF
-IF TALENT:MASTER:구현 == 0
+IF TALENT:MASTER:구현 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [14] \@ GETBIT(FLAG:33, 14) ? ○ # －\@ 구현 （페니스의 구현화）   ６Ｐ
 	IS_SELECT:14 = 6
 ENDIF
-IF TALENT:MASTER:현명함 == 0
+IF TALENT:MASTER:현명함 == 0 || CONFIG("주차능력계승")
 	PRINTFORML  [15] \@ GETBIT(FLAG:33, 15) ? ○ # －\@ 현명함 ３Ｐ
 	IS_SELECT:15 = 3
 ENDIF
 
-IF TALENT:MASTER:혀놀림 < 3
+IF TALENT:MASTER:혀놀림 < 3 || CONFIG("주차능력계승")
 	PRINTFORML  [30] \@ GETBIT(FLAG:33, 30) ? ○ # －\@ 혀놀림 （컨닐링구스등의 효과ＵＰ） ４Ｐ
 	IS_SELECT:30 = 4
 ENDIF
-IF TALENT:MASTER:손가락놀림 < 3
+IF TALENT:MASTER:손가락놀림 < 3 || CONFIG("주차능력계승")
 	PRINTFORML  [31] \@ GETBIT(FLAG:33, 31) ? ○ # －\@ 손가락놀림 （애무등의 효과ＵＰ） ４Ｐ
 	IS_SELECT:31 = 4
 ENDIF
-IF TALENT:MASTER:발놀림 < 3
+IF TALENT:MASTER:발놀림 < 3 || CONFIG("주차능력계승")
 	PRINTFORML  [32] \@ GETBIT(FLAG:33, 32) ? ○ # －\@ 발놀림 （풋잡의 효과ＵＰ） ４Ｐ
 	IS_SELECT:32 = 4
 ENDIF
-IF TALENT:MASTER:허리놀림 < 3
+IF TALENT:MASTER:허리놀림 < 3 || CONFIG("주차능력계승")
 	PRINTFORML  [33] \@ GETBIT(FLAG:33, 33) ? ○ # －\@ 허리놀림 （섹스계의 효과ＵＰ） ４Ｐ
 	IS_SELECT:33 = 4
 ENDIF
-IF TALENT:MASTER:마유 < 3 && TALENT:MASTER:남자 == 0
+IF TALENT:MASTER:마유 < 3 && TALENT:MASTER:남자 == 0 || CONFIG("주차능력계승") && TALENT:MASTER:남자 == 0
 	PRINTFORML  [34] \@ GETBIT(FLAG:33, 34) ? ○ # －\@ 가슴놀림（=마유,파이즈리의 효과ＵＰ） ４Ｐ
 	IS_SELECT:34 = 4
 ENDIF
