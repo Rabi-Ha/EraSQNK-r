@@ -1555,22 +1555,22 @@ IF SHOOT("정액세례")
 			ENDIF
 		ENDIF
 	ELSEIF SHOOT("Ａくぱぁ")
-		PRINTFORM %CALLNAME:TARGET%의%TEXTR("엉덩이の穴", "窄まった後ろの穴", "引き伸ばされた肛門")%
+		PRINTFORM %CALLNAME:TARGET%의 %TEXTR("엉덩이의 구멍", "오므라진 뒷 구멍", "열린 항문")%
 		SELECTCASE RANDF(3)
 		CASE 2
 			PRINTFORM 에 페니스를 강압해
 		CASE 1
-			PRINTFORM 에 목적을 정해
+			PRINTFORM 으로 타겟을 정해
 		CASEELSE
-			PRINTFORM 노려
+			PRINTFORM 을 노려
 		ENDSELECT
-		PRINTFORMW %TEXTR("、정액を吐き出した", "사정した", "、정액を정액세례た")%
-		PRINTFORMW 점도가 높은 백탁액이,%CALLNAME:TARGET%의 %TEXTR("부정한 구멍", "그곳", "아누스")%을 덮어 가린 뒤로 걸죽 흘러내려 간다…
+		PRINTFORMW %TEXTR("、정액을 토해냈다", " 사정했다", "、정액을 뿌렸다")%
+		PRINTFORMW 점도가 높은 백탁액이, %CALLNAME:TARGET%의 %TEXTR("부정한 구멍", "그곳", "아누스")%을 덮어 가린 뒤로 걸죽 흘러내려 간다…
 	ELSEIF SHOOT("お腹")
 		IF TEQUIP:넘어뜨리기
-			PRINTFORML 자신의 배에 정액을 토하게했다
+			PRINTFORML 자신의 배에 정액을 토하게 했다
 		ELSE
-			PRINTFORML %CALLNAME:TARGET%의 배에 정액을 토하게했다
+			PRINTFORML %CALLNAME:TARGET%의 배에 정액을 토하게 했다
 		ENDIF
 		PRINTFORM 방출된 정액이, 
 		IF TALENT:배꼽피어스 && RAND:2
