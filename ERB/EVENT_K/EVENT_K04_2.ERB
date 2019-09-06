@@ -949,7 +949,7 @@ ELSEIF SELECTCOM == 0
 			IF TALENT:임신 && RAND:2 == 0
 				PRINTFORM 「에헤헤
 				CALL HEARTMARK
-				PRINTFORM %CNAME("二人称")%에 스윽스윽 해 받아, 배의빨강도 기뻐하고 있다
+				PRINTFORM %CNAME("二人称")%에 스윽스윽 해 받아, 배의 아기도 기뻐하고 있다
 				CALL HEARTMARK_E
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 애무한다손에 자신의손를 거듭해 기쁜듯이 미소지었다
 			ELSEIF RAND:2 == 0
@@ -1508,7 +1508,7 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 			IF RAND:2 == 0
 				PRINTFORMW 「읏, 후웃……에헤헤, 어때？%CNAME("一人称")%의 엣치한 곳 봐 덮치고 싶어지거나 하지 않는다？」
 			ELSE
-				PRINTFORM 「읏, 아읏……앗%CNAME("二人称")%도얼굴하지만빨강구 되어 있다？우후후
+				PRINTFORM 「읏, 아읏……앗%CNAME("二人称")%도 얼굴이 빨갛게 되어 있다？우후후
 				CALL HEARTMARK_E
 			ENDIF
 		ELSE
@@ -1675,7 +1675,7 @@ IF SELECTCOM == 5
 			IF BASE:육아중 && RAND:3 == 0
 				PRINTFORM 「아읏
 				CALL HEARTMARK
-				PRINTFORM 빨강가 있기 때문은 마시는 것 사양하지 않아도 좋아
+				PRINTFORM 아기가 있기 때문에 마시는 것 사양하지 않아도 좋아
 				CALL HEARTMARK_E
 				PRINTFORM 「챠～음%CNAME("二人称")%의부응의 밀크도 만들어 있기 때문에, 사양하지 않고 자꾸자꾸 마셔
 				CALL HEARTMARK_E
@@ -1707,20 +1707,20 @@ IF SELECTCOM == 5
 				CALL HEARTMARK_E
 				;임신＋육아중
 				IF TALENT:임신 && BASE:육아중
-					PRINTFORM 「이제(벌써), 이렇게 많은빨강돌보지 못할
+					PRINTFORM 「이제(벌써), 이렇게 많은 아기를 돌보지 못할
 					CALL HEARTMARK_E
 				;임신or육아중
 				ELSEIF TALENT:임신 || BASE:육아중
-					PRINTFORM 「후훗, 마치 2인째의빨강를 할 수 있던 것 같다
+					PRINTFORM 「후훗, 마치 2인째의 아기를 할 수 있던 것 같다
 					CALL HEARTMARK_E
 				;출산경험
 				ELSEIF TALENT:출산경험
-					PRINTFORM 「마치 큰빨강를 할 수 있던 것 같구나
+					PRINTFORM 「마치 큰 아기를 할 수 있던 것 같구나
 					CALL HEARTMARK
 					PRINTFORM 좋아 좋아
 					CALL HEARTMARK_E
 				ELSE
-					PRINTFORM 「마치%CNAME("一人称")%에빨강할 수 있던 것 같다……
+					PRINTFORM 「마치 %CNAME("一人称")%의 아기인 것 같다……
 					CALL HEARTMARK_E
 				ENDIF
 			ELSEIF RAND:2 == 0
@@ -1751,7 +1751,7 @@ IF SELECTCOM == 5
 				CALL HEARTMARK
 				PRINTFORM 젖가슴 오돌오돌 째에
 				CALL HEARTMARK_E
-				PRINTFORM 「하아, 하아……%TEXTR("ま, まだ", "も, もっと")%――앗, 야앗, 후아앙
+				PRINTFORM 「하아, 하아……%TEXTR("아, 아직", "좀, 좀 더")%――앗, 야앗, 후아앙
 				CALL HEARTMARK_E
 			ENDIF
 		;굴복각인2LV이상＋모유마시기
@@ -2078,7 +2078,7 @@ IF SELECTCOM == 8
 				CALL HEARTMARK
 				;임신 
 				IF TALENT:임신
-					PRINTFORM 빨강마다자궁가 흔들어지고 있는 것
+					PRINTFORM 빨강마다 자궁가 흔들어지고 있는 것
 				ELSE
 					PRINTFORM 장난감이 부들부들 떨려, 배안전부 흔들어져 버리고 있는 것
 				ENDIF
@@ -2233,7 +2233,7 @@ IF SELECTCOM == 8
 			CALL HEARTMARK
 			PRINTFORM 손가락그런데, 자지가 들어 오고 있는 것 같이 움직여 버리고 있다……
 			CALL HEARTMARK_E
-			PRINTFORMW 정자를 짜내려고 하는 것 같은질안의 움직임에%조사처리(CALLNAME:TARGET,"는")% 빨강면 했다
+			PRINTFORMW 정자를 짜내려고 하는 것 같은 질안의 움직임에%조사처리(CALLNAME:TARGET,"는")% 빨간 얼굴을 했다
 		;それ以外
 		ELSE
 			PRINTFORMW 「응우……상냥하게 해？」
@@ -2423,7 +2423,7 @@ IF SELECTCOM == 13
 					CALL HEARTMARK_E
 					;임신していない
 					IF TALENT:임신 == 0 && RAND:2 == 0
-						PRINTFORM 「빨리%CNAME("二人称")%의 큰 자지로%CNAME("一人称")%에빨강만들게 해
+						PRINTFORM 「빨리%CNAME("二人称")%의 큰 자지로%CNAME("一人称")%에 빨강만들게 해
 						CALL HEARTMARK_E
 					ELSE
 						PRINTFORM 「빨리%CNAME("二人称")%의 자지 갖고 싶어
@@ -2866,7 +2866,7 @@ IF SELECTCOM == 31 && TEQUIP:바이브
 				CALL HEARTMARK_E
 				;目が見える
 				SIF COND("視力")
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 거대한바이브를 받아들이기 (위해)때문에 한계까지 펼쳐졌다질입을 봐얼굴을빨강놈들이라고 있다
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 거대한 바이브를 받아들이기 위해 한계까지 벌려진 질구를 봐 얼굴을 빨갛게 들이라고 있다
 			ELSEIF COND("視力") &&  RAND:2 == 0
 				PRINTFORM 「아아
 				CALL HEARTMARK
@@ -2979,7 +2979,7 @@ ELSEIF SELECTCOM == 31
 			CALL HEARTMARK_E
 			PRINTFORM 읏……응, 쿠우, 응응～～～～읏
 			CALL HEARTMARK
-			PRINTFORM 아, 하아……빨강출생한 것 같다……에헤헤
+			PRINTFORM 아, 하아……빨강 출생한 것 같다……에헤헤
 			CALL HEARTMARK_E
 			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 근원까지삽입된 극태[極太]의바이브를질압만으로 토해냈다
 		ELSE
@@ -3274,7 +3274,7 @@ ELSEIF SELECTCOM == 35
 	;目が見える＋Ｂ発情1이상
 	ELSEIF COND("視力") && CALCF("Ｂ발정") >= 1 && RAND:2 == 0
 		PRINTFORMW 「아우우……기분 좋지만 젖가슴 길어져 버릴 것 같다……」
-		PRINTFORMW 충혈해빨강구 되었다유두(와)과 같게%CALLNAME:TARGET%의 얼굴도 주홍에 물들었다
+		PRINTFORMW 충혈해 빨갛게 된 유두와 같게 %CALLNAME:TARGET%의 얼굴도 주홍에 물들었다
 	ELSE
 		PRINTFORMW 「응읏! 읏하아……젖가슴 얼얼 해 이상한 느낌……」
 	ENDIF
@@ -3340,7 +3340,7 @@ IF SELECTCOM == 36 && TEQUIP:착유기
 		ELSEIF TALENT:연모
 			;임신による모유체질
 			IF GETBIT(CFLAG:468, 2)
-				PRINTFORMW 「(이)나, 이것빨강의 젖가슴인데 가로채서는 안돼에」
+				PRINTFORMW 「(이)나, 이것 빨강의 젖가슴인데 가로채서는 안돼에」
 			ELSE
 				PRINTFORMW 「이제(벌써), 어쩔 수 없구나. 짠 만큼 다음에%CNAME("二人称")%태우고─하지도 먹여？」
 			ENDIF
@@ -3569,7 +3569,7 @@ IF SELECTCOM == 39 && TEQUIP:로터삽입
 		ELSEIF TALENT:연모 && TALENT:임신 && RAND:2 == 0
 			PRINTFORM 「아핫
 			CALL HEARTMARK
-			PRINTFORM 보지의 부들부들이 배의빨강에까지 도착하고 있어……기분이 좋은～～～～
+			PRINTFORM 보지의 부들부들이 배의 빨강에까지 도착하고 있어……기분이 좋은～～～～
 			CALL HEARTMARK_E
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 큰 배를 내던져로터(이)가 가져오는 완만한 쾌감에 잠겨 있다……
 		;노출벽Lv3＋손が使える＋目が見える
@@ -4401,7 +4401,7 @@ IF SELECTCOM == 62
 				IF COND("視力") && RAND:2 == 0
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 좋아승손에 출납되는 자신의 결합부를 가만히 응시하고 있다……
 				ELSE
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 결합부로부터 들리는 소리에얼굴을 진빨강로 하고 있다……
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 결합부로부터 들리는 소리에 얼굴을 진분홍으로 하고 있다……
 				ENDIF
 			ENDIF
 		ELSE
@@ -4550,7 +4550,7 @@ IF SELECTCOM == 63
 					CALL HEARTMARK_E
 					;임신中 
 					IF TALENT:임신
-						PRINTFORM 「이대로빨강마다%CNAME("一人称")%의 보지 가득 사랑해
+						PRINTFORM 「이대로 빨강마다 %CNAME("一人称")%의 보지 가득 사랑해
 						CALL HEARTMARK_E
 					ELSE
 						PRINTFORM 「이대로다 넘으면서 보지의 안쪽까지 쓱쓱 해 기분 좋게 해
@@ -4757,7 +4757,7 @@ IF SELECTCOM == 64
 					;당신の子
 					SIF COND("정액의우세") == MASTER
 						PRINTFORM %조사처리(CNAME("二人称"),"과")%
-					PRINTFORM %CNAME("一人称")%의빨강에 가득한으로 어루만지고 해 주어
+					PRINTFORM %CNAME("一人称")%의 빨강에 가득한으로 어루만지고 해 주어
 					CALL HEARTMARK_E
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에신체를 유지되면서 탐욕에허리를 움직여, 충혈해 부드러워졌다질그래서%조사처리(NAMES("페니스", PLAYER),"를")% 큥큥 단단히 조인다……
 				ELSEIF RAND:2 == 0
@@ -5191,7 +5191,7 @@ ELSEIF SELECTCOM == 65 && TEQUIP:넘어뜨리기 == 0
 					CALL HEARTMARK
 					;임신中 ＋당신に生えている
 					IF TALENT:임신 && PENIS(PLAYER)
-						PRINTFORM 뒤는%조사처리(CNAME("二人称"),"가")% 배의빨강가짜─해 따라 줄 뿐(만큼)이구나
+						PRINTFORM 뒤는 %조사처리(CNAME("二人称"),"가")% 배의 빨강가짜─해 따라 줄 뿐이구나
 					ELSE
 						PRINTFORM 이대로 둘이서 녹아 버릴 때까지 1개가 되자……
 					ENDIF
@@ -5466,13 +5466,13 @@ IF SELECTCOM == 67 && INSERT("기승위")
 					CALL HEARTMARK
 					PRINTFORM 에헤헤
 					CALL HEARTMARK
-					PRINTFORM %CNAME("一人称")%의 안에 또 한사람빨강를 할 수 있던 것 같다
+					PRINTFORM %CNAME("一人称")%의 안에 또 한사람 빨강를 할 수 있던 것 같다
 					CALL HEARTMARK_E
 					PRINTFORM 「앗
 					CALL HEARTMARK
 					PRINTFORM 하앗
 					CALL HEARTMARK
-					PRINTFORM 이대로자궁위로부터, 배의빨강스윽스윽 시켜 준다……
+					PRINTFORM 이대로자궁위로부터, 배의 빨강스윽스윽 시켜 준다……
 					CALL HEARTMARK_E
 				;임신가능＋당신に生えている 50%
 				ELSEIF COND("임신가능") && PENIS(PLAYER) && RAND:2 == 0
@@ -5503,7 +5503,7 @@ IF SELECTCOM == 67 && INSERT("기승위")
 				IF TALENT:임신 && PENIS(PLAYER) && RAND:2 == 0
 					PRINTFORM 「아읏
 					CALL HEARTMARK
-					PRINTFORM 빨강의들이입동글동글 하는 것 기분 좋다……
+					PRINTFORM 빨강들이 입동글동글 하는 것 기분 좋다……
 					CALL HEARTMARK_E
 					PRINTFORM 「앗
 					CALL HEARTMARK
@@ -5517,7 +5517,7 @@ IF SELECTCOM == 67 && INSERT("기승위")
 				ELSEIF COND("임신가능") && PENIS(PLAYER) && RAND:2 == 0
 					PRINTFORM 「아핫
 					CALL HEARTMARK
-					PRINTFORM 여기가%CNAME("一人称")%의빨강만드는 곳이야, %CNAME("二人称")%
+					PRINTFORM 여기가%CNAME("一人称")%의 빨강만드는 곳이야, %CNAME("二人称")%
 					CALL HEARTMARK_E
 					PRINTFORM 「읏
 					CALL HEARTMARK
@@ -5547,9 +5547,9 @@ IF SELECTCOM == 67 && INSERT("기승위")
 				IF TALENT:임신 && PENIS(PLAYER) && RAND:2 == 0
 					PRINTFORM 「후훗
 					CALL HEARTMARK
-					PRINTFORM 여기가빨강의 출입입(이)야, %CNAME("二人称")%
+					PRINTFORM 여기가 빨강의 출입구야, %CNAME("二人称")%
 					CALL HEARTMARK_E
-					PRINTFORM 「이대로 배의빨강에 영양 충분한 밀크 가득 따라 줘
+					PRINTFORM 「이대로 배의 빨강에 영양 충분한 밀크 가득 따라 줘
 					CALL HEARTMARK_E
 				;임신가능＋당신に生えている 50%
 				ELSEIF COND("임신가능") && PENIS(PLAYER) && RAND:2 == 0
@@ -5559,7 +5559,7 @@ IF SELECTCOM == 67 && INSERT("기승위")
 					CALL HEARTMARK_E
 					PRINTFORM 「%CNAME("二人称")%, 안다？%CNAME("一人称")%의 막다른 곳……
 					CALL HEARTMARK_E
-					PRINTFORM 「이대로%CNAME("二人称")%태우고─해로, 건강한빨강임신시켜
+					PRINTFORM 「이대로%CNAME("二人称")%태우고─해로, 건강한 빨강임신시켜
 					CALL HEARTMARK_E
 				ELSE
 					PRINTFORM 「아읏
@@ -5678,7 +5678,7 @@ ELSEIF SELECTCOM == 67 && INSERT("기승위") == 0
 					CALL HEARTMARK
 					PRINTFORM 간닷
 					CALL HEARTMARK
-					PRINTFORM 빨강가 있다자궁로 가 버린다～～～～
+					PRINTFORM 빨강가 있는 자궁로 가 버린다～～～～
 					CALL HEARTMARK
 					CALL HEARTMARK_E
 				;임신가능＋당신に生えている
@@ -5687,12 +5687,12 @@ ELSEIF SELECTCOM == 67 && INSERT("기승위") == 0
 					CALL HEARTMARK
 					PRINTFORM %CNAME("二人称")%의 자지로, %CNAME("一人称")%의 보지 전부 메워져 버렸다……
 					CALL HEARTMARK_E
-					PRINTFORM 「이대로자궁의들이입에, %CNAME("二人称")%태우고─해 가득 따라……
+					PRINTFORM 「이대로 자궁의들이입에, %CNAME("二人称")%태우고─해 가득 따라……
 					CALL HEARTMARK_E
 				ELSE
 					PRINTFORM 「응읏……하아, 하아……
 					CALL HEARTMARK
-					PRINTFORM %CNAME("一人称")%의자궁, %CNAME("二人称")%의 자지로 찌부러뜨려져 버리고 있다……
+					PRINTFORM %CNAME("一人称")%의 자궁, %CNAME("二人称")%의 자지로 찌부러뜨려져 버리고 있다……
 					CALL HEARTMARK_E
 					PRINTFORM 「앗
 					CALL HEARTMARK
@@ -5707,9 +5707,9 @@ ELSEIF SELECTCOM == 67 && INSERT("기승위") == 0
 			ELSEIF ABL:Ｖ확장 > SIZE("페니스", PLAYER)
 				;임신中 ＋당신に生えている＋자궁간경험あり＋前回と同じ
 				IF TALENT:임신 && PENIS(PLAYER) && EXP:자궁간경험 && PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
-					PRINTFORM 「(이)나
+					PRINTFORM 「나 
 					CALL HEARTMARK
-					PRINTFORM 지금은빨강있기 때문에 그렇게 밀어넣어도삽입들 없어
+					PRINTFORM 지금은 빨강있기 때문에 그렇게 밀어넣어도 삽입이 안 돼
 					CALL HEARTMARK_E
 					PRINTFORM 「빨강태어나면 또자궁엣치해 주기 때문에, 지금은들이입그리고 참아
 					CALL HEARTMARK_E
@@ -5717,7 +5717,7 @@ ELSEIF SELECTCOM == 67 && INSERT("기승위") == 0
 				ELSEIF TALENT:임신 && PENIS(PLAYER) && RAND:2 == 0
 					PRINTFORM 「후아앗
 					CALL HEARTMARK
-					PRINTFORM %CNAME("二人称")%의 자지와빨강-하고 있다……
+					PRINTFORM %CNAME("二人称")%의 자지와 빨강-하고 있다……
 					CALL HEARTMARK_E
 					PRINTFORM 「햐앗
 					CALL HEARTMARK
@@ -5760,7 +5760,7 @@ ELSEIF SELECTCOM == 67 && INSERT("기승위") == 0
 					CALL HEARTMARK
 					PRINTFORM %CNAME("二人称")%의 자지, 빨강의 출입에 해당되고 있다
 					CALL HEARTMARK_E
-					PRINTFORM 「이대로빨강에 많이 영양 따라 주어
+					PRINTFORM 「이대로 빨강에 많이 영양 따라 주어
 					CALL HEARTMARK_E
 				;임신가능＋당신に生えている
 				ELSEIF COND("임신가능") && PENIS(PLAYER) && RAND:2 == 0
@@ -5791,7 +5791,7 @@ ELSEIF SELECTCOM == 67 && INSERT("기승위") == 0
 				CALL HEARTMARK
 				PRINTFORM (이)나
 				CALL HEARTMARK
-				PRINTFORM 그렇게 안쪽까지 찌르면 또빨강되어있고는……앗, 아, 햐아아앗
+				PRINTFORM 그렇게 안쪽까지 찌르면 또 빨강되어있고는……앗, 아, 햐아아앗
 				CALL HEARTMARK_E
 			ELSEIF RAND:2 == 0
 				PRINTFORM 「앗
@@ -5879,7 +5879,7 @@ IF SELECTCOM == 68 && INSERT("기승위")
 						CALL HEARTMARK
 						PRINTFORM 하앗
 						CALL HEARTMARK
-						PRINTFORM 이대로 진짜의빨강도, 줘……
+						PRINTFORM 이대로 진짜의 빨강도, 줘……
 						CALL HEARTMARK_E
 					ENDIF
 				ELSE
@@ -6619,7 +6619,7 @@ IF SELECTCOM == 91
 				IF TALENT:연모 && ABL:봉사정신 >= 3
 					;임신 50%
 					IF TALENT:임신 && RAND:2 == 0
-						PRINTFORM 「배의빨강를 위해서(때문에), 전부입중(안)에서 내
+						PRINTFORM 「배의 빨강를 위해서, 전부입중(안)에서 내
 						CALL HEARTMARK
 						PRINTFORM 응긋, 응츗……
 						CALL HEARTMARK_E
@@ -6659,7 +6659,7 @@ IF SELECTCOM == 91
 				IF TALENT:연모 && ABL:봉사정신 >= 3
 					;임신 50%
 					IF TALENT:임신 && RAND:2 == 0
-						PRINTFORM 「배의빨강를 위해서(때문에), 영양 가득 줘
+						PRINTFORM 「배의 빨강를 위해서, 영양 가득 줘
 						CALL HEARTMARK
 						PRINTFORM 츗츗……
 						CALL HEARTMARK_E
@@ -6788,7 +6788,7 @@ IF SELECTCOM == 92
 					ENDIF
 				;모유체질 50%
 				ELSEIF TALENT:모유체질 && RAND:2 == 0
-					PRINTFORM 「응후우……%CNAME("二人称")%의 자지 밀크와, %CNAME("一人称")%의빨강밀크가 섞이고 있다……
+					PRINTFORM 「응후우……%CNAME("二人称")%의 자지 밀크와, %CNAME("一人称")%의 빨강밀크가 섞이고 있다……
 					CALL HEARTMARK_E
 					PRINTFORM 「%CNAME("一人称")%, 좀더 좀더 기분 좋아져……
 					CALL HEARTMARK_E
@@ -8301,7 +8301,7 @@ IF SELECTCOM == 139 && INSERT("인서트")
 					IF TALENT:임신 && COND("정액의우세") == MASTER
 						PRINTFORM 「호～들, 파파의 자지야～
 						CALL HEARTMARK
-						PRINTFORM 이봐요, %CNAME("二人称")%아이참 배의빨강어루만져 줘
+						PRINTFORM 이봐요, %CNAME("二人称")%아이참 배의 빨강 어루만져 줘
 						CALL HEARTMARK_E
 						PRINTFORML %조사처리(NAMES("페니스", PLAYER),"를")% 돌진한 채로%CALLNAME:TARGET%의 크게 부풀어 오른 배를 어루만지고 문지르면
 						PRINTFORMW 어루만지고 있다손에%CALLNAME:TARGET%도 작은손를 거듭해 행복하게 미소지었다
@@ -8966,9 +8966,9 @@ IF SELECTCOM == 148
 					IF TALENT:임신
 						PRINTFORM 「에헤헤
 						CALL HEARTMARK
-						PRINTFORM 뭔가 배의빨강까지%CNAME("二人称")%의 것으로 되고 있는 것 같다
+						PRINTFORM 뭔가 배의 빨강까지 %CNAME("二人称")%의 것으로 되고 있는 것 같다
 						CALL HEARTMARK_E
-						PRINTFORM 「……우응, %CNAME("一人称")%의 몸은빨강마다%CNAME("二人称")%의 것이야. 쭉, 쭉……
+						PRINTFORM 「……우응, %CNAME("一人称")%의 몸은 빨강마다 %CNAME("二人称")%의 것이야. 쭉, 쭉……
 						CALL HEARTMARK_E
 						;구속されていない
 						SIF TEQUIP:구속 == 0
@@ -9710,7 +9710,7 @@ IF SELECTCOM == 175
 				;당신の子
 				SIF COND("정액의우세") == MASTER
 					PRINTFORM %조사처리(CNAME("二人称"),"과")%
-				PRINTFORM %CNAME("一人称")%의빨강(군)양이 들어가 있는거야～
+				PRINTFORM %CNAME("一人称")%의 빨강쨩이 들어가 있는거야～
 				CALL HEARTMARK_E
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 노출한 큰 배를 어루만지면서 미소지었다
 			ELSE
@@ -10024,7 +10024,7 @@ IF SELECTCOM == 232
 			CALL HEARTMARK_E
 		;연모＋임신
 		ELSEIF TALENT:연모 && TALENT:임신
-			PRINTFORM 「앗……배의빨강가 움직였다아
+			PRINTFORM 「앗……배의 빨강가 움직였다아
 			CALL HEARTMARK_E
 			PRINTFORM 「반드시%CNAME("二人称")%태우고─해를 가득 마시고 싶고 두근두근 하고 있는거야
 			CALL HEARTMARK
@@ -10382,7 +10382,7 @@ IF SELECTCOM == 264
 			PRINTFORMW 
 		;연모＋Ｖ섹스まだ
 		ELSEIF TALENT:연모 && EXP:Ｖ성교경험 == 0
-			PRINTFORMW 「빨강할 수 있는 약……라는 일은, %조사처리(CNAME("二人称"),"과")% 엣치할 수 있어？정말？」
+			PRINTFORMW 「빨강 만들 수 있는 약……라는 일은, %조사처리(CNAME("二人称"),"과")% 엣치할 수 있어？정말？」
 		;상사상애
 		ELSEIF TALENT:상사상애
 			PRINTFORM 「에헤헤
@@ -10393,9 +10393,9 @@ IF SELECTCOM == 264
 			CALL HEARTMARK_E
 		;연모＋출산경험
 		ELSEIF TALENT:연모 && TALENT:출산경험
-			PRINTFORM 「빨강할 수 있는 약……후훗
+			PRINTFORM 「빨강 만들 수 있는 약……후훗
 			CALL HEARTMARK
-			PRINTFORM %CNAME("二人称")%도 참빨강좀 더 갖고 싶어져 버렸어？
+			PRINTFORM %CNAME("二人称")%도 참 빨강 좀 더 갖고 싶어져 버렸어？
 			CALL HEARTMARK_E
 			PRINTFORM 「%CNAME("一人称")%도 같음
 			CALL HEARTMARK
@@ -10403,20 +10403,20 @@ IF SELECTCOM == 264
 			CALL HEARTMARK_E
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORM 「빨강할 수 있는 약……라는 일은, %CNAME("二人称")%도 참%CNAME("一人称")%의빨강갖고 싶다～
+			PRINTFORM 「빨강할 수 있는 약……라는 일은, %CNAME("二人称")%도 참%CNAME("一人称")%의 빨강갖고 싶다～
 			CALL HEARTMARK_E
 			PRINTFORM 「물론 좋아
 			CALL HEARTMARK
-			PRINTFORM %CNAME("一人称")%도 언젠가%CNAME("二人称")%의빨강갖고 싶다라고 생각하고 있었던 것
+			PRINTFORM %CNAME("一人称")%도 언젠가%CNAME("二人称")%의 빨강갖고 싶다라고 생각하고 있었던 것
 			CALL HEARTMARK
 			PRINTFORM 에헤헤
 			CALL HEARTMARK_E
 		;출산경험
 		ELSEIF TALENT:출산경험
-			PRINTFORMW 「빨강할 수 있는 약？일전에 낳았던 바로 직후인데……」
-			PRINTFORMW 「……혹시, %조사처리(CNAME("一人称"),"가")% 빨강낳는 곳을 좋아해？」
+			PRINTFORMW 「빨강 만들 수 있는 약？일전에 낳았던 바로 직후인데……」
+			PRINTFORMW 「……혹시, %조사처리(CNAME("一人称"),"가")% 빨강 낳는 곳을 좋아해？」
 		ELSE
-			PRINTFORMW 「빨강할 수 있는 약？그 쪽이에로기분이 된다？이상해―」
+			PRINTFORMW 「빨강 만들 수 있는 약？그 쪽이 에로기분이 된다？이상해―」
 		ENDIF
 		CFLAG:330 = 1
 	;二回目以降
@@ -10431,11 +10431,11 @@ IF SELECTCOM == 264
 		ELSEIF TALENT:연모 && TALENT:출산경험
 			;상사상애
 			IF TALENT:상사상애 && RAND:4 == 0
-				PRINTFORM 「빨강가 뱃속에 있으면 말이죠, 보지로 갈 때에자궁가 언제나보다 나무라고 꼭 죄여
+				PRINTFORM 「빨강가 뱃속에 있으면 말이죠, 보지로 갈 때에 자궁가 언제나보다 꼭 죄여
 				CALL HEARTMARK_E
-				PRINTFORM 「그것이 매우 기분 좋아서……빨강가%CNAME("一人称")%의신체를 에로로 해 주는 것이야
+				PRINTFORM 「그것이 매우 기분 좋아서……빨강가%CNAME("一人称")%의 신체를 에로로 해 주는 것이야
 				CALL HEARTMARK_E
-				PRINTFORM 「물론%CNAME("二人称")%의빨강낳는다는 좋아해
+				PRINTFORM 「물론%CNAME("二人称")%의 빨강 낳는다는 좋아해
 				CALL HEARTMARK
 				PRINTFORM 그러니까 자꾸자꾸%조사처리(CNAME("一人称"),"를")% 임신하게 해
 				CALL HEARTMARK_E
@@ -10453,27 +10453,27 @@ IF SELECTCOM == 264
 				CALL HEARTMARK
 				PRINTFORM 빨강만드는 것 좋아아
 				CALL HEARTMARK_E
-				PRINTFORM 「왜냐하면[だって] 배에빨강가 있으면, 보지로 갈 때에 배 전부 기분 좋게 될 수 있는거야
+				PRINTFORM 「왜냐하면 배에 빨강가 있으면, 보지로 갈 때에 배 전부 기분 좋게 될 수 있는거야
 				CALL HEARTMARK_E
-				PRINTFORM 「거기에 평소보다%CNAME("二人称")%태우고─하지도 갖고 싶어지고, 사랑스럽다빨강태어나고 좋은 일쿠메야
+				PRINTFORM 「거기에 평소보다 %CNAME("二人称")%태우고─하지도 갖고 싶어지고, 사랑스러운 빨강 태어나고 좋은 일쿠메야
 				CALL HEARTMARK_E
 			ELSE
 				PRINTFORM 「했다아
 				CALL HEARTMARK
-				PRINTFORM 지금일하%CNAME("二人称")%곳만들기 엣치
+				PRINTFORM 지금일은 %CNAME("二人称")%곳 만들기 엣치
 				CALL HEARTMARK_E
-				PRINTFORM 「건강한빨강가 태어나도록(듯이), 배가 출렁출렁이 될 정도로까지 키─해 따라
+				PRINTFORM 「건강한 빨강가 태어나도록, 배가 출렁출렁이 될 정도로까지 키─해 따라
 				CALL HEARTMARK_E
 			ENDIF
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORM 「에헤헤
 			CALL HEARTMARK
-			PRINTFORM 이번이야말로빨강할 수 있도록 노력하자
+			PRINTFORM 이번이야말로 빨강 만들 수 있도록 노력하자
 			CALL HEARTMARK_E
 		;출산경험
 		ELSEIF TALENT:출산경험
-			PRINTFORMW 「엣, 또빨강낳지 않으면 안 되는거야―？」
+			PRINTFORMW 「엣, 또 빨강 낳지 않으면 안 되는거야―？」
 			PRINTFORM 「그렇게 갖고 싶으면%조사처리(CNAME("二人称"),"가")% 
 			;당신が남자＋몽마ではない
 			SIF TALENT:PLAYER:남자 && COND("몽마", PLAYER) == 0
@@ -11955,16 +11955,16 @@ ELSEIF SHOOT("Ｖ내사정")
 			ELSE
 				PRINTFORM 「우후후
 				CALL HEARTMARK
-				PRINTFORM 빨강중으로부터%CNAME("二人称")%태우고─해를 충분히 맛볼 수 있다니, 이 아이는 매우 행복하다
+				PRINTFORM 빨강안으로부터 %CNAME("二人称")%태우고─해를 충분히 맛볼 수 있다니, 이 아이는 매우 행복하다
 				CALL HEARTMARK_E
 			ENDIF
 		ELSE
 			;大量사정이상
 			IF COND("절정", PLAYER) >= 2
-				PRINTFORM 「이대로빨강가%CNAME("二人称")%태우고─해로 빠져 버릴 정도가 될 때까지 따라
+				PRINTFORM 「이대로 빨강가%CNAME("二人称")%태우고─해로 빠져 버릴 정도가 될 때까지 따라
 				CALL HEARTMARK_E
 			ELSE
-				PRINTFORM 「그렇지만 이것뿐으로는발리나 있고의, 다시 한번빨강에 밀크 따라 주어
+				PRINTFORM 「그렇지만 이것뿐으로는발리나 있고의, 다시 한번 빨강에 밀크 따라 주어
 				CALL HEARTMARK_E
 			ENDIF
 		ENDIF
@@ -12077,12 +12077,12 @@ ELSEIF SHOOT("Ｖ내사정")
 			IF COND("임신가능") && RAND:2 == 0
 				PRINTFORM 「하아……하아……
 				CALL HEARTMARK
-				PRINTFORM 확실히%CNAME("二人称")%의빨강는 갖고 싶지만, 
+				PRINTFORM 확실히%CNAME("二人称")%의 빨강는 갖고 싶지만, 
 				;출산경험
 				IF TALENT:출산경험 && RAND:2 == 0
-					PRINTFORM 이런빨강태어나기 직전정도 될 때까지
+					PRINTFORM 이런빨강 태어나기 직전정도 될 때까지
 				ELSE
-					PRINTFORM 정말로임신한 것 같이 될 때까지
+					PRINTFORM 정말로 임신한 것 같이 될 때까지
 				ENDIF
 				PRINTFORM 따르지 않아도……
 				CALL HEARTMARK_E
@@ -12092,7 +12092,7 @@ ELSEIF SHOOT("Ｖ내사정")
 				;당신が요정ではない
 				SIF TALENT:PLAYER:요정 == 0
 					PRINTFORM 작은 신체에서도
-				PRINTFORM 분명하게%CNAME("二人称")%의빨강를 낳아 주기 때문에, 맡겨
+				PRINTFORM 분명하게%CNAME("二人称")%의 빨강를 낳아 주기 때문에, 맡겨
 				CALL HEARTMARK_E
 			ELSE
 				PRINTFORM 「하아……하아……
@@ -12112,7 +12112,7 @@ ELSEIF SHOOT("Ｖ내사정")
 					CALL HEARTMARK
 					PRINTFORM 뱃속, %CNAME("二人称")%태우고─해로 출렁출렁 하고 있다……
 					CALL HEARTMARK_E
-					PRINTFORM 「이렇게 나오면, %CNAME("二人称")%의빨강할 수 있는 것도시간의 문제구나……우후후
+					PRINTFORM 「이렇게 나오면, %CNAME("二人称")%의 빨강 만들 수 있는 것도 시간 문제구나……우후후
 					CALL HEARTMARK_E
 				ELSE
 					PRINTFORM 「배 출렁출렁이 될 때까지 따라 주다니……
@@ -12139,7 +12139,7 @@ ELSEIF SHOOT("Ｖ내사정")
 				ELSE
 					PRINTFORM 「우후후
 					CALL HEARTMARK
-					PRINTFORM %CNAME("一人称")%중(안)에서%CNAME("二人称")%태우고─해가 건강하게 헤엄치고 있는 것이 알아……
+					PRINTFORM %CNAME("一人称")% 안에서%CNAME("二人称")%태우고─해가 건강하게 헤엄치고 있는 것이 알아……
 					CALL HEARTMARK_E
 				ENDIF
 			ELSE
@@ -12192,7 +12192,7 @@ ELSEIF SHOOT("Ｖ내사정")
 		IF TALENT:임신 && COND("태内の정액량") >= 20000 && RAND:2 == 0
 			PRINTFORM 「후훗
 			CALL HEARTMARK
-			PRINTFORM 이만큼 많은 키─해가 있으면, 반드시 건강한빨강가 태어나네요
+			PRINTFORM 이만큼 많은 키─해가 있으면, 반드시 건강한 빨강가 태어나네요
 			CALL HEARTMARK_E
 		;임신가능＋태내정액량2万이상 50%
 		ELSEIF COND("임신가능") && COND("태内の정액량") >= 20000 && RAND:2 == 0
@@ -12716,7 +12716,7 @@ CASE "아침기승위"
 			CALL HEARTMARK_E
 			PRINTFORM 「안녕%CNAME("二人称")%
 			CALL HEARTMARK
-			PRINTFORM 빨강의 만큼의아침밥 받고 있었어. 앗, 또 움찔움찔은 왔다아
+			PRINTFORM 빨강의 만큼의 아침밥 받고 있었어. 앗, 또 움찔움찔은 왔다아
 			CALL HEARTMARK_E
 		ELSEIF RAND:2 == 0
 			PRINTFORM 「읏……아하아
@@ -12893,7 +12893,7 @@ CASE "요바이기승위"
 			CALL HEARTMARK
 			PRINTFORM 빨강의 영양 받으러 왔어
 			CALL HEARTMARK_E
-			PRINTFORM 「%CNAME("二人称")%도빨강의 파파인 것이니까, 육아～응과 협력해
+			PRINTFORM 「%CNAME("二人称")%도 빨강의 파파인 것이니까, 육아～응과 협력해
 			CALL HEARTMARK_E
 		;V감각Lv5이상 50%
 		ELSEIF ABL:Ｖ감각 >= 5 && RAND:2 == 0
@@ -12963,10 +12963,10 @@ CASE "요바이Ａ기승위"
 CASE "요바이키스"
 	;당신の子を임신
 	IF TALENT:임신 && COND("정액의우세") == MASTER
-		PRINTFORMW 「배의빨강, 건강하게 자라고 있다. %조사처리(CNAME("二人称"),"과")%%CNAME("一人称")%의빨강……」
+		PRINTFORMW 「배의 빨강, 건강하게 자라고 있다. %조사처리(CNAME("二人称"),"과")%%CNAME("一人称")%의 빨강……」
 		;人間の당신と몽마の요정
 		SIF COND("인외度", PLAYER) == 0 && COND("몽마", PLAYER) == 0 && COND("몽마")
-			PRINTFORMW 「인간이라든지, 요정라든지, 몽마라든지……관계없는거야. 세계에서 제일 좋아하는 사람과, 서로 사랑해 할 수 있었다빨강」
+			PRINTFORMW 「인간이라든지, 요정라든지, 몽마라든지……관계없는거야. 세계에서 제일 좋아하는 사람과, 서로 사랑해 만드는 빨강」
 		PRINTFORM 「앞으로도, 둘이서 함께 지켜 주자……츗
 		CALL HEARTMARK_E
 	ELSEIF RAND:2 == 0
@@ -12991,11 +12991,11 @@ CASE "添い寝"
 			CALL HEARTMARK_E
 			;아이がある程度育っている
 			IF BASE:육아중 >= 7
-				PRINTFORMW %CALLNAME:TARGET%의 팔 중(안)에서는, 응석 번화가의 우리 아이가 푹 자고 있다……
+				PRINTFORMW %CALLNAME:TARGET%의 팔 안에서는, 응석 번화가의 우리 아이가 푹 자고 있다……
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%의 팔 중(안)에서는, 아직 그저빨강응방의 우리 아이가 새근새근 숨소리를 내고 있다……
+				PRINTFORMW %CALLNAME:TARGET%의 팔 안에서는, 아직 그저 빨강응방의 우리 아이가 새근새근 숨소리를 내고 있다……
 			ENDIF
-			PRINTFORM 「사랑스럽다……%조사처리(CNAME("二人称"),"과")%%CNAME("一人称")%의빨강……
+			PRINTFORM 「사랑스럽다……%조사처리(CNAME("二人称"),"과")%%CNAME("一人称")%의 빨강……
 			CALL HEARTMARK_E
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「밤하지만 쭉 계속되면 좋은데―」
@@ -13397,12 +13397,12 @@ CASE "출산"
 	IF TALENT:연모 && COND("정액의우세") == MASTER
 		;출산경험
 		IF TALENT:출산경험
-			PRINTFORM 「하후우……%CNAME("二人称")%의빨강, 태어났어～
+			PRINTFORM 「하후우……%CNAME("二人称")%의 빨강, 태어났어～
 			CALL HEARTMARK_E
 			IF RAND:4 == 0
 				PRINTFORM 「꺄우～응
 				CALL HEARTMARK
-				PRINTFORMW %CNAME("二人称")%의빨강인가～원 있고～! 」
+				PRINTFORMW %CNAME("二人称")%의 빨강인가～원 있고～! 」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"와")%의 사랑의 결정에 몇번이나 뺨 비비기를 했다
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 「이봐요! 여기는%CNAME("二人称")%꼭 닮구나! 」
@@ -13430,7 +13430,7 @@ CASE "출산"
 		IF TALENT:출산경험
 			PRINTFORM 「하후우……빨강태어났어～
 			CALL HEARTMARK_E
-			PRINTFORM 「이번은%CNAME("二人称")%의빨강가 좋구나……배 텅 비게 되었고, %조사처리(CNAME("一人称"),"는")% 언제라도 준비 오케이야
+			PRINTFORM 「이번은%CNAME("二人称")%의 빨강가 좋구나……배 텅 비게 되었고, %조사처리(CNAME("一人称"),"는")% 언제라도 준비 오케이야
 			CALL HEARTMARK_E
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아직 물러나지 않은 배를 팡팡 두드려 미소지었다
 		ELSE
@@ -13491,10 +13491,10 @@ CASE "子離れ"
 		ENDIF
 	;연모
 	ELSEIF TALENT:연모
-		PRINTFORMW 「빨강, 간신히손하지만 걸리지 않는 위까지 커졌군요」
+		PRINTFORMW 「빨강, 간신히 손으로 걸리지 않는 위까지 커졌군요」
 		;당신の子を임신
 		IF TALENT:임신 && COND("정액의우세") == MASTER
-			PRINTFORM 「그리고 다음은……%CNAME("二人称")%의빨강의 차례～
+			PRINTFORM 「그리고 다음은……%CNAME("二人称")%의 빨강의 차례～
 			CALL HEARTMARK_E
 			PRINTFORM 「우후후
 			CALL HEARTMARK
@@ -13503,10 +13503,10 @@ CASE "子離れ"
 		;임신
 		ELSEIF TALENT:임신
 			PRINTFORMW 「저기%CNAME("二人称")%……%조사처리(CNAME("二人称"),"는")% , %CNAME("一人称")%의 일이 싫어？」
-			PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 갖고 싶은 것은%CNAME("一人称")%의빨강가 아니야, %CNAME("二人称")%의빨강야……」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 갖고 싶은 것은 %CNAME("一人称")%의 빨강가 아니야, %CNAME("二人称")%의 빨강야……」
 		ELSE
 			PRINTFORMW 「지금까지%CNAME("一人称")%에 사양하고 있었어？이제(벌써), 그런 일 하지 않아도 괜찮은데……」
-			PRINTFORM 「무엇은……물론 다음의빨강
+			PRINTFORM 「무엇은……물론 다음의 빨강
 			CALL HEARTMARK
 			PRINTFORM 분명하게 수정시켜 줄 때까지 떼어 놓지 않으니까
 			CALL HEARTMARK_E
@@ -13515,7 +13515,7 @@ CASE "子離れ"
 		;임신
 		IF TALENT:임신
 			PRINTFORMW 「후우……간신히손하지만 걸리지 않는 위까지 커졌지만……」
-			PRINTFORMW 「뱃속에는 다음의빨강가 있고……」
+			PRINTFORMW 「뱃속에는 다음의 빨강가 있고……」
 			PRINTFORMW 「이제(벌써), 작은요정를 이렇게 일하게 하고 있기 때문에 조금은 위로해요」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 허리에손를 맞히고 뺨을 부풀려%CALLNAME:PLAYER%에 항의를 했다
 		ELSE

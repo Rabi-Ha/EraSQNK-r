@@ -1230,7 +1230,7 @@ IF CHOICE == -1
 			PRINTFORM 마루에
 		ENDIF
 	ENDIF
-	PRINTFORML \@ TEQUIP:넘어뜨리기 ? 싸게한다 # 싼다 \@」
+	PRINTFORML \@ TEQUIP:넘어뜨리기 ? 싸게 한다 # 싼다 \@」
 
 	PRINTFORML  [ 1] 「머리카락」
 	PRINTFORML  [ 2] 「얼굴」
@@ -1316,9 +1316,9 @@ ELSEIF SHOOT("そのまま") == 0 && COND("사정箇所변경", PLAYER) == 0
 		ELSEIF SHOOT("손")
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 페니스를 빠르게 훓어 목적을 유도시켜, 
 		ELSEIF SHOOT("질内")
-			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"가")% 사정하기 직전에 허리를 올려 페니스를 개방해, 
+			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"가")% 사정하기 직전에 허리를 올려 페니스를 풀어줘, 
 		ELSEIF SHOOT("애널")
-			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"가")% 사정하기 직전에 허리를 올려 페니스를 개방해, 
+			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"가")% 사정하기 직전에 허리를 올려 페니스를 풀어줘, 
 		ELSEIF SHOOT("파이즈리")
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"가")% 사정하기 직전에 파이즈리를 멈추어, 
 		;ELSEIF SHOOT("다리")
@@ -1366,16 +1366,16 @@ IF SHOOT("정액세례")
 		IF TALENT:뿔 && RAND:2 == 0
 			IF TEQUIP:넘어뜨리기
 				PRINTFORML 자신의 뿔에 정액을 뿌리게 했다
-				PRINTFORMW 또, %TEXTR("매끈한", "아름다운")% 뿔로 페니스를 문질러 진한 정액을 칠해나간다…
+				PRINTFORMW 또, %TEXTR("매끈한", "아름다운")% 뿔로 페니스를 문질러 진한 정액을 칠해 나간다…
 			ELSE
 				PRINTFORML %CALLNAME:TARGET%의 뿔에 정액을 뿌렸다
-				PRINTFORMW 그리고, %TEXTR("매끈한", "아름다운")% 뿔에 페니스를 문질러 진한 정액을 칠해나간다…
+				PRINTFORMW 그리고, %TEXTR("매끈한", "아름다운")% 뿔에 페니스를 문질러 진한 정액을 칠해 나간다…
 			ENDIF
 		;천사の輪
 		ELSEIF (BASE:종족 == 20 || BASE:종족 == 21) && (RAND:3 == 0 || COND("절정", PLAYER) >= 3)
 			IF TEQUIP:넘어뜨리기
 				PRINTFORMW 자기 머리 위의 빛나는 고리에 정액세례를 시켰다
-				PRINTFORMW 실제로 더러워지는 것은 아니지만, 배덕적인 행위에 흥분하고 있는 것같다…
+				PRINTFORMW 실제로 더러워지는 것은 아니지만, 배덕적인 행위에 흥분하고 있는 것 같다…
 			ELSE
 				PRINTFORMW %CALLNAME:TARGET%의 머리 위의 빛나는 고리에 정액세례를 했다
 				PRINTFORMW 실제로 더러워지는 것은 아니지만, 배덕적인 행위에 흥분이 된다…
@@ -1413,9 +1413,9 @@ IF SHOOT("정액세례")
 						PRINTFORM 을 범해져 
 					ENDIF
 					IF RAND:3 == 0
-						PRINTFORM 눈동자에 물기를 띠게 하고 있는
+						PRINTFORM 눈동자에 물기를 띈
 					ELSEIF RAND:2
-						PRINTFORM 눈물고인 눈을 하고 있는
+						PRINTFORM 눈물 고인 눈을 하고 있는
 					ELSE
 						PRINTFORM 게우고 있는
 					ENDIF
@@ -1485,7 +1485,7 @@ IF SHOOT("정액세례")
 		;	PRINTFORML 
 		;ENDIF
 		IF TEQUIP:넘어뜨리기
-			PRINTFORMW 자신의 사타구니 노려정액을 토해내게 했다
+			PRINTFORMW 자신의 사타구니를 노려 정액을 토해내게 했다
 		ELSE
 			IF SHOOT("くぱぁ")
 				IF TALENT:처녀
@@ -1499,11 +1499,11 @@ IF SHOOT("정액세례")
 
 			SELECTCASE RANDF(3)
 			CASE 2
-				PRINTFORM 에 페니스를 강압해
+				PRINTFORM 에 페니스를 눌러
 			CASE 1
 				PRINTFORM 에 목적을 정해
 			CASEELSE
-				PRINTFORM 노려
+				PRINTFORM  노려
 			ENDSELECT
 			PRINTFORMW %TEXTR("、정액을 토했다", "사정했다", "、정액세례했다")%
 		ENDIF
@@ -1513,9 +1513,9 @@ IF SHOOT("정액세례")
 		ELSEIF SHOOT("くぱぁ")
 			SELECTCASE RANDF(3)
 			CASE 2
-				PRINTFORMW 그리고정액을 발휘하면서, 귀두로백탁액을 정성스럽게 부드러운 점막으로 펴발랐다…
+				PRINTFORMW 그리고 정액을 나오게 하면서, 귀두로 백탁액을 정성스럽게 부드러운 점막으로 펴 발랐다…
 			CASEELSE
-				PRINTFORMW 드러내졌다%CALLNAME:TARGET%의 비밀의 장소는, 구석구석까지%CALLNAME:PLAYER%의정액그리고 더럽혀져 버리고 있다…
+				PRINTFORMW 드러내진 %CALLNAME:TARGET%의 비밀의 장소는, 구석구석까지 %CALLNAME:PLAYER%의 정액으로 더럽혀 졌다…
 			ENDSELECT
 		;보지が見える
 		ELSE
@@ -1580,7 +1580,7 @@ IF SHOOT("정액세례")
 		ENDIF
 	ELSEIF SHOOT("엉덩이")
 		IF TEQUIP:넘어뜨리기
-			PRINTFORMW 자신의 엉덩이에 정액을 흩뿌리게했다…
+			PRINTFORMW 자신의 엉덩이에 정액을 흩뿌리게 했다…
 		ELSE
 			PRINTFORMW %CALLNAME:TARGET%의 %TEXTS("엉덩이：視覚")%에 정액을 흩뿌렸다……
 		ENDIF
@@ -1592,14 +1592,14 @@ ELSEIF SHOOT("음경맞대기")
 	IF NOWEX:사정 > 0
 		SELECTCASE COND("절정", PLAYER)
 		CASE IS >= 3
-			PRINTFORMW 굉장한 기세로 토해내진 두 명의정액은, 가슴는 커녕 서로의 얼굴까지 도달해 질척질척했다…
+			PRINTFORMW 굉장한 기세로 토해내진 두 사람의 정액은, 가슴는 커녕 서로의 얼굴까지 도달해 질척질척했다…
 		CASE 1
-			PRINTFORMW 두 명 동시에 토해내진 정액은, 배의 사이를 끈적끈적 더럽혀 갔다…
+			PRINTFORMW 두 사람이 동시에 토해낸 정액은, 배의 사이를 끈적끈적 더럽혀 갔다…
 		ENDSELECT
 	ELSE
 		SELECTCASE COND("절정", PLAYER)
 		CASE IS >= 2
-			PRINTFORMW 굉장한 기세로 토해내진 대량의 정액은,%CALLNAME:TARGET%의 가슴원까지 질척질척했다…
+			PRINTFORMW 굉장한 기세로 토해내진 대량의 정액은, %CALLNAME:TARGET%의 가슴까지 질척하게 했다…
 		CASE 1
 			PRINTFORMW 토해내진 정액은 두 명의 배의 사이를 끈적끈적 더럽혀 갔다…
 		ENDSELECT
@@ -1611,18 +1611,18 @@ ELSEIF SHOOT("다리") || SHOOT("스마타")
 		IF NOWEX:사정 > 0
 			SELECTCASE COND("절정", PLAYER)
 			CASE IS >= 3
-				PRINTFORMW 무서운 기세로 토해내진 두사람의 정액은, 학교수영복의 틈을 뚫고 나와%CALLNAME:TARGET%의 얼굴까지 끈적끈적하게 만들었다…
+				PRINTFORMW 무서운 기세로 토해내진 두 사람의 정액은, 학교수영복의 틈을 뚫고 나와 %CALLNAME:TARGET%의 얼굴까지 끈적끈적하게 만들었다…
 			CASE 2
-				PRINTFORMW 동시에 분출한 대량의 정액은, 학교수영복옷감에서 배어나와 배위에 하얗고 탁한 연못을 만들고있다…
+				PRINTFORMW 동시에 분출한 대량의 정액은, 학교수영복의 천에서 배어나와 배위에 하얗고 탁한 연못을 만들고있다…
 			CASE 1
-				PRINTFORMW 두사람이 동시에 뿜어낸 정액이, 학교수영복과 배의 사이를 끈적끈적하게 더럽혀 갔다…
+				PRINTFORMW 두 사람이 동시에 뿜어낸 정액이, 학교수영복과 배의 사이를 끈적끈적하게 더럽혀 갔다…
 			ENDSELECT
 		ELSE
 			SELECTCASE COND("절정", PLAYER)
 			CASE IS >= 3
 				PRINTFORMW 무서운 기세로 토해내진 대량의 정액은, %CALLNAME:TARGET%의 앞가슴까지 끈적끈적하게 만들었다…
 			CASE 2
-				PRINTFORMW 학교수영복의 안에 토해진 대량의 정액이, 배의 천너머로 배어나오고있다…
+				PRINTFORMW 학교수영복의 안에 토해진 대량의 정액이, 배의 천너머로 배어 나오고 있다…
 			CASE 1
 				PRINTFORMW 토해내진 정액이 학교수영복과 배의 사이를 끈적끈적하게 더럽혀 갔다…
 			ENDSELECT
@@ -1630,11 +1630,11 @@ ELSEIF SHOOT("다리") || SHOOT("스마타")
 	ELSEIF SELECTCOM == 93 && SELECTCOM:1 == SELECTCOM
 		SELECTCASE COND("절정", PLAYER)
 		CASE IS >= 3
-			PRINTFORMW 두사람의 몸은 토해내진 대량의 정액으로 범벅이 되었다…
+			PRINTFORMW 두 사람의 몸은 토해내진 대량의 정액으로 범벅이 되었다…
 		CASE 2
-			PRINTFORMW 두사람의 몸은 토해내진 대량의 정액으로 범벅이 되었다…
+			PRINTFORMW 두 사람의 몸은 토해내진 대량의 정액으로 범벅이 되었다…
 		CASE 1
-			PRINTFORMW 토해내진 정액이 두사람의 몸을 더럽히고있다…
+			PRINTFORMW 토해내진 정액이 두 사람의 몸을 더럽히고 있다…
 		ENDSELECT
 	ELSE
 		SELECTCASE SELECTCOM:1
@@ -1647,7 +1647,7 @@ ELSEIF SHOOT("다리") || SHOOT("스마타")
 			ELSE
 				PRINTFORM 고간
 			ENDIF
-			PRINTFORMW 으로 \@ COND("절정", PLAYER) >= 2 ? 대량으로 # \@사정해버렸다…
+			PRINTFORMW 으로 \@ COND("절정", PLAYER) >= 2 ? 대량으로 # \@사정해 버렸다…
 		CASEELSE
 			SELECTCASE COND("절정", PLAYER)
 			CASE IS >= 3
@@ -1696,7 +1696,7 @@ ELSEIF SHOOT("입")
 	ELSEIF SELECTCOM == 91 && SELECTCOM:1 == SELECTCOM
 		SELECTCASE COND("절정", PLAYER)
 		CASE IS >= 3
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 입을 열고 기다리고 있는 두사람의 얼굴을 골고루 백탁액으로 물들였다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 입을 열고 기다리고 있는 두 사람의 얼굴을 골고루 백탁액으로 물들였다…
 		CASEELSE
 			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 치솟아 올라오는 감정에 맡기고, 두 사람의 입에 욕망을 토해냈다…
 		ENDSELECT
@@ -1719,9 +1719,9 @@ ELSEIF SHOOT("입")
 		ENDIF
 		PRINTFORM %CALLNAME:TARGET%의 
 		IF TEQUIP:딥스로트
-			PRINTFORMW %TEXTR("喉奥", "食道")%에욕망를 토해냈다…
+			PRINTFORMW %TEXTR("喉奥", "食道")%에 욕망을 토해냈다…
 		ELSE
-			PRINTFORMW 입에욕망를 토해냈다…
+			PRINTFORMW 입에 욕망을 토해냈다…
 		ENDIF
 	ENDIF
 
