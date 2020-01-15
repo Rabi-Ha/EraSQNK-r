@@ -52,7 +52,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 팔에 기억에 없는 기괴한팔찌하지만 몸에 익힐 수 있었던 일을 눈치챘다%CALLNAME:TARGET%에, %조사처리(CALLNAME:MASTER,"는")% 지금의 상황을 말했다. 
 	PRINTFORMW 자신은노예로서%CALLNAME:MASTER%에 사진 것. 
 	PRINTFORMW 팔찌에는 있는 마술이 베풀어지고, 장비자의 모두를 속박 해, 장착자 이외에 제외할 수 없는 것. 
-	PRINTFORMW 최근조교스승에 거역해, 덤벼 든다노예도 적지는 않고, 만일에 준비%CALLNAME:MASTER%도 이팔찌를 입수하고 있던 것이다. 
+	PRINTFORMW 최근조교사에 거역해, 덤벼 든다노예도 적지는 않고, 만일에 준비%CALLNAME:MASTER%도 이팔찌를 입수하고 있던 것이다. 
 	PRINTFORML 「농담이 아니에요……! 절대, 여기로부터 빠져 나가 주기 때문에!」
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 노기를 임신한 말을%CALLNAME:MASTER%에 부딪친다. 
 	PRINTFORMW 위세는 좋다. 
@@ -95,9 +95,9 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 그렇지 않으면――
 	PRINTFORMW ……「그」라는 여행을 다시 생각하면 눈물이 흘러내린다. 울고 싶지 않은데, 울어 버린다. 
 	PRINTFORMW 도대체, 얼마나의 때가 흘렀는가――. 
-	PRINTFORMW %CALLNAME:MASTER%(와)과 만날 때마다, %조사처리(CALLNAME:TARGET,"는")% 말에서는 표현할 수 없는 부풀어 터질 것 같은 무언가에 번민스럽게 하고 있었다. 
+	PRINTFORMW %마스터와% 만날 때마다, %조사처리(CALLNAME:TARGET,"는")% 말에서는 표현할 수 없는 부풀어 터질 것 같은 무언가에 번민스럽게 하고 있었다. 
 	PRINTFORMW 그 때 「그」라고 여행을 하는 동안에 싹텄다, 그 기분과 같이. 
-	PRINTFORMW %CALLNAME:MASTER%(와)과 피부를 서로 거듭하는 동안에 그 생각은 서서히 강해져, 그 한편으로 「그」라는 추억이 희미해져 간다. 
+	PRINTFORMW %마스터와% 피부를 서로 거듭하는 동안에 그 생각은 서서히 강해져, 그 한편으로 「그」라는 추억이 희미해져 간다. 
 	PRINTFORMW 이제(벌써) 「그」의 일을 생각해 내도, 자위에 잠겨도, 다만 허무해질 뿐이었다. 
 	PRINTFORMW 신체는 쾌락에 침식해지고, 
 	PRINTFORMW 마음은 사랑에 마음에 끌려지고, 
@@ -267,7 +267,7 @@ IF STATE("撃沈", MASTER)
 			PRINTFORMW 훑어 내면서 쇠약해지고 있는 육봉을 녀음에 주어, 무리해삽입시킨다. 
 			PRINTFORMW 허리를 요염하게 흔들어질를 벌름거려라, 육봉을 다시 크게 시켜 간다. 
 			PRINTFORMW 「후후, 아직 건강하지 않아……좀 더 합시다♪」
-			PRINTFORMW 당분간의 사이, %CALLNAME:MASTER%(와)과%조사처리(CALLNAME:TARGET,"는")% 서로 격렬하게 사귀고 있었다…
+			PRINTFORMW 당분간의 사이, %마스터와%%조사처리(CALLNAME:TARGET,"는")% 서로 격렬하게 사귀고 있었다…
 		ENDIF
 	;その他
 	ELSE
@@ -4097,7 +4097,7 @@ IF SELECTCOM == 171 && COND("마을")
 					PRINTFORMW 「, 조금……마을의 사람이 보고 있어요……!」
 					PRINTFORMW 「……뭔가 조금, 기분이 좋다……일지도」
 				ELSE
-					PRINTFORMW %CALLNAME:MASTER%(와)과%조사처리(CALLNAME:TARGET,"는")% 온 마을을 흔들흔들산책했다…
+					PRINTFORMW %마스터와%%조사처리(CALLNAME:TARGET,"는")% 온 마을을 흔들흔들산책했다…
 				ENDIF
 			;노출벽Lv3이상or음란
 			ELSEIF ABL:노출벽 >= 3 || TALENT:음란
@@ -4266,7 +4266,7 @@ ELSEIF SELECTCOM == 171 && COND("화원")
 			;	PRINTFORMW 
 			;それ以外
 			;ELSE
-				PRINTFORMW 「헤에, 조교스승의 주제에 좋은 곳 알고 있지 않아」
+				PRINTFORMW 「헤에, 조교사의 주제에 좋은 곳 알고 있지 않아」
 				PRINTFORMW 「어머나 이 꽃, 예쁘구나……」
 			;ENDIF
 		;２回目以降
@@ -4387,7 +4387,7 @@ IF SELECTCOM == 172 && TEQUIP:목욕탕플레이
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「후우, 당신(와)과 함께 들어가면 어쩐지 침착해요……」
 			ELSE
-				PRINTFORMW %CALLNAME:MASTER%(와)과%조사처리(CALLNAME:TARGET,"는")%, 김의 솟아오르는 욕조로 한가로이 잠기고 있었다. 
+				PRINTFORMW %마스터와%%조사처리(CALLNAME:TARGET,"는")%, 김의 솟아오르는 욕조로 한가로이 잠기고 있었다. 
 				PRINTFORMW 기분 좋은 온탕은 이것까지의 피로를 달래도록(듯이) 전신을 싸 간다…
 			ENDIF
 		;それ以外
@@ -5857,7 +5857,7 @@ CASE "조교후섹스"
 			PRINTFORMW 「……뭐야, 아직 시발리나 있고의？」
 			PRINTFORMW 「완전히……좋아요」
 			PRINTFORMW 「한다 라고 한 이상에는 끝까지 나를만족시켜요♪」
-			PRINTFORMW 그리고%CALLNAME:MASTER%(와)과%조사처리(CALLNAME:TARGET,"는")% 동물(와)과 같이 계속 사귀었다. 
+			PRINTFORMW 그리고%마스터와%%조사처리(CALLNAME:TARGET,"는")% 동물(와)과 같이 계속 사귀었다. 
 			PRINTFORMW 정자를 다해도 더 남근은 여전히 격분한 채로, %CALLNAME:TARGET%의 질뿐만 아니라, 입을, 가슴을, 국문[菊門]을 계속 찔러 넣었다…
 		ENDIF
 	;それ以外
@@ -5889,7 +5889,7 @@ CASE "매각した"
 		PRINTFORMW ……
 		PRINTFORMW …
 		PRINTFORMW 다음날, %조사처리(CALLNAME:TARGET,"는")% 노예상인에 이끌리고, 떠나 갔다. 
-		PRINTFORMW ……정에는 흐르게 되지 않는다. 그것이%CALLNAME:MASTER%의조교스승으로서의 신조였다. 
+		PRINTFORMW ……정에는 흐르게 되지 않는다. 그것이%CALLNAME:MASTER%의조교사으로서의 신조였다. 
 		PRINTFORMW 라고 말하는데. 
 		PRINTFORMW 왜, 눈물이 넘쳐 나오고 있을까――
 	;음란

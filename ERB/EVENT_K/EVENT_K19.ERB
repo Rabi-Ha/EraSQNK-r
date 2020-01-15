@@ -620,7 +620,7 @@ IF SELECTCOM == 1 && TEQUIP:수치플레이 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 자신의 가랑이 밑에 뭍혀있는 %CALLNAME:ASSI%의 머리를 안고 목소리를 참고있다
 				PRINTFORMW %조사처리(CALLNAME:ASSI,"가")% 잠깐 머리를 들고 이유를 묻자 %조사처리(CALLNAME:TARGET,"는")% 얼굴을 붉게 물들이면서 대답했다
 				PRINTFORMW 「웃지말아줘？…… 저기, 왠지 여자아이에게 야한 목소리 들려주는게… 왠지 부끄러워」
-				PRINTFORMW 그렇게 말하고 %조사처리(CALLNAME:TARGET,"는")% 얼굴을 돌렸다. %CALLNAME:MASTER%(와)과%조사처리(CALLNAME:ASSI,"는")% 그 모습과 몽마답지 않은 말에 무심코 웃음을 터뜨려버렸다
+				PRINTFORMW 그렇게 말하고 %조사처리(CALLNAME:TARGET,"는")% 얼굴을 돌렸다. %마스터와%%조사처리(CALLNAME:ASSI,"는")% 그 모습과 몽마답지 않은 말에 무심코 웃음을 터뜨려버렸다
 				PRINTFORMW 「정말… 웃지 말라고 했는데…」
 			;청소컨닐링구스
 			ELSEIF COND("청소컨닐링구스플래그", PLAYER)
@@ -1480,7 +1480,7 @@ ELSEIF SELECTCOM == 33 && TEQUIP:애널바이브 == 0
 	;조수플레이かつ굴복3LV時
 	ELSEIF MARK:굴복각인 == 3 && ASSIPLAY
 		PRINTFORMW 「하아, 하아……아아앙, 봐줘어… 엉덩이 구멍… 훤히 열려있어…」
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 그렇게 말하면서 %CALLNAME:MASTER%(와)과%CALLNAME:ASSI%에게 엉덩이를 내밀고 있다
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 그렇게 말하면서 %마스터와%%CALLNAME:ASSI%에게 엉덩이를 내밀고 있다
 	;연모
 	ELSEIF TALENT:연모
 		PRINTFORMW 「후우… 엉덩이까지 조교되어버려서… 완전히 변태같이 되어버렸네…」

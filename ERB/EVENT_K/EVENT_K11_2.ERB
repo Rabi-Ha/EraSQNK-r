@@ -199,7 +199,7 @@ ELSEIF GETBIT(CFLAG:201, 5) == 0 && TALENT:임신 && COND("정액의우세") == 
 	PRINTFORMW 약간 커진 배를 어루만지면,%타겟은()% 행복하게 웃음을 띄운다
 	PRINTFORMW 「하우♪………이대로,%CNAME("二人称")%곳의 아이와 함께, 쭉 이렇게 하고 있을 수 있으면 좋습니다만～」
 	PRINTFORMW 「역시…그렇게 말할 수는 없지요～」
-	PRINTFORMW 임신의%CALLNAME:TARGET%에는 미안하지만,조교스승이다이상, 그녀에게만 쭉 붙어 있음로는 있을 수 없을 것이다
+	PRINTFORMW 임신의%CALLNAME:TARGET%에는 미안하지만,조교사이다이상, 그녀에게만 쭉 붙어 있음로는 있을 수 없을 것이다
 	PRINTFORMW 「…엣또 -, 괜찮아, 괜찮습니닷」
 	PRINTFORMW 「그렇지만 그렇지만…오늘 정도는,%CNAME("二人称")%성분을 있고～있고 보충할 수 있는 레슨, 리크에스트해 버려도 좋지요…」
 	PRINTFORMW 그렇게 말해 눈을 치켜 뜨고 봄에 응시하는 %CALLNAME:TARGET%…
@@ -8601,7 +8601,7 @@ CASE "비디오매각失敗"
 	ELSE
 		PRINTFORMW 
 	ENDIF
-	PRINTFORMW 불량재고의 산을 앞에,%CALLNAME:MASTER%(와)과%타겟은()% 머리를 움켜 쥐었다…
+	PRINTFORMW 불량재고의 산을 앞에,%마스터와%%타겟은()% 머리를 움켜 쥐었다…
 	RETURN 1
 ;----------------------------------------------------------------
 ;플러그をしていない状態での액체관장구상(ここはPRINTFORML で記述する)
@@ -8969,7 +8969,7 @@ CASE "서류작업：키스"
 	ELSE
 		PRINTFORMW %마스터는()% 어깨 너머에 들여다 봐 왔다%CALLNAME:ARG%의 입술을 빼앗았습니다！
 		PRINTL 
-		PRINTFORML 「햣♪…응후, 응헤헤～♪…%CNAMET(ARG, "一人称")%로부터도, 답례이랍니다…츄」
+		PRINTFORML 「햣♪…응후, 응헤헤～♪…%조사처리(CNAMET(ARG, "一人称"),"로")%부터도, 답례이랍니다…츄」
 		PRINTFORMW 돌연의 일에 당황하는 %CALLNAME:ARG%(이었)였지만, 그렇지만도 않다……는 커녕 굉장한 기쁜 듯합니다
 		PRINTL 
 		PRINTFORMW 서로 쪼아먹는 것 같은입짓고를 몇번인가 주고 받았다%조사처리(CALLNAME:MASTER,"는")%, 싱글벙글 위기분%CALLNAME:ARG%라고 잡담하면서 일을 계속했습니다.

@@ -101,7 +101,7 @@ ELSEIF TEXTS("季節") == "여름" && CEVENT("ミニトマト栽培") && CEVENT(
 		PRINTFORMW 「후후,%CNAME("一人称")%하지만손소금에 걸어 기른 미니 토마토를 사용한 요리들이다！자%CNAME("二人称")%, 먹어 봐 줘♪」
 		PRINTFORMW 겉모습도 향기도 자주(잘), 식욕을 돋운다.%마스터는()% 예를 말해 먹기 시작했다……
 		PRINTFORMW ！ ……맛있어……자연히(과)입로부터 나온 그 말에,%타겟은()% 기쁨을 숨기지 못할 모습이다.
-		PRINTFORMW 「그, 그런가……！아, 아무튼%CNAME("一人称")%(이)가 기른 미니 토마토에%CNAME("一人称")%의 요리 솜씨가 더해지면 당연하다！후하하하하！！」
+		PRINTFORMW 「그, 그런가……！아, 아무튼%조사처리(CNAME("一人称"),"가")% 기른 미니 토마토에%CNAME("一人称")%의 요리 솜씨가 더해지면 당연하다！후하하하하！！」
 		PRINTFORMW 「어이쿠！한 그릇 더를 갖고 싶어지면 사양말고 말해 줘, 아직 많이 있을거니까！」
 		PRINTFORMW %CALLNAME:TARGET%의 마음이 가득찼다손요리를 배 가득 될 때까지 만끽했다……
 	ENDIF
@@ -156,7 +156,7 @@ ELSEIF TIME == 0 && RAND:3 == 0
 			PRINTFORMW %CALLNAME:TARGET%의 허가하면%CALLNAME:LOCAL%는 관안에 가로놓여, 그대로 정말로 잠 시작해 버린 것이라고 한다……
 			PRINTFORMW 즉, 침상이 점령되었으므로,%CALLNAME:MASTER%의 침대를 빌려 낮잠자고 싶다고 하는 일인 것 같다.
 			PRINTFORMW 자신의 방의 침대에서 자면 좋은 것이 아닐것인가 라고 하는%CALLNAME:MASTER%에,%타겟은()%  「%CALLNAME:MASTER%의 침대는 관과 같은 정도잘 때의 기분이 좋다」라고 돌려주어 왔다.
-			PRINTFORMW 복잡한 기분이 되었다%CALLNAME:MASTER%(와)과는 대조적으로,%타겟은()% 기쁜 듯한 얼굴로 침대에 기어들고 있다……
+			PRINTFORMW 복잡한 기분이 되었다%마스터와%는 대조적으로,%타겟은()% 기쁜 듯한 얼굴로 침대에 기어들고 있다……
 		;☆それ以外
 		ELSE
 			PRINTFORMW 리빙에 가면, 졸린 것 같은 표정의%CALLNAME:TARGET%의 토마토 쥬스를 마시고 있었다.

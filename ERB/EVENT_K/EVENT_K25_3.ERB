@@ -245,7 +245,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	SETBIT CFLAG:201, 3
 ;연모
 ELSEIF TALENT:연모 && GETBIT(CFLAG:201, 4) == 0
-	PRINTFORMW 「설마, 긍지 높다흡혈귀인 이%조사처리(CNAME("一人称"),"가")% , 조교스승 따위에 마음이 사로잡힌다고는 말야……」
+	PRINTFORMW 「설마, 긍지 높다흡혈귀인 이%조사처리(CNAME("一人称"),"가")% , 조교사 따위에 마음이 사로잡힌다고는 말야……」
 	PRINTL
 	PRINTFORMW %CALLNAME:TARGET%의 돌연의 말에, %조사처리(CALLNAME:MASTER,"는")% 무심코조교의 준비노손를 멈추었다. 
 	PRINTFORMW 한편의%CALLNAME:TARGET%도, 놀란 것 같은 표정의%마스터를()% 봐, 생각하고 있었던 것이입에 내 버렸는데 눈치챈 것 같다. 
@@ -527,7 +527,7 @@ ELSEIF COND("욕구불만") && COND("욕구불만", ASSI)
 ELSEIF NO:ASSI == 17 && CFLAG:ASSI:209 == 1
 	;初めて
 	IF CEVENT("조수会話：퀸메이브") == 0
-		PRINTFORMW %CALLNAME:MASTER%(와)과 함께 방에 들어 왔다%조사처리(CALLNAME:ASSI,"를")% 보든지, %조사처리(CALLNAME:TARGET,"는")% 흠칫 몸을 진동시켰다. 
+		PRINTFORMW %마스터와% 함께 방에 들어 왔다%조사처리(CALLNAME:ASSI,"를")% 보든지, %조사처리(CALLNAME:TARGET,"는")% 흠칫 몸을 진동시켰다. 
 		PRINTFORMW 그리고%CALLNAME:MASTER%의 팔을 잡으면, 쭉쭉 방의 구석에 이끌어 간다……
 		PRINTL 
 		PRINTFORML 「오, 두고 어떤 생각이다! 어째서%조사처리(CALLNAME:ASSI,"를")% 데려 왔다! ？」
@@ -595,7 +595,7 @@ ELSEIF NO:ASSI == 9
 			PRINTFORM %CALLNAME:TARGET%의 시선에, %조사처리(CALLNAME:ASSI,"는")% 당황한 것 같은 표정이다……
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%에 돌연 어떻게 했는지 (들)물어 보았다. 
 			PRINTL
-			PRINTFORMW 「어떻게 했는가, 라면？흥, 모르는 것인지……조교스승이 (들)물어 질리지마」
+			PRINTFORMW 「어떻게 했는가, 라면？흥, 모르는 것인지……조교사이 (들)물어 질리지마」
 			PRINTFORMW 「%CNAME("二人称")%의 뒤로 있는 여자……처녀그럴 것이다, 냄새로 알겠어」
 			PRINTFORMW 「무지한%CNAME("二人称")%에 가르쳐 주자, 우리들흡혈귀는 특히처녀의 피를 좋아한다」
 			PRINTFORMW 「왠지？그것은처녀의 피는, 그렇지 않은 사람의 피보다 우리에게 큰 힘을 주기 때문이다……! 」
@@ -655,7 +655,7 @@ ELSEIF NO:ASSI == 9
 ELSEIF NO:ASSI == 7
 	;初めて
 	IF CEVENT("조수会話：워울프") == 0
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, %CALLNAME:MASTER%(와)과 함께조교의 준비를 하고 있다%조사처리(CALLNAME:ASSI,"를")% 가만히 보고 있다……
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, %마스터와% 함께조교의 준비를 하고 있다%조사처리(CALLNAME:ASSI,"를")% 가만히 보고 있다……
 		PRINTFORMW 신경이 쓰였다%조사처리(CALLNAME:MASTER,"는")% , %CALLNAME:TARGET%에조수하지만 어떻게든 했는지 (들)물어 보았다. 
 		PRINTL
 		PRINTFORMW 「……아니 뭐, 녀석을 봐 낡은 친구의 일을 생각해 내서 말이야」
@@ -671,7 +671,7 @@ ELSEIF NO:ASSI == 7
 ELSEIF NO:ASSI == 46
 	;初めて
 	IF CEVENT("조수会話：클라라") == 0
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%(와)과 함께조교의 준비를 하고 있다%조사처리(CALLNAME:ASSI,"를")% 가만히 보고 있다……
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %마스터와% 함께조교의 준비를 하고 있다%조사처리(CALLNAME:ASSI,"를")% 가만히 보고 있다……
 		PRINTFORMW 신경이 쓰였다%조사처리(CALLNAME:MASTER,"는")% , %CALLNAME:TARGET%에조수하지만 어떻게든 했는지 (들)물어 보았다. 
 		PRINTL
 		PRINTFORMW 「……아니 뭐, 녀석을 봐 낡은 친구의 일을 생각해 내서 말이야」
@@ -1050,7 +1050,7 @@ IF STATE("撃沈", MASTER)
 			ELSEIF TALENT:MASTER:동정
 				PRINTFORMW 「흥, 동정의 분수로%조사처리(CNAME("一人称"),"를")% 조교등100해 빨라요! 후하하하하! 」
 			ELSE
-				PRINTFORMW 「무엇이다, 벌써 끝인가？ 조교스승이 (들)물어 질리지마……후하하하하! 」
+				PRINTFORMW 「무엇이다, 벌써 끝인가？ 조교사이 (들)물어 질리지마……후하하하하! 」
 			ENDIF
 		ELSE
 			;☆MASTERが少年・子供
@@ -1063,7 +1063,7 @@ IF STATE("撃沈", MASTER)
 				PRINTFORMW 「%CNAME("一人称","どもり")%를조교등, 100해 빨라요……! 후하하하하……쿨럭……」
 			ELSE
 				PRINTFORML 「하아……하아……, 무엇이다, 이제(벌써), 끝인가？」
-				PRINTFORMW 「조교스승이, (들)물어 질리지마……후하하하하……쿨럭……」
+				PRINTFORMW 「조교사이, (들)물어 질리지마……후하하하하……쿨럭……」
 			ENDIF
 		ENDIF
 	ENDIF
@@ -7549,7 +7549,7 @@ IF SELECTCOM == 104
 			IF TALENT:빈유
 				;☆MASTERが빈유好き
 				IF GETBIT(TALENT:PLAYER:성벽, 23)
-					PRINTFORM 「%CNAME("一人称")%(이)가 작다가슴그렇지만 기뻐해 주다니……기뻐, %CNAME("二人称")%
+					PRINTFORM 「%조사처리(CNAME("一人称"),"가")% 작다가슴그렇지만 기뻐해 주다니……기뻐, %CNAME("二人称")%
 					CALL HEARTMARK_E
 					PRINTFORMW 「후훅, 답례에%조사처리(CNAME("二人称"),"가")% 정말 좋아하는 이가슴그래서, 가득 귀여워해 줄거니까♪」
 				ELSE
@@ -14368,7 +14368,7 @@ CASE "매각した"
 		PRINTFORMW ……%조사처리(CALLNAME:TARGET,"는")% 새로운 주아래로 여행을 떠나 갔다. 
 		PRINTFORMW 그 후%조사처리(CALLNAME:TARGET,"는")%, 언제나 대로의 거만한 태도에 돌아오고 있었지만……
 		PRINTFORMW %CALLNAME:MASTER%에는, 그것이무리를 해 평상시와 같이 행동하고 있는 것 같고 딱하게 생각되었다. 
-		PRINTFORMW 자신의조교스승으로서의 입장, 그리고 자신에 대하는 %CALLNAME:TARGET%의 생각……%CALLNAME:MASTER%의가슴에는, 뭐라고도 말할 수 없다, 뭉게뭉게 한 것이 남았다. 
+		PRINTFORMW 자신의조교사으로서의 입장, 그리고 자신에 대하는 %CALLNAME:TARGET%의 생각……%CALLNAME:MASTER%의가슴에는, 뭐라고도 말할 수 없다, 뭉게뭉게 한 것이 남았다. 
 	;음란
 ;	ELSEIF TALENT:음란
 ;		PRINTFORMW 
@@ -14816,7 +14816,7 @@ CASE "비디오매각失敗"
 			PRINTFORMW 
 		ENDIF
 	ENDIF	
-	PRINTFORMW 불량재고의 산을 앞에, %CALLNAME:MASTER%(와)과%조사처리(CALLNAME:TARGET,"는")% 머리를 움켜 쥐었다…
+	PRINTFORMW 불량재고의 산을 앞에, %마스터와%%조사처리(CALLNAME:TARGET,"는")% 머리를 움켜 쥐었다…
 	RETURN 1
 ;----------------------------------------------------------------
 ;플러그をしていない状態での액체관장구상(ここはPRINTFORML で記述する)
@@ -15674,7 +15674,7 @@ IF TALENT:연모 && PLAYER == MASTER
 	;거근
 	ELSEIF SIZE("페니스", PLAYER) >= 2
 		PRINTL
-		PRINTFORM 「오오, 과연조교스승 같다？
+		PRINTFORM 「오오, 과연조교사 같다？
 			;☆PLAYERが오토코노코 or 후타나리
 			IF TALENT:PLAYER:오토코노코 || TALENT:PLAYER:후타나리
 				PRINTFORM 얼굴에 어울리지 않고
@@ -15748,7 +15748,7 @@ ELSE
 		PRINTL
 		PRINTFORM 「우와아……
 		SIF PLAYER == MASTER
-			PRINTFORM , 과연조교스승……
+			PRINTFORM , 과연조교사……
 		;☆PLAYERが오토코노코 or 후타나리
 		IF TALENT:PLAYER:오토코노코 || TALENT:PLAYER:후타나리
 			PRINTFORM 인가, 얼굴에 어울리지 않고
@@ -15787,7 +15787,7 @@ ELSE
 		PRINTL
 		PRINTFORM 「호, 호우, 
 		SIF PLAYER == MASTER
-			PRINTFORM 과연조교스승……
+			PRINTFORM 과연조교사……
 			;☆PLAYERが오토코노코 or 후타나리
 		IF TALENT:PLAYER:오토코노코 || TALENT:PLAYER:후타나리
 			PRINTFORM 얼굴에 어울리지 않고
@@ -15836,7 +15836,7 @@ ELSE
 			;☆PLAYERがMASTER
 			IF PLAYER == MASTER
 				PRINTL
-				PRINTFORMW 「뭇？무엇이다, 조교스승이라고 하기 때문에 얼마나의 것일까하고 생각하면……대단히 평범한 것을 매달고 있다？」
+				PRINTFORMW 「뭇？무엇이다, 조교사이라고 하기 때문에 얼마나의 것일까하고 생각하면……대단히 평범한 것을 매달고 있다？」
 			;☆PLAYERが조수
 			ELSE
 				PRINTL
@@ -15876,7 +15876,7 @@ ELSE
 			PRINTFORM 「무엇이다 이것은？
 			;☆PLAYERがMASTER
 			SIF PLAYER == MASTER
-				PRINTFORM 조교스승이라고 하기 때문에 얼마나의 것일까하고 생각하면……
+				PRINTFORM 조교사이라고 하기 때문에 얼마나의 것일까하고 생각하면……
 			PRINTFORMW 작아서, 마치 꼬마님 자지다」
 			;☆PLAYERが작은몸집
 			IF TALENT:PLAYER:작은몸집

@@ -79,7 +79,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORML 「나의 이름은%NAME:TARGET%, %NICKNAME:TARGET%같다고 불러도 상관없어요」
 	PRINTFORMW 「, 그 나를 일부러 호출한 정도니까, 이름 정도 아는 것이 당연해요？」
 	PRINTFORMW 그렇게 말해%조사처리(CALLNAME:TARGET,"는")% 가슴을의욕, 후흥, (와)과 코로 웃는다. 
-	PRINTFORML 「그렇다 치더라도…너, 정말로조교스승？」
+	PRINTFORML 「그렇다 치더라도…너, 정말로조교사？」
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 수상한 듯이%CALLNAME:MASTER%의얼굴을 초롱초롱 응시하고 있다. 
 	PRINTFORMW 「의외이다고 말할까…정직한 감상이야？」
 	;몽마
@@ -90,14 +90,14 @@ IF GETBIT(CFLAG:201, 0) == 0
 	ELSE
 		;남자
 		IF TALENT:MASTER:남자
-			PRINTFORMW 「조교스승이라고 말하기 때문 좀 더 완고하다, 수염투성이 얼굴 약간 통통함의 아저씨라고 생각하고 있던 것이야」
+			PRINTFORMW 「조교사이라고 말하기 때문 좀 더 완고하다, 수염투성이 얼굴 약간 통통함의 아저씨라고 생각하고 있던 것이야」
 			PRINTFORMW 「그것이 이런 젊은 남자였다라니～. 헤─, 상당히 나쁘지 않잖아？」
 			PRINTFORMW 「핫, 안 된다 안 된다, 제일 최초로 용사와 했을 때도 경시해 심한 꼴을 당한 것이던가」
-			PRINTFORMW 「그래요, 몽마상대노조교스승이야!？끝냈다얼굴해 드 변태였다거나 할지도 몰라요」
+			PRINTFORMW 「그래요, 몽마상대노조교사이야!？끝냈다얼굴해 드 변태였다거나 할지도 몰라요」
 			PRINTFORMW …무심코 심한 말해지는 방식이다…
 		;それ以外（몽마でなく女）
 		ELSE
-			PRINTFORMW 「조교스승이라고 말하기 때문에 남자라고 생각하고 있으면, 여자였던 것이야」
+			PRINTFORMW 「조교사이라고 말하기 때문에 남자라고 생각하고 있으면, 여자였던 것이야」
 			;작은몸집
 			IF TALENT:MASTER:작은몸집
 				PRINTFORMW 「게다가 너 같은 소딸그렇겠지요？로꼬와 어느 쪽이 연상？라는 느껴라―」
@@ -2813,7 +2813,7 @@ IF SELECTCOM == 91
 			;それ以外
 			ELSE
 				PRINTFORMW 「와…읏, 도, 혹시 나에게 올라타져 흥분하고 있었다…？」
-				PRINTFORMW 「풍부했다조교스승 같구나…어쩔 수 없네요…」
+				PRINTFORMW 「풍부했다조교사 같구나…어쩔 수 없네요…」
 			ENDIF
 			CFLAG:354 = 1
 		;二回目以降
@@ -3144,7 +3144,7 @@ IF SELECTCOM == 96
 			;새드끼Lv3
 			IF ABL:새드끼 >= 3
 				PRINTFORMW 「흥…이런 곳 빨 수 있고 느끼고 있다니…」
-				PRINTFORMW 「조교스승은 그만두어노예라도 되는 것이 좋은 것이 아니다!？」
+				PRINTFORMW 「조교사은 그만두어노예라도 되는 것이 좋은 것이 아니다!？」
 			;마조끼Lv3
 			ELSEIF ABL:마조끼 >= 3
 				PRINTFORMW 「…이런 심한 일…하게 한 적 없는데」
@@ -5735,7 +5735,7 @@ CASE "굴복각인Lv3취득"
 CASE "반발각인Lv3취득"
 	IF FIRST_EV("반발각인Lv3취득") == 0
 		PRINTFORMW 「장난치는 것이 아니에요 이 형편없다!!」
-		PRINTFORMW 「뭐가조교스승이야, 모이지 말아요! 이 변태!!」
+		PRINTFORMW 「뭐가조교사이야, 모이지 말아요! 이 변태!!」
 		RETURN 1
 	ENDIF
 ENDSELECT
@@ -5837,7 +5837,7 @@ CASE "매각した"
 	ELSE
 		PRINTFORMW 「에？벌써 끝？」
 		PRINTFORMW 「무엇인가…너무 강해진 것 같지 않지만？」
-		PRINTFORMW 「, 너 같은 자코 같다조교스승아래에서, 질질 해도 강하게 될 수 있을 이유 없는가」
+		PRINTFORMW 「, 너 같은 자코 같다조교사아래에서, 질질 해도 강하게 될 수 있을 이유 없는가」
 	ENDIF
 	RETURN 1
 ;-----------------------------

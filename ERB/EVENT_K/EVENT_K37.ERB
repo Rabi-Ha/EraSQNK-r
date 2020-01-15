@@ -329,7 +329,7 @@ ELSEIF GETBIT(CFLAG:201, 34) == 0 && GETBIT(CFLAG:201, 33)
 		PRINTFORML 　
 		PRINTFORMW 「♪♪～♪♪♪」
 		PRINTFORMW 방 안으로부터 노랫소리가 들린다
-		PRINTFORMW 문을 열자마자%CALLNAME:MASTER%(와)과 눈치 만면의 미소로 가까워져 왔다
+		PRINTFORMW 문을 열자마자%마스터와% 눈치 만면의 미소로 가까워져 왔다
 		PRINTFORMW 「에？왜기분인가입니까？」
 		PRINTFORMW 「그래, 그렇네요……특히 이유는 없어요」
 		PRINTFORMW 「억지로 말한다면%CNAME("一人称")%의 근처에 있는 것이 다른 누구라도 없다%CALLNAME:MASTER%이기 때문일까요？」
@@ -849,7 +849,7 @@ ELSEIF GETBIT(CFLAG:201, 6) || GETBIT(CFLAG:201, 30)
 		IF COND("성욕만족")
 			IF TALENT:임신
 				PRINTFORMW 「빨강의 일…신경써 주어 감사합니다♪」
-				PRINTFORMW 「그렇지만, 여자로서는 좀 더%CALLNAME:MASTER%(와)과 격렬하게 하고 싶었던 것입니다…」
+				PRINTFORMW 「그렇지만, 여자로서는 좀 더%마스터와% 격렬하게 하고 싶었던 것입니다…」
 				PRINTFORMW 머뭇머뭇손가락를 움직인다%CALLNAME:TARGET%에 상냥하고입짓고를 주고 받았다
 				PRINTFORMW 「읏……♪」
 				PRINTFORMW %CALLNAME:MASTER%에 그 부풀어 오른 배를 문지르면서 응석부린다
@@ -2133,7 +2133,7 @@ IF SELECTCOM == 13
 						IF RAND:3 == 0
 							PRINTFORMW 「아아…빨리%CNAME("二人称")%의빨강를 갖고 싶습니다…♪」
 							PRINTFORMW 욕망에 빛나는 시선을%CALLNAME:PLAYER%에 향하면서, %타겟이()% 비부[秘部]를 조금씩 쬐어 간다…
-							PRINTFORM 「빨리…%CNAME("一人称")%(이)가 말랐다자궁에, 빨강의 아래를 충분히 주세요…
+							PRINTFORM 「빨리…%조사처리(CNAME("一人称"),"가")% 말랐다자궁에, 빨강의 아래를 충분히 주세요…
 							CALL HEARTMARK_E
 						ELSEIF RAND:2 == 0
 							PRINTFORMW 「하아하아…보입니까？이것이%CNAME("一人称")%의위험일자궁입니다…♪」
@@ -9296,9 +9296,9 @@ CASE "비디오매각"
 			IF TALENT:MASTER:남자 == 0
 				PRINTFORMW …여자라면 뭐든지 좋을 것이다, 아마…
 			ELSEIF TALENT:MASTER:오토코노코
-				PRINTFORMW …오토코노코노조교스승이 드물기 때문일 것이다, 아마…
+				PRINTFORMW …오토코노코노조교사이 드물기 때문일 것이다, 아마…
 			ELSE
-				PRINTFORMW …조교스승의 팔이 인정되고 있다고 하는 일로 하자, 응…
+				PRINTFORMW …조교사의 팔이 인정되고 있다고 하는 일로 하자, 응…
 			ENDIF
 			PRINTFORMW 「후훗, 이렇게%CNAME("一人称")%들의 정사를 봐 주는 사람이 있는 것은 기쁩니다…♪」
 			PRINTFORMW 그렇다 치더라도 여기까지인기그러면 다음의조교대상는 유부녀도 있는 곳인이라고 생각하는 %CALLNAME:MASTER%(이었)였다…
@@ -9389,7 +9389,7 @@ CASE "비디오送付"
 				PRINTFORMW 「실은%CNAME("二人称")%에는 그 밖에도 신부가 있지만…」
 				PRINTFORMW 「진지한얼굴그래서 『일생 사랑합니다』는 맹세해 주었기 때문에 결혼해 버렸어♪」
 			ELSEIF CHARA_NUM("연모") >= 2
-				PRINTFORMW 「%CNAME("二人称")%는 조교스승이니까 그 밖에도 연정을 안고 있다딸입었지만…」
+				PRINTFORMW 「%CNAME("二人称")%는 조교사이니까 그 밖에도 연정을 안고 있다딸입었지만…」
 				PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 제일 좋아, 사랑하고 있다 라고 해 주었기 때문에 결혼했어♪」
 			ELSEIF CHECK_SHIRT("웨딩드레스")
 				PRINTFORMW 「이드레스예쁘다？결혼식은 다른딸도 축복해 주었어요♪」
@@ -9452,7 +9452,7 @@ CASE "비디오送付"
 		IF TALENT:임신
 			PRINTFORM 훌륭할까 보테 인어
 		ELSEIF TALENT:음란 && RAND:3 == 0
-			PRINTFORM 계속 찾은 연인이조교스승의 변태조교에 드하마리 해 아헤얼굴피스 비디오 레터를 보내 오다니…
+			PRINTFORM 계속 찾은 연인이조교사의 변태조교에 드하마리 해 아헤얼굴피스 비디오 레터를 보내 오다니…
 		ELSEIF RAND:5 == 0
 			PRINTFORM 이렇게 괴롭다면 사랑 따위요정! 
 		ELSEIF RAND:4 == 0
@@ -9615,9 +9615,9 @@ CASE "서약의반지"
 	PRINTFORMW …
 	PRINTFORMW 「%CNAME("一人称")%…처음은 그 밖에 약혼자가 있어…」
 	PRINTFORMW 「%CNAME("二人称")%에조교되어 가는 동안에 몸도 마음도 저속해져 가…」
-	PRINTFORMW 「그렇지만…%CNAME("二人称")%는 조교스승이니까%조사처리(CNAME("一人称"),"를")% 손놓는다고 생각하고 있었고…」
+	PRINTFORMW 「그렇지만…%CNAME("二人称")%는 조교사이니까%조사처리(CNAME("一人称"),"를")% 손놓는다고 생각하고 있었고…」
 	PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 결국 다른 남자로부터 네토리한 여자이니까……읏! ! 」
-	PRINTFORMW 「…%조사처리(CNAME("一人称"),"는")% 결국조교스승의 일이나 놀이로서라고 생각해…의 것에…」
+	PRINTFORMW 「…%조사처리(CNAME("一人称"),"는")% 결국조교사의 일이나 놀이로서라고 생각해…의 것에…」
 	PRINTFORMW 「정말로…%CNAME("一人称")%그리고 좋습니까？다른 사람에 가랑이를 열게 되는 것 같은 경솔에서도…」
 	PRINTFORMW ―――그런 일 관계없다%타겟이()% 좋다, 라고 말하면 굵은 눈물이 1개 흐름, 
 	PRINTFORMW 「…기뻐…입니닷%CNAME("一人称")%도%조사처리(CNAME("二人称"),"를")% 사랑하고 있습니닷, 쭉 함께 있고 싶습니닷」

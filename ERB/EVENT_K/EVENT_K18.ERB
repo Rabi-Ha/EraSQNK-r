@@ -3115,7 +3115,7 @@ IF SELECTCOM == 95 && PENIS(PLAYER)
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 이해 할 수 없다, 그렇다고 했다얼굴돌출하고%조사처리(CALLNAME:PLAYER,"를")% 보고 있다…
 		;연모＋새드끼Lv3이상
 		ELSEIF TALENT:연모 && ABL:새드끼 >= 3
-			PRINTFORMW 「밟혀 단단해진다니 변태야？ 조교스승보다노예하지만 어울리지 않아？」
+			PRINTFORMW 「밟혀 단단해진다니 변태야？ 조교사보다노예하지만 어울리지 않아？」
 			PRINTFORMW 「아, 매도해져도 단단해져 와 있어요…당신같은 변태는, 나에게조교되세요♪」
 		;연모
 		ELSEIF TALENT:연모
@@ -3147,7 +3147,7 @@ IF SELECTCOM == 95 && PENIS(PLAYER)
 						ENDIF
 					ENDIF
 				ELSE
-					PRINTFORMW 「…싫다, 커져 오고 있다…이런 것으로 흥분해 왔어？변태조교스승씨？」
+					PRINTFORMW 「…싫다, 커져 오고 있다…이런 것으로 흥분해 왔어？변태조교사씨？」
 				ENDIF
 			ELSEIF RAND:2
 				PRINTFORMW 「그다지 능숙하게는 할 수 없지만……이것으로 어떨까？」
@@ -5937,7 +5937,7 @@ ELSEIF SHOOT("애널봉사")
 	;연모+새드끼Lv3
 	ELSEIF TALENT:연모 && ABL:새드끼 >= 3
 		PRINTFORMW 「뺨등, 여기가 약한거야, 잘 알고 있는거야？」
-		PRINTFORMW 「사양하지 말아줘, 조교스승과노예의 입장, 대신해 주어요」
+		PRINTFORMW 「사양하지 말아줘, 조교사과노예의 입장, 대신해 주어요」
 		PRINTFORMW 「마음껏, 귀여워해 주기 때문에」
 	;연모+마조끼Lv3
 	ELSEIF TALENT:연모 && ABL:마조끼 >= 3
@@ -6194,7 +6194,7 @@ CASE "매각した"
 		PRINTFORMW 「그러니까…나의 일을 잊지 말아줘？」
 	;음란
 	ELSEIF TALENT:음란
-		PRINTFORMW 「응응…만끽되어 받았어요. 고마워요, 조교스승씨」
+		PRINTFORMW 「응응…만끽되어 받았어요. 고마워요, 조교사씨」
 		PRINTFORMW 「그런데, 지금부터 내가 가는 곳은, 어떤 곳이야？어떤 사람？」
 		PRINTFORMW 「당신노조교보다 맛이 없었으면, 먹을 뿐(만큼) 다 먹어, 먹어 말려 죽여 돌아올 생각이지만」
 		PRINTFORMW 「얼굴하고 있는거야. 킥킥, 농담이야？농담」
@@ -6406,7 +6406,7 @@ CASE "조수に抜擢"
 			ENDIF
 		ELSE
 			IF ABL:ARG:기교 > ABL:MASTER:기교 && ABL:ARG:조수 >= 3 && RAND:3 == 0
-				PRINTFORMW 「나와 입장이 역전하지 않게 노력해, 조교스승씨♪」
+				PRINTFORMW 「나와 입장이 역전하지 않게 노력해, 조교사씨♪」
 			ELSEIF RAND:2
 				PRINTFORMW 「……가끔 씩은당신이외를 맛보는 것도 또 일흥, 그럴까요？」
 			ELSE

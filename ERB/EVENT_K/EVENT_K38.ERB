@@ -272,7 +272,7 @@ ELSEIF TALENT:연모
 				PRINTFORMW 「늦었지 않아…기다리고 있었어요」
 				PRINTFORMW %CALLNAME:MASTER%의얼굴의 위에 걸쳐, 얼굴을 상기 시키고 있다%조사처리(CALLNAME:TARGET,"가")% , 억지로%CALLNAME:MASTER%의 입술을 빼앗아 온다…
 				PRINTFORMW 「후후후후…시작해요」
-				PRINTFORMW 이것으로는 어느 쪽이조교스승인 것인가 모른다…
+				PRINTFORMW 이것으로는 어느 쪽이조교사인 것인가 모른다…
 				TEQUIP:넘어뜨리기 = 1
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 창도 크게 열려 있기 (위해)때문에, 상쾌한 바람이 흐르고 있는 생각이 든다…
@@ -542,7 +542,7 @@ IF SELECTCOM == 0
 			IF RAND:2 == 0
 				PRINTFORMW 「어떨까？달라붙고 싶어질 정도매력적이겠지요？」
 			ELSE
-				PRINTFORMW 「이봐요 이봐요, 좀 더 나를 즐겁게 하세요…당신조교스승이지요？」
+				PRINTFORMW 「이봐요 이봐요, 좀 더 나를 즐겁게 하세요…당신조교사이지요？」
 			ENDIF
 		ENDIF
 		RETURN 1
@@ -855,7 +855,7 @@ IF SELECTCOM == 5
 		;それ以外
 		ELSE
 			IF CHOSECOM(SELECTCOM) && RAND:2
-				PRINTFORMW 「조교스승이라고 말하기 때문에 괜찮겠지만, 너무 열중해 나의 구슬의 피부에 상처라든지 붙이지 않도록요？」
+				PRINTFORMW 「조교사이라고 말하기 때문에 괜찮겠지만, 너무 열중해 나의 구슬의 피부에 상처라든지 붙이지 않도록요？」
 				PRINTFORMW ……스스로구슬의 피부라고 말하는 것은 어떨까？
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 「읏…아, 하앗! 스, 조금은 하지 않아…」
@@ -1969,7 +1969,7 @@ IF SELECTCOM == 91
 				PRINTFORMW 「다만 몸을 바치고 있으면, 내가 높은 곳에 데려 가 주어요…♪」
 			;それ以外
 			ELSE
-				PRINTFORMW 「어떻게 했을까조교스승씨？나에게 좋아해 승손되어서는 곤란한 것이 아니고？」
+				PRINTFORMW 「어떻게 했을까조교사씨？나에게 좋아해 승손되어서는 곤란한 것이 아니고？」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 줄줄 소리를 내페니스에 달라붙음, %조사처리(CALLNAME:PLAYER,"를")% 사정로 이끌려고 하고 있다…
 				PRINTFORMW 어떻게든저항하려고 했다%CALLNAME:PLAYER%(이었)였지만, %CALLNAME:TARGET%에 확실히 억눌러져 동작 1개 용서되지 않는다! 
 				PRINTFORMW 「옷홋홋호! 그래서 힘을 쓰고 있을 생각일까♪」
@@ -3770,7 +3770,7 @@ IF SELECTCOM == 300
 			IF RAND:2 == 0
 				PRINTFORMW 「헤에, 꽤 센스 있은 것도 말할 수 있지 않아」
 			ELSE
-				PRINTFORMW 「헤에, 조교스승은 하고 있는 주제에 로맨티스트인 거네」
+				PRINTFORMW 「헤에, 조교사은 하고 있는 주제에 로맨티스트인 거네」
 			ENDIF
 		ENDIF
 		RETURN 1
@@ -4766,7 +4766,7 @@ CASE "매각した"
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뾰롱통 해진 채로, %CALLNAME:MASTER%에 정면에서 단언했다
 		PRINTFORMW 「팥고물이라고 이해하고 있어요, 당신은 그렇게 생활하고 있는 것이고」
 		PRINTFORMW 「당신왜냐하면[だって] 나와의 이별을 애석해해 주고 있는 것이겠지？ 얼굴에 써 있어요」
-		PRINTFORMW 「뭐라고 할까, 당신자신의 생활을 지키기 위해라든지조교스승으로서의 체면이기 때문이라든지, 」
+		PRINTFORMW 「뭐라고 할까, 당신자신의 생활을 지키기 위해라든지조교사으로서의 체면이기 때문이라든지, 」
 		PRINTFORMW 「그러한 것에 붙잡힌 불합리 떠나 하는거야？거기에 이빨 향할 수 없는 것이 분하다고 말할까…저기？」
 		PRINTFORMW 더욱 더%조사처리(CALLNAME:TARGET,"는")% 초조도 숨기지 않고 계속 말하고 있다…하지만, 갑자기 쫙 그 표정을 바꾸었다
 		PRINTFORMW 「아, 나의기분는 따로 신경쓰지 마. 지금 나는 지금부터 어떻게 할까를 생각하고 있기 때문에」

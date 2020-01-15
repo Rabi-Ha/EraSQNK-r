@@ -58,7 +58,7 @@ ELSEIF RESULT == 1
 	ELSEIF RAND:3 == 0
 		PRINTFORMW 「혹시 부끄러워하고 있는 것인가？ 후후후, 그렇다면 부끄러워할 여유도 없을 정도, 가게 해 준다…♪」
 	ELSEIF RAND:2
-		PRINTFORMW 「아무것도 대답하지 않는다면,%CNAME("一人称")%(이)가 좋아하게 시켜 받는다？ 몇번 가도 그만두어 주지 않으니까♪」
+		PRINTFORMW 「아무것도 대답하지 않는다면,%조사처리(CNAME("一人称"),"가")% 좋아하게 시켜 받는다？ 몇번 가도 그만두어 주지 않으니까♪」
 	ELSE
 		PRINTFORMW 「후후……솔직(이)가 되는 편이 좋아…？ 그렇지 않으면, 자제 하지 못하고 마구 가게 되는 슈츄에이션을 좋아하는가？」
 	ENDIF
@@ -238,7 +238,7 @@ IF RAND:20 == 0 && ( (PENIS(MASTER) && (ITEM:로터 && ITEM:오나홀 && (ITEM:�
 				PRINTFORMW %타겟은()% 울퉁불퉁 혹이 있다애널바이브를 단번에 앞질러 버리면, 뻐끔입을 연 채로 되어 버렸다%CALLNAME:MASTER%의 엉덩이 구멍에 한숨에페니스밴드를 돌진해 왔다…！
 				PRINTFORMW 「후후훗,음란엉덩이그렇네…♪ 녹진녹진 장액 넘쳐 나와…읏, 조수도 돌진할 때마다 분출해…읏♪ 이것은, 벌 하지 않으면 안 되지요♪」
 				PRINTFORMW %타겟은()% 울퉁불퉁했다페니스밴드그래서%CALLNAME:MASTER%의 뒤의 구멍을 범하면서, 철썩 엉덩이살에 손바닥을 쳐박아 온다…！
-				PRINTFORMW 「쿠쿳, 아프게 하고 있는데 상당히 기분 좋은 것 같은 소리를 지르는 것이군…♪ 후후, 이제(벌써) 무엇을 되어도 기분 좋아질 정도로 망가져 버렸던가…이음란조교스승째가♪」
+				PRINTFORMW 「쿠쿳, 아프게 하고 있는데 상당히 기분 좋은 것 같은 소리를 지르는 것이군…♪ 후후, 이제(벌써) 무엇을 되어도 기분 좋아질 정도로 망가져 버렸던가…이음란조교사째가♪」
 				PRINTFORMW 업신여기는 것 같은%CALLNAME:TARGET%의 말에조차%마스터는()% 오슬오슬 허리를 진동시켜 쾌락에 빠져 버린다…
 			ENDIF
 		ENDIF
@@ -436,7 +436,7 @@ ELSEIF RAND:7 == 0
 		CFLAG:461 = ( ABL:기교 + ABL:새드끼 + ABL:MASTER:마조끼) * 600 + EXP:가학쾌락경험 + RAND:10
 ELSEIF RAND:6 == 0
 	PRINTFORML 
-	PRINTFORML %타겟은()% %CALLNAME:MASTER%(와)과 피부를 밀착시켜, 사타구니로손를 늘렸다.
+	PRINTFORML %타겟은()% %마스터와% 피부를 밀착시켜, 사타구니로손를 늘렸다.
 	IF PENIS(MASTER)
 		PRINTFORMW 「후훗♪뭐야, 이렇게 끙끙해 버려…♪」
 		PRINTFORMW %타겟은()% 그대로 천천히%CALLNAME:MASTER%의페니스를 문지른다.
@@ -2035,7 +2035,7 @@ ENDIF
 ;-------------------------------------------------
 @KOJO_KAIRAKU_21_1
 IF TALENT:PLAYER:음란
-	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 자신이조교스승이라고 하는 일도 잊어,
+	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 자신이조교사이라고 하는 일도 잊어,
 	;称号（？）取得
 	;연모か음란かプレイヤーが마조だと飼われる
 	IF (TALENT:연모 || TALENT:음란 || TALENT:PLAYER:마조) && RAND:3 == 0
@@ -2109,7 +2109,7 @@ RETURN 1
 IF PLAYER != MASTER
 	RETURN 1
 ELSEIF MARK:주인굴복각인 == 3
-	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 자신이조교스승이라고 하는 일도 잊어,
+	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 자신이조교사이라고 하는 일도 잊어,
 	;称号（？）取得
 	;연모かプレイヤーが마조だと飼われる
 	IF (TALENT:연모 || TALENT:PLAYER:마조) && RAND:3 == 0
