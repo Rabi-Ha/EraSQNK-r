@@ -8057,7 +8057,7 @@ CASE "탐색：ご休憩"
 	ELSE
 		PRINTFORMW 「%CNAMET(ARG, "주인", "～")%, 차가 들어갔어요」
 		PRINTFORMW 「조금이지만, 과자도 가져온 것입니다……키득♪」
-		PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%마스터와% 단 둘에서의 순간의 휴식을 싱글벙글 얼굴로 만끽하고 있다
+		PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%마스터와()% 단 둘에서의 순간의 휴식을 싱글벙글 얼굴로 만끽하고 있다
 	ENDIF
 CASE "탐색：帰還"
 	IF RAND:3 == 0

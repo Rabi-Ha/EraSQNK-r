@@ -1607,7 +1607,7 @@ ELSEIF COND("부친", PLAYER) == TARGET || COND("모친", PLAYER) == TARGET
 				PRINTFORMW 어머님, 어머님과 아버님은 언제나 어떻게 말하는 일 하고 있어？』
 			ENDIF
 			PRINTFORMW 「후후후, 그것은 말야……에 소근소근……♪」
-			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% %마스터와%%CALLNAME:TARGET%의 정사를 흥미로운 것 같게 (듣)묻고 있습니다……
+			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% %마스터와()%%CALLNAME:TARGET%의 정사를 흥미로운 것 같게 (듣)묻고 있습니다……
 		ELSE
 			PRINTFORM 「자, 어느 정도 능숙해졌는가
 			;뱀파이어が부친
@@ -2430,7 +2430,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 				;単独で会っていない
 				IF !CEVENT("날짜：정월")
 					PRINTFORMW 「아라, 두 사람 모두 잘 와 주었습니다. 새해 복많이 받으세요♪」
-					PRINTFORMW 신년의 인사를 해 왔다%CALLNAME:TARGET%에, %마스터와%%CALLNAME:ASSI%도 신년의 인사를 돌려주었습니다
+					PRINTFORMW 신년의 인사를 해 왔다%CALLNAME:TARGET%에, %마스터와()%%CALLNAME:ASSI%도 신년의 인사를 돌려주었습니다
 				ELSE
 					PRINTFORMW 「이런？이제(벌써)%CALLNAME:TARGET%씨와도 자 왔다니, 신년 조속히 번성하네요♪」
 					PRINTFORMW %타겟을()% %마스터가()% %CALLNAME:ASSI%를 안은 일을 알아차려, 그 일을 얼버무려 왔습니다
@@ -3062,7 +3062,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 								PRINTFORM 싱긋 미소지어 속옷을 벗어, 쑥
 							ENDIF
 							PRINTFORMW %CALLNAME:MASTER%에 건네주었습니다
-							PRINTFORMW %마스터와%%CALLNAME:ASSI%의 사이에, 특별한 공기가 흐르기 시작합니다…
+							PRINTFORMW %마스터와()%%CALLNAME:ASSI%의 사이에, 특별한 공기가 흐르기 시작합니다…
 							PRINTFORMW 「…이제(벌써)! 둘이서 배우자 자랑 싶은 것이라면 다른 장소에서 해 주세요」
 							PRINTFORMW 삐질 것 같았다%타겟을()% , %마스터는()% 위기의 순간에 달랬습니다…
 						ENDIF
@@ -3164,7 +3164,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 			;조수がいる
 			IF ASSI > 0
 				PRINTFORMW 「메리크리스마스읏♪」
-				PRINTFORMW %마스터와%%CALLNAME:ASSI%하지만 방에 들어간 순간, %타겟을()% 큰 소리로 그렇게 외쳤습니다
+				PRINTFORMW %마스터와()%%CALLNAME:ASSI%하지만 방에 들어간 순간, %타겟을()% 큰 소리로 그렇게 외쳤습니다
 				PRINTFORMW 「응후후─♪축하일이 있다일라고 좋네요…」
 				PRINTFORMW …%타겟이()% 크리스마스를 축하해도 좋은 것이라고 하는 의문이, %CALLNAME:MASTER%의 머리에 떠오릅니다
 				PRINTFORMW 「이제(벌써), 그런 일 신경쓰고 있으면 아무것도 즐길 수 있지 않아요？이봐요, 케이크도 홀에서 사 온 것입니다. 두 사람 모두 앉고 앉아! 」
@@ -3188,7 +3188,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 				PRINTFORMW 「이제(벌써), 그런 일 신경쓰고 있으면 아무것도 즐길 수 있지 않아요？이봐요, 렛드그룹펜도 사 온 것입니다. 앉고 앉아! 」
 				PRINTFORMW 「～웃 값이 쳤습니다만……가끔 씩은 좋지요♪」
 				PRINTFORMW 「………네, 건배♪」
-				PRINTFORMW %마스터와%%타겟을()% 조교전에, 20년물의 렛드그룹펜으로크리스마스를 축하했습니다…
+				PRINTFORMW %마스터와()%%타겟을()% 조교전에, 20년물의 렛드그룹펜으로크리스마스를 축하했습니다…
 			ENDIF
 			CALL SET_CEVENT, "날짜：크리스마스"
 		ENDIF
@@ -3618,10 +3618,10 @@ ELSEIF TALENT:연모
 					PRINTFORMW %마스터가()% 방에 들어간 순간, %타겟을()% 달려들어 그 입술에 달라붙었습니다! 
 					PRINTFORMW 「읏후후…당신노…달콤해서…응…읏………응…………？」
 					PRINTFORMW 「………다른여자의 맛이 나네요」
-					PRINTFORMW 이 방에 오는 도중, 복도에서%마스터와%%CALLNAME:LOCAL%하지만키스를 교환한 일에%타겟을()% 깨달은 것 같습니다
+					PRINTFORMW 이 방에 오는 도중, 복도에서%마스터와()%%CALLNAME:LOCAL%하지만키스를 교환한 일에%타겟을()% 깨달은 것 같습니다
 					PRINTFORMW 「후후훗…」
 					PRINTFORMW 「관계 없습니다♪」
-					PRINTFORMW %타겟은()% 웃는 얼굴을 띄워,%마스터와%의 뜨겁다키스를 재개했습니다…
+					PRINTFORMW %타겟은()% 웃는 얼굴을 띄워,%마스터와()%의 뜨겁다키스를 재개했습니다…
 				;상사상애だと가능性
 				ELSEIF RAND:6 == 0 && TALENT:상사상애
 					PRINTFORMW 「저것…이제(벌써) 그런시간입니까……후아아……」
@@ -4192,7 +4192,7 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 						PRINTFORMW 「돌아가면 차가운 음료라도 마셔, 좀 쉬어요♪」
 					;秋だと가능性あり
 					ELSEIF RAND:4 == 0 && TEXTS("季節") == "가을"
-						PRINTFORMW 관에의 돌아가는 길,%타겟은()% %마스터와%손를 잡으면서……뿐만이 아니고, 매우 몸을 붙여 걷고 있다
+						PRINTFORMW 관에의 돌아가는 길,%타겟은()% %마스터와()%손를 잡으면서……뿐만이 아니고, 매우 몸을 붙여 걷고 있다
 						PRINTFORMW 「모처럼 몸을 서로 따뜻하게 한 것 인거야. 귀가도 따뜻하게 해 돌아가지 않으면♪」
 					ELSEIF RAND:3 == 0
 						PRINTFORMW 「이봐요, 여기예요 여기」
@@ -4209,7 +4209,7 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 						PRINTFORMW 「그……안됩니까？」
 						PRINTFORML 대답 대신에, %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%의 손를 살그머니 잡아 돌려주었다
 						PRINTFORMW 「후후………♪」
-						PRINTFORMW %마스터와%%조사처리(CALLNAME:TARGET,"는")% 연인과 같이손를 매듭, 관에 돌아갔다……
+						PRINTFORMW %마스터와()%%조사처리(CALLNAME:TARGET,"는")% 연인과 같이손를 매듭, 관에 돌아갔다……
 					ENDIF
 				ENDIF
 			ELSE
@@ -4346,7 +4346,7 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 						PRINTFORMW 「……관에 도착하는 무렵에는 몸도 식고, 또 안아 받을 수 있는 기회의 예정입니다♪」
 					;秋だと가능性あり
 					ELSEIF RAND:5 == 0 && TEXTS("季節") == "가을"
-						PRINTFORMW 관에의 돌아가는 길,%타겟은()% %마스터와%손를 잡으면서……뿐만이 아니고, 매우 몸을 붙여 걷고 있다
+						PRINTFORMW 관에의 돌아가는 길,%타겟은()% %마스터와()%손를 잡으면서……뿐만이 아니고, 매우 몸을 붙여 걷고 있다
 						PRINTFORMW 「모처럼 몸을 서로 따뜻하게 한 것 인거야. 귀가도 따뜻하게 해 돌아가지 않으면♪」
 					ELSEIF RAND:4 == 0
 						PRINTFORMW 「앗！유성！」
@@ -4387,7 +4387,7 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 						PRINTFORMW 「그……안됩니까？」
 						PRINTFORML 대답 대신에, %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%의 손를 살그머니 잡아 돌려주었다
 						PRINTFORMW 「후후………♪」
-						PRINTFORMW %마스터와%%조사처리(CALLNAME:TARGET,"는")% 연인과 같이손를 매듭, 관에 돌아갔다……
+						PRINTFORMW %마스터와()%%조사처리(CALLNAME:TARGET,"는")% 연인과 같이손를 매듭, 관에 돌아갔다……
 					ENDIF
 				ENDIF
 			ENDIF
@@ -7589,7 +7589,7 @@ IF SELECTCOM >= 60 && SELECTCOM <= 79 && COND("３Ｐ")
 				IF RAND:2 == 0 && TALENT:상사상애 && TALENT:ASSI:상사상애 && PENIS(MASTER) && PENIS(ASSI)
 					PRINTFORMW 「힛♪아……아아……♪」
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 보지에 쑤셔 넣어진 2 개의페니스에 희롱해지고, 변변히 움직일 수도 있지 않고 다만 허덕이고 있다
-					PRINTFORMW 그러나 돌연, %CALLNAME:TARGET%의 질입하지만 강하게 긴축시킬 수 있었다! 언제나이상에 육봉을 압박받았다%마스터와%%CALLNAME:PLAYER%의 소리가 샌다……
+					PRINTFORMW 그러나 돌연, %CALLNAME:TARGET%의 질입하지만 강하게 긴축시킬 수 있었다! 언제나이상에 육봉을 압박받았다%마스터와()%%CALLNAME:PLAYER%의 소리가 샌다……
 					PRINTFORMW 「후……후후, 일방적으로 당한다는 것은 성에 맞지 않아요. 두 명 정리해 가게 해 줍니다……♪」
 				ELSE
 					PRINTFORMW 「후아…하웃, 2 개도 넣을 수 있으면보지하지만 가득해………힛, 쿠우♪」
@@ -7692,7 +7692,7 @@ IF SELECTCOM >= 60 && SELECTCOM <= 79 && COND("３Ｐ")
 					ELSE
 						PRINTFORMW 「힛♪아……아아……♪」
 						PRINTFORMW %타겟은()% 전후로부터 덤벼 든다페니스에저항도 하지 못하고, 불규칙하게 몸을 진동시키고 있다
-						PRINTFORMW 그러나 돌연,%CALLNAME:TARGET%의 질입(와)과애널하지만 동시에 긴축시킬 수 있었다！그 반격에%마스터와%%CALLNAME:PLAYER%의 소리가 갖추어져 샌다……
+						PRINTFORMW 그러나 돌연,%CALLNAME:TARGET%의 질입(와)과애널하지만 동시에 긴축시킬 수 있었다！그 반격에%마스터와()%%CALLNAME:PLAYER%의 소리가 갖추어져 샌다……
 						PRINTFORMW 「아핫……사랑스러운 소리♪보지와애널그리고 함께 짜내는 것도 즐거운 듯 하네요♪」
 					ENDIF
 				ELSE

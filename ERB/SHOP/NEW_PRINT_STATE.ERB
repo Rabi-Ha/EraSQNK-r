@@ -1099,15 +1099,15 @@ ENDSELECT
 
 SELECTCASE COND("身嗜み：성행위の제한", ARG)
 CASE 1
-	PRINTFORML ·전의 구멍을 사용한 성행위는%마스터와% 만
+	PRINTFORML ·전의 구멍을 사용한 성행위는%마스터와()% 만
 CASE 2
-	PRINTFORML ·애널을 사용한 성행위는%마스터와% 만
+	PRINTFORML ·애널을 사용한 성행위는%마스터와()% 만
 CASE 3
 	PRINTFORML ·입을 사용해봉사하%CALLNAME:MASTER%에만
 CASE 4
-	PRINTFORML ·키스하%마스터와% 만
+	PRINTFORML ·키스하%마스터와()% 만
 CASE 5
-	PRINTFORML ·페니스를 사용한 성행위는%마스터와% 만
+	PRINTFORML ·페니스를 사용한 성행위는%마스터와()% 만
 CASE 100
 	PRINTFORML ·%조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 것
 CASE IS > 0
@@ -1117,7 +1117,7 @@ CASE IS > 0
 	LOCALS = %LOCALS%\@ COND("身嗜み：입독점", ARG) ? 입での봉사と # \@
 	LOCALS = %LOCALS%\@ COND("身嗜み：키스독점", ARG) ? 키스と # \@
 	LOCALS = %LOCALS%\@ COND("身嗜み：Ｐ독점", ARG) ? 肉棒と # \@
-	PRINTFORML ·%SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2)%를 이용한 행위는%마스터와% 만
+	PRINTFORML ·%SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2)%를 이용한 행위는%마스터와()% 만
 ENDSELECT
 
 ;SELECTCASE COND("身嗜み：Ｖ準備", ARG)
