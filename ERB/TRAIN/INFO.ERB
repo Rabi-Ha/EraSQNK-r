@@ -843,7 +843,7 @@ IF INSERT("인서트", ARG)
 	PRINT ]
 ELSEIF INSERT("삽입中", ARG)
 	IF INSERT("Ａ삽입中", ARG)
-		PRINTFORM [Ａ삽입안(%CALLNAME:INSERT("삽입中", ARG)%)]
+		PRINTFORM [Ａ삽입중(%CALLNAME:INSERT("삽입中", ARG)%)]
 	ELSEIF INSERT("요도삽입中", ARG)
 		LOCALS = [요도삽입中(%CALLNAME:INSERT("삽입中", ARG)%)]
 	ELSE

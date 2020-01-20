@@ -52,28 +52,28 @@ ELSE
 		PRINT 멍하니 이쪽의 일거수일투족을 보고있는 
 	ELSEIF EXP:촬영경험 == 0
 		IF TALENT:호기심
-			PRINT 처음 본 것에 흥미진진의
+			PRINT 처음 본 것에 흥미진진의 
 		ELSE
-			PRINT 이상한 것을 보는 것 같이 촬영기재를 바라보는
+			PRINT 이상한 것을 보는 것 같이 촬영기재를 바라보는 
 		ENDIF
 	ELSEIF ABL:노출벽 >= 3 || TALENT:부끄럼없음
 		IF TALENT:상사상애 && TALENT:음란 && RAND:2
-			PRINT 자신들 사랑을 타인에게 과시해 주려고 분위기를 살리고 있는
+			PRINT 자신들 사랑을 타인에게 과시해 주려고 분위기를 살리고 있는 
 		ELSEIF COND("인기：ＡＶ") && RAND:2
 			IF TALENT:강기 || TALENT:교만
-				PRINT 자신의 인기의 상태를 받아 그렇지만도 않은 모습으로 준비를 하고 있는
+				PRINT 자신의 인기의 상태를 받아 그렇지만도 않은 모습으로 준비를 하고 있는 
 			ELSE
-				PRINT 작품 만들기에도 익숙해져 렌즈 너머의 손님의 접수를 염려하고 있는
+				PRINT 작품 만들기에도 익숙해져 렌즈 너머의 손님의 접수를 염려하고 있는 
 			ENDIF
 		ELSE
-			PRINT 비디오카메라가 시야에 들어간 순간에 눈을 빛내는
+			PRINT 비디오카메라가 시야에 들어간 순간에 눈을 빛내는 
 		ENDIF
 	ELSEIF TEQUIP:야외플레이
-		PRINT 주위를 불안한 듯이 두리번거리고 있는
+		PRINT 주위를 불안한 듯이 두리번거리고 있는 
 	ELSEIF TALENT:부끄럼쟁이
 		PRINT 얼굴을 새빨갛게 붉히고 이쪽의 상태를 엿보는 
 	ELSE
-		PRINT 어떤 플레이를 하려는지 의심하는  
+		PRINT 어떤 플레이를 하려는지 의심하는 
 	ENDIF
 	PRINTFORM %조사처리(CALLNAME:TARGET,"를")% 거들떠도 안보고, 
 	IF ASSI <= 0
@@ -108,7 +108,7 @@ ELSE
 				IF TALENT:ASSI:음란
 					LOCALS = 「지금은 %CALLNAME:TARGET%의 차례」 라고 자신에게 말하면서, 
 				ELSE
-					LOCALS = 외로운 표정을 짓고 있었지만, 마지못해
+					LOCALS = 외로운 표정을 짓고 있었지만, 마지못해 
 				ENDIF
 			ENDIF
 		ELSEIF ABL:ASSI:자위중독 >= 3 && RAND:3 == 0
@@ -117,19 +117,19 @@ ELSE
 		ELSEIF TALENT:ASSI:새드 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직, TALENT:ASSI:호기심, TALENT:ASSI:고무, TALENT:ASSI:조야, TALENT:ASSI:질투)
 			LOCALS = 직접 조교하지 않는 것을 질투하면서도, 제대로 일을 해내려고
 		ELSEIF TALENT:ASSI:질투 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직, TALENT:ASSI:호기심, TALENT:ASSI:고무, TALENT:ASSI:조야)
-			LOCALS = 행위에 가담하지 않는 것에 질투하며, %마스터를()% 위해서라고 자신에게 말하게 하면서
+			LOCALS = 행위에 가담하지 않는 것에 질투하며, %마스터를()% 위해서라고 자신에게 말하게 하면서 
 		ELSEIF TALENT:ASSI:조야 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직, TALENT:ASSI:호기심, TALENT:ASSI:고무)
 			LOCALS = 자신에게 맡기라고 가슴을 내밀며, 
 		ELSEIF TALENT:ASSI:고무 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직, TALENT:ASSI:호기심)
 			LOCALS = %조사처리(CALLNAME:TARGET,"를")% 열심히 응원하면서, 
 		ELSEIF TALENT:ASSI:호기심 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직)
 			IF RELATION:ASSI:TARGET >= 150
-				LOCALS = %CALLNAME:TARGET%의 치태를 빠짐없이 기록하려고 기를 쓰고
+				LOCALS = %CALLNAME:TARGET%의 치태를 빠짐없이 기록하려고 기를 쓰고 
 			ELSE
-				LOCALS = %CALLNAME:MASTER%들의 치태를 빠짐없이 기록하려고 기를 쓰고
+				LOCALS = %CALLNAME:MASTER%들의 치태를 빠짐없이 기록하려고 기를 쓰고 
 			ENDIF
 		ELSEIF TALENT:ASSI:솔직 && RANDIF(1, TALENT:ASSI:유치)
-			LOCALS = %조사처리(CALLNAME:MASTER,"가")% 말한 대로
+			LOCALS = %조사처리(CALLNAME:MASTER,"가")% 말한 대로 
 		ELSEIF TALENT:ASSI:유치
 			LOCALS = %CALLNAME:MASTER%의 말에 씩씩하게 대답하면서, 즐거운듯이 
 		ELSEIF ABL:ASSI:자위중독 >= 3 && RAND:3 == 0
@@ -140,7 +140,7 @@ ELSE
 			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 비디오카메라를 %CALLNAME:ASSI%에 건네줘 촬영을 시작하게 했다…
 		ELSE
 			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 비디오카메라를 %CALLNAME:ASSI%에 건네주었다. 
-			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% %LOCALS%촬영을 개시했다…
+			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% %LOCALS% 촬영을 개시했다…
 		ENDIF
 		TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：촬영개시", ASSI
 	ENDIF
@@ -509,7 +509,7 @@ IF TEQUIP:비디오카메라 >= 10
 	RETURN 1
 ELSEIF BASE:기력 <= 0 && GETBIT(CFLAG:69, 0) == 0
 	PRINTFORML 
-	PRINTFORML %CALLNAME:TARGET%에게서 지루한 분위기가 풍겨나오고 있다. 
+	PRINTFORML %CALLNAME:TARGET%에게서 노곤한 분위기가 풍겨나오고 있다. 
 	PRINTFORML 이 이상의 촬영은 그만두는 편이 좋을 것같다…
 	SETBIT CFLAG:69, 0
 ENDIF

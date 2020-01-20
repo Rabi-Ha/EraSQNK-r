@@ -121,7 +121,7 @@ ELSE
 		;가슴が노출している옷
 		IF CHECK_CLO("가슴골노출") && CHECK_CLO("유두노출") == 0 && RANDF(3)
 			IF TALENT:거유
-				PRINTFORM 흘러넘칠 것 같은
+				PRINTFORM 흘러넘칠 것 같은 
 			ELSEIF TALENT:빈유
 				PRINTFORM 소극적인 
 			ENDIF
@@ -154,7 +154,7 @@ IF TEQUIP:촉수
 	IF TALENT:남자 || RAND:2
 		PRINTFORMW 가슴 끝의 돌기를, 빨판 모양의 촉수가 감싸올렸다…
 	ELSE
-		PRINTFORMW %조사처리(LOCALS,"를")% 쥐어짜듯이, 몇개의 촉수가 얽혀붙었다…
+		PRINTFORMW %조사처리(LOCALS,"를")% 쥐어짜듯이, 몇 개의 촉수가 얽혀붙었다…
 	ENDIF
 	SETBIT TEQUIP:엉덩이애무, 0
 	CLEARBIT TEQUIP:엉덩이애무, 1
@@ -168,9 +168,9 @@ ELSEIF CHECK_COM("유두핥기に変化")
 	;가슴揉みも同時にするか？（主に連続선택時）
 	IF CHECK_COM("가슴揉み") && CHECK_COM("유두핥기")
 		IF CALCF("Ｂ발정")
-			PRINTFORM %TEXTS("유두：描写")%%TEXTR("유두", "돌기")%를%TEXTR("핥으", "혀를 굴리", "빨아들이", "물", "달게 씹으")%면서,
+			PRINTFORM %TEXTS("유두：描写")% %TEXTR("유두", "돌기")%를 %TEXTR("핥으", "혀를 굴리", "빨아들이", "물", "달게 씹으")%면서,
 		ELSE
-			PRINTFORM %TEXTS("유두：描写")%유두를 %TEXTR("핥으", "혀끝으로 돌리", "빨아들이", "핥짝이")%면서,
+			PRINTFORM %TEXTS("유두：描写")% 유두를 %TEXTR("핥으", "혀끝으로 돌리", "빨아들이", "핥짝이")%면서,
 		ENDIF
 		SIF TALENT:남자 == 0
 			PRINTFORM %TEXTS("おっぱい：描写")%
@@ -212,13 +212,13 @@ ELSEIF CHECK_COM("유두핥기に変化")
 				PRINTFORM %TEXTR("밀크가 번지는 곳", "모유가 스며나오는 함몰상태의 유두")%
 			ENDIF
 		ELSE
-			PRINTFORM %TEXTS("유두：描写")%%TEXTR("유두", "돌기")%
+			PRINTFORM %TEXTS("유두：描写")% %TEXTR("유두", "돌기")%
 		ENDIF
 		;ピアスをいじめる
 		IF TALENT:니플피어스 && RAND:2
 			;ピアス弄りフラグ
 			SETBIT TEQUIP:엉덩이애무, 2
-			PRINTFORM 에 붙여졌다%TEXTS("니플피어스")%
+			PRINTFORM 에 붙여진 %TEXTS("니플피어스")%
 			IF RAND:2
 				PRINTFORMW 를 혀로 빨고 굴렸다…
 			ELSE
@@ -228,18 +228,18 @@ ELSEIF CHECK_COM("유두핥기に変化")
 			;においフェチ分岐
 			IF TALENT:모유체질 && COND("성벽：냄새페티시", PLAYER) && PLAYER == MASTER && TALENT:마음에듬 + TALENT:상사상애 && (CHOSECOM(SELECTCOM) == 0 || RAND:3 == 0)
 				IF RAND:2 && CALCF("Ｂ발정")
-					PRINTFORMW 를 입에 포함하면서, 모유의 달콤한 냄새를 즐겼다…
+					PRINTFORMW 를 입에 넣으면서, 모유의 달콤한 냄새를 즐겼다…
 				ELSE
 					PRINTFORMW 에 달라붙어, 모유의 달콤한 냄새에 휩싸여지면서 첨단을 혀로 굴렸다…
 				ENDIF
 			ELSEIF RAND:4 == 0
-				PRINTFORMW 를 살짝 깨물기 하면서 이빨로 훑었다…
+				PRINTFORMW 를 살짝 깨물면서 이빨로 훑었다…
 			ELSEIF RAND:3 == 0
 				PRINTFORMW \@ CALCF("Ｂ발정") ? 를 물고 # 에 입을 붙이고 \@, 츗츗 빨아 올렸다…
 			ELSEIF RAND:2
 				PRINTFORMW 를 마음껏 빨아 올려, 첨단을 혀로\@ CALCF("Ｂ발정") ? 굴렸다 # 쑤셨다 \@…
 			ELSE
-				PRINTFORMW 를 입에 포함하면서, 유륜의 주위를 간질거리며 빨았다…
+				PRINTFORMW 를 입에 넣으면서, 유륜의 주위를 간질거리며 빨았다…
 			ENDIF
 		ENDIF
 	ENDIF
@@ -255,7 +255,7 @@ ELSEIF CALCF("Ｂ발정") && (TALENT:남자 || (CHECK_CLO("유두노출") && RAN
 	IF TALENT:모유체질 && RAND:3 == 0
 		PRINTFORM 모유가 배어있는 돌기
 	ELSE
-		PRINTFORM %TEXTS("유두：描写")%%TEXTR("유두", "돌기")%
+		PRINTFORM %TEXTS("유두：描写")% %TEXTR("유두", "돌기")%
 	ENDIF
 	;ピアスをいじめる
 	IF TALENT:니플피어스 && RAND:2
@@ -288,7 +288,7 @@ ELSEIF CALCF("Ｂ발정") && (TALENT:남자 || (CHECK_CLO("유두노출") && RAN
 	ENDIF
 
 	SIF TALENT:모유체질 && (CHOSECOM(SELECTCOM) == 0 || RAND:4 == 0)
-		PRINTFORMW 유두를 만지작거려지는 자극으로,%CALLNAME:TARGET%의 유방으로부터 자꾸자꾸 모유가 배어 나와 간다…
+		PRINTFORMW 유두를 만지작거려지는 자극으로, %CALLNAME:TARGET%의 유방으로부터 자꾸자꾸 모유가 배어 나와 간다…
 ;가슴을揉む
 ELSE
 	SIF TALENT:남자 == 0
@@ -314,11 +314,11 @@ ELSE
 		IF EX:Ｂ절정 * 10000 + PALAM:쾌Ｂ >= 10000 && RAND:4 == 0
 			PRINTFORM %LOCALS%를 아래로 부터 지탱하면서,
 			IF COND("진성함몰유두")
-				PRINTFORMW 끝이 매몰 한 유두를 짜내는것 같이 다뤘다…
+				PRINTFORMW 끝이 매몰된 유두를 짜내는것 같이 다뤘다…
 			ELSEIF CALCF("Ｂ발정")
 				PRINTFORMW 찡 날카로워진 유두에 향해 천천히 다뤘다…
 			ELSE
-				PRINTFORMW 부끄러움으로 얼굴을 숨기고 있는 유두를 호되게 괴롭히려  조금 강하게 다뤘다…
+				PRINTFORMW 부끄러움으로 얼굴을 숨기고 있는 유두를 호되게 괴롭히려 강하게 다뤘다…
 			ENDIF
 		ELSEIF RAND:3 == 0 && ABL:Ｂ감각 >= 3
 			PRINTFORMW %조사처리(LOCALS,"를")%, 모양이 바뀔 정도로 주물렀다…

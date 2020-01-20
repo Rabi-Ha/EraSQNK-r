@@ -123,15 +123,15 @@ ELSEIF TEQUIP:식스나인 || PREVCOM == 1 || PREVCOM == 9
 	;においは확률高め
 	IF RAND:3
 		IF AGE(TARGET) == 1 && RAND:3 == 0
-			PRINTFORM 소녀특유의 성기의%TEXTS("匂い")%
+			PRINTFORM 소녀특유의 성기의 %TEXTS("匂い")%
 		ELSEIF AGE(TARGET) == 4 && RAND:3 == 0
-			PRINTFORM 숙성된 어른의%TEXTS("匂い")%
+			PRINTFORM 숙성된 어른의 %TEXTS("匂い")%
 		ELSEIF TALENT:호색 && CALCF("Ｖ발정") >= 2 && RAND:3 == 0
 			PRINTFORM 화악하고 피어오르는 
 			IF RAND:2
-				PRINTFORM 음부의%TEXTS("匂い")%
+				PRINTFORM 음부의 %TEXTS("匂い")%
 			ELSE
-				PRINTFORM 농후한 암컷의%TEXTS("匂い")%
+				PRINTFORM 농후한 암컷의 %TEXTS("匂い")%
 			ENDIF
 		ELSEIF RAND:3 == 0 && (AGE(TARGET) == 1 || TALENT:오줌싸개버릇)
 			PRINTFORM 희미한 오줌냄새
@@ -139,13 +139,13 @@ ELSEIF TEQUIP:식스나인 || PREVCOM == 1 || PREVCOM == 9
 			IF RAND:2 && CHECK_CLO("Ｖ노출") == 0
 				PRINTFORM 다리사이에 감도는 후끈한 애액의 향기
 			ELSE
-				PRINTFORM 축축히 배인 땀의%TEXTS("匂い")%
+				PRINTFORM 축축히 배인 땀의 %TEXTS("匂い")%
 			ENDIF
 		ELSE
-			PRINTFORM 조금 향기나는 땀의%TEXTS("匂い")%
+			PRINTFORM 조금 향기나는 땀의 %TEXTS("匂い")%
 		ENDIF
 		IF RAND:2
-			PRINTFORM 를 냄새 맡으면서,
+			PRINTFORM %조사만처리(TEXTS("匂い"),"를")% 냄새 맡으면서,
 		ELSE
 			PRINTFORM 에 휩싸여지면서,
 		ENDIF
@@ -156,12 +156,12 @@ ELSEIF TEQUIP:식스나인 || PREVCOM == 1 || PREVCOM == 9
 		ELSEIF AGE(TARGET) == 4 && RAND:2
 			PRINTFORM 성숙한 어른의 그곳
 		ELSE
-			PRINTFORM 지근거리로 초롱초롱 성기
+			PRINTFORM 지근거리로 초롱초롱 성기모양
 		ENDIF
 		IF RAND:2
-			PRINTFORM 를 바라보면서,
+			PRINTFORM 을 바라보면서,
 		ELSE
-			PRINTFORM 를 보고 관찰하면서,
+			PRINTFORM 을 보고 관찰하면서,
 		ENDIF
 	ELSE
 		PRINTFORM 눈앞의 경치
@@ -185,20 +185,20 @@ ELSE
 		ELSEIF RAND:2
 			PRINTFORM %CALLNAME:TARGET%의 
 			IF EX:절정수합계
-				PRINTFORM 홍조한
+				PRINTFORM 홍조한 
 			ELSEIF PALAM:욕정 >= 3000
 				SIF PALAM:욕정 < 10000
-					PRINTFORM 어렴풋이
-				PRINTFORM 땀흘린
+					PRINTFORM 어렴풋이 
+				PRINTFORM 땀흘린 
 			ENDIF
-			PRINTFORM 허벅지에 손을 기게 해,
+			PRINTFORM 허벅지에 손을 기게 해, 
 		ELSE
 			SIF TALENT:호색 && MARK:반발각인 == 0
 				PRINTFORM 무의식 중에 열린
-			PRINTFORM %CALLNAME:TARGET%의 다리의 사이에 손을 기게 해,
+			PRINTFORM %CALLNAME:TARGET%의 다리의 사이에 손을 기게 해, 
 		ENDIF
 	ELSEIF RAND:2
-		PRINTFORM %타겟을()% 껴안아,
+		PRINTFORM %타겟을()% 껴안아, 
 	ELSE
 		PRINTFORM %CALLNAME:TARGET%의 
 		IF EX:절정수합계 >= 5 && RAND:3
@@ -207,12 +207,12 @@ ELSE
 			SIF EX:절정수합계 >= 1
 				PRINTFORM 쾌감으로 녹은
 			IF RAND:2
-				PRINTFORM 얼굴
+				PRINTFORM 얼굴을 
 			ELSE
-				PRINTFORM 눈동자
+				PRINTFORM 눈동자를 
 			ENDIF
 		ENDIF
-		PRINTFORM 를 응시하면서,
+		PRINTFORM  응시하면서,
 	ENDIF
 ENDIF
 
@@ -232,16 +232,16 @@ IF CHECK_COM("음핵애무に変化")
 		;0通常 1皮の下で勃起 2顔を出す 3ギンギン
 		SELECTCASE CALCF("Ｃ발정")
 		CASE 0
-			PRINTFORM 포피에 감싸진
+			PRINTFORM 포피에 감싸진 
 		CASE 1
-			PRINTFORM 가죽 위로부터라도 딱딱해지고 있는 것이 보이는
+			PRINTFORM 가죽 위로부터라도 딱딱해지고 있는 것이 보이는 
 		CASE 2
-			PRINTFORM 발기해 얼굴을 보이는
+			PRINTFORM 발기해 얼굴을 보이는 
 		CASEELSE
-			PRINTFORM 발기한 굵은
+			PRINTFORM 발기한 굵은 
 		ENDSELECT
-		PRINTFORM %TEXTR("클리토리스를", "음핵을", "돌기를")%
-		PRINTFORM %TEXTR("집요하게", "철저하게", "가차없이")%
+		PRINTFORM %TEXTR("클리토리스를", "음핵을", "돌기를")% 
+		PRINTFORM %TEXTR("집요하게", "철저하게", "가차없이")% 
 		IF CALCF("Ｃ발정") >= 2
 			PRINTFORMW %TEXTR("다뤘다", "만지작거렸다", "계속 괴롭혔다")%…
 		ELSE
@@ -250,9 +250,9 @@ IF CHECK_COM("음핵애무に変化")
 	ELSE
 		;下着越し
 		IF CHECK_CLO("Ｖ노출") == 0
-			PRINTFORM %CLO("가랑이")%를 밀어 올리고 있는
+			PRINTFORM %CLO("가랑이")%를 밀어 올리고 있는 
 		ELSE
-			PRINTFORM %TEXTS("클리토리스")%
+			PRINTFORM %TEXTS("클리토리스")% 
 		ENDIF
 		IF RAND:4 == 0
 			PRINTFORM 클리토리스
@@ -388,7 +388,7 @@ ELSEIF RAND:2 || TEQUIP:식스나인 || PREVCOM == 1 || PREVCOM == 9
 		IF TALENT:처녀 == 0
 			PRINTFORMW 를 손가락끝으로 희롱했다…
 		ELSE
-			PRINTFORMW 를 밀어열어서 손가락 끝으로 만지자걱렸다…
+			PRINTFORMW 를 밀어열어서 손가락 끝으로 만질거렸다…
 		ENDIF
 	ELSEIF RAND:3 == 0
 		PRINTFORMW 에 손가락을 움직여서, 돌기를 문질렀다…

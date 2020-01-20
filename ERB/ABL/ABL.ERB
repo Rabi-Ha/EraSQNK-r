@@ -350,15 +350,15 @@ MEMO_LINECOUNT = LINECOUNT
 REDRAW 0
 
 PRINTFORML 
-PRINTFORML 여기에선 각종 구슬 1만개를 경험치 10P로 교환하는 장소 입니다.
-PRINTFORML 조교로 쌓는 경험치 보다 좋은 것은 아니지만, 남는 구슬을 처리할때 유용합니다.
+PRINTFORML 여기에선 각종 구슬 1만개를 경험치 10P로 교환합니다.
+PRINTFORML 조교로 쌓는 것보단 효율이 떨어지나, 남는 구슬을 처리할때 유용합니다.
 PRINTFORML 
 PRINTFORM 현재 경험치의{EXP:경험치}Ｐ에서, 
 IF ARG < 0
 	PRINTFORML 선택된 구슬을 교환합니다. 
-	PRINTFORML 어느것을 교환 하겠습니까？
+	PRINTFORML 어느 것을 교환 하겠습니까？
 ELSE
-	PRINTFORML 교환 단위는{ARG/10000}만입니다. 어느 것을 교환 하시겠습니까？
+	PRINTFORML 교환 단위는 {ARG/10000}만입니다. 어느 것을 교환 하시겠습니까？
 	PRINTFORML （교환 단위 미만의 경우 １만 단위로 교환 가능합니다.）
 ENDIF
 
@@ -373,7 +373,7 @@ FOR LCOUNT, 0, 16
 			PRINTFORM  [×] 
 		ENDSELECT
 
-		PRINTFORM %PALAMNAME:LCOUNT%の구슬:{ARG:(LCOUNT+1), 8}
+		PRINTFORM %PALAMNAME:LCOUNT%의 구슬:{ARG:(LCOUNT+1), 8}
 		SIF JUEL:LCOUNT != ARG:(LCOUNT+1)
 			PRINTFORM  → {JUEL:LCOUNT, 8} {(ARG:(LCOUNT+1) - JUEL:LCOUNT)/1000, 5}Ｐ get
 		PRINTL 
@@ -644,8 +644,8 @@ IF TALENT:반항적
 	ENDIF
 	IF LOCAL
 		IF LOCAL == 1
-			PRINTFORM 상냥하게 접한 덕분인가,%타겟은()% 
-			PRINTFORMW \@EXP:조교횟수 > 1 ? 最近%CALLNAME:MASTER%에 친근해진 것 같다… # 어깨의 힘을 뺀 것 같다… \@
+			PRINTFORM 상냥하게 접한 덕분인가, %타겟은()% 
+			PRINTFORMW \@EXP:조교횟수 > 1 ? 최근 %CALLNAME:MASTER%에 친근해진 것 같다… # 어깨의 힘을 뺀 것 같다… \@
 		ENDIF
 		PRINTFORMW %타겟은()% 【반항적】이 아니게 되었습니다
 		TALENT:반항적 = 0

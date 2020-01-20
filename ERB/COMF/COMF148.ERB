@@ -121,47 +121,47 @@ IF COND("피어스ＯＮ플래그")
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의
 	IF COND("클리피어스플래그")
 		IF PENIS(TARGET)
-			PRINT 페니스에
+			PRINT 페니스에 
 		ELSE
 			IF TALENT:음핵
-				PRINT 발기한
+				PRINT 발기한 
 			ELSEIF TALENT:Ｃ민감
-				PRINT 민감한
+				PRINT 민감한 
 			ELSEIF TALENT:작은몸집
-				PRINT 작은
+				PRINT 작은 
 			ENDIF
-			PRINT 클리토리스에
+			PRINT 클리토리스에 
 		ENDIF
 	ELSEIF COND("라비아피어스플래그")
 		IF TALENT:음호
-			PRINT 추잡하게 실룩거리는
+			PRINT 추잡하게 실룩거리는 
 		ELSEIF TALENT:Ｖ민감
 			PRINT 민감한 
 		ELSEIF TALENT:작은몸집 && TALENT:유치
-			PRINT 어린
+			PRINT 어린 
 		ELSEIF TALENT:작은몸집
 			PRINT 작은 
 		ENDIF
 		PRINT 소음순에
 	ELSEIF COND("니플피어스플래그")
 		IF COND("함몰유두")
-			PRINTFORM 매몰 된\@ COND("유두비대") ? 거대한 # \@유두를노출시켜
+			PRINTFORM 매몰 된\@ COND("유두비대") ? 거대한 # \@유두를노출시켜 
 		ELSE
 			IF COND("유두비대")
-				PRINT 비대한
+				PRINT 비대한 
 			ELSEIF TALENT:음유
-				PRINT 발기한
+				PRINT 발기한 
 			ELSEIF TALENT:Ｂ민감
-				PRINT 민감한
+				PRINT 민감한 
 			ELSEIF TALENT:작은몸집 && TALENT:유치
-				PRINT 어린
+				PRINT 어린 
 			ELSEIF TALENT:작은몸집
-				PRINT 작은
+				PRINT 작은 
 			ENDIF
-			PRINT 유두에
+			PRINT 유두에 
 		ENDIF
 	ELSEIF COND("배꼽피어스플래그")
-		PRINT 배꼽에
+		PRINT 배꼽에 
 	ENDIF
 	SIF PIERCES != ""
 		PRINTFORM %PIERCES%의

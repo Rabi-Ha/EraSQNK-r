@@ -113,16 +113,16 @@ IF COND("うっかり자궁삽입플래그")
 	ELSE
 		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% \@ PENIS(PLAYER) ? 귀두 # 끄트머리 \@를 %CALLNAME:TARGET%의 자궁구에 밀어붙인채, 
 		IF TEQUIP:손대중
-			PRINTFORMW 일부러 약하게, 때때로 움직임을 멈추면서 %TEXTR("문질러주고있다", "괴롭히고있다", "자극하고있다", "애태우고있다")%…
+			PRINTFORMW 일부러 약하게, 때때로 움직임을 멈추면서 %TEXTR("문질러주고 있다", "괴롭히고 있다", "자극하고 있다", "애태우고 있다")%…
 		ELSE
-			PRINTFORMW %TEXTR("집요하게", "가차없이く", "철저하게")% %TEXTR("문질러주고있다", "괴롭히고있다", "자극하고있다")%…
+			PRINTFORMW %TEXTR("집요하게", "가차없이", "철저하게")% %TEXTR("문질러주고 있다", "괴롭히고 있다", "자극하고 있다")%…
 		ENDIF
 	ENDIF
 	PRINTFORMW 그러자. 
 	PRINTFORMW 더욱 깊숙한 곳까지 페니스가 삼켜지는 감촉과 함께, %CALLNAME:TARGET%의 얼굴 색이 변했다
 	PRINTFORMW ……아무래도, 쾌락에 빠진 자궁구에 페니스가 들어가 버린 모양이다! 
 	IF TALENT:슬라임
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 자궁를 직접적으로 범해져 정액를 따라지는 것을 상상해, 몽롱 녹은 표정을 하고 있다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 자궁을 직접적으로 범해져 정액를 따라지는 것을 상상해, 몽롱 녹은 표정을 하고 있다…
 	ELSEIF TALENT:자궁성감 && CUP:고통 < 100
 		IF COND("임신가능") && RAND:2
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 자궁에 직접 직접 씨를 받는다는 기대에, 흐리멍텅하게 황홀한 얼굴을 하고있다…
@@ -141,7 +141,7 @@ IF COND("うっかり자궁삽입플래그")
 ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 	;하드피스톤
 	IF PENIS(PLAYER) && STATE("하드스킨", PLAYER) && TEQUIP:넘어뜨리기 == 0
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 딱딱한 페니스로 %CALLNAME:TARGET%의 자궁를 계속 괴롭혔다…
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 딱딱한 페니스로 %CALLNAME:TARGET%의 자궁을 계속 괴롭혔다…
 	;押し倒され(기승위)
 	ELSEIF TEQUIP:넘어뜨리기 || INSERT("기승위")
 		IF TALENT:자궁성감
@@ -156,9 +156,9 @@ ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 	ELSE
 		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% \@ PENIS(PLAYER) ? 귀두 # 끄트머리 \@를 %CALLNAME:TARGET%의 자궁에 %TEXTR("잠입시킨", "침입시킨", "쑤셔넣은")% 채로, 
 		IF TEQUIP:손대중
-			PRINTFORMW 일부러 약하게, 때로 움직임을 멈추기도 하면서 %TEXTR("계속 문질러주었다", "괴롭히고있다", "자극하고있다", "애태우고있다")%…
+			PRINTFORMW 일부러 약하게, 때로 움직임을 멈추기도 하면서 %TEXTR("계속 문질러주었다", "괴롭히고 있다", "자극하고 있다", "애태우고 있다")%…
 		ELSE
-			PRINTFORMW %TEXTR("집요하게", "가차없이", "철저하게")% %TEXTR("계속 문질러주었다", "괴롭히고있다", "자극하고있다")%…
+			PRINTFORMW %TEXTR("집요하게", "가차없이", "철저하게")% %TEXTR("계속 문질러주었다", "괴롭히고 있다", "자극하고 있다")%…
 		ENDIF
 	ENDIF
 ;하드피스톤
@@ -180,7 +180,7 @@ ELSEIF PENIS(PLAYER) && STATE("하드스킨", PLAYER) && TEQUIP:넘어뜨리기 
 	ELSE
 		PRINTFORM 자궁구를 비틀어 열면서
 	ENDIF
-	PRINTFORM 자궁의 안까지 비집고 들어가,%타겟을()%
+	PRINTFORM 자궁의 안까지 비집고 들어가,%타겟을()% 
 	IF TALENT:작은몸집
 		PRINT 미성숙한 자궁안까지 범해지는 
 	ELSE
@@ -189,7 +189,7 @@ ELSEIF PENIS(PLAYER) && STATE("하드스킨", PLAYER) && TEQUIP:넘어뜨리기 
 	PRINTFORMW 감각에 허덕이게했다…
 ;押し倒され(기승위)
 ELSEIF TEQUIP:넘어뜨리기 || INSERT("기승위")
-	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 가슴에 손을 얹고 , 
+	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 가슴에 손을 얹고, 
 	IF RAND:2
 		PRINTFORMW 질로 섹스하듯이 자궁으로 푸욱 %조사처리(NAMES("페니스", PLAYER),"를")% 삼켰다…
 	ELSE
@@ -225,9 +225,9 @@ ELSE
 		CASEELSE
 			;いきなり자궁を犯した
 			IF INSERT("Ｖ인서트") == 0
-				PRINTFORM %TEXTR("に照準を合わせて", "目掛けて")%강력하게 허리를 내밀어,%NAMES("페니스", PLAYER)%로
+				PRINTFORM %TEXTR("에 조준해", "겨냥해")% 강력하게 허리를 내밀어,%NAMES("페니스", PLAYER)%로
 			ELSE
-				PRINTFORM 에\@ PENIS(PLAYER) ? 귀두를 # 장대의 끝을 \@ 꽉 누른 뒤로 허리를 강하게 끌어 들여 침입시키면, 그대로
+				PRINTFORM 에\@ PENIS(PLAYER) ? 귀두를 # 장대의 끝을 \@ 꽉 누른 뒤로 허리를 강하게 끌어 들여 침입시키면, 그대로 
 			ENDIF
 		ENDSELECT
 	ENDIF
@@ -236,7 +236,7 @@ ELSE
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	IF (TALENT:자궁성감 || TALENT:슬라임) && CUP:고통 < 500
 		IF COND("임신가능") && RAND:3 == 0
-			PRINTFORMW 자궁에 직접%TEXTR("씨뿌려지는", "정액울 부어진다는")% 기대에, 몽롱 녹은 표정을 하고 있다…
+			PRINTFORMW 자궁에 직접 %TEXTR("씨뿌려지는", "정액울 부어진다는")% 기대에, 몽롱 녹은 표정을 하고 있다…
 		ELSEIF RAND:4 == 0
 			PRINTFORMW 자신의 가장 안쪽을 후벼파지는 고통과 환희에 쳐 떨려, 반 무의식 중에 질벽을 벌름거려 페니스에 휘감기게 하고 있다…
 		ELSEIF RAND:3 == 0

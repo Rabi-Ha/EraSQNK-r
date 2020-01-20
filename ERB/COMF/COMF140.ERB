@@ -208,11 +208,11 @@ ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 	;角がありますか？
 	PRINTFORM \@ COND("뿔ハンドル") ? 뿔을 잡고 # 머리를 누르고 \@, 
 	IF SIZE("페니스", PLAYER) >= 2 && RANDIF(2, ABL:PLAYER:새드끼 >= 3)
-		PRINTFORM 긴 페니스로
+		PRINTFORM 긴 페니스로 
 	ELSEIF ABL:PLAYER:새드끼 >= 3 && RAND:2
-		PRINTFORM 휴식도 시키지 않을 기세로
+		PRINTFORM 휴식도 시키지 않을 기세로 
 	ELSEIF ABL:마조끼 >= 3 && CHECK("喉姦")
-		PRINTFORM 바람직하는 대로
+		PRINTFORM 바람직하는 대로 
 	ENDIF
 	IF (ABL:기교 >= 4 || TALENT:PLAYER:새드 || TEQUIP:딥스로트) && SIZE("페니스", PLAYER) && RAND:2
 		IF SIZE("페니스", PLAYER) >= 3 && TEQUIP:딥스로트 && RAND:2
@@ -231,7 +231,7 @@ ELSE
 	IF PREVCOM == 91 && COND("前Ｔ조교자") == PLAYER
 		;汚れてますか？악취둔감で無いならば, 실행치の10分の一の値とRAND:5を比べて判定
 		IF CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｖ", "Ａ") && TALENT:악취둔감 == 0 && RAND:6 > TCVAR:28/10
-			PRINTFORM %TEXTS("匂い")%에 미간을 찌뿌리며
+			PRINTFORM %TEXTS("匂い")%에 미간을 찌뿌리며 
 		;연모or헌신的or봉사정신3이상or악취둔감
 		ELSEIF (TALENT:연모 || TALENT:헌신 || ABL:봉사정신 >= 3 || TALENT:악취둔감) && RAND:2 == 0
 			PRINT 맛있는 듯이 
@@ -317,9 +317,9 @@ ELSE
 	ENDIF
 	;角がありますか？
 	IF COND("뿔ハンドル")
-		PRINT 뿔을 잡고
+		PRINT 뿔을 잡고 
 	ELSE
-		PRINT 머리를 잡고
+		PRINT 머리를 잡고 
 	ENDIF
 	SIF PREVCOM == 91 && COND("前Ｔ조교자") == PLAYER
 		PRINT , 

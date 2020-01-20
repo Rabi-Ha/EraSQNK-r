@@ -213,7 +213,7 @@ ELSEIF RESULT == 0 || RESULT == 1
 					IF AGE(TARGET) >= 4
 						PRINT 늘어뜨리고 있는 
 					ELSE
-						PRINT 장식하고 잇는 
+						PRINT 장식하고 있는 
 					ENDIF
 				ENDIF
 			ELSEIF RAND:2
@@ -284,7 +284,7 @@ ELSEIF RESULT == 2 && COND("음모") >= 6
 	CALL DEL_CEVENT_GROUP, "음모の명칭"
 
 	IF PENIS(TARGET)
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 음모의 형태를\@ABL:PLAYER:기교 >= 4 ? 깔끔하게 #  \@ 정돈했다…
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 음모의 형태를 \@ABL:PLAYER:기교 >= 4 ? 깔끔하게 #  \@ 정돈했다…
 	ELSE
 		PRINTFORML 어떤 모양으로 합니까? 
 		PRINTFORML  [ 0] ▼ 역삼각형
@@ -323,7 +323,7 @@ ELSEIF RESULT == 2 && COND("음모") >= 6
 			CALL SET_CEVENT, LOCALS
 		ENDSELECT
 
-	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 대음순을 가리는 털을 확실히 깎아 치부를 장식하는 음모의 형태를\@ STRLENS(CEVENTS("음모の명칭") ) ? %CEVENTS("음모の명칭")% # 예쁜 모양 \@으로 깎았다 …
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 대음순을 가리는 털을 확실히 깎아 치부를 장식하는 음모의 형태를 \@ STRLENS(CEVENTS("음모の명칭") ) ? %CEVENTS("음모の명칭")% # 예쁜 모양 \@으로 깎았다 …
 	ENDIF
 ELSE
 	GOTO INPUT_LOOP

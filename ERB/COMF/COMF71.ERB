@@ -85,7 +85,7 @@ IF CHECK_COM("Ａ두개삽입")
 		IF INSERT("배면좌위")
 			PRINTFORM 결합부가 훤히 보이는 체위로 %CALLNAME:(PLAYER:1)%에게 범해지는 중인 %CALLNAME:TARGET%의 가랑이를 밀어 열고, 
 		ELSEIF INSERT("기승위")
-			PRINTFORM %CALLNAME:(PLAYER:1)%에게 걸터앉아 허리를 흔드는 %CALLNAME:TARGET%에게 스키활강을 하는 듯이 앞으로 숙인 자세를 취하게하고, 
+			PRINTFORM %CALLNAME:(PLAYER:1)%에게 걸터앉아 허리를 흔드는 %CALLNAME:TARGET%에게 스키활강을 하는 듯이 앞으로 숙인 자세를 취하게 하고, 
 		ELSE
 			PRINTFORM %CALLNAME:(PLAYER:1)%에게 배면좌위의 자세로, 범해지고있는 %CALLNAME:TARGET%의 가랑이를 밀어열고, 
 		ENDIF
@@ -159,7 +159,7 @@ ELSE
 				PRINT 소중한 장소를 과시하면서 
 			ENDIF
 		ELSEIF RAND:2 == 0
-			PRINT 부끄러는 장소가 훤히 보이는 모습으로
+			PRINT 부끄러는 장소가 훤히 보이는 모습으로 
 		ELSE
 			PRINT 가랑이를 드러낸 모습으로 
 		ENDIF
@@ -214,7 +214,7 @@ ELSE
 			SIF TALENT:부끄럼쟁이 || (TALENT:반항적 && ABL:Ａ감각 <= 2 && TALENT:연모 == 0)
 				PRINT , 
 		ENDIF
-		PRINTFORM %TEXTS("애널")%
+		PRINTFORM %TEXTS("애널")% 
 	ENDIF
 	IF RAND:2 == 0
 		PRINT 엉덩이 구멍에 

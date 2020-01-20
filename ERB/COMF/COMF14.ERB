@@ -114,13 +114,13 @@ ENDIF
 ;両穴くぱぁ
 IF PREVCOM == 13 && CHECK_COM("両穴くぱぁ")
 	IF COND("両穴くぱぁ")
-		PRINTFORM %타겟은()% 이미 양쪽 모두의 구멍을 아까워하지도 않고 개장 하고 있었지만, 요구에 응해 재차
+		PRINTFORM %타겟은()% 이미 양쪽 모두의 구멍을 아까워하지도 않고 개장 하고 있었지만, 요구에 응해 재차 
 	ELSE
-		PRINTFORM %타겟은()% 저기를 과시하고 있는 자세로부터 더욱 허리를 내밀면,
+		PRINTFORM %타겟은()% 저기를 과시하고 있는 자세로부터 더욱 허리를 내밀고, 
 	ENDIF
 ;前回Ｖくぱぁ
 ELSEIF PREVCOM == 13
-	PRINTFORM %타겟은()% 저기를 과시하고 있는 자세인 채, 이번은
+	PRINTFORM %타겟은()% 저기를 과시하고 있는 자세인 채, 이번은 
 ELSE
 	;다리구속
 	IF GETBIT(TEQUIP:구속, 21)
@@ -187,7 +187,7 @@ ELSE
 		IF TCVAR:28 > 20 && RAND:2
 			PRINT 서 가랑이를 한층 더 열면, 
 		ELSE
-			PRINT 와
+			PRINT 와 
 		ENDIF
 	;다리を구속されていないなら開く描写
 	ELSEIF COND("다리 사용") && INSERT("Ｖ인서트") == 0
@@ -199,7 +199,7 @@ ELSE
 				PRINTFORM 데굴 위로 향해 되어 
 			ENDIF
 			IF RAND:2 == 0
-				PRINTFORM %NAMES("両腕")%으로 허벅지를 끌어당기듯이해 크게 가랑이를 열어 
+				PRINTFORM %조사처리(NAMES("両腕"),"으로")% 허벅지를 끌어당기듯이 해 크게 가랑이를 열어 
 			ELSEIF TEQUIP:비디오카메라
 				PRINTFORM 잘 보이도록 허리를 내밀어 
 			ELSE
@@ -207,7 +207,7 @@ ELSE
 			ENDIF
 			IF ABL:노출벽 >= 3 && CHOSECOM(SELECTCOM) == 0 && RAND:2
 				IF RAND:2
-					PRINTFORM 일로 시선을 사타구니에 유도하면, 
+					PRINTFORM 일로 시선을 사타구니에 유도하고, 
 				ELSE
 					PRINTFORM 일로 시선이 사타구니에 꽂히는 것을 즐기면서, 
 				ENDIF
@@ -245,7 +245,7 @@ IF TCVAR:28 > 20 && ABL:Ａ확장 >= 2 && COND("손가락 사용") && COND("액�
 	ELSEIF PREVCOM == 33
 		PRINTFORM 바이브를 뽑은지 얼마 안된 
 	ELSEIF PREVCOM >= 70 && PREVCOM <= 79
-		PRINTFORM 조금전까지 범해지던 
+		PRINTFORM 조금 전까지 범해지던 
 	ELSEIF PREVEX("Ａ절정")
 		IF PREVCOM == 3
 			PRINTFORM 절정한지 얼마 안된 
@@ -350,9 +350,9 @@ IF PREVCOM >= 70 && PREVCOM <= 79 && COND("액체관장") + COND("배설：危�
 		IF EX:Ａ내사정 >= 3 && RAND:3 == 0
 			PRINTFORMW 둥글고 뻐끔 연 구멍으로부터는 심하게 쏟은 것이 울컥거려, 부끄러운 냄새와 소리를 수반해 추접스럽게 흘려 보내지고 있다…
 		ELSE
-			PRINTFORM 크게 퍼진 아누스로부터는, 심하게 섞여 거품이 인 탁해진 오물이
+			PRINTFORM 크게 퍼진 아누스로부터는, 심하게 섞여 거품이 인 탁해진 오물이 
 			SIF PREVEX("Ａ내사정")
-				PRINT 나온지 얼마 안된 정액과 함께
+				PRINT 나온지 얼마 안된 정액과 함께 
 			PRINTFORMW 질척질척 흘러 넘치기 시작하고 있다…
 		ENDIF
 	;前回내사정
@@ -367,7 +367,7 @@ IF PREVCOM >= 70 && PREVCOM <= 79 && COND("액체관장") + COND("배설：危�
 	ELSEIF ABL:Ａ확장 >= 2 && RAND:2 == 0
 		PRINTFORMW 벌려져서 닫히지 않는 고기동굴 안에서는, 이어지는 쾌감을 요구하며 점막이 꿈틀대고있다…
 	ELSE
-		PRINTFORMW 페니스가 뽑힌 애널은, 쾌감에 입을 연채로 \@ RAND:2 ? 부드러운  # 신선한 색의 \@ 안쪽의 점막을 내보이고있다…
+		PRINTFORMW 페니스가 뽑힌 애널은, 쾌감에 입을 연 채로 \@ RAND:2 ? 부드러운  # 신선한 색의 \@ 안쪽의 점막을 내보이고있다…
 	ENDIF
 	TFLAG:16 = 1
 ;장内ルート
@@ -382,7 +382,7 @@ ELSEIF LOCAL:1 == 1
 				SIF TALENT:처녀 == 1 && CHOSECOM(SELECTCOM) == 0
 					PRINTFORM 아직 사용한 적 없는 깨끗한 보지와는 대조적으로 
 				IF CHOSECOM(SELECTCOM) == 0 && ABL:Ａ놀림 < ABL:Ａ확장
-					PRINTFORM \@ AGE(TARGET) < 3 ? 장래가 # 일상생활이 \@ 걱정될 만큼\@ RAND:2 ? 느슨해진 # 커진 \@
+					PRINTFORM \@ AGE(TARGET) < 3 ? 장래가 # 일상생활이 \@ 걱정될 만큼\@ RAND:2 ? 느슨해진 # 커진 \@ 
 				ELSEIF RAND:2 == 0
 					PRINT 완전히 열린 채인 
 				ELSE
@@ -585,7 +585,7 @@ ENDIF
 ;前回내사정
 IF PREVEX("Ａ내사정")
 	LOCAL -= 10
-	LOCALS = %LOCALS% - 내사정直後(10)
+	LOCALS = %LOCALS% - 장내사정직후(10)
 ENDIF
 ;미약
 IF TEQUIP:미약

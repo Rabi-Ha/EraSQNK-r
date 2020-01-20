@@ -152,7 +152,7 @@ ELSEIF TEQUIP:넘어뜨리기
 		ELSE
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%\@ COND("다리 사용") ? 에 올라타,  # 의 \@
 			IF TEQUIP:PLAYER:식스나인 == 4
-				PRINTFORM 입을 범하면서
+				PRINTFORM 입을 범하면서 
 				SIF TEQUIP:식스나인 == 91
 					PRINTFORM \@ COND("다리 사용") ?  # ,  \@ 자신도 
 			ELSE
@@ -417,7 +417,7 @@ CASE 0 TO 2, 4, 7 TO 10, 15, 30 TO 34, 39, 130, 141 TO 143, 150
 	ELSE
 		SELECTCASE TEQUIP:식스나인
 		CASE 90
-			PRINTFORM %CALLNAME:PLAYER%의 페니스를
+			PRINTFORM %CALLNAME:PLAYER%의 페니스를 
 			IF ABL:기교 >= 3 && RAND:3 == 0
 				PRINTFORML 완급을 붙이면서 계속 잡아당기고 있다…
 			ELSEIF ABL:새드끼 && RAND:3 == 0
@@ -428,7 +428,7 @@ CASE 0 TO 2, 4, 7 TO 10, 15, 30 TO 34, 39, 130, 141 TO 143, 150
 				PRINTFORML 계속 잡아당기고 있다…
 			ENDIF
 		CASE 91, 150
-			PRINTFORM %CALLNAME:PLAYER%의 페니스를
+			PRINTFORM %CALLNAME:PLAYER%의 페니스를 
 			IF TEQUIP:딥스로트
 				;기교４かつ봉사정신３
 				IF ABL:기교 >= 4 && ABL:봉사정신 >= 3 && RAND:3 == 0
@@ -444,7 +444,7 @@ CASE 0 TO 2, 4, 7 TO 10, 15, 30 TO 34, 39, 130, 141 TO 143, 150
 			ELSEIF TALENT:요정 || ABL:순종 <= 1 || ABL:봉사정신 <= 1
 				;작은몸집で追加
 				SIF TALENT:작은몸집
-					PRINT 작은
+					PRINT 작은 
 				PRINTFORML 혀끝에서 핥아대고 있다…
 			ELSEIF (ABL:순종 >= 4 || ABL:봉사정신 >= 3 || ABL:마조끼 >= 3) && ABL:기교 >= 3 && EXP:펠라경험 >= 100 && RAND:3 == 0
 				;기교４かつ봉사정신３
@@ -469,26 +469,26 @@ CASE 0 TO 2, 4, 7 TO 10, 15, 30 TO 34, 39, 130, 141 TO 143, 150
 				ENDIF
 			ENDIF
 		CASE 92
-			PRINTFORM %CALLNAME:PLAYER%의 페니스를
+			PRINTFORM %CALLNAME:PLAYER%의 페니스를 
 			IF ABL:기교 >= 3 && RAND:3 == 0
-				PRINTFORM 완급을 붙이면서
+				PRINTFORM 완급을 붙이면서 
 			ELSEIF ABL:새드끼 && RAND:3 == 0
-				PRINTFORM 물컹물컹 격렬하게
+				PRINTFORM 물컹물컹 격렬하게 
 			ELSEIF ABL:욕망 + ABL:봉사정신 >= 3 && RAND:2 == 0
-				PRINTFORM 열중해
+				PRINTFORM 열중해 
 			ENDIF
 			IF TALENT:빈유
-				PRINT 얇은
+				PRINT 얇은 
 			ELSEIF TALENT:거유
-				PRINT 풍만한
+				PRINT 풍만한 
 			ENDIF
 			PRINTL 가슴으로 쓸어올리고 있다…
 		CASE 97
-			PRINTFORM %CALLNAME:PLAYER%의 페니스를
+			PRINTFORM %CALLNAME:PLAYER%의 페니스를 
 			IF CHECK_CLO("濡れ") && RAND:2 == 0
-				PRINT 습기찬
+				PRINT 습기 찬 
 			ELSEIF CHECK_CLO("蒸れ")
-				PRINT 열띈
+				PRINT 열띈 
 			ENDIF
 			PRINTFORM %CLO("가랑이")%
 			IF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
@@ -503,17 +503,17 @@ CASE 0 TO 2, 4, 7 TO 10, 15, 30 TO 34, 39, 130, 141 TO 143, 150
 		CASE 105
 			PRINTFORM %CALLNAME:PLAYER%의 페니스를 오나홀로
 			IF ABL:새드끼 >= 3 && RAND:3 == 0
-				PRINTFORM 아플 정도에 힘을 집중해
+				PRINTFORM 아플 정도에 힘을 집중해 
 			ELSEIF TALENT:호기심 && RAND:3 == 0
-				PRINTFORM 흥미로운 것 같게
+				PRINTFORM 흥미로운 것 같게 
 			ELSEIF MARK:굴복각인 == 0 && RAND:3 == 0
-				PRINTFORM 복잡한 얼굴을 하면서
+				PRINTFORM 복잡한 얼굴을 하면서 
 			ELSEIF RAND:3 == 0
-				PRINTFORM 격렬하게
+				PRINTFORM 격렬하게 
 			ELSEIF RAND:2 == 0
-				PRINTFORM 질척질척
+				PRINTFORM 질척질척 
 			ELSE
-				PRINTFORM 천천히
+				PRINTFORM 천천히 
 			ENDIF
 			PRINTFORML 다루고 있다…
 		ENDSELECT

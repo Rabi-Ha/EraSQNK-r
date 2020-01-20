@@ -275,10 +275,10 @@ ELSEIF LOCAL:1 && RAND:3 == 0
 ;범용成功
 ELSEIF TEQUIP:달콤한말
 	IF TALENT:교만 && RAND:2
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 꼭 싫지만도 않은 것같다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 꼭 싫지만도 않은 것 같다…
 	ELSEIF TALENT:양기
 		IF RAND:2
-			PRINTFORM %조사처리(CALLNAME:TARGET,"는")%, 히죽 웃는 얼굴로%CALLNAME:PLAYER%
+			PRINTFORM %조사처리(CALLNAME:TARGET,"는")%, 히죽 웃는 얼굴로 %CALLNAME:PLAYER%
 			IF AGE(TARGET) >= 3
 				PRINTFORMW %조사만처리(CALLNAME:PLAYER,"를")% 안아주었다! 
 			ELSE
@@ -297,7 +297,7 @@ ELSE
 	IF TALENT:교만 && RAND:2
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, %CALLNAME:PLAYER%의 입에 발린 소리를 비웃었다…
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, %CALLNAME:PLAYER%의 말을 귓등으로 흘려보냈다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, %CALLNAME:PLAYER%의 말을 귓등으로 흘려 보냈다…
 	ENDIF
 ENDIF
 

@@ -79,13 +79,13 @@ ELSEIF INSERT("Ｖ인서트") && COND("前Ｔ조교자") == PLAYER
 	ELSEIF INSERT("굴곡위")
 		PRINTFORM 다리를 크게 벌린 부끄러운 자세로, 이번에는 %CALLNAME:TARGET%의 
 	ELSE
-		PRINTFORM %조사처리(CALLNAME:TARGET,"를")% 위로 드러눕게 해, 질에서 뽑아낸 %조사처리(NAMES("페니스", PLAYER),"로")%%TEXTS("애널")%
+		PRINTFORM %조사처리(CALLNAME:TARGET,"를")% 위로 드러눕게 해, 질에서 뽑아낸 %조사처리(NAMES("페니스", PLAYER),"로")% %TEXTS("애널")% 
 	ENDIF
 	PRINTFORMW 애널을 범하기 시작했다…
 ELSEIF INSERT("Ａ인서트") && COND("前Ｔ조교자") == PLAYER
 	IF INSERT("정상위") || INSERT("굴곡위")
 		IF TEQUIP:키스
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%%TEXTS("키스継続助詞付き")%, 다시 허리를 움직이기 시작했다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET% %TEXTS("키스継続助詞付き")%, 다시 허리를 움직이기 시작했다…
 			CALL SETFLAG, "추가키스플래그", TARGET
 		;조교자が남자か후타나리である
 		ELSEIF PENIS(PLAYER)
@@ -211,7 +211,7 @@ ELSE
 	ENDIF
 
 	IF TEQUIP:키스
-		PRINTFORM 입술을 빼앗으면서
+		PRINTFORM 입술을 빼앗으면서 
 		CALL SETFLAG, "추가키스플래그", TARGET
 	ELSEIF TALENT:임신 && TALENT:PLAYER:새드
 		PRINT 임신한 사실은 아랑곳하지 않고 
@@ -223,7 +223,7 @@ ELSE
 		PRINT 얼굴을 바라보면서 
 	;PLAYERが새드orA経験20이상or연모かつA감각Lv3이상
 	ELSEIF TALENT:PLAYER:새드 || MIN(EXP:Ａ경험, EXP:Ａ성교경험) >= 20 || (TALENT:연모 && ABL:Ａ감각 >= 3)
-		PRINTFORM \@ TALENT:작은몸집 ? 배 # 잘록한 데\@를 잡고 
+		PRINTFORM \@ TALENT:작은몸집 ? 배를 # 잘록한 곳을\@  잡고 
 	ENDIF
 	;PLAYERが새드or임신していない, かつA経験3이상or연모かつA감각Lv4이상
 	IF (TALENT:PLAYER:새드 || TALENT:임신 == 0) && (MIN(EXP:Ａ경험, EXP:Ａ성교경험) >= 20 || (TALENT:연모 && ABL:Ａ감각 >= 3) ) && RAND:3 == 0

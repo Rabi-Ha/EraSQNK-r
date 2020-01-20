@@ -70,7 +70,7 @@ CALL CALC, "조교소스", LOCAL:0, LOCAL:1, LOCAL:2, LOCAL:3, LOCAL:4, LOCAL:5,
 
 @TRAIN_MESSAGE_COM282
 ;범용文…はまだない
-LOCALS = %CALLNAME:TARGET%의 치태를 바라보면서
+LOCALS = %CALLNAME:TARGET%의 치태를 바라보면서 
 
 ;何をオカズにしているか
 SELECTCASE TEQUIP:PLAYER:자위한다
@@ -79,37 +79,37 @@ CASE 1
 	IF TEQUIP:안면기승 && RAND:2
 		SELECTCASE RANDF(5)
 		CASE 4
-			LOCALS = 얼굴에 닿은 %CALLNAME:TARGET%에게 마크당하면서,
+			LOCALS = 얼굴에 닿은 %CALLNAME:TARGET%에게 마크당하면서, 
 		CASE 3
-			LOCALS = %CALLNAME:TARGET%의 무게를 얼굴로 받아 들이면서,
+			LOCALS = %CALLNAME:TARGET%의 무게를 얼굴로 받아 들이면서, 
 		CASE 2
-			LOCALS = %TEXTS("匂い")%가 강한 곳에서 코와 입을 가로막으면서,
+			LOCALS = %TEXTS("匂い")%가 강한 곳에서 코와 입을 가로막으면서, 
 		CASE 1
-			LOCALS = %CALLNAME:TARGET%에게 강요당하고 있는 봉사를 받아들이면서,
+			LOCALS = %CALLNAME:TARGET%에게 강요당하고 있는 봉사를 받아들이면서, 
 		CASEELSE
-			LOCALS = %CALLNAME:TARGET%의 가랑이에 얼굴을 파묻으면서,
+			LOCALS = %CALLNAME:TARGET%의 가랑이에 얼굴을 파묻으면서, 
 		ENDSELECT
 	;アソコむき出し
 	ELSEIF CHECK_CLO("Ｖ노출")
 		SELECTCASE RANDF(4)
 		CASE 3
-			LOCALS = %CALLNAME:TARGET%의 부끄러운 장소의 맛과 %TEXTS("匂い")%을 보급하면서,
+			LOCALS = %CALLNAME:TARGET%의 부끄러운 장소의 맛과 %TEXTS("匂い")%을 보급하면서, 
 		CASE 2
-			LOCALS = %CALLNAME:TARGET%의 그곳을 혀로 핥으면서,
+			LOCALS = %CALLNAME:TARGET%의 그곳을 혀로 핥으면서, 
 		CASE 1
-			LOCALS = %CALLNAME:TARGET%의 그곳을 핥으면서,
+			LOCALS = %CALLNAME:TARGET%의 그곳을 핥으면서, 
 		CASEELSE
-			LOCALS = 배어나온 %CALLNAME:TARGET%의 음액으로 목을 축이면서,
+			LOCALS = 배어나온 %CALLNAME:TARGET%의 음액으로 목을 축이면서, 
 		ENDSELECT
 	;팬티とか越し
 	ELSE
 		SELECTCASE RANDF(3)
 		CASE 2
-			LOCALS = 심호흡하고%CLO("가랑이")%너머의 보지의 %조사처리(TEXTS("匂い"),"를")% 만끽하면서
+			LOCALS = 심호흡하고 %CLO("가랑이")%너머의 보지의 %조사처리(TEXTS("匂い"),"를")% 만끽하면서 
 		CASE 1
-			LOCALS = 가랑이에 밀착한 %조사처리(CLO("가랑이"),"를")% 특등석으로 즐기면서,
+			LOCALS = 가랑이에 밀착한 %조사처리(CLO("가랑이"),"를")% 특등석으로 즐기면서, 
 		CASEELSE
-			LOCALS = %CALLNAME:TARGET%의 %조사처리(CLO("가랑이"),"를")%를 지근거리에서 관찰하면서,
+			LOCALS = %CALLNAME:TARGET%의 %조사처리(CLO("가랑이"),"를")%를 지근거리에서 관찰하면서, 
 		ENDSELECT
 	ENDIF
 
@@ -118,35 +118,35 @@ CASE 3
 	IF ABL:자위중독 >= 5 && RAND:2
 		SELECTCASE RANDF(3)
 		CASE 2
-			LOCALS = %CALLNAME:TARGET%의 진심 오나니가 내뿜는 열기에 휩싸이면서,
+			LOCALS = %CALLNAME:TARGET%의 진심 오나니가 내뿜는 열기에 휩싸이면서, 
 		CASE 1
-			LOCALS = 자위 행위에 몰두하여 어지럽게 변한%CALLNAME:TARGET%의 모습을 즐기면서,
+			LOCALS = 자위 행위에 몰두하여 어지럽게 변한 %CALLNAME:TARGET%의 모습을 즐기면서, 
 		CASEELSE
-			LOCALS = 사람들 앞에서의 자위에 부끄러움은 커녕 흥분을 감추지 못하는 %타겟을()% 응시하면서,
+			LOCALS = 사람들 앞에서의 자위에 부끄러움은 커녕 흥분을 감추지 못하는 %타겟을()% 응시하면서, 
 		ENDSELECT
 	ELSEIF ABL:자위중독 >= 3
 		SELECTCASE RANDF(3)
 		CASE 2
-			LOCALS = 눈앞에 펼쳐진 과격한 구경거리에 몸을 내밀며,
+			LOCALS = 눈앞에 펼쳐진 과격한 구경거리에 몸을 내밀며, 
 		CASE 1
-			LOCALS = %CALLNAME:TARGET%의 치태를 바라보면서,
+			LOCALS = %CALLNAME:TARGET%의 치태를 바라보면서, 
 		CASEELSE
-			LOCALS = 쾌감에 허덕이는 %CALLNAME:TARGET%의 요염한 모습에 열중하며,
+			LOCALS = 쾌감에 허덕이는 %CALLNAME:TARGET%의 요염한 모습에 열중하며, 
 		ENDSELECT
 	ELSE
 		SELECTCASE RANDF(3)
 		CASE 2
-			LOCALS = 어색한 손놀림으로 스스로를 위로하고 있는 %타겟은()% 과시하는 듯이,
+			LOCALS = 어색한 손놀림으로 스스로를 위로하고 있는 %타겟은()% 과시하는 듯이, 
 		CASE 1
-			LOCALS = 다른 사람들의 눈을 신경쓰고 조심스럽게 오나니를 하고 있는 %타겟을()% 바라보면서
+			LOCALS = 다른 사람들의 눈을 신경쓰고 조심스럽게 오나니를 하고 있는 %타겟을()% 바라보면서 
 		CASEELSE
-			LOCALS = 부끄러운 듯이 자위 행위를 보이고 있는 %CALLNAME:TARGET% 앞에 진을 치고,
+			LOCALS = 부끄러운 듯이 자위 행위를 보이고 있는 %CALLNAME:TARGET% 앞에 진을 치고, 
 		ENDSELECT
 		IF CHOSECOM(SELECTCOM) == 0
 			IF RAND:2
-				LOCALS = 눈앞에서 오나니 시작해서 움직임이 어색해진 %타겟을()% 신경쓰지 않고,
+				LOCALS = 눈앞에서 오나니 시작해서 움직임이 어색해진 %타겟을()% 신경쓰지 않고, 
 			ELSE
-				LOCALS = 눈앞에서 오나니하는 것을 어이없는 모습으로 보고있는 %타겟을()% 신경쓰지 않고,
+				LOCALS = 눈앞에서 오나니하는 것을 어이없는 모습으로 보고있는 %타겟을()% 신경쓰지 않고, 
 			ENDIF
 		ENDIF
 	ENDIF
@@ -157,26 +157,26 @@ CASE 4
 	IF TEQUIP:넘어뜨리기
 		SELECTCASE RANDF(5)
 		CASE 4
-			LOCALS = %CALLNAME:TARGET%의 맛을 익숙하게 하면서
+			LOCALS = %CALLNAME:TARGET%의 맛을 익숙하게 하면서 
 		CASE 3
-			LOCALS = %CALLNAME:TARGET%에 사용되어 거칠게 코로 숨을 쉬면서,
+			LOCALS = %CALLNAME:TARGET%에 사용되어 거칠게 코로 숨을 쉬면서, 
 		CASE 2
-			LOCALS = %CALLNAME:TARGET%에 입을 범해지면서,
+			LOCALS = %CALLNAME:TARGET%에 입을 범해지면서, 
 		CASE 1
-			LOCALS = %CALLNAME:TARGET%의 페니스로 양치질을 하면서,
+			LOCALS = %CALLNAME:TARGET%의 페니스로 양치질을 하면서, 
 		CASEELSE
-			LOCALS = %CALLNAME:TARGET%의 오나홀처럼 취급받으면서,
+			LOCALS = %CALLNAME:TARGET%의 오나홀처럼 취급받으면서, 
 		ENDSELECT
 	ELSE
 		SELECTCASE RANDF(4)
 		CASE 3
-			LOCALS = %CALLNAME:TARGET%의 %TEXTS("페니스：視覚", TARGET)%페니스를 맛보면서,
+			LOCALS = %CALLNAME:TARGET%의 %TEXTS("페니스：視覚", TARGET)% 페니스를 맛보면서, 
 		CASE 2
-			LOCALS = %CALLNAME:TARGET%의 냄새와 맛을 즐기면서
+			LOCALS = %CALLNAME:TARGET%의 냄새와 맛을 즐기면서 
 		CASE 1
-			LOCALS = 페니스의 끝에서 넘쳐나는 투명한 국물을 맛보면서,
+			LOCALS = 페니스의 끝에서 넘쳐나는 투명한 국물을 맛보면서, 
 		CASEELSE
-			LOCALS = %CALLNAME:TARGET%의 페니스를 핥아먹으면서
+			LOCALS = %CALLNAME:TARGET%의 페니스를 핥아먹으면서 
 		ENDSELECT
 	ENDIF
 ;애널핥기
@@ -184,27 +184,27 @@ CASE 9
 	IF TEQUIP:안면기승 && RAND:2
 		SELECTCASE RANDF(5)
 		CASE 4
-			LOCALS = 얼굴을 맞댄 %CALLNAME:TARGET%에게 마킹받으면서,
+			LOCALS = 얼굴을 맞댄 %CALLNAME:TARGET%에게 마킹받으면서, 
 		CASE 3
-			LOCALS = %CALLNAME:TARGET%의 무게를 얼굴로 받아 들이면서,
+			LOCALS = %CALLNAME:TARGET%의 무게를 얼굴로 받아 들이면서, 
 		CASE 2
-			LOCALS = %TEXTS("匂い")%의 강한 곳에서 코와 입을 가로막으면서,
+			LOCALS = %TEXTS("匂い")%의 강한 곳에서 코와 입을 가로막으면서, 
 		CASE 1
-			LOCALS = %CALLNAME:TARGET%에 강요당하고 있는 봉사를 받아들이면서,
+			LOCALS = %CALLNAME:TARGET%에 강요당하고 있는 봉사를 받아들이면서, 
 		CASEELSE
-			LOCALS = %CALLNAME:TARGET%의 가랑이에 얼굴을 파묻으면서,
+			LOCALS = %CALLNAME:TARGET%의 가랑이에 얼굴을 파묻으면서, 
 		ENDSELECT
 	;この커맨드は下着越しはないんだ。すまない
 	ELSE
 		SELECTCASE RANDF(4)
 		CASE 3
-			LOCALS = %CALLNAME:TARGET%의 한층 더 더러움의 강한 장소의 맛과%조사처리(TEXTS("匂い"),"을")% 보급하면서,
+			LOCALS = %CALLNAME:TARGET%의 한층 더 더러움의 강한 장소의 맛과 %조사처리(TEXTS("匂い"),"을")% 보급하면서, 
 		CASE 2
-			LOCALS = %CALLNAME:TARGET%의 애널 주름을 혀로 핥으면서,
+			LOCALS = %CALLNAME:TARGET%의 애널 주름을 혀로 핥으면서, 
 		CASE 1
-			LOCALS = %CALLNAME:TARGET%의 항문주변을 핥으면서,
+			LOCALS = %CALLNAME:TARGET%의 항문주변을 핥으면서, 
 		CASEELSE
-			LOCALS = %CALLNAME:TARGET%의 아누스를 뾰족한 혀끝으로 쑤셔대면서
+			LOCALS = %CALLNAME:TARGET%의 아누스를 뾰족한 혀끝으로 쑤셔대면서 
 		ENDSELECT
 	ENDIF
 ;조개벌리기
@@ -212,74 +212,74 @@ CASE 13
 	IF ABL:노출벽 >= 5 && RAND:2
 		SELECTCASE RANDF(4)
 		CASE 3
-			LOCALS = 보여주고 싶어 견딜 수 없어하는 %CALLNAME:TARGET%에 응하여 지근거리에서 공들인 관찰을 하면서,
+			LOCALS = 보여주고 싶어 견딜 수 없어하는 %CALLNAME:TARGET%에 응하여 지근거리에서 공들인 관찰을 하면서, 
 		CASE 2
-			LOCALS = 보여지고 있는 기쁨인지 반사적으로 그곳을 한층 더 활짝 연 %CALLNAME:TARGET%에 그 일을 지적하면서,
+			LOCALS = 보여지고 있는 기쁨인지 반사적으로 그곳을 한층 더 활짝 연 %CALLNAME:TARGET%에 그 일을 지적하면서, 
 		CASE 1
-			LOCALS = 이렇게 인가 하며 열고있는 %CALLNAME:TARGET%의 아소코를 핥으면서,
+			LOCALS = 이렇게 인가 하며 열고있는 %CALLNAME:TARGET%의 아소코를 핥으면서, 
 		CASEELSE
-			LOCALS = %CALLNAME:TARGET%의 가랑이 사이로 얼굴을 가까이 대고 %조사처리(TEXTS("匂い"),"을")% 즐기면서,
+			LOCALS = %CALLNAME:TARGET%의 가랑이 사이로 얼굴을 가까이 대고 %조사처리(TEXTS("匂い"),"을")% 즐기면서, 
 		ENDSELECT
 	ELSEIF ABL:노출벽 >= 3
 		SELECTCASE RANDF(4)
 		CASE 3
-			LOCALS = 활짝 펴져서 노출된 %CALLNAME:TARGET%의 점막부분을 품평하면서,
+			LOCALS = 활짝 펴져서 노출된 %CALLNAME:TARGET%의 점막부분을 품평하면서, 
 		CASE 2
-			LOCALS = %CALLNAME:TARGET%의 그곳의 냄새를 일부러 코를 킁킁하며 맡으면서,
+			LOCALS = %CALLNAME:TARGET%의 그곳의 냄새를 일부러 코를 킁킁하며 맡으면서, 
 		CASE 1
-			LOCALS = 특등석에서 %CALLNAME:TARGET%의 가장 사랑스러운 부분을 감상하면서,
+			LOCALS = 특등석에서 %CALLNAME:TARGET%의 가장 사랑스러운 부분을 감상하면서, 
 		CASEELSE
-			LOCALS = 부끄러워하는 %CALLNAME:TARGET%의 얼굴을 마주 보며 바라보면서,
+			LOCALS = 부끄러워하는 %CALLNAME:TARGET%의 얼굴을 마주 보며 바라보면서, 
 		ENDSELECT
 	ELSE
 		SELECTCASE RANDF(3)
 		CASE 2
-			LOCALS = 찌르는 시선을 의식해서인지 수치로 온몸이 땀흘려 냄새난 %타겟을()% 안주로 하면서,
+			LOCALS = 찌르는 시선을 의식해서인지 수치로 온 몸이 땀흘려 냄새난 %타겟을()% 안주로 하면서, 
 		CASE 1
-			LOCALS = 새빨개져 있는 %CALLNAME:TARGET%의 모습을 즐기며
+			LOCALS = 새빨개져 있는 %CALLNAME:TARGET%의 모습을 즐기며 
 		CASEELSE
-			LOCALS = 크게 퍼진 %CALLNAME:TARGET%의 비밀 부분을 핥으면서,
+			LOCALS = 크게 퍼진 %CALLNAME:TARGET%의 비밀 부분을 핥으면서, 
 		ENDSELECT
 		SIF TALENT:강기 && TALENT:반항적 && RANDF(4) == 0
-			LOCALS = 원하지 않는 행위에 날카로운 시선으로 노려보는 %CALLNAME:TARGET%의 그곳을 감상하면서,
+			LOCALS = 원하지 않는 행위에 날카로운 시선으로 노려보는 %CALLNAME:TARGET%의 그곳을 감상하면서, 
 		SIF TALENT:처녀 == 1 && RANDF(5) == 0
-			LOCALS = %CALLNAME:TARGET%의 소중한 처녀막을 귀여워하면서,
+			LOCALS = %CALLNAME:TARGET%의 소중한 처녀막을 귀여워하면서, 
 	ENDIF
 ;Ａ조개벌리기
 CASE 14
 	IF ABL:노출벽 >= 5 && RAND:2
 		SELECTCASE RANDF(4)
 		CASE 3
-			LOCALS = 보여주고 싶어 견딜 수 없어하는 %CALLNAME:TARGET%에 응하여 지근거리에서 공들인 관찰을 하면서,
+			LOCALS = 보여주고 싶어 견딜 수 없어하는 %CALLNAME:TARGET%에 응하여 지근거리에서 공들인 관찰을 하면서, 
 		CASE 2
-			LOCALS = 보여지고 있는 기쁨인지 반사적으로 애널을 한층 더 활짝 연 %CALLNAME:TARGET%에 그 일을 지적하면서,
+			LOCALS = 보여지고 있는 기쁨인지 반사적으로 애널을 한층 더 활짝 연 %CALLNAME:TARGET%에 그 일을 지적하면서, 
 		CASE 1
-			LOCALS = 이렇게 인가 하며 열고있는 %CALLNAME:TARGET%의 애널을 핥으면서,
+			LOCALS = 이렇게 인가 하며 열고있는 %CALLNAME:TARGET%의 애널을 핥으면서, 
 		CASEELSE
-			LOCALS = %CALLNAME:TARGET%의 가랑이 사이로 얼굴을 가까이 대고 %조사처리(TEXTS("匂い"),"을")% 즐기면서,
+			LOCALS = %CALLNAME:TARGET%의 가랑이 사이로 얼굴을 가까이 대고 %조사처리(TEXTS("匂い"),"을")% 즐기면서, 
 		ENDSELECT
 	ELSEIF ABL:노출벽 >= 3
 		SELECTCASE RANDF(4)
 		CASE 3
-			LOCALS = 활짝 펴져서 노출된 %CALLNAME:TARGET%의 점막부분을 품평하면서,
+			LOCALS = 활짝 펴져서 노출된 %CALLNAME:TARGET%의 점막부분을 품평하면서, 
 		CASE 2
-			LOCALS = %CALLNAME:TARGET%의 그곳의 냄새를 일부러 코를 킁킁하며 맡으면서,
+			LOCALS = %CALLNAME:TARGET%의 그곳의 냄새를 일부러 코를 킁킁하며 맡으면서, 
 		CASE 1
-			LOCALS = 특등석에서 %CALLNAME:TARGET%의 가장 사랑스러운 부분을 감상하면서,
+			LOCALS = 특등석에서 %CALLNAME:TARGET%의 가장 사랑스러운 부분을 감상하면서, 
 		CASEELSE
-			LOCALS = 부끄러워하는 %CALLNAME:TARGET%의 얼굴을 마주 보며 바라보면서,
+			LOCALS = 부끄러워하는 %CALLNAME:TARGET%의 얼굴을 마주 보며 바라보면서, 
 		ENDSELECT
 	ELSE
 		SELECTCASE RANDF(3)
 		CASE 2
-			LOCALS = 찌르는 시선을 의식해서인지 수치로 온몸이 땀흘려 냄새난 %타겟을()% 안주로 하면서,
+			LOCALS = 찌르는 시선을 의식해서인지 수치로 온몸이 땀흘려 냄새난 %타겟을()% 안주로 하면서, 
 		CASE 1
-			LOCALS = 새빨개져 있는 %CALLNAME:TARGET%의 모습을 즐기며、
+			LOCALS = 새빨개져 있는 %CALLNAME:TARGET%의 모습을 즐기며, 
 		CASEELSE
-			LOCALS = 크게 퍼진 %CALLNAME:TARGET%의 부정한 부분을 먹어들어가면서、
+			LOCALS = 크게 퍼진 %CALLNAME:TARGET%의 부정한 부분을 먹어들어가면서, 
 		ENDSELECT
 		SIF TALENT:강기 && TALENT:반항적 && RANDF(4) == 0
-			LOCALS = 원하지 않는 행위에 날카로운 시선으로 노려보는 %CALLNAME:TARGET%의 애널을 감상하면서,
+			LOCALS = 원하지 않는 행위에 날카로운 시선으로 노려보는 %CALLNAME:TARGET%의 애널을 감상하면서, 
 	ENDIF
 ;이하はなんか違う気がしてきたので保留
 ;키스
@@ -287,11 +287,11 @@ CASE 6
 ;애널봉사
 CASE 96
 	IF ABL:봉사정신 >= 3 && RANDIF(1, ABL:새드끼 >= 3)
-		LOCALS = %CALLNAME:TARGET%의 애널을 햝짝이면서,
+		LOCALS = %CALLNAME:TARGET%의 애널을 햝짝이면서, 
 	ELSEIF ABL:새드끼 >= 3
-		LOCALS = %CALLNAME:TARGET%의 애널을 졸라대면서,
+		LOCALS = %CALLNAME:TARGET%의 애널을 졸라대면서, 
 	ELSE
-		LOCALS = %CALLNAME:TARGET%의 애널을 핥으면서,
+		LOCALS = %CALLNAME:TARGET%의 애널을 핥으면서, 
 	ENDIF
 ;파후파후
 CASE 104
@@ -303,20 +303,20 @@ IF TEQUIP:안면기승 && PREVPLAY("飲尿", PLAYER)
 	IF ABL:PLAYER:마조끼 >= 3 && RAND:2
 		SELECTCASE RANDF(3)
 		CASE 2
-			LOCALS = %타겟이()% 준 포상에 입맛을 다시면서,
+			LOCALS = %타겟이()% 준 포상에 입맛을 다시면서, 
 		CASE 1
-			LOCALS = %CALLNAME:TARGET%에 화장실로 사용된 여운에 잠기면서,
+			LOCALS = %CALLNAME:TARGET%에 화장실로 사용된 여운에 잠기면서, 
 		CASEELSE
-			LOCALS = 물방울을 떨어뜨리는 %CALLNAME:TARGET%의 그곳에 혀를 내밀면서,
+			LOCALS = 물방울을 떨어뜨리는 %CALLNAME:TARGET%의 그곳에 혀를 내밀면서, 
 		ENDSELECT
 	ELSE
 		SELECTCASE RANDF(3)
 		CASE 2
-			LOCALS = %CALLNAME:TARGET%의 맛과 냄새를 만끽하면서,
+			LOCALS = %CALLNAME:TARGET%의 맛과 냄새를 만끽하면서, 
 		CASE 1
-			LOCALS = 격렬한 플레이의 여파로 어깨를 들썩이며,
+			LOCALS = 격렬한 플레이의 여파로 어깨를 들썩이며, 
 		CASEELSE
-			LOCALS = 답답함과 너무 강한 자극에 허덕이면서,
+			LOCALS = 답답함과 너무 강한 자극에 허덕이면서, 
 		ENDSELECT
 	ENDIF
 ENDIF

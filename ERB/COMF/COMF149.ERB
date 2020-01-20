@@ -174,13 +174,13 @@ CALL CALC, "조교소스", LOCAL:0, LOCAL:1, LOCAL:2, LOCAL:3, LOCAL:4, LOCAL:5,
 INVERTBIT TEQUIP:카테터, 0
 IF TEQUIP:카테터
 	IF PENIS(TARGET)
-		PRINTFORMW %CALLNAME:TARGET%의 페니스를 붙잡고 요도구를 손가락으로 벌린 후, 윤활용의 젤을 바른 카테터를 전천히 삽입했다
+		PRINTFORMW %CALLNAME:TARGET%의 페니스를 붙잡고 요도를 손가락으로 벌린 후, 윤활용의 젤을 바른 카테터를 전천히 삽입했다
 		PRINTFORML …
 		PRINTFORML ……
 		PRINTFORML ………
 		PRINTFORMW 약20cm는 찔러넣었을 것인가？
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%의 요도구를 드러내고, 윤활용의 젤을 바른 카테터를 천천히 삽입했다
+		PRINTFORMW %CALLNAME:TARGET%의 요도를 드러내고, 윤활용의 젤을 바른 카테터를 천천히 삽입했다
 	ENDIF
 	PRINTFORMW 끝이 방광이 도달하자, 삽입할 때의 저항이 작아짐과 동시에 관에서 오줌이 주르르륵… 하고 흘러나왔다…
 ELSE
@@ -192,7 +192,7 @@ CALL SOURCE_COM149, 10
 RETURN 1
 
 @EQUIP_COM12_2
-PRINTL ＜카테터 삽입안＞
+PRINTL ＜카테터 삽입 중＞
 IF BASE:요의 >= 1000 || (BASE:요의 >= 100 && RAND:4 == 0)
 	IF INSERT("인서트")
 		SELECTCASE CONDS("체위")

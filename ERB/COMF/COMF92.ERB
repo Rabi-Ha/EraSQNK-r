@@ -131,7 +131,7 @@ IF CHECK_COM("Ｗ봉사")
 		ENDIF
 		PRINTFORMW %CALLNAME:MASTER%의 페니스를 가슴으로 계속 훑었다…
 	ELSE
-		PRINTFORM %타겟과()%%조사처리(CALLNAME:(TARGET:1),"는")%
+		PRINTFORM %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")%
 		SIF TALENT:(TARGET:1):음란 + TALENT:(TARGET:1):연모 + TALENT:음란 + TALENT:연모 && RAND:2 == 0
 			PRINTFORM 상기된 눈동자로 %조사처리(CALLNAME:MASTER,"를")% 바라보면서 , 
 		IF RAND:3 == 0
@@ -149,7 +149,7 @@ ELSEIF TEQUIP:Ｗ넘어뜨리기
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	;조수が前回と同じ行動(違う行動の時は, ここでなく, EQUIP_COM32で記述)
 	IF SELECTCOM:1 == PREVCOM:1 && SELECTCOM:1 >= 0
-		PRINTFORM , %TEXTS("Ｗ넘어뜨리기 중")%
+		PRINTFORM , %TEXTS("Ｗ넘어뜨리기 중")% 
 	ENDIF
 	IF SELECTCOM == PREVCOM
 		PRINTFORMW %CALLNAME:MASTER%의 페니스를 가슴에 끼우고 열심히 계속 문지르고있다…
@@ -333,7 +333,7 @@ ELSE
 	;가슴元が노출しているなら, そこではさむ
 	IF CHECK_CLO("가슴골노출")
 		IF TEQUIP:식스나인
-			PRINTFORM %TEXTS("６９")%
+			PRINTFORM %TEXTS("６９")% 
 		ELSEIF TALENT:빈유
 		ELSEIF TALENT:거유 && RAND:2 == 0
 			PRINT 가슴계곡이 엿보이는 

@@ -170,7 +170,7 @@ ELSE
 	IF TEQUIP:관장
 		IF COND("대량관장")
 			PRINTFORMW %CALLNAME:TARGET%에게 한계까지 관장액을 추가로 주입했다
-			PRINTFORMW 대략의 액채로 가득찬 %CALLNAME:TARGET%의 배는 개구리처럼 부풀어올라있다…
+			PRINTFORMW 대량의 액채로 가득찬 %CALLNAME:TARGET%의 배는 개구리처럼 부풀어올라있다…
 			TEQUIP:관장 = 1p1 + 1p2 + 1p3 + 1p4
 		ELSE
 			PRINTFORMW %CALLNAME:TARGET%의 애널에 관장액을 추가로 흘려넣었다
@@ -259,7 +259,7 @@ SIF SELECTCOM == 136
 IF COND("정액관장")
 	PRINTL ＜정액관장중＞
 ELSEIF TEQUIP:촉수
-	PRINTL ＜관장촉수삽입안＞
+	PRINTL ＜관장촉수삽입중＞
 ELSE
 	PRINTFORM ＜\@ COND("온천관장") ? 온천 # \@관장
 	SELECTCASE COND("액체관장")
@@ -277,7 +277,7 @@ ELSE
 	ELSEIF INSERT("Ａ인서트")
 		PRINT ＋Ａ인서트
 	ELSEIF COND("애널栓")
-		PRINT ＋애널플러그 삽입안
+		PRINT ＋애널플러그 삽입중
 	ENDIF
 	PRINTL ＞
 ENDIF
@@ -369,21 +369,21 @@ ELSEIF COND("액체관장")
 	BASE:배설욕 += MULTIPLY(LOCAL, LOCAL:1)
 
 	IF COND("애널栓")
-		PRINTFORML 장내에 대량의 \@ COND("온천관장") ? 소변이 흘려넣어진 # 관장액이 들이부어진 \@ %조사처리(CALLNAME:TARGET,"는")%, 항문에 마개를 끼운채로 계속 괴로워하고있다. 
+		PRINTFORML 장내에 대량의 \@ COND("온천관장") ? 소변이 흘려넣어진 # 관장액이 들이부어진 \@ %조사처리(CALLNAME:TARGET,"는")%, 항문에 마개를 끼운채로 계속 괴로워하고 있다. 
 		SELECTCASE ABL:마조끼
 		CASE 0
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 고통스러운 표정을 짓고있다
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 고통스러운 표정을 짓고 있다
 		CASE 1
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 비지땀을 흘리며, 배설감을 참고있다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 비지땀을 흘리며, 배설감을 참고 있다…
 		CASE 2
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 괴로워보이는 표정을 지으면서도, 얼굴을 붉게 물들이고 쭈삣쭈삣 엉덩이를 흔들고있다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 괴로워보이는 표정을 지으면서도, 얼굴을 붉게 물들이고 쭈삣쭈삣 엉덩이를 흔들고 있다…
 		CASE 3
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")%, 배설감에 쫒기면서도, 이따금씩 황홀한 표정을 짓고있다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")%, 배설감에 쫒기면서도, 이따금씩 황홀한 표정을 짓고 있다…
 		CASE 4
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")%, 황홀한 표정을 지으며, 배설감과 복통을 즐기고있다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")%, 황홀한 표정을 지으며, 배설감과 복통을 즐기고 있다…
 		CASE IS >= 5
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")%, 배설감을 마음껏 맛보고있다…
-			PRINTFORML 그 표정은 쾌락에 칠칠맞게 풀어져, 입\@ TALENT:남자 == 0 ? 과 질구 # \@에서 똑똑 군침을 흘리고있다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")%, 배설감을 마음껏 맛보고 있다…
+			PRINTFORML 그 표정은 쾌락에 칠칠맞게 풀어져, 입\@ TALENT:남자 == 0 ? 과 질구 # \@에서 똑똑 군침을 흘리고 있다…
 		ENDSELECT
 		SIF COND("배설：限界")
 			CALL SELF_KOJO, "플러그無し관장이벤트"

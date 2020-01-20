@@ -2,7 +2,7 @@
 @EVENTCHECK_M
 ;堕とした人数が5人이상で, 수수께끼의매력が付く
 IF FLAG:30 >= 5 && TALENT:MASTER:수수께끼의매력 == 0
-	PRINTFORMW %CALLNAME:MASTER%은 【수수께끼의매력】을 몸에 익혔다
+	PRINTFORMW %마스터는()% 【수수께끼의매력】을 몸에 익혔다
 	TALENT:MASTER:수수께끼의매력 = 1
 ENDIF
 
@@ -10,8 +10,8 @@ ENDIF
 IF EXP:MASTER:Ａ경험 >= 500 && EXP:MASTER:Ａ확장경험 >= 35 && TALENT:MASTER:애널광 == 0
 	PRINTFORMW 몸의 상태가 이상하다…
 	PRINTFORML 엉덩이가 뜨겁고, 욱신거려서 어쩔 수가 없다.
-	PRINTFORMW 아무래도 조교에의해 %CALLNAME:MASTER% 자신도 쾌락에 눈을 떠버린 것 같다
-	PRINTFORMW %CALLNAME:MASTER%은 【애널광】이 되어버렸다
+	PRINTFORMW 아무래도 조교에 의해 %CALLNAME:MASTER% 자신도 쾌락에 눈을 떠버린 것 같다
+	PRINTFORMW %마스터는()% 【애널광】이 되어버렸다
 	TALENT:MASTER:애널광 = 1
 ENDIF
 
@@ -19,8 +19,8 @@ ENDIF
 IF EXP:MASTER:Ｖ경험 >= 500 && TALENT:MASTER:음호 == 0
 	PRINTFORMW 몸의 상태가 이상하다…
 	PRINTFORML 자궁 부근이 뜨겁고, 욱신거려서 어쩔 수가 없다.
-	PRINTFORMW 아무래도 조교에의해 %CALLNAME:MASTER% 자신도 쾌락에 눈을 떠버린 것 같다
-	PRINTFORMW %CALLNAME:MASTER%은 【음호】를 얻고 말았다
+	PRINTFORMW 아무래도 조교에 의해 %CALLNAME:MASTER% 자신도 쾌락에 눈을 떠버린 것 같다
+	PRINTFORMW %마스터는()% 【음호】를 얻고 말았다
 	TALENT:MASTER:음호 = 1
 ENDIF
 
@@ -44,7 +44,7 @@ FOR LCOUNT, 2, CHARANUM
 	LOCAL = CALCF("경험치획득", LCOUNT)
 	EXP:MASTER:경험치 += LOCAL
 	IF ARG && LOCAL && LCOUNT == TARGET
-		PRINTFORML %CALLNAME:MASTER%은 경험치를 {LOCAL}Ｐ 얻었습니다
+		PRINTFORML %마스터는()% 경험치를 {LOCAL}Ｐ 얻었습니다
 		SIF ABL:MASTER:ＬＶ == FLAG:255 && EXP_NEXTLV(MASTER, ABL:MASTER:ＬＶ) - EXP:MASTER:경험치 > 0
 			PRINTFORML 앞으로 {EXP_NEXTLV(MASTER, ABL:MASTER:ＬＶ) - EXP:MASTER:경험치}Ｐ의 경험치로 다음 레벨이 될 수 있습니다.
 		WAIT
@@ -71,13 +71,13 @@ NEXT
 
 SETCOLOR DEF_COLOR("노랑")
 IF LOCAL:100 == 1
-	PRINTFORMW %CALLNAME:MASTER%은 LV의 최대치가 {FLAG:255}\@LOCAL:90 == NUM("최대레벨", 90) ? (MAX!) # \@로 올라갔습니다!
+	PRINTFORMW %마스터는()% LV의 최대치가 {FLAG:255}\@LOCAL:90 == NUM("최대레벨", 90) ? (MAX!) # \@로 올라갔습니다!
 ELSEIF LOCAL:100 == 2
-	PRINTFORMW %CALLNAME:MASTER%은 LV이 {ABL:MASTER:ＬＶ}\@LOCAL:90 == NUM("최대레벨", 90) ? (MAX!) # \@로 올라갔습니다!
+	PRINTFORMW %마스터는()% LV이 {ABL:MASTER:ＬＶ}\@LOCAL:90 == NUM("최대레벨", 90) ? (MAX!) # \@로 올라갔습니다!
 ENDIF
 ;달콤한말ゲット
 IF ( (FLAG:255 >= 5 && FLAG:30) || ITEM:로즈닐의시집) && TALENT:MASTER:달콤한말 == 0
-	PRINTFORMW \@ ITEM:로즈닐의시집 ? 시집을 탐독한 # 경험을 쌓은\@ %CALLNAME:MASTER%은, %TALENTNAME:191%을 습득했다!
+	PRINTFORMW \@ ITEM:로즈닐의시집 ? 시집을 탐독한 # 경험을 쌓은\@ %마스터는()%, %조사처리(TALENTNAME:191,"을")% 습득했다!
 	TALENT:MASTER:달콤한말 = 1
 ENDIF
 RESETCOLOR
@@ -127,11 +127,11 @@ CASE "주말"
 
 	$START
 	VARSET LOCAL, 0, 0, 100
-	PRINTFORML 다음 주차에 대비해, %CALLNAME:MASTER%의 능력의 LV변경을 합니다
+	PRINTFORML 다음 주차에 대비해, %CALLNAME:MASTER%의 능력LV변경을 합니다
 	CALL NEW_PRINT_ABL, MASTER
 	DRAWLINE
-	PRINTFORML 다음 중에서 두개까지 선택해주세요
-	PRINTFORML (기교LV의 상승은 손가락놀림은, ~놀림의 LV의 합계가 필요치를 만족시키는 것이 조건입니다)
+	PRINTFORML 다음 중에서 두 개까지 선택해주세요
+	PRINTFORML (기교LV의 상승은 손가락놀림등, ~놀림의 LV의 합계가 필요치를 만족해야 가능합니다)
 
 	;기교ＬＶが上げられるかどうか
 	LOCAL:99 = ABL:MASTER:혀놀림+ABL:MASTER:손가락놀림+ABL:MASTER:발놀림+ABL:MASTER:허리놀림+ABL:MASTER:마유
@@ -265,7 +265,7 @@ CASE "주말"
 	ELSEIF LOCAL:RESULT
 		CLEARBIT CHOICE, RESULT + 1 - (RESULT%2)*2
 		IF GETBIT(CHOICE, RESULT) == 0 && NUM_BIT(CHOICE) == 2
-			PRINTW 선택 가능한 것은 두 개까지 입니다. 무언가 하나를 줄여주세요
+			PRINTW 선택 가능한 것은 두 개까지 입니다. 줄여주세요
 		ELSE
 			INVERTBIT CHOICE, RESULT
 		ENDIF
@@ -330,13 +330,13 @@ REDRAW 0
 PRINTL 
 IF CONFIG("ＨＡＲＤ") && ARG > 0
 	PRINTFORML {ABL:ＬＶ/5*5}LV\@ ABL:ＬＶ == ABL:ＬＶ/5*5 ? 이 되었기 # 을 넘었기 \@때문에, %타겟은()% 소질을 앞으로 {ARG}개 획득할 수 있게 되었습니다
-	PRINTFORML 변화를 좋아하지 않는다면 [999] 돌아간다 를 선택해주세요
+	PRINTFORML 변하는 것을 좋아하지 않는다면 [999] 돌아간다 를 선택해주세요
 ELSE
 	PRINTFORM 경험치를
 	SETCOLOR DEF_COLOR("황색")
 	PRINTFORM {NUM("경험치：소질획득")}Ｐ
 	RESETCOLOR
-	PRINTFORML 사용해서 몇 개의 소질을 획득하거나 잃을 수 있습니다
+	PRINTFORML 사용해서 몇 몇 소질을 획득하거나 잃을 수 있습니다
 	;PRINTFORML （ただし、ここで소질を変化させる度に、필요な경험치は200Ｐづつ増えていきます）
 	PRINTFORML 앞으로 {EXP:경험치}Ｐ의 경험치가 있습니다
 ENDIF
@@ -347,48 +347,48 @@ PRINTFORML [  0] 체력+200＆기력+200
 LOCAL:0 = 1
 
 IF COND("유두비대") < 3
-	PRINTFORML [  8] 유두를 비대화 시킨다（[유두비대{COND("유두비대") + 1}LV](이)가 됩니다）
+	PRINTFORML [  8] 유두를 비대화 시킨다（[유두비대{COND("유두비대") + 1}LV]이 됩니다）
 	LOCAL:8 = 1
 ENDIF
 IF TALENT:젖기어려움
-	PRINTFORML [ 43] [젖기어려움] 를 잃는다
+	PRINTFORML [ 43] [젖기어려움] 을 잃는다
 	LOCAL:43 = 1
 ELSEIF TALENT:젖기쉬움 == 0
-	PRINTFORML [ 42] [젖기쉬움] 를 얻는다
+	PRINTFORML [ 42] [젖기쉬움] 을 얻는다
 	LOCAL:42 = 1
 ENDIF
 IF TALENT:장액분비체질 == 0
 	IF EXP:Ａ경험 >= 100
-		PRINTFORML [ 48] [장액분비체질] 를 얻는다
+		PRINTFORML [ 48] [장액분비체질] 을 얻는다
 		LOCAL:48 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [장액분비체질] 를 얻는다（요정：Ａ경험100）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [장액분비체질] 을 얻는다（요정：Ａ경험100）_L"
 	ENDIF
 ENDIF
 
 IF TALENT:구토반사내성 == 0
 	IF EXP:펠라경험 >= 300
-		PRINTFORML [ 52] [구토반사내성] 를 얻는다
+		PRINTFORML [ 52] [구토반사내성] 을 얻는다
 		LOCAL:52 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [구토반사내성] 를 얻는다（요정：펠라경험300）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [구토반사내성] 을 얻는다（요정：펠라경험300）_L"
 	ENDIF
 ENDIF
 
 IF TALENT:조합지식 == 0
 	IF TALENT:현명함
-		PRINTFORML [ 55] [조합지식] 를 얻는다
+		PRINTFORML [ 55] [조합지식] 을 얻는다
 		LOCAL:55 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [조합지식] 를 얻는다（요정：[현명함]）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [조합지식] 을 얻는다（요정：[현명함]）_L"
 	ENDIF
 ENDIF
 IF TALENT:확장적정 == 0
 	IF MAX(EXP:Ｖ확장경험, EXP:Ａ확장경험, EXP:요도확장경험) >= 20
-		PRINTFORML [ 59] [확장적정] 를 얻는다
+		PRINTFORML [ 59] [확장적성] 을 얻는다
 		LOCAL:59 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [확장적정] 를 얻는다（요정：Ｖ확장경험20 or Ａ확장경험20 or 요도확장경험20）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [확장적성] 을 얻는다（요정：Ｖ확장경험20 or Ａ확장경험20 or 요도확장경험20）_L"
 	ENDIF
 ENDIF
 
@@ -398,10 +398,10 @@ IF TALENT:불결무시 == 0
 ENDIF
 
 IF TALENT:Ｍ둔감
-	PRINTFORML [ 96] [Ｍ둔감] 를 잃는다
+	PRINTFORML [ 96] [Ｍ둔감] 을 잃는다
 	LOCAL:96 = 1
 ELSEIF TALENT:Ｍ민감 == 0
-	PRINTFORML [ 97] [Ｍ민감] 를 얻는다
+	PRINTFORML [ 97] [Ｍ민감] 을 얻는다
 	LOCAL:97 = 1
 ENDIF
 
@@ -418,36 +418,36 @@ ELSE
 ENDIF
 
 IF TALENT:Ｃ둔감
-	PRINTFORML [101] [Ｃ둔감] 를 잃는다
+	PRINTFORML [101] [Ｃ둔감] 을 잃는다
 	LOCAL:101 = 1
 ELSEIF TALENT:Ｃ민감 == 0
-	PRINTFORML [102] [Ｃ민감] 를 얻는다
+	PRINTFORML [102] [Ｃ민감] 을 얻는다
 	LOCAL:102 = 1
 ENDIF
 
 IF TALENT:남자 == 0
 	IF TALENT:Ｖ둔감
-		PRINTFORML [103] [Ｖ둔감] 를 잃는다
+		PRINTFORML [103] [Ｖ둔감] 을 잃는다
 		LOCAL:103 = 1
 	ELSEIF TALENT:Ｖ민감 == 0
-		PRINTFORML [104] [Ｖ민감] 를 얻는다
+		PRINTFORML [104] [Ｖ민감] 을 얻는다
 		LOCAL:104 = 1
 	ENDIF
 ENDIF
 IF TALENT:Ａ둔감
-	PRINTFORML [105] [Ａ둔감] 를 잃는다
+	PRINTFORML [105] [Ａ둔감] 을 잃는다
 	LOCAL:105 = 1
 ELSEIF TALENT:Ａ민감 == 0
-	PRINTFORML [106] [Ａ민감] 를 얻는다
+	PRINTFORML [106] [Ａ민감] 을 얻는다
 	LOCAL:106 = 1
 ENDIF
 
 IF TALENT:남자 == 0
 	IF TALENT:Ｂ둔감
-		PRINTFORML [107] [Ｂ둔감] 를 잃는다
+		PRINTFORML [107] [Ｂ둔감] 을 잃는다
 		LOCAL:107 = 1
 	ELSEIF TALENT:Ｂ민감 == 0
-		PRINTFORML [108] [Ｂ민감] 를 얻는다
+		PRINTFORML [108] [Ｂ민감] 을 얻는다
 		LOCAL:108 = 1
 	ENDIF
 ENDIF
@@ -455,7 +455,7 @@ ENDIF
 IF TALENT:남자 || COND("子孫") || COND("몽마") == 0
 ELSE
 	IF TALENT:거유 == 0
-		PRINTFORML [109] \@ TALENT:빈유 ? 가슴을 크게 한다（빈유라고 할수 없어！） # 가슴을 작게한다（[빈유]） \@
+		PRINTFORML [109] \@ TALENT:빈유 ? 가슴을 크게 한다（빈유라고 할 수 없어！） # 가슴을 작게 한다（[빈유]） \@
 		LOCAL:109 = 1
 	ENDIF
 	IF TALENT:빈유 == 0
@@ -463,7 +463,7 @@ ELSE
 		IF TALENT:거유 >= 2
 			PRINTFORML 가슴을 작게 한다（\@ TALENT:거유 >= 3 ? [초유]→[폭유] # [폭유]→[거유] \@）
 		ELSEIF TALENT:거유
-			PRINTFORML 가슴을 더 크게 만들거나, 작게만든다
+			PRINTFORML 가슴을 더 크게 만들거나, 작게 만든다
 		ELSE
 			PRINTFORML 가슴을 크게 한다（[거유]）
 		ENDIF
@@ -472,10 +472,10 @@ ELSE
 ENDIF
 
 IF TALENT:회복느림
-	PRINTFORML [112] [회복느림] 를 잃는다
+	PRINTFORML [112] [회복느림] 을 잃는다
 	LOCAL:112 = 1
 ELSEIF TALENT:회복빠름 == 0
-	PRINTFORML [111] [회복빠름] 를 얻는다
+	PRINTFORML [111] [회복빠름] 을 얻는다
 	LOCAL:111 = 1
 ENDIF
 
@@ -604,20 +604,20 @@ CASE 185
 ;純粋獲得
 CASE 42, 48, 52, 55, 59, 64, 97, 102, 104, 106, 108, 111, 117, 125, 127, 140, 141, 142, 151, 189
 	TALENT:RESULT = 1
-	PRINTFORMW [%TALENTNAME:RESULT%]를 획득했습니다
+	PRINTFORMW [%TALENTNAME:RESULT%]%조사만처리(TALENTNAME:RESULT,"를")% 획득했습니다
 ;분신
 CASE 243
 	TALENT:RESULT = 2
-	PRINTFORMW [%TALENT_NAME(RESULT, TALENT:ARG:RESULT)%]를 체득했습니다
+	PRINTFORMW [%TALENT_NAME(RESULT, TALENT:ARG:RESULT)%]%조사만처리(TALENT_NAME(RESULT, TALENT:ARG:RESULT),"를")% 체득했습니다
 
 ;生まれつきかどうかで違いがある소질の獲得
 CASE 130
 	TALENT:RESULT = 2
-	PRINTFORMW [%TALENTNAME:RESULT%]를 획득했습니다
+	PRINTFORMW [%TALENTNAME:RESULT%]%조사만처리(TALENTNAME:RESULT,"를")% 획득했습니다
 ;純粋喪失
 CASE 43, 96, 101, 103, 105, 107, 112
 	TALENT:RESULT = 0
-	PRINTFORMW [%TALENTNAME:RESULT%]를 잃었습니다
+	PRINTFORMW [%TALENTNAME:RESULT%]%조사만처리(TALENTNAME:RESULT,"를")% 잃었습니다
 ;반전
 CASE 99
 	TALENT:장신 = !TALENT:장신

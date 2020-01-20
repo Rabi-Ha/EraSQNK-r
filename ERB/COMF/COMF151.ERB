@@ -267,8 +267,8 @@ ELSEIF CALCF("요도径") >= CALCF("요도확장の壁")
 	;ちょっとお得な情報
 	CALL COM_ABLE146
 	IF RESULT && COND("身嗜み：요도확장") == 0 && ABL:요도확장 >= 0 && EXP:요도경험 >= 5 && (EXP:요도경험 >= 20 || EXP:요도확장경험 >= 5 || ABL:요도확장 >= 1)
-		PRINTFORML 몸관리를 지시하는 일로, 요도의 확장을%CALLNAME:TARGET%에도 실시하게 할 수가 있습니다
-		PRINTFORML %CALLNAME:PLAYER%의 손에는 미치지 않다고 생각됩니다만, 어떻습니까？
+		PRINTFORML 몸관리를 지시하는 일로, 요도의 확장을 %CALLNAME:TARGET%에도 실시하게 할 수가 있습니다
+		PRINTFORML %CALLNAME:PLAYER%의 솜씨에는 미치지 않다고 생각됩니다만, 어떻습니까？
 	ENDIF
 	RESETCOLOR
 ENDIF
@@ -308,17 +308,17 @@ IF TEQUIP:클리캡 == 0 && FIRSTCOM(34)
 	CALL COM_ABLE34
 	IF RESULT
 		LOCAL:90 = 90
-		PRINTFORML  [90] 클리캡를 붙인다
+		PRINTFORML  [90] 클리캡을 붙인다
 	ENDIF
 ENDIF
 IF TEQUIP:니플캡 == 0 && FIRSTCOM(35)
 	CALL COM_ABLE35
 	IF RESULT
 		LOCAL:91 = 91
-		PRINTFORML  [91] 니플캡를 붙인다
+		PRINTFORML  [91] 니플캡을 붙인다
 	ENDIF
 ENDIF
-PRINTFORML  [99] 보발을 본다
+PRINTFORML  [99] 보충설명을 본다
 PRINTFORML [100] 그만둔다
 
 CALL INPUT_SELECT, LOCAL, 99, 100, LOCAL:90, LOCAL:91
@@ -331,12 +331,12 @@ CASE 100
 	RETURN 0
 CASE 99
 	PRINTFORML □ 보충 □---------------------------------------------------------------------
-	PRINTFORM 요도를 확장할 때에는 , 
+	PRINTFORM 요도를 확장할 때에는,  
 	CALL PRINT_COLORTEXT, "[조교지식(성기확장)]", DEF_COLOR("황색")
-	PRINTFORM 과
+	PRINTFORM 과 
 	CALL PRINT_COLORTEXT, "[확장적정]", DEF_COLOR("황색")
 	PRINTFORML 이 있으면 수월합니다
-	PRINTFORM 확장의 하기 쉬움에는 영향이 없는 소질이지만,
+	PRINTFORM 확장의 하기 쉬움에는 영향이 없는 소질이지만, 
 	CALL PRINT_COLORTEXT, "[도착적]", DEF_COLOR("황색")
 	PRINTFORML 이 있으면 반감을 적게 받지요
 	PRINTFORML 
@@ -387,9 +387,9 @@ LOCALS = %CONDS("요도확장度")%
 
 PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 
 IF GETBIT(TEQUIP:근육이완제, 1) 
-	PRINTFORM 이완 했다요도에, 
+	PRINTFORM 이완된 요도에, 
 ELSE
-	PRINTFORM \@ PENIS(TARGET) ? 페니스 # 요도 \@에
+	PRINTFORM \@ PENIS(TARGET) ? 페니스 # 요도 \@에 
 ENDIF
 SELECTCASE TEQUIP:요도확장기
 CASE IS < 15
@@ -459,9 +459,9 @@ ELSEIF CHOSECOM(SELECTCOM)
 		IF TALENT:요도성감
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 			IF RAND:2
-				PRINTFORM 연결되는 막대기를\@ PENIS(TARGET) ? 뿌리 # 방광 \@까지 유유히 받아들였다, 
+				PRINTFORM 연결되는 막대기를 \@ PENIS(TARGET) ? 뿌리 # 방광 \@까지 유유히 받아들였다, 
 			ELSE
-				PRINTFORM 본래는 액체밖에 통과하는 일이 없는 구멍에서\@ TALENT:요도성감 ? 즐겁게 # \@이물을 삼켜,
+				PRINTFORM 본래는 액체밖에 통과하는 일이 없는 구멍에서 \@ TALENT:요도성감 ? 즐겁게 # \@이물을 삼켜,
 			ENDIF
 			IF TALENT:요도성감 && RAND:3 == 0
 				PRINTFORMW 상기된 얼굴에서 소변을 뚝뚝 떨어지며 플레이를 즐기고 있다…
@@ -473,7 +473,7 @@ ELSEIF CHOSECOM(SELECTCOM)
 		ELSEIF PENIS(TARGET)
 			PRINTFORMW 특히 걸리는 것 없이 깊숙이 침투 한 금속막대는, 출입할때마다 음경 해면체를 제쳐 가면서 %CALLNAME:TARGET%의 요도를 이물질에 익숙해져간다…
 		ELSE
-			PRINTFORMW 미끄러지듯 방광까지 도달한 금속막대는, 출입 때마다 흘러나온 액체로 요도를 넓히면서%CALLNAME:TARGET%의 요도를 이물질에 익숙해져간다…
+			PRINTFORMW 미끄러지듯 방광까지 도달한 금속막대는, 출입 때마다 흘러나온 액체로 요도를 넓히면서 %CALLNAME:TARGET%의 요도를 이물질에 익숙해져간다…
 		ENDIF
 	ELSE
 		PRINTFORMW 저항이 강한 구멍을, 금속제의 확장막대가 천천히 그러나 확실히 성기로 만들어 간다…

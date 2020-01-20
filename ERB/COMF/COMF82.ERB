@@ -86,15 +86,15 @@ IF CHECK_COM("좌우니플퍽")
 	IF SELECTCOM:2 == PREVCOM:2 && SELECTCOM == PREVCOM
 		PRINTFORM %조사처리(CALLNAME:PLAYER,"와")% %(CALLNAME:(PLAYER:1),"는")%
 		IF RAND:4 == 0
-			PRINTFORM 내부의 점막을 쓸어올리면서
+			PRINTFORM 내부의 점막을 쓸어올리면서 
 		ELSEIF RAND:3 == 0
-			PRINTFORM \@ RAND:2 ? 격렬한 # 느린 \@허리의 움직임으로
+			PRINTFORM \@ RAND:2 ? 격렬한 # 느린 \@허리의 움직임으로 
 		ELSEIF RAND:2
-			PRINTFORM 긴 스트로크로
+			PRINTFORM 긴 스트로크로 
 		ELSE
-			PRINTFORM 타이밍을 %TEXTR("맞춰서", "다르게")%
+			PRINTFORM 타이밍을 %TEXTR("맞춰서", "다르게")% 
 		ENDIF
-		PRINTFORM %CALLNAME:TARGET%의 %TEXTR("양옆", "양쪽")%의 유방을
+		PRINTFORM %CALLNAME:TARGET%의 %TEXTR("양옆", "양쪽")%의 유방을 
 		IF RAND:2
 			PRINTW 계속 범했다…
 		ELSE
@@ -104,9 +104,9 @@ IF CHECK_COM("좌우니플퍽")
 		IF RAND:2
 			PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 			IF RAND:2
-				PRINTFORM %CALLNAME:TARGET%의 유두를 사용하고 있는
+				PRINTFORM %CALLNAME:TARGET%의 유두를 사용하고 있는 
 			ELSE
-				PRINTFORM 니플퍽를 즐기고 있는
+				PRINTFORM 니플퍽를 즐기고 있는 
 			ENDIF
 			PRINTFORMW %CALLNAME:(PLAYER:1)%에 줄, %TEXTR("비어있는", "남아 있는")% 유방을 페니스로 범하기 시작했다…
 		ELSE
@@ -119,11 +119,11 @@ ELSEIF CHECK_COM("３Ｐ봉사")
 	RETURN 1
 ELSEIF TEQUIP:넘어뜨리기
 	IF SELECTCOM == PREVCOM
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를 %조사처리(TEXTS("おっぱい"),"로")% 계속 범하고있다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를 %조사처리(TEXTS("おっぱい"),"로")% 계속 범하고 있다…
 	ELSE
 		;各조교初回선택時は니플피어스をはずす
 		SIF TALENT:니플피어스 && CHOSECOM(SELECTCOM) == 0
-			PRINTFORM 니플피어싱을 뺀
+			PRINTFORM 니플피어싱을 뺀 
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를 벌어진 유두에 밀어넣고, 오나홀을 쓰듯이 %TEXTR("격렬하게", "교묘하게 ", ", 완급을 조절해서")% 훑었다…
 	ENDIF
 	RETURN 1
@@ -150,7 +150,7 @@ IF PREVCOM == 92 && COND("前Ｔと同ペア")
 	;욕정4이상
 	ELSEIF PALAM:욕정 >= PALAMLV:4 && RAND:3 == 0
 		SIF TALENT:도착적 && RAND:3 == 0
-			PRINTFORM %TEXTS("匂い")%에
+			PRINTFORM %TEXTS("匂い")%에 
 		PRINT 흥분하면서 
 	;연모かつ봉사정신5or헌신的かつ봉사정신3이상
 	ELSEIF ( (TALENT:연모 && ABL:봉사정신 >= 5) || (TALENT:헌신 && ABL:봉사정신 >= 3) ) && RAND:3 == 0
@@ -188,9 +188,9 @@ ELSE
 ENDIF
 ;各조교初回선택時は니플피어스をはずす
 IF TALENT:니플피어스 && CHOSECOM(SELECTCOM) == 0
-	PRINTFORM 유두를 관철하는 피어싱을 제외해
+	PRINTFORM 유두를 관철하는 피어싱을 제외해 
 ELSE
-	PRINTFORM %TEXTS("유두：描写")%유두에
+	PRINTFORM %TEXTS("유두：描写")% 유두에 
 	;直前の조교と汚れで分岐
 	SIF CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｖ", "Ａ")
 		CALL TEXT, "추가地の文：穴から穴へ"
@@ -227,7 +227,7 @@ ELSEIF RAND:2
 ELSE
 	PRINTFORM 가슴을 은 
 ENDIF
-PRINTFORM %TEXTR("침입해들어오는", "무자비하게 찔러들어오는 ")% 페니스
+PRINTFORM %TEXTR("침입해들어오는", "무자비하게 찔러들어오는")% 페니스
 SELECTCASE TALENT:거유 - SIZE("페니스", PLAYER)
 CASE IS >= 1
 	PRINTFORM 를 여유있게 받아들여, 

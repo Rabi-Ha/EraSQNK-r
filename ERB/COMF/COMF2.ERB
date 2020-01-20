@@ -265,7 +265,7 @@ ELSE
 		PRINTFORM %TEXTS("애널")% 애널
 		;애널系조교やＡ민감やＡ경험150이상にあわせて乱数分岐. 하피のときは舐めます. 
 		IF (PREVCOM == 33 || (PREVCOM >= 60 && PREVCOM <= 69) || (PREVCOM >= 136 && PREVCOM <= 138) || PREVCOM == 142 || PREVCOM == 143 || PREVCOM == 202 || EXP:Ａ경험 >= 150) && TALENT:요정 == 0 && RAND:3
-			PRINT 에 손가락을 몇개씩 넣고 
+			PRINT 에 손가락을 몇 개씩 넣고 
 		ELSEIF (PREVCOM == 33 || (PREVCOM >= 60 && PREVCOM <= 69) || (PREVCOM >= 136 && PREVCOM <= 138) || PREVCOM == 142 || PREVCOM == 143 || PREVCOM == 202 || EXP:Ａ경험 >= 150 || TALENT:Ａ민감) && TALENT:요정 == 0 && RAND:2
 			PRINT 에 손가락을 뿌리끝까지 넣고 
 		ELSEIF TALENT:요정 && EXP:Ａ경험 < 150

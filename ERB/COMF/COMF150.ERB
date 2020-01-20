@@ -58,7 +58,7 @@ IF TEQUIP:딥스로트
 			PRINTFORM 목을 범하는것을 멈추고 허리를 당겨, 
 		ELSE
 			;角がありますか？
-			PRINTFORM \@ COND("뿔ハンドル") ? 뿔을 잡은 채로 # 머리를 누르면서 \@허리를 , 
+			PRINTFORM \@ COND("뿔ハンドル") ? 뿔을 잡은 채로 # 머리를 누르면서 \@허리를, 
 		ENDIF
 		;大きいと食道にまで行ってしまう
 		IF SIZE("페니스", PLAYER) >= 3
@@ -78,12 +78,12 @@ PRINTFORM %조사처리(CALLNAME:TARGET,"는")%
 IF (PREVCOM == 91 || PREVCOM == 140) && COND("前Ｔ조교자") == PLAYER
 	IF RAND:2 && CHECK("喉姦") >= 2
 		IF RAND:3 == 0 && SIZE("페니스", PLAYER) >= 3
-			PRINTFORM 식도까지 사용하고
+			PRINTFORM 식도까지 사용하고 
 		ELSE
 			PRINTFORM %TEXTR("주저없이", "혀를 미끄러하도록하고")%
 		ENDIF
 	ELSEIF TEQUIP:넘어뜨리기
-		PRINTFORM 가랑이에 얼굴을 파뭇고
+		PRINTFORM 가랑이에 얼굴을 파뭇고 
 	ELSEIF PREVCOM == 140 && RAND:2
 		PRINTFORM 의 허리 움직임에 맞추어 
 	ELSE
@@ -98,15 +98,15 @@ ELSEIF TEQUIP:넘어뜨리기
 			PRINT 자신의 항문에서 빼내 막 
 		;젖기쉬움で追加
 		SIF TALENT:젖기쉬움 && RAND:3 && TEQUIP:아이마스크 == 0
-			PRINT 끈적끈적
+			PRINT 끈적끈적해진 
 		SIF (PREVCOM >= 60 && PREVCOM <= 69) && COND("前Ｔ조교자") == PLAYER && TEQUIP:아이마스크 == 0
-			PRINT 자신의 애액으로
-		PRINT 더러워진
+			PRINT 자신의 애액으로 
+		PRINT 더러워진 
 	;음란or새드or새드끼Lv.5이상で「부끄럼쟁이」を持たない
 	;ELSEIF (TALENT:음란 || TALENT:소악마 || ABL:새드끼 >= 5) && TALENT:부끄럼쟁이 == 0
 	;	PRINT 침을 흘리면서, 
 	ELSEIF RAND:3 == 0
-		PRINTFORM 냄새나는
+		PRINTFORM 냄새나는 
 	ELSE
 		PRINTFORM %TEXTS("페니스：視覚", PLAYER)%
 	ENDIF
@@ -116,42 +116,42 @@ ELSE
 		PRINTFORM %TEXTS("６９")%
 	;아이마스크で分岐. ところで, Ｍ字開다리座りってもっといい名称無いですかね？
 	ELSEIF TEQUIP:아이마스크 || TEQUIP:구속
-		PRINTFORM 입술에 떠맡겨진
+		PRINTFORM 입술에 떠맡겨진 
 	ENDIF
 
 	;直前の조교と汚れで分岐
 	IF PREVEX("방뇨", PLAYER)
 		IF RAND:2
-			PRINTFORM 콕하고 코에 오는 구린 냄새를 발하고 있는
+			PRINTFORM 콕하고 코에 오는 구린 냄새를 발하고 있는 
 		ELSE
 			PRINTFORM 소변을 더했기 때문에 냄새의 독한 
 		ENDIF
 	ELSEIF PREVCOM == 83 && CHECK_STAIN(STAIN:PLAYER:Ｐ, "尿")
-		PRINTFORM 콕하고 코에 오는 구린 냄새를 발하고 있는
+		PRINTFORM 콕하고 코에 오는 구린 냄새를 발하고 있는 
 	ELSEIF CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｖ", "Ａ")
 		CALL TEXT, "추가地の文：穴から穴へ"
 	ELSEIF RAND:3 == 0
-		PRINTFORM 냄새나는
+		PRINTFORM 냄새나는 
 	ELSE
 		PRINTFORM %TEXTS("페니스：視覚", PLAYER)%
 	ENDIF
 ENDIF
 
-PRINTFORM 페니스를 뿌리까지 %TEXTR("단숨에"," 들이마시도록"," 쉽게")% 삼키면서
+PRINTFORM 페니스를 뿌리까지 %TEXTR("단숨에"," 들이마시도록"," 쉽게")% 삼키면서 
 IF TALENT:연모 && RAND:4 == 0
 	IF RAND:2 && COND("음모", PLAYER) >= 5 && TEQUIP:식스나인 == 0
 		PRINTFORM 음모에 코끝을 묻어 문지르면서 
 	ELSE
-		PRINTFORM 황홀해하면서
+		PRINTFORM 황홀해하면서 
 	ENDIF
 ELSEIF ABL:봉사정신 >= 3 && TEQUIP:넘어뜨리기 == 0 && TEQUIP:식스나인 == 0 && RAND:3 == 0
-	PRINTFORM %TEXTR("눈을 치켜 뜨고", "물기를 띤 눈동자")%에서 바라보며
+	PRINTFORM %TEXTR("눈을 치켜 뜨고", "물기를 띤 눈동자")%로 바라보며 
 ELSEIF ABL:기교 >= 3 && TEQUIP:재갈 == 0 && RAND:2
-	PRINTFORM %TEXTR("완급을 조절하", "입술에 바짝 조이")%며
+	PRINTFORM %TEXTR("완급을 조절하", "입술에 바짝 조이")%며 
 ELSEIF TALENT:구토반사내성 == 0 && RAND:2
-	PRINTFORM 올라오는 구토감에 눈을 글썽하면서
+	PRINTFORM 올라오는 구토감에 눈을 글썽하면서 
 ELSE
-	PRINTFORM 입가에 %TEXTR("거품의 침을 줄줄", "점도가 높은 대량의 침")% 흘리며
+	PRINTFORM 입가에 %TEXTR("거품의 침을 줄줄", "점도가 높은 대량의 침")% 흘리며 
 ENDIF
 ;기교４かつ봉사정신３
 IF ABL:기교 >= 4 && ABL:봉사정신 >= 3

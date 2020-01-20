@@ -137,7 +137,7 @@ IF CHECK_COM("Ｗ봉사")
 		ENDIF
 		PRINTFORMW %CALLNAME:MASTER%의 페니스를 팬티로 감싸 계속 훑고있다…
 	ELSE
-		PRINTFORM %타겟과()%%조사처리(CALLNAME:(TARGET:1),"는")%
+		PRINTFORM %타겟과()%%조사처리(CALLNAME:(TARGET:1),"는")% 
 		IF SELECTCOM:1 != PREVCOM:1 && SELECTCOM != PREVCOM && RAND:2 == 0
 			PRINTFORMW %CALLNAME:MASTER%에게 과시하듯이 팬티를 벗고, 갓 벗은 팬티로 페니스를 훑기 시작했다…
 		ELSE
@@ -167,9 +167,9 @@ ELSEIF TEQUIP:Ｗ넘어뜨리기
 	ENDIF
 	PRINTFORM %CLO("팬티훑기")%
 	IF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
-		PRINTFORMW %조사만처리(CLO("팬티훑기"),"로")% 쓱쓱 문지르고있다…
+		PRINTFORMW %조사만처리(CLO("팬티훑기"),"로")% 쓱쓱 문지르고 있다…
 	ELSE
-		PRINTFORMW %조사만처리(CLO("팬티훑기"),"로")% 감싸서 훑고있다…
+		PRINTFORMW %조사만처리(CLO("팬티훑기"),"로")% 감싸서 훑고 있다…
 	ENDIF
 ELSE
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
@@ -184,7 +184,7 @@ ELSE
 			ELSE
 				PRINT 의 얼굴에 걸터앉은 자세인 채, 
 			ENDIF
-			PRINTFORMW %조사처리(CLO("팬티훑기"),"로")% 페니스를 쓱쓱 문지르고있다…
+			PRINTFORMW %조사처리(CLO("팬티훑기"),"로")% 페니스를 쓱쓱 문지르고 있다…
 		ELSE
 			IF EQUIP:겉옷 == 0 && CHECK_PANTIES("끈") && TALENT:부끄럼쟁이 == 0 && RAND:2 == 0
 				PRINTFORM %CALLNAME:PLAYER%의 얼굴에 앉은 채로 
@@ -211,7 +211,7 @@ ELSE
 		SIF TEQUIP:식스나인
 			PRINTFORM %TEXTS("６９")%
 		IF TEQUIP:키스
-			PRINTFORM %CALLNAME:PLAYER%%TEXTS("키스継続助詞付き")%,
+			PRINTFORM %CALLNAME:PLAYER% %TEXTS("키스継続助詞付き")%,
 			CALL SETFLAG, "추가키스플래그", TARGET
 		ELSEIF CHECK_COM("Ａ責め손훑기")
 			PRINTFORM %CALLNAME:PLAYER%의 엉덩이 구멍을 \@ RAND:2 ? 뾰족하게 세운  # \@ 혀로 
@@ -252,7 +252,7 @@ ELSE
 		ENDIF
 		PRINTFORM %CLO("팬티훑기")%
 		IF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
-			PRINTFORMW %조사만처리(CLO("팬티훑기"),"로")% 페니스를 쓱쓱 문지르고있다…
+			PRINTFORMW %조사만처리(CLO("팬티훑기"),"로")% 페니스를 쓱쓱 문지르고 있다…
 		ELSEIF RAND:3 == 0 && (TALENT:부끄럼쟁이 == 0 || TALENT:음란 || TALENT:연모)
 			IF RAND:2 || CHECK_PANTIES("훈도시")
 				PRINTW 의 그곳이 닿은 부분에 귀두를 문질렀다…

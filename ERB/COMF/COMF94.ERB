@@ -151,7 +151,7 @@ ELSEIF TEQUIP:Ｗ넘어뜨리기
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	;조수が前回と同じ行動(違う行動の時は, ここでなく, EQUIP_COM32で記述)
 	IF SELECTCOM:1 == PREVCOM:1 && SELECTCOM:1 >= 0
-		PRINTFORM , %TEXTS("Ｗ넘어뜨리기 중")%
+		PRINTFORM , %TEXTS("Ｗ넘어뜨리기 중")% 
 	ENDIF
 	IF SELECTCOM == PREVCOM
 		PRINTFORMW %CALLNAME:MASTER%에게 거품이 묻은 몸을 밀착해, 열심히 계속 문지르고있다…
@@ -162,7 +162,7 @@ ELSEIF TEQUIP:Ｗ넘어뜨리기
 ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	IF TEQUIP:키스
-		PRINTFORM 일 있을 때 마다%TEXTS("키스継続")%,
+		PRINTFORM 일 있을 때 마다%TEXTS("키스継続")%, 
 		CALL SETFLAG, "추가키스플래그", TARGET
 	ENDIF
 	IF TALENT:빈유 == 0 && RAND:3 == 0

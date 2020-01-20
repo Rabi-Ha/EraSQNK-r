@@ -119,17 +119,17 @@ VARSET LOCAL
 ;両穴くぱぁ
 IF PREVCOM == 14 && CHECK_COM("両穴くぱぁ")
 	IF COND("両穴くぱぁ")
-		PRINTFORM %타겟은()% 이미 양쪽 모두의 구멍을 아까워하지도 않고 개장 하고 있었지만, 요구에 응해 재차
+		PRINTFORM %타겟은()% 이미 양쪽 모두의 구멍을 아까워하지도 않고 개장 하고 있었지만, 요구에 응해 재차 
 	ELSE
-		PRINTFORM %타겟은()% 엉덩이의 구멍을 과시하고 있는 몸의 자세로부터 더욱 허리를 내밀면,
+		PRINTFORM %타겟은()% 엉덩이의 구멍을 과시하고 있는 몸의 자세로부터 더욱 허리를 내밀고, 
 	ENDIF
 ;前回Ａくぱぁ
 ELSEIF PREVCOM == 14
-	PRINTFORM %타겟은()% 애널을 과시하고 있는 몸의 자세인 채, 이번은
+	PRINTFORM %타겟은()% 애널을 과시하고 있는 몸의 자세인 채, 이번은 
 ELSE
 	;다리구속
 	IF GETBIT(TEQUIP:구속, 21)
-		PRINTFORM 다리를 열린 모습으로 구속되고 있는 %타겟은()%,
+		PRINTFORM 다리를 열린 모습으로 구속되고 있는 %타겟은()%, 
 	ELSE
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	ENDIF
@@ -139,7 +139,7 @@ ELSE
 		CALL SETFLAG, "바텀을노출：텍스트없음", TARGET
 
 	IF PREVCOM >= 60 && PREVCOM <= 62 && TCVAR:28 > 20 && COND("다리 사용") && RAND:2
-		PRINTFORM 범해지고 있던 몸의 자세인 채로
+		PRINTFORM 범해지고 있던 몸의 자세인 채로 
 		LOCAL = 2
 	ELSEIF PREVCOM == 65 && ABL:새드끼 >= 3 && TCVAR:28 > 20 && COND("다리 사용") && RAND:2
 		PRINTFORM 엎드려 누운 %CALLNAME:PLAYER%의 얼굴을 넘고 나서 
@@ -344,7 +344,7 @@ ELSE
 			PRINTFORM 방금전까지 범해지던 
 		ENDIF
 	ELSEIF TALENT:라비아피어스 && RAND:3 == 0
-		PRINTFORM %조사처리(TEXTS("라비아피어스"),"로")%  장식된 
+		PRINTFORM %조사처리(TEXTS("라비아피어스"),"로")% 장식된 
 	;음모描写
 	ELSEIF COND("음모") && RAND:2
 		SELECTCASE COND("음모")
@@ -521,7 +521,7 @@ ENDIF
 
 ;初めて
 IF TALENT:호색 == 0 && TALENT:부끄럼쟁이 && ABL:노출벽 < 3 && FIRSTCOM(SELECTCOM) == 0
-	PRINTFORMW 타인을 향해 음부를 처음으로 노출시키는 그 행위에,%조사처리(CALLNAME:TARGET,"의")% 얼굴은 \@ RAND:2 ? 어쩔 수 없을 정도의 # 숨기지 못할 \@ 수치심으로 물들어있다…
+	PRINTFORMW 타인을 향해 음부를 처음으로 노출시키는 그 행위에,%조사처리(CALLNAME:TARGET,"의")% 얼굴은 \@ RAND:2 ? 어쩔 수 없을 정도의 # 숨기지 못할 \@ 수치심으로 물들어 있다…
 ;前回섹스
 ELSEIF PREVCOM >= 60 && PREVCOM <= 69
 	IF ABL:Ｖ확장 >= 3 && RAND:3 == 0
@@ -662,7 +662,7 @@ ELSE
 		IF TALENT:호색+TALENT:음란 && ABL:노출벽 >= 3
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 			IF PREVEX("요도内사정")
-				PRINTFORM 중에 나온 정액이 섞인 물방울을 흘리는 요도구에 꽂히는 %CALLNAME:PLAYER%의 시선을, 
+				PRINTFORM 중에 나온 정액이 섞인 물방울을 흘리는 요도에 꽂히는 %CALLNAME:PLAYER%의 시선을, 
 			ELSEIF TEQUIP:카테터
 				PRINTFORM 깊숙이 꽂혔힌 카테터의 끝에서 소변 방울을 떨어뜨리며, %CALLNAME:PLAYER%의 시선을
 			ELSE
@@ -803,16 +803,16 @@ ELSE
 
 			IF PALAM:욕정 >= 6000 && RAND:3 == 0
 				IF RAND:2
-					PRINTFORMW 녹진녹진 애액을 흘리면서, 독특한 버릇이 된%조사처리(TEXTS("匂い"),"를")% 감돌게 하고 있다…
+					PRINTFORMW 녹진녹진 애액을 흘리면서, 독특한 버릇이 된 %조사처리(TEXTS("匂い"),"를")% 감돌게 하고 있다…
 				ELSE
 					PRINTFORMW 군침과 같이 점도의 높은 애액을 흘리고 있다…
 				ENDIF
 			ELSEIF EXP:Ｖ경험 >= 150 && RAND:2
 				PRINTFORMW 희미하게 탁한 애액을 끈적끈적하게 토해내고있다…
 			ELSEIF TALENT:음호
-				PRINTFORMW \@ PENIS(PLAYER) && RAND:2 ? 맡기만 해도 발기하지 않고는 못 배기는 # 뇌가 저리는 \@ 추잡한%조사처리(TEXTS("匂い"),"를")% 토해내고 있다…
+				PRINTFORMW \@ PENIS(PLAYER) && RAND:2 ? 맡기만 해도 발기하지 않고는 못 배기는 # 뇌가 저리는 \@ 추잡한 %조사처리(TEXTS("匂い"),"를")% 토해내고 있다…
 			ELSE
-				PRINTFORMW 독특한 향기를 발하기 시작하고있다…
+				PRINTFORMW 독특한 향기를 발하기 시작하고 있다…
 			ENDIF
 		ELSE
 			SIF INSERT("Ａ인서트")
@@ -881,7 +881,7 @@ ENDIF
 ;前回내사정
 IF PREVEX("Ｖ내사정")
 	LOCAL -= 10
-	LOCALS = %LOCALS% - 내사정直後(10)
+	LOCALS = %LOCALS% - 질내사정직후(10)
 ENDIF
 ;미약
 IF TEQUIP:미약

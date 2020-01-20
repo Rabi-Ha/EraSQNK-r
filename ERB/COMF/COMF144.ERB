@@ -244,7 +244,7 @@ IF CHECK_COM("강제방뇨")
 		ELSE
 			PRINT 의 애널을 후벼파면서, 
 		ENDIF
-		PRINTFORMW 요도구를 집요하게 주물러 풀었다
+		PRINTFORMW 요도를 집요하게 주물러 풀었다
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 참지 못하고, 주르륵 오줌을 흘려 버렸다…
 		IF CHECK_CLO("Ｖ노출") && INSERT("굴곡위")
 			PRINTFORMW 몸의 자세가 뒤집어져있기 때문에, 노란 물보라가 배에서 얼굴에 걸쳐 더럽혀 간다…
@@ -254,17 +254,17 @@ IF CHECK_COM("강제방뇨")
 	ELSEIF TEQUIP:구속
 		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 		IF CHECK_CLO("Ｖ노출") == 0
-			PRINTFORMW %CLO("가랑이")%의 위로부터 %CALLNAME:TARGET%의 요도구를 자극했다
+			PRINTFORMW %CLO("가랑이")%의 위로부터 %CALLNAME:TARGET%의 요도를 자극했다
 		ELSEIF RAND:2 == 0
-			PRINTFORMW %CALLNAME:TARGET%의 보지를 펴넓혀, 요도구를 만지작거렸다
+			PRINTFORMW %CALLNAME:TARGET%의 보지를 펴넓혀, 요도를 만지작거렸다
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%의 요도구를 자극했다
+			PRINTFORMW %CALLNAME:TARGET%의 요도를 자극했다
 		ENDIF
 		;손, 발
 		IF GETBIT(TEQUIP:구속, 20) && GETBIT(TEQUIP:구속, 21)
 			SIF GETBIT(TEQUIP:구속, 22)
-				PRINTFORM 꼼짝 못하는
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 숨기지 못하고%CALLNAME:PLAYER%의 눈앞에서 오줌을 흘려 버렸다…
+				PRINTFORM 꼼짝 못하는 
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 숨기지 못하고 %CALLNAME:PLAYER%의 눈앞에서 오줌을 흘려 버렸다…
 		;발だけ
 		ELSEIF GETBIT(TEQUIP:구속, 21)
 			PRINTFORM 발을 붙이지 못하는 %조사처리(CALLNAME:TARGET,"는")% 가랑이를 %조사처리(NAMES("손"),"로")% 숨겼지만, 
@@ -277,28 +277,28 @@ IF CHECK_COM("강제방뇨")
 		ELSE
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 			SIF TALENT:작은몸집 && TALENT:빈유
-				PRINT 작은
+				PRINT 작은 
 			PRINTFORMW 몸을 떨게 해 오줌을 내뿜게 해 버렸다…
 		ENDIF
 	ELSEIF CHECK_CLO("Ｖ노출") == 0
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 오줌을 참고 있는 %CALLNAME:TARGET%의 요도구를 천 너머로 집요하게 자극해, 강제적으로 흘리게 했다
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 오줌을 참고 있는 %CALLNAME:TARGET%의 요도를 천 너머로 집요하게 자극해, 강제적으로 흘리게 했다
 		PRINTFORMW 내뿜은 오줌이 %CLO("가랑이")%로 막혀, %CALLNAME:TARGET%의 하반신은 심한 모양입니다…
 	;야외or관내
 	ELSEIF TEQUIP:관내노출플레이 || TEQUIP:야외플레이
-		PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 발을 들어 올리고, 요도구를 자극했다
+		PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 발을 들어 올리고, 요도를 자극했다
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 참지 못하고, 개와 같은 모습으로 오줌을 내뿜게 해 버렸다…
 	ELSEIF RAND:3 == 0
-		PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 성기에 입을 붙이고, 요도구를 핥았다
+		PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 성기에 입을 붙이고, 요도를 핥았다
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 참지 못하고 %CALLNAME:PLAYER%의 눈앞에서 물줄기를 내뿜었다…
 	ELSEIF RAND:2 == 0
 		PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 양발을 고용 인상, 오줌의 구멍을손가락앞으로 간질였다
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 		SIF TALENT:작은몸집 && TALENT:빈유
-			PRINT 작은
+			PRINT 작은 
 		PRINTFORMW 몸을 떨게 해 오줌을 내뿜게 해 버렸다…
 	ELSE
 		IF RAND:2 == 0
-			PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 요도구를 손가락 끝으로 자극했다
+			PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 요도를 손가락 끝으로 자극했다
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 참지 못하고 오줌을 내뿜었다…
 		ELSEIF COND("마을")
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 수치와 굴욕감에 눈물을 머금으면서, 길가에 주저앉아 방뇨했다…
@@ -318,7 +318,7 @@ ENDIF
 TFLAG:16 = 0
 ;인서트中
 IF INSERT("인서트")
-	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에\@ INSERT("Ａ인서트") ? 애널을 # \@범해지면서, 
+	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에 \@ INSERT("Ａ인서트") ? 애널을 # \@범해지면서, 
 	IF CHECK_CLO("Ｖ노출") && INSERT("굴곡위")
 		PRINTFORMW 기분 좋은 듯 오줌을 흘렸다
 		IF ABL:마조끼 >= 3 && TALENT:도착적 && PALAM:욕정 >= 30000 && EXP_GAIN(31) == 0
@@ -368,7 +368,7 @@ ELSE
 	IF COND("マーキング플래그")
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 		SIF COND("다리 사용")
-			PRINTFORM %TEXTR("네 발로 서서 크게 다리를 벌리고, ", "암컷 개 같은 포즈로")%
+			PRINTFORM %TEXTR("네 발로 서서 크게 다리를 벌리고,", "암컷 개 같은 포즈로")% 
 		IF COND("마을")
 			PRINTFORMW %TEXTR("민가의 처마끝", "나무 밑동", "돌기둥 밑")%에 오줌을 쌌다…
 		ELSEIF TEQUIP:야외플레이
@@ -386,7 +386,7 @@ ELSE
 	ELSEIF PENIS(TARGET) == 0 && (RAND:2 || ABL:노출벽 >= 3 || ABL:봉사정신 >= 3)
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 보지를 %NAMES("손가락")%으로 활짝 열어 요도를 노출 해, 나오는 곳이 보이게끔
 		SIF EXP:방뇨경험 >= 10 && COND("다리 사용") && RAND:3 == 0
-			PRINTFORM 선 채로 요령 있게
+			PRINTFORM 선 채로 요령 있게 
 		PRINTFORMW 방뇨했다…
 		TFLAG:16 = 3
 	ELSEIF COND("마을")

@@ -68,7 +68,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 			ELSE
 				PRINT 즐거운듯이 
 			ENDIF
-			PRINTFORMW %CALLNAME:MASTER%의 양 구멍을 계속 범하고있다…! 
+			PRINTFORMW %CALLNAME:MASTER%의 양 구멍을 계속 범하고 있다…! 
 		;조수が前回と同じ行動
 		ELSEIF SELECTCOM:1 == PREVCOM:1
 			PRINTFORM %타겟은()% %CALLNAME:(TARGET:1)%에 애널을 범해지고 있는 %CALLNAME:MASTER%의 다리를 펴넓히고,
@@ -110,7 +110,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 			ELSEIF ABL:욕망 >= 3 && RAND:2 == 0
 				PRINT 깊숙히 
 			ENDIF
-			PRINTFORMW 범하기시작했다…! 
+			PRINTFORMW 범하기 시작했다…! 
 		;役割交換
 		ELSEIF PREVCOM:1 == 120 && SELECTCOM:1 == 121
 			PRINTFORMW %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")% 범하는 구멍을 교환하거나 해, %마스터로()% 즐기고 있다…！
@@ -121,7 +121,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 			ELSE
 				PRINTFORM 협력해서 
 			ENDIF
-			PRINTFORMW %CALLNAME:MASTER%의 양구멍을 범하기시작했다…! 
+			PRINTFORMW %CALLNAME:MASTER%의 양구멍을 범하기 시작했다…! 
 		ENDIF
 	ELSE
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
@@ -132,21 +132,21 @@ IF TEQUIP:Ｗ넘어뜨리기
 		IF SELECTCOM == PREVCOM
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 마음대로 범하고있다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 범하기시작했다…
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 범하기 시작했다…
 		ENDIF
 	ENDIF
 ELSEIF TEQUIP:넘어뜨리기
 	IF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 		PRINTFORM %타겟은()% %CALLNAME:PLAYER%
 		IF TEQUIP:키스
-			PRINTFORM %TEXTS("키스継続助詞付き")%, 콧김 난폭하게
+			PRINTFORM %TEXTS("키스継続助詞付き")%, 콧김 난폭하게 
 			CALL SETFLAG, "추가키스플래그", TARGET
 		ELSEIF ABL:기교 >= 4 && STATE("미니멈", TARGET) && RAND:2 == 0
-			PRINTFORM 의 질 안쪽을 후벼파면서, 즐거운 듯이
+			PRINTFORM 의 질 안쪽을 후벼파면서, 즐거운 듯이 
 		ELSEIF ABL:기교 >= 3 && RAND:2 == 0
-			PRINTFORM 의 Ｇ스팟을 중점적으로 비비면서, 격렬하고
+			PRINTFORM 의 Ｇ스팟을 중점적으로 비비면서, 격렬하고 
 		ELSE
-			PRINTFORM 의 질을 마음껏
+			PRINTFORM 의 질을 마음껏 
 		ENDIF
 		PRINTFORMW 계속 범하고있다…
 	ELSE
@@ -267,7 +267,7 @@ ELSE
 			PRINT 얼굴을 붉히면서 
 		;「소악마」で랜덤1/2
 		ELSEIF TALENT:PLAYER:소악마 && RAND:2 == 0
-			PRINT 히죽히죽 거리면서 
+			PRINT 히죽히죽거리면서 
 		ELSEIF RAND:2 == 0
 			PRINT 미소지으면서 
 		;반항적かつ음란
@@ -277,7 +277,7 @@ ELSE
 		ELSEIF (TALENT:PLAYER:음란 || PALAM:욕정 >= 3000) && RAND:4 > 0
 			PRINT 요염하게 미소지으면서 
 		ELSEIF TALENT:연모
-			PRINTFORM %조사처리(CALLNAME:TARGET,"를")% 눈을 치켜뜨고 보면서
+			PRINTFORM %조사처리(CALLNAME:TARGET,"를")% 눈을 치켜뜨고 보면서 
 		ENDIF
 	ENDIF
 	IF RAND:2 == 0

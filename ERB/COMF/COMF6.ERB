@@ -140,7 +140,7 @@ ELSEIF TEQUIP:넘어뜨리기
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	;조수が前回と同じ行動(違う行動の時は, ここでなく, EQUIP_COM32で記述)
 	SIF TEQUIP:Ｗ넘어뜨리기 && SELECTCOM:1 == PREVCOM:1 && SELECTCOM:1 >= 0
-		PRINTFORM %TEXTS("Ｗ넘어뜨리기 중")%
+		PRINTFORM %TEXTS("Ｗ넘어뜨리기 중")% 
 	IF TEQUIP:키스
 		IF TEQUIP:Ｗ넘어뜨리기 == 0
 			PRINTFORMW 공기를 찾아 허덕이는 %CALLNAME:PLAYER%의 입술을 놓치지 않고, 다시 키스로 입을 막아버렸다…
@@ -181,11 +181,11 @@ ELSEIF TEQUIP:키스 && COND("前Ｔ조교자") == PLAYER
 		ELSE
 			PRINTFORM %조사만처리(CALLNAME:TARGET,"를")% 껴안고, 
 			IF RAND:3 == 0
-				PRINT 서로의 입안을 혀끝에서 핥아대면서
+				PRINT 서로의 입안을 혀끝에서 핥아대면서 
 			ELSEIF RAND:2
 				PRINT 혀를 얽어 타액을 교환하듯이 
 			ELSE
-				PRINT 입의 주위를 끈적끈적하면서
+				PRINT 입의 주위를 끈적끈적하면서 
 			ENDIF
 		ENDIF
 	ENDIF
@@ -214,7 +214,7 @@ ELSE
 	ELSEIF COND("前回펠라")
 		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 페니스를 빠는 것을 중단시키고, 
 	ELSEIF COND("前Ｔ조교자") == PLAYER && (PREVCOM == 98 || PREVCOM == 99)
-		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 보지에 봉사하는 것을 그만두게하고, 
+		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 보지에 봉사하는 것을 그만두게 하고, 
 	ELSEIF COND("前Ｔ조교자") == PLAYER && PREVCOM == 96
 		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 엉덩이구멍에 봉사를 하던 
 	ELSEIF PLAYER != MASTER

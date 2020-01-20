@@ -184,7 +184,7 @@ IF !CHECK_CLO("Ａ노출")
 	PRINT , 
 ENDIF
 IF (ABL:Ａ확장 >= 5 || (PREVCOM >= 70 && PREVCOM <= 79) || PREVCOM == 142 || PREVCOM == 143) && ABL:Ａ확장 >= 2 && RAND:3 == 0
-	PRINT 야무지지 못하게 구멍을 열고있는 
+	PRINT 야무지지 못하게 구멍을 열고 있는 
 ELSEIF ABL:Ａ확장 >= 2
 	PRINT 완전히 부드러워진 
 ELSEIF TALENT:연모 || RAND:3 == 0
@@ -281,9 +281,9 @@ IF CHECK("Ａ바이브") && RAND:3
 		SELECTCASE SIZE("Ａ바이브", TARGET)
 		CASE IS >= 3
 			IF TALENT:남자 || TALENT:처녀
-				PRINT 입에도 들어가지 않을 것같은 
+				PRINT 입에도 들어가지 않을 것 같은 
 			ELSEIF ABL:Ｖ확장 < SIZE("Ａ바이브", TARGET)
-				PRINT 앞의 구멍에도 들어갈 것같지 않은 
+				PRINT 앞의 구멍에도 들어갈 것 같지 않은 
 			ENDIF
 			PRINT 흉악한 
 		CASE 2
@@ -321,7 +321,7 @@ ELSEIF CHECK("Ａ바이브")
 ELSEIF ABL:Ａ감각 >= 2 && CUP:고통 < 500
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 기묘한 감각에 당황하고있다…
 ELSE
-	PRINTFORM 익숙하지않은 
+	PRINTFORM 익숙하지 않은 
 	IF COND("애널비즈")
 		PRINT 애널비즈
 	ELSE
@@ -405,23 +405,23 @@ SIF SELECTCOM == 33 || SELECTCOM == 202
 IF TEQUIP:촉수
 	SELECTCASE SIZE("Ａ바이브", TARGET)
 	CASE IS >= 3
-		PRINTL ＜애널극태촉수삽입안＞
+		PRINTL ＜애널극태촉수삽입중＞
 	CASEELSE
-		PRINTL ＜애널촉수삽입안＞
+		PRINTL ＜애널촉수삽입중＞
 	ENDSELECT
 ELSE
 	IF COND("애널비즈")
-		PRINTL ＜애널비즈삽입안＞
+		PRINTL ＜애널비즈삽입중＞
 	ELSE
 		SELECTCASE SIZE("Ａ바이브", TARGET)
 		CASE 5
-			PRINTL ＜애널말잦이바이브삽입안＞
+			PRINTL ＜애널말잦이바이브삽입중＞
 		CASE 4
-			PRINTL ＜애널완형바이브삽입안＞
+			PRINTL ＜애널완형바이브삽입중＞
 		CASE 3
-			PRINTL ＜애널극태바이브삽입안＞
+			PRINTL ＜애널극태바이브삽입중＞
 		CASEELSE
-			PRINTL ＜애널바이브삽입안＞
+			PRINTL ＜애널바이브삽입중＞
 		ENDSELECT
 	ENDIF
 

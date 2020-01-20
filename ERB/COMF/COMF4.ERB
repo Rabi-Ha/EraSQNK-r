@@ -90,18 +90,18 @@ IF TEQUIP:넘어뜨리기
 			ELSEIF PREVPLAY("요도인서트", PLAYER)
 				;前回내사정
 				IF PREVEX("사정")
-					PRINT 방광을 정액으로 더럽힌지 얼마 안된
+					PRINT 방광을 정액으로 더럽힌지 얼마 안된 
 				ELSEIF PENIS(PLAYER)
-					PRINT 페니스로부터 뽑아 낸지 얼마 안된
+					PRINT 페니스로부터 뽑아 낸지 얼마 안된 
 				ELSE
-					PRINT 로부터 뽑아 낸지 얼마 안된
+					PRINT 로부터 뽑아 낸지 얼마 안된 
 				ENDIF
 			ELSEIF PREVPLAY("요도인서트")
 				;前回中出しされた
 				IF PREVEX("요도内사정")
-					PRINT 정액를 따라진지 얼마 안된
+					PRINT 정액를 따라진지 얼마 안된 
 				ELSE
-					PRINT 그리고 즐기고 있던지 얼마 안된
+					PRINT 그리고 즐기고 있던지 얼마 안된 
 				ENDIF
 			ELSEIF CHECK_STAIN(STAIN:Ｐ, "Ａ")
 				PRINT 축축하게 
@@ -194,7 +194,7 @@ ELSE
 			ELSEIF RAND:3 == 0
 				LOCALS = 막 %LOCALS%, 따끈따끈한 온기가 피어오르는 
 			ELSEIF RAND:2
-				LOCALS = %LOCALS%뿐인, 굉장한 %TEXTS("匂い")% 하고있다
+				LOCALS = %LOCALS%뿐인, 굉장한 %TEXTS("匂い")% 하고 있는 
 			ELSE
 				LOCALS = 갓 %LOCALS% 
 			ENDIF
@@ -208,13 +208,13 @@ ELSE
 		ENDIF
 		PRINTFORM %LOCALS%페니스
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%의 %TEXTS("페니스：視覚", TARGET)%페니스
+		PRINTFORM %CALLNAME:TARGET%의 %TEXTS("페니스：視覚", TARGET)% 페니스
 	ENDIF
 	IF CHECK_COM("청소펠라")
 		IF PREVPLAY("요도인서트") && PREVEX("요도内사정")
-			PRINTFORMW 를%TEXTR("훌쩍거리며 정액을 전부 빨았", "핥아서 깨끗하게 했", "입으로 공들여 청소했")%다…
+			PRINTFORMW 를 %TEXTR("훌쩍거리며 정액을 전부 빨았", "핥아서 깨끗하게 했", "입으로 공들여 청소했")%다…
 		ELSE
-			PRINTFORMW 를%TEXTR("핥아서 깨끗하게", "입으로 공들여 청소")%했다…
+			PRINTFORMW 를 %TEXTR("핥아서 깨끗하게", "입으로 공들여 청소")%했다…
 		ENDIF
 	ELSEIF TEQUIP:손대중
 		PRINTFORMW 를 혀로 감질나게 괴롭혔다…
@@ -223,7 +223,7 @@ ELSE
 		STAIN:PLAYER:Ｍ |= STAIN:Ｐ
 		CALL RESET_STAIN_EX, "Ｐ", TARGET
 	ELSEIF ABL:요도확장 >= 0 && RAND:3 == 0
-		PRINTFORMW 에 혀를 %TEXTR("끼워 넣어", "넣고 빼며")%공격해대었다…
+		PRINTFORMW 에 혀를 %TEXTR("끼워 넣어", "넣고 빼며")% 공격해대었다…
 	ELSEIF RAND:2
 		PRINTFORMW 를 물어 핥아댔다…
 	ELSE

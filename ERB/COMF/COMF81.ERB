@@ -119,7 +119,7 @@ IF PREVCOM == 92 && COND("前Ｔと同ペア")
 	;욕정4이상
 	ELSEIF PALAM:욕정 >= PALAMLV:4 && RAND:3 == 0
 		SIF TALENT:도착적 && RAND:3 == 0
-			PRINTFORM %TEXTS("匂い")%에
+			PRINTFORM %TEXTS("匂い")%에 
 		PRINT 흥분하면서 
 	;연모かつ봉사정신5or헌신的かつ봉사정신3이상
 	ELSEIF ( (TALENT:연모 && ABL:봉사정신 >= 5) || (TALENT:헌신 && ABL:봉사정신 >= 3) ) && RAND:3 == 0

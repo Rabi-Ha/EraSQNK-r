@@ -1408,41 +1408,41 @@ RESTART
 @SHOW_NYUURIN
 IF CHECK_BRA("オープン브래지어") || CHECK_BRA("1/4컵") || CHECK_BRA("1/2컵") || CHECK_BRA("시스루")
 	IF CHECK_BRA("시스루")
-		PRINTFORM %TEXTR("천지에 비쳐 보이는", "희미하게 비치는", "얇은 옷감 너머로 비치는")%
+		PRINTFORM %TEXTR("천지에 비쳐 보이는", "희미하게 비치는", "얇은 옷감 너머로 비치는")% 
 	ELSE
-		PRINTFORM %TEXTR("훤히 보이는", "강력하게 주장하는", "부끄러운 기색도 없이 나타나 있는")%
+		PRINTFORM %TEXTR("훤히 보이는", "강력하게 주장하는", "부끄러운 기색도 없이 나타나 있는")% 
 	ENDIF
 	IF CALCF("Ｂ발정")
 		IF COND("유두비대") && RANDIF(1, TALENT:니플피어스)
 			IF COND("유두비대") >= 2
-				PRINTFORM 비대해진
+				PRINTFORM 비대해진 
 			ELSE
-				PRINTFORM 큰
+				PRINTFORM 큰 
 			ENDIF
 		ELSEIF TALENT:니플피어스
-			PRINTFORM 피어스로 장식해진
+			PRINTFORM 피어스로 장식해진 
 		ENDIF
 	ELSE
-		PRINTFORM 함몰
+		PRINTFORM 함몰 
 	ENDIF
-	PRINTFORM 유두와
+	PRINTFORM 유두와 
 	SELECTCASE COND("거유륜")
 	CASE IS >= 2
-		PRINTFORM 거대한
+		PRINTFORM 거대한 
 	CASE 1
-		PRINTFORM 큰
+		PRINTFORM 큰 
 	ENDSELECT
 	PRINTFORMW 유륜이 정말 %TEXTR("음탕합니다", "흥분되게 합니다", "멋집니다")%…
 ELSEIF CHECK_BRA("마이크로")
 	IF CALCF("Ｂ발정") && COND("유두비대") && RANDIF(1, COND("거유륜") )
 		PRINTFORMW 밀착도가 높은 옷감때문에, 아래에서 세워진 유두의 크기를 숨길 수가 없기는 커녕 반대로 강조되어 버리고 있습니다…
 	ELSEIF COND("거유륜")
-		PRINTFORM 유두는 겨우 숨기고 있지만,
+		PRINTFORM 유두는 겨우 숨기고 있지만, 
 		SELECTCASE COND("거유륜")
 		CASE IS >= 2
-			PRINTFORM 부끄러울만큼 큰
+			PRINTFORM 부끄러울만큼 큰 
 		CASE 1
-			PRINTFORM 평균보다 꽤 큰
+			PRINTFORM 평균보다 꽤 큰 
 		ENDSELECT
 		PRINTFORMW 유륜은 그 대부분을 쬐어 버리고 있습니다…
 	ENDIF
@@ -2332,7 +2332,7 @@ SIF CHECK_CLO("토플리스", ARG)
 
 ;브래지어は, 上に何か着ていたりする時などは비표시
 SIF EQUIP:ARG:브래지어 && (ARGS != "短縮표시" || EQUIP:ARG:웃옷 + EQUIP:ARG:보디슈츠 == 0)
-	PRINTFORM [%BRA(ARG)%\@ CHECK_BRA("ずらした", ARG) ? (ずれ) # \@]
+	PRINTFORM [%BRA(ARG)%\@ CHECK_BRA("ずらした", ARG) ? (열려짐) # \@]
 
 IF EQUIP:ARG:겉옷 && CHECK_OUTER("つなぎ") == 0
 	PRINTFORM [%OUTER(ARG)%

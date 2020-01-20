@@ -69,7 +69,7 @@ RETURN 1
 IF CHECK_COM("로션마사지", SELECTCOM)
 	CALL TRAIN_MESSAGE_COM260
 ELSEIF TALENT:남자
-	PRINTFORMW %CALLNAME:TARGET%의 온몸을 감질나게 애무했다…
+	PRINTFORMW %CALLNAME:TARGET%의 온 몸을 감질나게 애무했다…
 ;식스나인
 ELSEIF TEQUIP:식스나인
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%
@@ -92,21 +92,21 @@ ELSEIF TEQUIP:넘어뜨리기
 				IF RAND:4 == 0
 					PRINTFORM 군침을 흘리며 허리를 움직이는 
 				ELSEIF RAND:3 == 0
-					PRINTFORM 허리를 흔들어 금단의 쾌감을 탐내고 있는
+					PRINTFORM 허리를 흔들어 금단의 쾌감을 탐내고 있는 
 				ELSEIF RAND:2 == 0
-					PRINTFORM 요도의 포로가 되어 있는
+					PRINTFORM 요도의 포로가 되어 있는 
 				ELSE
 					PRINTFORM 촉촉한 눈동자로 %조사처리(CALLNAME:PLAYER,"를")% 바라보는 
 				ENDIF
 			ELSEIF EXP:요도경험 >= 50 || TALENT:요도성감 || TALENT:도착적
 				IF PENIS(PLAYER) && ABL:봉사정신 >= 3 && RANDIF(3, TALENT:요도성감)
-					PRINTFORM 요도에서의 봉사에 기를 쓰고 있는
+					PRINTFORM 요도에서의 봉사에 기를 쓰고 있는 
 				ELSEIF PENIS(PLAYER) && RANDIF(2, TALENT:요도성감)
-					PRINTFORM 뿌리까지 페니스를 삼켜 오슬오슬 하고 있는
+					PRINTFORM 뿌리까지 페니스를 삼켜 오슬오슬 하고 있는 
 				ELSEIF TALENT:요도성감 && RAND:2
-					PRINTFORM 요도성감의 포로가 되어 있는
+					PRINTFORM 요도성감의 포로가 되어 있는 
 				ELSEIF RAND:2
-					PRINTFORM 민감한 점막을 %TEXTR("문질러지는", "확장되는")% 감각을 %TEXTR("맛보고", "만끽하고")%있는
+					PRINTFORM 민감한 점막을 %TEXTR("문질러지는", "확장되는")% 감각을 %TEXTR("맛보고", "만끽하고")%있는 
 				ELSE
 					PRINTFORM 홍조를 띈 얼굴로 %조사처리(CALLNAME:PLAYER,"를")% 바라보는 
 				ENDIF
@@ -136,7 +136,7 @@ ELSEIF TEQUIP:넘어뜨리기
 				IF PREVCOM == 67 && PENIS(PLAYER) && RAND:2 == 0
 					PRINTFORM 질 깊은 안쪽까지 페니스를 물고 두근두근거리고 있는 
 				ELSEIF PREVCOM == 66 && RAND:2 == 0
-					PRINTFORM Ｇ스팟이 주는 쾌감에 포로가 된
+					PRINTFORM Ｇ스팟이 주는 쾌감에 포로가 된 
 				ELSEIF RAND:2 == 0
 					PRINTFORM 질을 넓혀지는 감각을 만끽하고 있는 
 				ELSE
@@ -217,7 +217,7 @@ ELSEIF TEQUIP:넘어뜨리기
 			ELSEIF CALCF("Ｃ발정") >= 2
 				PRINTFORMW 충혈된 클리토리스를 희롱했다…
 			ELSE
-				PRINTFORMW 작은 클리토리스를 손가락의 배로 문질렀다…
+				PRINTFORMW 작은 클리토리스를 손가락의 가운데로 문질렀다…
 			ENDIF
 		ENDIF
 	ELSEIF RAND:(ABL:기교 + 1) >= 2
@@ -266,7 +266,7 @@ ELSEIF TEQUIP:촉수
 	PRINTW 몸 위에 갖가지 크기의 다양한 촉수가 기어다닌다…
 ELSEIF TEQUIP:플라트 == 1
 	IF TEQUIP:키스
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 키스를 하면서%CALLNAME:TARGET%의 전신을 초조하게 하듯이 애무했다…
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 키스를 하면서 %CALLNAME:TARGET%의 전신을 초조하게 하듯이 애무했다…
 		CALL SETFLAG, "추가키스플래그", TARGET
 	ELSE
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 전신을 초조하게 하듯이 애무했다…
@@ -275,13 +275,13 @@ ELSE
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 	;인서트中
 	IF INSERT("합체中")
-		PRINTFORM %TEXTS("합체中", PLAYER)%%CALLNAME:TARGET%의 
+		PRINTFORM %TEXTS("합체中", PLAYER)% %CALLNAME:TARGET%의 
 		IF COND("다리에약함", PLAYER) && INSERT("굴곡위") && RAND:3
 			IF CHECK_CLO("발노출") && RAND:3
 				PRINTFORMW %TEXTR("발가락을 핥았다", "다리에 혀를 내밀었다")%…
 				CALL SETFLAG, "발핥기플래그", TARGET
 			ELSE
-				PRINTFORM %TEXTR("다리에 혀를 내미", "다리에 뺨을 비비", "민감한 무릎 뒤에 키스의 비를 내리")%면서
+				PRINTFORM %TEXTR("다리에 혀를 내미", "다리에 뺨을 비비", "민감한 무릎 뒤에 키스의 비를 내리")%면서 
 				IF TALENT:임신 && RAND:2 == 0
 					PRINT 큰 배
 				ELSEIF TALENT:작은몸집
@@ -292,11 +292,11 @@ ELSE
 					PRINT 신체
 				ENDIF
 				IF TALENT:임신 || RAND:3 == 0
-					PRINT 를 상냥하고
+					PRINT 를 상냥하고 
 				ELSEIF RAND:2
-					PRINT 를 정성스럽게
+					PRINT 를 정성스럽게 
 				ELSE
-					PRINT 를 열심히
+					PRINT 를 열심히 
 				ENDIF
 				PRINTFORMW %TEXTR("쓰다듬어 돌리고", "애무하고")%…
 			ENDIF
@@ -337,30 +337,30 @@ ELSE
 		;腋
 		IF CHECK_CLO("겨드랑이노출") && COND("성벽：겨드랑이", PLAYER) && RAND:3 == 0
 			SIF TALENT:부끄럼쟁이
-				PRINT 부끄러워한다
+				PRINT 부끄러워하는 
 			IF RAND:2
-				PRINTFORMW %CALLNAME:TARGET%의 %TEXTS("겨드랑이")%에 코를 접근해, 땀의%조사처리(TEXTS("匂い"),"를")% 즐기고 나서 혀로 빨아냈다…
+				PRINTFORMW %CALLNAME:TARGET%의 %TEXTS("겨드랑이")%에 코를 접근해, 땀의 %조사처리(TEXTS("匂い"),"를")% 즐기고 나서 혀로 빨아냈다…
 				CALL SETFLAG, "겨드랑이핥기플래그", TARGET
 				RETURN 1
 			ELSE
-				PRINTFORM %CALLNAME:TARGET%의 %TEXTS("겨드랑이")%의 %조사처리(TEXTS("匂い"),"를")% 냄새 맡으면서,
+				PRINTFORM %CALLNAME:TARGET%의 %TEXTS("겨드랑이")% %조사처리(TEXTS("匂い"),"를")% 맡으면서,
 			ENDIF
 		;汗ばんだ…とりあえず욕정かな
 		ELSEIF PALAM:욕정 >= 3000 && RAND:2
 			SIF TALENT:부끄럼쟁이
-				PRINT 부끄러워한다
+				PRINT 부끄러워하는 
 			IF RAND:3 == 0
-				PRINTFORM %CALLNAME:TARGET%의 체취를 냄새 맡으면서, 땀흘린 신체를%TEXTR("쓰다듬어 돌리고", "애무하고")%있다…
+				PRINTFORM %CALLNAME:TARGET%의 체취를 냄새 맡으면서, 땀흘린 신체를 %TEXTR("쓰다듬어 돌리고", "애무하고")%있다…
 			ELSEIF RAND:2
-				PRINTFORMW %CALLNAME:TARGET%의 전신을 애무해, 땀흘린 신체의%조사처리(TEXTS("匂い"),"를")% 즐겼다…
+				PRINTFORMW %CALLNAME:TARGET%의 전신을 애무해, 땀흘린 신체의 %조사처리(TEXTS("匂い"),"를")% 즐겼다…
 			ELSE
-				PRINTFORM %CALLNAME:TARGET%의
+				PRINTFORM %CALLNAME:TARGET%의 
 				IF CHECK_CLO("겨드랑이노출") && COND("성벽：겨드랑이", PLAYER) && RAND:3 == 0
 					PRINTFORM %TEXTS("겨드랑이")%의%TEXTS("匂い")%
 				ELSEIF COND("다리 사용") && COND("신발の着用") == 0 && RAND:2
 					PRINTFORM 발의 %TEXTS("匂い")%
 				ELSEIF CHECK_OUTER("바지") == 0
-					PRINTFORM 사타구니의%TEXTS("匂い")%
+					PRINTFORM 사타구니의 %TEXTS("匂い")%
 				ELSE
 					PRINTFORM 머리카락의 냄새
 				ENDIF
@@ -371,9 +371,9 @@ ELSE
 		;머리카락は多分みんなある！
 		ELSE
 			IF RAND:2
-				PRINTFORM %타겟을()% 껴안아, 머리카락의 냄새를 맡으면서
+				PRINTFORM %타겟을()% 껴안아, 머리카락의 냄새를 맡으면서 
 			ELSE
-				PRINTFORM %CALLNAME:TARGET%의 머리카락의 냄새를 맡으면서,
+				PRINTFORM %CALLNAME:TARGET%의 머리카락의 냄새를 맡으면서, 
 			ENDIF
 		ENDIF
 	ELSEIF CHECK_CLO("겨드랑이노출") && COND("성벽：겨드랑이", PLAYER) && RAND:3
@@ -448,16 +448,16 @@ ELSE
 		ELSE
 			SELECTCASE TALENT:날개
 			CASE 6
-				PRINTFORM 와 박쥐같은 날개날개
+				PRINTFORM 와 박쥐같은 날개
 			CASE 10
 				PRINTFORM 와 나비같은 날개
 			CASE 12
 				PRINTFORM 와 천사의 품격을 갖춘 날개
 			;허니비
 			CASE 13
-				PRINTFORM 와 벌레와 같이 얇다날개
+				PRINTFORM 와 벌레와 같이 얇은 날개
 			CASEELSE
-				PRINTFORM 와 맹금같은 날개
+				PRINTFORM 와 맹금류같은 날개
 			ENDSELECT
 		ENDIF
 	;꼬리
@@ -532,7 +532,7 @@ ELSE
 	ELSEIF RAND:2
 		PRINT 를 정성스럽게 
 	ELSE
-		PRINT 를 정신없이
+		PRINT 를 정신없이 
 	ENDIF
 	IF PREVCOM == SELECTCOM
 		PRINTFORMW %TEXTR("계속 주물렀다", "계속 애무했다")%…

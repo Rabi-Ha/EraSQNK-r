@@ -31,7 +31,7 @@ CASE "ＬＶ"
 
 	CALL ISABLUP, ARGS
 	SIF TALENT:몽마
-		PRINTFORML 몽마가 15LV이상이되려면, 소질[상위몽마]（필요10LV 이상）가 필요
+		PRINTFORML 몽마가 15LV이상이되려면, 소질[상위몽마]（10LV 이상 필요）가  필요한 
 	IF A:0 > 0
 		PRINTFORM  [ 0] - 레벨을 {ABL:ARGS + 1} 로 올린다：경험치
 		SIF EXP:경험치 < A:0
@@ -128,13 +128,13 @@ CASE "Ｖ확장", "Ａ확장"
 			RETURN 0
 		ENDIF
 
-		PRINTFORML %CALLNAME:TARGET%의 현재 %ARGS% 레벨은{ABL:ARGS}이고 Ｖ명기도는{ABL_V(TARGET, "절대치")}입니다
+		PRINTFORML %CALLNAME:TARGET%의 현재 %ARGS% 레벨은 {ABL:ARGS}이고 Ｖ명기도는 {ABL_V(TARGET, "절대치")}입니다
 		PRINTFORML %ARGS%레벨을 상승 시키겠습니까？（주의：상대적 명기도는 줄어들게 됩니다）
 		PRINTFORML 
 		;ＬＶＵＰ가능
 		IF CALCF("Ｖ확장の상한", TARGET) > ABL:Ｖ확장
 			ABL:ARGS += 1
-			PRINTFORML  [ 0] - %ARGS%레벨을 {ABL:ARGS}에 올린다（레벨을 올린 이후 Ｖ명기도는 {ABL_V(TARGET, "절대치")}입니다.）
+			PRINTFORML  [ 0] - %ARGS%레벨을 {ABL:ARGS}로 올린다（레벨을 올린 이후 Ｖ명기도는 {ABL_V(TARGET, "절대치")}입니다.）
 			ABL:ARGS -= 1
 			LOCAL:0 = 1
 		ELSE
@@ -148,18 +148,18 @@ CASE "Ｖ확장", "Ａ확장"
 			RETURN 0
 		ENDIF
 
-		PRINTFORML %CALLNAME:TARGET%의 현재 %ARGS% 레벨을{ABL:ARGS}이고 Ａ명기도는{ABL_A(TARGET, "절대치")}입니다
+		PRINTFORML %CALLNAME:TARGET%의 현재 %ARGS% 레벨은 {ABL:ARGS}이고 Ａ명기도는 {ABL_A(TARGET, "절대치")}입니다
 		PRINTFORML %ARGS%레벨을 상승 시키겠습니까?？（주의：상대적 명기도는 줄어들게 됩니다）
 		PRINTFORML 
 		;ＬＶＵＰ가능
 		IF CALCF("Ａ확장の상한", TARGET) > ABL:Ａ확장
 			ABL:ARGS += 1
-			PRINTFORML  [ 0] - %ARGS%레벨을 {ABL:ARGS}에 올린다（레벨을 올린 이후 Ａ명기도는{ABL_A(TARGET, "절대치")}입니다.）
+			PRINTFORML  [ 0] - %ARGS%레벨을 {ABL:ARGS}에 올린다（레벨을 올린 이후 Ａ명기도는 {ABL_A(TARGET, "절대치")}입니다.）
 			ABL:ARGS -= 1
 			LOCAL:0 = 1
 		ELSE
 			SETCOLOR DEF_COLOR("회색")
-			PRINTFORML  [×] - %ARGS%레벨을 {ABL:ARGS + 1}로 올린다 ……Ａ확장경험과 소질이 부족한것 같습니다
+			PRINTFORML  [×] - %ARGS%레벨을 {ABL:ARGS + 1}로 올린다 ……Ａ확장경험과 소질이 부족한 것 같습니다
 			RESETCOLOR
 		ENDIF
 	ENDSELECT
@@ -178,9 +178,9 @@ CASE "Ｖ확장", "Ａ확장"
 
 		SELECTCASE ARGS
 		CASE "Ｖ확장"
-			PRINTFORMW %NAME:TARGET%의 %ARGS%레벨은 {ABL:ARGS}, 명기도는{ABL_V(TARGET, "절대치")}이 되었습니다. 
+			PRINTFORMW %NAME:TARGET%의 %ARGS%레벨은 {ABL:ARGS}, 명기도는 {ABL_V(TARGET, "절대치")}이 되었습니다. 
 		CASE "Ａ확장"
-			PRINTFORMW %NAME:TARGET%의 %ARGS%레벨은 {ABL:ARGS}, 명기도는{ABL_A(TARGET, "절대치")}이 되었습니다. 
+			PRINTFORMW %NAME:TARGET%의 %ARGS%레벨은 {ABL:ARGS}, 명기도는 {ABL_A(TARGET, "절대치")}이 되었습니다. 
 		ENDSELECT
 	ENDIF
 
@@ -210,9 +210,9 @@ CASE "음핵", "음호", "애널광", "음유", "음탕한입술", "새드", "�
 		ENDIF
 	CASE "요도광"
 		IF TALENT:연모 || TALENT:음란
-			PRINTFORMW %타겟은()% 조교하지만 끝난 뒤에도 불구하고,%CALLNAME:MASTER%에 오줌 구멍을 괴롭혔으면 좋겠다고 간원 해 왔다…
+			PRINTFORMW %타겟은()% 조교가 끝난 뒤에도 불구하고,%CALLNAME:MASTER%에 오줌구멍을 괴롭혔으면 좋겠다고 간청해 왔다…
 		ELSE
-			PRINTFORMW %타겟은()% 스스로를 위로하면서 %CALLNAME:MASTER%에 갖고 싶어하는 듯한 시선을 보내고 있다…
+			PRINTFORMW %타겟은()% 스스로를 위로하면서 %마스터를()% 갖고 싶어하는 듯한 시선을 보내고 있다…
 		ENDIF
 	CASE "음호"
 		IF TALENT:연모 || PENIS(MASTER) == 0
@@ -228,7 +228,7 @@ CASE "음핵", "음호", "애널광", "음유", "음탕한입술", "새드", "�
 		ENDIF
 	CASE "음유"
 		IF CONFIG("니플퍽") && TALENT:거유 && TALENT:슬라임 == 0
-			PRINTFORMW %타겟은()% 완전히 음란하게 개화한 유두에 손가락을 푹푹 찌르며, 가벼운 자위행위를 보여주고있습니다…
+			PRINTFORMW %타겟은()% 완전히 음란하게 개화한 유두에 손가락을 푹푹 찌르며, 가벼운 자위행위를 보여주고 있습니다…
 			PRINTFORMW …이렇다면 가슴을 이용해 더욱 하드한 플레이도 가능할 것입니다! 
 			CALL PRINT_STR, "하트핑크_※니플퍽을 할 수 있게 되었습니다※_W"
 		ELSEIF TALENT:연모 || TALENT:음란
@@ -237,7 +237,7 @@ CASE "음핵", "음호", "애널광", "음유", "음탕한입술", "새드", "�
 			PRINTFORMW %CALLNAME:TARGET%의 가슴은 %CALLNAME:MASTER%에 의해 개발되어, 민감하게 되어버린 것같다…
 		ENDIF
 	CASE "음탕한입술"
-		PRINTFORMW %타겟은()% 행위가 끝나 떠나려고 하는 %마스터를()% 끌어안고, 몇번이고 입맞춤을 계속하고있다…
+		PRINTFORMW %타겟은()% 행위가 끝나 떠나려고 하는 %마스터를()% 끌어안고, 몇번이고 입맞춤을 계속하고 있다…
 	CASE "도착적"
 		PRINTFORMW %타겟은()% 평범하지 않은 행위에 의한 흥분을 몸에 익힌 것같다…
 	CASE "새드"
@@ -250,7 +250,7 @@ CASE "음핵", "음호", "애널광", "음유", "음탕한입술", "새드", "�
 		ENDIF
 	ENDSELECT
 	SETCOLOR DEF_COLOR("하트핑크")
-	PRINTFORMW %타겟은()% 【%ARGS%】를 얻었다
+	PRINTFORMW %타겟은()% 【%ARGS%】%조사만처리(ARGS,"를")% 얻었다
 	RESETCOLOR
 	RETURN 0
 ENDSELECT
@@ -358,9 +358,9 @@ CASE "기교"
 		;펠라경험～커닐링구스경험の合計によるEXPLVによる軽減
 		SELECTCASE GET_EXP_LV(EXP:키스경험 + (EXP:펠라경험+EXP:수음경험+EXP:풋잡경험+EXP:허리사용경험+EXP:파이즈리경험+EXP:Ａ자극경험+EXP:커닐링구스경험)*5) - ABL:기교
 		CASE IS >= 9
-			PRINTFORML （기교에 관련되는 경험의 합계 회수가 굉장히 많기 때문에,필요%PALAMNAME:B%의 구슬이 격감하고 있습니다）
+			PRINTFORML （기교에 관련되는 경험의 합계 회수가 굉장히 많기 때문에, 필요한 %PALAMNAME:B%의 구슬이 격감하고 있습니다）
 		CASE IS >= 6
-			PRINTFORML （기교에 관련되는 경험의 합계 회수가 매우 많기 때문에,필요%PALAMNAME:B%의 구슬이 격감하고 있습니다）
+			PRINTFORML （기교에 관련되는 경험의 합계 회수가 매우 많기 때문에, 필요한 %PALAMNAME:B%의 구슬이 격감하고 있습니다）
 		CASE IS >= 3
 			PRINTFORML （기교에 관한 경험의 총 횟수가 많으므로, 필요한 %PALAMNAME:B%의 구슬이 감소합니다）
 		ENDSELECT
@@ -516,7 +516,7 @@ CASE "음핵", "음호", "애널광", "음유", "음탕한입술", "새드", "�
 		PRINTFORM ）,
 	ENDIF
 	IF U > 0
-		PRINTFORM 이번 조교 중에%EXNAME:V%{U}회（
+		PRINTFORM 이번 조교 중에 %EXNAME:V%{U}회（
 		SIF EX:V < U
 			SETCOLOR DEF_COLOR("회색")
 		PRINTFORM {EX:V}
@@ -538,7 +538,7 @@ SELECTCASE ARGS:2
 CASE "요도광"
 	PRINTL 
 	CALL ISABLUP, ARGS:2
-	PRINTFORML  소질【%ARGS:2%】를 획득한다
+	PRINTFORML  소질【%ARGS:2%】을 획득한다
 	IF O > 0
 		PRINTFORM  %ABLNAME:P%{O}LV（현재
 		SIF ABL:P < O
@@ -556,7 +556,7 @@ CASE "요도광"
 		PRINTFORM ）,
 	ENDIF
 	IF U > 0
-		PRINTFORM 이번 조교 중에%EXNAME:V%{U}회（
+		PRINTFORM 이번 조교 중에 %EXNAME:V%{U}회（
 		SIF EX:V < U
 			SETCOLOR DEF_COLOR("회색")
 		PRINTFORM {EX:V}
@@ -599,14 +599,14 @@ CASE "굴복각인"
 	MARK:ARGS += 1
 	SIF MARK:ARGS == 3
 		CALL KOJO_MESSAGE_MARKCNG, "굴복각인Lv3취득"
-	PRINTFORMW %ARGS%의 레벨이 {MARK:ARGS}가 되었습니다.
+	PRINTFORMW %ARGS%의 레벨이 {MARK:ARGS}이 되었습니다.
 CASE "반발각인"
 	MARK:ARGS -= 1
 	;CALL KOJO_MESSAGE_MARKCNG, "반발각인감소"
-	PRINTFORMW %ARGS%의 레벨이 {MARK:ARGS}가 되었습니다.
+	PRINTFORMW %ARGS%의 레벨이 {MARK:ARGS}이 되었습니다.
 CASEELSE
 	ABL:ARGS += 1
-	PRINTFORMW %ARGS%의 레벨이 {ABL:ARGS}가 되었습니다.
+	PRINTFORMW %ARGS%의 레벨이 {ABL:ARGS}이 되었습니다.
 ENDSELECT
 
 ;소질が変動したりするものの체크
@@ -638,7 +638,7 @@ CASE "정액중독"
 		CALL CALC, "정액에약함", TARGET
 		;소질を得た
 		IF TALENT:정액에약함 && EXP:조교횟수
-			PRINTFORMW %타겟은()% 정액을 수 없이 받아 들이는 사이에, 정액으로 쾌락을 얻는 몸이 되어버린 모양이다…
+			PRINTFORMW %타겟은()% 정액을 수 없이 받아 들이는 사이에, 정액으로 쾌락을 얻는 몸이 되어버린것 같다…
 			PRINTFORM %타겟은()% 
 			LOCALS = [%TALENT_NAME(49, TALENT:정액에약함)%]
 			CALL PRINT_COLORTEXT, LOCALS, DEF_COLOR("황색")

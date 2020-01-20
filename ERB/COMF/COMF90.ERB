@@ -154,7 +154,7 @@ IF CHECK_COM("Ｗ봉사")
 			PRINTFORMW %CALLNAME:PLAYER%의 페니스를 계속 다루고 있다…
 		ENDIF
 	ELSE
-		PRINTFORM %타겟과()%%조사처리(CALLNAME:(TARGET:1),"는")%
+		PRINTFORM %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")% 
 		SIF TALENT:(TARGET:1):음란 + TALENT:(TARGET:1):연모 && TALENT:음란 + TALENT:연모 && RAND:2 == 0
 			PRINTFORM 상기된 눈동자로 %조사처리(CALLNAME:MASTER,"를")% 바라보면서, 
 		IF RAND:2 == 0
@@ -171,7 +171,7 @@ ELSEIF TEQUIP:Ｗ넘어뜨리기
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	;조수が前回と同じ行動(違う行動の時は, ここでなく, EQUIP_COM32で記述)
 	SIF SELECTCOM:1 == PREVCOM:1 && SELECTCOM:1 >= 0
-		PRINTFORM , %TEXTS("Ｗ넘어뜨리기 중")%
+		PRINTFORM , %TEXTS("Ｗ넘어뜨리기 중")% 
 
 	IF SELECTCOM == PREVCOM
 		PRINTFORMW %CALLNAME:MASTER%의 페니스를 쓱쓱 계속 훑고있다…
@@ -219,7 +219,7 @@ ELSEIF CHECK_COM("손훑기펠라")
 		ELSE
 			PRINTFORM ,페니스의 %TEXTS("匂い")%
 		ENDIF
-		PRINTFORM 를 %TEXTR("맡으", "즐기")%면서 %CALLNAME:PLAYER%의
+		PRINTFORM 를 %TEXTR("맡으", "즐기")%면서 %CALLNAME:PLAYER%의 
 	ELSEIF TALENT:연모 && RAND:4 == 0
 		PRINTFORM , 황홀해하면서 %CALLNAME:PLAYER%의 
 	ELSEIF ABL:봉사정신 >= 3 && RAND:3 == 0
@@ -305,7 +305,7 @@ ELSEIF TEQUIP:넘어뜨리기 || CHECK_COM("파후파후손훑기")
 ELSE
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	IF TEQUIP:키스
-		PRINTFORM %CALLNAME:PLAYER%%TEXTS("키스継続助詞付き")%,
+		PRINTFORM %CALLNAME:PLAYER% %TEXTS("키스継続助詞付き")%, 
 		CALL SETFLAG, "추가키스플래그", TARGET
 	ELSEIF TEQUIP:식스나인
 		PRINTFORM %TEXTS("６９")%
@@ -365,12 +365,12 @@ ELSE
 					PRINT 정액으로 미끈미끈한 
 				PRINTFORM 손바닥
 			ENDIF
-			PRINTFORM 그리고 귀두를 동글동글 더듬어
+			PRINTFORM 으로 귀두를 동글동글 더듬어
 		ELSE
 			;정액ぬるぬる
 			SIF (CHECK_GLOVE("손가락노출") && CHECK_STAIN(STAIN:장갑, "정액") ) || CHECK_STAIN(STAIN:손, "정액")
 				PRINT 정액으로 미끈미끈한 
-			PRINTFORM 손가락을 페니스에 감아 문
+			PRINTFORM 손가락을 페니스에 감아 문 
 		ENDIF
 		;새드끼LV3이상で睾丸刺激
 		;IF TALENT:PLAYER:남자 && ABL:새드끼 >= 3 && RAND:3 == 0

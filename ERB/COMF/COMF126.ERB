@@ -66,12 +66,12 @@ IF TEQUIP:Ｗ넘어뜨리기
 			ELSEIF RAND:2 == 0
 				PRINT 정신없이 
 			ELSE
-				PRINT 즐거운듯이 
+				PRINT 즐거운 듯이 
 			ENDIF
 			PRINTFORMW %CALLNAME:MASTER%의 양 구멍을 계속 범하고있다…! 
 		;조수が前回と同じ行動
 		ELSEIF SELECTCOM:1 == PREVCOM:1
-			PRINTFORM %타겟은()% %CALLNAME:(TARGET:1)%에 범해지고 있는 %CALLNAME:MASTER%의 엉덩이를 활짝 열고, 애널을
+			PRINTFORM %타겟은()% %CALLNAME:(TARGET:1)%에 범해지고 있는 %CALLNAME:MASTER%의 엉덩이를 활짝 열고, 애널을 
 			;ペニバン
 			IF PENIS(TARGET) == 0
 				IF ABL:새드끼 >= 5
@@ -100,7 +100,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 			ELSEIF ABL:욕망 >= 3 && RAND:2 == 0
 				PRINT 깊숙히 
 			ENDIF
-			PRINTFORMW 범하기시작했다…! 
+			PRINTFORMW 범하기 시작했다…! 
 		;役割交換
 		ELSEIF PREVCOM:1 == 121 && SELECTCOM:1 == 120
 			PRINTFORMW %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")% 범하는 구멍을 교환하거나 하면서 %마스터로()% 즐기고 있다…！
@@ -117,7 +117,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 		;조수が前回と同じ行動(違う行動の時は, ここでなく, EQUIP_COM32で記述)
 		SIF SELECTCOM:1 == PREVCOM:1 && SELECTCOM:1 >= 0
-			PRINTFORM , %TEXTS("Ｗ넘어뜨리기 중")%
+			PRINTFORM , %TEXTS("Ｗ넘어뜨리기 중")% 
 
 		IF SELECTCOM == PREVCOM
 			PRINTFORMW %CALLNAME:MASTER%의 항문을 마음대로 범하고있다…
@@ -128,7 +128,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 ELSEIF TEQUIP:넘어뜨리기
 	;前回と同じ
 	IF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 항문을 마음대로 범하고있다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 항문을 마음대로 범하고 있다…
 	ELSE
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 		SIF TALENT:새드
@@ -159,7 +159,7 @@ ELSEIF TEQUIP:넘어뜨리기
 		ENDIF
 		PRINTFORM %조사처리(NAMES("페니스"),"로")% %CALLNAME:PLAYER%의 애널을 
 		IF TALENT:새드 && RAND:3 == 0
-			PRINT 즐거운듯이 
+			PRINT 즐거운 듯이 
 		ELSEIF ABL:새드끼 && RAND:2 == 0
 			PRINT 거칠게 
 		ELSEIF ABL:욕망 >= 3 && RAND:2 == 0

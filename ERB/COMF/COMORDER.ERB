@@ -309,7 +309,7 @@ IF STATE("술주정", TARGET)
 	LOCALS = %LOCALS% + 술주정(20)
 ELSEIF STATE("드렁크", TARGET)
 	LOCAL += 10
-	LOCALS = %LOCALS% + 드렁크(10)
+	LOCALS = %LOCALS% + 취함(10)
 ENDIF
 
 ;마도인형
@@ -380,7 +380,7 @@ ENDIF
 IF ASSI
 	IF TALENT:ASSI:고무
 		LOCAL += 10
-		LOCALS = %LOCALS% + %TEXTS("조수の명칭")%の고무(10)
+		LOCALS = %LOCALS% + %TEXTS("조수の명칭")%의 응원(10)
 	ENDIF
 ENDIF
 

@@ -160,12 +160,12 @@ ELSE
 		IF RAND:3 == 0
 			CALL SETFLAG, "바텀을노출：텍스트有り", TARGET
 		ELSE
-			PRINTFORM %CLO("가랑이")%에 손을 넣고
+			PRINTFORM %CLO("가랑이")%에 손을 넣고 
 		ENDIF
 		LOCALS = 바텀묘사
 	ENDIF
 	IF PREVEX("Ｖ내사정") && CHECK_STAIN(STAIN:Ｖ, "정액")
-		PRINTFORMW 질내사정 직후의 질에 손가락을 삽입하고, 주름에 달라붙은 정액을 천천히 긁어내기시작했다…
+		PRINTFORMW 질내사정 직후의 질에 손가락을 삽입하고, 주름에 달라붙은 정액을 천천히 긁어내기 시작했다…
 	ELSE
 		IF CHECK_CLO("Ｖ노출") == 0 || RAND:3 == 0
 			SIF PALAM:Ｖ윤 >= PALAMLV:4

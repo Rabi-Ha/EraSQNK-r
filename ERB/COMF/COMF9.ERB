@@ -131,7 +131,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 		ELSE
 			PRINT 에 허리를 내려서, 
 		ENDIF
-		PRINTFORMW 엉덩이구멍을 계속 핥게했다…
+		PRINTFORMW 엉덩이구멍을 계속 핥게 했다…
 	ELSE
 		IF COND("다리 사용") == 0
 			PRINTFORMW %CALLNAME:MASTER%의 얼굴을 억누르고, 입에 애널을 밀어붙였다……
@@ -179,10 +179,10 @@ ELSEIF TEQUIP:넘어뜨리기
 		PRINTFORM %CALLNAME:PLAYER%의 안면 위에 
 		;「부끄럼쟁이」or「겁쟁이」で랜덤
 		IF (TALENT:부끄럼쟁이 || TALENT:겁쟁이) && RAND:3 == 0
-			PRINTFORM 그곳을 %조사처리(NAMES("손"),"로")%  숨기면서 
+			PRINTFORM 그곳을 %조사처리(NAMES("손"),"로")% 숨기면서 
 		;「건방짐」or「음란」or「소악마」で랜덤
 		ELSEIF (TALENT:건방짐 || TALENT:음란 || TALENT:소악마) && RAND:2 == 0
-			PRINT 다리를 크게 벌리고
+			PRINT 다리를 크게 벌리고 
 		ENDIF
 		PRINT 주저앉으며, 
 		;애널が노출していないで, 팬티をずらしていないなら自動的にずらす
@@ -238,7 +238,7 @@ ELSEIF TEQUIP:넘어뜨리기
 		PRINTFORMW %CALLNAME:PLAYER%의 입에 %TEXTS("애널")% 애널을 밀어붙였다……
 	;それ以外
 	ELSE
-		PRINTFORMW %CALLNAME:PLAYER%의 입가에 %TEXTS("애널")%애널을 내밀었다……
+		PRINTFORMW %CALLNAME:PLAYER%의 입가에 %TEXTS("애널")% 애널을 내밀었다……
 	ENDIF
 ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의
