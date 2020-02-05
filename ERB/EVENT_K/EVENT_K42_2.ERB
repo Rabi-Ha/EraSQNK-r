@@ -67,7 +67,7 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 ;굴복각인Lv2
 ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	PRINTFORMW 「………자주(잘) 올게…」
-	PRINTFORMW 「…%CNAME("二人称")%는…%CNAME("一人称")%로 하는 것 ,  즐거운거야…?」
+	PRINTFORMW 「…%조사처리(CNAME("二人称"),"는")%…%CNAME("一人称")%로 하는 것 ,  즐거운거야…?」
 	PRINTFORMW 그런 것을 물어보는%CALLNAME:TARGET%에 별로 싫지 않다고 대답한다
 	PRINTFORMW 「………그런가」
 	PRINTFORMW %CALLNAME:TARGET%의 표정은 변함없었지만 왠지 기쁜 듯한 생각이 들었다…
@@ -2199,7 +2199,7 @@ IF SELECTCOM == 65
 			;굴복각인Lv2이상＋V감각Lv3이상
 			ELSEIF MARK:굴복각인 >= 2 && ABL:Ｖ감각 >= 3
 				IF RAND:2 == 0
-					PRINTFORMW 「……%CNAME("二人称")%는…기분이 좋아…? ……하아 ,  …%CNAME("一人称")%도…느끼고 있다, 의…」
+					PRINTFORMW 「……%조사처리(CNAME("二人称"),"는")%…기분이 좋아…? ……하아 ,  …%CNAME("一人称")%도…느끼고 있다, 의…」
 				ELSE
 					PRINTFORMW 「………안쪽까지 ,  오고……느껴버리는…」
 					PRINTFORMW 깊게 꽂히는 페니스의 쾌감에 %타겟은()% 애달픈 표정을 보이고 있다
@@ -3170,7 +3170,7 @@ IF SELECTCOM == 95 && PENIS(PLAYER)
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 「……이것…어려운, …」
-				PRINTFORMW 「…%CNAME("二人称")%는 기분이 좋아져서 …?」
+				PRINTFORMW 「…%조사처리(CNAME("二人称"),"는")% 기분이 좋아져서 …?」
 			;새드끼Lv3이상
 			ELSEIF ABL:새드끼 >= 3
 				PRINTFORMW 「………아팠어…?」
@@ -5293,17 +5293,17 @@ IF SELECTCOM == 175
 			PRINTFORML 「이것…운동하는 옷이야…」
 			PRINTFORMW 「…그래서…%CNAME("一人称")%과 어떤 운동을 하는 거야…?」
 		ELSEIF CHECK_SHIRT("간호사")
-			PRINTFORML 「…%CNAME("二人称")%는 어떤 병이야…? …엣찌한 병…?」
+			PRINTFORML 「…%조사처리(CNAME("二人称"),"는")% 어떤 병이야…? …엣찌한 병…?」
 			PRINTFORMW 「…만약 그러면…%조사처리(CNAME("一人称"),"가")% 치료해 줄 수 있는, …」
 		ELSEIF CHECK_SHIRT("차이나드레스")
 			PRINTFORML 「……%CNAME("一人称")%의 다리 ,  신경이 쓰이는 거야…?」
 			PRINTFORMW 「…후후……어떻게…좀더 ,  보고 싶어…?」
 		ELSEIF CHECK_SHIRT("세라복")
-			PRINTFORML 「…%CNAME("二人称")%는 선생님…? …그렇지 않으면 동급생…?」
+			PRINTFORML 「…%조사처리(CNAME("二人称"),"는")% 선생님…? …그렇지 않으면 동급생…?」
 			PRINTFORMW 「…어디라도…%CNAME("一人称")%과 하면 안되는 일할 것 같군요…」
 		ELSEIF CHECK_SHIRT("무녀")
 			PRINTFORML 「…맑고 깨끗한…무녀님…?」
-			PRINTFORMW 「…그런 무녀님에…%CNAME("二人称")%는…어떤 일 ,  하는 거야…?」
+			PRINTFORMW 「…그런 무녀님에…%조사처리(CNAME("二人称"),"는")%…어떤 일 ,  하는 거야…?」
 		ELSEIF CHECK_SHIRT("베이비돌")
 			PRINTFORMW 
 		ELSEIF CHECK_CLO("비키니姿")
@@ -5369,7 +5369,7 @@ IF SELECTCOM == 179 && TEQUIP:수치플레이
 		;연모+노출벽Lv3이상
 		ELSEIF TALENT:연모 && ABL:노출벽 >= 3
 			PRINTFORMW 「……이것…부끄러운데…」
-			PRINTFORMW 「…%CNAME("二人称")%는…하아 ,  ……심술쟁이 , 구나…」
+			PRINTFORMW 「…%조사처리(CNAME("二人称"),"는")%…하아 ,  ……심술쟁이 , 구나…」
 			PRINTFORMW %타겟은()% 거기로부터 뜨거운 꿀이 늘어지는 모습(상태)를 거울 넘어 하러 보여 왔다
 		;연모
 		ELSEIF TALENT:연모
@@ -7006,7 +7006,7 @@ CASE "아침펠라"
 	IF TALENT:연모
 		IF RAND:2 == 0
 			PRINTFORMW 「……안녕 …겨우 ,  일어나 주었다…」
-			PRINTFORMW 「…여기는 일찍 일어나기인데…%CNAME("二人称")%는 잠꾸러기야…」
+			PRINTFORMW 「…여기는 일찍 일어나기인데…%조사처리(CNAME("二人称"),"는")% 잠꾸러기야…」
 		ELSE
 			PRINTFORMW 「쪽…,  하아……안녕 …기분 좋았어…?」
 			PRINTFORMW 「…%조사처리(CNAME("一人称"),"는")% ,  아직 부족하기 때문에…다시 한번 ,  줬으면해…, 」

@@ -91,7 +91,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 ;반발각인Lv3
 ELSEIF MARK:반발각인 == 3
 	IF BASE:몇번째 == 1
-		PRINTFORMW 「%CNAME("二人称")%는…싫습니다」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"는")%…싫습니다」
 		PRINTFORMW 아가씨의 말이 귀에 아프다
 	ELSEIF BASE:몇번째 == 2
 		PRINTFORMW 「어딘가…라고」
@@ -224,7 +224,7 @@ IF BASE:몇번째 == 1
 		RETURN 1
 	;굴복각인Lv0
 	ELSEIF MARK:굴복각인 == 0
-		PRINTFORMW 「%CNAME("二人称")%는 %CNAME("一人称")%나 어머님 의외로도 저런 것을 했습니까?」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% %CNAME("一人称")%나 어머님 의외로도 저런 것을 했습니까?」
 		PRINTFORMW 이상한 일을 듣는…뭐 이제 와서 숨기는 것도 아니기 때문에 고개를 끄덕였다
 		PRINTFORMW 「므우…약간, 글자인것 같은, 입니다」
 		RETURN 1

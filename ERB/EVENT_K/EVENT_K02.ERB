@@ -441,7 +441,7 @@ IF STATE("撃沈", MASTER)
 ELSEIF MARK:반발각인 == 3
 	DRAWLINE
 	PRINTFORMW %타겟은()%%마스터를()% 피하듯이 얼굴을 돌려 착의를 정돈했다.
-	PRINTFORMW 「%CNAME("二人称")%는…싫어…」
+	PRINTFORMW 「%조사처리(CNAME("二人称"),"는")%…싫어…」
 	PRINTFORMW 방을 나오려고 하면, 그 등중에 어두운 군소리를 던질 수 있었다.
 	RETURN 1
 ;굴복각인Lv1이하
@@ -1485,7 +1485,7 @@ IF SELECTCOM == 5
 			PRINTFORMW %CALLNAME:TARGET%의 가슴을 비비어 하기 만이면, %타겟은()% 벌벌하고 신체를 진동시키고 있다.
 		;연모
 		ELSEIF TALENT:연모 && TALENT:빈유
-			PRINTFORMW 「%CNAME("二人称")%는, 젖가슴 커다란 편이 좋아?」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"는")%, 젖가슴 커다란 편이 좋아?」
 			PRINTFORMW 「%CALLNAME:TARGET%,  너무 커져 없지만…%CALLNAME:TARGET%에 대해 싫어가 되지 마…」
 		;B감각Lv3이상
 		ELSEIF ABL:Ｂ감각 >= 3 || TALENT:빈유 == 0
@@ -3710,7 +3710,7 @@ IF SELECTCOM == 65
 				PRINTFORMW 「,  히야 아앙!……%CNAME("二人称", "응석부리고")%…♪」
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 「아하, %CNAME("二人称")%의, 먹어 버린다…♪」
-				PRINTFORMW 「%CNAME("二人称")%는, 움직이지 않아, 좋아…? %조사처리(CALLNAME:TARGET,"가")%, 해서,  줄 테니까…」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"는")%, 움직이지 않아, 좋아…? %조사처리(CALLNAME:TARGET,"가")%, 해서,  줄 테니까…」
 				PRINTFORMW 「언제나, %조사처리(CALLNAME:TARGET,"가")% 되고 있는 것 같이…%조사처리(CNAME("二人称"),"를")%, 아이 해 준다…♪」
 				PRINTFORMW %조사만처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 가슴에 얼굴을 대고 혀로 유두를 애무하면서, 열심히 허리를 흔들고 있는.
 				PRINTFORMW 자신이 올라 채우는 것보다, %CALLNAME:PLAYER%에 의해 많은 쾌감을 주고 싶은 것 같다….
@@ -7767,7 +7767,7 @@ IF SELECTCOM == 304 && TEQUIP:넘어뜨리기 == 0
 					PRINTFORMW 「,  좋은 것,  %CNAME("二人称")%…? 류 짱의로… %타겟은()% 엉덩이의 구멍만으로 이렇게 광야…?」
 					PRINTFORMW 「여기까지 되면…벌써,  %CNAME("二人称")%로 돌아오지 않게 되어버릴까도 몰라…그런데도 좋은거야…?」
 					PRINTFORMW %CALLNAME:TARGET%의 눈동자에는 그것에 대할 우려와%CALLNAME:MASTER%에의 구상조차 발라 잡는 강렬한 쾌락에의 기대가 머물고 있다…
-					PRINTFORMW 「아무것도 대답하지 않는다…%CALLNAME:TARGET%의 사랑을 시험할 생각이지요∼？ 괜찮아…는 말할 수 없어요……,  그…%CNAME("二人称")%는 좋아하지만…그것만으로%조사처리(CALLNAME:TARGET,"가")% 류 짱의 자지에 다 참아 수 있다고 생각하지 않지요?」
+					PRINTFORMW 「아무것도 대답하지 않는다…%CALLNAME:TARGET%의 사랑을 시험할 생각이지요∼？ 괜찮아…는 말할 수 없어요……,  그…%조사처리(CNAME("二人称"),"는")% 좋아하지만…그것만으로%조사처리(CALLNAME:TARGET,"가")% 류 짱의 자지에 다 참아 수 있다고 생각하지 않지요?」
 					PRINTFORMW !
 				ELSE
 					PRINTFORMW 「네…? …기다려…혐…무리하게야 그런 것 …!」
@@ -8428,7 +8428,7 @@ IF SELECTCOM == 305 && TEQUIP:넘어뜨리기 == 0
 					PRINTFORMW 「,  좋은 것,  %CNAME("二人称")%…? 류 짱의로… %타겟은()% 엉덩이 헐렁헐렁에 펼칠 수 있어 이렇게 광야…?」
 					PRINTFORMW 「여기까지 되면…벌써,  %CNAME("二人称")%로 돌아오지 않게 되어버릴까도 몰라…그런데도 좋은거야…?」
 					PRINTFORMW %CALLNAME:TARGET%의 눈동자에는 그것에 대할 우려와%CALLNAME:MASTER%에의 구상조차 발라 잡는 강렬한 쾌락에의 기대가 머물고 있다…
-					PRINTFORMW 「아무것도 대답하지 않는다…%CALLNAME:TARGET%의 사랑을 시험할 생각이지요∼？ 괜찮아…는 말할 수 없어요……,  그…%CNAME("二人称")%는 좋아하지만…벌써%CALLNAME:TARGET%의 카라다궼류 짱의 자지를 갖고 싶어서 큐―…라고 되었어요?」
+					PRINTFORMW 「아무것도 대답하지 않는다…%CALLNAME:TARGET%의 사랑을 시험할 생각이지요∼？ 괜찮아…는 말할 수 없어요……,  그…%조사처리(CNAME("二人称"),"는")% 좋아하지만…벌써%CALLNAME:TARGET%의 카라다궼류 짱의 자지를 갖고 싶어서 큐―…라고 되었어요?」
 					PRINTFORMW !
 				ELSE
 					PRINTFORMW 「네…? …기다려…혐…무리하게야 그런 것 …!」
@@ -10436,7 +10436,7 @@ CASE "Ｖ인서트"
 						PRINTFORMW %타겟은()% 방금전보다 격렬하게, 그리고 음란하게 허리를 내리기 시작했다
 					ELSE
 						PRINTFORMW %타겟은()% 허리에 성장해 온%CALLNAME:PLAYER%의 손을 잡아, 미소지었다
-						PRINTFORMW 「안돼~, %CNAME("二人称")%는%CALLNAME:TARGET%의 성장 상태를 느껴 준다면 좋은거야♪」
+						PRINTFORMW 「안돼~, %조사처리(CNAME("二人称"),"는")%%CALLNAME:TARGET%의 성장 상태를 느껴 준다면 좋은거야♪」
 					ENDIF
 				ENDIF
 			ELSE
@@ -10635,7 +10635,7 @@ CASE "반발각인Lv3취득"
 	IF FIRST_EV("반발각인Lv3취득") == 0
 		PRINTFORMW 「으윽,  벌써 싫어!」
 		PRINTFORMW 「모처럼 %CNAME("二人称")%에 대해 기분 좋게 해 주려고 생각했었는데…」
-		PRINTFORMW 「%CNAME("二人称")%는 싫어!」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 싫어!」
 		RETURN 1
 	ENDIF
 ENDSELECT
@@ -10752,7 +10752,7 @@ CASE "요바이기승위"
 CASE "매각した"
 	;반발각인Lv3
 	IF MARK:반발각인 == 3
-		PRINTFORMW 「%CNAME("二人称")%는, 매우 싫다!」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"는")%, 매우 싫다!」
 		PRINTFORMW 마지막에 그렇게 외쳐, %타겟은()%%CALLNAME:MASTER%의 곳으로부터 떠나 갔다….
 	;연모
 	ELSEIF TALENT:연모

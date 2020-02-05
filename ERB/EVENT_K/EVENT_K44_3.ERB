@@ -253,7 +253,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 「저기,  %CNAME("二人称")%…」
 	PRINTFORMW %CALLNAME:TARGET%의 눈은 물기를 띠어 있는 것 같이 보였다
 	PRINTFORMW 그러나 ,  곧바로 평소의 장난 같은 웃는 얼굴을 띄우면(자), %CALLNAME:PLAYER%에 달려들어 안겼다
-	PRINTFORMW 「…아니요, 아무것도 없습니다. %CNAME("二人称")%는 %CNAME("二人称")%의 기분의 소로 해 주세요」
+	PRINTFORMW 「…아니요, 아무것도 없습니다. %조사처리(CNAME("二人称"),"는")% %CNAME("二人称")%의 기분의 소로 해 주세요」
 	PRINTFORMW 「지금은 고명한 조련사가 가르친 고급 창녀를 ,  차분히 충분히(듬뿍) 맛봐 주세요♪」
 	SETBIT CFLAG:201, 4
 ;初임신＋당신の子
@@ -788,7 +788,7 @@ ELSEIF NO:ASSI == 20
 		;それ以外
 		ELSE
 			PRINTFORMW %CALLNAME:TARGET%の조교に%CALLNAME:ASSI%を%TEXTS("조수の명칭")%として連れてきた…
-			PRINTFORMW 「%CNAME("二人称")%는 대단하군요,  천사님까지 타로 해버린다는…」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 대단하군요,  천사님까지 타로 해버린다는…」
 			PRINTFORMW 「뭐, 아직 타로 여겨지지 않았습니다! 」
 			PRINTFORMW %CALLNAME:ASSI%네나 아니와 머리를 흔들어 부정한다
 			PRINTFORMW 「 아직 , 라는 것은 ,  지금부터 저속해집니다?」
@@ -1024,7 +1024,7 @@ ELSEIF TALENT:연모
 			PRINTFORMW 새하얀 시트에 갈색의 나체가 ,  신비적인 매력을 놓아 있다…
 			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 느긋하게 침대에 가까워지면(자) ,  권해지는 대로 침대의%CALLNAME:TARGET%에 지워졌다
 			PRINTFORMW 「우리들은 부부가 되었습니까들 ,  이 일도 다른 의미를 가집니다」
-			PRINTFORMW 「 그렇지만 %CNAME("二人称")%는 몽마의 조련사 ,  여러가지 여성과 피부를 거듭하고 있겠지요지만…」
+			PRINTFORMW 「 그렇지만 %조사처리(CNAME("二人称"),"는")% 몽마의 조련사 ,  여러가지 여성과 피부를 거듭하고 있겠지요지만…」
 			PRINTFORMW 「 나만 봐주는 것 하면 싫어요?」
 			PRINTFORM 「다른 여성에 지지 않을 정도 ,  깜짝 놀랄만한의 사랑을 따라 주세요 ,  당신
 			CALL HEARTMARK_E
@@ -1376,7 +1376,7 @@ ELSEIF TALENT:연모
 			PRINTFORMW 「기다리고 있었습니다♪」
 			PRINTFORMW 침대의 안에는 ,  무녀옷을 입은%타겟이()% 기다리고 있었다
 			PRINTFORMW 드러냈다 복장의 ,  반짝반짝(팔랑팔랑)하며 보이는 앞가슴이 고혹적이다…
-			PRINTFORMW 「%CNAME("二人称")%는 자각이 없을지도 모르겠습니다만…」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 자각이 없을지도 모르겠습니다만…」
 			PRINTFORMW 「여자아이에게 코스프레 시켜 조교라든지 ,  상당한 변태 상이에요?」
 			PRINTFORMW 「그러니까 ,  무녀님의 내가 그 번뇌를 가라앉혀 드립니다♪」
 			PRINTFORMW 무녀옷의%타겟은()%%조사처리(CALLNAME:PLAYER,"를")% 침대로 끌여들이면(자) ,  요염하게 미소지었다…
@@ -1422,7 +1422,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW 「%CNAME("二人称")%에 만족 하실 수 있도록(듯이) ,  전력을 다하게 해 받네요…」
 		PRINTFORMW %타겟은()% 그렇게 말하고 ,  요염한 미소를 띄우고 있다
 	ELSEIF RAND:4 == 0 && TALENT:상사상애 == 0
-		PRINTFORMW 「%CNAME("二人称")%는 몽마의 조련사이기 때문에 ,  나같은 걸로 상대가 감당해낼까 불안합니다만…」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 몽마의 조련사이기 때문에 ,  나같은 걸로 상대가 감당해낼까 불안합니다만…」
 		PRINTFORMW 「이렇게도 다리 끓임없게 다녀 줄 수 있는 것을 보면(자) ,  기대해 버려서도 괜찮겠(좋)습니까♪」
 		PRINTFORMW %CALLNAME:TARGET%벌납치등과%CALLNAME:PLAYER%에 곁눈질을 보내고 있다…
 	ELSEIF RAND:3 == 0 && COND("위험일") == 0
@@ -1549,7 +1549,7 @@ ELSEIF TALENT:연모
 	ENDIF
 ;굴복각인Lv1이하
 ELSEIF MARK:굴복각인 <= 1
-	PRINTFORMW 「그러고 보니 %CNAME("二人称")%는 몽마의 조련사이예요」
+	PRINTFORMW 「그러고 보니 %조사처리(CNAME("二人称"),"는")% 몽마의 조련사이예요」
 	PRINTFORMW 「…역시 몽마는 대단해 입니까?」
 	PRINTFORMW 공부 열심인%타겟은()% , %CALLNAME:PLAYER%로부터 성의 이야기를 (듣)묻기 시작하고 있다
 ;굴복각인Lv2
@@ -3010,7 +3010,7 @@ IF SELECTCOM == 5
 							PRINTFORMW 「%CNAME("二人称")%에 비비어져 나도 기분이 좋으니까 ,  많이 손대어 주세요♪」
 						;빈유
 						ELSEIF TALENT:빈유
-							PRINTFORMW 「%CNAME("二人称")%는 작은 가슴에서도 괜찮(좋)겠습니까…」
+							PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 작은 가슴에서도 괜찮(좋)겠습니까…」
 							PRINTFORMW 스쿠미즈 넘어로%CALLNAME:TARGET%의 소극적인 가슴을 어루만지고 돌렸다
 							PRINTFORMW 간신히 부풀어 오른 앞가슴은 ,  손댈 때마다 포근포근하고 한 감각이 되돌아 온다
 							PRINTFORMW 「…♪　%조사처리(CNAME("二人称"),"가")% 기뻐해 준다면…얼마든지♪」
@@ -3049,7 +3049,7 @@ IF SELECTCOM == 5
 							PRINTFORMW 「우후후 ,  큰 젖가슴으로 좋았습니다 ,  많이 즐겨서 주세요…♪」
 						;빈유
 						ELSEIF TALENT:빈유
-							PRINTFORMW 「%CNAME("二人称")%는…이런 작은 가슴에서도 만족해 줍니까…?」
+							PRINTFORMW 「%조사처리(CNAME("二人称"),"는")%…이런 작은 가슴에서도 만족해 줍니까…?」
 							PRINTFORMW %CALLNAME:TARGET%의 기복이 부족한 가슴은 ,  매끈매끈으로 한 부드러운 감촉을 준다…
 							PRINTFORMW 「♪　그, 그런 상냥한 손대는 방법…♪」
 						ELSE
@@ -6953,7 +6953,7 @@ IF SELECTCOM == 90
 						PRINTFORMW 「주인님의 약한 곳 ,  전부 가르쳐 주세요…♪」
 					;여교사
 					ELSEIF CHECK_SHIRT("여교사") 
-						PRINTFORMW 「여기도 기분이 좋습니까?　%CNAME("二人称")%는 정말로 변태 상이군요…♪」
+						PRINTFORMW 「여기도 기분이 좋습니까?　%조사처리(CNAME("二人称"),"는")% 정말로 변태 상이군요…♪」
 						PRINTFORMW 「괜찮아 ,  상냥하게 가르쳐 줄 테니까 ,  힘을 빼고라고 주세요♪」
 					;巫女
 					ELSEIF CHECK_SHIRT("무녀")
@@ -7884,7 +7884,7 @@ IF SELECTCOM == 95 && PENIS(PLAYER)
 				PRINTFORMW 「다리가 괜찮(좋)겠습니까?　이제(벌써),  %CNAME("二人称")%의 변태♪」
 			;それ以外
 			ELSE
-				PRINTFORMW 「다리로 밟는…아,  %CNAME("二人称")%는 그러한…」
+				PRINTFORMW 「다리로 밟는…아,  %조사처리(CNAME("二人称"),"는")% 그러한…」
 				PRINTFORMW 「아니요 ,  조교의 일관이군요 ,  알았습니다!」
 			ENDIF
 			CFLAG:370 = 1
@@ -8730,7 +8730,7 @@ IF SELECTCOM == 125
 					ENDIF
 				PRINTFORMW %타겟은()% 기학적인 웃는 얼굴을 띄워%CALLNAME:PLAYER%의 어널을 유린하고 있다…
 			ELSE
-				PRINTFORMW 「후훗 ,  엉덩이를 범해지는 %CNAME("二人称")%는 어떤 얼굴을 하는 것입니까」
+				PRINTFORMW 「후훗 ,  엉덩이를 범해지는 %조사처리(CNAME("二人称"),"는")% 어떤 얼굴을 하는 것입니까」
 				PRINTFORMW 「충분히(듬뿍) 관찰시켜 주어요?」
 				PRINTFORMW %타겟은()% 혀인 째를 하면서%CALLNAME:PLAYER%의 어널을 범하고 있다
 				PRINTFORMW 열이 깃들인 시선이%조사처리(CALLNAME:PLAYER,"를")% 가만히 하며  응시하고 있는 것이 안다…
@@ -8743,7 +8743,7 @@ IF SELECTCOM == 125
 				PRINTFORMW 「%조사처리(CNAME("二人称"),"가")% 기분이 좋아져서 준다면 ,  최고입니다♪」
 		;それ以外
 		ELSE
-			PRINTFORMW 「우우 ,  변태군요 %CNAME("二人称")%는…」
+			PRINTFORMW 「우우 ,  변태군요 %조사처리(CNAME("二人称"),"는")%…」
 		ENDIF
 	ENDIF
 	RETURN 1
@@ -9536,7 +9536,7 @@ ELSEIF SELECTCOM == 135
 		PRINTFORMW 「후핫 ,  군침 줄줄이 되어 버렸습니다」
 	;それ以外
 	ELSE
-		PRINTFORMW 「%CNAME("二人称")%는 도착적이네요…」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 도착적이네요…」
 		CFLAG:309 = 1
 	ENDIF
 	RETURN 1
@@ -10368,7 +10368,7 @@ ELSEIF SELECTCOM == 171 && COND("삼림")
 						PRINTFORMW 어슴푸레한 밤의 숲에 목걸이를 입은%타겟을()% 데려 왔다
 						PRINTFORMW 모처럼이므로%CALLNAME:TARGET%에 개와 같이 납죽 엎드려 주는 일로 했다
 						PRINTFORMW 「은 ,  이런 목걸이 붙일 수 있어 ,  개같은 모습…♪」
-						PRINTFORMW 「%CNAME("二人称")%는 나의 해 주었으면 한 일 ,  전부 알아 줍니다」
+						PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 나의 해 주었으면 한 일 ,  전부 알아 줍니다」
 						PRINTFORMW 「빨리, 빠르게 ,  이 암캐로 해 청구서를 해 주세요 …♪」
 					ENDIF
 				ENDIF
@@ -10843,7 +10843,7 @@ IF SELECTCOM == 175
 			ENDIF
 		ELSEIF CHECK_SHIRT("여교사")
 			IF GETBIT(CFLAG:331, 1) == 0
-				PRINTFORMW 「호오 ,  %CNAME("二人称")%는 어른의 매력에 훨씬 옵니까」
+				PRINTFORMW 「호오 ,  %조사처리(CNAME("二人称"),"는")% 어른의 매력에 훨씬 옵니까」
 				PRINTFORMW 타이트 스커트의 여교사 모습으로 , %타겟은()% 요염한 미소를 띄웠다
 				PRINTFORMW 손가락끝에서는 가리켜 막대기를 빙글빙글 돌려 희롱하고 있다
 				PRINTFORMW 「역시 엣찌한 수업을 바램(소원)입니까♪」
@@ -10951,7 +10951,7 @@ IF SELECTCOM == 175
 					PRINTFORMW 「, 오늘은 어떤 격렬한 운동을 하는 것입니까?」
 				ELSE
 					PRINTFORMW 「창녀 정원 수근 잡어인 모습 시키다니…」
-					PRINTFORMW 「%CNAME("二人称")%는 정말로 음란한<하다) 사람이군요♪」
+					PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 정말로 음란한<하다) 사람이군요♪」
 					PRINTFORMW %타겟은()% 그렇게 말하면서 ,  엉덩이를 과시하는 것 같은 포즈를 취하고 있다…
 				ENDIF
 			ELSE
@@ -11013,7 +11013,7 @@ IF SELECTCOM == 175
 			ENDIF
 		ELSEIF CHECK_SHIRT("세라복")
 			IF GETBIT(CFLAG:331, 7) == 0
-				PRINTFORMW 「%CNAME("二人称")%는 로리콘?」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 로리콘?」
 				PRINTFORMW %타겟은()% 지트눈으로 %조사처리(CALLNAME:PLAYER,"를")% 응시하고 있다…
 				SETBIT CFLAG:331, 7
 			;연모
@@ -11048,7 +11048,7 @@ IF SELECTCOM == 175
 					PRINTFORMW 「…아마 ,  3일3밤 걸치면 얌전하게 된다고 생각합니다만…」
 					PRINTFORMW 드러냈다 무녀옷의%CALLNAME:TARGET%의 유혹에 , %조사처리(CALLNAME:PLAYER,"는")% 타지 않을 수 없게 되었다
 				ELSE
-					PRINTFORMW 「%CNAME("二人称")%는 번뇌가 소용돌이치고 계십니다…」
+					PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 번뇌가 소용돌이치고 계십니다…」
 					PRINTFORMW 「내가 책임을 져 진정시켜 드리네요…♪」
 					PRINTFORMW 무녀옷을 입은%타겟은()% ,  솔선해%조사처리(CALLNAME:PLAYER,"를")% 침대까지 불렀다
 				ENDIF
@@ -11161,7 +11161,7 @@ IF SELECTCOM == 175
 				PRINTFORMW 「우와와 ,  이런 모습…!」
 				PRINTFORMW %타겟이()% 입고 있는 것은 ,  언뜻 보면(자) 붉은 리본을 다룬 하얀 레오타드다
 				PRINTFORMW 그러나 가슴과 비부가 노출 하도록옷감이 잘라내지고 있다…
-				PRINTFORMW 「%CNAME("二人称")%는 정말로 취미가 나쁘네요…」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 정말로 취미가 나쁘네요…」
 				SETBIT CFLAG:331, 12
 			;노출벽Lv3이상
 			ELSEIF ABL:노출벽 >= 3
@@ -11178,7 +11178,7 @@ IF SELECTCOM == 175
 				ENDIF
 			ELSE
 				IF RAND:2 == 0
-					PRINTFORMW 「정말로 %CNAME("二人称")%는…여자아이를 부끄러워 무늬 다투는 일에 관해서는 천재적이군요…」
+					PRINTFORMW 「정말로 %조사처리(CNAME("二人称"),"는")%…여자아이를 부끄러워 무늬 다투는 일에 관해서는 천재적이군요…」
 					PRINTFORMW 「 그렇지만 이런 일로 부끄러워가 창녀 실격이군요…!」
 					PRINTFORMW %타겟은()% 이상한 대항 의식을 태워 ,  몸을 숨기지 않고 드러내고 있다
 				ELSE
@@ -11235,7 +11235,7 @@ IF SELECTCOM == 175
 					PRINTFORMW %타겟은()% 양손을 벌려%조사처리(CALLNAME:PLAYER,"를")% 유혹해 왔다…
 				ENDIF
 			ELSE
-				PRINTFORMW 「%CNAME("二人称")%는 어른의 매력이 취향이군요?」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 어른의 매력이 취향이군요?」
 				PRINTFORMW 「건전해 좋아 일이라고 생각합니다♪」
 				PRINTFORMW %타겟은()% 침대 위로부터 윙크와 키스를 날려 왔다
 			ENDIF
@@ -11320,7 +11320,7 @@ IF SELECTCOM == 175
 		;검정いレースをあしらった팬티
 		ELSEIF CHECK_PANTIES("레이스")
 			PRINTFORMW 「어른의 속옷이군요 」
-			PRINTFORMW 「%CNAME("二人称")%는 역시 어른의 여자가 괜찮습니다?」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 역시 어른의 여자가 괜찮습니다?」
 		;하양いフリルつきの팬티
 		ELSEIF CHECK_PANTIES("프릴")
 			PRINTFORMW 「사랑스럽습니다만… 나에게 어울립니까?」
@@ -14306,7 +14306,7 @@ CASE "Ｖ바이브추가구상"
 			PRINTFORMW 「자,  %CNAME("二人称")%, 도…♪」
 		ELSE
 			PRINTFORMW 「우우 ,  아직 이 크기는 익숙해져 있지 않습니다지만…」
-			PRINTFORMW 「%CNAME("二人称")%는 어떻습니까?　괴롭지 않습니까?」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 어떻습니까?　괴롭지 않습니까?」
 		ENDIF
 	;後は大きさで分岐
 	ELSE
@@ -15392,7 +15392,7 @@ ELSEIF TALENT:MASTER:마조 && TALENT:새드 && TALENT:마조 == 0 && CFLAG:2 >=
 	PRINTFORMW 고급 창녀만이 가능한 교묘한 테크닉에 , %조사처리(CALLNAME:PLAYER,"는")%앗이라고 하는 동안에 가버려
 	PRINTFORMW 그러나 한 번이나 두 번의 절정에서 한계를 맞이하는 만큼, %조사처리(CALLNAME:PLAYER,"는")% 야와는 아닌 것이다…
 	PRINTFORMW 「후훗 ,  그토록의 성공을 거두어 ,  그런데도 나의 노예가 되고 싶다니…」
-	PRINTFORMW 「정말로 %CNAME("二人称")%는 진짜 매저키스트이군요♪」
+	PRINTFORMW 「정말로 %조사처리(CNAME("二人称"),"는")% 진짜 매저키스트이군요♪」
 	PRINTFORMW 「바램(소원) 대로 ,  이쪽의 좋아하는 때(시)에 바랄 뿐(만큼) 상대 받아요?」
 	PRINTFORMW 「아,  내일은 나오프의 날이기 때문에 ,  잔뜩 귀여워해 주네요♪」
 	PRINTFORMW 모두의 재산을 던지고 친%조사처리(CALLNAME:PLAYER,"는")% ,  고급 창녀인%CALLNAME:TARGET%의 노예로서 생활하는 것을 바램이다

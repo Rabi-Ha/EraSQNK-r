@@ -4347,7 +4347,7 @@ IF SELECTCOM == 146 && TFLAG:16 == 1
 			PRINTFORMW 「%CNAME("二人称")%에 그렇게 부탁받아. ……좋을 것이다, 알았다」
 		;それ以外
 		ELSE
-			PRINTFORMW 「흥. %CNAME("二人称")%는 변함 없이 좋은 취미를 하고 있구나」
+			PRINTFORMW 「흥. %조사처리(CNAME("二人称"),"는")% 변함 없이 좋은 취미를 하고 있구나」
 		ENDIF
 ELSEIF SELECTCOM == 146 && TFLAG:16 == 1
 	;初めて
@@ -6572,7 +6572,7 @@ CASE "애무"
 	CASE "中"
 		IF PENIS(PLAYER)
 			IF RAND:3 == 0
-				PRINTFORMW 「삽입할 필요 없어, %CNAME("二人称")%는 이것으로 충분하니까」
+				PRINTFORMW 「삽입할 필요 없어, %조사처리(CNAME("二人称"),"는")% 이것으로 충분하니까」
 				IF RAND:2 == 0
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 페니스를 허벅지에 끼워넣어, 보지로 페니스를 덮어씌워왔다…
 				ELSE

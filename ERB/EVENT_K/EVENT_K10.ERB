@@ -2797,7 +2797,7 @@ IF SELECTCOM == 130
 	IF CFLAG:246 == 0
 		;연모
 		IF TALENT:연모
-			PRINTFORMW 「%CNAME("一人称")%,%CNAME("二人称")%는 믿고 있고,%CNAME("二人称")%의 엣치한요정구라면 기꺼이 (들)물어요……」
+			PRINTFORMW 「%CNAME("一人称")%,%조사처리(CNAME("二人称"),"는")% 믿고 있고,%CNAME("二人称")%의 엣치한요정구라면 기꺼이 (들)물어요……」
 			PRINTFORMW 「그렇지만, 그렇지만 말야？……그 평손는 무엇！？」
 		;それ以外
 		ELSE
@@ -3216,7 +3216,7 @@ IF SELECTCOM == 171 && COND("마을")
 			;연모
 			IF TALENT:연모
 				PRINTFORMW 「……괜찮아. 다른몽마하지만 냄새 맡아내 오면,%CNAME("一人称")%하지만 전력으로 쫓아버려요！」
-				PRINTFORMW 「그러니까%CNAME("二人称")%는 안심해……%조사처리(CNAME("一人称"),"를")%……」
+				PRINTFORMW 「그러니까%조사처리(CNAME("二人称"),"는")% 안심해……%조사처리(CNAME("一人称"),"를")%……」
 				PRINTFORMW 「읏, 밖은, 부끄럽지 않앗」
 			;それ以外
 			ELSE
@@ -5820,7 +5820,7 @@ IF SELECTCOM == 91 && TEQUIP:넘어뜨리기 == 0
 			PRINTFORMW 「씩씩한 그것, 통째로 삼킴으로 해 준다……이제(벌써), 초조하게 하지 말고, 빨리 먹여♪」
 		;それ以外
 		ELSE
-			PRINTFORMW 「그것을%CNAME("一人称")%에 빨라고, 그렇게%CNAME("二人称")%는 말해？」
+			PRINTFORMW 「그것을%CNAME("一人称")%에 빨라고, 그렇게%조사처리(CNAME("二人称"),"는")% 말해？」
 			PRINTFORMW 「……바라는 곳♪음마의입음에 허리, 빠뜨리지 말아줘？」
 		ENDIF
 		RETURN 1
@@ -6896,7 +6896,7 @@ CASE "아침펠라"
 CASE "조교後섹스"
 	;V感覚Lv4이상
 	IF ABL:Ｖ감각 >= 4
-		PRINTFORMW 「한로 방울져 떨어지는 고기단지에,%조사처리(CNAME("一人称"),"는")% 불러,%CNAME("二人称")%는 돌진한다……아, 하아」
+		PRINTFORMW 「한로 방울져 떨어지는 고기단지에,%조사처리(CNAME("一人称"),"는")% 불러,%조사처리(CNAME("二人称"),"는")% 돌진한다……아, 하아」
 		PRINTFORMW 「이제(벌써)……성욕의 포로……응후, 쿳, 후우……앙, 좀 더 허리, 흔들어……♪」
 	;それ以外
 	ELSE

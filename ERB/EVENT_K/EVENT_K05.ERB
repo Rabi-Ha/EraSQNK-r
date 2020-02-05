@@ -1336,7 +1336,7 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 			PRINTFORMW %타겟은()% 말없이 스스로를 위로는…
 		;それ以外
 		ELSE
-			PRINTFORMW 「어머나? %CNAME("二人称")%는 보는 것 만으로 좋은거야?」
+			PRINTFORMW 「어머나? %조사처리(CNAME("二人称"),"는")% 보는 것 만으로 좋은거야?」
 		ENDIF
 		CFLAG:224 = 1
 		RETURN 1
@@ -2547,7 +2547,7 @@ ELSEIF SELECTCOM == 31 && TEQUIP:바이브 == 0
 		PRINTFORMW 「아앙,  다음은 %CNAME("二人称")%의 것을…%KOJO_K5_HT()%」
 	;それ以外
 	ELSE
-		PRINTFORMW 「아앙…응? %CNAME("二人称")%는 하고 싶지 않은거야?」
+		PRINTFORMW 「아앙…응? %조사처리(CNAME("二人称"),"는")% 하고 싶지 않은거야?」
 		CFLAG:301 = 1
 	ENDIF
 	RETURN 1
@@ -4485,7 +4485,7 @@ IF SELECTCOM == 65
 						PRINTFORMW 「,  뭘 하는 거야,  벌써, 심술쟁이!」
 						PRINTFORMW %타겟은()% 토라져 버린 것 같다…
 					ELSEIF RAND:2 == 0
-						PRINTFORMW 「후후훗 %KOJO_K5_HT()% %조사처리(CNAME("二人称"),"를")% 가득 사랑해 주는 %KOJO_K5_HT()% %CNAME("二人称")%는 가만히 하고 있어 괜찮으니까요 %KOJO_K5_HT()%」
+						PRINTFORMW 「후후훗 %KOJO_K5_HT()% %조사처리(CNAME("二人称"),"를")% 가득 사랑해 주는 %KOJO_K5_HT()% %조사처리(CNAME("二人称"),"는")% 가만히 하고 있어 괜찮으니까요 %KOJO_K5_HT()%」
 						PRINTFORMW %타겟은()%%CALLNAME:PLAYER%에 지워져 오면, 스스로의 질 입구에 %CALLNAME:PLAYER%의 페니스를 앞…
 						PRINTFORMW 「응…%KOJO_K5_HT()% 하아아%KOJO_K5_HT()% 아앙……,  전부 들어간 원%KOJO_K5_HT()%」
 						PRINTFORMW %조사만처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를 모두질내에 넣었다…
@@ -6273,7 +6273,7 @@ IF SELECTCOM == 92 && CHECK_COM("파이즈리펠라") == 0
 					PRINTFORMW 「가슴으로 하는 거야? 나의 젖가슴은 사이에 두는 것은 무리이지만…」
 				;거유
 				ELSEIF TALENT:거유
-					PRINTFORMW 「가슴으로 하는 거야? %CNAME("二人称")%는 정말, 엣찌군요 %KOJO_K5_HT()%」
+					PRINTFORMW 「가슴으로 하는 거야? %조사처리(CNAME("二人称"),"는")% 정말, 엣찌군요 %KOJO_K5_HT()%」
 				;普乳
 				ELSE
 					PRINTFORMW 「가슴으로 하는 거야? %CNAME("二人称")%,  바뀌었다고 말해지지 않아?」
@@ -8226,7 +8226,7 @@ IF TEQUIP:관장 && SELECTCOM == 136
 			;それ以外
 			ELSE
 				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 어널에 관장을 꽉 눌렀다…
-				PRINTFORMW 「 벌써,  %CNAME("二人称")%는 정말 취미가 너무 나빠요!」
+				PRINTFORMW 「 벌써,  %조사처리(CNAME("二人称"),"는")% 정말 취미가 너무 나빠요!」
 				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %타겟을()% 억누르면서 장내에 관장을 넣어 갔다…
 				PRINTFORMW 「히아아%KOJO_K5_HT()% 차가운 %KOJO_K5_HT()%」
 				PRINTFORMW 모두 넣고 끝내면, 강렬한 복통이%타겟을()% 덮쳤다…
@@ -8253,7 +8253,7 @@ IF TEQUIP:관장 && SELECTCOM == 136
 				PRINTFORMW %타겟은()% 장내에 들어 오는 관장을 미소로 받아들이고 있다…
 			;それ以外
 			ELSE
-				PRINTFORMW 「하아, %CNAME("二人称")%는 정말 취미가 너무 나빠요 …」
+				PRINTFORMW 「하아, %조사처리(CNAME("二人称"),"는")% 정말 취미가 너무 나빠요 …」
 				PRINTFORMW %타겟은()% 기가 막히고 있다…
 				PRINTFORMW 상관하지 않고%조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 장내에 관장을 넣어 갔다…
 			ENDIF
@@ -8906,14 +8906,14 @@ IF SELECTCOM == 148
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「…!, 끝났어…?」
-			PRINTFORMW 「응…%KOJO_K5_HT()% 벌써, 이런 엣찌한곳에 붙이다니 %CNAME("二人称")%는 정말 음란하구나 %KOJO_K5_HT()%」
+			PRINTFORMW 「응…%KOJO_K5_HT()% 벌써, 이런 엣찌한곳에 붙이다니 %조사처리(CNAME("二人称"),"는")% 정말 음란하구나 %KOJO_K5_HT()%」
 			PRINTFORMW %타겟은()%%LOCALS%에 장착된 피어스 바라봐 수줍은 것 같은 곤란한 것 같은 얼굴을 하고 있다…
 			PRINTFORMW 「 벌써, 이런 상처 물건으로 되면 다른 사람이 사랑해 주다니 무리이니까 %KOJO_K5_HT()%」
 			PRINTFORMW 「책임, 취해 주세요?」
 		;それ以外
 		ELSE
 			PRINTFORMW 「…!, 끝났어…?」
-			PRINTFORMW 「응…%KOJO_K5_HT()% 벌써, 이런 엣찌한곳에 붙이다니 %CNAME("二人称")%는 정말 음란하구나 %KOJO_K5_HT()%」
+			PRINTFORMW 「응…%KOJO_K5_HT()% 벌써, 이런 엣찌한곳에 붙이다니 %조사처리(CNAME("二人称"),"는")% 정말 음란하구나 %KOJO_K5_HT()%」
 		ENDIF
 		CFLAG:429 = 1
 	;二回目以降
@@ -8943,7 +8943,7 @@ IF SELECTCOM == 148
 			;それ以外
 			ELSE
 				PRINTFORMW 「응…!, 끝났어…?」
-				PRINTFORMW 「응…%KOJO_K5_HT()% 벌써, 이런 엣찌한곳에 붙이다니 %CNAME("二人称")%는 정말 음란하구나 %KOJO_K5_HT()%」
+				PRINTFORMW 「응…%KOJO_K5_HT()% 벌써, 이런 엣찌한곳에 붙이다니 %조사처리(CNAME("二人称"),"는")% 정말 음란하구나 %KOJO_K5_HT()%」
 				PRINTFORMW %타겟은()%%LOCALS%에 장착된 피어스를 바라봐 수줍은 것 같은 곤란한 것 같은 얼굴을 하고 있다…
 			ENDIF
 		;取り外し
@@ -11389,7 +11389,7 @@ CASE "사정했다"
 			ELSE
 				;반발각인Lv3
 				IF MARK:반발각인 == 3
-					PRINTFORMW 「%CNAME("二人称")%는, 나의 아이임신는 엣」
+					PRINTFORMW 「%조사처리(CNAME("二人称"),"는")%, 나의 아이임신는 엣」
 				;연모
 				ELSEIF TALENT:연모
 					;새드끼Lv3이상
