@@ -223,7 +223,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	RETURN 1
 ;연모+호감도3000이상+연모구상が発生済み
 ELSEIF GETBIT(CFLAG:201, 30) == 0 && GETBIT(CFLAG:201, 4) && CFLAG:2 >= 3000 && TALENT:연모
-	PRINTFORMW 「그런데,  %CNAME("二人称")%는 신님을 믿습니까?」
+	PRINTFORMW 「그런데,  %조사처리(CNAME("二人称"),"는")% 신님을 믿습니까?」
 	DRAWLINE
 	PRINTFORML [0] 끄덕한다
 	PRINTFORML [1] 머리를 흔든다
@@ -239,7 +239,7 @@ ELSEIF GETBIT(CFLAG:201, 30) == 0 && GETBIT(CFLAG:201, 4) && CFLAG:2 >= 3000 && 
 		ENDIF
 	ELSEIF RESULT == 0
 		PRINTFORMW 「다행이야」
-		PRINTFORMW 「그럼,  %CNAME("二人称")%는 %조사처리(CNAME("一人称"),"가")% 수호 해 주는」
+		PRINTFORMW 「그럼,  %조사처리(CNAME("二人称"),"는")% %조사처리(CNAME("一人称"),"가")% 수호 해 주는」
 		PRINTFORMW 「쿡♪반드시 좋은 일이 있어요 ♪」
 		PRINTFORMW 
 		IF ABL:PLAYER:기교 < NUM("최대레벨", 2)
@@ -1779,7 +1779,7 @@ IF SELECTCOM == 35 && TEQUIP:니플캡
 			PRINTFORMW 「후아아! 젖가슴……기분…입니다 …♪」
 		;それ以外
 		ELSE
-			PRINTFORMW 「%CNAME("二人称")%는 여러가지 가지고 있네요∼♪」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 여러가지 가지고 있네요∼♪」
 		ENDIF
 		CFLAG:234 = 1
 		RETURN 1
@@ -2484,7 +2484,7 @@ IF SELECTCOM == 90
 					PRINTFORMW 「이 안에 모여 있는 불끈, 풀짜 주네요 ♪」
 					PRINTFORMW %타겟은()% 옥대에 손을 더해나 원이나 원과 비비는 대로라고 온다…
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 「%CNAME("二人称")%는, %CNAME("一人称")%의 비비어 유 보고를 아주 좋아하는」
+					PRINTFORMW 「%조사처리(CNAME("二人称"),"는")%, %CNAME("一人称")%의 비비어 유 보고를 아주 좋아하는」
 					PRINTFORMW 「%CNAME("二人称")%의 여기, 조금 잡아 드린 것만으로 깜짝 깜짝 뛰고 있어요  ♪」
 					PRINTFORMW 「,  참지 말고 기분 좋게있어요 ♪」
 				ELSE
@@ -3525,7 +3525,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 		;それ以外
 		ELSE
 			PRINTFORMW 「알몸의 여자아이를 촬영하고 기뻐하는이라니……」
-			PRINTFORMW 「%CNAME("二人称")%는 곤란한 취미를 가지고 있네요」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 곤란한 취미를 가지고 있네요」
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -3755,7 +3755,7 @@ ELSEIF SELECTCOM == 171 && COND("화원")
 					PRINTFORMW 「아? 무리하고 먹지 않아도…상냥하지요♪」
 				ELSEIF RESULT == 0
 					PRINTFORMW 「다행이야♪」
-					PRINTFORMW 「그럼,  %CNAME("二人称")%는 또 노력해 만들네요 ♪」
+					PRINTFORMW 「그럼,  %조사처리(CNAME("二人称"),"는")% 또 노력해 만들네요 ♪」
 					PRINTFORMW 「쿡♪맛있다는 마법의 말이랍니다♪」
 				ENDIF
 			ELSE
@@ -4768,7 +4768,7 @@ IF SELECTCOM == 176
 	;それ以外
 	ELSE
 		PRINTFORMW 「,  실마리……와♪」
-		PRINTFORMW 「%CNAME("二人称")%는 엎드려 누워 기분 좋게 되고 있는 것만으로 좋아요 ♪」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 엎드려 누워 기분 좋게 되고 있는 것만으로 좋아요 ♪」
 		PRINTFORMW 「후후♪」
 	ENDIF
 ENDIF

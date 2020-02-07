@@ -84,7 +84,7 @@ ELSEIF GETBIT(CFLAG:201, 0) == 0 && BASE:몇번째 == 3
 	PRINTFORMW 「와이~☆드디어 나의 차례구나☆」
 	PRINTFORMW 자들로부터 여러가지 이야기를 듣고 있던 것 같다…
 	PRINTFORMW %타겟은()% 기대 가득%CALLNAME:MASTER%로 얽혀 붙는다
-	PRINTFORMW 「%CNAME("二人称")%는 내 것인데…언니들도 참 쓸데없는 노력을 좋아하는 것 같다♪」
+	PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 내 것인데…언니들도 참 쓸데없는 노력을 좋아하는 것 같다♪」
 	PRINTFORMW 작은 악마의 미소로 자들을 업신여긴다
 	PRINTFORMW %마스터는()% 가볍게%CALLNAME:TARGET%의 머리를 찔렀다
 	PRINTFORMW 「아얏☆무우~뭐 해∼？」
@@ -328,7 +328,7 @@ IF BASE:몇번째 == 1
 		IF CFLAG:279
 			;반감を持たせ처녀상실
 			IF TALENT:쾌감을부정
-				PRINTFORMW 「%CNAME("二人称")%는………」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"는")%………」
 				PRINTFORMW 「싫다! 싫다!………매우 싫다!」
 				PRINTFORMW 「 벌써 모르는 걸!………흥」
 				PRINTFORMW 첫날밤에 실패한%마스터는()%, 단지 사과할 것 밖에 할 수 없었다…
@@ -716,7 +716,7 @@ IF SELECTCOM == 2 && BASE:몇번째 == 1
 	ELSE
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
-			PRINTFORMW 「이나, 싫어! 싫은,  %CNAME("二人称")%는 매우 싫다!」
+			PRINTFORMW 「이나, 싫어! 싫은,  %조사처리(CNAME("二人称"),"는")% 매우 싫다!」
 		;それ以外
 		ELSE
 			;연모
@@ -954,7 +954,7 @@ IF SELECTCOM == 5 && BASE:몇번째 == 1
 		;연모
 		ELSEIF TALENT:연모
 			CALL KOJO_AEGI_97_33_0
-			PRINTFORMW 「후훗♪………%CNAME("二人称")%는 상냥한………」
+			PRINTFORMW 「후훗♪………%조사처리(CNAME("二人称"),"는")% 상냥한………」
 			PRINTFORMW 「젖가슴, 이렇게 작아도 귀여운이 라고 주다는…☆」
 		;B감각Lv3이상
 		ELSEIF ABL:Ｂ감각 >= 3
@@ -1647,7 +1647,7 @@ IF SELECTCOM == 60
 							PRINTFORMW 「이 감각……싫지 않은, ……♪」
 						ELSE
 							PRINTFORMW 「응………새근…………」
-							PRINTFORMW 「……%CNAME("二人称")%는, 기분……좋아?」
+							PRINTFORMW 「……%조사처리(CNAME("二人称"),"는")%, 기분……좋아?」
 							PRINTFORMW 「……그런가, 으응……나도, 느껴…」
 							PRINTFORMW 「좋아하게…………,  움직여…………새근……」
 						ENDIF

@@ -515,7 +515,7 @@ ELSEIF COND("욕구불만") && COND("욕구불만", ASSI)
 	PRINTL
 	PRINTFORMW 「저질렀다%CALLNAME:ASSI%, 칭찬해 보내겠어」
 	PRINTFORMW 천천히 관의 뚜껑이 열려, %타겟이()% 모습을 나타낸다. 관안에 있는 것은 맞고 있었지만, 아무래도 자고 있던 것은 아닌 것 같다……
-	PRINTFORMW 「후훈, 놀랐는지？뭐, 아무래도 최근%CNAME("二人称")%는 %CNAME("一人称")%들의 일을 소홀히 하고 있는 것 같은 것으로 말야」
+	PRINTFORMW 「후훈, 놀랐는지？뭐, 아무래도 최근%조사처리(CNAME("二人称"),"는")% %CNAME("一人称")%들의 일을 소홀히 하고 있는 것 같은 것으로 말야」
 	PRINTFORMW 「……아무튼, 단순하게 바빠서%CNAME("一人称")%들에게 상관하고 있을 수 없는 것뿐인지도 모르겠지만……」
 	PRINTFORMW 「하지만%CNAME("一人称")%들도, 이미 이 신체의 욱신거림을 억제할 수 없는 것이다……! 각오 해 받겠어, %CNAME("二人称")%! 」
 	PRINTL
@@ -4265,7 +4265,7 @@ IF CHECK_COM("파후파후손훑기")
 		ELSE
 			IF COND("모유마시기플래그", PLAYER)
 				IF TALENT:PLAYER:외견연령 <= 1
-					PRINTFORMW 「아휴,%CNAME("二人称")%는 아직 젖떼기가 되어 있지 않는 것인지？」
+					PRINTFORMW 「아휴,%조사처리(CNAME("二人称"),"는")% 아직 젖떼기가 되어 있지 않는 것인지？」
 					PRINTFORMW 「후훈,\@ PLAYER == MASTER ? 조교師などと名乗っても #  \@결국은 아이다！」
 				ELSEIF SIZE("페니스", PLAYER) == 0 && COND("포경", PLAYER)
 					PRINTFORMW 「완전히, 젖가슴을 마시고 싶어해요, 자지는 작아서 벗겨지지 않아요……」
@@ -7569,7 +7569,7 @@ IF SELECTCOM == 104
 				IF TALENT:빈유
 					;☆MASTERが빈유好き
 					IF GETBIT(TALENT:PLAYER:성벽, 23) && PLAYER == MASTER
-						PRINTFORMW 「……무엇이다%CNAME("二人称")%는 , 기쁜 듯한얼굴을 해 따라……」
+						PRINTFORMW 「……무엇이다%조사처리(CNAME("二人称"),"는")% , 기쁜 듯한얼굴을 해 따라……」
 						PRINTFORMW 「후, 보통는 좀 더 큰가슴그리고 되는 편이 기쁜 것이 아닌 것인지! ？」
 					ELSE
 						PRINTFORMW 「무, 가슴하지만 작기 때문이라고 해 경시하지 마! %CNAME("一人称")%에 걸리면, %CNAME("二人称")%마다 나무에 쾌감을 준다 따위 용이한 일인 것이다! 」
@@ -7583,7 +7583,7 @@ IF SELECTCOM == 104
 					;☆MASTERが빈유好き
 					IF GETBIT(TALENT:PLAYER:성벽, 23) && PLAYER == MASTER
 						PRINTFORMW 「%CNAME("一人称")%의가슴그리고 이런 일을 되어, 기쁜듯이 한다고는……｣
-						PRINTFORMW 「완전히, %CNAME("二人称")%는 구제할 길 없는 녀석이다」
+						PRINTFORMW 「완전히, %조사처리(CNAME("二人称"),"는")% 구제할 길 없는 녀석이다」
 					ELSE
 						PRINTFORMW 「%CNAME("一人称")%에 이런 일을 명한다고는……짖궂음인가？｣
 					ENDIF
@@ -15959,7 +15959,7 @@ IF PENIS(PLAYER)
 ;☆ちんこ無し
 ELSE
 	PRINTFORMW 「%CNAME("二人称")%의 치태,%CNAME("一人称")%하지만 차분히 바라봐 주자」
-	PRINTFORMW 「쿠쿡,%CNAME("二人称")%는 신경쓰지 않고 마음껏 흐트러지는 것이 좋다……」
+	PRINTFORMW 「쿠쿡,%조사처리(CNAME("二人称"),"는")% 신경쓰지 않고 마음껏 흐트러지는 것이 좋다……」
 ENDIF
 BASE:PLAYER:절정 += 5000
 ;☆폭발

@@ -1076,7 +1076,7 @@ IF SELECTCOM == 4
 				PRINTFORMW 
 			;연모
 			ELSEIF TALENT:연모
-				PRINTFORMW 「%CNAME("二人称")%는 육 창의 취급도 알아 있는 것이군요」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 육 창의 취급도 알아 있는 것이군요」
 				PRINTFORMW 「네…%CNAME("二人称")%의 입…%CNAME("一人称")%,  기대해 버립니다…」
 			;それ以外
 			ELSE
@@ -2802,7 +2802,7 @@ IF SELECTCOM == 65
 		IF CFLAG:356 == 0
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 「,  후우…지금은,  %조사처리(CNAME("一人称"),"가")% 선도하는…%CNAME("二人称")%는 편하게 하고 있어 주세요」
+				PRINTFORMW 「,  후우…지금은,  %조사처리(CNAME("一人称"),"가")% 선도하는…%조사처리(CNAME("二人称"),"는")% 편하게 하고 있어 주세요」
 				PRINTFORMW 「%CNAME("二人称")%에 가르쳐 준 기술로 ,  하아 ,  …힘껏 ,  대접 할테니까」
 			;それ以外
 			ELSE
@@ -3162,7 +3162,7 @@ IF SELECTCOM == 75
 			;연모
 			IF TALENT:연모
 				PRINTFORMW 「뒤의 구멍입니다만…,  %CNAME("二人称")%…당신이라면」
-				PRINTFORMW 「…후아…%CNAME("二人称")%는 편하게 해…%조사처리(CNAME("一人称"),"가")% 이끄는 대로 쾌락을 맛봐 주세요」
+				PRINTFORMW 「…후아…%조사처리(CNAME("二人称"),"는")% 편하게 해…%조사처리(CNAME("一人称"),"가")% 이끄는 대로 쾌락을 맛봐 주세요」
 			;それ以外
 			ELSE
 				PRINTFORMW 「뒤의 구멍입니다만…,  실례합니다」
@@ -3462,11 +3462,11 @@ IF CHECK_COM("파후파후손훑기")
 					PRINTFORMW 「응…후우,%CNAME("二人称")%에 수유 품질, 육창[肉槍]의 주선까지 하도록 해 받을 수 있다니…후후, 매우 영광입니다」
 					PRINTFORMW 「…이대로,%CNAME("一人称")%의 모유로%조사처리(CNAME("二人称"),"를")% 육창[肉槍] 다 같이, 훌륭하게 추잡하게 길러 드립니다…」
 				ELSE
-					PRINTFORMW 「후후…%CNAME("一人称")%의 모유를 열심히 들이마신다%CNAME("二人称")%는 마치 아이와 같이 사랑스럽네요」
+					PRINTFORMW 「후후…%CNAME("一人称")%의 모유를 열심히 들이마신다%조사처리(CNAME("二人称"),"는")% 마치 아이와 같이 사랑스럽네요」
 					PRINTFORMW 「손안의 육창[肉槍]은 이렇게 씩씩해서, 추잡하다%CNAME("二人称")%인 채인데…하아, 멋집니다」
 				ENDIF
 			ELSE
-				PRINTFORMW 「후후…눈가득 응석부려 주시는,  %CNAME("二人称")%는 매우 사랑스럽다…」
+				PRINTFORMW 「후후…눈가득 응석부려 주시는,  %조사처리(CNAME("二人称"),"는")% 매우 사랑스럽다…」
 				PRINTFORMW 「 그렇지만 육 창 쪽은 뜨겁고 ,  씩씩하고 ,  강한 %CNAME("二人称")%그대로…하아 ,  멋집니다」
 			ENDIF
 		;봉사정신Lv3이상
@@ -4154,7 +4154,7 @@ IF SELECTCOM == 97
 		IF CFLAG:358 == 0
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 「%CNAME("二人称")%는 좋아하지요,  %CNAME("一人称")%의 속옷…후후 ,  얼마든지 짜 취해 드립니다」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 좋아하지요,  %CNAME("一人称")%의 속옷…후후 ,  얼마든지 짜 취해 드립니다」
 			;それ以外
 			ELSE
 				PRINTFORMW 「당신도 좋아했지요 로부터 ,  속옷으로 육 창의 손질을 하겠습니다」
@@ -4371,7 +4371,7 @@ IF SELECTCOM == 100
 				PRINTFORMW 「%CNAME("一人称")%,  이대로는…,  하아…가능하다면 ,  %CNAME("二人称")%도 함께…」
 			ELSE
 				PRINTFORMW 「하아…,  수영복이나 그것을 몸에 대는 신체까지 ,  성기가 되어 버린 것 같습니다」
-				PRINTFORMW 「이러한 쾌락까지 가르쳐 받을 수 있다니 %CNAME("二人称")%는 정말로 훌륭한 (분)편…」
+				PRINTFORMW 「이러한 쾌락까지 가르쳐 받을 수 있다니 %조사처리(CNAME("二人称"),"는")% 정말로 훌륭한 (분)편…」
 			ENDIF
 		;봉사정신Lv3이상
 		ELSEIF ABL:봉사정신 >= 3
@@ -4689,7 +4689,7 @@ IF SELECTCOM == 126
 			IF MARK:반발각인 == 3
 				PRINTFORMW 
 			ELSEIF TALENT:연모
-				PRINTFORMW 「후후…설마 ,  이러한 명령도 해 주시다니…정말로 %CNAME("二人称")%는…」
+				PRINTFORMW 「후후…설마 ,  이러한 명령도 해 주시다니…정말로 %조사처리(CNAME("二人称"),"는")%…」
 				PRINTFORMW 「그러면,  %CNAME("一人称")%의 육 창 ,  %조사처리(CNAME("二人称"),"를")% 위해 마음껏 털게 해 잘 먹겠습니다」
 			ELSE
 				PRINTFORMW 「…당신이 오라고 말한다면…따를 때까지입니다」
@@ -4713,7 +4713,7 @@ IF SELECTCOM == 126
 					PRINTFORMW 「후후, 다음은 좀 더 격렬하게 해 갈 것이니까…%CNAME("一人称")%의 육창[肉槍]으로 선도할테니까…하아, 무서워하지 않고 몸을 맡겨 주세요」
 					PRINTFORMW 충분히애널하지만 풀려 오면,%타겟은()% 일전, 격렬하고 강력한 공격으로애널의 안쪽 깊게까지를 쾌락으로 정옷해 갔다
 				ELSE
-					PRINTFORMW 「하아 ,  …하앗…%CNAME("二人称")%는 ,  느껴 주시고 있습니까?」
+					PRINTFORMW 「하아 ,  …하앗…%조사처리(CNAME("二人称"),"는")% ,  느껴 주시고 있습니까?」
 					PRINTFORMW 「%조사처리(CNAME("二人称"),"를")% 채우는 육창[肉槍]의 쾌감…그리고,%조사처리(CNAME("二人称"),"과")% 이렇게 해 1개가 되었다%CNAME("一人称")%의 고조됨을…」
 					PRINTFORML 지워지도록(듯이) 해 밀착하는 신체 ,  귓전으로 들리는 뜨거운 숨결 ,  그리고 격렬하게 어널에 찔러 붐비어지는%CALLNAME:TARGET%의 페니스…
 					PRINTFORMW 의식할 정도로,%CALLNAME:TARGET%의 육창[肉槍]의 존재감과 거기로부터 태어나는 치욕 섞임의 쾌감에 의식이 풀어져 간다
@@ -6273,7 +6273,7 @@ IF SELECTCOM == 175
 					SETBIT CFLAG:331, 2
 				ELSE
 					PRINTFORML 「예쁜 것(정도)만큼 더럽혀 ,  정복 해 버리고 싶어진다…」
-					PRINTFORMW 「……%CNAME("二人称")%는 자주(잘) 알고 계십니다」
+					PRINTFORMW 「……%조사처리(CNAME("二人称"),"는")% 자주(잘) 알고 계십니다」
 					PRINTFORMW 흐트러진 기모노 모습으로 가로놓이는 모습은 언제보다 더 요염함을 자아내고 있었다
 				ENDIF
 			ELSEIF CHECK_SHIRT("메이드복")
@@ -6300,7 +6300,7 @@ IF SELECTCOM == 175
 					PRINTFORMW 「그러면 ,  그 긴장된 육 창 ,  간호하네요」
 					SETBIT CFLAG:331, 5
 				ELSE
-					PRINTFORML 「그러면 ,  진찰을 시작하는…%CNAME("二人称")%는 누워,  %CNAME("一人称")%에 맡겨주세요」
+					PRINTFORML 「그러면 ,  진찰을 시작하는…%조사처리(CNAME("二人称"),"는")% 누워,  %CNAME("一人称")%에 맡겨주세요」
 					PRINTFORMW 「…%조사처리(CNAME("二人称"),"가")% 나쁜 곳은 ,  어디일까요……여기…그렇지 않으면…」
 					PRINTFORML %CALLNAME:TARGET%의 손이 느긋하게 신체를 어루만지고 성감을 흥분시켜라고 간다
 					PRINTFORMW 그 손가락끝은 우뚝 솟는 페니스 뿐만이 아니라 ,  유두나 항문에까지 성장해 왔다
@@ -6326,11 +6326,11 @@ IF SELECTCOM == 175
 			ELSEIF CHECK_SHIRT("무녀")
 				IF GETBIT(CFLAG:331, 8) == 0
 					PRINTFORML 「이국의 성직자 ,  무녀의 의상…이국의 지식에 대해서는 서먹합니다만…꽤에 관심이 많네요」
-					PRINTFORMW 「그리고,  %CNAME("二人称")%는 그 무녀를 더럽 해 보고 싶다 , 라고…더욱 더 흥미롭습니다…」
+					PRINTFORMW 「그리고,  %조사처리(CNAME("二人称"),"는")% 그 무녀를 더럽 해 보고 싶다 , 라고…더욱 더 흥미롭습니다…」
 					SETBIT CFLAG:331, 8
 				ELSE
 					PRINTFORML 「순수한 것(정도)만큼 ,  더럽 해서,  정복 해 버리고 싶어진다…」
-					PRINTFORMW 「……역시,  %CNAME("二人称")%는 잘 알고 계십니다」
+					PRINTFORMW 「……역시,  %조사처리(CNAME("二人称"),"는")% 잘 알고 계십니다」
 				ENDIF
 			ELSEIF CHECK_SHIRT("베이비돌")
 				IF GETBIT(CFLAG:331, 9) == 0
@@ -6730,7 +6730,7 @@ IF SELECTCOM == 280
 	IF TEQUIP:넘어뜨리기 == 0
 		IF TALENT:연모
 			IF RAND:2 == 0
-				PRINTFORMW 「,  힘이 부족해서 짐 해 버렸어요…후후 ,  팥밥 있고 %CNAME("二人称")%는 멋집니다」
+				PRINTFORMW 「,  힘이 부족해서 짐 해 버렸어요…후후 ,  팥밥 있고 %조사처리(CNAME("二人称"),"는")% 멋집니다」
 			ELSE
 				PRINTFORMW 「…좀 더 ,  꾸짖어 보고 싶었습니다만…%CNAME("二人称")%의 명령이라면 어쩔 수 없겠네요」
 			ENDIF
@@ -7725,7 +7725,7 @@ ELSEIF SHOOT("안면기승")
 		IF RAND:2 == 0
 			PRINTFORMW 「후훗…%CNAME("一人称")%의 거기는 마음에 드셨습니까,  %CNAME("二人称")%?」
 		ELSE
-			PRINTFORMW 「얼굴에 거기를 꽉 눌려 절정 해 버린다고는,  %CNAME("二人称")%는 귀엽네요……후후후」
+			PRINTFORMW 「얼굴에 거기를 꽉 눌려 절정 해 버린다고는,  %조사처리(CNAME("二人称"),"는")% 귀엽네요……후후후」
 		ENDIF
 	;굴복각인Lv3
 	ELSEIF MARK:굴복각인 == 3
@@ -8225,7 +8225,7 @@ CASE "매각した"
 		PRINTFORMW 
 	;연모
 	ELSEIF TALENT:연모
-		PRINTFORMW 「%CNAME("二人称")%는 ,  그 때 에 대해서 기억하고 계십니까?」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% ,  그 때 에 대해서 기억하고 계십니까?」
 		PRINTFORMW 「………」
 		PRINTFORMW 「……그렇, 습니까」
 		PRINTFORMW 「괜찮습니다,  %조사처리(CNAME("一人称"),"는")% 당신의 것…」

@@ -8020,7 +8020,7 @@ IF SELECTCOM == 160
 					PRINTFORMW 페니스를 더듬어 위로하고 있다…
 				ENDIF
 			ELSE
-				PRINTFORMW 「저기, 빨리%CNAME("一人称")%에도 %조수처리(CNAME("조수"),"와")% \@ TALENT:MASTER:남자 == 0 ? %조사처리(CNAME("二人称"),"를")% #  \@엣치하게 해줘♪」
+				PRINTFORMW 「저기, 빨리 %CNAME("一人称")%에도 %조사처리(CNAME("조수"),"와")% \@ TALENT:MASTER:남자 == 0 ? %조사처리(CNAME("二人称"),"를")% #  \@엣치하게 해줘♪」
 				PRINTFORMW 기다리고 있는 것이 계속 참을 수 없게 된 %타겟은()% 두 명을 반찬으로 자위하기 시작했다…
 			ENDIF
 			EXP:자위경험 += 1
@@ -12764,11 +12764,11 @@ CASE "조수に抜擢"
 				CASE "애무・봉사지식"
 					PRINTFORMW 「%CNAMET(ARG, "一人称")%의 테크닉에 맡겨」
 				CASE "지도능숙"
-					PRINTFORMW 「%(CNAMET(ARG, "一人称"),"가")% 손수 가르쳐 준닷」
+					PRINTFORMW 「%조사처리(CNAMET(ARG, "一人称"),"가")% 손수 가르쳐 준닷」
 				CASE "ＳＭ지식"
 					;새드끼が4이상
 					IF ABL:새드끼 > 3
-						PRINTFORMW 「%(CNAMET(ARG, "一人称"),"가")% 마조노예의 기쁨을 맛보게 해 준다…」
+						PRINTFORMW 「%조사처리(CNAMET(ARG, "一人称"),"가")% 마조노예의 기쁨을 맛보게 해 준다…」
 					ENDIF
 				CASE "Ａ조교지식"
 					PRINTFORMW 「엉덩이의 좋은 점…%조사처리(CNAMET(ARG, "一人称"),"이")% 제일 알고 있어…♪」

@@ -84,7 +84,7 @@ ENDIF
 IF CHECK_COM("좌우니플퍽")
 	;同じ커맨드の組み合わせで連続実行
 	IF SELECTCOM:2 == PREVCOM:2 && SELECTCOM == PREVCOM
-		PRINTFORM %조사처리(CALLNAME:PLAYER,"와")% %(CALLNAME:(PLAYER:1),"는")%
+		PRINTFORM %조사처리(CALLNAME:PLAYER,"와")% %조사처리(CALLNAME:(PLAYER:1),"는")%
 		IF RAND:4 == 0
 			PRINTFORM 내부의 점막을 쓸어올리면서 
 		ELSEIF RAND:3 == 0
