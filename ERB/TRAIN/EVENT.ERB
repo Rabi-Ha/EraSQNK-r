@@ -79,7 +79,7 @@ PRINTFORM  [ 1]～[{FLAG:255, 2}]
 IF FLAG:247 && FLAG:247 <= FLAG:255
 	PRINTFORML 항상ＬＶ{FLAG:247}
 ELSE
-	PRINTFORML 0～{FLAG:255}까지의 범위에서 입력했다ＬＶ그리고 고정한다
+	PRINTFORML 0～{FLAG:255}까지의 범위에서 입력한 ＬＶ으로 고정
 ENDIF
 PRINTFORML  [91] \@ CONFIG("레벨리미터：－10ＬＶ") ? ○ # － \@ 상대의ＬＶ－10
 PRINTFORML  [92] \@ CONFIG("레벨리미터：－５ＬＶ") ? ○ # － \@ 상대의ＬＶ－５
@@ -163,7 +163,7 @@ IF TALENT:정액에약함 == 0
 	CALL CALC, "정액에약함", TARGET
 	;소질を得た
 	IF TALENT:정액에약함
-		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 정액을 몇번이나 받아들이는 사이에, 
+		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 정액을 몇 번이나 받아들이는 사이에, 
 		SELECTCASE TALENT_NAME(49, TALENT:정액에약함)
 		CASE "정음에약함"
 			PRINT 정액을 마시는 것
@@ -174,7 +174,7 @@ IF TALENT:정액에약함 == 0
 		CASE "유内사정에약함"
 			PRINT 니플퍽 중에 사정당하는 것
 		CASE "요도内사정에약함"
-			PRINT 요도를 범해지면서사정되는 일
+			PRINT 요도를 범해지면서 사정되는 것
 		ENDSELECT
 		PRINTFORMW 으로 쾌락을 얻는 몸이 되어버린 것 같다…
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
@@ -187,7 +187,7 @@ ELSE
 	LOCAL = TALENT:정액에약함
 	CALL CALC, "정액에약함部位の変化", TARGET
 	IF TALENT:정액에약함 != LOCAL
-		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 정액을 몇번이고 받아들이는 사이에, 
+		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 정액을 몇 번이고 받아들이는 사이에, 
 		SELECTCASE TALENT_NAME(49, TALENT:정액에약함)
 		CASE "정음에약함"
 			PRINT 정액을 마시는 것
@@ -198,7 +198,7 @@ ELSE
 		CASE "유内사정에약함"
 			PRINT 니플퍽 중에 사정당하는 것
 		CASE "요도内사정에약함"
-			PRINT 요도를 범해지면서사정되는 일
+			PRINT 요도를 범해지면서 사정되는 것
 		ENDSELECT
 		PRINTFORMW 으로 쾌락을 얻는 몸이 되어버린 것 같다…
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
@@ -260,11 +260,11 @@ IF ASSI
 	IF BASE:ASSI:종족 == 3
 		IF TALENT:ASSI:상위몽마 && ITEM:라벤더 < 99
 			PRINTL 
-			PRINTFORMW %CALLNAME:ASSI%로부터라벤더를 받았습니다.
+			PRINTFORMW %CALLNAME:ASSI%로부터 라벤더를 받았습니다.
 			ITEM:라벤더 += 1
 		ELSEIF ITEM:재스민 < 99
 			PRINTL 
-			PRINTFORMW %CALLNAME:ASSI%로부터재스민를 받았습니다.
+			PRINTFORMW %CALLNAME:ASSI%로부터 재스민를 받았습니다.
 			ITEM:재스민 += 1
 		ENDIF
 	ENDIF
