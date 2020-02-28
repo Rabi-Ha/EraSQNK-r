@@ -54,24 +54,24 @@ IF TALENT:작은몸집
 ;初조교時 CFLAG201
 ;-------------------------------------------------
 ELSEIF GETBIT(CFLAG:201, 0) == 0
-	PRINTFORMW 매직 스퀘어의 푸른 빛남안에 실루엣이 떠오른다…
-	PRINTFORMW 에르다사큐바스───가장 강대한 마력을 가지는 몽마의 일종……그 중에서 한층 더 강대한 힘을 가지는 모룬 자매
-	PRINTFORML 그 모룬 자매의 언니이며, 몽마들의 리더인 %CALLNAME:TARGET%·모룬이 빛중에서 그 모습을 나타냈다…
-	PRINTFORMW 「어머나, 여기는……후후, 혹시, 당신에게 환 발각되었는지..…?」
-	PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 젖은 것 같은 요염한 눈동자가, %마스터를()% 마치 평가라도 하는것 같이 보고 있다…
-	PRINTFORMW 「후후……과연, 이 나를 조교……? 쿡쿡, 할 수 있을까, 당신에게?」
-	PRINTFORMW 그렇게 말하고, %타겟은()%%CALLNAME:MASTER%의 뺨을 어루만져 온다…
+	PRINTFORMW 마법진의 푸른 빛안에 실루엣이 떠오른다…
+	PRINTFORMW 엘더 서큐버스───가장 강대한 마력을 가지는 몽마의 일종……그 중에서 한층 더 강대한 힘을 가지는 모룬 자매
+	PRINTFORML 그 모룬 자매의 언니이며, 몽마들의 리더인 %CALLNAME:TARGET%·모룬이 빛 안에서 그 모습을 나타냈다…
+	PRINTFORMW 「어머나, 여기는……후후, 혹시, 당신에게 소환되었는지..…?」
+	PRINTFORMW %CALLNAME:TARGET%의 젖은 것 같은 요염한 눈동자가, %마스터를()% 마치 평가라도 하는 것 같이 보고 있다…
+	PRINTFORMW 「후후……과연, 이 몸을 조교……? 쿡쿡, 할 수 있을까, 당신이?」
+	PRINTFORMW 그렇게 말하고, %타겟은()% %CALLNAME:MASTER%의 뺨을 어루만져 온다…
 
 	SELECTCASE ABL:ＬＶ - ABL:MASTER:ＬＶ + (ABL:기교 - ABL:MASTER:기교)*3
 	;10LV차
 	CASE IS >= 10
-		PRINTFORMW 그것만으로, 미숙한%CALLNAME:MASTER%의 척추를 공포와도 환희라고도 붙지 않는 것이 달려 빠짐……무심코, 신체를 떨리게 해 버린다…
-		PRINTFORMW 「어머나…당신 떨고 있는 거야? 위세의 좋은 것을 말했다고 생각하면…귀여운 아이」
+		PRINTFORMW 그것만으로, 미숙한 %CALLNAME:MASTER%의 척추를 공포와도 환희하고도 같지 않는 것이 스친다…… 무의식적으로, 몸이 떨린다…
+		PRINTFORMW 「어머나…당신 떨고 있는 거야? 기세 좋은 것을 말했지만…귀여운 아이구나」
 		PRINTFORMW 「후후…그렇게 무서워하지 않아도 좋아요」
-		PRINTFORMW 「상냥하게……후후, 상냥하게 봐주는 것 해 줄 테니까 ,?」
+		PRINTFORMW 「상냥하게……후후, 상냥하게 봐 줄 테니까 ,?」
 		PRINTFORML 
 		SETCOLOR DEF_COLOR("노랑")
-		PRINTFORMW 에스트님이 당분간의 유예를 받았습니다!
+		PRINTFORMW 에스트님의 당분간의 유예를 받았습니다!
 		RESETCOLOR
 		PRINTFORML 
 		CFLAG:9 = 1
@@ -79,24 +79,24 @@ ELSEIF GETBIT(CFLAG:201, 0) == 0
 		MARK:기분 = 1
 	;５LV차
 	CASE IS >= 5
-		PRINTFORMW 에르다사큐바스의 압도적인 존재감에 %마스터는()% 압도되어 버릴 것 같게 되지만, 그것을 기력으로 어떻게든 누르고 붐빈다
-		PRINTFORMW 「후후, 귀여운 아이. 손질하고는 있지만……나의 상대가 감당해낼까?」
-		PRINTFORMW 「어디까지 할 수 있을까 시험해 주는…후후, 실망, 시키지 않도록?」
+		PRINTFORMW 엘더 서큐버스의 압도적인 존재감에 %마스터는()% 압도되어 버릴 것 같게 되지만, 그것을 기력으로 어떻게든 누르고 버틴다
+		PRINTFORMW 「후후, 귀여운 아이. 버텨내고는 있지만……나를 상대해낼까?」
+		PRINTFORMW 「어디까지 할 수 있을까 시험해 준다…후후, 실망, 시키지 않도록?」
 		PRINTFORML 
 		SETCOLOR DEF_COLOR("노랑")
-		PRINTFORMW 에스트님이 조금만 유예를 받았습니다!
+		PRINTFORMW 에스트님의 어느정도의 유예를 받았습니다!
 		RESETCOLOR
 		PRINTFORML 
 		CFLAG:9 = 1
 		SETBIT CFLAG:201, 31
 		MARK:기분 = 1
 	CASEELSE
-		PRINTFORMW 그러나, %마스터는()% 유혹을 정말이지 뜻에 개좌도, 그 손을 가볍게 뿌리친다…
+		PRINTFORMW 그러나, %마스터는()% 유혹을 개의치 않고, 그 손을 가볍게 뿌리친다…
 		PRINTFORMW %타겟과()% 같이 말을 자르는 몽마는 많이 있었지만, 결국은……
-		PRINTFORMW 그렇게, 상대가 에르다사큐바스라고 해도, 몽마는 몽마다. 무서워할 정도의 것은 아니다.
+		PRINTFORMW 그렇게, 상대가 엘더 서큐버스라고 해도, 몽마는 몽마다. 무서워할 정도의 것은 아니다.
 		PRINTFORMW 「어머나, 의외로 여유 듬뿍, 인가 ..…?」
-		PRINTFORMW 「그렇다면 그 당신의 자랑의 농간, 듬뿍 볼까요……후후, 기대에 못미치지 않으면 좋지만…」
-		PRINTFORMW 「글쎄, 즐기게 해……당신의 꿈을……?」
+		PRINTFORMW 「그렇다면 그 당신의 자랑의 솜씨, 듬뿍 봐 볼까요……후후, 기대에 못미치지 않으면 좋지만…」
+		PRINTFORMW 「자, 즐겁게 해줘……당신의 꿈을……응?」
 	ENDSELECT
 	CALL U_LOVE
 	SETBIT CFLAG:201, 0
@@ -109,7 +109,7 @@ ELSEIF MARK:반발각인 == 3
 ;コドモ→おとな
 ELSEIF GETBIT(CFLAG:201, 40)
 	PRINTFORMW 「어머나, 역시 이쪽의 신체가 좋아하는 것일까요?」
-	PRINTFORMW 문을 열면, %CALLNAME:TARGET%의 요염한 미소가%마스터를()% 마중나갔다…
+	PRINTFORMW 문을 열면, %CALLNAME:TARGET%의 요염한 미소가 %마스터를()% 마중나갔다…
 	PRINTFORMW 「후후, 정말이지 당신라고 사치군요…」
 	;빈유から폭유に
 	CALL CALC, "폭유化", TARGET
@@ -118,24 +118,24 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	;MASTERビビリLV2
 	IF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「오세요」
-		PRINTFORMW 문을 열면, %타겟은()% 요염한 미소로%마스터를()% 맞이했다…
+		PRINTFORMW 문을 열면, %타겟은()% 요염한 미소로 %마스터를()% 맞이했다…
 		PRINTFORMW 그것만으로, 공포와도 환희라고도 붙지 않는 자극이 전류와 같이 척추를 달려 빠져 몸이 떨려 버린다…
 		PRINTFORML 
 		PRINTFORMW 「쿡쿡쿡……그 얼굴, 오싹오싹 해버리는……정말, 사랑스러운 것 같은 아이」
-		PRINTFORMW 「,  언제나 같이 나를 즐겁게 해 정대……나를 지루 시키지 않게,?」
+		PRINTFORMW 「,  언제나 같이 나를 즐겁게 해 주세요……나를 지루하게 만들지 않고,?」
 		PRINTFORML 
 		SETCOLOR DEF_COLOR("노랑")
-		PRINTFORMW 에스트님이 아직 약간의 유예를 단지 차는 것 같다!
+		PRINTFORMW 에스트님이 아직 약간의 유예를 주시는 것 같다!
 		RESETCOLOR
 		PRINTFORML 
 	;MASTERビビリLV1
 	ELSEIF GETBIT(CFLAG:201, 31)
 		PRINTFORMW 「오세요, 기다리고 있어요」
-		PRINTFORMW 문을 열면, %CALLNAME:TARGET%의 요염한 미소가%마스터를()% 마중나갔다…
+		PRINTFORMW 문을 열면, %CALLNAME:TARGET%의 요염한 미소가 %마스터를()% 마중나갔다…
 		PRINTFORML 
 		PRINTFORMW 「후후, 당신……꽤 좋아요. 여기까지는 합격…기대 이상이야」
-		PRINTFORMW %타겟은()% 스르르 하고%CALLNAME:MASTER%의 목으로 손을 돌리면, 딱하고이마와 액을 교제하게 해 온다…
-		PRINTFORMW 가까이 보는%CALLNAME:TARGET%의 얼굴은 숨을 감출 만큼 아름답고, 그리고, 콧구멍을 간질이는 음미한  향기는 순식간에 이성을 녹일 수 있어 가는…
+		PRINTFORMW %타겟은()% 스르륵 %CALLNAME:MASTER%의 목에 손을 감고, 똑똑 이마와 이마를 맞대온다…
+		PRINTFORMW 가까이 보는 %CALLNAME:TARGET%의 얼굴은 숨을 감출 만큼 아름답고, 그리고, 콧구멍을 간질이는 음미한 향기는 순식간에 이성을 녹여간다…
 		PRINTFORMW 「 그렇지만, 언제까지라도 당신만이라고 하는 것은 교활해요……오늘부터는, 후후, 나에게도 즐기게 해……?」
 		PRINTFORMW 아무래도 좋아하게 시켜 줄 수 있는 것은 여기까지인 것 같다…여기에서는 각오를 결정해 조교에 착수하지 않으면 안 될 것이다
 		PRINTFORML 
@@ -148,13 +148,13 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	ELSE
 		PRINTFORMW 방에 들어가면, 왜 그래 일인가, %CALLNAME:TARGET%의 모습이 없다
 		PRINTFORMW 설마, 도망갔어……?
-		PRINTFORMW 아니, 상대는인가의%CALLNAME:TARGET%·모룬이라고 해도, 그렇게 손쉽게 도망갈 것은…
+		PRINTFORMW 아니, 상대는 그 %CALLNAME:TARGET%·모룬이라고 해도, 그렇게 손쉽게 도망갈 것은…
 		PRINTFORML 
-		PRINTFORMW 곤혹하는%CALLNAME:MASTER%의 귀에 숨을 내뿜을 수 있다
-		PRINTFORMW 놀라 되돌아 보면, 어느 사이에인가 거기에%조사처리(CALLNAME:TARGET,"가")% 서 있었다
+		PRINTFORMW 당황하는 %CALLNAME:MASTER%의 귀에 숨이 내뿜어진다
+		PRINTFORMW 놀라 되돌아 보면, 어느 사이에인가 거기에 %조사처리(CALLNAME:TARGET,"가")% 서 있었다
 		PRINTFORMW %타겟은()% 쿡쿡하고 웃고 있다……
 		PRINTFORML 
-		PRINTFORMW 「글쎄, 오늘도 즐겁게 해 정대」
+		PRINTFORMW 「자, 오늘도 즐겨주세요」
 	ENDIF
 	CALL U_LOVE
 	SETBIT CFLAG:201, 1
@@ -163,17 +163,17 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	;MASTERビビリLV2
 	IF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「후후……오늘도 왔네. 기다리고 있어요」
-		PRINTFORMW 문을 열면, %CALLNAME:TARGET%의 요염한 미소가%마스터를()% 마중나갔다…
-		PRINTFORMW 서로 양보해 온%CALLNAME:TARGET%에 뺨을 어루만질 수 있어%마스터는()% 무심코 뒷걸음질쳐 버리는…여기까지는, 평소의 광경이다
+		PRINTFORMW 문을 열면, %CALLNAME:TARGET%의 요염한 미소가 %마스터를()% 마중나갔다…
+		PRINTFORMW 서로 양보해 온  %CALLNAME:TARGET%에 뺨을 어루만져져 %마스터는()% 무심코 뒷걸음질쳐 버렸다…여기까지는, 평소의 광경이다
 		PRINTFORML 
 		PRINTFORMW 「어떨까, 후후, 슬슬 조교에도 익숙해져 왔어?」
-		PRINTFORMW 익숙해지고도 아무것도, 라고 말해 걸쳤더니%CALLNAME:TARGET%의 손가락이%CALLNAME:MASTER%의 입술을 차지해 버린다…
+		PRINTFORMW 익숙해지고도 아무것도, 라고 말해 걸쳤더니 %CALLNAME:TARGET%의 손가락이 %CALLNAME:MASTER%의 입술을 차지해 버린다…
 		PRINTFORMW 「말은 필요하지 않아요……대답은, 당신에게 조교되고 있는 내가 제일 잘 알고 있으니까…」
 		PRINTFORMW %CALLNAME:TARGET%의 손가락이, 입술을 나누어, %CALLNAME:MASTER%의 입속 안으로 비집고 들어가 온다…
-		PRINTFORMW 그 뱅어와 같은 손가락은 종횡에 %CALLNAME:MASTER%의 입안을 유린해, 혀를 잡아 마치 예의 범절을 하는것 같이 희롱해 온다…
-		PRINTFORMW 그렇게, 그것은 마치【조교】와 같이……
+		PRINTFORMW 그 뱀과 같은 손가락은 이곳저곳 %CALLNAME:MASTER%의 입안을 유린해, 혀를 잡아 마치 예의를 가르치는 것 같이 희롱해 온다…
+		PRINTFORMW 그렇게, 그것은 마치 【조교】와 같이……
 		PRINTFORMW 「후후, 여전히 좋은 얼굴을 하군요…사실, 귀여운 아이」
-		PRINTFORMW , 라고 뽑아 내진 손가락과%CALLNAME:MASTER%의 입술과의 사이에 타액이 실을 당긴다…
+		PRINTFORMW , 라고 뽑아 낸 손가락과 %CALLNAME:MASTER%의 입술과의 사이에 타액이 실을 당긴다…
 		PRINTFORMW 「 그렇지만, 언제까지라도 당신만, 라고 하는 것은 교활해요……이니까 오늘부터는, 후후……나도 즐기게 해 주어요」
 		PRINTFORML 
 		SETCOLOR DEF_COLOR("노랑")
@@ -201,27 +201,27 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 탐욕과 몰입에 몰아내듯이 속삭임을 ,
 	PRINTFORMW 뇌까지 범하는 것 같은 불쾌를 맛보게 해
 	PRINTFORMW 즐거움의 정점에 밀어 올리듯이 애무를 입에 물어 온다……
-	PRINTFORM 방의 주인은 %마스터를()% 맞아들이듯이 손을 넓혀 위에서 내려 온다
-	PRINTFORMW 와%CALLNAME:MASTER%에 팔을 걸어 입술을 거듭해 왔다…
+	PRINTFORM 방의 주인은 %마스터를()% 맞아들이듯이 손을 넓혀 위에서 내려 오는 
+	PRINTFORMW %CALLNAME:MASTER%에 팔을 걸어 입술을 거듭해 왔다…
 	PRINTFORMW 「쪽……%KOJO_RAND_48_2("키스")%」
 	PRINTFORMW 입술을 거듭해 맞출 뿐이었던 것이, 곧바로 혀를 서로 걸어, 서로의 입안을, 타액을 탐내는 격렬한 것으로 변해간다…
 	PRINTFORMW 「,  쪽……,  ……,  는…………♪」
-	PRINTFORMW %마스터는()%, 눈동자를 정욕에 물들인%CALLNAME:TARGET%에 그대로 침대 위로 밀어 넘어뜨려져 버린다…
+	PRINTFORMW %마스터는()%, 눈동자를 정욕에 물들인 %CALLNAME:TARGET%에 그대로 침대 위로 밀어 넘어뜨려져 버린다…
 	;손대중してもらっていた
 	IF GETBIT(CFLAG:201, 32)
 		;MASTERビビリLV2
 		IF GETBIT(CFLAG:201, 30)
-			PRINTFORMW 「……설마, 당신에게 여기까지 되어버린다는…♪ 후후, 굉장(대단)한 것이예요…이것은, 그 포상…♪」
-			PRINTFORMW %타겟은()%%CALLNAME:MASTER%의 위에 말타기가 되면, 정열적으로 입술을 거듭해 온다…
+			PRINTFORMW 「……설마, 당신에게 여기까지 되어버린다는…♪ 후후, 대단한 것이예요…이것은, 그 포상…♪」
+			PRINTFORMW %타겟은()% %CALLNAME:MASTER%의 위에 말타듯 올라타고, 정열적으로 입술을 거듭해 온다…
 		;MASTERビビリLV1
 		ELSE
 			PRINTFORMW 「조금, 경시해 타카시등…? 후후……이 나를 포로로 해버린다는…」
-			PRINTFORMW %타겟은()%%CALLNAME:MASTER%의 위에 말타기가 되어, %마스터를()% 요구하듯이 입술을 거듭해 온다…
+			PRINTFORMW %타겟은()% %CALLNAME:MASTER%의 위에 말타듯 올라타고, %마스터를()% 요구하듯이 입술을 거듭해 온다…
 		ENDIF
 	;손대중してもらっていない
 	ELSE
 		PRINTFORMW 「…후후후……당신, 멋져요…♪ 나를, 이렇게까지 흐트러지게 하다는…♪」
-		PRINTFORMW 의치, 라고 침대를 삐걱거리게 해%CALLNAME:MASTER%의 위에 말타기가 된%타겟은()%, 다 억제할 수 있지 않게 된 욕망에 자극을 받듯이 다시 입술을 거듭해 온다…
+		PRINTFORMW 치걱, 라고 침대를 삐걱거리게 하며 %CALLNAME:MASTER%의 위에 말타듯 올라탄 %타겟은()%, 다 억제할 수 있지 않게 된 욕망에 자극을 받듯이 다시 입술을 거듭해 온다…
 	ENDIF
 	PRINTFORMW 「쪽……%KOJO_RAND_48_2("키스")%, 오늘도 당신의 손으로…후후, 나를 즐겁게 하며…♪」
 	CALL U_LOVE
@@ -232,14 +232,14 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 방에 들어 온%CALLNAME:MASTER%의 모습을 인정해 침대에 앉고 있는%조사처리(CALLNAME:TARGET,"가")% 상냥하게 미소지었다…
 	PRINTFORMW 「설마, 후후, 이 내가 마음까지 허락해버린다는」
 	PRINTFORMW %CALLNAME:TARGET%의 미소에 수줍은 것 같은 색이 더해져, %마스터는()% 곤혹해 버린다…
-	PRINTFORMW 처음으로 보는, 에르다사큐바스의 가면을 벗어 던진, %CALLNAME:TARGET%의 소녀와 같이 순진한 모.
+	PRINTFORMW 처음으로 보는, 엘더 서큐버스의 가면을 벗어 던진, %CALLNAME:TARGET%의 소녀와 같이 순진한 모습.
 	PRINTFORMW 「곤란하게 되었네요, 이런 것 익숙해지지 않기 때문에……어떻게 말하면 괜찮은 것일까요?」
 	PRINTFORMW %타겟은()% 가슴에 손을 맞히면서, 주저하는 것 같은 행동을 보이고…살그머니 그 말을 입에 했다.
 	PRINTFORMW 「좋아해요, 사랑하고 있다…♪ 후후, 진부하구나, 말로 해 버리면. 그러니까…」
-	PRINTFORMW %타겟은()% 조용히 침대에서 일어서면, 스르르 하고 의복을 마루에 떨어뜨려, 아름다운 전라를 쬐면%CALLNAME:MASTER%의 신체를 그 팔에 안아…
+	PRINTFORMW %타겟은()% 조용히 침대에서 일어서면, 스르르 하고 의복을 마루에 떨어뜨려, 아름다운 전라를 보여주며 %CALLNAME:MASTER%의 신체를 그 팔에 안아…
 	PRINTFORMW 「글쎄, 나의 기분, 지금부터 당신에게 가르쳐 준다…♪」
-	PRINTFORMW 귓전으로 달고 속삭이면서입술을 거듭해 왔다…
-	PRINTFORMW 에르다사큐바스, 에스트·모룬……아무도 들여다 본 적이 없는 그녀의 마음중을, 얼마나 엿볼 수가 있는 것일까?
+	PRINTFORMW 귓전으로 달고 속삭이면서 입술을 거듭해 왔다…
+	PRINTFORMW 엘더 서큐버스, 에스트·모룬……아무도 들여다 본 적이 없는 그녀의 마음 속을, 얼마나 엿볼 수가 있는 것일까?
 	PRINTFORMW %마스터는()% 단 키스의 맛에 빠질 것 같게 되면서, 멍하니 그런 것을 생각하고 있었다…
 	CALL U_LOVE
 	SETBIT CFLAG:201, 4
@@ -249,15 +249,15 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	SETBIT CFLAG:201, 32
 ;음란
 ELSEIF GETBIT(CFLAG:201, 5) == 0 && TALENT:음란
-	PRINTFORMW %CALLNAME:TARGET%의 방을 방문하면, 언제나 대로의 음란한 카오루가%마스터를()% 마중나갔다…
-	PRINTFORMW 그러나, 왜 그래 일인가 거기에 있어야할%CALLNAME:TARGET%의 모습이 없다…
-	PRINTFORMW 설마당황하는%CALLNAME:MASTER%였지만, 갑자기 방을 싸는 음미한  향기가 강하게 된 것인가라고 생각하면…뒤로부터 불쑥 성장해 온 손에 부축할 수 있어 버립니다…
+	PRINTFORMW %CALLNAME:TARGET%의 방을 방문하면, 언제나 대로의 음란한 카오루가 %마스터를()% 마중나갔다…
+	PRINTFORMW 그러나, 왜 그래 일인가 거기에 있어야할 %CALLNAME:TARGET%의 모습이 없다…
+	PRINTFORMW 설마 당황하는 %CALLNAME:MASTER%였지만, 갑자기 방을 싸는 음미한 향기가 강하게 된 것 같다라고 생각하면…뒤로부터 불쑥 성장해 온 손에 부축할 수 있어 버립니다…
 	PRINTFORMW 「후후, 늦었지 않아…기다리고 있었어요?」
 	PRINTFORMW %타겟은()%%CALLNAME:MASTER%의 귓전으로 새가 시끄럽게 우는 것, 옷의 틈새로부터 피부로 손가락을 헛디딜 수 있어 옵니다…
-	PRINTFORMW 「정말이지……굉장한 물건이군요. 환나왔을 때는 상당히 재미있는 농담을 말하는 것이라고 생각하고 있었지만…」
+	PRINTFORMW 「정말이지……굉장한 물건이군요. 소환되었을 때는 상당히 재미있는 농담을 말하는 것이라고 생각하고 있었지만…」
 	PRINTFORM %CALLNAME:TARGET%의 손은
 	IF TALENT:MASTER:남자
-		PRINTFORM 남녀의 구별 등 사소한 일과 같이%CALLNAME:MASTER%의 가슴에 성장해 승부에서 이기는 일의 앞을 살그머니 손가락으로 굴려,
+		PRINTFORM 남녀의 구별 등 사소한 일과 같이 %CALLNAME:MASTER%의 가슴에 성장해 승부에서 이기는 일의 앞을 살그머니 손가락으로 굴려,
 	ELSE
 		IF TALENT:MASTER:거유
 			PRINTFORM %CALLNAME:MASTER%의 풍부한 가슴을 들어 올리듯이 희롱해, 상냥하게, 때에 강하게 비비어 납라고 ,
@@ -289,15 +289,15 @@ ELSEIF GETBIT(CFLAG:201, 5) == 0 && TALENT:음란
 	BASE:MASTER:절정 += MAXBASE:MASTER:절정*2
 	CALL BOUHATSU
 	IF PENIS(MASTER)
-		PRINTFORMW %CALLNAME:MASTER%의 페니스는%CALLNAME:TARGET%의 손안으로 격렬하게 날뛰어 기세 좋게 정자를 놓아 끝냅니다…!
+		PRINTFORMW %CALLNAME:MASTER%의 페니스는 %CALLNAME:TARGET%의 손안으로 격렬하게 날뛰어 기세 좋게 정자를 놓아 끝냅니다…!
 		PRINTFORMW 그리고%CALLNAME:TARGET%의 손은 더욱더 멈추지 않고, 장대를 잡아당겨, 정액과 함께, %CALLNAME:MASTER%의 이성마저도 짜 취해 가겠습니다…
 	ELSE
 		PRINTFORMW %마스터는()% 무릎을 흔들흔들하고 떨리게 해%CALLNAME:TARGET%에 체중을 맡기면서, 강렬한 쾌락에 몸을 맡겨 버립니다…
 		PRINTFORMW %CALLNAME:TARGET%의 손가락은 더욱더 멈추지 않고, 절정에 수축하는 질벽을 손가락으로 비틀어 열어%CALLNAME:MASTER%의 이성을 소 나무이고라고 가겠습니다…
 	ENDIF
 	PRINTFORMW 「후후……,  함께 저속해져 갑시다…? 깊고 감미로운 쾌락의 바닥에……♪」
-	PRINTFORMW %마스터는()% 절정에 안개가 걸린 머리로%CALLNAME:TARGET%의 말을 되새김 해, 그대로 공포와도 환희라고도 붙지 않는 것이 등골을 빠져 나간 것을 느낍니다…
-	PRINTFORMW 에르다사큐바스, 그 안에서도 강대한 마력을 가지는%CALLNAME:TARGET%·모룬……그 그녀가 부르는, 쾌락의 바닥. 그것은 얼마나 달고, 깊은 것일 것이다…?
+	PRINTFORMW %마스터는()% 절정에 안개가 걸린 머리로 %CALLNAME:TARGET%의 말을 되새김 해, 그대로 공포와도 환희라고도 붙지 않는 것이 등골을 빠져 나간 것을 느낍니다…
+	PRINTFORMW 엘더 서큐버스, 그 안에서도 강대한 마력을 가지는 %CALLNAME:TARGET%·모룬……그 그녀가 부르는, 쾌락의 바닥. 그것은 얼마나 달고, 깊은 것일 것이다…?
 	PRINTFORMW 그리고───
 	PRINTFORML 
 	PRINTFORML 과연 자신은, 그 쾌락의 바닥을 지켜볼 때까지 자신을 잃지 않고 있을 수 있을까?
@@ -394,7 +394,7 @@ ELSEIF TALENT:음란
 	ELSE
 		PRINTFORMW 저기,  빨리 즐깁시다?」
 	ENDIF
-	PRINTFORMW 눈동자를 정욕으로 적신%CALLNAME:TARGET%의 미향이%마스터를()% 유혹해 옵니다…
+	PRINTFORMW 눈동자를 정욕으로 적신 %CALLNAME:TARGET%의 미향이 %마스터를()% 유혹해 옵니다…
 	;一定확률で誘惑に負ける（에스트の욕망と당신の욕망の合計値に依存）
 	IF ABL:욕망 + ABL:MASTER:욕망 > RAND:25
 		PRINTFORMW %마스터는()%%CALLNAME:TARGET%의 유혹에 항선이었습니다…!
@@ -3211,7 +3211,7 @@ IF SELECTCOM == 92
 			;봉사정신Lv3이상
 			ELSEIF ABL:봉사정신 >= 3
 				PRINTFORMW 「젖가슴으로 하고 갖고 싶은거야? 후훗♪ 좋아요, 해 준다…♪」
-				PRINTFORMW 「에르다사큐바스의 기유, 듬뿍 맛보세요♪」
+				PRINTFORMW 「엘더 서큐버스의 기유, 듬뿍 맛보세요♪」
 			;それ以外
 			ELSE
 				PRINTFORMW 「나의 가슴으로 하고 갖고 싶은거야? 일부러 부탁하다니 기특한 사람이네」
@@ -9630,7 +9630,7 @@ FOR LOCAL, 0, ARG
 			CASE 45
 				LOCALS = %LOCALS%읏, ㅏ, 하아앙……
 			CASE 44
-			
+
 				LOCALS = %LOCALS%하아읏, 응……
 			CASE 43
 				LOCALS = %LOCALS%응쿳, 크…으…
