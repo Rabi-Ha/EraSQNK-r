@@ -56,7 +56,7 @@ IF TALENT:작은몸집
 ELSEIF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 매직 스퀘어의 푸른 빛남안에 실루엣이 떠오른다…
 	PRINTFORMW 에르다사큐바스───가장 강대한 마력을 가지는 몽마의 일종……그 중에서 한층 더 강대한 힘을 가지는 모룬 자매
-	PRINTFORML 그 모룬 자매의언니이며, 몽마들의 리더인%CALLNAME:TARGET%·모룬이 빛중에서 그 모습을 나타냈다…
+	PRINTFORML 그 모룬 자매의 언니이며, 몽마들의 리더인 %CALLNAME:TARGET%·모룬이 빛중에서 그 모습을 나타냈다…
 	PRINTFORMW 「어머나, 여기는……후후, 혹시, 당신에게 환 발각되었는지..…?」
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 젖은 것 같은 요염한 눈동자가, %마스터를()% 마치 평가라도 하는것 같이 보고 있다…
 	PRINTFORMW 「후후……과연, 이 나를 조교……? 쿡쿡, 할 수 있을까, 당신에게?」
@@ -2338,7 +2338,7 @@ IF SELECTCOM == 36 && TEQUIP:착유기
 			TEQUIP:착유기 = 0
 		;음란
 		ELSEIF TALENT:음란
-			PRINTFORMW 「어머나 사육주씨, 젖짜기의시간그럴까…♪」
+			PRINTFORMW 「어머나 사육주씨, 젖짜기의 시간그럴까…♪」
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「이제(벌써)…이런 기계가 아니고당신노손그리고 짰으면 좋은데…♪」
@@ -2437,7 +2437,7 @@ IF SELECTCOM >= 60 && SELECTCOM <= 69 && FIRSTCOMS("Ｖ삽입") == 0 && TALENT:�
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 신체를 찢는 것 같은아픔에신체를 비틀게 하면서, %조사처리(CALLNAME:PLAYER,"를")% 날카롭게 노려보고 있다…
 			;보통이하
 			ELSE
-				PRINTFORMW 「읏쿠…우……내가아픔에 몸부림치는 모습을 보는 것이, 읏…그렇게 즐거운 것일까…？」
+				PRINTFORMW 「읏쿠…우…… 내가 아픔에 몸부림치는 모습을 보는 것이, 읏…그렇게 즐거운 것일까…？」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 냉혹한 눈동자로 날카롭게 노려보고 있다…
 			ENDIF
 		ELSE
@@ -2479,29 +2479,33 @@ IF SELECTCOM == 60
 	IF CFLAG:237 == 0
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
-			PRINTFORMW 
+			PRINTFORMW 「그, 더러운 물건으로 읏! 움직이지 맛!」
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「본격적인 게임을 하고 싶은 거야?」
+			PRINTFORMW 「좋아, 오도록 해. 부디 날 즐겁게 해줘.」
+			PRINTFORMW 「하앗, 하앙, 으읏! 기분이… 좋을 리가, 앙♪」
 		;それ以外
 		ELSE
-			PRINTFORMW 
+			PRINTFORMW 「앙, 하…앙…, 으앗! 아, 아…하, 아♪」
 		ENDIF
 		CFLAG:237 = 1
 	;二回目以降
 	ELSE
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
-			PRINTFORMW 
+			PRINTFORMW 「감히 난폭하게 허리를 움직이다니 이런 발칙한! 아앗!」
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「안쪽에 쿵쿵하고 오고 있어♡」
+			PRINTFORMW 「기분 좋아, 정말 좋아♡ 아앙, 앗, 아아앙♡」
+			PRINTFORMW 「이대로 안에 내는 거지? 그런 거지?」
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
-			PRINTFORMW 
+			PRINTFORMW 「이건 반칙이야, 으읏…!」
 		;それ以外
 		ELSE
-			PRINTFORMW 
+			PRINTFORMW 「움직이지 말아줘… 그렇게 흔들면 안… 아으읏!」
 		ENDIF
 	ENDIF
 	RETURN 1
@@ -2518,10 +2522,13 @@ IF SELECTCOM == 61
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「뒤를 노리는 거군요. 좋아, 오도록 하세요♡」
+			PRINTFORMW 「아아♡ 어쩜 이렇게 격렬할 수가 있단 말인가아♡」
+			PRINTFORMW 「아읏, 앗, 좀 더♡ 하으읏♡」
 		;それ以外
 		ELSE
-			PRINTFORMW 
+			PRINTFORMW 「야만스러운 자세긴 하지만… 이래봬도 주요 체위 중 하나야.」
+			PRINTFORMW 「뭐, 설명은 됐고, 일단 오렴. 놀아줄게.」
 		ENDIF
 		CFLAG:238 = 1
 	;二回目以降
@@ -2531,10 +2538,11 @@ IF SELECTCOM == 61
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「많이 쌓인 모양이네♡ 격렬해서 너무 굉장해♡」
+			PRINTFORMW 「하앙, 좀 더 찔러줫♡ 날 기분좋게 만들어줘어♡」
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
-			PRINTFORMW 
+			PRINTFORMW 「그렇게 세게 움직이면, 가버려…」
 		;それ以外
 		ELSE
 			PRINTFORMW 
@@ -2554,7 +2562,8 @@ IF SELECTCOM == 62
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「추잡스러운 자세… 두근두근 해♪」
+			PRINTFORMW 「그래, 좋을대로 해줘. 마음껏 엉망친창으로 범해줘♡」
 		;それ以外
 		ELSE
 			PRINTFORMW 
@@ -2567,7 +2576,8 @@ IF SELECTCOM == 62
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「그래… 그거얏♡ 아래로 푹푹 찍는거얏♡ 으앙♡」
+			PRINTFORMW 「하아, 하아… 히야아아아앙♡♡」
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 
@@ -2590,7 +2600,8 @@ IF SELECTCOM == 63
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「당신의 애절한 얼굴을 이렇게나 가까이서 볼 수 있다니 꿈만 같아♡」
+			PRINTFORMW 「자, 함께 행복해지자♡」
 		;それ以外
 		ELSE
 			PRINTFORMW 
@@ -2603,7 +2614,8 @@ IF SELECTCOM == 63
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「쩌업…♡ 츄릅…쩝…어때, 내 입술?」
+			PRINTFORMW 「힘껏, 앙♪ 허리…흔들 테니까…부디 기분좋아지도록…해……하읏!」
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 
@@ -2627,7 +2639,9 @@ IF SELECTCOM == 64
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「어라라? 이러면 당신의 멋진 모습을 보기 힘들어지잖아♡」
+			PRINTFORMW 「뭐, 서로 사랑하는 우리들 사이에 그런 장애는 아무 것도 아니지만…」
+			PRINTFORMW 「그럼 허리 움직일…게……흐읏♡」
 		;それ以外
 		ELSE
 			PRINTFORMW 
@@ -2640,7 +2654,9 @@ IF SELECTCOM == 64
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「내 움직임만으론 부족…해……하앗♡ 당신도 허리를 흔들어…히양♡」
+			PRINTFORMW 「정말 좋아♡ 정말 좋아해♡」
+			PRINTFORMW 「키스……하자♡ 츕♡♡」
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 
@@ -2661,7 +2677,8 @@ IF SELECTCOM == 65
 		IF CFLAG:356 == 0
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「내 밑에 깔린 감상은 어때♡ 정말 색다르지?」
+				PRINTFORMW 「지금부터 황홀경을 보여줄게, 기대해♡」
 			;それ以外
 			ELSE
 				PRINTFORMW 
@@ -2671,7 +2688,18 @@ IF SELECTCOM == 65
 		ELSE
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 
+				IF RAND:3 == 0
+					PRINTFORMW 「당신, 내 모습, 예쁘지?」
+					PRINTFORMW 「사랑하는 당신만을 위한 내 댄스, 마음껏 봐줘♡」
+				ELSEIF RAND:2 == 0
+					PRINTFORMW 「히야앙…앙♡ 읏,읏,으으읏!」
+					PRINTFORMW 「들어와…느껴져, 안쪽 깊숙히 큥큥 오고 있어어♡」
+					PRINTFORMW 「내 질이, 당신의 모양이 되어 가♡」
+				ELSE
+					PRINTFORMW 「흐읏… 하앙♡ 기분…정말 좋아♡」
+					PRINTFORMW 「좀 더 네가 기뻐할 수 있도록 마음껏 허리 흔들게♡」
+				ENDIF
+				PRINTFORMW 「사랑…해♡ 정말 좋아해, 달링♡♡」
 			;굴복각인Lv2이상
 			ELSEIF MARK:굴복각인 >= 2
 				PRINTFORMW 
@@ -2686,10 +2714,12 @@ IF SELECTCOM == 65
 		IF CFLAG:245 == 0
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
-				PRINTFORMW 
+				PRINTFORMW 「큿… 억지로 허리를 내리게 하고선!」
 			;연모
 			ELSEIF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「밑에서 올려다본 감상은?」
+				PRINTFORMW 「남자로서 가질 법한 성적판타지, 내가 한번 그려내볼게♡」
+				PRINTFORMW 「이를 잘 만끽해줘♡」
 			;それ以外
 			ELSE
 				PRINTFORMW 
@@ -2699,13 +2729,17 @@ IF SELECTCOM == 65
 		ELSE
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
-				PRINTFORMW 
+				PRINTFORMW 「이 이상의 촌극은 제발 그만둬졌으면, 큿!」
 			;연모
 			ELSEIF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「앗, 앙, 앙…아앙♪」
+				PRINTFORMW 「허리 흔드는 거 정말 좋아♡」
+				PRINTFORMW 「이렇게… 또 이렇게 하면……」
+				PRINTFORMW 「후후… 느끼면서 헐떡이는 당신의 얼굴…… 귀여워라♡」
 			;굴복각인Lv2이상
 			ELSEIF MARK:굴복각인 >= 2
-				PRINTFORMW 
+				PRINTFORMW 「절대, 나는 굴복하지 않아…」
+				PRINTFORMW 「하지만… 기분 좋아.」
 			;それ以外
 			ELSE
 				PRINTFORMW 
@@ -2725,7 +2759,7 @@ IF SELECTCOM == 66
 			PRINTFORMW 
 		;それ以外
 		ELSE
-			PRINTFORMW 
+			PRINTFORMW 「내 안쪽의 성감대, 아무래도 찾은 것 같아…」
 		ENDIF
 	;二回目以降…押し倒されているとき（기승Ｇ스팟자극）
 	ELSEIF TEQUIP:넘어뜨리기
@@ -2734,7 +2768,8 @@ IF SELECTCOM == 66
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「…히야아아아앙♡♡ 정말 쩔어♬ 최고야♪」
+			PRINTFORMW 「아읏, 읏, 아아앗!!」
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 
@@ -2749,7 +2784,7 @@ IF SELECTCOM == 66
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「이 부분이 긁혀져서, 엄청난 쾌감이야…」
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 
@@ -2772,7 +2807,7 @@ IF SELECTCOM == 67
 			PRINTFORMW 
 		;それ以外
 		ELSE
-			PRINTFORMW 
+			PRINTFORMW 「…이렇게 안쪽 깊숙히 들어온 건 당신의 물건이 처음이야♪ 하앙♡ 앗♡」
 		ENDIF
 	;二回目以降…기승자궁구자극
 	ELSEIF TEQUIP:넘어뜨리기
@@ -2781,7 +2816,16 @@ IF SELECTCOM == 67
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「아읏…♪ 당신, 느껴지지?」
+			PRINTFORMW 「당신의 자지, 내 자궁구가 쪽…하고 물고 있어♪」
+			PRINTFORMW 「마치 놓고 싶지 않다는 듯이 말이야♪」
+			PRINTFORMW 「응♡ 아응♡ 내 마음도 같아♪ 놓아주고 싶지 않아♡」
+			PRINTFORMW 「당신, 정말 사랑해…♡ 그러니 여기에, 내 아기방에 잔뜩 씨앗을 줘♡」
+			IF TALENT:임신
+				PRINTFORMW 「우리 아이에게 아빠의 밀크를 둠뿍 마시게 해줘♡♡」
+			ELSE
+				PRINTFORMW 「날 임신시켜줘어♡ 당신의 아기, 가지고 싶어♡♡」
+			ENDIF
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 
@@ -2796,7 +2840,14 @@ IF SELECTCOM == 67
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「깊숙히 닿고 있어♪」
+			PRINTFORMW 「절대 놓지 않아, 당신의 손♪」
+			PRINTFORMW 「정말 좋아해…♡ 그러니 여기에, 내 아기방에 잔뜩 씨앗을 줘♡」
+			IF TALENT:임신
+				PRINTFORMW 「아빠의 사랑을 이 아이에게도 가르쳐 줘♡♡」
+			ELSE
+				PRINTFORMW 「낳을 거야♡ 당신과 내 사랑의 결정, 그리고 귀엽게 키울거야♡♡」
+			ENDIF
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 
@@ -2977,20 +3028,23 @@ IF SELECTCOM == 90
 		IF CFLAG:353 == 0
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「자, 제 손의 감상은 어때?」
+				PRINTFORMW 「마음껏 탐닉해줄 테니 잔뜩 황홀해지도록 하세요.」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「기분 좋아지도록 도와줄게.」
 			ENDIF
 			CFLAG:353 = 1
 		;二回目以降
 		ELSE
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「느끼는 건가요? 기분 좋죠?」
+				PRINTFORMW 「움찔움찔하면서 매우 귀엽군요.」
+				PRINTFORMW 「자, 참지 말고 내세요♡」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「어머, 아직도 제 손이 필요한 걸까나?」
 			ENDIF
 		ENDIF
 	;それ以外
@@ -3003,13 +3057,13 @@ IF SELECTCOM == 90
 			;봉사정신Lv3이상
 			ELSEIF ABL:봉사정신 >= 3
 				PRINTFORMW 「아라, 상당히 기분 좋은 것 같지 않아…」
-				PRINTFORMW 「소망이라면손뿐이 아니고…나의 몸을 좋아하는 곳에서 기분 좋게 시켜 주어요？」
+				PRINTFORMW 「소망이라면 손뿐이 아니고… 나의 몸을 좋아하는 곳에서 기분 좋게 시켜 주어요？」
 				PRINTFORM 「후후후
 				CALL HEARTMARK_E
 			;それ以外
 			ELSE
 				PRINTFORMW 「기분 좋은 것 같이 움찔움찔 해 버려……이봐요, 참지 않아도 괜찮은거야」
-				PRINTFORMW 「당신의로, 나를 더럽혀 줘…」
+				PRINTFORMW 「당신의 것으로, 나를 더럽혀 줘…」
 			ENDIF
 			CFLAG:241 = 1
 		;二回目以降
@@ -3060,20 +3114,23 @@ IF SELECTCOM == 91
 		IF CFLAG:354 == 0
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「내 목구멍으로 기분 좋게 해줄게.」
+				PRINTFORMW 「맛있어, 정말 맛있어. 당신의 자지… 굉장해.」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「입으로 해줄 테니 쾌감을 잘 음미하도록 하세요.」
 			ENDIF
 			CFLAG:354 = 1
 		;二回目以降
 		ELSE
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「후후훗, 소시지가 쫑긋쫑긋하네♪ 정말 귀여워♪」
+				PRINTFORMW 「하음, 츕♡ 츄웁… 츄르읍♡」
+				PRINTFORMW 「참지 말고 쾌감을 해방해♪ 사양하지 말고♪」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「과연 얼마나 견딜 수 있을까나?」
 			ENDIF
 		ENDIF
 	;それ以外
@@ -3082,29 +3139,32 @@ IF SELECTCOM == 91
 		IF CFLAG:242 == 0
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
-				PRINTFORMW 
+				PRINTFORMW 「정말 최악이네. 나한테 무슨 짓을 했는지 벌써 잊은 걸까나?」
 			;봉사정신Lv3이상
 			ELSEIF ABL:봉사정신 >= 3
-				PRINTFORMW 
+				PRINTFORMW 「더 커지게 해줄게♪」
+				PRINTFORMW 「츄릅♪ 쩝♪」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「츄릅♪ 쩝♪」
 			ENDIF
 			CFLAG:242 = 1
 		;二回目以降
 		ELSE
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
-				PRINTFORMW 
+				PRINTFORMW 「마지못해서 하는 걸 당신은 아는 걸까? 하아, 모른다고?」
+				PRINTFORMW 「그 정도의 눈치도 없는 주제에 감히 날 길들이겠다고? 기가 막히네.」
 			;연모＋봉사정신Lv5
 			ELSEIF TALENT:연모 && ABL:봉사정신 >= 5
-				PRINTFORMW 
+				PRINTFORMW 「후루룹♪ 츄웁…쩝……」
+				PRINTFORMW 「하암… 쿠퍼액이 나와서… 정말 진미야. 정말 좋아하게 돼…」
 			;봉사정신Lv3이상
 			ELSEIF ABL:봉사정신 >= 3
-				PRINTFORMW 
+				PRINTFORMW 「후후… 기분 좋지요?」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「…언제쯤이면 쾌락을 만끽하는 걸까나?」
 			ENDIF
 		ENDIF
 	ENDIF
@@ -3121,8 +3181,8 @@ IF SELECTCOM == 92
 		IF CFLAG:355 == 0
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 「나의 가슴으로 당신의 자지를 귀여운이 라고 주겠어요♪」
-				PRINTFORMW 「가득 참아 주세요? 그러니까, 사정 할 때 매우 기분 좋게 될 수 있어요♪」
+				PRINTFORMW 「나의 가슴으로 당신의 자지를 귀여워해 주겠어요♪」
+				PRINTFORMW 「가득 참아 주세요? 그러니까, 사정할 때 매우 기분 좋게 될 수 있어요♪」
 			;それ以外
 			ELSE
 				PRINTFORMW 「후후…당신의 그 얼굴, 대단한 귀엽네요♪」
@@ -3155,7 +3215,7 @@ IF SELECTCOM == 92
 			;それ以外
 			ELSE
 				PRINTFORMW 「나의 가슴으로 하고 갖고 싶은거야? 일부러 부탁하다니 기특한 사람이네」
-				PRINTFORMW 「좋아요…에르다사큐바스의 기유, 듬뿍 맛  아울러 주겠어요♪」
+				PRINTFORMW 「좋아요… 에르다 사큐바스의 가슴, 듬뿍 맛봐 주겠어요♪」
 			ENDIF
 			CFLAG:243 = 1
 		;二回目以降
@@ -3311,26 +3371,32 @@ IF SELECTCOM == 95 && PENIS(PLAYER)
 		IF CFLAG:363 == 0
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「발 봉사는 이렇게 하는 거란다…」
+				PRINTFORMW 「…어머, 어딜 신경쓰는 걸까나? 내 다리 사이가 신경쓰여?」
+				PRINTFORMW 「…정말, 엣찌♡」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「발은 걸어다닐 때만 쓰는 게 아니라는 걸 알려줄게.」
 			ENDIF
 			CFLAG:363 = 1
 		;二回目以降
 		ELSE
 			;연모＋새드끼Lv3이상
 			IF TALENT:연모 && ABL:새드끼 >= 3
-				PRINTFORMW 
+				PRINTFORMW 「자, 이렇게 문질러주면 천국에 다다를 수 있을지도♡」
+				PRINTFORMW 「…어머, 내 사타구니를 보면서 자지가 더 커졌네♡」
+				PRINTFORMW 「정말이지, 색골이네♡」
 			;연모
 			ELSEIF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「더 기분좋아지도록 하세요♪」
+				PRINTFORMW 「문질문질♪ 문질문질♪」
 			;새드끼Lv3이상
 			ELSEIF ABL:새드끼 >= 3
-				PRINTFORMW 
+				PRINTFORMW 「느끼는 네 신음, 부디 들려주도록 해.」
+				PRINTFORMW 「그리고 가 버려.」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「읏차, 기분 좋지?」
 			ENDIF
 		ENDIF
 	ELSE
@@ -3338,29 +3404,35 @@ IF SELECTCOM == 95 && PENIS(PLAYER)
 		IF CFLAG:370 == 0
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
-				PRINTFORMW 
+				PRINTFORMW 「참나, 괜한 걸 시키네.」
+				PRINTFORMW 「당신 정말로 귀축이잖아.」
 			;연모
 			ELSEIF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「천국에 도달할 수 있도록 내 발로 쓱싹쓱싹 해줄게♪」
+				PRINTFORMW 「어때, 점점 황홀해지지 않아?」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「읏차, 읏차.. 발만 아프네.」
 			ENDIF
 			CFLAG:370 = 1
 		;二回目以降
 		ELSE
 			;연모＋새드끼Lv3이상
 			IF TALENT:연모 && ABL:새드끼 >= 3
-				PRINTFORMW 
+				PRINTFORMW 「여길 이렇게 괴롭혀줄까? 아님 이렇게?」
+				PRINTFORMW 「내 발놀림 어떻게 생각해? 기분 좋지?」
+				PRINTFORMW 「어머, 벌써 가고 싶은 거야? 그럼 참지 말고 발사♪」
 			;연모
 			ELSEIF TALENT:연모
-				PRINTFORMW 
+				PRINTFORMW 「천국에 도달할 수 있도록 내 발로 쓱싹쓱싹 해줄게♪」
+				PRINTFORMW 「어때, 점점 황홀해지지 않아?」
+				PRINTFORMW 「자, 천계가 보였다면 망설이지 말고 가버리렴♬」
 			;새드끼Lv3이상
 			ELSEIF ABL:새드끼 >= 3
-				PRINTFORMW 
+				PRINTFORMW 「정욕을 쭉~ 빠지도록 해줄게. 맡겨줘.」
 			;それ以外
 			ELSE
-				PRINTFORMW 
+				PRINTFORMW 「발 기술은 나를 따라올 자가 없었어. 그 실력을 지금 보여줄게.」
 			ENDIF
 		ENDIF
 	ENDIF
@@ -6919,7 +6991,7 @@ IF SELECTCOM >= 60 && SELECTCOM <= 69 && TALENT:처녀
 	IF TALENT:처녀 > 1
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
-			PRINTFORM 「일부러처녀에 되돌려 두어 또 그것을 빼앗자이라니…얕다욕망하지만 비쳐 보이도록(듯이)」
+			PRINTFORM 「일부러 처녀에 되돌려 두어 또 그것을 빼앗자이라니… 얕다욕망하지만 비쳐 보이도록(듯이)」
 			;거근か말잦이
 			IF SIZE("페니스", PLAYER) >= 2
 				PRINTFORM 남들 수준을 벗어났다페니스를 앞으로 해도강기태도를 바꾸려고 하지 않는다
@@ -6930,19 +7002,81 @@ IF SELECTCOM >= 60 && SELECTCOM <= 69 && TALENT:처녀
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"를")% 무시해, %조사처리(CALLNAME:PLAYER,"는")% 난폭하게허리를 추천해 간다…
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「응후후, 일부러처녀에 되돌리고 나서 하다니…당신도 좋아하구나…♪」
+			PRINTFORMW 「응후후, 일부러 처녀에 되돌리고 나서 하다니…당신도 좋아하구나…♪」
 		;それ以外
 		ELSE
-			PRINTFORMW 「아라, 일부러처녀에 되돌리고 나서는…쿠스, 정옷욕구가 강한거네」
+			PRINTFORMW 「아라, 일부러 처녀에 되돌리고 나서는… 쿠스, 정옷욕구가 강한거네」
 		ENDIF
 	;처녀
 	ELSEIF TALENT:처녀
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
-			PRINTFORMW 「당신라고무드도 델리커시도 빠져 있는 거네…기가 막혀 버려요. 최대한, 좋아하게 하세요」
+			PRINTFORMW 「당신라고무드도 델리커시도 빠져 있는 거네… 기가 막혀 버려요. 최대한, 좋아하게 하세요」
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「좋아요, 나의 하지메테…당신에 아겔♪그 대신…후후, 책임 취하세요♪」
+			SELECTCASE SELECTCOM
+			;기승위
+			CASE 65
+				IF TEQUIP:넘어뜨리기
+				;여자주도 기승위 처녀상실
+					PRINTFORMW %CALLNAME:TARGET%한테 짓눌려져서 신나게 엔조잉 & 익사이팅 당하는 도중에…
+					PRINTFORMW 갑자기 %CALLNAME:TARGET%가 요염한 미소를 보이면서 내 물건을 부드럽게 잡았다.
+					PRINTFORMW 「당신은 지금까지 내 처음을 빼앗지 않았어.」
+					PRINTFORMW 「그렇게나 유혹하고 조르고 아양을 떨어봐도 당신은 꿈쩍하지 않았지.」
+					PRINTFORMW 「이봐, 당신. 대체 무슨 생각이야?」
+					PRINTFORMW 「왜 이렇게 나를 기다리게 만드는 걸까나? 대체 무슨 배짱이길래?」
+					PRINTFORMW 아, 그건 말이지,%CALLNAME:TARGET%. 나는 너를 소중하게 대해주고 싶어서……
+					PRINTFORMW 「……그래, 거짓말이 아니구나. 나를 그만큼 소중히 생각하고 있으니깐 내 처녀를 노리지 않는 거네.」
+					PRINTFORMW 「하지만 물러요. 너무 물러.」
+					PRINTFORMW 「나는 말이지, 당신이 갖고 싶어. 당신의 사랑을 직접 이 몸으로 받고 싶어…」
+					PRINTFORMW 「그렇기에 절대로 물러나지 않을 거에요.」
+					IF TALENT:MASTER:동정
+					;당신이 아다일 경우
+						PRINTFORMW 이봐, %CALLNAME:TARGET%! 나는 아직 한번도 하지 않았어!
+						PRINTFORMW 지금 당장은 내 자신의 순결을 유지하고 싶어.
+						PRINTFORMW 「어머나♡ 설마 이렇게나 가까운 곳에 탐스러운 과실이 존재하고 있을 줄은♡」
+						PRINTFORMW %CALLNAME:TARGET%, 지금 대체 무슨 말을……
+						PRINTFORMW 뭐, 뭔 짓을 할 생각이야!?
+						PRINTFORMW 「그거야 뻔하지 않나요♪ 당신의 체리를 사랑스럽게 따먹는 거랍니다♡」
+						PRINTFORMW 싫어! 나는 이 동정을 유지하고 싶어! 진정한 마법사가 되고 싶단 말이다!
+						PRINTFORMW 「그딴 얘긴 그냥 망상이랍니다♪ 자, 함께 하나가 되어 사랑을 나누자고요♡」
+						PRINTFORMW 안 돼, 아아… 내 동정이……
+					ELSE
+					;당신이 후다일 경우
+						PRINTFORMW 무, 무슨 생각이야, %CALLNAME:TARGET%!?
+						PRINTFORMW 「호오, 그걸 몰라서 묻나요? 당연히 당신에게 내 처녀를 바치려는 거지요.」
+						PRINTFORMW 나는 아직 준비가 안 됐어!
+						PRINTFORMW 「거절하지 말아요, 내 사랑♡ 금방 끝날 거니까 불안해하지 않아도 돼.」
+						PRINTFORMW 「당신은 그저, 천장 위의 무늬만 세고 있으면 되는 거야♡♡」
+						PRINTFORMW 「자, 함께 행복해져요♡」
+						PRINTFORMW 아, 안 돼! 아아… 아아악…!!!
+					ENDIF
+				ELSE
+				;남자주도 기승위 처녀상실
+					PRINTFORMW 「정말로… 허락해주는 거야? 진짜 당신에게 내 처녀를 바쳐도 되는 거야?」
+					PRINTFORMW 나도 고심한 끝에 결론을 내린 거라고.
+					PRINTFORMW 쭉 생각해봤어. 네 마음을 알고 있으면서도 널 건드리지 않는 나 자신이 대체 뭔지를 말이야.
+					PRINTFORMW 처음에는 내가 널 너무나도 소중히 여기고 있기 때문이라고 생각했어. 아껴주고 보호해주자고.
+					PRINTFORMW 헌데 사실은 그런 게 아니었어.
+					PRINTFORMW 그저 내가 용기가 없던 거야. 내게 덮칠 의지가 없던 거였어.
+					PRINTFORMW 그건 지금도 같아. 나는 약해. 그래서 내가 네 밑에 깔린 거고.
+					PRINTFORMW 「………정말이지, 미워할 수 없는 사람……」
+					PRINTFORMW 「…나는 당신의 그런 면도 정말로 좋아해요…♪」
+					PRINTFORMW 「강한 면도, 약한 면도 나에겐 전부 눈부시게 보이는걸♪」
+					PRINTFORMW 「걱정마요, 내 사랑♡ 금방 끝날 테니까.」
+					PRINTFORMW 「당신은 그저, 허공에 떠다니는 먼지를 세고 있으면 돼♡」
+					PRINTFORMW 「그럼 내 처음을, 당신에게 바칠게♡」
+					PRINTFORMW 아아, 얼른 와 줘.
+				ENDIF
+			;그 이외 체위
+			CASEELSE
+				PRINTFORMW 「나의 처음, 끝내 가져가는 거네…」
+				PRINTFORMW 아아, 결국 참을 수가 없어서 말이야.
+				PRINTFORMW 그 뭐냐, 지금까지 미안했어. 네가 이렇게나 내 것을 원하고 있을 줄 눈치채지 못해서……
+				PRINTFORMW 「후후… 좋아요. 용서해줄게요.」
+				PRINTFORMW 고마워, 헤어려줘서. 그럼 네 처음, 기꺼이 가져가도록 할게.
+				PRINTFORMW 「얼마든지요♡ 그럼 앞으로도 잘 부탁드려요, 당신♡」
+			ENDSELECT
 		;それ以外
 		ELSE
 			PRINTFORMW 「후후…좋아요, 이 나의 것 아직 아무도 접한 적이 없는 여기…당신에 맛보게 해 준다…♪」
@@ -7201,7 +7335,11 @@ CASE "처녀상실"
 		ELSEIF TALENT:연모
 			;주인の섹스による처녀상실
 			IF PLAYER == MASTER && INSERT("Ｖ인서트")
-				PRINTFORMW 
+				PRINTFORMW 「당신에게 내 순결을 줄 수 있어서 다행이야♡」
+				PRINTFORMW 「때문에 무척 행복해♡」
+				PRINTFORMW 「…그리고 당신 덕분에 엘더 서큐버스의 진정한 덕목까지 실천할 수 있었어♪」
+				PRINTFORMW 「…그것은 참된 사랑♪ 순결을 예물로 한 낭군님에게 바치는 영원한 순애의 맹세.」
+				PRINTFORMW 「고마워, 그리고 정말 좋아해, 달링♥」
 			ELSE
 				PRINTFORMW 
 			ENDIF
@@ -7551,16 +7689,24 @@ ELSEIF SHOOT("Ｖ내사정")
 		PRINTFORMW 
 	;初めて
 	ELSEIF FIRST_EV("절정：Ｖ내사정") == 0
-		PRINTFORMW 「핫, 아……아, 응♪나오고 있다…나의질안에……♪아읏…흘러넘쳐 버릴 것 같다♪」
+		PRINTFORMW 「핫, 아……아, 응♪ 나오고 있어… 나의 질 안에……♪ 아읏… 흘러넘쳐 버릴 것 같아♪」
 	;연모
 	ELSEIF TALENT:연모
-		PRINTFORMW 「앗, 아아……읏♪좀 더…좀 더 줘♪ 당신노정액…자궁가득 될 때까지…♪」
+		IF RAND:3 == 0
+			PRINTFORMW 「아아, 왔어♪ 당신의 씨앗… 안에 가득 나오고 있어어…♪」
+		ELSEIF RAND:2 == 0
+			PRINTFORMW 「이렇게 내면 임신은 시간문제야♪」
+			PRINTFORMW 「만약 생겼을 경우엔 책임…져줘야 하는 거 잊지 말길 바래♥」
+			PRINTFORMW 「알겠지, 달링♥」
+		ELSE
+			PRINTFORMW 「앗, 아아……읏♪ 좀 더…좀 더 줘♪ 당신의 정액… 자궁에 가득찰 때까지…♪」
+		ENDIF
 	;굴복각인Lv3
 	ELSEIF MARK:굴복각인 == 3
-		PRINTFORMW 「앗, 아아…읏♪뜨거운 것이, 나의 안에서 튀어……읏♪」
+		PRINTFORMW 「앗, 아아…읏♪ 뜨거운 것이, 나의 안에서 튀어……읏♪」
 	;それ以外
 	ELSE
-		PRINTFORMW 「아핫…당신의 정자가질안에서 튀고 있다…♪후후…사양하지 않고사정해 버리세요…♪」
+		PRINTFORMW 「아핫…당신의 정자가 질 안에서 튀고 있다…♪후후…사양하지 않고 사정해 버리세요…♪」
 	ENDIF
 ELSEIF SHOOT("Ａ내사정")
 	;반발각인Lv3
@@ -7583,7 +7729,7 @@ ELSEIF SHOOT("Ａ내사정")
 ;키스で사정
 ;-------------------------------------------------
 ELSEIF SHOOT("키스")
-	PRINTFORMW 
+	PRINTFORMW 「…내 입술이 그렇게나 맛있나보네♪」
 ;-------------------------------------------------
 ;안면기승で사정
 ;-------------------------------------------------
@@ -8260,13 +8406,13 @@ CASE "고통각인Lv3취득"
 	IF FIRST_EV("고통각인Lv3취득") == 0
 		IF TALENT:연모
 		ELSE
-			PRINTFORMW 너무 해 버렸을 것인가
-			PRINTFORMW 자신이 상대로 하고 있는 상대가 어떤 존재인가, 생각해 내, 식은 땀이 불거져 나온다
+			PRINTFORMW 너무 심했던 것일까…
+			PRINTFORMW 자신이 상대로 하고 있는 상대가 어떤 존재인가, 생각해 내, 식은 땀이 나오기 시작했다.
 			PRINTFORMW 「쿡쿡쿡……」
 			PRINTFORMW 「그렇게……이것이야……이것, 오래간만……」
 			PRINTFORMW %타겟은()%, 즐거운 듯이 웃고 있다
 			PRINTFORMW 「쿠스……그런 얼굴 하지 않고……제법 좋은 것……?」
-			PRINTFORMW %타겟은()%%CALLNAME:MASTER%의 어깨에 손을 두면, 손톱을 세워 가릭, 라고 하는 소리와 함께 인 긁었다
+			PRINTFORMW %타겟은()% %CALLNAME:MASTER%의 어깨에 손을 두면서, 손톱을 세워 가릭, 라고 하는 소리와 함께 꼬집었다.
 			PRINTFORMW 
 			PRINTFORMW 날카로운 아픔--붉은 손톱 자국으로부터 피가 스며들기 시작한다
 			PRINTFORMW 「이봐요……」
@@ -8298,8 +8444,8 @@ CASE "굴복각인Lv3취득"
 ;-------------------------------------------------
 CASE "반발각인Lv3취득"
 	IF FIRST_EV("반발각인Lv3취득") == 0
-		PRINTFORMW 「……질려 왔군요」
-		PRINTFORMW 「……재미없는」
+		PRINTFORMW 「…이제 질렸어요.」
+		PRINTFORMW 「……참으로 재미없네.」
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 그렇게 중얼거린 순간, 정체의 모르는 공포가 전신을 뛰어 돌아다녔다
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 접해선 안 되는 것에 접해 버렸을지도 모른다……
 		RETURN 1
@@ -8328,7 +8474,8 @@ CASE "조교후자위"
 		PRINTFORMW 
 	;연모
 	ELSEIF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「부족해… 달링, 나 좀 더 원해애…」
+		PRINTFORMW 「읏, 으읏… 아아앙!!」
 	;자위중독Lv3이상
 	ELSEIF ABL:자위중독 >= 3
 		PRINTFORMW 
@@ -8364,7 +8511,9 @@ CASE "조교후레즈플레이"
 CASE "아침펠라"
 	;연모
 	IF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「어머 일어났구나♬」
+		PRINTFORMW 「죤슨 씨가 텐트를 발딱 세우고 있기에 어쩔 수 없었어.」
+		PRINTFORMW 「…얼굴을 보니 더 해주길 원하는 거 같은데, 그럼 좀 더 봉사하도록 할게♪」
 	;봉사정신Lv3이상
 	ELSEIF ABL:봉사정신 >= 3
 		PRINTFORMW 
@@ -8379,7 +8528,8 @@ CASE "아침펠라"
 CASE "아침파이즈리"
 	;연모
 	IF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「내 가슴 스크류는 맛있었나요?」
+		PRINTFORMW 「혼이 빨려나갈 것 같았다고? 그럼 더욱 빠지게 해줄게♡」
 	;それ以外
 	ELSE
 		PRINTFORMW 
@@ -8391,7 +8541,11 @@ CASE "아침파이즈리"
 CASE "아침기승위"
 	;연모
 	IF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「히양♡ 앙…아앙♪」
+		PRINTFORMW 「읏, 일어났…군요♡ 흐응…」
+		PRINTFORMW 「당신의 죤슨 군이 보지를 갖고 싶어하길래 그만 그 소원을 들어주고 말았어♪」
+		PRINTFORMW 「아, 이제 갈게♪」
+		PRINTFORMW 「그러니 당신도 같이 가자♪♪」
 	;それ以外
 	ELSE
 		PRINTFORMW 
@@ -8403,7 +8557,9 @@ CASE "아침기승위"
 CASE "아침の새댁플레이"
 	;연모
 	IF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「좋은 아침이야, 당신♪」
+		PRINTFORMW 「시장할 것 같은 달링을 위해 특별식을 준비해놨어.」
+		PRINTFORMW 「부디 만끽해 줘…♪」
 	;それ以外
 	ELSE
 		PRINTFORMW 
@@ -8415,7 +8571,10 @@ CASE "아침の새댁플레이"
 CASE "아침키스"
 	;연모
 	IF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「할짝… 츄릅… 기어이 눈을 떴구나.」
+		PRINTFORMW 「당신이 자고 있을 때 솔직히 몇 번이나 키스를 했는지 기억이 안 나…」
+		PRINTFORMW 「…그 정도로 당신을 갖고 싶어서……」
+		PRINTFORMW 「싫지 않다…고? 그럼 좀 더 입술을 가져가도록 할게♪」
 	;それ以外
 	ELSE
 		PRINTFORMW 
@@ -8427,10 +8586,10 @@ CASE "아침키스"
 CASE "아침풋잡"
 	;연모
 	IF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「당신, 내 발봉사는 어때? 기분 좋아?」
 	;それ以外
 	ELSE
-		PRINTFORMW 
+		PRINTFORMW 「일어나자마자 내 아름다운 각선미를 볼 수 있다니 운이 좋군요.」
 	ENDIF
 	RETURN 1
 ;-------------------------------------------------
@@ -8591,16 +8750,17 @@ CASE "自発脱ぎ"
 	;알몸になった
 	IF CHECK_CLO("알몸")
 		IF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「변변치 않은 몸이지만… 잘 부탁해…」
 		ELSE
 			PRINTFORMW 
 		ENDIF
 	;보지剥きだし
 	ELSEIF CHECK_CLO("Ｖ노출")
 		IF TALENT:연모
-			PRINTFORMW 
+			PRINTFORMW 「이제부터 멋지게 거사를 치루는 거야♡」
+			PRINTFORMW 「그러니 각오 단단히 하도록 해, 달링♡♡」
 		ELSE
-			PRINTFORMW 
+			PRINTFORMW 「자, 그럼 이제부터 본 게임을 하도록 할까요♪」
 		ENDIF
 	;部分脱ぎ
 	ELSE
@@ -8613,10 +8773,12 @@ CASE "自発脱ぎ"
 CASE "임신発覚"
 	;출산경험
 	IF TALENT:출산경험
-		PRINTFORMW 
+		PRINTFORMW 「결실이 추가됐어…」
+		PRINTFORMW 「너무 행복해서 녹아버릴 것만 같아♡」
 	;연모
 	ELSEIF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「드디어… 나와 당신 간의 자손이 생겼어♡」
+		PRINTFORMW 「……이런 축복이 또 어디에 있을 수 있을까…♬」
 	ELSE
 		PRINTFORMW 
 	ENDIF
@@ -8659,7 +8821,7 @@ CASE "子離れ"
 CASE "질내사정후벌리기"
 	;연모
 	IF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「아… 좀 더 안쪽에 담아두고 싶었는데♡」
 	ELSE
 		PRINTFORMW 
 	ENDIF
@@ -8694,7 +8856,7 @@ CASE "질내사정후정액퍼내기"
 CASE "질내사정후황홀"
 	;연모
 	IF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「내가 당신의 것이라는 증거, 좀 더 확실히 이 안에 새겨졌어♡」
 	ELSE
 		PRINTFORMW 
 	ENDIF
@@ -8758,14 +8920,14 @@ CASE "비디오매각"
 CASE "비디오매각失敗"
 	;반발각인Lv3
 	IF MARK:반발각인 == 3
-		PRINTFORML 
+		PRINTFORMW 「흥! 날 그렇게까지 마구잡이로 다뤘으면서 잘도 팔리겠네♪」
 	;연모
 	ELSEIF TALENT:연모
-		PRINTFORMW 
+		PRINTFORMW 「소비자들과 판매업자들은 보는 눈이 없네. 당신과 나눈 뜨거운 정사씬이 흥분되지 않을 리가 없잖아!」
 	ELSE
-		PRINTFORMW 
+		PRINTFORMW 「좀 더 능숙하게 되도록 힘내야 할 것 같네요, 당신♪」
 	ENDIF
-	PRINTFORMW 불량재고의 산을 앞에 두고, %마스터와()%%타겟은()% 머리를 안았다…
+	PRINTFORMW 불량재고의 산을 앞에 두고, %마스터와()% %타겟은()% 머리를 안았다…
 	RETURN 1
 ;----------------------------------------------------------------
 ;플러그를 하고 있지 않는 상태에서의 액체 관장 말(여기는 PRINTFORML 로 기술한다)
@@ -8799,11 +8961,11 @@ CASE "다방"
 	;	PRINTFORML 
 	;ELSE
 		IF RAND:3 == 0
-			PRINTFORML 「어서오세요, 오손님모양.  자, 이쪽으로 오세요……후후♪」
+			PRINTFORML 「어서오세요, 손님. 자, 이쪽으로 오세요……후후♪」
 		ELSEIF RAND:2
-			PRINTFORML 「그런데…지금일는 몇 사람의손님같아 즐길 수 있을까」
+			PRINTFORML 「그런데… 오늘은 몇 사람의 손님이 즐길 수 있을까나♪」
 		ELSE
-			PRINTFORML 「킥킥…지금일는 어떤%TEXTR("楽しい", "素敵な")%일이 일어날까」
+			PRINTFORML 「킥킥… 오늘은 과연 어떤 %TEXTR("신나는", "멋진")% 일이 일어날까♬」
 		ENDIF
 	;ENDIF
 	RETURN 1
@@ -9638,18 +9800,18 @@ IF PLAYER == MASTER && ASSI && STATE("撃沈", ASSI) == 0 && TEQUIP:넘어뜨리
 	PRINTFORML
 	;조수が동물귀
 	SIF TALENT:ASSI:동물귀 >= 1
-		PRINTFORM 완전히 발정해 버렸다
+		PRINTFORM 완전히 발정해 버린 
 	PRINTFORM %CALLNAME:ASSI%는
 	IF RAND:4 == 0
-		PRINTFORM 욕망에 눈동자를 흐리게 해
+		PRINTFORM 욕망에 눈동자를 흐리게 해 
 	ELSEIF RAND:3 == 0
-		PRINTFORM 육욕에 항네 없어져 버려,
+		PRINTFORM 육욕에 항네 없어져 버려, 
 	ELSEIF RAND:2 == 0
 		PRINTFORM 정욕의 포로가 되어 버려,
 	ELSE
 		PRINTFORM 몸을 태우는 정욕인 채 ,
 	ENDIF
-	PRINTFORM %타겟과()% 함께%마스터를()% 밀기도
+	PRINTFORM %타겟과()% 함께 %마스터를()% 밀어
 	;정력に余力があり, 상사상애の時は에스트様が独占欲を爆発させる
 	IF BASE:정력 > 10 && TALENT:상사상애 && RAND:3 == 0
 		IF TALENT:작은몸집
