@@ -259,6 +259,12 @@ IF TARGET
 	BASE:체력 = MAX(BASE:체력, 0)
 	CALL PRINT_BAR, "감소게이지", BASE:체력, MAXBASE:체력, 5
 	PRINTFORML ({BASE:체력}/{MAXBASE:체력}) 호감도:{CFLAG:2} 봉사쾌락:{EXP:봉사쾌락경험}
+
+	IF CONFIG("음문패치") 
+		;음문 표시
+		CALL PRINT_TATTOO, ARG
+	ENDIF
+
 	;갈아입히기表示
 	CALL PRINT_DRESS, TARGET, "短縮표시"
 	PRINTL 
@@ -2612,12 +2618,20 @@ CASE 350
 
 	SELECTCASE MARK:CHOICE:정액각인
 	CASE 0
+		SIF CONFIG("음문패치") 
+			CALL PRINT_TATTOO_LV1
 		PRINTFORMW 음마의 물방울을 이용해, %NAME:CHOICE%의 하복부에 사랑스러운 하트형의 문양을 새겼습니다
 	CASE 1
+		SIF CONFIG("음문패치") 
+			CALL PRINT_TATTOO_LV2
 		PRINTFORMW 이미 새겨져 있는 하트의 문양에 장식을 추가해, %NAME:CHOICE%의 자궁을 형상화한 문양을 새겼습니다
 	CASE 2
+		SIF CONFIG("음문패치") 
+			CALL PRINT_TATTOO_LV3
 		PRINTFORMW %NAME:CHOICE%의 하복부… 분명 자궁이 있는 장소에 새겨진 각인에, 난관과 난소를 나타내는 문양을 추가로 그렸습니다
 	CASE 3
+		SIF CONFIG("음문패치") 
+			CALL PRINT_TATTOO_LV4
 		PRINTFORMW %NAME:CHOICE%의 자궁을 투영한 듯한 음란한 문양에, 자궁경부를 구상한 무늬를 새겨 넣어 정액각인을 완성시켰습니다
 	CASE 4
 		GOTO INPUT_LOOP

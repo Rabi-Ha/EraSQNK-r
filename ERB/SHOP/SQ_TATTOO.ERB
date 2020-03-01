@@ -1,0 +1,1244 @@
+﻿;변수선언 및 초기화================================================================================================================
+
+@PRINT_TATTOO, ARG
+;for문 지역변수
+#DIM LCOUNT 
+#DIM LCOUNT2 
+;현재 조교중인지 확인
+#DIM 조교중
+
+;애니메이션 출력속도(1초 : 1000)
+#DIM ANI_SPEED
+;애니메이션 삽입도달 깊이
+#DIM ANI_DIP
+;스트로크 애니메이션 횟수
+#DIM ANI_RE
+
+;컬러맵 색상정의
+#DIM T_COLOR, 3, 3
+;컬러맵
+#DIM MC, 15, 40
+;음문맵
+#DIMS MM, 15, 40
+;음문 저장된 그림 배열
+#DIMS TT,15, 40
+;음문 색상 선택
+#DIM COLOR
+;음문 색 진행도
+#DIM PROG_VAR
+;음문창 사이즈
+#DIM SIZE_H
+#DIM SIZE_V
+
+;날개1 타입
+#DIM W1_TYPE
+;날개2 타입	 
+#DIM W2_TYPE
+;질 타입
+#DIM V_TEPE
+;자궁 타입
+#DIM W_TEPE
+
+;페니스 상태(1~6:조교자굵기,7~9:촉수굵기,10:용간)
+#DIM P_TYPE
+;페니스 삽입심도(0~10, 0은 비삽입)
+#DIM P_DIP
+;페니스 스트로크 길이
+#DIM P_DIP2
+;페니스 귀두 종류 그림배열
+#DIMS P_H, 10
+;페니스 몸체 종류 그림배열
+#DIMS P_B, 20
+;페니스 귀두 타입
+#DIM P_H_TEPE
+;페니스 몸체 타입
+#DIM P_B_TEPE
+;페니스 색상 선택
+#DIM P_COLOR
+
+
+;초기화---------------------------------------------
+;타겟 남자인경우 리턴	
+IF TALENT:ARG:남자 == 1
+	return 1
+ENDIF
+
+;타겟 음문 없는경우 리턴	
+IF MARK:ARG:정액각인 == 0
+	return 1
+ENDIF
+
+;조교중 변수 불러오기
+조교중 = FLAG:99
+
+;음문창 크기 설정
+SIZE_H = 32
+SIZE_V = 13
+
+;기관 타입 설정
+;날개1 타입(0~3, 0은생략)
+W1_TYPE = 2
+;날개2 타입(0~4, 0은생략)	 
+W2_TYPE = 2
+;질 타입(1~4)
+V_TEPE = 2
+;자궁 타입(1~3)
+W_TEPE = 1
+	
+;음문진행도 설정
+IF MARK:ARG:정액각인 == 4
+	PROG_VAR = 70
+ELSEIF MARK:ARG:정액각인 == 3
+	PROG_VAR = 50
+ELSEIF MARK:ARG:정액각인 == 2
+	PROG_VAR = 40
+ELSEIF MARK:ARG:정액각인 == 1
+	PROG_VAR = 30
+ELSE
+	PROG_VAR = 20
+ENDIF
+IF COND("발정기", ARG) >= 1 || COND("위험일", ARG) >= 1  || COND("배란中", ARG) >= 1  || COND("배란유발제사용中", ARG) >= 1 
+	PROG_VAR += 30
+ENDIF
+IF COND("피임中", ARG) >= 1 || COND("안전일", ARG) >= 1
+	PROG_VAR -= 20
+ENDIF
+IF PROG_VAR > 100
+	PROG_VAR = 100
+ENDIF
+
+;음문 컬러맵 프리셋(0, 1, 2번맵)
+T_COLOR:0:0 = PROG_VAR * 2 + 55
+T_COLOR:0:1 = PROG_VAR + 28
+T_COLOR:0:2 = PROG_VAR * 2 + 45
+
+T_COLOR:1:0 = PROG_VAR * 3 / 5 + 144
+T_COLOR:1:1 = PROG_VAR * 3 / 10 + 67
+T_COLOR:1:2 = PROG_VAR * 9 / 20 + 108
+
+T_COLOR:2:0 = PROG_VAR * 3 / 5 + 133
+T_COLOR:2:1 = PROG_VAR * 3 / 10 + 58
+T_COLOR:2:2 = PROG_VAR * 11 / 50 + 92	
+
+;음문 색 설정
+COLOR = (T_COLOR:0:0*0x010000) + (T_COLOR:0:1*0x000100) + T_COLOR:0:2
+
+
+;음문 밑그림 배열 작성 ================================================================================================================
+IF 1
+
+	;빈상자=======================================
+
+	TT: 0:0  = ┎┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┒
+	TT: 0:1  = ┇                              ┇
+	TT: 0:2  = ┇                              ┇
+	TT: 0:3  = ┇                              ┇
+	TT: 0:4  = ┇                              ┇
+	TT: 0:5  = ┇                              ┇
+	TT: 0:6  = ┇                              ┇
+	TT: 0:7  = ┇                              ┇
+	TT: 0:8  = ┇                              ┇
+	TT: 0:9  = ┇                              ┇
+	TT: 0:10 = ┇                              ┇
+	TT: 0:11 = ┇                              ┇
+	TT: 0:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+
+
+	;날개1=======================================
+
+	TT: 1:0  = ┎123456789012345678901234567890┒
+	TT: 1:1  = 1                              ┇
+	TT: 1:2  = 2                              ┇
+	TT: 1:3  = 3                              ┇
+	TT: 1:4  = 4      ‿                ‿      ┇
+	TT: 1:5  = 5    ╱⁀╲   ╭⋞      ⋟╮   ╱⁀╲    ┇
+	TT: 1:6  = 6   ╱╱⁀╲╲╱⋟╯        ╰⋞╲╱╱⁀╲╲   ┇
+	TT: 1:7  = 7  ╱╱   ╲╱            ╲╱   ╲╲  ┇
+	TT: 1:8  = 8 ╱╱╱⁀⁀╲╱              ╲╱⁀⁀╲╲╲ ┇
+	TT: 1:9  = 9▕╱⁀                        ⁀╲▏┇
+	TT: 1:10 = 0                              ┇
+	TT: 1:11 = 1                              ┇
+	TT: 1:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+	    
+	TT: 2:0  = ┎123456789012345678901234567890┒
+	TT: 2:1  = 1                              ┇
+	TT: 2:2  = 2                              ┇
+	TT: 2:3  = 3                              ┇
+	TT: 2:4  = 4     ‿                  ‿     ┇
+	TT: 2:5  = 5   ╱⁀╲   ╭⋞        ⋟╮   ╱⁀╲   ┇
+	TT: 2:6  = 6  ╱╱⁀╲╲╱⋟╯          ╰⋞╲╱╱⁀╲╲  ┇
+	TT: 2:7  = 7 ╱╱   ╲╱              ╲╱   ╲╲ ┇
+	TT: 2:8  = 8▕▕╱⁀⁀╲╱                ╲╱⁀⁀╲▏▏┇
+	TT: 2:9  = 9 ╲▏                        ▕╱ ┇
+	TT: 2:10 = 0                              ┇
+	TT: 2:11 = 1                              ┇
+	TT: 2:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+	    
+	TT: 3:0  = ┎123456789012345678901234567890┒
+	TT: 3:1  = 1                              ┇
+	TT: 3:2  = 2                              ┇
+	TT: 3:3  = 3                              ┇
+	TT: 3:4  = 4    ‿                    ‿    ┇
+	TT: 3:5  = 5  ╱⁀╲   ╭⋞          ⋟╮   ╱⁀╲  ┇
+	TT: 3:6  = 6 ╱╱⁀╲╲╱⋟╯            ╰⋞╲╱╱⁀╲╲ ┇
+	TT: 3:7  = 7▕▕   ╲╱                ╲╱  ▕▕ ┇
+	TT: 3:8  = 8 ╲╲╱╲╱                  ╲╱╲╱╱ ┇
+	TT: 3:9  = 9  ╲▏                      ▕╱  ┇
+	TT: 3:10 = 0                              ┇
+	TT: 3:11 = 1                              ┇
+	TT: 3:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+
+
+	;날개2=====================================
+
+	TT: 4:0  = ┎123456789012345678901234567890┒
+	TT: 4:1  = 1                              ┇
+	TT: 4:2  = 2                              ┇
+	TT: 4:3  = 3                              ┇
+	TT: 4:4  = 4                              ┇
+	TT: 4:5  = 5                              ┇
+	TT: 4:6  = 6                              ┇
+	TT: 4:7  = 7                              ┇
+	TT: 4:8  = 8           ╭⋞    ⋟╮           ┇
+	TT: 4:9  = 9       ╱⁀⁀⋟╯      ╰⋞⁀⁀╲       ┇
+	TT: 4:10 = 0      ▕╱⁀⁀          ⁀⁀╲▏      ┇
+	TT: 4:11 = 1                              ┇
+	TT: 4:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+	    
+	TT: 5:0  = ┎123456789012345678901234567890┒
+	TT: 5:1  = 1                              ┇
+	TT: 5:2  = 2                              ┇
+	TT: 5:3  = 3                              ┇
+	TT: 5:4  = 4                              ┇
+	TT: 5:5  = 5                              ┇
+	TT: 5:6  = 6                              ┇
+	TT: 5:7  = 7                              ┇
+	TT: 5:8  = 8          ╭⋞      ⋟╮          ┇
+	TT: 5:9  = 9      ╱⁀⁀⋟╯        ╰⋞⁀⁀╲      ┇
+	TT: 5:10 = 0     ▕╱⁀⁀            ⁀⁀╲▏     ┇
+	TT: 5:11 = 1                              ┇
+	TT: 5:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+	    
+	TT: 6:0  = ┎123456789012345678901234567890┒
+	TT: 6:1  = 1                              ┇
+	TT: 6:2  = 2                              ┇
+	TT: 6:3  = 3                              ┇
+	TT: 6:4  = 4                              ┇
+	TT: 6:5  = 5                              ┇
+	TT: 6:6  = 6                              ┇
+	TT: 6:7  = 7                              ┇
+	TT: 6:8  = 8         ╭⋞        ⋟╮         ┇
+	TT: 6:9  = 9      ╱⁀⋟╯          ╰⋞⁀╲      ┇
+	TT: 6:10 = 0     ▕▕⁀              ⁀▏▏     ┇
+	TT: 6:11 = 1      ╲▏              ▕╱      ┇
+	TT: 6:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+	    
+	TT: 7:0  = ┎123456789012345678901234567890┒
+	TT: 7:1  = 1                              ┇
+	TT: 7:2  = 2                              ┇
+	TT: 7:3  = 3                              ┇
+	TT: 7:4  = 4                              ┇
+	TT: 7:5  = 5                              ┇
+	TT: 7:6  = 6                              ┇
+	TT: 7:7  = 7                              ┇
+	TT: 7:8  = 8        ╭⋞          ⋟╮        ┇
+	TT: 7:9  = 9     (⁀⋟╯            ╰⋞⁀)     ┇
+	TT: 7:10 = 0      ╲╲              ╱╱      ┇
+	TT: 7:11 = 1       ╲▏            ▕╱       ┇
+	TT: 7:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+
+
+	;질 =======================================
+
+	TT: 8:0  = ┎123456789012345678901234567890┒
+	TT: 8:1  = 1                              ┇
+	TT: 8:2  = 2                              ┇
+	TT: 8:3  = 3                              ┇
+	TT: 8:4  = 4                              ┇
+	TT: 8:5  = 5            ╰⦆  ⦅╯            ┇
+	TT: 8:6  = 6              ʅʃ              ┇
+	TT: 8:7  = 7                              ┇
+	TT: 8:8  = 8                              ┇
+	TT: 8:9  = 9                              ┇
+	TT: 8:10 = 0                              ┇
+	TT: 8:11 = 1                              ┇
+	TT: 8:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+
+	TT: 9:0  = ┎123456789012345678901234567890┒
+	TT: 9:1  = 1                              ┇
+	TT: 9:2  = 2                              ┇
+	TT: 9:3  = 3                              ┇
+	TT: 9:4  = 4                              ┇
+	TT: 9:5  = 5           ╰⦆    ⦅╯           ┇
+	TT: 9:6  = 6            ʅʃ  ʅʃ            ┇
+	TT: 9:7  = 7            ∣⦅  ⦆∣            ┇
+	TT: 9:8  = 8            ∣⦆  ⦅∣            ┇
+	TT: 9:9  = 9            ∣⦅  ⦆∣            ┇
+	TT: 9:10 = 0            ╰-  -╯            ┇
+	TT: 9:11 = 1                              ┇
+	TT: 9:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+
+	TT:10:0  = ┎123456789012345678901234567890┒
+	TT:10:1  = 1                              ┇
+	TT:10:2  = 2                              ┇
+	TT:10:3  = 3                              ┇
+	TT:10:4  = 4                              ┇
+	TT:10:5  = 5           ╰⦆    ⦅╯           ┇
+	TT:10:6  = 6           ╭ʅʃ  ʅʃ╮           ┇
+	TT:10:7  = 7           ∣⦅    ⦆∣           ┇
+	TT:10:8  = 8           ∣⦆    ⦅∣           ┇
+	TT:10:9  = 9           ∣⦅    ⦆∣           ┇
+	TT:10:10 = 0           ╰--  --╯           ┇
+	TT:10:11 = 1                              ┇
+	TT:10:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+
+	TT:11:0  = ┎123456789012345678901234567890┒
+	TT:11:1  = 1                              ┇
+	TT:11:2  = 2                              ┇
+	TT:11:3  = 3                              ┇
+	TT:11:4  = 4                              ┇
+	TT:11:5  = 5          ╰⦆      ⦅╯          ┇
+	TT:11:6  = 6          ╭ʅ‿ʃ  ʅ‿ʃ╮          ┇
+	TT:11:7  = 7          ∣⦅      ⦆∣          ┇
+	TT:11:8  = 8          ∣⦆      ⦅∣          ┇
+	TT:11:9  = 9          ∣⦅      ⦆∣          ┇
+	TT:11:10 = 0          ╰---  ---╯          ┇
+	TT:11:11 = 1                              ┇
+	TT:11:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+
+
+	;자궁 =======================================
+
+	TT:12:0  = ┎123456789012345678901234567890┒
+	TT:12:1  = 1                              ┇
+	TT:12:2  = 2  ╭⊰⋟⇁⇀╮    ‿‿  ‿‿    ╭↼↽⋞⊱╮  ┇
+	TT:12:3  = 3  ∣    ╰⇀⇁⇀⊰⦆͡  ͡⦅⊱↼↽↼╯    ∣  ┇
+	TT:12:4  = 4  ╰═════⊰¤╼⦅      ⦆╾¤⊱═════╯  ┇
+	TT:12:5  = 5                              ┇
+	TT:12:6  = 6                              ┇
+	TT:12:7  = 7                              ┇
+	TT:12:8  = 8                              ┇
+	TT:12:9  = 9                              ┇
+	TT:12:10 = 0                              ┇
+	TT:12:11 = 1                              ┇
+	TT:12:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+
+	TT:13:0  = ┎123456789012345678901234567890┒
+	TT:13:1  = 1                              ┇
+	TT:13:2  = 2  ╭⊰⋟⇁⇀╮   ‿‿‿  ‿‿‿   ╭↼↽⋞⊱╮  ┇
+	TT:13:3  = 3  ∣    ╰⇁⇀⊰⦆͡͡  ͡͡⦅⊱↼↽╯    ∣  ┇
+	TT:13:4  = 4  ╰════⊰¤╼⦅        ⦆╼¤⊱════╯  ┇
+	TT:13:5  = 5                              ┇
+	TT:13:6  = 6                              ┇
+	TT:13:7  = 7                              ┇
+	TT:13:8  = 8                              ┇
+	TT:13:9  = 9                              ┇
+	TT:13:10 = 0                              ┇
+	TT:13:11 = 1                              ┇
+	TT:13:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+
+	TT:14:0  = ┎123456789012345678901234567890┒
+	TT:14:1  = 1            ‿‿  ‿‿            ┇
+	TT:14:2  = 2  ╭⊰⋟⇁⇀╮  ╭⦆͡͡  ͡͡⦅╮  ╭↼↽⋞⊱╮  ┇
+	TT:14:3  = 3  ∣    ╰⇀⊰⦅        ⦆⊱↼╯    ∣  ┇
+	TT:14:4  = 4  ╰════⊰¤╼⦅        ⦆╼¤⊱════╯  ┇
+	TT:14:5  = 5                              ┇
+	TT:14:6  = 6                              ┇
+	TT:14:7  = 7                              ┇
+	TT:14:8  = 8                              ┇
+	TT:14:9  = 9                              ┇
+	TT:14:10 = 0                              ┇
+	TT:14:11 = 1                              ┇
+	TT:14:12 = ┖┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┚
+	
+	;전각1: ☸❁❂Ⓞ☫◎⓪○◯●ⒾⓛΘ︿♉♈〰 §♒♌Φↀↂ ☊
+	;전각2: 〡〣❀❉✼✻✽❃✾❊❋❈✿❧❦☝△☊ Ǒ
+	;반각 :	█ ▌▐ ⋂ ╭╮╭▬ⓛ▬╮╱▔╲╱﹌╲ ∭▓█
+		
+	P_H:1  = ∩  
+	P_H:2  = ╭ⓛ╮ 
+	P_H:3  = ╭▬⓪▬╮
+	P_H:4  = ∧  
+	P_H:5  = ╱﹌╲ 
+	P_H:6  = ╱▔﹌▔╲
+	P_B:1  = ▐▌  
+	P_B:2  = ██  
+	P_B:3  = ▐▓▓▌ 
+	P_B:4  = █▓▓█ 
+	P_B:5  = ▐▓░░▓▌
+	P_B:6  = █▓░░▓█
+	P_B:7  = ℵℵ  
+	P_B:8  = ℵӁӁℵ 
+	P_B:9  = ℵӁӁӁӁℵ
+	P_B:10 = «⋚ѦѦ⋛»
+	
+	
+ENDIF
+
+;애니메이션 설정================================================================================================================
+;애니메이션 출력시 위에 한줄 지워지는것 대응
+PRINTFORML
+;애니메이션 출력속도(1초 : 1000)
+ANI_SPEED = 50
+IF BASE:INSERT("인서트상대", ARG):정력 >= 200
+	ANI_SPEED = 30
+ELSEIF BASE:INSERT("인서트상대", ARG):정력 < 20
+	ANI_SPEED = 70
+ENDIF
+;스트로크 애니메이션 횟수
+ANI_RE = 4
+IF BASE:INSERT("인서트상대", ARG):정력 >= 200
+	ANI_RE = 6
+ELSEIF BASE:INSERT("인서트상대", ARG):정력 < 20
+	ANI_RE = 3
+ENDIF
+;페니스 스트로크 길이
+P_DIP2 = 3
+;애니메이션 삽입도달 깊이
+ANI_DIP = 10
+
+;페니스 상태(1~6:조교자굵기,7~9:촉수굵기,10:용간)
+P_TYPE = 0
+;페니스 삽입심도(삽입 시작지점)(0~10, 0은 비삽입)
+P_DIP = 1
+;페니스 컬러 보통 갈색 흰색 파랑
+P_COLOR = DEF_COLOR("하트핑크")
+IF TALENT:INSERT("인서트상대", ARG):피부색 == 0
+	P_COLOR = (250*0x010000) + (181*0x000100) + 175
+ELSEIF TALENT:INSERT("인서트상대", ARG):피부색 == 1
+	P_COLOR = (232*0x010000) + (184*0x000100) + 122
+ELSEIF TALENT:INSERT("인서트상대", ARG):피부색 == 2
+	P_COLOR = (249*0x010000) + (238*0x000100) + 216
+ELSEIF TALENT:INSERT("인서트상대", ARG):피부색 == 3
+	P_COLOR = (190*0x010000) + (192*0x000100) + 236
+ENDIF
+IF (TEQUIP:ARG:바이브 && TEQUIP:ARG:촉수)
+	P_COLOR = (251*0x010000) + (110*0x000100) + 154
+ENDIF
+IF SELECTCOM == 304
+	P_COLOR = (69*0x010000) + (152*0x000100) + 129
+ENDIF
+
+;삽입신 설정
+;용간
+IF SELECTCOM == 304
+	P_TYPE = 10
+;촉수
+ELSEIF TEQUIP:ARG:촉수
+	IF SIZE("바이브", ARG) == 1
+		P_TYPE = 7
+	ELSEIF SIZE("바이브", ARG) == 2
+		P_TYPE = 8
+	ELSEIF SIZE("바이브", ARG) == 3
+		P_TYPE = 9
+	ENDIF
+;그 외 삽입 상황 확장 여유분 (딜도 손가락삽입 로터 바이브)
+ELSEIF 0
+ELSEIF 0
+ELSEIF 0
+ELSEIF 0
+;조교자 사이즈 크기0(왜소)
+ELSEIF SIZE("페니스", INSERT("인서트상대", ARG)) == 0
+	P_TYPE = 1
+ELSE
+	P_TYPE = SIZE("페니스", INSERT("인서트상대", ARG))
+ENDIF
+
+;조교상황별 삽입도달 깊이 설정 설정================================================================================================================
+
+;초기 삽입
+IF (INSERT("Ｖ인서트"))
+	ANI_DIP = 5
+	
+ENDIF
+;삽입 중 다른조교
+IF ( INSERT("Ｖ인서트") && (SELECTCOM<60||SELECTCOM>68) )
+	ANI_DIP = 5
+	P_DIP = ANI_DIP-P_DIP2
+ENDIF
+
+;g스팟자극
+IF (INSERT("Ｖ인서트") && SELECTCOM == 66)
+	ANI_DIP = 4
+	P_DIP = 3
+ENDIF
+
+;자궁구자극
+IF (INSERT("Ｖ인서트") && SELECTCOM == 67)
+	ANI_DIP = 6
+	P_DIP = 4
+ENDIF
+
+;자궁삽입
+IF (INSERT("Ｖ인서트") && SELECTCOM == 68)
+	ANI_DIP = 9
+	P_DIP = 5
+ENDIF
+
+;자궁삽입확장(마음에드는 체위) 
+IF ( INSERT("Ｖ인서트") && SELECTCOM == 68 && COND("마음에 드는 체위中", ARG) )
+	ANI_DIP = 10
+	P_DIP = 7
+ENDIF
+
+;촉수삽입 
+IF ( TEQUIP:ARG:바이브 && TEQUIP:ARG:촉수 )
+	ANI_DIP = 6
+ENDIF
+
+;촉수삽입중 다른조교
+IF ( (TEQUIP:ARG:바이브&&TEQUIP:ARG:촉수) && SELECTCOM!=201 )
+	ANI_DIP = 6
+	P_DIP = ANI_DIP-P_DIP2
+ENDIF
+
+;용간
+IF ( SELECTCOM == 304 )
+	ANI_DIP = 6
+ENDIF
+
+;애니메이션 루프시작================================================================================================================
+$INPUT_LOOP
+
+;페니스 상태에 따른 귀두, 바디, 음문 매칭================================================================================================================
+
+IF P_DIP <= 1
+	P_H_TEPE = 1
+	P_B_TEPE = 1
+	V_TEPE = 2
+	IF W1_TYPE != 0
+		W1_TYPE = 2
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 2
+	ENDIF
+ELSEIF P_TYPE == 1
+	P_H_TEPE = 1
+	P_B_TEPE = 1
+	V_TEPE = 2
+	IF W1_TYPE != 0
+		W1_TYPE = 2
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 2
+	ENDIF
+ELSEIF P_TYPE == 2
+	P_H_TEPE = 1
+	P_B_TEPE = 2
+	V_TEPE = 2
+	IF W1_TYPE != 0
+		W1_TYPE = 2
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 2
+	ENDIF
+ELSEIF P_TYPE == 3
+	P_H_TEPE = 2
+	P_B_TEPE = 3
+	V_TEPE = 3
+	IF W1_TYPE != 0
+		W1_TYPE = 2
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 3
+	ENDIF
+ELSEIF P_TYPE == 4
+	P_H_TEPE = 2
+	P_B_TEPE = 4
+	V_TEPE = 3
+	IF W1_TYPE != 0
+		W1_TYPE = 2
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 3
+	ENDIF
+ELSEIF P_TYPE == 5
+	P_H_TEPE = 3
+	P_B_TEPE = 5
+	V_TEPE = 4
+	IF W1_TYPE != 0
+		W1_TYPE = 3
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 4
+	ENDIF
+ELSEIF P_TYPE == 6
+	P_H_TEPE = 6
+	P_B_TEPE = 6
+	V_TEPE = 4
+	IF W1_TYPE != 0
+		W1_TYPE = 3
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 4
+	ENDIF
+ELSEIF P_TYPE == 7
+	P_H_TEPE = 4
+	P_B_TEPE = 7
+	V_TEPE = 2
+	IF W1_TYPE != 0
+		W1_TYPE = 2
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 2
+	ENDIF
+ELSEIF P_TYPE == 8
+	P_H_TEPE = 5
+	P_B_TEPE = 8
+	V_TEPE = 3
+	IF W1_TYPE != 0
+		W1_TYPE = 2
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 3
+	ENDIF
+ELSEIF P_TYPE == 9
+	P_H_TEPE = 6
+	P_B_TEPE = 9
+	V_TEPE = 4
+	IF W1_TYPE != 0
+		W1_TYPE = 3
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 4
+	ENDIF
+ELSEIF P_TYPE == 10
+	P_H_TEPE = 6
+	P_B_TEPE = 10
+	V_TEPE = 4
+	IF W1_TYPE != 0
+		W1_TYPE = 3
+	ENDIF
+	IF W2_TYPE != 0
+		W2_TYPE = 4
+	ENDIF
+ENDIF	
+;자궁 타입(1~3)
+W_TEPE = 1
+;굵은페니스 삽입시
+IF STRLENSU(P_H:P_H_TEPE) == 5
+	W_TEPE = 2
+ENDIF
+;깊은삽입시 혹은 출산에 가까울경우 혹은 자궁정자량많을경우
+IF (P_DIP == 10) || (TALENT:ARG:임신>=3) || (BASE:ARG:자궁정자량>=2000)
+	W_TEPE = 3
+ENDIF
+
+;음문 배열작성 시작================================================================================================================
+
+
+;음문 윈도우 초기화 신
+IF 1
+	FOR LCOUNT,0,SIZE_V
+		FOR LCOUNT2,0,SIZE_H
+			MM:LCOUNT:LCOUNT2 = %UNICODE(0x0020)%
+			MC:LCOUNT:LCOUNT2 = 0xffffff
+		NEXT
+	NEXT
+ENDIF
+
+;창 테두리 그리기2 신
+IF 1
+	FOR LCOUNT2,0,SIZE_V
+		FOR LCOUNT,0,SIZE_H
+			SUBSTRING TT:0:LCOUNT2, LCOUNT, 1
+			MM:LCOUNT2:LCOUNT = %RESULTS:0%
+			;테두리 색상
+			MC:LCOUNT2:LCOUNT = 0xafafaf
+		NEXT
+	NEXT
+	;테두리 모서리 (버그 대응)
+	MM:0:0 = ┎
+	MM:(SIZE_V-1):0 = ┖
+	MM:0:(SIZE_H-1) = ┒
+	MM:(SIZE_V-1):(SIZE_H-1) = ┚
+ENDIF
+
+;날개1 그리기
+IF W1_TYPE != 0
+	FOR LCOUNT2,1,SIZE_V-1
+		FOR LCOUNT,1,SIZE_H-1
+			SUBSTRINGU TT:(W1_TYPE):LCOUNT2, LCOUNT, 1
+			IF (ENCODETOUNI(RESULTS:0, 0) != 0x0020)
+				MM:LCOUNT2:LCOUNT = %RESULTS:0%
+				;날개1 색상
+				MC:LCOUNT2:LCOUNT = COLOR
+			ENDIF
+		NEXT
+	NEXT
+ENDIF
+
+;날개2 그리기
+IF W2_TYPE != 0
+	FOR LCOUNT2,1,SIZE_V-1
+		FOR LCOUNT,1,SIZE_H-1
+			SUBSTRINGU TT:(W2_TYPE+3):LCOUNT2, LCOUNT, 1
+			IF (ENCODETOUNI(RESULTS:0, 0) != 0x0020)
+				MM:LCOUNT2:LCOUNT = %RESULTS:0%
+				;날개2 색상
+				MC:LCOUNT2:LCOUNT = COLOR
+			ENDIF
+		NEXT
+	NEXT
+ENDIF
+
+;V 그리기
+IF 1
+	FOR LCOUNT2,1,SIZE_V-1
+		FOR LCOUNT,1,SIZE_H-1
+			SUBSTRINGU TT:(V_TEPE+7):LCOUNT2, LCOUNT, 1
+			IF (ENCODETOUNI(RESULTS:0, 0) != 0x0020)
+				MM:LCOUNT2:LCOUNT = %RESULTS:0%
+				;V 색상
+				MC:LCOUNT2:LCOUNT = COLOR
+			ENDIF
+		NEXT
+	NEXT
+ENDIF
+
+;W 그리기
+IF 1
+	FOR LCOUNT2,1,SIZE_V-1
+		FOR LCOUNT,1,SIZE_H-1
+			SUBSTRINGU TT:(W_TEPE+11):LCOUNT2, LCOUNT, 1
+			IF (ENCODETOUNI(RESULTS:0, 0) != 0x0020)
+				MM:LCOUNT2:LCOUNT = %RESULTS:0%
+				;W 색상
+				MC:LCOUNT2:LCOUNT = COLOR
+			ENDIF
+		NEXT
+	NEXT
+ENDIF
+
+;음문 전각기호 
+IF 1
+	;전각1: ☸❁❂Ⓞ☫◎⓪○◯●ⒾⓛΘ︿♉♈〰 §♒♌Φↀↂ
+	;전각2: ｏ✺☉⦿♋ↀ❤♊川❀❉✼✻✽❃✾❊❋❈✿❧❦☝△☊
+	;나팔관
+	MM:2:7 = %UNICODE(0x0000)%
+	MM:2:6 = 〰
+	MC:2:6 = COLOR
+	MM:2:25 = %UNICODE(0x0000)%
+	MM:2:24 = 〰
+	MC:2:24 = COLOR
+	MM:4:5 = %UNICODE(0x0000)%
+	MM:4:4 = 〰
+	MC:4:4 = COLOR
+	MM:4:7 = %UNICODE(0x0000)%
+	MM:4:6 = 〰
+	MC:4:6 = COLOR
+	MM:4:25 = %UNICODE(0x0000)%
+	MM:4:24 = 〰
+	MC:4:24 = COLOR
+	MM:4:27 = %UNICODE(0x0000)%
+	MM:4:26 = 〰
+	MC:4:26 = COLOR	
+	;자궁
+	IF W_TEPE == 3
+		;자궁위
+		MM:1:16 = %UNICODE(0x0000)%
+		MM:1:15 = ♉
+		MC:1:15 = COLOR
+		;자궁상단
+		MM:2:16 = %UNICODE(0x0000)%
+		MM:2:15 = ♈
+		MC:2:15 = COLOR
+	ELSE
+		MM:2:16 = %UNICODE(0x0000)%
+		MM:2:15 = ♉
+		MC:2:15 = COLOR
+		;자궁상단
+		MM:3:16 = %UNICODE(0x0000)%
+		MM:3:15 = ♈
+		MC:3:15 = COLOR
+	ENDIF
+	;자궁 정자량에 따른 정액 표시
+	IF (BASE:ARG:자궁정자량>=2000)
+		IF W_TEPE == 1
+			FOR LCOUNT, 14, 18
+				MM:3:LCOUNT = ≋
+				MC:3:LCOUNT = 0xdfdfdf	
+			NEXT
+		ELSEIF W_TEPE == 2
+			FOR LCOUNT, 13, 19
+				MM:3:LCOUNT = ≋
+				MC:3:LCOUNT = 0xdfdfdf	
+			NEXT
+		ELSEIF W_TEPE == 3
+			FOR LCOUNT, 13, 19
+				MM:2:LCOUNT = ≋
+				MC:2:LCOUNT = 0xffffff	
+			NEXT
+		ENDIF
+	ENDIF
+	IF (BASE:ARG:자궁정자량>=400)
+		IF W_TEPE == 1
+			FOR LCOUNT, 14, 18
+				MM:3:LCOUNT = ≋
+				MC:3:LCOUNT = 0xdfdfdf	
+			NEXT
+		ELSEIF W_TEPE == 2
+			FOR LCOUNT, 13, 19
+				MM:3:LCOUNT = ≋
+				MC:3:LCOUNT = 0xdfdfdf	
+			NEXT
+		ELSEIF W_TEPE == 3
+			FOR LCOUNT, 12, 20
+				MM:3:LCOUNT = ≋
+				MC:3:LCOUNT = 0xdfdfdf	
+			NEXT
+		ENDIF		
+	ENDIF
+	IF (BASE:ARG:자궁정자량>=100)
+		IF W_TEPE == 1
+			FOR LCOUNT, 13, 19
+				MM:4:LCOUNT = ≋
+				MC:4:LCOUNT = 0xbfbfbf	
+			NEXT
+		ELSEIF W_TEPE == 2 || 3
+			FOR LCOUNT, 12, 20
+				MM:4:LCOUNT = ≋
+				MC:4:LCOUNT = 0xbfbfbf	
+			NEXT
+		ENDIF
+	ENDIF
+	IF (BASE:ARG:자궁정자량>=10)
+		IF V_TEPE == 1
+			FOR LCOUNT, 15, 17
+				MM:5:LCOUNT = ≋
+				MC:5:LCOUNT = 0x9f9f9f	
+			NEXT
+		ELSEIF V_TEPE == 2 || 3
+			FOR LCOUNT, 14, 18
+				MM:5:LCOUNT = ≋
+				MC:5:LCOUNT = 0x9f9f9f
+			NEXT
+		ELSEIF V_TEPE == 4
+			FOR LCOUNT, 13, 19
+				MM:5:LCOUNT = ≋
+				MC:5:LCOUNT = 0x9f9f9f	
+			NEXT
+		ENDIF
+	ENDIF
+	;전각1: ☸❁❂Ⓞ☫◎⓪○◯●ⒾⓛΘ︿♉♈〰 §♒♌Φↀↂ
+	;전각2: ｏ✺☉⦿♋ↀ❤♊川❀❉✼✻✽❃✾❊❋❈✿❧❦☝△☊
+
+	;태내 상황별 추가 음문마크
+	IF BASE:ARG:태아 == 1
+		MM:4:16 = %UNICODE(0x0000)%
+		MM:4:15 = ❤
+		MC:4:15 = DEF_COLOR("하트핑크")
+	ELSEIF BASE:ARG:태아 == 2
+		MM:4:16 = %UNICODE(0x0000)%
+		MM:4:15 = ⦿
+		MC:4:15 = DEF_COLOR("하트핑크")
+	ELSEIF BASE:ARG:태아 == 3
+		MM:4:16 = %UNICODE(0x0000)%
+		MM:4:15 = ↀ
+		MC:4:15 = DEF_COLOR("하트핑크")
+	ELSEIF TALENT:ARG:임신 == 1
+		MM:4:16 = %UNICODE(0x0000)%
+		MM:4:15 = ❦
+		MC:4:15 = COLOR
+	ELSEIF TALENT:ARG:임신 == 2
+		MM:4:14 = ⊱
+		MC:4:14 = COLOR
+		MM:4:16 = %UNICODE(0x0000)%
+		MM:4:15 = ❦
+		MC:4:15 = COLOR
+		MM:4:17 = ⊰
+		MC:4:17 = COLOR
+	ELSEIF TALENT:ARG:임신 == 3
+		MM:3:14 = ⊱
+		MC:3:14 = COLOR
+		MM:3:16 = %UNICODE(0x0000)%
+		MM:3:15 = ❦
+		MC:3:15 = COLOR
+		MM:3:17 = ⊰
+		MC:3:17 = COLOR
+		MM:4:14 = ʅ
+		MC:4:14 = COLOR
+		MM:4:15 = ʔ
+		MC:4:15 = COLOR
+		MM:4:16 = ʕ
+		MC:4:16 = COLOR
+		MM:4:17 = ʃ
+		MC:4:17 = COLOR		
+	ENDIF
+	
+	;페니스가 자궁경부 밀어올릴때
+	IF	P_DIP == 6		
+		MM:5:16 = %UNICODE(0x0000)%
+		MM:5:15 = ♊
+		MC:5:15 = COLOR
+		IF V_TEPE >=2
+			MM:5:14 = ‿
+			MC:5:14 = COLOR
+			MM:5:17 = ‿
+			MC:5:17 = COLOR
+			MM:6:14 = ╱
+			MC:6:14 = COLOR
+			MM:6:17 = ╲
+			MC:6:17 = COLOR
+		ENDIF
+		IF V_TEPE >=4
+			MM:5:13 = ‿
+			MC:5:13 = COLOR
+			MM:5:18 = ‿
+			MC:5:18 = COLOR
+			MM:6:13 = %UNICODE(0x0020)%
+			MC:6:13 = COLOR
+			MM:6:18 = %UNICODE(0x0020)%
+			MC:6:18 = COLOR
+		ENDIF
+	ELSE
+		;자궁경부
+		MM:6:16 = %UNICODE(0x0000)%
+		MM:6:15 = ↂ
+		MC:6:15 = COLOR
+	ENDIF
+	;질주름
+	MM:7:16 = %UNICODE(0x0000)%
+	MM:7:15 = ♒
+	MC:7:15 = COLOR
+	MM:8:16 = %UNICODE(0x0000)%
+	MM:8:15 = ♒
+	MC:8:15 = COLOR
+	MM:9:16 = %UNICODE(0x0000)%
+	MM:9:15 = ♒
+	MC:9:15 = COLOR
+	IF V_TEPE == 4
+		MM:7:14 = %UNICODE(0x0000)%
+		MM:7:13 = ♒
+		MC:7:13 = COLOR
+		MM:8:14 = %UNICODE(0x0000)%
+		MM:8:13 = ♒
+		MC:8:13 = COLOR
+		MM:9:14 = %UNICODE(0x0000)%
+		MM:9:13 = ♒
+		MC:9:13 = COLOR
+		MM:7:18 = %UNICODE(0x0000)%
+		MM:7:17 = ♒
+		MC:7:17 = COLOR
+		MM:8:18 = %UNICODE(0x0000)%
+		MM:8:17 = ♒
+		MC:8:17 = COLOR
+		MM:9:18 = %UNICODE(0x0000)%
+		MM:9:17 = ♒
+		MC:9:17 = COLOR
+	ENDIF
+	;처녀막
+	IF TALENT:ARG:처녀
+		MM:8:16 = %UNICODE(0x0000)%
+		MM:8:15 = Θ
+		MC:8:15 = COLOR
+	ENDIF
+	;V
+	MM:10:16 = %UNICODE(0x0000)%
+	MM:10:15 = ☫
+	MC:10:15 = COLOR
+ENDIF
+
+;페니스 그리기 
+;조교중일때 및 삽입중만 출력
+;IF (조교중 && P_TYPE>0 && INSERT("인서트상대", ARG))
+;IF (조교중 && (INSERT("Ｖ인서트")||(TEQUIP:ARG:바이브&&TEQUIP:ARG:촉수)||SELECTCOM==304))
+
+IF 조교중 && P_TYPE>0 && ( INSERT("인서트상대", ARG) || (TEQUIP:ARG:바이브 && TEQUIP:ARG:촉수) || SELECTCOM == 304)
+	
+	;귀두 각각 굵기 1,2,3단계
+	IF STRLENSU(P_H:P_H_TEPE) == 1
+		SUBSTRINGU P_H:P_H_TEPE, 0, 1
+		MM:(12-P_DIP):16 = %UNICODE(0x0000)%
+		MM:(12-P_DIP):15 = %RESULTS:0%
+		MC:(12-P_DIP):15 = P_COLOR
+	ELSEIF STRLENSU(P_H:P_H_TEPE) == 3
+		SUBSTRINGU P_H:P_H_TEPE, 0, 1
+		MM:(12-P_DIP):14 = %RESULTS:0%
+		MC:(12-P_DIP):14 = P_COLOR
+		SUBSTRINGU P_H:P_H_TEPE, 1, 1
+		MM:(12-P_DIP):16 = %UNICODE(0x0000)%
+		MM:(12-P_DIP):15 = %RESULTS:0%
+		MC:(12-P_DIP):15 = P_COLOR
+		SUBSTRINGU P_H:P_H_TEPE, 2, 1
+		MM:(12-P_DIP):17 = %RESULTS:0%
+		MC:(12-P_DIP):17 = P_COLOR
+	ELSEIF STRLENSU(P_H:P_H_TEPE) == 5
+		SUBSTRINGU P_H:P_H_TEPE, 0, 1
+		MM:(12-P_DIP):13 = %RESULTS:0%
+		MC:(12-P_DIP):13 = P_COLOR
+		SUBSTRINGU P_H:P_H_TEPE, 1, 1
+		MM:(12-P_DIP):14 = %RESULTS:0%
+		MC:(12-P_DIP):14 = P_COLOR
+		SUBSTRINGU P_H:P_H_TEPE, 2, 1
+		MM:(12-P_DIP):16 = %UNICODE(0x0000)%
+		MM:(12-P_DIP):15 = %RESULTS:0%
+		MC:(12-P_DIP):15 = P_COLOR
+		SUBSTRINGU P_H:P_H_TEPE, 3, 1
+		MM:(12-P_DIP):17 = %RESULTS:0%
+		MC:(12-P_DIP):17 = P_COLOR
+		SUBSTRINGU P_H:P_H_TEPE, 4, 1
+		MM:(12-P_DIP):18 = %RESULTS:0%
+		MC:(12-P_DIP):18 = P_COLOR
+	ENDIF
+	
+	;페니스 바디
+	IF P_DIP>=1 && P_DIP<=10
+		FOR LCOUNT2, 0, P_DIP-1
+			FOR LCOUNT, 0, STRLENSU(P_B:P_B_TEPE)
+			
+				SUBSTRINGU P_B:P_B_TEPE, LCOUNT, 1
+				MM:(13-P_DIP+LCOUNT2):(LCOUNT-(STRLENSU(P_B:P_B_TEPE)/2)+16) = %RESULTS:0%
+				MC:(13-P_DIP+LCOUNT2):(LCOUNT-(STRLENSU(P_B:P_B_TEPE)/2)+16) = P_COLOR
+			NEXT
+		NEXT
+	ENDIF
+
+	;사정효과(애니메이션 효과 종료 후 출력 결정)
+	IF P_DIP==ANI_DIP
+		IF (TFLAG:9>0 && SELECTCOM == 304) || (TFLAG:15 && TEQUIP:ARG:촉수!=0) || (COND("前回절정", INSERT("인서트상대", ARG)) && SELECTCOM!=304 && TEQUIP:ARG:촉수==0)
+			MM:(11-P_DIP):16 = %UNICODE(0x0000)%
+			MM:(11-P_DIP):15 = ♈
+			MC:(11-P_DIP):15 = 0xffffff
+		ENDIF
+	ENDIF
+ENDIF
+
+;각인 레벨 4가 아닌경우 
+IF MARK:ARG:정액각인 != 4
+	FOR LCOUNT2,0,SIZE_V
+		FOR LCOUNT,0,SIZE_H
+			SUBSTRING TT:0:LCOUNT2, LCOUNT, 1
+			MM:LCOUNT2:LCOUNT = %RESULTS:0%
+			;테두리 색상
+			MC:LCOUNT2:LCOUNT = 0xafafaf
+		NEXT
+	NEXT
+	;테두리 모서리 (버그 대응)
+	MM:0:0 = ┎
+	MM:(SIZE_V-1):0 = ┖
+	MM:0:(SIZE_H-1) = ┒
+	MM:(SIZE_V-1):(SIZE_H-1) = ┚
+	;V
+	FOR LCOUNT2,1,SIZE_V-1
+		FOR LCOUNT,1,SIZE_H-1
+			SUBSTRINGU TT:8:LCOUNT2, LCOUNT, 1
+			IF (ENCODETOUNI(RESULTS:0, 0) != 0x0020)
+				MM:LCOUNT2:LCOUNT = %RESULTS:0%
+				;V 색상
+				MC:LCOUNT2:LCOUNT = COLOR
+			ENDIF
+		NEXT
+	NEXT
+	;W
+	IF MARK:ARG:정액각인 >= 1
+		FOR LCOUNT,13,19
+			SUBSTRINGU TT:12:3, LCOUNT, 1
+			IF (ENCODETOUNI(RESULTS:0, 0) != 0x0020)
+				MM:3:LCOUNT = %RESULTS:0%
+				;W 색상
+				MC:3:LCOUNT = COLOR
+			ENDIF
+		NEXT
+		FOR LCOUNT,12,20
+			SUBSTRINGU TT:12:4, LCOUNT, 1
+			IF (ENCODETOUNI(RESULTS:0, 0) != 0x0020)
+				MM:4:LCOUNT = %RESULTS:0%
+				;W 색상
+				MC:4:LCOUNT = COLOR
+			ENDIF
+		NEXT
+	ENDIF
+	IF MARK:ARG:정액각인 >= 3
+		FOR LCOUNT2,1,SIZE_V-1
+			FOR LCOUNT,1,SIZE_H-1
+				SUBSTRINGU TT:12:LCOUNT2, LCOUNT, 1
+				IF (ENCODETOUNI(RESULTS:0, 0) != 0x0020)
+					MM:LCOUNT2:LCOUNT = %RESULTS:0%
+					;W 색상
+					MC:LCOUNT2:LCOUNT = COLOR
+				ENDIF
+			NEXT
+		NEXT
+	ENDIF
+	IF MARK:ARG:정액각인 >= 2
+		MM:2:16 = %UNICODE(0x0000)%
+		MM:2:15 = ♉
+		MC:2:15 = COLOR
+		MM:3:16 = %UNICODE(0x0000)%
+		MM:3:15 = ♈
+		MC:3:15 = COLOR
+	ENDIF
+ENDIF
+
+;음문 출력 
+IF 1
+	SETFONT "MS Gothic"
+	FOR LCOUNT,0,SIZE_V
+		PRINTFORM 
+		FOR LCOUNT2,0,SIZE_H
+				SETCOLOR MC:LCOUNT:LCOUNT2
+				PRINTFORM %MM:LCOUNT:LCOUNT2%
+		NEXT
+		PRINTFORML 
+	NEXT
+	RESETCOLOR	
+	SETFONT
+ENDIF
+
+;각인레벨 4 아닐시 종료
+IF MARK:ARG:정액각인 != 4
+	RETURN 1
+ENDIF
+
+;애니메이션 루프 제어부================================================================================================================
+
+;애니메이션 출력속도(1초 : 1000)
+;ANI_SPEED
+;애니메이션 삽입도달 깊이
+;ANI_DIP
+;애니메이션 반복횟수
+;ANI_RE
+
+;페니스 삽입 있을시만 애니메이션 동작
+
+IF 조교중 && P_TYPE>0 && ( INSERT("인서트상대", ARG) || (TEQUIP:ARG:바이브 && TEQUIP:ARG:촉수) || SELECTCOM == 304)
+
+	;스트로크 애니메이션
+	IF P_DIP < ANI_DIP
+		P_DIP++
+		TWAIT ANI_SPEED, 0
+		CLEARLINE 13
+		GOTO INPUT_LOOP
+	ENDIF
+	;스트로크 애니메이션 횟수
+	IF ANI_RE > 1
+		ANI_RE--
+		;삽입 출발지점(초기 삽입시는 처음부터, 두번째부턴 왕복운동)
+		IF (ANI_DIP<P_DIP2)
+			P_DIP = 1
+		ELSE
+			P_DIP = ANI_DIP-P_DIP2
+		ENDIF
+		;사정시 대기시간 길게
+		IF (TFLAG:9>0 && SELECTCOM == 304) || (TFLAG:15 && TEQUIP:ARG:촉수!=0) || (COND("前回절정", INSERT("인서트상대", ARG)) && SELECTCOM!=304 && TEQUIP:ARG:촉수==0)
+			TWAIT ANI_SPEED*20, 0
+		ELSE
+			TWAIT ANI_SPEED*8, 0
+		ENDIF
+		CLEARLINE 13
+		GOTO INPUT_LOOP
+	ENDIF
+	;애니메이션 종료후 대기시간
+	TWAIT 1500, 0
+ENDIF
+
+;음문 코드 끝================================================================================================================
+RETURN 1
+
+
+;사용할 변수 찾은것---------------------------------------------
+;
+;IF 0
+;	;아직 완벽하진 않은 변수
+;	;PRINTFORML 피조교자 정사절정 : {BASE:ARG:절정}
+;	;PRINTFORML 피조교자 음호 : {TALENT:ARG:음호}
+;	;PRINTFORML 주인 정사절정 : {BASE:MASTER:절정}
+;	;PRINTFORML 조수 정사절정 : {BASE:ASSI:절정}
+;	;PRINTFORML 태내정액량 : {BASE:ARG:태내정액량}
+;	
+;	PRINTFORML
+;	
+;	PRINTFORML 최근 입력값 : {SELECTCOM}
+;	PRINTFORML 조교중인지 확인 : {조교중}
+;	PRINTFORML 최근 조교 명칭 문자열 : %STR:0%
+;	PRINTFORML 전회조교커맨드 : %TEXTS("前回조교커맨드")%
+;	PRINTFORML 현재체위 확인 : {TEQUIP:ARG:체위}
+;	
+;	PRINTFORML Ｖ인서트만 확인 : {INSERT("Ｖ인서트")}
+;	PRINTFORML 피조교자 인서트중인 캐릭터 : {INSERT("인서트상대", ARG)}
+;	PRINTFORML 피조교자 인서트중인 캐릭터 페니스 사이즈 : {SIZE("페니스", INSERT("인서트상대", ARG))}
+;
+;	PRINTFORML 촉수소환중 : {TEQUIP:ARG:촉수}
+;	PRINTFORML 촉수삽입중 : {TEQUIP:ARG:바이브 && TEQUIP:ARG:촉수}
+;	PRINTFORML 촉수 사이즈 : {SIZE("바이브", ARG)}
+;	PRINTFORML 촉수 사정 : {TFLAG:15}
+;	
+;	PRINTFORML 드래곤 사정 : {COND("절정：드래곤", ARG)}
+;	PRINTFORML 조교자 사정 : {COND("절정", INSERT("인서트상대", ARG))}
+
+;	;미믹구상 
+;	PRINTFORML 러브트랩중 : {TEQUIP:ARG:러브트랩}
+;	PRINTFORML 로터삽입중 : {TEQUIP:ARG:로터삽입}
+;
+;	PRINTFORML 바이브삽입중 : {TEQUIP:ARG:바이브} 
+;	PRINTFORML 바이브 사이즈 : {SIZE("바이브", ARG)}
+;	
+;	;1초 지연함수
+;	TWAIT 1000, 0
+;	
+;	;줄지우기
+;	;CLEARLINE 23
+;
+;	;GOTO문 테스트
+;	;TEST1 = 3
+;	;$INPUT_LOOP
+;
+;	;GOTO문 테스트
+;	;IF TEST1 > 0
+;	;	TEST1--
+;	;	GOTO INPUT_LOOP
+;	;ENDIF
+;
+;	;TEST문자열1 = aa
+;	;TEST문자열2 = bb
+;	;TEST문자열3 = %TEST문자열1%%UNICODE(0x0020)%%TEST문자열2%　★
+;	;PRINTFORM 가
+;	;UNICODE 0x0020 
+;	;PRINTFORM % RESULTS %
+;	;PRINTFORM 나
+;	;PRINTFORM %UNICODE(0x0020)%
+;	;PRINTFORM 다
+;	;PRINTFORM %TEST문자열3%
+;	;PRINTFORML 드래곤 사정 TFLAG:9 : {TFLAG:9}
+;	PRINTFORML 드래곤 사정 : {COND("절정：드래곤", ARG)}
+;	PRINTFORML 조교자 사정 : {COND("前回절정", INSERT("인서트상대", ARG))}
+
+;ENDIF
+
+; 변수 테스트---------------------------------------------
+
+;IF 0		
+;	
+;
+;	SELECTCASE SELECTCOM
+;	CASE 60
+;		PRINTFORML 정상위 Ｖ인서트
+;	CASE 61
+;		PRINTFORML 후배위 Ｖ인서트
+;	CASE 62
+;		PRINTFORML 굴곡위 Ｖ인서트
+;	CASE 63
+;		PRINTFORML 대면좌위 Ｖ인서트
+;	CASE 64
+;		PRINTFORML 배면좌위 Ｖ인서트
+;	CASE 65
+;		PRINTFORML 기승위 Ｖ인서트
+;	CASE 66
+;		PRINTFORML 삽입g스팟자극
+;	CASE 67
+;		PRINTFORML 삽입자궁구자극
+;	CASE 68
+;		PRINTFORML 자궁삽입
+;	CASE 304
+;		PRINTFORML 용간
+;	CASE 307
+;		PRINTFORML 부들부들삽입(슬라임)	
+;	ENDSELECT
+;
+;
+;ENDIF
+
+
+
+

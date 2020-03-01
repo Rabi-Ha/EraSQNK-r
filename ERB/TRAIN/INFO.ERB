@@ -361,6 +361,11 @@ IF EX:ARG:처녀상실 || EX:ARG:Ｃ절정 || EX:ARG:요도절정 || EX:ARG:Ｖ�
 	PRINTL 
 ENDIF
 
+IF CONFIG("음문패치") 
+	;음문 표시
+	CALL PRINT_TATTOO, ARG
+ENDIF
+
 IF PALAM:ARG:Extacy
 	;オバフロ対策
 	IF PALAM:Extacy >= 10000000000000000
