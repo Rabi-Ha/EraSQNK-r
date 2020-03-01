@@ -1102,7 +1102,7 @@ ENDIF
 
 ;페니스 삽입 있을시만 애니메이션 동작
 
-IF 조교중 && P_TYPE>0 && ( INSERT("인서트상대", ARG) || (TEQUIP:ARG:바이브 && TEQUIP:ARG:촉수) || SELECTCOM == 304)
+IF CONFIG("음문애니메이션") && 조교중 && P_TYPE>0 && ( INSERT("인서트상대", ARG) || (TEQUIP:ARG:바이브 && TEQUIP:ARG:촉수) || SELECTCOM == 304)
 
 	;스트로크 애니메이션
 	IF P_DIP < ANI_DIP

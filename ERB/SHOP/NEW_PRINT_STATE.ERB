@@ -129,8 +129,8 @@ CASE "通常", "通常：２", "キャラメイク", "ＬＶＵＰ"
 		PRINTFORM 태내정액량:{COND("태内の정액량", ARG)}pt
 	PRINTL 
 	;마지막に상대した일からの経過일数
-	SIF ARG != MASTER && COND("이전回조교일", ARG) && COND("조교공백기간", ARG) >= 2
-		PRINTFORML 전회조교일：{COND("이전回조교일", ARG)}일 방치기간：{COND("조교공백기간", ARG)}일
+	SIF ARG != MASTER && COND("前回조교일", ARG) && COND("조교공백기간", ARG) >= 2
+		PRINTFORML 전회조교일：{COND("前回조교일", ARG)}일 방치기간：{COND("조교공백기간", ARG)}일
 CASE "소환"
 	CALL PROFILE_TEXT, NO:ARG
 ENDSELECT
@@ -1935,10 +1935,10 @@ RETURN 0
 #DIM LCOUNT
 ;改行するかの判定に使う
 #DIM NEXT_LINE
+;음문패치:음문의 색설정, 음문 진행도
+#DIM PROG_VAR
+#DIM T_COLOR, 3, 3
 IF CONFIG("음문패치")
-	;음문의 색설정, 음문 진행도
-	#DIM PROG_VAR
-	#DIM T_COLOR, 3, 3
 	;음문 컬러맵
 	T_COLOR:0:0 = PROG_VAR * 21 / 10 + 15
 	T_COLOR:0:1 = PROG_VAR * 9 / 10 + 2
@@ -2160,7 +2160,7 @@ FOR LCOUNT, 0, 300
 
 	;デフォと異なる소질は色を変える
 	SIF IGNORE_COLOR == 0 && CSVTALENT_EX(ARG, LCOUNT) != TALENT:ARG:LCOUNT
-		PRINT_TALENTS:TALENT_TYPE = %PRINT_TALENTS:TALENT_TYPE%색으로 바꿈/
+		PRINT_TALENTS:TALENT_TYPE = %PRINT_TALENTS:TALENT_TYPE%色変え/
 
 	PRINT_TALENTS:TALENT_TYPE = %PRINT_TALENTS:TALENT_TYPE%[%TALENT_NAME(LCOUNT, TALENT:ARG:LCOUNT, ARG)%]/
 

@@ -471,9 +471,11 @@ CASE "地の文ＯＦＦ"
 CASE "구상による地の文ＯＦＦ"
 	SIF TARGET && TCVAR:24
 		RETURNF 1
-		
+
 CASE "음문패치"
-	RETRUNF GETBIT(FLAG:286)
+	RETURNF GETBIT(FLAG:286, 0)
+CASE "음문애니메이션"
+	RETURNF GETBIT(FLAG:286, 1)
 
 ;주차플레이 관련
 CASE "주차날짜리셋"
@@ -781,8 +783,9 @@ CASE "システム＆이벤트全般"
 	PRINTFORML  [22] \@ CONFIG("蓄精") ? ○ # －\@ 하룻밤 개방 이벤트 등으로 보온병에 정액을 축적할 수 있도록 한다.
 	PRINTFORML  [23] \@ CONFIG("주차날짜리셋") ? ○ # －\@ 새 주차를 시작할때 날짜를 리셋
 	PRINTFORML  [24] \@ CONFIG("주차능력계승") ? ○ # －\@ 새 주차를 시작할때 능력을 계승
+	PRINTFORML  [25] \@ CONFIG("음문패치") ? ○ # －\@ 정액각인시 음문을 표시
 	PRINTFORML [100] 돌아간다
-	CALL INPUT_SELECT, 25, 100
+	CALL INPUT_SELECT, 26, 100
 	SELECTCASE RESULT
 	CASE 100
 		RETURN 0
@@ -836,6 +839,8 @@ CASE "システム＆이벤트全般"
 		CALL SETCONFIG, "주차날짜리셋"
 	CASE 24
 		CALL SETCONFIG, "주차능력계승"
+	CASE 25
+		CALL SETCONFIG, "음문패치"
 	ENDSELECT
 	ARGS = システム＆이벤트全般
 	RESTART
@@ -2029,7 +2034,37 @@ CASE "주차능력계승"
 		PRINTFORML 새 주차를 시작할 때 얻었던 소질을 버립니다.
 		PRINTFORMW 주차플레이특전에서 받은 소질만 적용됩니다
 	ENDIF
-
+CASE "음문패치"
+	PRINTFORML 현재 음문 패치 설정은 이렇습니다.
+	PRINTFORML [0] 음문패치       \@ CONFIG("음문패치") ? ○ # －\@
+	PRINTFORML [1]     애니메이션 \@ GETBIT(FLAG:286,1) ? ○ # －\@
+	PRINTFORML [100] 돌아가기
+	
+	CALL INPUT_SELECT, 2 , 100
+	IF RESULT == 100
+		REDRAW 1
+		RETURN 0
+	ELSEIF RESULT == 0
+		IF CONFIG(ARGS)
+			PRINTFORMW 음문을 표시하지 않습니다. 뇌장그래픽 ON!
+			CLEARBIT FLAG:286, 1
+		ELSE
+			CALL PRINT_STR, "모바일 환경에서는 _황색_사용에 주의_해주세요._L"
+			PRINTFORML 정액각인을 새길 시 음문을 표시합니다.
+			PRINTFORML 레벨4에서 애니메이션 기능이 있습니다.
+			PRINTFORMW 설정에서 1341 이상의 폭으로 설정해야 정상적으로 표시됩니다.
+		ENDIF
+		INVERTBIT FLAG:286, 0
+	ELSEIF RESULT == 1 & GETBIT(FLAG:286,0)
+		IF GETBIT(FLAG:286,1)
+			PRINTFORMW 애니메이션 기다리는게 귀찮다구!
+		ELSE
+			PRINTFORMW 그럼 계속 즐겨주세요
+		ENDIF
+		INVERTBIT FLAG:286, 1
+	ENDIF
+	CLEARLINE LINECOUNT - MEMO_LINECOUNT
+	RESTART
 CASE "유두の상세설정"
 	REDRAW 0
 

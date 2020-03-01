@@ -262,7 +262,7 @@ IF TARGET
 
 	IF CONFIG("음문패치") 
 		;음문 표시
-		CALL PRINT_TATTOO, ARG
+		CALL PRINT_TATTOO, TARGET
 	ENDIF
 
 	;갈아입히기表示
@@ -1103,8 +1103,8 @@ PRINTFORML  [\@ LOCAL:1 ? {1, 2} # × \@] %TEXT_LJ("파란드롭스", 16)% 10개
 PRINTFORML  [\@ LOCAL:2 ? {2, 2} # × \@] %TEXT_LJ("빨간드롭스", 16)% 10개 처녀막을 재생 or 모유체질을 상실
 PRINTFORML  [\@ LOCAL:3 ? {3, 2} # × \@] %TEXT_LJ("검은드롭스", 16)% 10개 성별이 반전된다
 PRINTFORML  [\@ LOCAL:4 ? {4, 2} # × \@] %TEXT_LJ("하얀드롭스", 16)% 10개 실금버릇이나, 체내의 손상 등을 치료한다
-PRINTFORML  [\@ LOCAL:5 ? {5, 2} # × \@] %TEXT_LJ("거근약", 16)% ３개 말할 필요도 없이, 커지게하는 약입니다!
-PRINTFORML  [\@ LOCAL:6 ? {6, 2} # × \@] %TEXT_LJ("축근약", 16)% ３개 그것을 작게만드는 약입니다
+PRINTFORML  [\@ LOCAL:5 ? {5, 2} # × \@] %TEXT_LJ("거근약", 16)% ３개 말할 필요도 없이, 커지게 하는 약입니다!
+PRINTFORML  [\@ LOCAL:6 ? {6, 2} # × \@] %TEXT_LJ("축근약", 16)% ３개 그것을 작게 만드는 약입니다
 PRINTFORML  [\@ LOCAL:7 ? {7, 2} # × \@] %TEXT_LJ("박피약", 16)% ３개 그곳 껍데기를 줄여줍니다
 PRINTFORML  [\@ LOCAL:8 ? {8, 2} # × \@] %TEXT_LJ("신피약", 16)% ３개 그곳 껍데기를 늘려줍니다
 PRINTFORML  [\@ LOCAL:9 ? {9, 2} # × \@] %TEXT_LJ("풍유환", 16)% ３개 가슴을 키워줍니다
@@ -1115,12 +1115,12 @@ PRINTFORML  [\@ LOCAL:13 ? {13, 2} # × \@] %TEXT_LJ("무지개의약", 16)% ３
 PRINTFORML  [\@ LOCAL:14 ? {14, 2} # × \@] %TEXT_LJ("풍둔약", 16)% ３개 엉덩이를 키워줍니다
 PRINTFORML  [\@ LOCAL:15 ? {15, 2} # × \@] %TEXT_LJ("축둔약", 16)% ３개 엉덩이를 줄여줍니다
 
-PRINTFORML  [\@ LOCAL:30 ? {30, 2} # × \@] %TEXT_LJ("정액각인", 16)% 30색욕을 강하게 하는 문장
+PRINTFORML  [\@ LOCAL:30 ? {30, 2} # × \@] %TEXT_LJ("정액각인", 16)% 30개 색욕을 강하게 하는 문장
 
-PRINTFORML  [\@ LOCAL:40 ? {40, 2} # × \@] %TEXT_LJ("프랭킨센스", 16)% 10달콤하고 고귀한 향기를 가진다인센스（소지：{ITEM:프랭킨센스}개）
-PRINTFORML  [\@ LOCAL:50 ? {50, 2} # × \@] %TEXT_LJ("문드롭스", 16)% 10몽마를 아주 좋아하는 눈깔사탕（소지：{ITEM:문드롭스}개）
+PRINTFORML  [\@ LOCAL:40 ? {40, 2} # × \@] %TEXT_LJ("프랭킨센스", 16)% 10개 달콤하고 고귀한 향기를 가진 인센스（소지：{ITEM:프랭킨센스}개）
+PRINTFORML  [\@ LOCAL:50 ? {50, 2} # × \@] %TEXT_LJ("문드롭스", 16)% 10개 몽마가 아주 좋아하는 눈깔사탕（소지：{ITEM:문드롭스}개）
 
-PRINTFORML  [\@ LOCAL:90 ? {90, 2} # × \@] 음마의물방울を%MONEY_C(ITEMPRICE:음마의물방울)%그리고 구매발스（소지금：%MONEY_C(MONEY)%）
+PRINTFORML  [\@ LOCAL:90 ? {90, 2} # × \@] 음마의물방울을 %MONEY_C(ITEMPRICE:음마의물방울)%로 구매한다（소지금：%MONEY_C(MONEY)%）
 
 PRINTFORML [100] 돌아간다
 
@@ -1217,7 +1217,7 @@ IF RESULT == 999
 ELSEIF RESULT == 900
 	INVERTBIT FLAG:259, 0
 ELSEIF RESULT >= 0 && RESULT < 999 && ITEM:RESULT && LOCAL:RESULT
-	ARGS = %ITEMNAME:RESULT%をひとつ%MONEY_C(ITEMPRICE:RESULT / 2)%で매각しました
+	ARGS = %ITEMNAME:RESULT%을 하나 %MONEY_C(ITEMPRICE:RESULT / 2)%으로 매각했습니다
 	ITEM:RESULT -= 1
 	MONEY += ITEMPRICE:RESULT / 2
 ELSE
@@ -1233,14 +1233,14 @@ PRINTL  □ 고급옷식점 『쿠바랏트미르크』 □
 DRAWLINE
 PRINTFORML 「어서오세요.
 PRINTFORML 당점에서는 세계 각국의 여성정장을 풍부하게 취급하고 있습니다.
-PRINTFORMW 오늘에 한정해, 일착 무려%MONEY_C(ITEMPRICE:여교사)%에서 준비해요」
+PRINTFORMW 오늘에 한정해, 한벌을 무려 %MONEY_C(ITEMPRICE:여교사)%로 모시고 있어요」
 CALL COSPLAY_SHOP_BUY
 
 @COSPLAY_SHOP_BUY
 #DIM LCOUNT
 
 PRINTL 
-PRINTFORML 어떤 것을 매입하십니까？ (나머지%MONEY_C(MONEY)%)
+PRINTFORML 어떤 것을 매입하십니까？ (잔액 %MONEY_C(MONEY)%)
 
 VARSET LOCAL
 FOR LCOUNT, 500, 600
@@ -1290,27 +1290,27 @@ DRAWLINE
 IF DAYEV("土曜") && TEXTS("시간") == "밤"
 	PRINTFORML 「어머, 어서와. 
 	PRINTFORML  여기는 마도서를 저렴하게 판매하고 있는 아주 양심적인 가게야. 
-	PRINTFORMW  ……뭐어, 어려워서 못읽을 지는 모르지만？ 쿡쿡쿡」
+	PRINTFORMW  ……뭐어, 어려워서 못 읽을 지도 모르지만？ 쿡쿡쿡」
 	PRINTFORML 
 	PRINTFORML  [마법사]의 소질을 갖고있다면 돈을 내고 아르카나를 습득할 수 있습니다
-	PRINTFORML  다만, 주인 이외는 1개 기억하는 것에 대해습득의 구슬이1,000필요됩니다
+	PRINTFORML  다만, 주인 이외는 1개 기억하는 것에 대해 습득의 구슬이 1,000필요합니다
 	CALL PRINT_COLORTEXT, " 다른 색깔", DEF_COLOR("물색")
-	PRINTFORML 은 중급이상의 마도서입니다.[현명함]없고[상위몽마]가 필요입니다
-	PRINTFORMW （어떤 (뜻)이유인가,스톡(와)과바인드는 주인에게는 팔아 주지 않는 것 같습니다……）
+	PRINTFORML 은 중급이상의 마도서입니다.[현명함]이나 [상위몽마]가 필요합니다
+	PRINTFORMW （왠지, 스톡과 바인드는 주인에게는 팔아 주지 않는 것 같습니다……）
 	CALL ARCANA_SHOP_BUY, "中級"
-	PRINTFORMW 「다음에 또봐」
+	PRINTFORMW 「다음에 또 봐」
 ELSE
 	PRINTFORML 「어머, 어서와. 
 	PRINTFORML  여기는 값싸고 간단한 마도서를 팔고있는 아주 양심적인 가게야. 
 	PRINTFORMW  ……근데, 머리가 나쁜 아이라면 읽기 어려울지도？」
 	PRINTFORML 
 	PRINTFORML  [마법사]의 소질을 갖고있다면 금을 내고 아르카나를 습득할 수 있습니다
-	PRINTFORML  다만, 주인 이외는 1개 기억하는 것에 대해습득의 구슬이1,000필요됩니다
+	PRINTFORML  다만, 주인 이외는 1개 기억하는 것에 대해 습득의 구슬이 1,000필요합니다
 	CALL PRINT_COLORTEXT, " 다른 색깔", DEF_COLOR("물색")
-	PRINTFORML 은 중급이상의 마도서입니다. [현명함]없고[상위몽마]가 필요입니다
-	PRINTFORMW （어떤 (뜻)이유인가,스톡(와)과바인드는 주인에게는 팔아 주지 않는 것 같습니다……）
+	PRINTFORML 은 중급이상의 마도서입니다. [현명함]이나 [상위몽마]가 필요입니다
+	PRINTFORMW （왠지, 스톡과 바인드는 주인에게는 팔아 주지 않는 것 같습니다……）
 	CALL ARCANA_SHOP_BUY, "中級"
-	PRINTFORMW 「또봐」
+	PRINTFORMW 「또 봐」
 ENDIF
 
 
@@ -1439,10 +1439,10 @@ CASEELSE
 				NEXT
 				IF LOCALS != ""
 					PRINTFORML %조사처리(CALLNAME:CHOICE,"는")% 현재 %조사처리(LOCALS,"를")% 습득한 상태입니다
-					PRINTFORML 새롭게[%ITEMNAME:BOUGHT%]를 기억해도 좋습니까？\@ CHOICE != MASTER ? （습득の구슬：{JUEL:CHOICE:습득}） # \@
+					PRINTFORML 새롭게[%ITEMNAME:BOUGHT%]를 기억해도 좋습니까？\@ CHOICE != MASTER ? （습득의 구슬：{JUEL:CHOICE:습득}） # \@
 				ELSE
 					PRINTFORML %조사처리(CALLNAME:CHOICE,"는")% 아르카나를 하나도 배울 수 없습니다
-					PRINTFORML [%ITEMNAME:BOUGHT%]를 기억해도 좋습니까？\@ CHOICE != MASTER ? （습득の구슬：{JUEL:CHOICE:습득}） # \@
+					PRINTFORML [%ITEMNAME:BOUGHT%]를 기억해도 좋습니까？\@ CHOICE != MASTER ? （습득의 구슬：{JUEL:CHOICE:습득}） # \@
 				ENDIF
 
 				PRINTFORML [ 0] 예

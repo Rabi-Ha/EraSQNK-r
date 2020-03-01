@@ -176,7 +176,11 @@ CASEELSE
 		CALL SETFLAG, "受精확인플래그", ARG
 
 		PRINTFORMW %CALLNAME:ARG%의 정액각인의 모습이 이상하다……어지럽게 색과 형태가 변해간다！
+		SIF CONFIG("음문패치")
+			CALL PRINT_PREGNANCT1
 		SETCOLOR DEF_COLOR("하트핑크")
+		SIF CONFIG("음문패치")
+			CALL PRINT_PREGNANCT2
 		CALL HEARTMARK
 		PRINTFORM %조사처리(CALLNAME:ARG,"는")% %CONDS("정액의우세", ARG)%의 정자로 수정했습니다
 		CALL HEARTMARK
