@@ -32,7 +32,7 @@ CASE "通常", "通常：２", "キャラメイク", "ＬＶＵＰ"
 		RESULT = 0
 		TRYCALLFORM IS_SINGLE_ENDING_K{NO:ARG}_{CFLAG:ARG:209}
 		SIF RESULT
-			CALL PRINT_STR, "(_하트핑크_個別ＥＮＤ有_)_ _"
+			CALL PRINT_STR, "(_하트핑크_개별ＥＮＤ있음_)_ _"
 	ENDIF
 	PRINT (
 	IF STATE("술주정", ARG)
@@ -54,7 +54,7 @@ CASE "通常", "通常：２", "キャラメイク", "ＬＶＵＰ"
 		ENDSELECT
 	CASE TARGET
 		SIF EXP:ARG:조교횟수
-			PRINTFORM 조교中 
+			PRINTFORM 조교중 
 	ENDSELECT
 
 
@@ -90,19 +90,19 @@ CASE "通常", "通常：２", "キャラメイク", "ＬＶＵＰ"
 			PRINT 　
 	ENDIF
 	IF TALENT:ARG:임신
-		PRINTFORM %CONDS("정액의우세", ARG)%의 아이를 임신中
+		PRINTFORM %CONDS("정액의우세", ARG)%의 아이를 임신중
 	ELSEIF COND("발정기", ARG)
 		SETCOLOR DEF_COLOR("하트핑크")
 		PRINTFORM 발정기
 	ELSEIF COND("着床확인", ARG)
 		SETCOLOR DEF_COLOR("하트핑크")
-		PRINTFORM %CONDS("정액의우세", ARG)%의 정자로 착상
+		PRINTFORM %CONDS("정액의우세", ARG)%의 정자로 착상함
 		CALL HEARTMARK
 	ELSEIF COND("피임中", ARG)
 		IF TALENT:ARG:피임의부적
 			PRINTFORM 피임의부적
 		ELSEIF TALENT:ARG:피임약복용
-			PRINTFORM 피임약복용中:잔량{TALENT:ARG:피임약복용}일분
+			PRINTFORM 피임약복용중:효과 {TALENT:ARG:피임약복용}일 남음
 		ENDIF
 	ELSEIF COND("안전일", ARG)
 		PRINTFORM 안전일
@@ -128,9 +128,9 @@ CASE "通常", "通常：２", "キャラメイク", "ＬＶＵＰ"
 	SIF TALENT:ARG:남자 == 0
 		PRINTFORM 태내정액량:{COND("태内の정액량", ARG)}pt
 	PRINTL 
-	;最後に상대した일からの経過일数
-	SIF ARG != MASTER && COND("前回조교일", ARG) && COND("조교공백기간", ARG) >= 2
-		PRINTFORML 전회조교일：{COND("前回조교일", ARG)}일 방치기간：{COND("조교공백기간", ARG)}일
+	;마지막に상대した일からの経過일数
+	SIF ARG != MASTER && COND("이전回조교일", ARG) && COND("조교공백기간", ARG) >= 2
+		PRINTFORML 전회조교일：{COND("이전回조교일", ARG)}일 방치기간：{COND("조교공백기간", ARG)}일
 CASE "소환"
 	CALL PROFILE_TEXT, NO:ARG
 ENDSELECT
@@ -184,8 +184,8 @@ CASE "通常"
 		ELSE
 			PRINTPLAINFORM  [×]%TEXTS("조수の명칭")%
 		ENDIF
-		PRINTFORM  [ 8]\@ ARG == 1 ? 最後 # 前 \@
-		PRINTFORML  [ 9]\@ ARG == CHARANUM - 1 ? 最初 # 次 \@
+		PRINTFORM  [ 8]\@ ARG == 1 ? 마지막 # 이전 \@
+		PRINTFORML  [ 9]\@ ARG == CHARANUM - 1 ? 처음 # 다음 \@
 
 		ONEINPUTS
 
@@ -256,8 +256,8 @@ CASE "通常"
 		ELSE
 			PRINTPLAINFORM  [×]%TEXTS("조수の명칭")%
 		ENDIF
-		PRINTFORM  [ 8]\@ ARG == 1 ? 最後 # 前 \@
-		PRINTFORML  [ 9]\@ ARG == CHARANUM - 1 ? 最初 # 次 \@
+		PRINTFORM  [ 8]\@ ARG == 1 ? 마지막 # 이전 \@
+		PRINTFORML  [ 9]\@ ARG == CHARANUM - 1 ? 처음 # 다음 \@
 
 		ONEINPUTS
 
@@ -321,8 +321,8 @@ CASE "通常：２"
 		ELSE
 			PRINTPLAINFORM  [×]%TEXTS("조수の명칭")%
 		ENDIF
-		PRINTFORM  [ 8]\@ ARG == 1 ? 最後 # 前 \@
-		PRINTFORML  [ 9]\@ ARG == CHARANUM - 1 ? 最初 # 次 \@
+		PRINTFORM  [ 8]\@ ARG == 1 ? 마지막 # 이전 \@
+		PRINTFORML  [ 9]\@ ARG == CHARANUM - 1 ? 처음 # 다음 \@
 		ONEINPUTS
 
 		SELECTCASE RESULTS
@@ -389,8 +389,8 @@ CASE "通常：２"
 		ELSE
 			PRINTPLAINFORM  [×]%TEXTS("조수の명칭")%
 		ENDIF
-		PRINTFORM  [ 8]\@ ARG == 1 ? 最後 # 前 \@
-		PRINTFORML  [ 9]\@ ARG == CHARANUM - 1 ? 最初 # 次 \@
+		PRINTFORM  [ 8]\@ ARG == 1 ? 마지막 # 이전 \@
+		PRINTFORML  [ 9]\@ ARG == CHARANUM - 1 ? 처음 # 다음 \@
 
 		ONEINPUTS
 
@@ -996,10 +996,10 @@ SWAP ARG, TARGET
 
 @PRINT_VIDEO, ARG
 #DIM LCOUNT
-SIF CFLAG:ARG:60 == 0
-	RETURN 0
+;SIF CFLAG:ARG:60 == 0
+;	RETURN 0
 
-CALL DRAWLINES, "□ 出演作品詳細(タイトル상성は最新10本のみ) □", "출연作品詳細"
+CALL DRAWLINES, "□ 출현작품상세(타이틀 생성은 최신 10편만) □", "출연작품상세"
 
 SIF CONFIG("항목：출연作品詳細")
 	RETURN 0
@@ -1012,7 +1012,7 @@ FOR LCOUNT, 0, 10
 	PRINTFORML %LOCALS:LCOUNT%
 NEXT
 PRINTL 
-PRINTFORML   총작품수：{CFLAG:ARG:60, 2}본역대 최고가격：%MONEY_C(CFLAG:ARG:61)%
+PRINTFORML   총작품수：{CFLAG:ARG:60, 2}편 역대 최고가격：%MONEY_C(CFLAG:ARG:61)%
 ;PRINTFORML 　　平均価格：%MONEY_C(CFLAG:ARG:62 / CFLAG:ARG:60)%
 ;SIF CFLAG:ARG:63
 ;	PRINTFORML 直近三本平均：%MONEY_C( (CFLAG:ARG:63 + CFLAG:ARG:64 + CFLAG:ARG:65)/3)%
@@ -1022,9 +1022,9 @@ PRINTFORML   총작품수：{CFLAG:ARG:60, 2}본역대 최고가격：%MONEY_C(C
 SIF CFLAG:ARG:368 == 0
 	RETURN 0
 IF ARG == MASTER
-	CALL DRAWLINES, "□ 身嗜み □", "身嗜み"
+	CALL DRAWLINES, "□ 몸가짐 □", "몸가짐"
 ELSE
-	CALL DRAWLINES, "□ 身嗜み지시 □", "身嗜み"
+	CALL DRAWLINES, "□ 몸가짐지시 □", "몸가짐"
 ENDIF
 
 SIF CONFIG("항목：身嗜み")
@@ -1099,32 +1099,32 @@ ENDSELECT
 
 SELECTCASE COND("身嗜み：성행위の제한", ARG)
 CASE 1
-	PRINTFORML ·전의 구멍을 사용한 성행위는%마스터와()% 만
+	PRINTFORML ·앞의 구멍을 사용한 성행위는 %CALLNAME:MASTER%하고만
 CASE 2
-	PRINTFORML ·애널을 사용한 성행위는%마스터와()% 만
+	PRINTFORML ·애널을 사용한 성행위는 %CALLNAME:MASTER%하고만
 CASE 3
-	PRINTFORML ·입을 사용해봉사하%CALLNAME:MASTER%에만
+	PRINTFORML ·입을 사용한 봉사는 %CALLNAME:MASTER%에만
 CASE 4
-	PRINTFORML ·키스하%마스터와()% 만
+	PRINTFORML ·키스는 %CALLNAME:MASTER%하고만
 CASE 5
-	PRINTFORML ·페니스를 사용한 성행위는%마스터와()% 만
+	PRINTFORML ·페니스를 사용한 성행위는 %CALLNAME:MASTER%하고만
 CASE 100
-	PRINTFORML ·%조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 것
+	PRINTFORML ·%조사처리(CALLNAME:ARG,"는")% %CALLNAME:MASTER%의 것
 CASE IS > 0
 	VARSET LOCALS
-	LOCALS = %LOCALS%\@ COND("身嗜み：Ｖ독점", ARG) ? アソコと # \@
-	LOCALS = %LOCALS%\@ COND("身嗜み：Ａ독점", ARG) ? 애널と # \@
-	LOCALS = %LOCALS%\@ COND("身嗜み：입독점", ARG) ? 입での봉사と # \@
-	LOCALS = %LOCALS%\@ COND("身嗜み：키스독점", ARG) ? 키스と # \@
-	LOCALS = %LOCALS%\@ COND("身嗜み：Ｐ독점", ARG) ? 肉棒と # \@
-	PRINTFORML ·%SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2)%를 이용한 행위는%마스터와()% 만
+	LOCALS = %LOCALS%\@ COND("身嗜み：Ｖ독점", ARG) ? 보지도 # \@
+	LOCALS = %LOCALS%\@ COND("身嗜み：Ａ독점", ARG) ? 애널도 # \@
+	LOCALS = %LOCALS%\@ COND("身嗜み：입독점", ARG) ? 입으로 하는 봉사도 # \@
+	LOCALS = %LOCALS%\@ COND("身嗜み：키스독점", ARG) ? 키스도 # \@
+	LOCALS = %LOCALS%\@ COND("身嗜み：Ｐ독점", ARG) ? 페니스도 # \@
+	PRINTFORML ·%SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2)%를 이용한 행위는%CALLNAME:MASTER%하고만
 ENDSELECT
 
 ;SELECTCASE COND("身嗜み：Ｖ準備", ARG)
 ;CASE 1
 ;	PRINTFORML ・いつも보지를綺麗にする
 ;CASE 2
-;	PRINTFORML ・조교前に보지に로션を馴染ませる
+;	PRINTFORML ・조교전に보지に로션を馴染ませる
 ;CASE 3
 ;	PRINTFORML ・いつも보지綺麗にさせる＆로션準備
 ;ENDSELECT
@@ -1134,7 +1134,7 @@ ENDSELECT
 SIF ARG == MASTER
 	RETURN 0
 
-CALL DRAWLINES, "□ 服装詳細 □", "복장詳細"
+CALL DRAWLINES, "□ 복장상세 □", "복장상세"
 
 SIF CONFIG("항목：服装詳細")
 	RETURN 0
@@ -1493,7 +1493,7 @@ FOR LCOUNT, 0, 13
 	SIF NEXT_LINE % 6 == 0
 		PRINTL 
 NEXT
-;最後のループで改行してなかったら改行
+;마지막のループで改行してなかったら改行
 SIF NEXT_LINE % 6
 	PRINTL 
 
@@ -1513,8 +1513,8 @@ SIF CONFIG("항목：경험")
 
 ;表示順の설정
 LOCALS = 
-LOCALS += "　　　　　Ｖ경험/　　　Ｖ성교경험/　　　Ｖ확장경험/　Ｖ피스트경험/"
-LOCALS += "　　　　　Ａ경험/　　　Ａ성교경험/　　　Ａ확장경험/　Ａ피스트경험/"
+LOCALS += "　　　　　Ｖ경험/　　　Ｖ성교경험/　　　Ｖ확장경험/    Ｖ피스트경험/"
+LOCALS += "　　　　　Ａ경험/　　　Ａ성교경험/　　　Ａ확장경험/　  Ａ피스트경험/"
 LOCALS += "　　　　자궁경험/　　　자궁간경험/　　　　절정경험/　　　　사정경험/"
 LOCALS += "　　　　정액경험/　　질내정액경험/　　장내정액경험/　　　　정음경험/"
 LOCALS += "　　　　자위경험/　　　Ｖ삽입경험/　　　Ａ삽입경험/　　　목성교경험/"
@@ -1524,13 +1524,13 @@ IF TALENT:ARG:남자
 ELSE
 	LOCALS += "　　　　레즈경험/　　　　노출경험/　　　　관장경험/　　　　ＳＭ경험/"
 ENDIF
-LOCALS += "　　　　촬영경험/　　실금경험/　　　　성수경험/　　　　긴박경험/"
+LOCALS += "　　　　촬영경험/　    　실금경험/　　　　성수경험/　　　　긴박경험/"
 LOCALS += "　　　　음뇨경험/　　질내욕뇨경험/　　자궁욕뇨경험/　　온천관장경험/"
-LOCALS += "　　　　키스경험/　　　펠라경험/　　　　수음경험/　　　풋잡경험/"
-LOCALS += "　　　허리사용경험/　　파이즈리경험/　　　Ａ자극경험/　　　커닐링구스경험/"
-LOCALS += "　　　A핥기경험/청소펠라경험/청소쿤니경험/청소A핥기경험/"
+LOCALS += "　　　　키스경험/　　  　펠라경험/　　　　수음경험/　  　　풋잡경험/"
+LOCALS += "　　허리사용경험/　　파이즈리경험/　　　Ａ자극경험/　커닐링구스경험/"
+LOCALS += "　　　 A핥기경험/    청소펠라경험/    청소쿤니경험/   청소A핥기경험/"
 LOCALS += "　　봉사쾌락경험/　　가학쾌락경험/　　고통쾌락경험/　　수치쾌락경험/"
-LOCALS += "　　처녀탈취경험/　　동정탈취경험/　　슬라임경험/　　　　촉수경험/"
+LOCALS += "　　처녀탈취경험/　　동정탈취경험/　　  슬라임경험/　　　　촉수경험/"
 LOCALS += "　　　Ｂ성교경험/　　　Ｂ삽입경험/　　유内정액경험/　　　　분유경험/"
 LOCALS += "　　　Ｖ용간경험/　　　Ａ용간경험/　　요도고문경험/　　　　요도경험/"
 LOCALS += "　　요도확장경험/　　요도성교경험/　　요도삽입경험/　　방광정액경험/"
@@ -1585,7 +1585,7 @@ FOR LCOUNT, 0, 100
 	SIF NEXT_LINE%4 == 0
 		PRINTL 
 NEXT
-;最後のループで改行してなかったら改行
+;마지막のループで改行してなかったら改行
 SIF NEXT_LINE%4
 	PRINTL 
 
@@ -1618,7 +1618,7 @@ IF GETBITS(CFLAG:ARG:11, 0, 19)
 	SIF GETBIT(CFLAG:ARG:11, 2)
 		LOCALS += "３Ｐ로 "
 	SIF GETBIT(CFLAG:ARG:11, 3)
-		LOCALS = %LOCALS%%TEXTS("조수の명칭")%のペニバン
+		LOCALS = %LOCALS%%TEXTS("조수の명칭")%의 페니스밴드로
 	SIF GETBIT(CFLAG:ARG:11, 4)
 		LOCALS += "페니스밴드"
 	IF (GETBIT(CFLAG:ARG:11, 3) || GETBIT(CFLAG:ARG:11, 4) ) && GETBIT(CFLAG:ARG:11, 5)
@@ -1923,7 +1923,7 @@ FOR LCOUNT, 0, 29
 		PRINTL 
 NEXT
 
-;最後の改行がされてないなら改行
+;마지막の改行がされてないなら改行
 SIF (LCOUNT+1)%5 == 0
 	PRINTL 
 
@@ -1935,6 +1935,23 @@ RETURN 0
 #DIM LCOUNT
 ;改行するかの判定に使う
 #DIM NEXT_LINE
+IF CONFIG("음문패치")
+	;음문의 색설정, 음문 진행도
+	#DIM PROG_VAR
+	#DIM T_COLOR, 3, 3
+	;음문 컬러맵
+	T_COLOR:0:0 = PROG_VAR * 21 / 10 + 15
+	T_COLOR:0:1 = PROG_VAR * 9 / 10 + 2
+	T_COLOR:0:2 = PROG_VAR * 3 / 2 + 12
+
+	T_COLOR:1:0 = PROG_VAR * 3 / 5 + 144
+	T_COLOR:1:1 = PROG_VAR * 3 / 10 + 67
+	T_COLOR:1:2 = PROG_VAR * 9 / 20 + 108
+
+	T_COLOR:2:0 = PROG_VAR * 3 / 5 + 133
+	T_COLOR:2:1 = PROG_VAR * 3 / 10 + 58
+	T_COLOR:2:2 = PROG_VAR * 11 / 50 + 92
+ENDIF
 
 SELECTCASE ARG
 CASE MASTER
@@ -1971,18 +1988,21 @@ CASEELSE
 	;0,고통각인　1,쾌락각인　2,굴복각인　3,반발각인
 	FOR LCOUNT, 0, 4
 		;PRINTFORM %MARKNAME:LCOUNT%:LV{MARK:ARG:LCOUNT} 
-		PRINTFORM  %SUBSTRING(MARKNAME:LCOUNT, 0, 4)%LV{MARK:ARG:LCOUNT}
+		PRINTFORM %SUBSTRING(MARKNAME:LCOUNT, 0, 4)%LV{MARK:ARG:LCOUNT}
 		CALL PRINT_BAR, "황색게이지", MARK:ARG:LCOUNT, 3, 3
 		PRINT 　 
 	NEXT
-	;PRINTL 
+	PRINTL 
 ENDSELECT
 ;정액각인は全員共通
 IF MARK:ARG:정액각인 && TALENT:ARG:남자 == 0
 	PRINTFORM 정액각인LV{MARK:ARG:정액각인}
 	CALL PRINT_BAR, "복숭아색게이지", MARK:ARG:정액각인, 3, 3
 ENDIF
-PRINTL 
+IF CONFIG("음문패치") 
+	;음문 표시
+	CALL PRINT_TATTOO, ARG
+ENDIF
 RETURN 0
 
 ;---------------------------------------------------------------------
@@ -2140,7 +2160,7 @@ FOR LCOUNT, 0, 300
 
 	;デフォと異なる소질は色を変える
 	SIF IGNORE_COLOR == 0 && CSVTALENT_EX(ARG, LCOUNT) != TALENT:ARG:LCOUNT
-		PRINT_TALENTS:TALENT_TYPE = %PRINT_TALENTS:TALENT_TYPE%色変え/
+		PRINT_TALENTS:TALENT_TYPE = %PRINT_TALENTS:TALENT_TYPE%색으로 바꿈/
 
 	PRINT_TALENTS:TALENT_TYPE = %PRINT_TALENTS:TALENT_TYPE%[%TALENT_NAME(LCOUNT, TALENT:ARG:LCOUNT, ARG)%]/
 
@@ -2182,7 +2202,7 @@ FOR LCOUNT2, 0, 10
 	CASE 7
 		TALENT_TYPES = 성감대：
 	CASEELSE
-		TALENT_TYPES = 未分類：
+		TALENT_TYPES = 미분류：
 	ENDSELECT
 
 	PRINTFORM %TALENT_TYPES%
@@ -2249,7 +2269,7 @@ IF MOTHER > 0 || FATHER > 0
 ENDIF
 
 IF TALENT:ARG:출산경험
-	PRINTFORM 출산경험：전회에 낳은 것은 
+	PRINTFORM 출산경험：저번에 낳은 것은 
 	SELECTCASE FATHER_CHILD
 	CASE IS > 0
 		SIF FATHER_CHILD != MASTER
@@ -2417,7 +2437,7 @@ FOR LCOUNT, 1, 100
 	SIF NEXT_LINE%3 == 0
 		PRINTL 
 NEXT
-;最後のループで改行してなかったら改行
+;마지막のループで改行してなかったら改行
 SIF NEXT_LINE%3
 	PRINTL 
 

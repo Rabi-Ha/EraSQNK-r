@@ -471,6 +471,9 @@ CASE "地の文ＯＦＦ"
 CASE "구상による地の文ＯＦＦ"
 	SIF TARGET && TCVAR:24
 		RETURNF 1
+		
+CASE "음문패치"
+	RETRUNF GETBIT(FLAG:286)
 
 ;주차플레이 관련
 CASE "주차날짜리셋"
