@@ -10528,7 +10528,7 @@ IF SELECTCOM == 133 && TEQUIP:아이마스크
 		;연모
 		ELSEIF TALENT:연모 
 			PRINTFORMW 「그……조금만 손을 잡아 받을 수 있지 않습니까?」
-			PRINTFORMW %CALLNAME:TARGET%으로서는 뭐라고 드문 부탁이다
+			PRINTFORMW %타겟으로()%서는 뭐라고 드문 부탁이다
 			PRINTFORMW 이지만 잘 보면……%타겟은()% 작게 떨고 있다
 			PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 손을 제대로 잡았다……
 			PRINTFORMW 「아………감사합니다……」

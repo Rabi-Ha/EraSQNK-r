@@ -1267,7 +1267,7 @@ ELSEIF SELECTCOM == 2 && TEQUIP:애널바이브 == 0
 					CALL HEARTMARK
 					PRINTFORM 뒤도
 					CALL HEARTMARK
-					PRINTFORM %CNAME("二人称")%으로 채워져 버리고 있다
+					PRINTFORM %조사처리(CNAME("二人称"),"로")% 채워져 버리고 있다
 					CALL HEARTMARK_E
 					PRINTFORM 「몸 전부 %조사처리(CNAME("二人称"),"를")% 느낀다
 					CALL HEARTMARK
@@ -1309,7 +1309,7 @@ ELSEIF SELECTCOM == 2 && TEQUIP:애널바이브 == 0
 				ENDIF
 				PRINTFORM 「후앗
 				CALL HEARTMARK
-				PRINTFORM 배 팡팡이야……%CNAME("二人称")%으로 채워지고 있어 굉장하다……
+				PRINTFORM 배 팡팡이야……%조사처리(CNAME("二人称"),"로")% 채워지고 있어 굉장하다……
 				CALL HEARTMARK_E
 			;Ａ확장1이상
 			ELSEIF ABL:Ａ확장 >= 1 && RAND:2 == 0

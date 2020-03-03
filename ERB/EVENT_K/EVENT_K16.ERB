@@ -1354,7 +1354,7 @@ IF CONFIG("寝取られ") && MARK:용간각인 == 2
 				PRINTFORMW %CNAME("二人称")%의 것은 확실히 큰 것 같지만… 아무리 해도 그 거친 허릿짓에는 미치지 않는구나… 얌전히 내 앞에서 떠나는 게 좋을게다」
 			;거근
 			CASE 2
-				PRINTFORMW 그럭저럭 그 물건에는 자신이 있는 모양이다만… %CNAME("二人称")%으로써는 그 자에게는 미치지 않는구나… 얌전히 내 앞에서 떠나는 게 좋을게다」
+				PRINTFORMW 그럭저럭 그 물건에는 자신이 있는 모양이다만… %조사처리(CNAME("二人称"),"로")%써는 그 자에게는 미치지 않는구나… 얌전히 내 앞에서 떠나는 게 좋을게다」
 			;보통
 			CASE 1
 				PRINTFORMW %CNAME("二人称")%같이 작은 녀석에게는 더는 볼일은 없느니라…」
@@ -2609,7 +2609,7 @@ ELSEIF COND("발정기")
 		IF COND("성욕만족")
 			;섹스사정で終了
 			IF SHOOT("Ｖ내사정") && PLAYER == MASTER
-				PRINTFORMW 「후아아…%CNAME("二人称")%아… 내 안, 이젠 %CNAME("二人称")%으로 가득찼구나…♪」
+				PRINTFORMW 「후아아…%CNAME("二人称")%아… 내 안, 이젠 %조사처리(CNAME("二人称"),"로")% 가득찼구나…♪」
 				PRINTFORMW %타겟은()% 이어진 채로, 잔뜩 정액을 받아낸 아랫 배를 쓰다듬으며 %CALLNAME:MASTER%에게 미소를 짓는다…
 				PRINTFORMW 「%CNAME("二人称")%에게 이렇게나 사랑받아서, 나는 행복하느니라…♪」
 				PRINTFORMW %마스터가()% 천천히 허리를 빼내자, %타겟은()% 시든 페니스를 조여온다…
@@ -20044,7 +20044,7 @@ CASE "요바이기승위"
 			PRINTFORML 
 			;마스터が勝利
 			IF RAND:3 == 0
-				PRINTFORMW 「후아…읏♪ 하아, 이제 그만 참아 줘어…읏, 이제 %CNAME("二人称")%으로 뱃속이 가득하니라♪」
+				PRINTFORMW 「후아…읏♪ 하아, 이제 그만 참아 줘어…읏, 이제 %조사처리(CNAME("二人称"),"로")% 뱃속이 가득하니라♪」
 				PRINTFORMW 처음의 위세 좋은 모습은 어디갔는지, %조사처리(CALLNAME:TARGET,"는")% 녹아버린 얼굴을 보이면서, 그 작은 몸을 %CALLNAME:MASTER%에 밀어올려지고 있을 뿐이었다…
 				PRINTFORMW 얼마나 많은 양을 %CALLNAME:MASTER%에게 쏟아냈을까, 결합부로부터 뒤룩뒤룩 거품이 일며 백탁액이 흘러넘치기 시작하고 있어, %CALLNAME:TARGET%의 하복부는 기분 탓인지 볼록 부풀어 올라 있는 것처럼 보일 지경이다…
 				PRINTFORMW 「이히잇♪ 또, 또 사정해♪ 하아, 임신해…, 임신한다아…, %CNAME("二人称")%의 자식이, 내 안에서 날뛰고 있다아…읏♪」
@@ -20175,7 +20175,7 @@ CASE "요바이Ａ기승위"
 	;Ａ감각Lv3이상
 	IF ABL:Ａ감각 >= 3
 		IF RAND:3 == 0
-			PRINTFORMW 「아쿠웃! 우읏! 나의 엉덩이 구멍, %CNAME("二人称")%으로 비틀어 열려지고 있다…읏♪」
+			PRINTFORMW 「아쿠웃! 우읏! 나의 엉덩이 구멍, %조사처리(CNAME("二人称"),"로")% 비틀어 열려지고 있다…읏♪」
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「히, 히잇♪ 더러운 구멍이…%CNAME("二人称")%의 자지로 펼쳐지고 있다아…읏♪」
 		ELSE
@@ -22066,7 +22066,7 @@ CASE "조수で성처리：事後"
 CASE "서류작업：도움"
 	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ARG%에게 손짓해, 차와 과자를 먹는 것을 도우라고 권했습니다
 	PRINTL 
-	PRINTFORMW 「호오…… %CNAMET(ARG, "二人称")%으로서는 멋부리고 있는 것이 아닌게냐」
+	PRINTFORMW 「호오…… %조사처리(CNAME("二人称"),"로")%서는 멋부리고 있는 것이 아닌게냐」
 	PRINTFORMW 「좋아, 어울려 주마♪」
 	PRINTFORMW 묘한 권유 요청이 효과가 있었는지, %조사처리(CALLNAME:ARG,"는")% %마스터와()% 둘만의 다과회가 기쁜 듯 합니다…
 	PRINTL 

@@ -357,7 +357,7 @@ IF CONFIG("寝取られ") && MARK:용간각인 == 2
 	;寝取り返し寸前
 	ELSE
 		IF RAND:2 == 0
-			PRINTFORM 「서방님~♪ 이제 %CNAME("一人称")%의 주인님은 %CNAME("二人称")%으로 정해졌어~｣
+			PRINTFORM 「서방님~♪ 이제 %CNAME("一人称")%의 주인님은 %조사처리(CNAME("二人称"),"로")% 정해졌어~｣
 			CALL HEARTMARK_E
 		ELSE
 			PRINTFORM 「후아…♪좀 더…좀 더 엣치해～%조사처리(CNAME("二人称"),"과")% 있는 것만으로%CNAME("一人称", "甘え")%…

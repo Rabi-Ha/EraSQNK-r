@@ -579,7 +579,7 @@ IF COND("임신中：分娩") && TALENT:임신 && BASE:육아중 == 0
 		SIF CFLAG:469/100 + CFLAG:469 % 100 >= 2
 			LASTWORD = %LASTWORD%들
 		SIF FATHER > 0 || TALENT:출산경험
-			PRINT %LASTWORD를()% 보살피던 중에
+			PRINTFORM %LASTWORD를()% 보살피던 중에
 		PRINT , 
 	ELSE
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 산기가 도는 것같습니다. 

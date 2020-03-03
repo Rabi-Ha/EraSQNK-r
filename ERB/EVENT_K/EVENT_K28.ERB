@@ -6484,7 +6484,7 @@ IF SELECTCOM == 175
 			ENDIF
 		ELSEIF CHECK_SHIRT("여교사")
 			IF GETBIT(CFLAG:331, 1) == 0
-				PRINTFORMW 「%CNAME("二人称")%으로서는 착실한옷저기」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"로")%서는 착실한옷저기」
 				SETBIT CFLAG:331, 1
 			ELSE
 				;연모

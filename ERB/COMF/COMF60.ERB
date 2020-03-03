@@ -944,7 +944,7 @@ IF CHECK_COM("Ｖ두개삽입")
 		PRINTFORMW %CALLNAME:TARGET%의 질구를 동시에 범하고잇다…
 	ELSE
 		IF INSERT("배면좌위")
-			PRINTFORM 결합부가 훤히 보이는 자세로 %CALLNAME:(PLAYER:1)%에게 범해지고 있는%CALLNAME:TARGET%의 가랑이를 밀어 열어, 
+			PRINTFORM 결합부가 훤히 보이는 자세로 %CALLNAME:(PLAYER:1)%에게 범해지고 있는 %CALLNAME:TARGET%의 가랑이를 밀어 열어, 
 		ELSEIF INSERT("기승위")
 			PRINTFORM %CALLNAME:(PLAYER:1)%에게 올라타 허리를 흔들고있는 %조사처리(CALLNAME:TARGET,"를")% 앞으로 몸을 기울이게 해, 
 		ELSE
@@ -954,7 +954,7 @@ IF CHECK_COM("Ｖ두개삽입")
 	ENDIF
 ELSEIF CHECK_COM("양구멍삽입")
 	IF INSERT("양구멍삽입")
-		PRINTFORM %CALLNAME:PLAYER%과 %조사처리(CALLNAME:(PLAYER:1),"는")% 
+		PRINTFORM %조사처리(CALLNAME:PLAYER,"와")% %조사처리(CALLNAME:(PLAYER:1),"는")% 
 		IF RAND:4 == 0
 			PRINTFORM 육벽을 문질러올리면서 
 		ELSEIF RAND:3 == 0
@@ -1061,7 +1061,7 @@ ELSE
 	ELSE
 		;前回, 삽입前に폭발してしまった
 		IF PREVCOM == 511 && COND("前Ｔ조교자") == PLAYER
-			PRINTFORM 기분을 고쳤다%조사처리(CALLNAME:PLAYER,"는")% , 
+			PRINTFORM 마음을 다잡은 %조사처리(CALLNAME:PLAYER,"는")% , 
 		ELSE
 			PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 		ENDIF
@@ -1078,16 +1078,16 @@ ELSE
 		ENDIF
 
 		IF TEQUIP:키스
-			PRINTFORM 입술을 빼앗으면서
+			PRINTFORM 입술을 빼앗으면서 
 			CALL SETFLAG, "추가키스플래그", TARGET
 		ELSE
 			SIF PREVCOM == 13
-				PRINT 손가락으로 벌린 자세인 채
+				PRINT 손가락으로 벌린 자세인 채 
 			SIF PALAM:Ｖ윤 < PALAMLV:4 && (PREVCOM == 91 || PREVCOM == 99 || PREVCOM == 140) && COND("前Ｔ조교자") == PLAYER && RAND:2 == 0
-				PRINT 빨아 준비시킨 페니스로
+				PRINT 빨아 준비시킨 페니스로 
 		ENDIF
 		IF CHOSECOM(SELECTCOM) == 0 && CHOSECOMS("삽입") && SIZE("페니스", PLAYER) >= 2 && (TALENT:작은몸집 || SIZE("페니스", PLAYER) >= 3)
-			PRINTFORMW 깊숙히 관철해, 자궁을 위치가 바뀔 정도로 밀어 올렸다…
+			PRINTFORMW 깊숙히 관철해, 자궁의 위치가 바뀔 정도로 밀어 올렸다…
 		ELSE
 			PRINTFORMW 관철했다…
 		ENDIF
@@ -1215,19 +1215,19 @@ IF V_JUST || A_JUST
 
 	SELECTCASE MAX(V_JUST, A_JUST)
 	CASE IS >= 90
-		PRINT 완전하게
+		PRINT 완전하게 
 	CASE IS >= 75
-		PRINT 거듭된다삽입그래서
+		PRINT 거듭되는 삽입으로 
 	CASEELSE
-		PRINT 완전히
+		PRINT 완전히 
 	ENDSELECT
-	PRINTFORM %CALLNAME:PLAYER%의페니스%TEXTR("の形にされて", "を覚えて", "専用になって")%큰일났다
+	PRINTFORM %CALLNAME:PLAYER%의 페니스%TEXTR("의 형태로 ", "를 기억하게 ", "전용으로 ")%된 
 	IF A_JUST
-		PRINTFORM %CALLNAME:TARGET%의애널하지만
+		PRINTFORM %CALLNAME:TARGET%의 애널이 
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%의 질이
+		PRINTFORM %CALLNAME:TARGET%의 질이 
 	ENDIF
-	PRINTFORML %TEXTR("得も言われぬ快感を与えて", "隙間なく絡みついて", "動きに맞춰서吸い付いて")%온다！
+	PRINTFORML %TEXTR("말할 수 없는 쾌감을 주어", "빈틈없이 얽혀", "움직임에 맞춰 달라붙어 ")%온다！
 	;CALL PRINT_STR, "하트핑크_H_お互いの快楽にボーナスが発生しています_하트핑크_H_L"
 ENDIF
 
@@ -1244,7 +1244,7 @@ IF INSERT("인서트") || SELECTCOM == 80
 		SIF LOCALS != ""
 			LOCALS = 마음에 드는 체위로 
 		IF INSERT("양구멍삽입")
-			LOCALS = %LOCALS% 양구멍 삽입中
+			LOCALS = %LOCALS% 양구멍 삽입중
 			EXP:Ｖ경험 += 1
 			LOCALS:1 = Ｖ경험＋１
 			EXP:Ａ경험 += 1
@@ -1258,7 +1258,7 @@ IF INSERT("인서트") || SELECTCOM == 80
 			EXP:Ａ경험 += 1
 			LOCALS:2 = Ａ경험＋１
 		ELSEIF INSERT("요도인서트")
-			LOCALS = %LOCALS%インサート中
+			LOCALS = %LOCALS% 요도인서트중
 			EXP:요도경험 += 1
 			LOCALS:2 = 요도경험＋１
 

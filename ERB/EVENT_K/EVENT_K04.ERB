@@ -821,7 +821,7 @@ IF SELECTCOM == 6
 	IF CFLAG:227 == 0
 		;연모
 		IF TALENT:연모
-			PRINTFORMW 「츄…… 겨우 %CNAME("二人称")%으로부터 키스해 주었네요？」
+			PRINTFORMW 「츄…… 겨우 %조사처리(CNAME("二人称"),"로")%부터 키스해 주었네요？」
 			PRINTFORMW 「쭉 하고 싶었어…… %CNAME("二人称")% 심술쟁잇」
 		;それ以外
 		ELSE
