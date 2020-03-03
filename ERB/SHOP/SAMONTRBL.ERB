@@ -410,14 +410,14 @@ IF GETBIT(P, 11)
 		IF P&(1p13 + 1p14)
 			LOCALS:6 = %LOCALS:6%하고, 
 		ELSE
-			LOCALS:6 = %LOCALS:6%한 것같다
+			LOCALS:6 = %LOCALS:6%한 것 같다
 		ENDIF
 	ELSE
 		LOCALS:6 = %LOCALS:6% 가슴 크기가 빼어
 		IF P&(1p13 + 1p14)
 			LOCALS:6 = %LOCALS:6%나게 크고, 
 		ELSE
-			LOCALS:6 = %LOCALS:6%난 것같다
+			LOCALS:6 = %LOCALS:6%난 것 같다
 		ENDIF
 	ENDIF
 
@@ -440,14 +440,14 @@ ELSEIF GETBIT(P, 12)
 		IF P&(1p13 + 1p14)
 			LOCALS:6 = %LOCALS:6%럽고, 
 		ELSE
-			LOCALS:6 = %LOCALS:6%러운 것같다
+			LOCALS:6 = %LOCALS:6%러운 것 같다
 		ENDIF
 	ELSE
-		LOCALS:6 = %LOCALS:6% 가슴의 평평함이 빼어
+		LOCALS:6 = %LOCALS:6% 가슴의 평평함이 특이
 		IF P&(1p13 + 1p14)
-			LOCALS:6 = %LOCALS:6%나고, 
+			LOCALS:6 = %LOCALS:6%하고, 
 		ELSE
-			LOCALS:6 = %LOCALS:6%난 것같다
+			LOCALS:6 = %LOCALS:6%한 것같다
 		ENDIF
 	ENDIF
 
@@ -469,9 +469,9 @@ IF GETBIT(P, 13)
 	R = 1 + RAND:R
 
 	IF R == 1
-		LOCALS:6 = %LOCALS:6% 키가 큰것같다
+		LOCALS:6 = %LOCALS:6% 키가 큰 것 같다
 	ELSE
-		LOCALS:6 = %LOCALS:6% 이상할 정도로 키가 큰것같다
+		LOCALS:6 = %LOCALS:6% 이상할 정도로 키가 큰 것 같다
 	ENDIF
 	IF TALENT:작은몸집 && R == 1
 		CALL CALC, "보통体型化", TARGET
@@ -488,7 +488,7 @@ ELSEIF GETBIT(P, 14)
 	IF R == 1
 		LOCALS:6 = %LOCALS:6% 조금 키가 작아보인다
 	ELSE
-		LOCALS:6 = %LOCALS:6% 예외적으로 신장이 낮아보인다…
+		LOCALS:6 = %LOCALS:6% 예외적으로 신장이 작아보인다…
 	ENDIF
 	IF TALENT:장신 && R == 1
 		CALL CALC, "보통体型化", TARGET
@@ -550,7 +550,7 @@ IF P == 1
 	SIF RAND:5 == 0 || TALENT:부끄럼쟁이
 		TALENT:부끄럼없음 = 0
 	IF RAND:3 == 0
-		LOCALS:13 = 근데, 아무래도 여성경험은 있는 것같다
+		LOCALS:13 = 근데, 아무래도 여성경험은 있는 것 같다
 		ABL:레즈끼 = 1 + RAND:4
 		EXP:레즈경험 = 10 * RAND:5+1
 		IF RAND:5 == 0

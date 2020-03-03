@@ -205,7 +205,7 @@ CASE "페니스", "거근약", "축근약", "박피약", "신피약"
 	ELSEIF GETBIT(TALENT:ARG:페니스, 4)
 		PRINT  팔 보통
 	ELSEIF GETBIT(TALENT:ARG:페니스, 3)
-		PRINT  말좆
+		PRINT  말자지
 	ELSEIF GETBIT(TALENT:ARG:페니스, 2)
 		PRINT  거근
 	ELSEIF GETBIT(TALENT:ARG:페니스, 1)
@@ -238,7 +238,7 @@ CASE "바스트", "풍유환", "축유환"
 	ENDIF
 CASE "힙", "풍둔약", "축둔약"
 	IF COND("큰엉덩이", ARG) >= 3
-		PRINT 초고 
+		PRINT 초거대엉덩이 
 	ELSEIF COND("큰엉덩이", ARG) == 2
 		PRINT 왕엉덩이 
 	ELSEIF COND("큰엉덩이", ARG)
@@ -437,12 +437,12 @@ ENDIF
 
 ;特化部位の表示
 IF TALENT:ARG:음호
-	PRINT 단지
+	PRINT 보지
 ELSE
 	PRINT --
 ENDIF
 IF TALENT:ARG:애널광
-	PRINT 엉덩이
+	PRINT 애널
 ELSE
 	PRINT --
 ENDIF
@@ -467,7 +467,7 @@ ELSE
 	PRINT --
 ENDIF
 IF MARK:ARG:정액각인
-	PRINT 문
+	PRINT 각인
 ELSE
 	PRINT --
 ENDIF
@@ -498,7 +498,8 @@ CASE "조교대상변경", "避妊措置"
 	ENDSELECT
 	RESETCOLOR
 CASE "하룻밤개방허가"
-	PRINTFORM  \@ COND("플로어점원", ARG) ? 喫 # -- \@ \@ TALENT:ARG:마음에듬 ? ☆ # -- \@
+	PRINTFORM  \@ COND("플로어점원", ARG) ? 식 # -- \@ \@ TALENT:ARG:마음에듬 ? ☆ # -- \@
+	;喫
 CASEELSE
 	PRINTFORM  \@ COND("플로어점원", ARG) ? 차 # -- \@ \@ COND("外出許可", ARG) ? 외 # -- \@ \@ TALENT:ARG:마음에듬 ? ☆ # -- \@
 ENDSELECT

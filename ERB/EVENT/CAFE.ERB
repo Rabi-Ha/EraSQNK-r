@@ -12,7 +12,7 @@ PRINTL
 PRINTL 길들인 몽마를 점원으로 해서, 귀여운 제복을 내세운 다방을 운영합니다
 PRINTL 수입은 일요일 아침에 일주일분을 한꺼번에 얻습니다
 PRINTL 점포의 통로는 넓기 때문에, 라미아등의 신체의 큰 몽마에서도 문제 없게 일할 수 있고,
-PRINTL 일하기 힘든 모습의 몽마에게는, 형태를 인간형으로 바꾸는 마법을 건다거나, 걸지 않는다거나 합니다
+PRINTL 일하기 힘든 모습의 몽마에게는, 형태를 인간형으로 바꾸는 마법을 건다거나, 걸지 않거나 합니다
 PRINTL 또한, 남자지만 보기에 아름다운 용모라면 일을 시킵니다만, 손님의 꿈을 부수지 않게 배려해, 
 PRINTL 중성적인 외모를 가진 사람에 한해, 여성스탭과 같은 복장으로 웨이트리스로 일하게 합니다
 PRINTFORML
@@ -4069,15 +4069,15 @@ CASE 7
 	ENDIF
 
 CASE 8
-	PRINTFORMW 이제(벌써) 가게의 빛을 꺼, 관에 돌아간다시간(이)가 되었습니다만……%타겟은()% 의자에 앉아 골아떨어지고 있습니다…
-	PRINTFORMW 이대로 방치할 수도 없기 때문에,%CALLNAME:MASTER%하지만 짊어져 돌아가는 일이 되었습니다！
+	PRINTFORMW 이제 가게의 빛을 꺼, 관에 돌아가는 시간이 되었습니다만……%타겟은()% 의자에 앉아 골아떨어지고 있습니다…
+	PRINTFORMW 이대로 방치할 수도 없기 때문에, %마스터가()% 짊어져 돌아가는 일이 되었습니다！
 	PRINTFORMW ………
 	PRINTFORMW ……
 	IF RAND:2 && FIND_COND("출연가능な점원", "연모")
 		WAITRESS = FIND_COND("출연가능な점원", "연모")
-		PRINTFORMW …옆에서 걷고 있다%CALLNAME:WAITRESS%들은 부러워해, 「다음은%CNAMET(WAITRESS, "一人称")%하지만！」 『아니오 내가……』라고 서로 견제하고 있습니다…
+		PRINTFORMW …옆에서 걷고 있는 %CALLNAME:WAITRESS%들은 부러워해, 「다음은%CNAMET(WAITRESS, "一人称")%하지만！」 『아니오 내가……』라고 서로 견제하고 있습니다…
 	ELSEIF TALENT:겁쟁이 || TALENT:내성적 || TALENT:부끄럼쟁이
-		PRINTFORMW …도중에 눈을 떴다%타겟은()% 얼굴을 새빨갛게 하면,%CALLNAME:MASTER%의 등에 얼굴을 가라앉혔습니다…
+		PRINTFORMW …도중에 눈을 뜬 %타겟은()% 얼굴을 새빨갛게 하면,%CALLNAME:MASTER%의 등에 얼굴을 가라앉혔습니다…
 	ELSE
 		PRINTFORMW …%타겟은()% 돌아가는 길의 도중에 눈을 떴지만, 관에 도착할 때까지 특등석을 만끽했습니다.
 	ENDIF

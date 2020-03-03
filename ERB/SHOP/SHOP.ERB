@@ -253,7 +253,7 @@ IF TEXTS("날짜対応이벤트") != ""
 ENDIF
 
 IF TARGET
-	PRINTFORM %NAME:TARGET% 조교中 
+	PRINTFORM %NAME:TARGET% 조교중 
 	CALL TEXT, "生理周期", TARGET
 	PRINT 체력
 	BASE:체력 = MAX(BASE:체력, 0)
@@ -402,7 +402,7 @@ MENU_SHOP = %MENU_SHOP%[125] 여행 예약(금요일 밤)/
 
 SIF FLAG:208
 	MENU_SHOP = %MENU_SHOP%회색/
-MENU_SHOP = %MENU_SHOP%[131] 마음에 듬＆성감대 설정/
+MENU_SHOP = %MENU_SHOP%[131] 마음에 듦＆성감대 설정/
 
 
 SIF NUM("所持아이템") + NUM("所持衣装") == 0
@@ -503,7 +503,7 @@ ENDSELECT
 IF LOCALS != ""
 	PRINTL 
 	SETCOLOR DEF_COLOR("황색")
-	PRINTFORML 어쩐지,%SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2)%하지만 안절부절 하고 있다……
+	PRINTFORML 어쩐지,%조사처리(SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2),"가")% 안절부절 하고 있다……
 	PRINTFORML 오늘만이 가능한 이야기가 있을 듯 합니다
 	RESETCOLOR
 ENDIF
@@ -539,10 +539,10 @@ IF CHARANUM >= 3 && COND("一言이벤트中") == 0
 	IF COND("一言이벤트中") == 0 && LINECOUNT == MEMO_LINECOUNT && RAND:3 == 0
 		IF COND("온천여행가능", ACTOR)
 			PRINTL 
-			PRINTFORML （%NAME:ACTOR%로부터의 뜨거운 시선을 느낀다….온천라도 데려 가 줄까？）
+			PRINTFORML （%NAME:ACTOR%로부터 뜨거운 시선을 느낀다….온천이라도 데려갈까？）
 		ELSEIF ACTOR != TARGET && COND("욕구불만", ACTOR)
 			PRINTL 
-			PRINTFORML （%NAME:ACTOR%로부터의 뜨거운 시선을 느낀다…. 가끔 씩은 상관해 주어야 할 것인가도 모른다）
+			PRINTFORML （%NAME:ACTOR%로부터 뜨거운 시선을 느낀다…. 가끔씩은 상관해 주어야 할지도 모른다）
 		ENDIF
 	ENDIF
 ENDIF
@@ -625,9 +625,9 @@ ELSEIF CHOICE == 108
 			ASSI = TARGET
 		TARGET = LOCAL
 	ELSEIF ASSI && CONFIG("조교상대변경불가")
-		PRINTFORMW 지금은%TEXTS("조수の명칭")%를 상대로 할 수 있는 상황이 아닙니다
+		PRINTFORMW 지금은 %조사처리(TEXTS("조수の명칭"),"를")% 상대로 할 수 있는 상황이 아닙니다
 	ELSEIF ASSI == 0
-		PRINTFORMW %TEXTS("조수の명칭")%하지만 없습니다
+		PRINTFORMW %조사처리(TEXTS("조수の명칭"),"가")% 없습니다
 	ENDIF
 ;[109]조수変更
 ELSEIF CHOICE == 109
@@ -638,9 +638,9 @@ ELSEIF CHOICE == 109
 		;1ページ目を表示
 		CALL SELECT_ASSI, 0, 0
 	ELSEIF CONFIG("조교상대변경불가")
-		PRINTFORMW 지금은%TEXTS("조수の명칭")%를 변경할 수 있는 상황이 아닙니다
+		PRINTFORMW 지금은 %조사처리(TEXTS("조수の명칭"),"를")% 변경할 수 있는 상황이 아닙니다
 	ELSEIF CHARA_NUM("조수가능") == 0
-		PRINTFORMW %TEXTS("조수の명칭")%하지만 없습니다
+		PRINTFORMW %조사처리(TEXTS("조수の명칭"),"가")% 없습니다
 	ENDIF
 	IF ASSI && ASSI != MEMO_ASSI
 		TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수に抜擢", ASSI
@@ -684,7 +684,7 @@ ELSEIF CHOICE == 112
 		MONEY:4 = MAX(MONEY:3, MONEY:4)
 		CALL CHARA_SALE, 0, 0
 	ELSEIF CONFIG("조교상대변경불가")
-		PRINTW 지금은 매각따위를 할 수있는 상황이 아닙니다
+		PRINTW 지금은 매각따위를 할 수 있는 상황이 아닙니다
 	ELSEIF CHARA_NUM("매각가능") == 0
 		PRINTW 없는 걸 팔 수 없습니다
 	ENDIF
@@ -715,7 +715,7 @@ ELSEIF CHOICE == 118
 	IF FLAG:40 == 0
 		CALL EAT_LUNCH
 	ELSE
-		PRINTFORMW 더  이상은 과식합니다
+		PRINTFORMW 더 이상은 과식합니다
 	ENDIF
 ;[120]外出許可を与える
 ELSEIF CHOICE == 120
@@ -728,9 +728,9 @@ ELSEIF CHOICE == 120
 		;BEGIN TURNEND
 		;RETURN 1
 	ELSE
-		PRINTL 외출 허가를 바란다or외출을 시켜도 문제 없는 캐릭터가 없습니다
-		PRINTL 성행위에 익숙해 있어[호색]or[음란]or노출벽하지만 높은 캐릭터가 외출을 바랍니다
-		PRINTW 순종야굴복각인노LV하지만 높지 않으면 허가를 낼 수 없는 것도 있습니다
+		PRINTL 외출 허가를 바라는or외출을 시켜도 문제 없는 캐릭터가 없습니다
+		PRINTL 성행위에 익숙해 있어 [호색]or[음란]or노출벽이 높은 캐릭터가 외출을 바랍니다
+		PRINTW 순종이나 굴복각인의 LV이 높지 않으면 허가를 낼 수 없기도 합니다
 	ENDIF
 ;[121]탐색に出かける
 ELSEIF CHOICE == 121
@@ -741,7 +741,7 @@ ELSEIF CHOICE == 122
 	IF TALENT:MASTER:조합지식 || (ASSI && TALENT:ASSI:조합지식)
 		CALL COMPOUND_ITEM
 	ELSE
-		PRINTFORMW 주인인가%TEXTS("조수の명칭")%에[조합지식]하지만필요입니다
+		PRINTFORMW 주인 또는 %TEXTS("조수の명칭")%에 [조합지식]이 필요합니다
 	ENDIF
 ;[123]서류작업をする
 ELSEIF CHOICE == 123
@@ -753,23 +753,23 @@ ELSEIF CHOICE == 123
 		ENDIF
 	ELSE
 		PRINTL 정리하는 만큼 서류가 모여 있지 않습니다
-		PRINTW （이벤트의 발생에는조교(이)가 진행된 캐릭터가필요입니다）
+		PRINTW （이벤트의 발생에는 조교가 진행된 캐릭터가 필요합니다）
 	ENDIF
 ;[124]조수に성욕処理を頼む
 ELSEIF CHOICE == 124
 	IF ASSI && CONFIG("조교상대변경불가") == 0
 		TRYCALL PLAY_WITH_ASSI
 	ELSEIF ASSI && CONFIG("조교상대변경불가")
-		PRINTFORMW 지금은%TEXTS("조수の명칭")%를 상대로 할 수 있는 상황이 아닙니다
+		PRINTFORMW 지금은 %조사처리(TEXTS("조수の명칭"),"를")% 상대로 할 수 있는 상황이 아닙니다
 	ELSEIF ASSI == 0
-		PRINTFORMW %TEXTS("조수の명칭")%하지만 없습니다
+		PRINTFORMW %조사처리(TEXTS("조수の명칭"),"가")% 없습니다
 	ENDIF
 ;[125]土曜日に온천여행を予約する
 ELSEIF CHOICE == 125
 	IF TARGET && COND("온천여행가능")
 		CALL EVENT_TRAVEL_SELECT
 	ELSE
-		PRINTL 금요일밤에$3,000를 준비해[연모]or[음란]의 캐릭터를조교상대로 하면선택할 수 있습니다
+		PRINTL 금요일밤에 $3,000를 준비해 [연모]or[음란]의 캐릭터를 조교상대로 하면 선택할 수 있습니다
 		PRINTW 다만, [처녀]인 경우에는 [상사상애]일 필요가 있습니다
 	ENDIF
 ;[131]마음에듬や성감대等の설정
@@ -800,17 +800,17 @@ ELSEIF CHOICE == 142
 	IF TARGET
 		CALL ANALYSIS
 	ELSE
-		PRINTW 애널라이즈하고싶은 상대를 조교대상으로 선택해주세요
+		PRINTW 애널라이즈하고 싶은 상대를 조교대상으로 선택해주세요
 	ENDIF
 ;[160]다방의 준비
 ELSEIF CHOICE == 160
 	IF NUM("運営가능店舗") || NUM("所持店舗")
 		CALL SHOP_EX
 	ELSE
-		PRINTFORML 다방의 웨이트레스가 생길 것 같은 캐릭터가부족하고 있습니다
-		PRINTFORML （겉모습이 여성인 일과[연모]없고순종하지만 높은 일이 기본 조건이 되고 있습니다）
+		PRINTFORML 다방의 웨이트레스로 할 캐릭터가 부족합니다
+		PRINTFORML （겉모습이 여성이고 [연모]또는 순종이 높은 것이 기본 조건입니다）
 		PRINTFORML 한 점포당 네명이 필요하므로, 앞으로 {4 - CHARA_NUM("バイト가능")}명이 필요합니다
-		PRINTFORMW 거기에 더해 개점자금으로 $10,000이 필요합니다
+		PRINTFORMW 거기에 더해 초기자금으로 $10,000이 필요합니다
 	ENDIF
 ELSEIF CHOICE == 200
 	CALL SAVEGAME_EX
@@ -912,7 +912,7 @@ CALL EVENT_SHOP_BUY
 
 MEMO_LINECOUNT = LINECOUNT
 PRINTL 
-PRINTFORML 어떤 것을 매입하십니까？ (나머지%MONEY_C(MONEY)%)
+PRINTFORML 어떤 것을 매입하십니까？ (잔금 %MONEY_C(MONEY)%)
 CALL SALEITEM_CHECK
 DRAWLINE
 PRINTFORML [100] 가게를 나간다
@@ -921,7 +921,7 @@ CALL INPUT_SELECT, 100, 100
 
 SELECTCASE RESULT
 CASE 100
-	PRINTFORMW 「다음 이용을 기다리고 있습니다」
+	PRINTFORMW 「또 오세요」
 	REDRAW 1
 	RETURN 0
 CASEELSE
@@ -1052,7 +1052,7 @@ WAIT
 MEMO_LINECOUNT = LINECOUNT
 PRINTL 
 DRAWLINE
-PRINTFORML 음마의물방울를 원료로서, 약이나아이템등을조합합니다(소지우：{ITEM:음마의물방울}개)
+PRINTFORML 음마의물방울를 원료로서, 약이나 아이템등을 조합합니다(소지수：{ITEM:음마의물방울}개)
 
 VARSET LOCAL
 ;조합아이템の実際に使う상대がいるかなどを判定
@@ -1307,7 +1307,7 @@ ELSE
 	PRINTFORML  [마법사]의 소질을 갖고있다면 금을 내고 아르카나를 습득할 수 있습니다
 	PRINTFORML  다만, 주인 이외는 1개 기억하는 것에 대해 습득의 구슬이 1,000필요합니다
 	CALL PRINT_COLORTEXT, " 다른 색깔", DEF_COLOR("물색")
-	PRINTFORML 은 중급이상의 마도서입니다. [현명함]이나 [상위몽마]가 필요입니다
+	PRINTFORML 은 중급이상의 마도서입니다. [현명함]이나 [상위몽마]가 필요합니다
 	PRINTFORMW （왠지, 스톡과 바인드는 주인에게는 팔아 주지 않는 것 같습니다……）
 	CALL ARCANA_SHOP_BUY, "中級"
 	PRINTFORMW 「또 봐」
@@ -1687,17 +1687,17 @@ CASE 0 TO 29, 97
 		PRINTFORM 과
 		CALL PRINT_COLORTEXT, "[확장적정]", DEF_COLOR("황색")
 		PRINTFORML 이 존재하면 순조롭게 됩니다
-		PRINTFORM 확장의 하기 쉬움에는 영향이 없다소질그렇지만,
+		PRINTFORM 확장의 용이성에는 영향이 없는 소질이지만,
 		CALL PRINT_COLORTEXT, "[도착적]", DEF_COLOR("황색")
-		PRINTFORML 하지만 있으면반감를 억제 당하는 일이지요
+		PRINTFORML 이 있다면 반감을 억제할 수 있을 것입니다.
 		PRINTFORML 
-		PRINTFORML 에서의 쾌감은Ｃ감각에 의존하고 있습니다……하지만, 초기는아픔하지만 강하고 대부분 쾌락을 얻을 수 있지 않습니다
-		PRINTFORML 경험을 쌓게해아픔를 줄여, 를 만지작거려지는 일에 익숙하게 하는 것이 겹요정됩니다
-		PRINTFORM 요도를 졸라대면서 절정을 경험하는 것이고 , 
+		PRINTFORML 요도에서의 쾌감은 Ｃ감각에 의존하고 있습니다……하지만, 처음에는 아픔이 강하고 대부분 쾌락을 얻을 수 있지 않습니다
+		PRINTFORML 경험을 쌓게 하여 통증을 줄이고 요도를 만지는 것에 익숙해 지는 것이 중요합니다.
+		PRINTFORM 요도를 졸라대면서 절정을 경험하는 것으로, 
 		CALL PRINT_COLORTEXT, "[요도성감]", DEF_COLOR("황색")
-		PRINTFORML 에 일깨우는 일이 됩니다.
+		PRINTFORML 를 일깨우는 일이 됩니다.
 		CALL PRINT_COLORTEXT, "[요도성감]", DEF_COLOR("황색")
-		PRINTFORMW 없음이라면 기본적으로는 기분의 좋지 않다조교그래서, 빠른 취득이 겹요정그렇겠지요
+		PRINTFORMW 이 없음다면 기본적으로는 기분이 좋지 않은 조교이므로, 빠른 취득이 중요하겠지요
 	ENDSELECT
 ;로션など, 소비아이템. それに加えて음마의물방울も
 CASE 30 TO 49, 78
@@ -1783,8 +1783,8 @@ MEMO_MAX = MIN(99 - ITEM:ARG, MONEY/ITEMPRICE:ARG)
 SIF ARG == 78
 	MEMO_MAX = MIN(999 - ITEM:ARG, MONEY/ITEMPRICE:ARG)
 
-PRINTFORML %조사선택(ITEMNAME:ARG, "를")%  몇개 삽니까？ (소지하고 있는 수：{ITEM:ARG} 소지금：%MONEY_C(MONEY)%)
-PRINTFORML （사고 싶은 수를 직접 입력에서도 구입가능. 0or999그리고 돌아온다）
+PRINTFORML %조사선택(ITEMNAME:ARG, "를")%  몇 개 삽니까？ (소지하고 있는 수：{ITEM:ARG} 소지금：%MONEY_C(MONEY)%)
+PRINTFORML （사고 싶은 수를 직접 입력에서도 구입가능. 0or999으로 돌아감）
 
 FOR LCOUNT, 1, MEMO_MAX+1
 	SIF MONEY < ITEMPRICE:ARG * LCOUNT
@@ -1846,9 +1846,9 @@ CASE 73
 CASE 74
 	PRINTFORML %ITEMNAME:BOUGHT%(%MONEY_C(ITEMPRICE:BOUGHT)%):피임 마법이 걸린 T자형의 작은 부적입니다
 	SETCOLOR DEF_COLOR("하트핑크")
-	PRINTFORML ※효과는 영속적(영구적)이지만, 자궁 안에 장착합니다※
+	PRINTFORML ※효과는 영구적이지만, 자궁 안에 장착합니다※
 	RESETCOLOR
-	PRINTFORML 이미 장착된 캐릭터를 선택하면, 피임의부적을 파괴합니다
+	PRINTFORML 이미 장착된 캐릭터를 선택하면, 피임의 부적을 파괴합니다
 CASE 90
 	PRINTFORML %ITEMNAME:BOUGHT%(%MONEY_C(ITEMPRICE:BOUGHT)%):처분하지 않을 것을 서약합니다
 CASE 91
@@ -1857,13 +1857,13 @@ CASE 91
 CASE 94
 	PRINTFORML %ITEMNAME:BOUGHT%(%MONEY_C(ITEMPRICE:BOUGHT)%):특정공간의 시간을 조종합니다(아이를 단번에 성장시킵니다)
 CASE 95
-	PRINTFORML %ITEMNAME:BOUGHT%(%MONEY_C(ITEMPRICE:BOUGHT)%):기묘한 분위기의 책. 두권 세트.
+	PRINTFORML %ITEMNAME:BOUGHT%(%MONEY_C(ITEMPRICE:BOUGHT)%):기묘한 분위기의 책. 두 권 세트.
 	PRINTFORML 선택한 두 명의 신체를 바꿔 넣는 효과가 있습니다
 CASE 98
 	PRINTFORML %ITEMNAME:BOUGHT%(%MONEY_C(ITEMPRICE:BOUGHT)%):조교의 기억을 지웁니다
 ;이하は조합系
 CASE 50
-	PRINTFORML %ITEMNAME:BOUGHT%:체력(와)과정력를 전회복합니다（스톡도입니다！）
+	PRINTFORML %ITEMNAME:BOUGHT%:체력과 정력를 전체회복합니다（스톡도 입니다！）
 CASE 51
 	PRINTFORML %ITEMNAME:BOUGHT%:여자를 후타나리로 만들거나, 되돌리거나 합니다
 CASE 55
@@ -1887,17 +1887,17 @@ CASE 350
 CASE 55 TO 59
 	SELECTCASE ARGS
 	CASE "調合"
-		PRINTFORML 누구에게 빨게 합니까？ (소지우：{ITEM:음마의물방울}개)
+		PRINTFORML 누구에게 빨게 합니까？ (소지 물방울：{ITEM:음마의물방울}개)
 	CASEELSE
 		PRINTFORML 누구에게 빨게 합니까？ (소지금：%MONEY_C(MONEY)%)
 	ENDSELECT
 ;조합약
 CASE 330 TO 340
-	PRINTFORML 누구에게 %ITEMNAME:BOUGHT%를 사용합니까？ (소지우：{ITEM:음마의물방울}개)
+	PRINTFORML 누구에게 %조사처리(ITEMNAME:BOUGHT,"를")% 사용합니까？ (소지우：{ITEM:음마의물방울}개)
 CASEELSE
 	SELECTCASE ARGS
 	CASE "調合"
-		PRINTFORML 누구에게 사용합니까？ (소지우：{ITEM:음마의물방울}개)
+		PRINTFORML 누구에게 사용합니까？ (소지 물방울：{ITEM:음마의물방울}개)
 	CASEELSE
 		PRINTFORML 누구에게 사용합니까？ (소지금：%MONEY_C(MONEY)%)
 	ENDSELECT
@@ -2070,12 +2070,12 @@ CASE 55
 	IF TALENT:CHOICE:모유체질 == 0
 		PRINTL  [ 0] 모유체질로 한다
 	ELSE
-		CALL PRINT_STR, "회색_ [×] 모유체질にする_L"
+		CALL PRINT_STR, "회색_ [×] 모유체질로 바뀜_L"
 	ENDIF
 	IF COND("함몰유두", CHOICE)
 		PRINTL  [ 1] 함몰유두를 고친다
 	ELSE
-		CALL PRINT_STR, "회색_ [×] 함몰유두を治す_L"
+		CALL PRINT_STR, "회색_ [×] 함몰유두를 고침_L"
 	ENDIF
 	PRINTFORML [100] 돌아온다
 
@@ -2087,7 +2087,7 @@ CASE 55
 		PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% 모유가 나오게 되었다＞
 		TALENT:CHOICE:모유체질 = 2
 	ELSEIF RESULT == 1 && COND("함몰유두", CHOICE)
-		PRINTFORMW ＜%NAME:CHOICE%의 함몰유두하지만 나았다＞
+		PRINTFORMW ＜%NAME:CHOICE%의 함몰유두가 나았다＞
 		SETBIT TALENT:CHOICE:유두, 10
 		CLEARBIT TALENT:CHOICE:유두, 11
 		CLEARBIT TALENT:CHOICE:유두, 12
@@ -2109,12 +2109,12 @@ CASE 56
 	IF TALENT:CHOICE:처녀 == 0
 		PRINTL  [ 0] 처녀막을 재생한다
 	ELSE
-		CALL PRINT_STR, "회색_ [×] 처녀膜を再生する_L"
+		CALL PRINT_STR, "회색_ [×] 처녀막을 재생한다_L"
 	ENDIF
 	IF TALENT:CHOICE:모유체질
-		PRINTL  [ 1] 모유체질를 잃게 한다
+		PRINTL  [ 1] 모유체질을 잃는다
 	ELSE
-		CALL PRINT_STR, "회색_ [×] 모유체질を失わせる_L"
+		CALL PRINT_STR, "회색_ [×] 모유체질을 잃는다_L"
 	ENDIF
 	PRINTFORML [100] 돌아온다
 
@@ -2150,7 +2150,7 @@ CASE 57
 	ELSE
 		PRINTFORM ＜%조사처리(NAME:CHOICE, "는")% 남자
 	ENDIF
-	PRINTFORMW 에\@ CFLAG:CHOICE:4 ? なりました # 戻りました \@＞
+	PRINTFORMW \@ CFLAG:CHOICE:4 ? 가 되었습니다 # 로 돌아갔습니다 \@＞
 	IF TALENT:CHOICE:남자
 		PRINTL 
 		PRINTFORML ……%조사처리(CALLNAME:CHOICE, "를")% 이른바 "오토코노코"로 합니까？
@@ -2229,7 +2229,7 @@ CASE 70
 		CALL INPUT_SELECT, 2
 	ENDIF
 	IF RESULT == 0
-		PRINTFORMW ＜%NAME:CHOICE%의 저기의 털을 폈습니다＞
+		PRINTFORMW ＜%NAME:CHOICE%의 저기의 털을 길렀습니다＞
 		SELECTCASE COND("음모", CHOICE)
 		CASE IS <= 5
 			BASE:CHOICE:음모 = 600
@@ -2237,7 +2237,7 @@ CASE 70
 			BASE:CHOICE:음모 = 700
 		ENDSELECT
 	ELSE
-		PRINTFORMW ＜%NAME:CHOICE%의 %TEXTS("겨드랑이")%털을 폈습니다＞
+		PRINTFORMW ＜%NAME:CHOICE%의 %TEXTS("겨드랑이")%털을 길렀습니다＞
 		BASE:CHOICE:겨털 = 700
 	ENDIF
 	SIF TALENT:CHOICE:마도인형
@@ -2249,19 +2249,19 @@ CASE 71
 	ELSEIF COND("겨털", CHOICE) <= 2
 		RESULT = 0
 	ELSE
-		PRINTFORML 음모와 %TEXTS("겨드랑이")%털 중 어느쪽을 탈모시킵니까？
+		PRINTFORML 음모와 %TEXTS("겨드랑이")%털 중 어느쪽을 제모시킵니까？
 		PRINTFORML [ 0] 음모
 		PRINTFORML [ 1] %TEXTS("겨드랑이")%털
 		CALL INPUT_SELECT, 2
 	ENDIF
 	IF RESULT == 0
-		PRINTFORMW ＜%NAME:CHOICE%의 저기의 털을 탈모했습니다＞
+		PRINTFORMW ＜%NAME:CHOICE%의 저기의 털을 제모했습니다＞
 		BASE:CHOICE:음모 = 200
 		;마도인형なら, パイパン化
 		SIF TALENT:CHOICE:마도인형
 			BASE:CHOICE:음모 = 100
 	ELSE
-		PRINTFORMW ＜%NAME:CHOICE%의 %TEXTS("겨드랑이")%털을 탈모했습니다＞
+		PRINTFORMW ＜%NAME:CHOICE%의 %TEXTS("겨드랑이")%털을 제모했습니다＞
 		BASE:CHOICE:겨털 = 200
 		SIF TALENT:CHOICE:마도인형
 			BASE:CHOICE:겨털 = 100
@@ -2277,7 +2277,7 @@ CASE 72
 				CONTINUE
 			MEMO += 1
 		NEXT
-		PRINTFORML 피임을 하고 있지 않는 인원수가 {MEMO}명이므로 %MONEY_C(ITEMPRICE:BOUGHT * MEMO)%가 필요입니다
+		PRINTFORML 피임을 하고 있지 않는 인원수가 {MEMO}명이므로 %MONEY_C(ITEMPRICE:BOUGHT * MEMO)%가 필요합니다
 		;お금が발りている
 		IF MONEY >= ITEMPRICE:BOUGHT*MEMO
 			PRINTFORML [ 0] 일괄구입한다 (구입 후의 소지금：%MONEY_C(MONEY - ITEMPRICE:BOUGHT*MEMO)%)
@@ -2290,7 +2290,7 @@ CASE 72
 						CONTINUE
 					TALENT:LCOUNT:피임약복용 += 10
 				NEXT
-				PRINTFORMW ＜피임약을 구입하고 썻습니다＞
+				PRINTFORMW ＜피임약을 구입하고 썼습니다＞
 			ENDIF
 		ELSE
 			PRINTW …아무래도 소지금이 부족한 모양이네요
@@ -2298,9 +2298,9 @@ CASE 72
 	CASEELSE
 		TALENT:CHOICE:피임약복용 += 10
 		IF CHOICE == MASTER
-			PRINTFORMW ＜%NAME:CHOICE%의 피임 기간이{TALENT:CHOICE:피임약복용}날이 되었다＞
+			PRINTFORMW ＜%NAME:CHOICE%의 피임 기간이 {TALENT:CHOICE:피임약복용}일이 되었다＞
 		ELSE
-			PRINTFORMW ＜%NAME:CHOICE%에게 피임약을 건네주었습니다. 피임 기간이{TALENT:CHOICE:피임약복용}날이 되었다＞
+			PRINTFORMW ＜%NAME:CHOICE%에게 피임약을 건네주었습니다. 피임 기간이{TALENT:CHOICE:피임약복용}일이 되었다＞
 		ENDIF
 
 		SWAP TARGET, CHOICE
@@ -2383,8 +2383,8 @@ CASE 91
 	ITEM:서약의반지 += 1
 ;비뚤어진시계
 CASE 94
-	PRINTFORML ＜%NAME:CHOICE%시에는 진행되었습니다＞
-	PRINTFORMW 1인분이 되기 위해서(때문에) 충분한 경험을 쌓으면, 새로운 성장의가능성이 보이겠지요……
+	PRINTFORML ＜%NAME:CHOICE%의 시간이 진행되었습니다＞
+	PRINTFORMW 어른이 되기 위해 충분한 경험을 쌓으면, 새로운 성장의 가능성이 보이겠지요……
 	SETBIT CFLAG:CHOICE:484, 0
 ;호접지몽（体の入れ換え）
 CASE 95
@@ -2394,7 +2394,7 @@ CASE 95
 		RETURN 0
 ;기억소거약
 CASE 98
-	PRINTFORMW ＜%NAME:CHOICE%는 지금까지의 일을 잊었습니다＞
+	PRINTFORMW ＜%조사처리(NAME:CHOICE,"는")% 지금까지의 일을 잊었습니다＞
 	CALL MEMORY_LOST, CHOICE
 ;身体変化系の効果
 CASE 330 TO 349
@@ -2422,7 +2422,7 @@ CASE 330 TO 349
 			SETBIT TALENT:CHOICE:페니스, 2
 			CLEARBIT TALENT:CHOICE:페니스, 0
 		ENDIF
-		PRINTFORMW ＜%NAME:CHOICE%의 페니스의 크기는[%TALENT_NAME(2, TALENT:CHOICE:페니스, CHOICE)%](이)가 되었습니다＞
+		PRINTFORMW ＜%NAME:CHOICE%의 페니스의 크기는 [%TALENT_NAME(2, TALENT:CHOICE:페니스, CHOICE)%]가 되었습니다＞
 	CASE 331
 		IF GETBIT(TALENT:CHOICE:페니스, 5)
 			SETBIT TALENT:CHOICE:페니스, 4
@@ -2440,7 +2440,7 @@ CASE 330 TO 349
 			SETBIT TALENT:CHOICE:페니스, 1
 			CLEARBIT TALENT:CHOICE:페니스, 0
 		ENDIF
-		PRINTFORMW ＜%NAME:CHOICE%의 페니스의 크기는[%TALENT_NAME(2, TALENT:CHOICE:페니스, CHOICE)%](이)가 되었습니다＞
+		PRINTFORMW ＜%NAME:CHOICE%의 페니스의 크기는 [%TALENT_NAME(2, TALENT:CHOICE:페니스, CHOICE)%]가 되었습니다＞
 	CASE 332
 		IF GETBIT(TALENT:CHOICE:페니스, 12)
 			SETBIT TALENT:CHOICE:페니스, 11
@@ -2448,7 +2448,7 @@ CASE 330 TO 349
 		ELSEIF GETBIT(TALENT:CHOICE:페니스, 11)
 			CLEARBIT TALENT:CHOICE:페니스, 11
 		ENDIF
-		PRINTFORMW ＜%NAME:CHOICE%의 페니스상태는[%TALENT_NAME(2, TALENT:CHOICE:페니스, CHOICE)%](이)가 되었습니다＞
+		PRINTFORMW ＜%NAME:CHOICE%의 페니스상태는 [%TALENT_NAME(2, TALENT:CHOICE:페니스, CHOICE)%]가 되었습니다＞
 	CASE 333
 		IF GETBIT(TALENT:CHOICE:페니스, 11)
 			SETBIT TALENT:CHOICE:페니스, 12
@@ -2462,49 +2462,49 @@ CASE 330 TO 349
 			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는, 있을 수 없는 크기의 초유가 되었습니다＞
 			CALL CALC, "초유化", CHOICE
 		ELSEIF TALENT:CHOICE:거유
-			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는, 터질듯한폭유(이)가 되었습니다＞
+			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는, 터질듯한 폭유가 되었습니다＞
 			CALL CALC, "폭유化", CHOICE
 		ELSEIF TALENT:CHOICE:빈유
-			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는 특히 희소 가치도 없는 보통의 크기가 되었습니다＞
+			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는 희소 가치도 없는 보통의 크기가 되었습니다＞
 			CALL CALC, "평유化", CHOICE
 		ELSE
-			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는[거유](이)가 되었습니다＞
+			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는 [거유]가 되었습니다＞
 			CALL CALC, "거유化", CHOICE
 		ENDIF
 	CASE 335
 		IF TALENT:CHOICE:거유 >= 3
-			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는[폭유](이)가 되었습니다＞
+			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는 [폭유]가 되었습니다＞
 			CALL CALC, "폭유化", CHOICE
 		ELSEIF TALENT:CHOICE:거유 == 2
-			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는[거유](이)가 되었습니다＞
+			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는 [거유] 되었습니다＞
 			CALL CALC, "거유化", CHOICE
 		ELSEIF TALENT:CHOICE:거유
-			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는거유로부터 일전해 보통의 크기가 되었습니다＞
+			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는 거유로부터 일전해 보통의 크기가 되었습니다＞
 			CALL CALC, "평유化", CHOICE
 		ELSE
-			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는[빈유](이)가 되었습니다＞
+			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는 [빈유]가 되었습니다＞
 			CALL CALC, "빈유化", CHOICE
 		ENDIF
 	CASE 336
 		IF TALENT:CHOICE:작은몸집
-			PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [작은몸집]를 잃었습니다＞
+			PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [작은몸집]을 잃었습니다＞
 			CALL CALC, "보통体型化", CHOICE
 		ELSE
-			PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [장신]를 얻었습니다＞
+			PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [장신]을 얻었습니다＞
 			CALL CALC, "장신化", CHOICE
 			SIF TALENT:CHOICE:오토코노코
 				PRINTFORMW ＜…역시 오토코노코라는 것은 무리가 있어보입니다＞
 		ENDIF
 	CASE 337
 		IF TALENT:CHOICE:장신
-			PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [장신]를 잃었습니다＞
+			PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [장신]을 잃었습니다＞
 			CALL CALC, "보통体型化", CHOICE
 		ELSE
-			PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [작은몸집](이)가 되었습니다＞
+			PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [작은몸집]이 되었습니다＞
 			CALL CALC, "小柄化", CHOICE
 		ENDIF
 	CASE 338
-		PRINTFORM 현재[{CHOICE, 2}]%CALLNAME:CHOICE%의피부색하
+		PRINTFORM 현재 [{CHOICE, 2}]%CALLNAME:CHOICE%의 피부색은
 		IF TALENT:CHOICE:피부색
 			PRINTFORML %CONDS("피부색", CHOICE)%입니다
 		ELSE
@@ -2515,38 +2515,38 @@ CASE 330 TO 349
 		PRINTFORML  [ 1] 갈색
 		PRINTFORML  [ 2] 흰피부
 		PRINTFORML  [ 3] 파랑
-		PRINTFORML [100] 역시 바꾸지않는다
+		PRINTFORML [100] 역시 바꾸지 않는다
 		CALL INPUT_SELECT, 4, 100
 		SELECTCASE RESULT
 		CASE 100
 			RETURN 0
 		CASE 0
-			PRINTFORMW ＜%CALLNAME:CHOICE%의피부색를 말[살색]에 변화시켰습니다＞
+			PRINTFORMW ＜%CALLNAME:CHOICE%의 피부색을 보통[살구색]으로 변화시켰습니다＞
 		CASE 1
-			PRINTFORMW ＜%CALLNAME:CHOICE%의피부색를 건강할 것 같은[갈색]에 변화시켰습니다＞
+			PRINTFORMW ＜%CALLNAME:CHOICE%의 피부색을 건강할 것 같은 색[갈색]에 변화시켰습니다＞
 		CASE 2
-			PRINTFORMW ＜%CALLNAME:CHOICE%의피부색를 빠지는 것 같은[백옥]에 변화시켰습니다＞
+			PRINTFORMW ＜%CALLNAME:CHOICE%의 피부색을 매력적인 색[백옥]에 변화시켰습니다＞
 		CASE 3
-			PRINTFORMW ＜%CALLNAME:CHOICE%의피부색를 보통에서는 뵙기 힘들다[파랑]에 변화시켰습니다＞
+			PRINTFORMW ＜%CALLNAME:CHOICE%의 피부색을 보통에서는 보기 힘든 색[파랑]에 변화시켰습니다＞
 		ENDSELECT
 		IF TALENT:CHOICE:피부색 == RESULT
-			PRINTFORMW …근데 원래색이랑 똑같군요. 소재는 돌려드립니다
+			PRINTFORMW …근데 원래 색이랑 똑같군요. 소재는 돌려드립니다
 			RETURN 0
 		ELSE
 			TALENT:CHOICE:피부색 = RESULT
 		ENDIF
 	CASE 339
-		PRINTFORM ＜%NAME:CHOICE%의 엉덩이하지만{BASE:CHOICE:힙}cm로부터{BASE:CHOICE:신장*3/100}cm커져,
+		PRINTFORM ＜%NAME:CHOICE%의 엉덩이가 {BASE:CHOICE:힙}cm로부터{BASE:CHOICE:신장*3/100}cm커져,
 		BASE:CHOICE:힙 += BASE:CHOICE:신장*3/100
-		PRINTFORMW {BASE:CHOICE:힙}cm(이)가 되었습니다＞
+		PRINTFORMW {BASE:CHOICE:힙}cm가 되었습니다＞
 		IF TALENT:CHOICE:큰엉덩이 == 2
 			CALL SETFLAG, "힙설정", CHOICE
 			SIF TALENT:CHOICE:큰엉덩이 != 2
-				PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [%CONDS("엉덩이", CHOICE)%](이)가 되었습니다＞
+				PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [%CONDS("엉덩이", CHOICE)%]가 되었습니다＞
 		ELSEIF TALENT:CHOICE:큰엉덩이 == 1
 			CALL SETFLAG, "힙설정", CHOICE
 			SIF TALENT:CHOICE:큰엉덩이 != 1
-				PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [%CONDS("엉덩이", CHOICE)%](이)가 되었습니다＞
+				PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [%CONDS("엉덩이", CHOICE)%]가 되었습니다＞
 		ELSEIF TALENT:CHOICE:작은엉덩이
 			CALL SETFLAG, "힙설정", CHOICE
 			SIF TALENT:CHOICE:작은엉덩이 == 0
@@ -2554,12 +2554,12 @@ CASE 330 TO 349
 		ELSEIF TALENT:CHOICE:큰엉덩이 == 0
 			CALL SETFLAG, "힙설정", CHOICE
 			SIF TALENT:CHOICE:큰엉덩이 != 0
-				PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [%CONDS("엉덩이", CHOICE)%](이)가 되었습니다＞
+				PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [%CONDS("엉덩이", CHOICE)%]가 되었습니다＞
 		ENDIF
 	CASE 340
-		PRINTFORM ＜%NAME:CHOICE%의 엉덩이하지만{BASE:CHOICE:힙}cm로부터{BASE:CHOICE:신장*3/100}cm작아져,
+		PRINTFORM ＜%NAME:CHOICE%의 엉덩이가 {BASE:CHOICE:힙}cm로부터{BASE:CHOICE:신장*3/100}cm작아져,
 		BASE:CHOICE:힙 -= BASE:CHOICE:신장*3/100
-		PRINTFORMW {BASE:CHOICE:힙}cm(이)가 되었습니다＞
+		PRINTFORMW {BASE:CHOICE:힙}cm가 되었습니다＞
 		IF TALENT:CHOICE:큰엉덩이 == 3
 			CALL SETFLAG, "힙설정", CHOICE
 			SIF TALENT:CHOICE:큰엉덩이 != 3
@@ -2575,7 +2575,7 @@ CASE 330 TO 349
 		ELSEIF TALENT:CHOICE:작은엉덩이 == 0
 			CALL SETFLAG, "힙설정", CHOICE
 			SIF TALENT:CHOICE:작은엉덩이
-				PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [%CONDS("엉덩이", CHOICE)%](이)가 되었습니다＞
+				PRINTFORMW ＜%조사처리(NAME:CHOICE, "는")% [%CONDS("엉덩이", CHOICE)%]가 되었습니다＞
 		ENDIF
 	ENDSELECT
 	;3サイズを체크
