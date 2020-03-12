@@ -2892,7 +2892,7 @@ IF SELECTCOM == 93
 		;연모有り
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
-				PRINTFORML 「응우, 후앙…훌륭한쿠노이치(이)가 되기 (위해)때문에입니다, %CNAME("二人称")%로부터 넣고 싶어질 때까지 비비어 버려요」
+				PRINTFORML 「응우, 후앙…훌륭한쿠노이치(이)가 되기 (위해)때문에입니다, %조사처리(CNAME("二人称"),"으로")%부터 넣고 싶어질 때까지 비비어 버려요」
 			ELSE
 				PRINTFORML 「응아, 하아…가득쿠노이치의 수업을 했으니까, 비비는 것만으로 남근을 기분 좋게 해 줍니다」
 			ENDIF
@@ -5392,7 +5392,7 @@ IF SELECTCOM == 280
 		PRINTFORMW 「햐우…%CNAME("二人称")%에 도망쳐져 버렸습니다…」
 	;失敗
 	ELSEIF TFLAG:39 > 0
-		PRINTFORMW 「아직 안됩니다, 좀 더%CNAME("二人称")%로 해 주고 싶으니까」
+		PRINTFORMW 「아직 안됩니다, 좀 더%조사처리(CNAME("二人称"),"으로")% 해 주고 싶으니까」
 	ENDIF
 	RETURN 1
 ENDIF
