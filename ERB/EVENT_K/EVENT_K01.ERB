@@ -4632,7 +4632,7 @@ IF SELECTCOM == 179 && TEQUIP:수치플레이
 		;연모
 		IF TALENT:연모
 			PRINTFORMW 「%CNAME("一人称")%에 부끄러운 생각을 시켜 어떻게 할 생각?」
-			PRINTFORMW 「후후 ,  별로(너무) 부끄러우면 %CNAME("二人称")%과 부끄러움을 분담하게 되어요♪」
+			PRINTFORMW 「후후 ,  별로(너무) 부끄러우면 %조사처리(CNAME("二人称"),"과")% 부끄러움을 분담하게 되어요♪」
 		;노출벽Lv3이상
 		ELSEIF ABL:Ｖ감각 >= 3
 			PRINTFORMW 「%CNAME("一人称")%에 부끄러운 생각을 시켜 어떻게 할 생각?」
@@ -5139,7 +5139,7 @@ IF SELECTCOM == 120 || SELECTCOM == 121
 					PRINTFORMW %타겟은()% 쾌락 이외 아무것도 생각하지 않고 오로지 허리를 흔들어 있다
 				;연모
 				ELSEIF TALENT:연모
-					PRINTFORMW 「%CNAME("二人称")%과 %CNAME("一人称")%의 궁합은 ,  100\%군요……♪」
+					PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% %CNAME("一人称")%의 궁합은 ,  100\%군요……♪」
 					PRINTFORMW 「좋아요!  주제에 되어버릴 그렇게♪」
 				;조교자のV経験が100이상
 				ELSEIF EXP:PLAYER:Ｖ경험 >= 100
@@ -5174,7 +5174,7 @@ IF SELECTCOM == 120 || SELECTCOM == 121
 					PRINTFORMW %타겟은()% 쾌락 이외 아무것도 생각하지 않고 오로지 허리를 흔들어 있다
 				;연모
 				ELSEIF TALENT:연모
-					PRINTFORMW 「%CNAME("二人称")%과 %CNAME("一人称")%의 궁합은 ,  100\%군요……♪」
+					PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% %CNAME("一人称")%의 궁합은 ,  100\%군요……♪」
 					PRINTFORMW 「좋아요!  주제에 되어버릴 그렇게♪」
 				;조교자のV経験が100이상
 				ELSEIF EXP:PLAYER:Ｖ경험 >= 100
@@ -5560,7 +5560,7 @@ ELSEIF SELECTCOM == 200 && TEQUIP:촉수 == 0
 		ELSE
 			PRINTFORMW 「하아 ,  하아…」
 			PRINTFORMW 「촉수의 고문도 나쁘지 않지만 ,  로맨틱함이 부족한 것이 옥의 티야…」
-			PRINTFORMW 「응 ,  나머지의 시간은 %CNAME("二人称")%과 서로 사랑하고 싶어요……♪」
+			PRINTFORMW 「응 ,  나머지의 시간은 %조사처리(CNAME("二人称"),"과")% 서로 사랑하고 싶어요……♪」
 		ENDIF
 	;それ以外
 	ELSE
@@ -8330,7 +8330,7 @@ CASE "매각した"
 		PRINTFORMW 이렇게 해서 ,  그와 그녀의 ,  조교는 ,  마지막을 ,  고했다……
 	;반발각인Lv3
 	ELSEIF MARK:반발각인 == 3
-		PRINTFORMW 「…이제(벌써),  %CNAME("二人称")%과는 만나고 싶지 않네요」
+		PRINTFORMW 「…이제(벌써),  %조사처리(CNAME("二人称"),"과")%는 만나고 싶지 않네요」
 	;음란
 	ELSEIF TALENT:음란
 		PRINTFORMW 「아하♪ 다른 사람의 맛은 ,  어떨까요♪」
@@ -8674,7 +8674,7 @@ CASE "서약의두루마리"
 CASE "서약의반지"
 	PRINTFORMW 「어머……여자에게 반지를 준다니, 그 의미를 알고 있는거야？」
 	PRINTFORMW %타겟은()% 반지를 손에 들면서 평소처럼 웃고있다……
-	PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 이 반지를 받는다면, %CNAME("二人称")%과 %CNAME("一人称")%와 부부가 되는거야」
+	PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 이 반지를 받는다면, %조사처리(CNAME("二人称"),"과")% %CNAME("一人称")%와 부부가 되는거야」
 	PRINTFORMW 「그렇게 되면. 영원히 %조사처리(CNAME("一人称"),"를")% 사랑해 줘야해」
 	;他にも상사상애のキャラが複数いる
 	IF CHARA_NUM("상사상애") >= 3

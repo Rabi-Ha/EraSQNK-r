@@ -80,7 +80,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 「%CNAME("一人称")%, 곤란했다…」
 	PRINTFORMW 「%CNAME("二人称")%의 곁에 있지 않으면, %CNAME("一人称")%, 침착하지 않다」
-	PRINTFORMW 「%CNAME("一人称")%, %CNAME("二人称")%로부터 멀어지고 싶지 않다. %CNAME("二人称")%…좋아. 너무 좋아…」
+	PRINTFORMW 「%CNAME("一人称")%, %조사처리(CNAME("二人称"),"으로")%부터 멀어지고 싶지 않다. %CNAME("二人称")%…좋아. 너무 좋아…」
 	SETBIT CFLAG:201, 4
 ;조수の有無を체크（いない場合は二回目以降へ飛ぶ）
 ELSEIF ASSI <= 0

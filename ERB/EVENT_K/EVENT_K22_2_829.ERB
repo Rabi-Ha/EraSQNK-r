@@ -115,7 +115,7 @@ ELSEIF MARK:굴복각인 == 1
 ;굴복각인Lv2
 ELSEIF MARK:굴복각인 == 2
 	PRINTFORMW 「흥...언제든지 와도 좋아 」
-	PRINTFORMW 「%CNAME("二人称")%과 어울리다보면 좀처럼 타오르게 된단 말야"」
+	PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% 어울리다보면 좀처럼 타오르게 된단 말야"」
 ;굴복각인Lv3＋연모無し
 ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 「드디어 왔는지, 기다리다 지치겠어…」
@@ -237,7 +237,7 @@ IF SELECTCOM == 0
 			PRINTFORMW 
 		;연모＋새댁플레이
 		ELSEIF TALENT:연모 && TEQUIP:새댁플레이
-			PRINTFORMW 「하우웃…응아앗…, %CNAME("二人称")%와 조금 닿았을 뿐인데…나 더 이상은…」
+			PRINTFORMW 「하우웃…응아앗…, %조사처리(CNAME("二人称"),"과")% 조금 닿았을 뿐인데…나 더 이상은…」
 			PRINTFORMW 「%CNAME("二人称")%…좀 더 사랑해주세요…하읏」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 손가락 이 닿을 때마다 몸이 튀어오르고 , 전율이 밀려들어왔다
 		;연모+굴복각인Lv3
@@ -3831,7 +3831,7 @@ IF SELECTCOM == 120 || SELECTCOM == 121
 			;初めて
 			IF CFLAG:386 == 0
 				IF TALENT:연모
-					PRINTFORMW 「%CNAME("一人称")%의 남근을 %CNAME("二人称")%의 안에 넣어도 괜찮은가…후훗, %CNAME("二人称")%과 하나될 수 있어서, 정말 기뻐」
+					PRINTFORMW 「%CNAME("一人称")%의 남근을 %CNAME("二人称")%의 안에 넣어도 괜찮은가…후훗, %조사처리(CNAME("二人称"),"과")% 하나될 수 있어서, 정말 기뻐」
 					PRINTFORMW 「으응, 후웃…%CNAME("一人称")%의 남근이 휘감겨서…응하앗…참을 수가 없어, 큭…응으으읏」
 					PRINTFORMW 뿌리까지 삼켜진 페니스를 감싸는 쫄깃한 쾌감에 %조사처리(CALLNAME:TARGET,"는")% 표정이 느슨해지며 허리를 흔들고있다.
 				ELSE
@@ -4209,7 +4209,7 @@ ELSEIF SELECTCOM == 134 && TEQUIP:구속 == 0
 			PRINTFORMW 「……다…다음에도 부탁해」
 		;それ以外
 		ELSE
-			PRINTFORMW 「조금은, %CNAME("二人称")%을 얕봤던 것일지도 모르겠군」
+			PRINTFORMW 「조금은, %조사처리(CNAME("二人称"),"을")% 얕봤던 것일지도 모르겠군」
 		ENDIF
 	ENDIF
 	CFLAG:308 = 1
@@ -5071,11 +5071,11 @@ IF SELECTCOM == 261
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「으윽…머리가 멍해져서 아무 생각도 할 수 없어…」
-			PRINTFORMW 「지금은 단지…%CNAME("二人称")%와 어울리고 싶을 뿐이야…」
+			PRINTFORMW 「지금은 단지…%조사처리(CNAME("二人称"),"과")% 어울리고 싶을 뿐이야…」
 		;それ以外
 		ELSE
 			PRINTFORMW 「안돼엣…억제할 수 없어…! 」
-			PRINTFORMW 「욱신거렷…%CNAME("二人称")%이 달래줘! 」
+			PRINTFORMW 「욱신거렷…%조사처리(CNAME("二人称"),"이")% 달래줘! 」
 			TEQUIP:넘어뜨리기 = 1
 		ENDIF
 		RETURN 1
@@ -5119,7 +5119,7 @@ IF SELECTCOM == 300
 			;새댁플레이
 			IF TEQUIP:새댁플레이
 				IF RAND:2 == 0
-					PRINTFORMW 「%CNAME("二人称")%이 그런말을 하면, 나는 이제 참을 수 없어…♪」
+					PRINTFORMW 「%조사처리(CNAME("二人称"),"이")% 그런말을 하면, 나는 이제 참을 수 없어…♪」
 				ELSE
 					PRINTFORMW 「하앗…%CNAME("二人称")%때문에, 나의 마음은 녹아버렷…」
 				ENDIF
@@ -5128,7 +5128,7 @@ IF SELECTCOM == 300
 				IF RAND:2 == 0
 					PRINTFORMW 「그런 말을 해주는 것은…%CNAME("二人称")%밖에 없을꺼야」
 				ELSE
-					PRINTFORMW 「후훗…%CNAME("二人称")%이 그렇게 말하니, 기뻐서 견딜 수 없어」
+					PRINTFORMW 「후훗…%조사처리(CNAME("二人称"),"이")% 그렇게 말하니, 기뻐서 견딜 수 없어」
 				ENDIF
 				PRINTFORMW 웃음을 흘리면서%CALLNAME:TARGET%의 뺨은, 살짝 붉게 물들었다…
 			ENDIF

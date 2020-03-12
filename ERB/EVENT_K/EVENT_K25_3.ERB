@@ -755,7 +755,7 @@ ELSEIF NO:ASSI == 25 && CFLAG:ASSI:209 == 2
 			IF GETBIT(CFLAG:ASSI:201, 30)
 				PRINTFORMW 「와, 지난번은 추태를 쬐었지만……%CNAME("一人称")%(와)과라고 고귀한 혈통을 받는다흡혈귀의 한사람이다! 」
 				PRINTFORMW 「%CNAME("二人称")%등에 굽히거나는 하지 않는다! 사실이다, 와, 무섭고 같은거 없기 때문에! 」
-				PRINTFORMW 허리가 파하면서도 홱%CALLNAME:ASSI%를 응시하는 %CALLNAME:TARGET%……
+				PRINTFORMW 허리가 파하면서도 홱%조수를()% 응시하는 %CALLNAME:TARGET%……
 				PRINTFORMW 한편의%CALLNAME:ASSI%는 , 그것을 아무것도 말하지 않고 차가운 눈동자로 보고 있다. 
 				PRINTFORMW ……순식간에%CALLNAME:TARGET%의 눈이 물기를 띠어 간다……
 				PRINTFORMW %마스터는()% 당황해 두 명의 사이에 비집고 들어감, 조교개시를 선언했다……
@@ -789,7 +789,7 @@ ELSEIF NO:ASSI == 18
 	;初めて
 	IF CEVENT("조수会話：아라크네") == 0
 		PRINTFORMW 「겟, 거미녀……」
-		PRINTFORMW %마스터가()% 조수로서 데려 왔다%CALLNAME:ASSI%를 보았다%타겟을()% , 얼굴을 경련이 일어나게 했다. 
+		PRINTFORMW %마스터가()% 조수로서 데려 왔다%조수를()% 보았다%타겟을()% , 얼굴을 경련이 일어나게 했다. 
 		PRINTFORMW 『아무튼, 인사군요……확실히, 잘못하지는 않지만』
 		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 거미가 싫다! 실은 끈적끈적 다 관련되어, 원래 그 기분 나쁜 겉모습이 마음에 들지 않아! 」
 		PRINTFORMW 「앗! 이, 말해 두지만, 별로 무섭다든가는 아니야! ？이 고귀한%CNAME("一人称")%에는 적합하지 않다고 하는 것만으로―――」
@@ -2517,7 +2517,7 @@ IF SELECTCOM == 13
 			PRINTFORMW 「이봐요, 이제 이렇게 젖고 있을 것이다……」
 			PRINTFORM 「아아……
 			CALL HEARTMARK
-			PRINTFORM %CNAME("二人称")%로 보여지고 있는 것만으로 갈 것 같다……
+			PRINTFORM %조사처리(CNAME("二人称"),"으로")% 보여지고 있는 것만으로 갈 것 같다……
 			CALL HEARTMARK
 		;연모
 		ELSEIF TALENT:연모 && PLAYER == MASTER

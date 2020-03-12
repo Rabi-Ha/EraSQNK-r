@@ -3513,7 +3513,7 @@ IF SELECTCOM == 36 && TEQUIP:착유기
 				PRINTFORMW 「좋아…, %CNAME("二人称")%전용이라면, 되어 준다…♪」
 			ELSEIF RAND:2
 				PRINTFORMW 「,  기분…♪」
-				PRINTFORMW 「%CNAME("二人称")%과 만나고 나서, 이런 참신한 쾌락을 맛볼 수 있게 되었어…♪」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% 만나고 나서, 이런 참신한 쾌락을 맛볼 수 있게 되었어…♪」
 			ELSE
 				PRINTFORMW 「~무엇에 사용하는지 격렬하게 신경이 쓰이지만…%조사처리(CNAME("二人称"),"를")% 갖고 싶으면…」
 				PRINTFORMW %타겟은()% 스스로 착유기를 달기 시작했다.
@@ -3707,7 +3707,7 @@ IF SELECTCOM == 60
 				PRINTFORMW 「새근, 후아!」
 				PRINTFORMW 「꽤 하지만…%CNAME("二人称")%보다는 굉장(대단)한…아아!」
 				PRINTFORMW %타겟은()% 허풍을 흘리지만, 조금 격렬하게%CALLNAME:ASSI%가 허리를 움직이면, 순식간에 쾌락에 삼켜지기.
-				PRINTFORMW 「싫어,  이 오고 싶고, …!  %CNAME("二人称")%로 밖에♪」
+				PRINTFORMW 「싫어,  이 오고 싶고, …!  %조사처리(CNAME("二人称"),"으로")% 밖에♪」
 			ELSE
 				PRINTFORMW 「,  아아…하는은…아닌가…후아!」
 				PRINTFORMW 「%CNAME("二人称")%보다, 는, ……한…일…아, 후아!」
@@ -3922,7 +3922,7 @@ IF SELECTCOM == 61
 				PRINTFORMW 「후아아! 히, 는, 아아아아!」
 			ELSE
 				PRINTFORMW 「아아, 좋다…짐승같아…후아…!」
-				PRINTFORMW %타겟은()% 여유의 표정으로 %CALLNAME:ASSI%를 받아들이고 있다.
+				PRINTFORMW %타겟은()% 여유의 표정으로 %조수를()% 받아들이고 있다.
 				PRINTFORMW 「후훗…기분 좋잖아? 후아, …함께 끝나자…」
 				PRINTFORMW 「히, 후아…! 으윽, ~……후아!…아아∼~~~~~…」
 				PRINTFORMW %CALLNAME:TARGET%의 교성과 결합부로부터의 추잡한 소리가 방에 계속 울렸다 …
@@ -4492,7 +4492,7 @@ IF SELECTCOM == 65
 			;연모+미약使用
 			IF TALENT:연모 && TEQUIP:미약
 				PRINTFORMW 「%CNAME("二人称")%…%CNAME("一人称")%, 도, 견딜 수  없어…♪」
-				PRINTFORMW 「%CNAME("二人称")%과 하나가 되고 싶어 …♪」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% 하나가 되고 싶어 …♪」
 			;미약
 			ELSEIF TEQUIP:미약
 				PRINTFORMW 「이봐요, 넣어버린다…%CNAME("一人称")%도, 만족시켜요…♪」
@@ -5761,7 +5761,7 @@ IF SELECTCOM == 94
 		ELSEIF TALENT:연모 && ABL:봉사정신 >= 5
 			IF RAND:3 == 0
 				PRINTFORMW 「응…후후, 후후훗♪」
-				PRINTFORMW 「%CNAME("二人称")%과 만나기 전의 %조사처리(CNAME("一人称"),"가")% 보면 놀랄 것이다…,  %조사처리(CNAME("一人称"),"가")% 이런 일 하고 있다니…♪」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% 만나기 전의 %조사처리(CNAME("一人称"),"가")% 보면 놀랄 것이다…,  %조사처리(CNAME("一人称"),"가")% 이런 일 하고 있다니…♪」
 				PRINTFORMW %타겟은()%, 기쁜 듯한 표정으로 신체를 문지르고 붙이면서, 녹은 표정을 띄우고 있다…
 			ELSEIF RAND:2
 				PRINTFORMW 「이봐요 이봐요, 자랑의 젖가슴이야?  이런 일 해 주는 것,  %CNAME("二人称")%만일 수 있는 이니까…♪」
@@ -8725,7 +8725,7 @@ CASE "분유했다"
 			PRINTFORMW 「후아아아아♪」
 			PRINTFORMW %타겟은()% 모유를 분출하는 쾌감에 허리를 녹일 수 있다.
 				IF TALENT:임신
-					PRINTFORMW 「%CNAME("一人称")%의 신체…,  %CNAME("二人称")%과의 아기 낳는 준비, 할 수 있어 버렸다…♪」
+					PRINTFORMW 「%CNAME("一人称")%의 신체…,  %조사처리(CNAME("二人称"),"과")%의 아기 낳는 준비, 할 수 있어 버렸다…♪」
 				ELSE
 					PRINTFORMW 「…%CNAME("一人称")%과 %CNAME("二人称")%의 아이……인가…♪」
 					PRINTFORMW 「할 수 있으면, 좋다…♪」
@@ -9849,7 +9849,7 @@ CASE "매각した"
 	;반발각인Lv3
 	IF MARK:반발각인 == 3
 		PRINTFORMW 「어째서 %조사처리(CNAME("一人称"),"가")% 기쁜 듯한가 라고?」
-		PRINTFORMW 「%CNAME("二人称")%과 헤어질 수 있기 때문에!」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% 헤어질 수 있기 때문에!」
 	;연모
 	ELSEIF TALENT:연모
 		PRINTFORML %타겟과()% 가게의 앞에 오면%타겟은()% 아연실색했다 상태를 보였다
@@ -9993,7 +9993,7 @@ CASE "임신発覚"
 		PRINTFORMW %타겟은()% 멍하니 스스로의 배를 어루만진다.
 		PRINTFORMW 그런%타겟을()% 껴안아, %조사처리(CALLNAME:PLAYER,"가")% 한번 더%조사처리(CALLNAME:TARGET,"가")% 임신했다고 하는 사실을 알려 줄게와
 		PRINTFORMW %CALLNAME:TARGET%의 눈동자인가들, 라고 눈물이 흘러 넘쳐 나왔다.
-		PRINTFORMW 「어, 어라?  이상한데. %CNAME("二人称")%과의 아이가 되어있어 기쁠 것인데?」
+		PRINTFORMW 「어, 어라?  이상한데. %조사처리(CNAME("二人称"),"과")%의 아이가 되어있어 기쁠 것인데?」
 		PRINTFORMW 「지옥에 저속해진 %CNAME("一人称")%에 아이가 되어있어 기쁜, 는 두인, 데도…!」
 		PRINTFORMW 그대로 엉엉과 울기 시작하는%타겟을()%, %조사처리(CALLNAME:PLAYER,"는")% 안정될 때까지 제대로 껴안았다.
 	ELSE

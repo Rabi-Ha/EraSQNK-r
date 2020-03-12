@@ -191,7 +191,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 		IF RESULT == 0
 			PRINTFORM 「후훗, %조사처리(CNAME("二人称"),"는")% 멋있네
 			CALL HEARTMARK_E
-			PRINTFORM 「그렇게까지 멋지다면 %CNAME("二人称")%로 더욱 더 헤롱헤롱하게 되어 버리자구～
+			PRINTFORM 「그렇게까지 멋지다면 %조사처리(CNAME("二人称"),"으로")% 더욱 더 헤롱헤롱하게 되어 버리자구～
 			CALL HEARTMARK_E
 			PRINTFORMW %타겟은()% 기쁜 듯 미소 지으며, 높은곳에서 내려와 조교 침대에 살짝 내려 섯다
 			PALAM:순종 += 10000
@@ -282,7 +282,7 @@ ELSEIF GETBIT(CFLAG:201, 8) == 0 && GETBIT(CFLAG:201, 6) && TALENT:연모 && TAL
 	;당신が요정ではない
 	SIF TALENT:PLAYER:요정 == 0
 		PRINTFORM 요정인데
-	PRINTFORMW %CNAME("二人称")%와 서로 가득 사랑하고, %CNAME("二人称")%의 아기도 태어나다니……」
+	PRINTFORMW %조사처리(CNAME("二人称"),"과")% 서로 가득 사랑하고, %CNAME("二人称")%의 아기도 태어나다니……」
 	PRINTFORMW 「저기 저기, 아기 낳는거 굉장히 아팠다구. 굉장히 힘들었단 말이야. 그러니까……」
 	PRINTFORM 「그러니까 보상으로, 다음 아기를 가지고 싶어
 	CALL HEARTMARK_E
@@ -367,12 +367,12 @@ ELSEIF COND("ご無沙汰")
 		PRINTFORMW %타겟은()% 당장이라도 울 것 같이 눈을 글썽 이며, 뺨을 불게 물 들인채 %CALLNAME:PLAYER%을 보고있다
 		;당신が요정好き
 		IF COND("성벽：요정", PLAYER)
-			PRINTFORMW 「더 이상 참을 수 없어! 오늘은 %조사처리(CNAME("一人称"),"가")% %CNAME("二人称")%을 조교할 차례야! 」
+			PRINTFORMW 「더 이상 참을 수 없어! 오늘은 %조사처리(CNAME("一人称"),"가")% %조사처리(CNAME("二人称"),"을")% 조교할 차례야! 」
 			PRINTFORMW %CALLNAME:TARGET%의 음란한 요청을 거절 할 이유도 없으니, 그냥 밀려 넘어 졌다
 			TEQUIP:넘어뜨리기 = 1
 		;互いのLvに応じて랜덤
 		ELSEIF RAND(ABL:PLAYER:ＬＶ) >= RAND(ABL:ＬＶ)
-			PRINTFORMW 「더 이상 참을 수 없어! 오늘은 %조사처리(CNAME("一人称"),"가")% %CNAME("二人称")%을 조교할 차례야! 」
+			PRINTFORMW 「더 이상 참을 수 없어! 오늘은 %조사처리(CNAME("一人称"),"가")% %조사처리(CNAME("二人称"),"을")% 조교할 차례야! 」
 			PRINTFORMW 고조된 성욕에 흥분해 버린 %CALLNAME:TARGET%와 뒤치락 거리다, 그대로 밀려 넘어 졌다
 			TEQUIP:넘어뜨리기 = 1
 		ELSE
@@ -394,10 +394,10 @@ ELSEIF TALENT:연모 && TALENT:임신 == 3
 		PRINTFORMW 배를 문지르거나 가볍게 두드리거나 하는 데에 맞춰 움직임의 변화도 일어난다
 		;당신が人間＋당신の子
 		IF COND("인외度", PLAYER) == 0 && COND("몽마", PLAYER) == 0 && COND("정액의우세") == MASTER
-			PRINTFORMW 「%CNAME("二人称")%와 %CNAME("一人称")%의 아기……」
-			PRINTFORMW 「이상해……%CNAME("二人称")%와 %조사처리(CNAME("一人称"),"는")%, 모습도 크기도 완전히 다른데」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% %CNAME("一人称")%의 아기……」
+			PRINTFORMW 「이상해……%조사처리(CNAME("二人称"),"과")% %조사처리(CNAME("一人称"),"는")%, 모습도 크기도 완전히 다른데」
 			PRINTFORMW 「서로 가득 사랑하고, 가득 연결도 되니, 이렇게 두 사람의 아기를 만들 수 있었어」
-			PRINTFORM 「%CNAME("二人称")%와 함께라면, 앞으로 어떤 힘든일이 있어도 버틸거야. 그 정도로……행복해
+			PRINTFORM 「%조사처리(CNAME("二人称"),"과")% 함께라면, 앞으로 어떤 힘든일이 있어도 버틸거야. 그 정도로……행복해
 			CALL HEARTMARK_E
 			PRINTFORM 「……자, 그럼 뱃속의 아기에게 사랑이란 것의 경이로움을 듬～뿍 전해줘 보자
 			CALL HEARTMARK_E
@@ -554,13 +554,13 @@ ELSEIF TALENT:연모
 	IF RAND:3 == 0
 		PRINTFORMW 「저기, %CNAME("二人称")%……」
 		PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 언젠가, %조사처리(CNAME("一人称"),"를")% 두고 어디론가 가지 않는거지？」
-		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% %CNAME("二人称")%와 함께라면 어디라도 같이 갈꺼야, 그러니까 버리지 말아 줘……」
+		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% %조사처리(CNAME("二人称"),"과")% 함께라면 어디라도 같이 갈꺼야, 그러니까 버리지 말아 줘……」
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 「아, %CNAME("二人称")%! 와 줬구나! 」
 		PRINTFORM 「기뻐～! 후훗, 만나러 온 답례로 잔뜩 기분 좋게 해줄께
 		CALL HEARTMARK_E
 	ELSE
-		PRINTFORMW 「%CNAME("一人称")%말야, %CNAME("二人称")%와 음란 한 것을 한다던가……」
+		PRINTFORMW 「%CNAME("一人称")%말야, %조사처리(CNAME("二人称"),"과")% 음란 한 것을 한다던가……」
 		PRINTFORMW 「%조사처리(CNAME("二人称"),"를")% 기분 좋게 해주는것도 좋아하지만……」
 		PRINTFORM 「그것들 보다 %조사처리(CNAME("二人称"),"가")% %CNAME("一人称")%에게 와주는게……그게 가장 좋아
 		CALL HEARTMARK_E
@@ -8884,7 +8884,7 @@ IF SELECTCOM == 148
 			PRINTFORMW 
 		;연모＋麻酔使用
 		ELSEIF TALENT:연모 && COND("鎮痛麻酔플래그")
-			PRINTFORM 「%CNAME("二人称")%로부터 받는 처음의 피어스, 소중히 하네요
+			PRINTFORM 「%조사처리(CNAME("二人称"),"으로")%부터 받는 처음의 피어스, 소중히 하네요
 			CALL HEARTMARK_E
 		;연모
 		ELSEIF TALENT:연모
@@ -13052,12 +13052,12 @@ CASE "매각した"
 		ELSEIF TALENT:음란
 			PRINTFORM 「에, %조사처리(CNAME("一人称"),"는")% 별로 이사 간다 던가 하고 싶진 않은데. 그것 보다 기분 좋은거 하자
 			CALL HEARTMARK_E
-			PRINTFORMW 「……우우……우우우우……역시 안돼？ 칫, 모처럼 %CNAME("二人称")%와는 상성이 딱 좋다고 생각했는데」
+			PRINTFORMW 「……우우……우우우우……역시 안돼？ 칫, 모처럼 %조사처리(CNAME("二人称"),"과")%는 상성이 딱 좋다고 생각했는데」
 			PRINTFORMW 「뭔가 분하니까 %CNAME("一人称")%, 더욱 더욱 야하게 변할꺼야! 그래서 %조사처리(CNAME("二人称"),"가")% %CNAME("一人称")%나 없이는 있을 수 없게 만들꺼야! 」
 			PRINTFORMW 「알겠지, 절대로 그렇게 만들꺼야! 그때까지는 다른 몽마 따위에게 말라 비틀어 지지 말라고! 」
 			PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 모습이 보이지 않을 때 까지 손을 계속 흔들었다……
 		ELSE
-			PRINTFORMW 「%CNAME("二人称")%와 작별？ 무으, 이제야 이 저택에서 사는 것도 많이 있숙해 졌는데……」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% 작별？ 무으, 이제야 이 저택에서 사는 것도 많이 있숙해 졌는데……」
 			PRINTFORMW 「……정말 어쩔수가 없구나. 지금까지 제대로 기분 좋게 해줬으니까, 특별히 봐주는거야」
 			PRINTFORMW 「그러면, %CNAME("二人称")%! 다음에 다시 만나! 」
 			PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 모습이 보이지 않을 때 까지 손을 계속 흔들었다……

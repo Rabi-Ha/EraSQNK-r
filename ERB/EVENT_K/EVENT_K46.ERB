@@ -1253,7 +1253,7 @@ IF SELECTCOM == 13
 					CALL HEARTMARK_E
 					PRINTFORMW 말과는 정반대로, %조사처리(CALLNAME:TARGET,"는")% 조금 즐거운 듯 하다…
 				ELSE
-					PRINTFORMW 「%CNAME("一人称")%의 신체……%CNAME("二人称")%로 보여지지 않은 곳 어쩐지 없을지도 모르네요」
+					PRINTFORMW 「%CNAME("一人称")%의 신체……%조사처리(CNAME("二人称"),"으로")% 보여지지 않은 곳 어쩐지 없을지도 모르네요」
 					PRINTFORM 「후후
 					CALL HEARTMARK_E
 				ENDIF

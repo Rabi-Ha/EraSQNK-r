@@ -2537,7 +2537,7 @@ IF SELECTCOM == 4
 ;				PRINTFORMW 
 			;それ以外
 			ELSE
-				PRINTFORMW 「어머나, 봉사 해주는 거야군요? 꽤 %CNAME("二人称")%로서의 자각이 되어있고 온 것 같지 않다♪」
+				PRINTFORMW 「어머나, 봉사 해주는 거야군요? 꽤 %조사처리(CNAME("二人称"),"으로")%서의 자각이 되어있고 온 것 같지 않다♪」
 			ENDIF
 			CFLAG:225 = 1
 			RETURN 1
@@ -3771,7 +3771,7 @@ IF SELECTCOM == 120 || SELECTCOM == 121
 				PRINTFORMW 「납죽 엎드려 줄까요? 물론, 할 수 있네요?」
 				PRINTFORML %CALLNAME:TARGET%에 명령받는 대로%조사처리(CALLNAME:PLAYER,"는")% 납죽 엎드림이 되었다.
 				PRINTFORML 
-				PRINTFORMW 「후응…조금은%CNAME("二人称")%로서의 자각이 나온 듯포상에당신노음란또한 보지를 사용해 주어요」
+				PRINTFORMW 「후응…조금은%조사처리(CNAME("二人称"),"으로")%서의 자각이 나온 듯포상에당신노음란또한 보지를 사용해 주어요」
 				PRINTFORM %타겟은()% %CALLNAME:PLAYER%의 허리를 배후로부터 붙잡기무리시리
 				IF PENIS(TARGET)
 					PRINTFORM 페니스

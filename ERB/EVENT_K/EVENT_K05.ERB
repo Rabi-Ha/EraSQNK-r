@@ -207,7 +207,7 @@ ELSEIF NO:ASSI == 97 && COND("모친", ASSI) == TARGET
 	ELSEIF CEVENT("조수会話：実の딸") == 0
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
-			PRINTFORMW 방에 %CALLNAME:ASSI%가 들어가면, %타겟은()%%CALLNAME:ASSI%를 꽉 꼭 껴안았다…
+			PRINTFORMW 방에 %CALLNAME:ASSI%가 들어가면, %타겟은()%%조수를()% 꽉 꼭 껴안았다…
 			PRINTFORMW 「%CNAME("조수")%! 좋았다…괜찮아? 아무것도 이상한 것 되지 않아?」
 			PRINTFORMW 「괜찮아요 %CNAMET(ASSI, "모친")%,  %CNAMET(ASSI, "주인")%과는 능숙하게 하고 있어 %KOJO_K5_HT()% 그런데, %CNAMET(ASSI, "주인") %%KOJO_K5_HT()%」
 			PRINTFORMW 그렇게 말하면서, %CALLNAME:ASSI%는 %CALLNAME:MASTER%의 손을 잡아, %CALLNAME:ASSI%의 다리 사이에 이끌었습니다…
@@ -1174,7 +1174,7 @@ IF SELECTCOM == 1
 					PRINTFORMW %조사만처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 입과 코로, 자위를하기 시작했다…
 					PRINTFORMW 「%KOJO_RAND_5("애무", 5)%」
 				ELSE
-					PRINTFORMW 「응 %KOJO_K5_HT()% %CNAME("二人称")%과 서로 사랑한다고 생각하면, 여기가 홍수가 되어 버려…」
+					PRINTFORMW 「응 %KOJO_K5_HT()% %조사처리(CNAME("二人称"),"과")% 서로 사랑한다고 생각하면, 여기가 홍수가 되어 버려…」
 					PRINTFORMW 「내로 빠져 …%KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("애무", 6)%」
 				ENDIF
@@ -1361,11 +1361,11 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 		ELSEIF TALENT:연모
 			IF RAND:3 == 0
 				PRINTFORMW 「%CNAME("二人称")%%KOJO_K5_HT()% %CNAME("二人称", "응석부리고", "かな")%%KOJO_K5_HT()%」
-				PRINTFORMW 「우우…역시 %CNAME("二人称")%로 했으면 좋아 …」
+				PRINTFORMW 「우우…역시 %조사처리(CNAME("二人称"),"으로")% 했으면 좋아 …」
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「이나…자신의 손가락은 만족할 수 없는 것」
 			ELSE
-				PRINTFORMW 「%CNAME("二人称")%에 손대었으면 좋은 것 …%CNAME("二人称")%로 했으면 좋은 것 …」
+				PRINTFORMW 「%CNAME("二人称")%에 손대었으면 좋은 것 …%조사처리(CNAME("二人称"),"으로")% 했으면 좋은 것 …」
 			ENDIF
 		;자위중독Lv3이상
 		ELSEIF ABL:자위중독 >= 3
@@ -2282,7 +2282,7 @@ IF SELECTCOM == 13
 					PRINTFORMW 「잘 봐…%KOJO_K5_HT()% 후후후 %KOJO_K5_HT()% 어떻게, 일까…?」
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「봐줘%KOJO_K5_HT()% 나의 엣찌한 구멍, 좀 더 봐줘%KOJO_K5_HT()%」
-					PRINTFORMW 「%CNAME("二人称")%에 보기를 원하는 것 %KOJO_K5_HT()% %CNAME("二人称")%로 보여지면 흥분 해서,  엣찌한 군침이 멈추지 않는 것 %KOJO_K5_HT()%」
+					PRINTFORMW 「%CNAME("二人称")%에 보기를 원하는 것 %KOJO_K5_HT()% %조사처리(CNAME("二人称"),"으로")% 보여지면 흥분 해서,  엣찌한 군침이 멈추지 않는 것 %KOJO_K5_HT()%」
 				ELSE
 					PRINTFORMW 「이봐요, 봐줘…%KOJO_K5_HT()% 나의 엣찌한 아래의 입, %조사처리(CNAME("二人称"),"를")% 갖고 싶고 뻐끔뻐끔 하고 있어…」
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 말하듯이, %CALLNAME:TARGET%의 질 입구는 개폐를 반복하고 있다…
@@ -2969,7 +2969,7 @@ IF SELECTCOM >= 60 && SELECTCOM <= 69 && TALENT:처녀 == 1 && FIRSTCOMS("Ｖ삽
 	ELSEIF TALENT:연모 && (ABL:순종 >= 5 || (SELECTCOM == 65 && TEQUIP:넘어뜨리기 && TALENT:음란) )
 		;新婚初밤
 		IF FIRSTCOMS_EX("상사상애", "Ｖ삽입") == 0
-			PRINTFORMW 「후훗, 꿈같아…%KOJO_K5_HT()% 정말 좋아하는 %CNAME("二人称")%과 결혼 해서,  처음으로 해 주다는…%KOJO_K5_HT()%」
+			PRINTFORMW 「후훗, 꿈같아…%KOJO_K5_HT()% 정말 좋아하는 %조사처리(CNAME("二人称"),"과")% 결혼 해서,  처음으로 해 주다는…%KOJO_K5_HT()%」
 			PRINTFORMW 「이것은, 혹시 하지 않아도 신혼 첫날밤라고 하는 건가 ..? 기쁜…%KOJO_K5_HT()%」
 		ELSE
 			SELECTCASE SELECTCOM
@@ -4644,7 +4644,7 @@ IF SELECTCOM == 65
 							PRINTFORM %조사만처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 위에 걸치면,
 						ENDIF
 						PRINTFORMW 느긋하게%CALLNAME:PLAYER%의 페니스를 자신의 질에 삽입했다…
-						PRINTFORMW 「아앙%KOJO_K5_HT()% 아하%KOJO_K5_HT()% 배안%CNAME("二人称")%로 가득해요 %KOJO_K5_HT()%」
+						PRINTFORMW 「아앙%KOJO_K5_HT()% 아하%KOJO_K5_HT()% 배안%조사처리(CNAME("二人称"),"으로")% 가득해요 %KOJO_K5_HT()%」
 						PRINTFORMW 「이봐요, 이렇게 배 위로부터 어루만지면, 나도 질내가 잘 맞아 …후아%KOJO_K5_HT()%」
 						PRINTFORMW 「후후후 %KOJO_K5_HT()% 움직이지 않고 이렇게 배 안에서 간질간질 하는 것, 버릇이 되어 버려 그렇게 %KOJO_K5_HT()% 아아앙%KOJO_K5_HT()%」
 					ELSEIF RAND:3 == 0 && COND("손가락 사용")
@@ -5093,7 +5093,7 @@ IF SELECTCOM == 67
 				PRINTFORMW 「하아아%KOJO_K5_HT()% 다음은 자궁에 직접 내%KOJO_K5_HT()%」
 				PRINTFORMW 「%KOJO_RAND_5("삽입", 4)%」
 			ELSEIF RAND:2 == 0
-				PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %CNAME("二人称")%과 키스 해버려요 %KOJO_K5_HT()%」
+				PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %조사처리(CNAME("二人称"),"과")% 키스 해버려요 %KOJO_K5_HT()%」
 				PRINTFORMW 「후후후 %KOJO_K5_HT()% 듬뿍 질내에 내%KOJO_K5_HT()%」
 				PRINTFORMW 「%KOJO_RAND_5("삽입", 2)%」
 			ELSE
@@ -5137,7 +5137,7 @@ IF SELECTCOM == 67
 					PRINTFORMW 「히아아앙%KOJO_K5_HT()% 다음은 자궁에 직접 내 %KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 4)%」
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %CNAME("二人称")%과 키스 해버려요 %KOJO_K5_HT()%」
+					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %조사처리(CNAME("二人称"),"과")% 키스 해버려요 %KOJO_K5_HT()%」
 					PRINTFORMW 「후후후 %KOJO_K5_HT()% 질내에 내 주면 기쁘겠는데…%KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 2)%」
 				ELSE
@@ -5197,7 +5197,7 @@ IF SELECTCOM == 67
 					PRINTFORMW 「히아아앙%KOJO_K5_HT()% 다음은 자궁에 직접 내 %KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 4)%」
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %CNAME("二人称")%과 키스 해버려요 %KOJO_K5_HT()%」
+					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %조사처리(CNAME("二人称"),"과")% 키스 해버려요 %KOJO_K5_HT()%」
 					PRINTFORMW 「후후후 %KOJO_K5_HT()% 질내에 내 주면 기쁘겠는데…%KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 2)%」
 				ELSE
@@ -5255,7 +5255,7 @@ IF SELECTCOM == 67
 					PRINTFORMW 「히아아앙%KOJO_K5_HT()% 다음은 자궁에 직접 내 %KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 4)%」
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %CNAME("二人称")%과 키스 해버려요 %KOJO_K5_HT()%」
+					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %조사처리(CNAME("二人称"),"과")% 키스 해버려요 %KOJO_K5_HT()%」
 					PRINTFORMW 「후후후 %KOJO_K5_HT()% 질내에 내 주면 기쁘겠는데…%KOJO_K5_HT()% 이 적당한들 정액도 넣기 쉽다고 생각하고 %KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 2)%」
 				ELSE
@@ -5297,11 +5297,11 @@ IF SELECTCOM == 67
 					PRINTFORMW 「히아아앙%KOJO_K5_HT()% 다음은 자궁에 직접 내 %KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 4)%」
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %CNAME("二人称")%과 키스 해버려요 %KOJO_K5_HT()%」
+					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %조사처리(CNAME("二人称"),"과")% 키스 해버려요 %KOJO_K5_HT()%」
 					PRINTFORMW 「후후후 %KOJO_K5_HT()% 질내에 내 주면 기쁘겠는데…%KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 2)%」
 				ELSE
-					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %CNAME("二人称")%과 키스 해버려요 %KOJO_K5_HT()%」
+					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %조사처리(CNAME("二人称"),"과")% 키스 해버려요 %KOJO_K5_HT()%」
 					PRINTFORMW 「여기의 입에서도 키스 합시다 %KOJO_K5_HT()% %KOJO_RAND_5("키스 IN", 5)%팬%KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입 국부 고문 IN", 3)%질내에서, 질내에서 내 %KOJO_K5_HT()%」
 				ENDIF
@@ -5341,7 +5341,7 @@ IF SELECTCOM == 67
 					PRINTFORMW 「히아아앙%KOJO_K5_HT()% 다음은 자궁에 직접 내 %KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 4)%」
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %CNAME("二人称")%과 키스 해버려요 %KOJO_K5_HT()%」
+					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %조사처리(CNAME("二人称"),"과")% 키스 해버려요 %KOJO_K5_HT()%」
 					PRINTFORMW 「후후후 %KOJO_K5_HT()% 질내에 내 주면 기쁘겠는데…%KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 2)%」
 				ELSE
@@ -5375,7 +5375,7 @@ IF SELECTCOM == 67
 					PRINTFORMW 「히아아앙%KOJO_K5_HT()% 다음은 자궁에 직접 내 %KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 4)%」
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %CNAME("二人称")%과 키스 해버려요 %KOJO_K5_HT()%」
+					PRINTFORMW 「후아%KOJO_K5_HT()% 응 %KOJO_K5_HT()% 나의 자궁이, %조사처리(CNAME("二人称"),"과")% 키스 해버려요 %KOJO_K5_HT()%」
 					PRINTFORMW 「후후후 %KOJO_K5_HT()% 듬뿍 질내에 내%KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("삽입", 2)%」
 				ELSE
@@ -5509,7 +5509,7 @@ IF SELECTCOM == 68
 					PRINTFORMW 「 벌써, 아기의 방에 들어가면는, 엣찌한 사람이네%KOJO_K5_HT()%」
 					PRINTFORMW 「이군요…천천히 움직여…후아……%KOJO_K5_HT()%」
 				ELSE
-					PRINTFORMW 「히앙!, 안쪽 맞고 있는 …자궁 짱의 안, %CNAME("二人称")%로 가득해요…%KOJO_K5_HT()%」
+					PRINTFORMW 「히앙!, 안쪽 맞고 있는 …자궁 짱의 안, %조사처리(CNAME("二人称"),"으로")% 가득해요…%KOJO_K5_HT()%」
 					PRINTFORMW 「이대로 천천히 움직여…%조사처리(CNAME("二人称"),"를")% 느끼게 해…%KOJO_RAND_5("쾌락 인내", 2)%」
 				ENDIF
 			;それ以外
@@ -5613,7 +5613,7 @@ IF SELECTCOM >= 70 && SELECTCOM <= 74
 		;연모＋A감각Lv3이상
 		ELSEIF TALENT:연모 && ABL:Ａ감각 >= 3
 			IF RAND:3 == 0
-				PRINTFORMW 「%KOJO_RAND_5("삽입 IN", 2) %%CNAME("二人称")%과라면, 엉덩이에서도, 기분이 좋은 %KOJO_K5_HT()%」
+				PRINTFORMW 「%KOJO_RAND_5("삽입 IN", 2) %%조사처리(CNAME("二人称"),"과")%라면, 엉덩이에서도, 기분이 좋은 %KOJO_K5_HT()%」
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「이앙%KOJO_K5_HT()% 엉덩이로 %KOJO_K5_HT()%」
 				PRINTFORMW 「나,  엉덩이로 기분 좋아져버리는…변태 상인 것 %KOJO_K5_HT()%」
@@ -5817,7 +5817,7 @@ IF SELECTCOM == 80
 					PRINTFORMW 「아앙%KOJO_K5_HT()% 대단해 %KOJO_K5_HT()% 좀 더 사랑해 %KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("애무", 5)%」
 				ELSEIF RAND:3 == 0
-					PRINTFORMW 「아앙%KOJO_K5_HT()% %CNAME("二人称")%과 나의 크리 짱이 키스 하고 있어%KOJO_K5_HT()%」
+					PRINTFORMW 「아앙%KOJO_K5_HT()% %조사처리(CNAME("二人称"),"과")% 나의 크리 짱이 키스 하고 있어%KOJO_K5_HT()%」
 					PRINTFORMW 「후아%KOJO_K5_HT()% 허리, 마음대로 움직이면%KOJO_K5_HT()%」
 					PRINTFORMW 「%KOJO_RAND_5("애무", 5)%」
 				ELSE
@@ -9058,7 +9058,7 @@ IF SELECTCOM == 171 && COND("마을")
 			;연모
 			IF TALENT:연모
 				PRINTFORMW 「네? 외? 이 모습으로? 벌써,  %CNAME("二人称")%도 참 정말로 심술쟁이」
-				PRINTFORMW 「…그렇지만, 좋아,  %CNAME("二人称")%과 함께라면 어디라도 좋아요 %KOJO_K5_HT()%」
+				PRINTFORMW 「…그렇지만, 좋아,  %조사처리(CNAME("二人称"),"과")% 함께라면 어디라도 좋아요 %KOJO_K5_HT()%」
 			;それ以外
 			ELSE
 				PRINTFORMW 「네? 외? 이 모습으로? 벌써, 정말로 심술쟁이」
@@ -13208,7 +13208,7 @@ CASE "조교후레즈플레이"
 		;TARGETがASSIを犯す
 		ELSE
 			PRINTFORMW 「후후훗 %KOJO_K5_HT()% %CNAME("조수")%도 참 정말로 귀엽네요 %KOJO_K5_HT()%」
-			PRINTFORMW %타겟은()%%CALLNAME:ASSI%를 밀어 넘어뜨렸다…
+			PRINTFORMW %타겟은()%%조수를()% 밀어 넘어뜨렸다…
 			;키스
 			IF RAND:3 == 0
 				PRINTFORMW 「%CNAMET(ASSI, "모친")%가 키스 해 주는 %KOJO_K5_HT()%」
@@ -13503,7 +13503,7 @@ CASE "Ｖ바이브추가구상"
 				IF MARK:반발각인 == 3
 					PRINTFORMW 「우우…이 변태……」
 				ELSE
-					PRINTFORMW 「 벌써,  %CNAME("二人称")%로 하기를 원하는데 %KOJO_K5_HT()%」
+					PRINTFORMW 「 벌써,  %조사처리(CNAME("二人称"),"으로")% 하기를 원하는데 %KOJO_K5_HT()%」
 					PRINTFORMW 그렇게는 말하지만, %CALLNAME:TARGET%의 눈에는 어딘가 기대가 담겨져 있다…
 				ENDIF
 			ELSE
@@ -13511,7 +13511,7 @@ CASE "Ｖ바이브추가구상"
 				IF MARK:반발각인 == 3
 					PRINTFORMW 「우우…이 변태……」
 				ELSE
-					PRINTFORMW 「 벌써,  %CNAME("二人称")%로 하기를 원하는데…」
+					PRINTFORMW 「 벌써,  %조사처리(CNAME("二人称"),"으로")% 하기를 원하는데…」
 				ENDIF
 			ENDIF
 		ENDIF

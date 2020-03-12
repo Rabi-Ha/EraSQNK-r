@@ -458,7 +458,7 @@ ELSEIF NO:ASSI == 7
 				PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% %CALLNAME:MASTER%의 왼쪽으로 딱 다가붙어, %조사처리(CALLNAME:TARGET,"를")% 노려보고 있습니다……
 				PRINTFORMW 「후응？ …………그러면 반대측을 받읍시다♪」
 				PRINTFORMW 『그래, 그쪽도%CNAMET(ASSI, "一人称")%의다! 어이%CNAMET(ASSI, "二人称")%, 어떻게든 말해라! 』
-				PRINTFORMW %타겟을()% 울컥하게 되어 있다%CALLNAME:ASSI%를 조롱해 놀았습니다……
+				PRINTFORMW %타겟을()% 울컥하게 되어 있다%조수를()% 조롱해 놀았습니다……
 			;조수が연모
 			ELSEIF TALENT:ASSI:연모 
 				PRINTFORMW 『이 녀석을조교하면 좋은 것인지？맡겨라』
@@ -1797,7 +1797,7 @@ ELSEIF NO:ASSI == 25 && CFLAG:ASSI:209 == 3
 				PRINTFORMW ……두 명은%마스터를()% 그대로 둬, %CALLNAME:MASTER%의 권리 여러 가지를 교섭하고 있습니다
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「저기～, %CALLNAME:ASSI%도 섞여 주세요♪」
-				PRINTFORMW %타겟을()% %CALLNAME:ASSI%를 권해3P를 하려고 하고 있습니다만……？
+				PRINTFORMW %타겟을()% %조수를()% 권해3P를 하려고 하고 있습니다만……？
 				PRINTFORMW 『후, 흥! 너가 아무래도라고 말한다면, 다음에 도와 주자』
 				PRINTFORMW %CALLNAME:ASSI%는 어떻게도솔직(이)가 될 수 없는 것 같습니다……
 			ELSE
@@ -2077,7 +2077,7 @@ ELSEIF NO:ASSI == 8
 			ELSE
 				PRINTFORMW 「후후……당신노%TEXTS("조수の명칭")%도 재난이군요. 지금부터 내가 무엇을 하는지, 가르치지 않겠지요？」
 				PRINTFORMW 『후, 후에～응……흡혈귀무서워～』
-				PRINTFORMW ……별로%CALLNAME:ASSI%를 위협하지 않게, %마스터는()% %타겟을()% 나무랐다
+				PRINTFORMW ……별로%조수를()% 위협하지 않게, %마스터는()% %타겟을()% 나무랐다
 			ENDIF
 			CALL SET_CEVENT, "조수会話：밴시"
 		;二回目以降
@@ -2093,7 +2093,7 @@ ELSEIF NO:ASSI == 8
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 『아, 저……거들기 실패해도……허락해 주세요……흐흑』
 					PRINTFORMW 「그런 일 신경쓰지 않아도 괜찮아요. 이봐요, 기분 좋아지는 것만을 생각합시다♪」
-					PRINTFORMW %타겟을()% %CALLNAME:ASSI%를 격려하고 있다……
+					PRINTFORMW %타겟을()% %조수를()% 격려하고 있다……
 				ELSE
 					PRINTFORMW 『저……도중에 혼합해 받아도 괜찮습니까？ %CNAMET(ASSI, "一人称")%만 보고 있다니……우우……』
 					PRINTFORMW 「후후, 언제라도. 함께주인모양을 귀여워해요♪」
@@ -2247,7 +2247,7 @@ ELSEIF NO:ASSI == 40
 			ELSEIF RAND:2 == 0
 				PRINTFORML 『있지있지, 조금으로 좋으니까%NICKNAME:ASSI%의 분도 남겨 두었으면 좋구나～』
 				PRINTFORMW 「아라, 나에게 신경을 쓰지 말고 언제라도 섞여 계(오)세요♪」
-				PRINTFORMW %타겟은()% %CALLNAME:ASSI%를3P로 이끌고 있는 것 같습니다……
+				PRINTFORMW %타겟은()% %조수를()%3P로 이끌고 있는 것 같습니다……
 			ELSE
 				PRINTFORMW 『%CALLNAME:TARGET%씨의 약한 곳 가득 꾸짖어 버린다～』
 				PRINTFORMW 「햐읏！그, 그런 곳으로부터 갑자기……앗, 싫닷……♪」
@@ -2433,7 +2433,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 					PRINTFORMW 신년의 인사를 해 왔다%CALLNAME:TARGET%에, %마스터와()%%CALLNAME:ASSI%도 신년의 인사를 돌려주었습니다
 				ELSE
 					PRINTFORMW 「이런？이제(벌써)%CALLNAME:TARGET%씨와도 자 왔다니, 신년 조속히 번성하네요♪」
-					PRINTFORMW %타겟을()% %마스터가()% %CALLNAME:ASSI%를 안은 일을 알아차려, 그 일을 얼버무려 왔습니다
+					PRINTFORMW %타겟을()% %마스터가()% %조수를()% 안은 일을 알아차려, 그 일을 얼버무려 왔습니다
 				ENDIF
 				PRINTFORMW 거기서%마스터는()% 조금 전%CALLNAME:ASSI%로부터 세배돈을 받은 것을 생각해 내, 무심코“세배돈은？”(와)과 말해 버렸습니다! 
 				PRINTFORMW 「………에？오, 세배돈은……나………그런 것 준비하고 있지 않습니다………」
@@ -5427,7 +5427,7 @@ ELSEIF SELECTCOM == 3
 					PRINTFORMW 「저기…나에게뿐 이런 일 시키지 말고,당신안개도 참？」
 					PRINTFORMW 「나에게 자위 시키는 것보다도………당신하지만 하고 있는 것 보여 주고 싶은 사람, 있겠죠」
 					PRINTFORMW %CALLNAME:TARGET%의 소리에 일순간 당황했다%CALLNAME:ASSI%(이었)였지만, 이윽고 그손를 스스로의 비밀스런 장소로 신장시키기 시작했다……
-					PRINTFORMW %타겟은()% %CALLNAME:ASSI%를 말려들게 해, 둘이서%CALLNAME:MASTER%에 치태를 과시했다……
+					PRINTFORMW %타겟은()% %조수를()% 말려들게 해, 둘이서%CALLNAME:MASTER%에 치태를 과시했다……
 				ELSE
 					IF RAND:2 == 0
 						PRINTFORMW 「응후훗……이런 엣치한 나를, 어느 쪽이 덮쳐 주는 것입니까……♪」

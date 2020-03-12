@@ -228,7 +228,7 @@ ELSEIF MARK:굴복각인 == 1
 ;굴복각인Lv2
 ELSEIF MARK:굴복각인 == 2
 	PRINTFORMW 「헥…헥…, 후후후…나의 실력을 깨달았을까…？」
-	PRINTFORMW 「이제(벌써)%CNAME("二人称")%로 되는 대로는 안 되기 때문에…!」
+	PRINTFORMW 「이제(벌써)%조사처리(CNAME("二人称"),"으로")% 되는 대로는 안 되기 때문에…!」
 ;굴복각인Lv3
 ELSEIF MARK:굴복각인 == 3
 	PRINTFORMW 「아직 나는 갈 수 있어요…, 엣, 벌써 끝나야？」
@@ -3430,7 +3430,7 @@ IF SELECTCOM == 133 && TEQUIP:아이마스크
 				PRINTFORMW 「후후…도대체 무엇 되어 버릴까…♪」
 			ELSE
 				PRINTFORMW 「이봐요…여기는 아무것도 안보이기 때문에…」
-				PRINTFORMW 「%CNAME("二人称")%로부터 해 주지 않으면…♪」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"으로")%부터 해 주지 않으면…♪」
 			ENDIF
 		;마조끼Lv3
 		ELSEIF ABL:마조끼 >= 3

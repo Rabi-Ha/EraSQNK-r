@@ -277,7 +277,7 @@ ELSEIF TALENT:연모
 			PRINTFORMW 「그렇지만 그렇지만, 이것은%CNAME("二人称")%의 애정의 무게라는 녀석이군요, 군요」
 			PRINTFORMW 이쪽에 찰싹 껴안아 온다%CALLNAME:TARGET%의 신체는, 이전과 비교하면 확실히 조금 무겁다
 			PRINTFORMW 새로운 생명을 품은 그 배를 돌보도록(듯이) 어루만지면서, 이제(벌써) 다른 한쪽의손그리고 머리카락을 어루만져 주면, 코에 걸린 달콤한 소리를올린다
-			PRINTFORMW 「응우…♪%CNAME("二人称")%,%CNAME("一人称")%읏…%CNAME("二人称")%로부터의 사랑이라면, 아직도 가져 버리니까요」
+			PRINTFORMW 「응우…♪%CNAME("二人称")%,%CNAME("一人称")%읏…%조사처리(CNAME("二人称"),"으로")%부터의 사랑이라면, 아직도 가져 버리니까요」
 			PRINTFORMW 「%CNAME("二人称")%의로―…좀 더 무겁게 해도 괜찮습니다」
 			PRINTFORMW 충분히 이쪽에 응석부렸다%CALLNAME:TARGET%이, 이번은 임신의 신체면서도 갖고 싶어할 것 같다 애액을 늘어뜨리는 저기를 보여 권해 왔다
 		ELSEIF RAND:2 == 0
@@ -1378,7 +1378,7 @@ IF SELECTCOM == 13
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「응후…%CNAME("二人称")%로 고쳐 보여 받을 수 있는 것은 조금 부끄럽습니다만―」
+			PRINTFORMW 「응후…%조사처리(CNAME("二人称"),"으로")% 고쳐 보여 받을 수 있는 것은 조금 부끄럽습니다만―」
 			PRINTFORMW 「그렇지만 그렇지만,%CNAME("一人称")%의력해 버립니다♪」
 		;それ以外
 		ELSE
@@ -7977,7 +7977,7 @@ CASE "조교後자위"
 	ELSEIF TALENT:연모
 		PRINTFORMW 「아아, 응웃♪…%CNAME("一人称")%,%조사처리(CNAME("二人称"),"가")% 머리로부터 멀어지지 않게 되어 버리고 있구나～」
 		PRINTFORMW 「%CNAME("二人称")%에 가르쳐 받은 일, 하나하나 생각해 내～…하아, 응아…」
-		PRINTFORMW 「하아…그렇지만 그렇지만, 역시%CNAME("二人称")%로 해 받는 것이 제일 좋구나～…」
+		PRINTFORMW 「하아…그렇지만 그렇지만, 역시%조사처리(CNAME("二人称"),"으로")% 해 받는 것이 제일 좋구나～…」
 	;자위중독Lv3이상
 	ELSEIF ABL:자위중독 >= 3
 		PRINTFORMW 「응우, 하앗…레슨의 일을 생각해 내는 것만으로…%CNAME("一人称")%의 신체, 뜨거워져 버린다…」

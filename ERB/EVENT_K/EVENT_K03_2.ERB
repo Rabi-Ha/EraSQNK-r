@@ -165,7 +165,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 신록의 눈동자로 %조사처리(CALLNAME:PLAYER,"를")% 바라보며, 말을 계속 한다
 	PRINTFORMW 「저는 몽마, 많은 남성들과 밀회를 거듭했지만, 모두 오래 갈 수 없었죠…」
 	PRINTFORMW 「그래서, 덧없는 사랑만을 했었죠」
-	PRINTFORMW 「그렇지만 %CNAME("二人称")%은, 완전히 괜찮아 보여요」
+	PRINTFORMW 「그렇지만 %조사처리(CNAME("二人称"),"은")%, 완전히 괜찮아 보여요」
 	PRINTFORMW 「그러니… 저는 사랑을 원해요」
 	PRINTFORMW 「조금이도 좋아요, 저를 연인으로… 대해주세요…」
 	PRINTFORMW 바짝 붙어오는 %CALLNAME:TARGET%의 머리를, 쓰다듬어 껴안는다
@@ -176,7 +176,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 갑자기, %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 넘어뜨렸다! 
 	PRINTFORMW 「우후후, %CNAME("二人称")%…」
 	PRINTFORMW 「앞으로는, 더욱 적극적으로 저의 사랑을 표현하겠어요…」
-	PRINTFORMW 「제가 먼져 팔릴지, %CNAME("二人称")%이 먼져 되는지…」
+	PRINTFORMW 「제가 먼져 팔릴지, %조사처리(CNAME("二人称"),"이")% 먼져 되는지…」
 	PRINTFORMW 「끝까지, 보도록하죠？」
 	SETBIT CFLAG:201, 4
 ;상사상애
@@ -1766,7 +1766,7 @@ IF SELECTCOM == 61
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「이런 교접도, 싫지 않아요」
-			PRINTFORMW 「오히려%CNAME("二人称")%로 된다고 생각하면…오슬오슬 합니다♪」
+			PRINTFORMW 「오히려%조사처리(CNAME("二人称"),"으로")% 된다고 생각하면…오슬오슬 합니다♪」
 		;それ以外
 		ELSE
 			PRINTFORMW 「후후, 조교사님의 자지로, 나를 히히 울려 주는 것이군요？」

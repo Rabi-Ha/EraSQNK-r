@@ -350,7 +350,7 @@ ELSEIF TALENT:연모
 					PRINTFORMW 「%CNAME("二人称")%,  늦어요!」
 					PRINTFORMW 방에 들어가는 것과 동시에 ,  그렇게 말하면서%타겟이()% 뛰어들어 왔다
 					PRINTFORMW 「 이제(벌써),  %CNAME("二人称")%……%조사처리(CNAME("一人称"),"는")% 화냈으니까」
-					PRINTFORMW 「%CNAME("二人称")%에 대해서는,  %CNAME("二人称")%로부터 포옹해 줄 때까지 허락하지 않습니다!」
+					PRINTFORMW 「%CNAME("二人称")%에 대해서는,  %조사처리(CNAME("二人称"),"으로")%부터 포옹해 줄 때까지 허락하지 않습니다!」
 					PRINTFORMW 곧바로%타겟을()% 꼭 껴안아 준다
 					PRINTFORMW 「원……%UNICODE(0x2661)% ,  스윽스윽  해준다면 허락할지도……」
 					PRINTFORMW 말해지는 대로%타겟을()% 상냥하게 어루만진다
@@ -515,7 +515,7 @@ IF STATE("撃沈", MASTER)
 				PRINTFORMW 「%CNAME("二人称")%! 확실히 해!」
 				PRINTFORMW 한계를 맞이한%마스터는()% 침대에 넘어지고 넣었다
 				PRINTFORMW 몸이  움직이지 않고 ,  난폭한 숨만이 나온다
-				PRINTFORMW 「원 ,  원……죄송합니다…… %CNAME("二人称")%로 오는 것 기뻤으니까 ,  전혀 깨닫지 않아서……」
+				PRINTFORMW 「원 ,  원……죄송합니다…… %조사처리(CNAME("二人称"),"으로")% 오는 것 기뻤으니까 ,  전혀 깨닫지 않아서……」
 				PRINTFORMW 「너무 짜고 ……군요…… 큐……」
 				PRINTFORMW 넘어지고 넣은%마스터를()% 걱정해 주고 있는 것 같고%타겟은()% 옆에 뒹굴어, %CALLNAME:MASTER%에 달라붙었다
 				PRINTFORMW 「%CNAME("二人称")%…… 움직일 수 있게 될 때까지 %조사처리(CNAME("一人称"),"가")% 함께 있어 줍니다……」
@@ -621,7 +621,7 @@ ELSEIF TALENT:연모 && CFLAG:99
 					PRINTFORMW 행복한 ,  기쁜 듯한 웃는 얼굴에 ,  깨달으면%CALLNAME:MASTER%도 이끌려 웃고 있었다
 				ENDIF
 				PRINTFORMW 「그런데 ,  %CNAME("二人称","かな")%……또 해요 %UNICODE(0x2661)%」
-				PRINTFORMW 「다음도 ,  %CNAME("二人称")%과 함께……%UNICODE(0x2661)%」
+				PRINTFORMW 「다음도 ,  %조사처리(CNAME("二人称"),"과")% 함께……%UNICODE(0x2661)%」
 				PRINTFORMW %타겟은()% 말하면서 점점 눈시울이 떨어져 가 이윽고 닫아 버린다
 				PRINTFORMW 한계까지 노력해 준%타겟을()% 노 깨면서, %마스터는()% 상냥하게 머리를 어루만졌다
 			ELSEIF RAND:2 == 0
@@ -634,7 +634,7 @@ ELSEIF TALENT:연모 && CFLAG:99
 					PRINTFORMW 「괜찮다면……오늘은 쭉 '귀여워가는 갖고 싶습니다……%UNICODE(0x2661)%」
 					PRINTFORMW %타겟은()% 살그머니%CALLNAME:MASTER%에 접하면서 ,  눈을 치켜 뜨고 봄으로 %마스터를()% 응시하고 있다
 					PRINTFORMW 「바빴으면 괜찮(좋)습니다……%CNAME("二人称")%의 방해는 하고 싶지 않으니까……」
-					PRINTFORMW 「 그렇지만 역시……%CNAME("二人称")%과 함께 있고 싶기 때문에……그……」
+					PRINTFORMW 「 그렇지만 역시……%조사처리(CNAME("二人称"),"과")% 함께 있고 싶기 때문에……그……」
 					PRINTL [0] 함께 있다
 					PRINTL [1] 그 밖에 하는 일이 있다
 					CALL INPUT_SELECT, 2
@@ -653,7 +653,7 @@ ELSEIF TALENT:연모 && CFLAG:99
 					ENDIF
 				ELSE
 					PRINTFORMW 「%CNAME("二人称")%……오늘은 함께 자줘전과?」
-					PRINTFORMW 「……%CNAME("二人称")%과 함께 자고 싶습니다……」
+					PRINTFORMW 「……%조사처리(CNAME("二人称"),"과")% 함께 자고 싶습니다……」
 					PRINTL [0] 함께 잔다
 					PRINTL [1] 그 밖에 하는 일이 있다
 					CALL INPUT_SELECT, 2
@@ -718,7 +718,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW 「원……이제(벌써) 가버립니까?」
 		PRINTFORMW 방을 나오려고 하면 , %타겟이()% 유감스러운 소리로 불러 세워 왔다
 		PRINTFORMW 「큐……%CNAME("二人称")%……」
-		PRINTFORMW 「%CNAME("二人称")%과 좀더……쭉 함께 있을 수 있으면(자) 괜찮(좋)은데……」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% 좀더……쭉 함께 있을 수 있으면(자) 괜찮(좋)은데……」
 		PRINTFORMW 만류하고는이야말로는 하지 않지만, %타겟은()% 당장 울 것 같은 표정으로 %마스터를()% 응시하고 있었다
 		PRINTFORMW 어쩔 수 없이%마스터는()%%CALLNAME:TARGET%앞으로 한 번 돌아와 ,  머리를 팡팡하며 어루만져 했다
 		PRINTFORMW 「%UNICODE(0x2661)% %CNAME("二人称")%……」
@@ -960,7 +960,7 @@ IF SELECTCOM == 1
 								PRINTFORMW 「에헤……♪ %CNAME("二人称")%의 입……기분 좋은 %UNICODE(0x2661)%」
 								PRINTFORMW %타겟은()%%CALLNAME:MASTER%에 다리 사이를 문질러 한층 더 애무를 조르고 있다
 							ELSE
-								PRINTFORMW 「원%UNICODE(0x2661)% %CNAME("二人称")%과 가득자 만들고 하고 싶습니다 %UNICODE(0x2661)%」
+								PRINTFORMW 「원%UNICODE(0x2661)% %조사처리(CNAME("二人称"),"과")% 가득자 만들고 하고 싶습니다 %UNICODE(0x2661)%」
 								PRINTFORMW 「그러니까……그 준비입니다 %UNICODE(0x2661)%」
 								PRINTFORMW 이미 애액이 흘러넘치고 떨어지고 있지만 ,  그런데도%타겟은()%%CALLNAME:MASTER%에 입으로 의 애무를 시키고 있다
 							ENDIF
@@ -2374,7 +2374,7 @@ IF SELECTCOM == 13
 				ELSEIF ABL:노출벽 >= 5
 					IF RAND:2 == 0
 						PRINTFORMW 「%CNAME("二人称")%……♪ 좀더 봐주세요……♪」
-						PRINTFORMW 「%CNAME("二人称")%로 보여지는 것만으로 %CNAME("一人称")%……♪ 흥분해 버립니다 ……%UNICODE(0x2661)%」
+						PRINTFORMW 「%조사처리(CNAME("二人称"),"으로")% 보여지는 것만으로 %CNAME("一人称")%……♪ 흥분해 버립니다 ……%UNICODE(0x2661)%」
 						PRINTFORMW 보이는%CALLNAME:TARGET%의 비밀장소는 벌써 애액을 방울져 떨어지게 해 막히는 것을 몰라요 게 넘쳐 나오고 있다
 					ELSE
 						PRINTFORMW %타겟은()% 비밀장소를 넓히면(자) ,  과시하도록(듯이) 실룩실룩움직인다
@@ -3434,7 +3434,7 @@ IF SELECTCOM == 60
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-				PRINTFORMW 「……♪ 코노카 이렇게,  %CNAME("二人称")%과 가득 서로 접한다 ……♪」
+				PRINTFORMW 「……♪ 코노카 이렇게,  %조사처리(CNAME("二人称"),"과")% 가득 서로 접한다 ……♪」
 				PRINTFORMW 「%CNAME("二人称")%……%UNICODE(0x2661)% 가득가득 ,  %CNAME("一人称")%로 해 붙이고 해 주세요…%UNICODE(0x2661)%」
 				PRINTFORMW %타겟은()% 벌써 쾌락으로 녹아 있는 걸까, 팔과 다리로 신체마다 추는 있다
 		;それ以外
@@ -3825,7 +3825,7 @@ IF SELECTCOM == 62
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「큐…%UNICODE(0x2661)% 코노카 이렇게,  %CNAME("二人称")%과 교미하고 있는 곳이 외관있습니다…%UNICODE(0x2661)%
+			PRINTFORMW 「큐…%UNICODE(0x2661)% 코노카 이렇게,  %조사처리(CNAME("二人称"),"과")% 교미하고 있는 곳이 외관있습니다…%UNICODE(0x2661)%
 			PRINTFORMW 「%CNAME("二人称")%의 씩씩한 자지가……%UNICODE(0x2661)% %CNAME("一人称")%에 교배하려고 하고 있습니다…%UNICODE(0x2661)%」
 			PRINTFORMW %타겟은()% 수치와 흥분으로 새빨갛게 된 얼굴로 ,  제대로 자기 자신이 범해지는 곳(중)을 응시하고 있었다
 		;それ以外
@@ -4315,7 +4315,7 @@ IF SELECTCOM == 67
 				PRINTFORMW 「이제 아무것도 한아 얻을 수  없는 것 %UNICODE(0x2661)% %CNAME("二人称 , 일까")%대단해요 %UNICODE(0x2661)%」
 				PRINTFORMW %타겟은()% 스스로 최안쪽을 몇번이나 두드려 ,  그때에 등을 뒤로 젖힐 수 있고 있었다
 			ELSE
-				PRINTFORMW 「원…%UNICODE(0x2661)% %CNAME("一人称")% 속 ,  전부 %CNAME("二人称")%로 파묻혀 있습니다 %UNICODE(0x2661)%」
+				PRINTFORMW 「원…%UNICODE(0x2661)% %CNAME("一人称")% 속 ,  전부 %조사처리(CNAME("二人称"),"으로")% 파묻혀 있습니다 %UNICODE(0x2661)%」
 				PRINTFORMW 「%CNAME("二人称")%,  여기서 가득 내 주세요……%UNICODE(0x2661)%」
 				PRINTFORMW %타겟은()% 허리를 세세하게 움직여 ,  최안쪽에서의 사정을 조르고 있다
 			ENDIF
@@ -8821,7 +8821,7 @@ CASE "처녀상실"
 				PRINTFORMW %타겟은()% 마음 속 행복할 것 같은 얼굴로 ,  머리를 손에 문지르고 붙이도록(듯이) 움직였다
 			ELSE
 				PRINTFORMW 「……구……………」
-				PRINTFORMW 「………정말은……%CNAME("二人称")%과 한가지(하나)가 되며………」
+				PRINTFORMW 「………정말은……%조사처리(CNAME("二人称"),"과")% 한가지(하나)가 되며………」
 				PRINTFORMW %타겟은()% 단단하게 감은 눈으로부터 물방울을 흘리면서 ,  작고 작게 중얼거렸다
 			ENDIF
 		;それ以外
@@ -9291,7 +9291,7 @@ ELSEIF SHOOT("Ｖ내사정")
 					PRINTFORMW %타겟이()% 위로부터 속삭이듯이 말해 ,  그것을 계기로%CALLNAME:MASTER%의 한계를 넘어 버린다
 					PRINTFORMW 「……%UNICODE(0x2661)% 아아%UNICODE(0x2661)% 왕4다 %UNICODE(0x2661)%」
 					PRINTFORMW 「……에헤 ,  말한 곁으로부터 이렇게 내……정말로 자제 하셨습니까?」
-					PRINTFORMW 「자제는 하지 않는 게 좋아 예요 %UNICODE(0x2661)% %CALLNAME:TARGET% 속 ,  %CNAME("二人称")%로 가득해 주었으면 하니까……%UNICODE(0x2661)%」
+					PRINTFORMW 「자제는 하지 않는 게 좋아 예요 %UNICODE(0x2661)% %CALLNAME:TARGET% 속 ,  %조사처리(CNAME("二人称"),"으로")% 가득해 주었으면 하니까……%UNICODE(0x2661)%」
 					PRINTFORMW %타겟은()% 사정한지 얼마 안된 페니스를 안으로 질네면서 ,  유혹 하도록 귓전으로 말했다
 				ENDIF
 			ELSE
@@ -10530,7 +10530,7 @@ CASE "秘湯食事"
 	PRINTFORMW %CALLNAME:MASTER%의 상상한 반응과는 조금 틀려 했지만 ,  확실히%타겟은()% 행복한 것 같았습니다
 	RETURN 1
 CASE "秘湯お風呂"
-	PRINTFORMW 「히히힛……%UNICODE(0x2661)% %CNAME("二人称")%과 욕실……%UNICODE(0x2661)%」
+	PRINTFORMW 「히히힛……%UNICODE(0x2661)% %조사처리(CNAME("二人称"),"과")% 욕실……%UNICODE(0x2661)%」
 	PRINTFORMW %타겟은()% 기뻐서 넋을 잃고 한 표정으로 옷을 벗고 있습니다
 	PRINTFORMW 요염하게 신체를 쬐면(자), %CALLNAME:MASTER%에 보이도록(듯이) 신체를 구부러지게 하고 있습니다
 	PRINTFORMW 그로부터(그리고)%마스터가()% 보고 있는 것을 곁눈질로 확인하면(자) ,  목욕타올로 신체를 숨겨 버렸습니다
@@ -10644,7 +10644,7 @@ CASE "秘湯フェーズ１개시：レズ"
 	RETURN 1
 CASE "秘湯フェーズ１종료"
 	PRINTFORMW 「하……하……%CNAME("二人称")%……%UNICODE(0x2661)%」
-	PRINTFORMW 「좀더……%UNICODE(0x2661)% 좀더 %CNAME("二人称")%과 서로 사랑하고 싶습니다 ……%UNICODE(0x2661)%」
+	PRINTFORMW 「좀더……%UNICODE(0x2661)% 좀더 %조사처리(CNAME("二人称"),"과")% 서로 사랑하고 싶습니다 ……%UNICODE(0x2661)%」
 	RETURN 1
 CASE "秘湯フェーズ２개시：파이즈리"
 	PRINTFORMW 「원……%UNICODE(0x2661)% %CNAME("二人称")%의 커져 해 준 젖가슴으로 보은입니다 %UNICODE(0x2661)%」

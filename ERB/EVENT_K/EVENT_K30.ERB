@@ -1192,7 +1192,7 @@ IF SELECTCOM == 13
 		;연모+노출벽Lv5
 		ELSEIF TALENT:연모 && ABL:노출벽 >= 5
 			PRINTFORMW 「보입니까, %CNAME("二人称")%……？%CNAME("一人称")%의 여기…이렇게 되어……」
-			PRINTFORMW 「상스러워서 미안해요…. 그렇지만…%CNAME("二人称")%로 보여지고 있다고 생각하면…어쩔 수 없어서……」
+			PRINTFORMW 「상스러워서 미안해요…. 그렇지만…%조사처리(CNAME("二人称"),"으로")% 보여지고 있다고 생각하면…어쩔 수 없어서……」
 			PRINTFORMW 「좀 더 부끄러운 일…명해 주세요…%CNAME("二人称")%……」
 		;연모
 		ELSEIF TALENT:연모
@@ -3288,7 +3288,7 @@ IF SELECTCOM == 179 && TEQUIP:수치플레이
 		ELSEIF TALENT:연모
 			PRINTFORMW 「아니…이런 것 부끄럽습니다……」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 손그래서얼굴을 숨기려고 하지만, %조사처리(CALLNAME:PLAYER,"는")% 손를 눌러 그것을 막는다. 
-			PRINTFORMW 「%CNAME("一人称")%, %CNAME("二人称")%로 해 받으면, 상스럽다얼굴보여 버리기 때문에…」
+			PRINTFORMW 「%CNAME("一人称")%, %조사처리(CNAME("二人称"),"으로")% 해 받으면, 상스럽다얼굴보여 버리기 때문에…」
 			PRINTFORMW 「부탁입니다…%CNAME("二人称")%……」
 			PRINTFORMW 눈동자를 물기를 띠게 해 애원 하는 모습에, %CALLNAME:PLAYER%의 기학심은 강하게 부추겨졌다. 
 		;노출벽Lv3이상
@@ -3360,7 +3360,7 @@ ELSEIF SELECTCOM == 179 && TEQUIP:수치플레이 == 0
 			PRINTFORMW 「정말로…정말로 부끄러웠던 것이에요…」
 			PRINTFORMW 수치로부터해방되었다%조사처리(CALLNAME:TARGET,"는")%, %CALLNAME:PLAYER%에 불만을 흘린다. 
 			PRINTFORMW 「또%조사처리(CNAME("二人称"),"가")% 바란다면, 응하고 싶다고 생각하고…」
-			PRINTFORMW 「%CNAME("二人称")%로 하고 있으면, 상스러운 모습도 보여 버립니다」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"으로")% 하고 있으면, 상스러운 모습도 보여 버립니다」
 			PRINTFORMW 「그렇지만…그것은 전부, %조사처리(CNAME("二人称"),"가")% 상대이기 때문이다라고 하는 일은, 알아 주세요…？」
 		;노출벽Lv3이상
 		ELSEIF ABL:노출벽 >= 3
@@ -3914,7 +3914,7 @@ IF SELECTCOM == 120 || SELECTCOM == 121
 						PRINTFORMW 「너무 멋져, 달하게 될 것 같습니다……%CNAME("二人称")%도, 함께 좋다 있고!」
 					ELSEIF RAND:3 == 0
 						PRINTFORMW 「후아, 후아, 아아, 앙……어떻습니까, %CNAME("二人称")%……」
-						PRINTFORMW 「%CNAME("一人称")%의 아래의 뿔, %CNAME("二人称")%로부터 나가고 싶지 않다고 말하고 있습니다……」
+						PRINTFORMW 「%CNAME("一人称")%의 아래의 뿔, %조사처리(CNAME("二人称"),"으로")%부터 나가고 싶지 않다고 말하고 있습니다……」
 						PRINTFORMW 「곧바로사정해 버릴 것 같지만……아, 앙, 계속하네요」
 					ELSEIF RAND:2 == 0
 						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 환희가 눈물을 머금어%CALLNAME:PLAYER%의 비렬를 찌르고 있었다
@@ -6089,7 +6089,7 @@ ELSEIF SHOOT("Ｖ내사정")
 	;初めての내사정
 	ELSEIF EX:Ｖ내사정 == 1 && EXP:질내정액경험 == EXP_GAIN(17) && MARK:반발각인의취득이력 == 0
 		PRINTFORMW 「아아아…읏! !  뜨겁습니다…이것이………%CNAME("二人称")%의정액…읏! 」
-		PRINTFORMW 「와, 이런 맛을 기억하게 되어지면, 이제(벌써)……읏!  %CNAME("二人称")%로부터 멀어지다니……」
+		PRINTFORMW 「와, 이런 맛을 기억하게 되어지면, 이제(벌써)……읏!  %조사처리(CNAME("二人称"),"으로")%부터 멀어지다니……」
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 처음의내사정의 쾌락에, 완전히 마음이 사로잡혀 버리고 있다…
 	;상사상애＋웨딩드레스（妹플레이중は랜덤でどちらかを선택）
 	ELSEIF TALENT:상사상애 && CHECK_SHIRT("웨딩드레스") && PLAYER == MASTER && RANDIF(1, CEVENT("二人称주인：兄さん") + CEVENT("二人称주인：お兄ちゃん") )
