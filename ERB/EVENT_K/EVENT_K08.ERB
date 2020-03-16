@@ -98,7 +98,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW %마스터는()% 문을 여는 것과 동시에 입술을 채워졌다
 	PRINTFORMW 「응……쪽…쪽……」
-	PRINTFORMW %타겟은()% 그대로%마스터를()% 침대로 밀어 넘어뜨린다…
+	PRINTFORMW %타겟은()% 그대로 %마스터를()% 침대로 밀어 넘어뜨린다…
 	PRINTFORMW %마스터는()% 갑작스러운 행위에 놀라, 무심코%타겟을()% 갈라 놓았다
 	PRINTFORMW 「역시, 구재불능인의…」
 	PRINTFORMW %CALLNAME:TARGET%의 푸른 눈동자로부터 눈물이 흘러넘친다…
@@ -5516,7 +5516,7 @@ CASE "요바이기승위"
 	IF ABL:Ｖ감각 >= 5
 		IF RAND:5 == 0
 			PRINTFORMW 조교 후, %타겟은()% 터벅터벅%마스터가()% 뒤따라 온다
-			PRINTFORMW 그대로%CALLNAME:MASTER%의 방까지 도착해 와버렸다
+			PRINTFORMW 그대로 %CALLNAME:MASTER%의 방까지 도착해 와버렸다
 			PRINTFORMW %마스터는()% 무슨 일이 있었던 걸까 들으면%타겟은()% 불쑥 한마디
 			PRINTFORMW 「덥침에…왔어……」
 			PRINTFORML 조금 위화감을 기억하지만, 지금부터 행해지는 것은

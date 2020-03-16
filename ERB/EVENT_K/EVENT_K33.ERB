@@ -381,7 +381,7 @@ ELSEIF MARK:굴복각인 == 1
 		PRINTFORMW 결심하고%마스터는()% 보물 상자를 열었다
 		PRINTFORML 「그러면~☆」
 		PRINTFORML 「………놀랐어?」
-		PRINTFORMW %마스터는()% 그대로%타겟을()% 껴안고 침대로 옮겼다
+		PRINTFORMW %마스터는()% 그대로 %타겟을()% 껴안고 침대로 옮겼다
 		PRINTFORMW 「이앙♪,  이것이 %CNAME("一人称")%의 본직 이니까 어쩔 수 없는데∼」
 	ELSE
 		PRINTFORMW 방에 들어가면 거기에 %CALLNAME:TARGET%의 모습은 없고 평소의 보물 상자가 방의 중앙에 놓여져 있었다
@@ -492,7 +492,7 @@ ELSEIF TALENT:연모
 		ELSE
 			PRINTFORMW 「%CNAME("二人称")%♪쪽,  쪽」
 			PRINTFORMW 방에 들어가면 숨을 붙는 동안도 없게 입술을 빼앗겼다
-			PRINTFORMW 그대로%타겟을()% 공주님 포옹으로 들어 올리고 침대로 옮겼다
+			PRINTFORMW 그대로 %타겟을()% 공주님 포옹으로 들어 올리고 침대로 옮겼다
 			PRINTFORMW 「아아앙♪」
 		ENDIF
 	ENDIF
@@ -3425,7 +3425,7 @@ IF SELECTCOM == 6
 				IF RAND:3 == 0
 					PRINTFORMW 「받는…♪」
 					PRINTFORMW %타겟은()%%CALLNAME:MASTER%의 앞에서갑자기 소리를 내 손을 맞추면
-					PRINTFORMW 그대로%CALLNAME:MASTER%의 입술을 억지로 빼앗았다
+					PRINTFORMW 그대로 %CALLNAME:MASTER%의 입술을 억지로 빼앗았다
 					CALL KOJO_KISS_33
 					PRINTFORMW 「쪽,  쪽,  쪽♪」
 					PRINTFORMW 「후훗, ……쪽,  루루루♪」
@@ -7931,7 +7931,7 @@ ELSEIF SELECTCOM == 171 && COND("강가")
 							PRINTFORMW 「무우∼………」
 							PRINTFORMW 「에잇☆」
 							PRINTFORMW %타겟은()% 러브 트랩을 사용했다
-							PRINTFORMW %마스터는()% 옷을 벗어 그대로%CALLNAME:TARGET%에 인서트 했다
+							PRINTFORMW %마스터는()% 옷을 벗어 그대로 %CALLNAME:TARGET%에 인서트 했다
 							PRINTFORMW 「아앙☆…………이것으로 %조사처리(CNAME("二人称"),"과")% 함께♪」
 							PRINTFORMW 「히히힛, %CNAME("一人称")%……나쁜 아이일까?」
 							TEQUIP:러브트랩 = 1

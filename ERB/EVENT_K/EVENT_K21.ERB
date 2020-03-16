@@ -145,7 +145,7 @@ ELSEIF GETBIT(CFLAG:201, 26) == 0 && COND("권속", MASTER) == TARGET
 		PRINTFORMW 「그렇지만, 막상%조사처리(CNAME("二人称"),"를")% 떨어뜨려, %CNAME("一人称")%(와)과 같은 존재로 해, 생각한 것이다」
 		PRINTFORMW 「이것은%CNAME("一人称")%자신의 에고다…%조사처리(CNAME("二人称"),"는")% 이런 일 바라지 않았지 않은가？라란 말야」
 		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 지금까지 알고 있어 죄를 거듭했을 것인데…이제 와서지요」
-		PRINTFORMW 말을 끝내, 그대로%조사처리(CALLNAME:TARGET,"가")% 숙여 침묵을 지켰다…
+		PRINTFORMW 말을 끝내, 그대로 %조사처리(CALLNAME:TARGET,"가")% 숙여 침묵을 지켰다…
 		;상사상애の枠が空いていれば, 선택지を表示する
 		IF CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0
 			PRINTL [0] 조금 말을 걸 수 없다…
@@ -1689,7 +1689,7 @@ ELSEIF SELECTCOM == 3 && TEQUIP:샤워
 				PRINTFORMW 「히♪ 히♪ 히♪」
 				PRINTFORMW 뜨거운 물보라가 클리토리스를 난타하는 쾌락에, %타겟은()% 무심코 샤워 헤드 위에 거치거나 붐빈다.
 				PRINTFORMW 「,  종류♪ %CNAME("二人称", "응석부리고", "かな")%,  라고 ♪ 간닷, 간다♪」
-				PRINTFORMW 그대로%타겟은()%%CALLNAME:PLAYER%에 도움을 요구하듯이 손을 늘려 온다.
+				PRINTFORMW 그대로 %타겟은()%%CALLNAME:PLAYER%에 도움을 요구하듯이 손을 늘려 온다.
 				PRINTFORMW 아무래도 쾌락에 도중 중단이 되어, 샤워 헤드 위로부터 움직일 수가 하지 못하고 쾌락에 계속 꾸짖임을 당하고 있는 것 같다…
 			ELSEIF RAND:2
 				PRINTFORMW 「~♪ 넌더리나고, 역시 굉장해~♪」
@@ -4243,7 +4243,7 @@ IF SELECTCOM == 63
 				ELSEIF RAND:2
 					PRINTFORMW 「읏아아아아아～읏♪」
 					PRINTFORMW %CALLNAME:TARGET%의질안에 찔러 넣은 채로%CALLNAME:PLAYER%하지만 일어서면,%타겟은()% 절규를올린다.
-					PRINTFORMW 그리고 그대로%CALLNAME:PLAYER%하지만발재매입을 시작하면,%타겟은()% 소리가 되지 않는 절규를 올려 번민 미쳤다.
+					PRINTFORMW 그리고 그대로 %CALLNAME:PLAYER%하지만발재매입을 시작하면,%타겟은()% 소리가 되지 않는 절규를 올려 번민 미쳤다.
 					PRINTFORMW 「읏♪ 읏！ ～읏♪」
 				ELSE
 					PRINTFORMW 「좀 더 해엣！ %CNAME("二人称", "甘え", "かな")%읏, 좀 더 후미질 수 있는♪」
@@ -4336,7 +4336,7 @@ IF SELECTCOM == 64
 				PRINTFORMW 「히, 는……? ♪ 후아아아 아아아아아!」
 				PRINTFORMW 미약의 효과인가 눅진눅진에 녹고 자른%CALLNAME:TARGET%의 비밀장소를 관철하면, %타겟은()% 달콤한 교성을 뛰었다.
 				PRINTFORMW 「,  가지 끝히종류 직물…,  처음으로인데, 넣을 수 있던 것만으로 이히야야 ……♪」
-				PRINTFORML 그대로%CALLNAME:PLAYER%에 기대어 가 그렇게 중얼거린%CALLNAME:TARGET%에 어쩔 수 없게 욕정 해서,
+				PRINTFORML 그대로 %CALLNAME:PLAYER%에 기대어 가 그렇게 중얼거린%CALLNAME:TARGET%에 어쩔 수 없게 욕정 해서,
 				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 가슴과 클리토리스를 만지작거려, 날개에 혀를 기게 한이면서 허리를 움직이기 시작했다.
 				PRINTFORMW 「기피!, 들, 상♪♪ 아앗, ″~♪♪♪」
 				PRINTFORMW 하면, %타겟은()% 조금 전까지 처녀였다고는 생각되지 않을 수록 음란한 교성을 올려, 쾌락의 소용돌이에 빠지고 미쳤다.

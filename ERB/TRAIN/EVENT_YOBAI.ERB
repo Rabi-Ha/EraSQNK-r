@@ -72,7 +72,7 @@ CASE "요바이기승위"
 			PRINTFORMW %타겟은()% 악담이 섞여있는 교성을 올리면서, 몇번이나 허리를 추잡하게 흔들며 자궁의 갈증을 달래고 있다…
 		;[부끄럼쟁이][청초]持ちの場合分岐
 		ELSEIF TALENT:부끄럼쟁이 || TALENT:청초
-			PRINTFORML %타겟은()% 몇 번이나 작은 소리로 환희의 비명과 사죄의 말을 더듬으면서,
+			PRINTFORML %타겟은()% 몇 번이나 작은 소리로 환희의 비명과 사죄의 말을 더듬으면서, 
 			PRINTFORMW 무심하게 허리를 흔들어 자궁의 갈증을 달래고 있다…
 		;[반하기쉬움][헌신][소악마][망신]持ちなら分岐
 		ELSEIF TALENT:반하기쉬움 || TALENT:헌신 || TALENT:망신 || TALENT:소악마
@@ -88,7 +88,7 @@ CASE "요바이기승위"
 
 	CALL CALC, "욕구불만解消", TARGET, LOCAL
 
-	PRINTFORM 몇 번인가의 절정 뒤,
+	PRINTFORM 몇 번인가의 절정 뒤, 
 	IF TALENT:마음에듬 || TALENT:상사상애
 		PRINTFORMW 마음을 이룬 두 명은 연결된 채로 얼싸안아, 깊은 잠에 떨어졌다…
 		;一緒に眠ったフラグ。朝の相手として優先。
@@ -100,7 +100,7 @@ CASE "요바이기승위"
 		IF RAND:CHARANUM >= 5
 			PRINTFORMW 몸을 깨끗하게 하자, 서운한 듯이 자신의 방으로 돌아 갔다…
 		ELSE
-			PRINTFORMW %마스터를()% 껴안아, 그대로 깊은 잠에 떨어졌다…
+			PRINTFORMW %마스터를()% 껴안고, 그대로 깊은 잠에 떨어졌다…
 			CFLAG:MASTER:96 = TARGET
 			CFLAG:96 = MASTER
 		ENDIF
@@ -122,7 +122,7 @@ CASE "요바이Ａ기승위"
 	;[교만][건방짐][심술쟁이][강기]持ちなら分岐
 	IF TALENT:교만 || TALENT:건방짐 || TALENT:강기 || TALENT:심술쟁이
 		PRINTFORMW 「……」
-		PRINTFORMW 말이 없는 채,%마스터를()% 매우 열띤 물기를 띤 눈동자로 노려보고 있다
+		PRINTFORMW 말이 없는 채, %마스터를()% 매우 열띤 물기를 띤 눈동자로 노려보고 있다
 	;[부끄럼쟁이][청초]持ちの場合分岐
 	ELSEIF TALENT:부끄럼쟁이 || TALENT:청초
 		PRINTFORMW 근심과 욕정의 열을 띤 눈빛으로, 눈을 치켜 뜨고 %CALLNAME:MASTER%의 모습을 살피고 있다
@@ -139,7 +139,7 @@ CASE "요바이Ａ기승위"
 		PRINTFORMW 「……」
 		PRINTFORMW 말이 없는 채, 열띤 물기를 띤 눈동자로 %마스터를()% 응시하면서 미소짓는다
 	ENDIF
-	PRINTFORMW 그대로\@ TALENT:남자 ? %CALLNAME:TARGET% # 그녀 \@는 %마스터를()% 넘어뜨리고, 부정의 구멍에서 페니스를 물고 격렬하게 허리를 부딪히기 시작했다
+	PRINTFORMW 그대로 \@ TALENT:남자 ? %타겟은()% # 그녀는 \@ %마스터를()% 넘어뜨리고, 부정의 구멍에서 페니스를 물고 격렬하게 허리를 부딪히기 시작했다
 
 	CALL SELF_KOJO, CSTR:요바이
 
@@ -170,12 +170,12 @@ CASE "요바이Ａ기승위"
 		CFLAG:MASTER:96 = TARGET
 		CFLAG:96 = MASTER
 	ELSE
-		PRINTFORM 생각을 이루었다%타겟은()% 
+		PRINTFORM 소원을 이룬 %타겟은()% 
 		;相手がいっぱいいるときは紳士協定
 		IF RAND:CHARANUM >= 5
 			PRINTFORMW 몸을 깨끗하게 하면, 서운한 듯이 자신의 방으로 돌아 갔다…
 		ELSE
-			PRINTFORMW %마스터를()% 껴안아, 그대로 깊은 잠에 떨어졌다…
+			PRINTFORMW %마스터를()% 껴안고, 그대로 깊은 잠에 떨어졌다…
 			CFLAG:MASTER:96 = TARGET
 			CFLAG:96 = MASTER
 		ENDIF
@@ -190,7 +190,7 @@ CASE "添い寝"
 		CALL SELF_KOJO, CSTR:요바이
 		PRINTFORMW 그리고, %마스터를()% 껴안고 만족스러운 표정을 보이면서, 그대로 잠들었다……
 	ELSE
-		PRINTFORM %마스터가()% 잠자리에 들면,
+		PRINTFORM %마스터가()% 잠자리에 들자,
 		IF RAND:3 == 0
 			PRINT 베개를 껴안은
 		ELSEIF RAND:2
@@ -280,15 +280,15 @@ CASE "요바이Ａ기승위", "요바이기승위", "添い寝"
 		PRINTFORMW 사타구니를 감싸는 쾌락에 눈을 뜬 당신의 입을 재빠르게 막아, %조사처리(CALLNAME:(TARGET:1),"가")% %CALLNAME:TARGET%에 발각되지 않게 소리를 죽여 욕망인채로 허리를 흔든다…
 		PRINTFORMW 사랑하는 몽마의 옆에서 행위에 이르는 배덕감과 쾌락만을 추구하는 %CALLNAME:(TARGET:1)%의 교묘한 허리놀림에 당신은 속수무책이다…
 		PRINTFORMW %조사처리(CALLNAME:(TARGET:1),"가")% 자궁를 두드리는 뜨거운 물보라에 눈을 감고 넋을 잃은 표정으로 만끽하고 나서 다시 허리를 움직이기 시작한다…!
-		LOCALS = 당신은%조사처리(CALLNAME:(TARGET:1),"가")%만족할때까지사랑하는%CALLNAME:TARGET%의바로옆에서%TEXTR("농락", "완구가 되어", "장난감이 되어", "짜여짐을")%당한다…
+		LOCALS = 당신은 %조사처리(CALLNAME:(TARGET:1),"가")% 만족할때까지사랑하는 %CALLNAME:TARGET%의 바로옆에서 %TEXTR("농락되었", "완구가 되었", "장난감이 되었", "짜여짐을 당했")%다…
 	CASE 120
 		PRINTFORMW %조사처리(CALLNAME:(TARGET:1),"가")% %CALLNAME:TARGET%의 옆에서 푹 자는 당신를 확인하고, 살그머니 가랑이를 열고 속옷을 비켜 놓았다…
 		PRINTFORMW 그리고 뜨겁게 끓어오른 페니스를 스스로의 타액으로 적시면서, 한 번에 당신의 그곳를 꿰뚫었다…！
 		IF ABL:(TARGET:1):새드끼 >= 5
-				PRINTFORM 신체를 관철하는 충격에 눈을 떴다 당신에 %조사처리(CALLNAME:(TARGET:1),"은")%
+				PRINTFORM 신체를 관철하는 충격에 눈을 뜬 당신에 %조사처리(CALLNAME:(TARGET:1),"은")%
 			;워울프系
 			IF BASE:(TARGET:1):스톡
-				PRINTFORM 움직이지마라고 큰 소리를 내면,
+				PRINTFORM 움직이지마라고 큰 소리를 내고,
 			ELSE
 				IF RAND:2 == 0
 					PRINTFORM 「%CALLNAME:TARGET%에 들켜도 괜찮은 
@@ -313,7 +313,7 @@ CASE "요바이Ａ기승위", "요바이기승위", "添い寝"
 				ENDSELECT
 				PRINTFORM 」 같이 속삭이면서,
 			ENDIF
-			PRINTFORMW 욕망인 채로 허리를 부딪혀 온다…！
+			PRINTFORMW 욕망에 가득한 채로 허리를 부딪혀 온다…！
 			PRINTFORMW 들키는것을 무서워하는 당신은 스스로 입을 손으로 눌러 소리를 죽여, %CALLNAME:(TARGET:1)%의 성욕 배출구로써 범해지는 그대로가 되어버린다…
 			LOCALS = 당신은 사랑하는 %CALLNAME:TARGET%의 자는 옆에서, 그대로 %조사처리(CALLNAME:(TARGET:1),"가")% 듬뿍 %TEXTR("씨받이가", "질내사정", "범해지는 희생자가", "레이프")% 되어버렸다…
 		ELSE

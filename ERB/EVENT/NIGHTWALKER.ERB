@@ -337,7 +337,7 @@ IF NUM_NPC >= 4
 ENDIF
 
 ;NPC_NAMEの複数形
-NPC_NAMES = %NPC_NAME%\@ NUM_NPC >= 2 ? たち # \@
+NPC_NAMES = %NPC_NAME%\@ NUM_NPC >= 2 ? 들 # \@
 
 ;-------------------------------------------------
 ;獲物たちのデータが出揃ったので정력などを決定（純粋に人数倍するとも言う…）
@@ -522,7 +522,7 @@ CASE "주점", "여관", "집회소", "비밀의 놀이터"
 	;	TEXT_INTRO = …%타겟은()% %NPC_HOME%에서 {NUM_NPC}명 %조사처리(NPC_NAME,"를")% 덮친 것 같다
 	;	TEXT_PLAY = %타겟은()% 거근에서 차례로 사납게 기승위로 범하면서 차례를 기다리는 페니스를 두 손과 입으로 훑어냈다…
 	CASEELSE
-		TEXT_INTRO = …%타겟은()% %NPC_HOME%에서 {NUM_NPC}명 %조사처리(NPC_NAME,"를")% %TEXTR(" 꼬신"," 즐긴")%것 같다
+		TEXT_INTRO = …%타겟은()% %NPC_HOME%에서 {NUM_NPC}명 %조사처리(NPC_NAME,"를")% %TEXTR("꼬신","즐긴")% 것 같다
 
 		;まずはどの穴を優先的に使うかで大きな分岐
 		;양구멍삽입. 애널광と음호必須
@@ -576,7 +576,7 @@ CASE "주점", "여관", "집회소", "비밀의 놀이터"
 			ELSEIF ABL:Ａ감각 >= 5 && RANDIF(3, TALENT:장액분비체질, EXP:Ａ성교경험 >= 200)
 				LOCALS = 개발이 끝난 애널
 			ELSEIF EXP:Ａ성교경험 >= 200 && RANDIF(3, TALENT:장액분비체질)
-				LOCALS = %TEXTR("男に飢えた", "정액に飢えた", "경험풍부한 ")%애널
+				LOCALS = %TEXTR("남자에 굶주린", "정액에 굶주린", "경험풍부한 ")%애널
 			ELSEIF TALENT:장액분비체질 && RAND:3 == 0
 				LOCALS = 더러운 윤활액이 넘치는 애널
 			;このルートは애널好きしか来ない
@@ -1043,14 +1043,14 @@ ENDIF
 CFLAG:55 += CFLAG:53 * CFLAG:54 * (NUM_NPC_TOTAL/5 + 1)
 
 IF FLAG:8
-	PRINTFORM 오늘밤의 피해 수：{NUM_NPC_TOTAL}사람
+	PRINTFORM 오늘밤의 피해 수：{NUM_NPC_TOTAL}명
 	SIF NUM_NPC_TOTAL >= 10
-		PRINTFORM \@ NUM_NPC_TOTAL >= 100 ? ☆ # \@하룻밤 %TEXTS("漢数字概数", NUM_NPC_TOTAL)%인포식 달성\@ NUM_NPC_TOTAL >= 100 ? ☆ # \@
+		PRINTFORM \@ NUM_NPC_TOTAL >= 100 ? ☆ # \@하룻밤 %TEXTS("漢数字概数", NUM_NPC_TOTAL)%명 포식 달성\@ NUM_NPC_TOTAL >= 100 ? ☆ # \@
 	PRINTL 
 
 	PRINTFORM 누적된 피해자 수：{CFLAG:51}명 
 	SIF CFLAG:51 >= 10
-		PRINTFORM \@ CFLAG:51 >= 100 ? ☆ # \@누계 %TEXTS("漢数字概数", CFLAG:51)%인포식 달성\@ CFLAG:51 >= 100 ? ☆ # \@ 
+		PRINTFORM \@ CFLAG:51 >= 100 ? ☆ # \@누계 %TEXTS("漢数字概数", CFLAG:51)%명 포식 달성\@ CFLAG:51 >= 100 ? ☆ # \@ 
 
 	;連続して実行した일数＆"連続して実行した일数"で襲った総人数
 	SIF CFLAG:52 >= 1 && CFLAG:52 == DAY
@@ -1076,7 +1076,7 @@ CASE "스트립극장"
 	ELSEIF AGE(TARGET) == 1 && RANDIF(3, ABL:Ｖ확장 > 2)
 		PRINTFORML 『꼬마의 주제에 이런 일하고 자빠져！ 자, 충분히 벌 해 주마！！』
 	ELSEIF ABL:Ｖ확장 > 2 && RAND:3 == 0
-		PRINTFORML 『무, 무엇이다, 이\@ AGE(TARGET) >= 3 ? 년 # 꼬마 \@！ 나의 자랑하는 녀석을 여유있게 뿌리까지…！ 구아앗！！』
+		PRINTFORML 『무, 무엇이다, 이 \@ AGE(TARGET) >= 3 ? 년 # 꼬마 \@！ 나의 자랑하는 녀석을 여유있게 뿌리까지…！ 구아앗！！』
 	ELSEIF RAND:7 == 0
 		PRINTFORML 『으웃…이, 이 녀석, 이제 안나오는, 데, …짜내진다앗！우아…』
 	ELSEIF RAND:6 == 0
@@ -1094,7 +1094,7 @@ CASE "스트립극장"
 	ENDIF
 CASE "글로리홀가게"
 	IF RAND:5 == 0 && ABL:목확장 > 2
-		PRINTFORML 『무, 무엇이다, 이\@ AGE(TARGET) >= 3 ? 년 # 꼬마 \@！ 나의 자랑의 녀석을 여유 가득 근원까지…！ 구아앗！！』
+		PRINTFORML 『무, 무엇이다, 이 \@ AGE(TARGET) >= 3 ? 년 # 꼬마 \@！ 나의 자랑의 녀석을 여유 가득 근원까지…！ 구아앗！！』
 	ELSEIF RAND:5 == 0 && AGE(TARGET) <= 2 && TALENT:남자 == 0
 		PRINTFORML 『좋아…아, 아가씨, 좀 더 나의 것을 날름날름 해……우웃！」
 	ELSEIF RAND:5 == 0
@@ -1172,7 +1172,7 @@ CASEELSE
 			PRINTFORML %LOCALS%
 		ELSE
 			IF RAND:5 == 0 && ABL:Ｖ확장 > 2
-				PRINTFORML 『무, 무엇이다, 이\@ AGE(TARGET) >= 3 ? 년 # 꼬마 \@！ 나의 자랑의 녀석을 여유있게 뿌리까지…！ 아앗！！』
+				PRINTFORML 『무, 무엇이다, 이 \@ AGE(TARGET) >= 3 ? 년 # 꼬마 \@！ 나의 자랑의 녀석을 여유있게 뿌리까지…！ 아앗！！』
 			ELSEIF RAND:4 == 0
 				PRINTFORML 『아아앗！이, 이제…나온닷！나온다앗！！！』
 			ELSEIF RAND:3 == 0

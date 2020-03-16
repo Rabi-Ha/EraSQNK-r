@@ -157,7 +157,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% %CALLNAME:TARGET%의 방에 들어가면, %조사처리(CALLNAME:TARGET,"는")% 미소지은 채로 아무것도 말하지 않고 입술을 거듭해 온다
 	PRINTFORMW 「좋아하게…시라고？」
-	PRINTFORMW 목과 등과 허리에손를 돌렸다%조사처리(CALLNAME:TARGET,"는")% 그대로%조사처리(CALLNAME:MASTER,"를")% 침대에 끌어들였다
+	PRINTFORMW 목과 등과 허리에손를 돌렸다%조사처리(CALLNAME:TARGET,"는")% 그대로 %조사처리(CALLNAME:MASTER,"를")% 침대에 끌어들였다
 	SETBIT CFLAG:201, 3
 ;연모
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모

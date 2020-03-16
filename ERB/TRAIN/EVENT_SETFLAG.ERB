@@ -602,11 +602,11 @@ CASE "안전위험일判定"
 	IF COND("낮")
 		IF STRLENS(LOCALS)
 			SETCOLOR DEF_COLOR("하트핑크")
-			PRINTFORMW %SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2)%하지만발정기에 들어갔다！
+			PRINTFORMW %조사처리SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2),"가")% 발정기에 들어갔다！
 			RESETCOLOR
 		ENDIF
 		SIF STRLENS(LOCALS:1)
-			PRINTFORMW %SUBSTRING(LOCALS:1, 0, STRLENS(LOCALS:1) - 2)%의발정기하지만 끝났습니다
+			PRINTFORMW %SUBSTRING(LOCALS:1, 0, STRLENS(LOCALS:1) - 2)%의 발정기가 끝났습니다
 	ENDIF
 CASE "避妊"
 	BASE:ARG:태아 = 0
@@ -947,19 +947,19 @@ CASE "배설"
 		ENDIF
 		SELECTCASE MIN(ABL:마조끼, (ABL:노출벽 + 1)/2)
 		CASE 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 고통과 치욕이 섞인 표정을 짓고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 고통과 치욕이 섞인 표정을 짓고 있다…
 		CASE 1
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% \@ PLAYER == MASTER && TALENT:연모 ? 사랑하는 사람 # 사람 \@ 앞에서하는 배설행위에 치욕을 느끼면서도, 작은 달성감을 느끼고있는 것같다…
 		CASE 2
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부끄러워하면서도, 해방감에 안도한 표정을 짓고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부끄러워하면서도, 해방감에 안도한 표정을 짓고 있다…
 		CASE 3
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 항문을 통해 지나가는 배설물의 감각에 때때로 음란한 신음을 내고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 항문을 통해 지나가는 배설물의 감각에 때때로 음란한 신음을 내고 있다…
 		CASE 4
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 황홀해하면서 \@ PLAYER == MASTER && TALENT:연모 ? 사랑하는 사람 # 사람 \@ 앞에서하는 배설에 의한 치욕과 해방감을 동시에 즐기고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 황홀해하면서 \@ PLAYER == MASTER && TALENT:연모 ? 사랑하는 사람 # 사람 \@ 앞에서하는 배설에 의한 치욕과 해방감을 동시에 즐기고 있다…
 		CASE IS >= 5
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")%, 배설감과 수치심을 뼛속깊이 맛보고있다. 
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")%, 배설감과 수치심을 뼛속깊이 맛보고 있다. 
 			IF TALENT:남자 || INSERT("Ｖ인서트") || RAND:2
-				PRINTFORMW 그 표정은 쾌감에 느슨하게 풀려, 항문에서 오물을 배출하는 해방감이 흘러넘치고있다…
+				PRINTFORMW 그 표정은 쾌감에 느슨하게 풀려, 항문에서 오물을 배출하는 해방감이 흘러넘치고 있다…
 			ELSE
 				PRINTFORMW 그 표정은 쾌감에 느슨하게 풀려, 항문에서 오물을 배출하는 것과 동시에, 질구에서도 애액을 뚝뚝 흘리고 있다…
 			ENDIF

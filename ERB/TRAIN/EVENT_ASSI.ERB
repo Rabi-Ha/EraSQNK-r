@@ -145,9 +145,9 @@ IF LOCAL && RANDIF(1, LOCAL:1)
 		ENDIF
 	CASE 3
 		IF PENIS(TARGET)
-			PRINTFORM %조사처리(CALLNAME:ASSI,"는")% %CALLNAME:TARGET%의 페니스로부터 뽑아내진지 얼마 안된%CALLNAME:MASTER%의 그것
+			PRINTFORM %조사처리(CALLNAME:ASSI,"는")% %CALLNAME:TARGET%의 페니스로부터 뽑아내진지 얼마 안된 %CALLNAME:MASTER%의 그것
 		ELSE
-			PRINTFORM %조사처리(CALLNAME:ASSI,"는")%으로부터 뽑아내진지 얼마 안된%CALLNAME:MASTER%의 페니스를
+			PRINTFORM %조사처리(CALLNAME:ASSI,"는")%으로부터 뽑아내진지 얼마 안된 %CALLNAME:MASTER%의 페니스를
 		ENDIF
 		;汚れの状態で判定(애널汚れのお청소펠라경험があるか？)
 		IF CHECK_STAIN(STAIN:MASTER:Ｐ, "Ａ") && GETBIT(CFLAG:ASSI:12, 9) == 0
@@ -185,7 +185,7 @@ ELSEIF LOCAL:1
 		ENDIF
 		STAIN:Ｖ = SET_STAIN(0, "Ｖ")
 	CASE 2
-		PRINTFORM %조사처리(CALLNAME:ASSI,"는")% 범해져서 입을 벌리고있는 %CALLNAME:TARGET%의 애널을 벌리고, 
+		PRINTFORM %조사처리(CALLNAME:ASSI,"는")% 범해져서 입을 벌리고 있는 %CALLNAME:TARGET%의 애널을 벌리고, 
 		IF (ABL:ASSI:봉사정신 >= 4 || ABL:ASSI:레즈끼 >= 3) && GETBIT(CFLAG:ASSI:12, 8) && COND("입의 사용", ASSI) && (MAX(ABL:ASSI:봉사정신, ABL:ASSI:레즈끼) >= 5 || RAND:2)
 			PRINTFORMW 혀를 꽂아서 정성스럽게 더러운 것을 핥아냈다…
 			TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：조교대상にお청소Ａ핥기", ASSI
@@ -196,7 +196,7 @@ ELSEIF LOCAL:1
 		STAIN:Ａ = SET_STAIN(0, "Ａ")
 	CASE 3
 		IF PENIS(TARGET)
-			PRINTFORM %조사처리(CALLNAME:ASSI,"는")% %CALLNAME:TARGET%의 구멍을 연 채로 되어 있는 페니스를
+			PRINTFORM %조사처리(CALLNAME:ASSI,"는")% %CALLNAME:TARGET%의 구멍을 연 채로 되어 있는 페니스를 
 			IF ABL:봉사정신 >= 3 && COND("입의 사용", ASSI) && (ABL:ASSI:봉사정신 >= 5 || RAND:2)
 				PRINTFORMW 물어, 더러움을 빨아 정중하게 혀로 빨고 깨끗하게 했다…
 				TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：조교대상に청소펠라", ASSI
@@ -206,7 +206,7 @@ ELSEIF LOCAL:1
 			ENDIF
 			STAIN:Ｐ = SET_STAIN(0, "Ｐ")
 		ELSE
-			PRINTFORM %조사처리(CALLNAME:ASSI,"는")% 범해져 질척질척한 %CALLNAME:TARGET%의 저기를 펴넓혀, 노출하고
+			PRINTFORM %조사처리(CALLNAME:ASSI,"는")% 범해져 질척질척한 %CALLNAME:TARGET%의 그곳을 펴넓혀, 노출하고
 			IF (ABL:ASSI:봉사정신 >= 4 || ABL:ASSI:레즈끼 >= 3) && COND("입의 사용", ASSI) && (MAX(ABL:ASSI:봉사정신, ABL:ASSI:레즈끼) >= 5 || RAND:2)
 				PRINTFORMW , 혀로 정중하게 더러움을 빨아냈다…
 				TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：조교대상に청소컨닐링구스", ASSI
@@ -548,7 +548,7 @@ IF GETBIT(CFLAG:ASSI:35, 30) && TALENT:ASSI:가창기능 && TEQUIP:연주중 == 
 	IF ARGS == "조교개시" && MAXBASE:체력 - BASE:체력 < 300
 	ELSE
 		PRINTFORML ＜평온의 노래＞
-		PRINTFORML %조사처리(CALLNAME:ASSI,"는")% 온화하고 부드러운 노래를 연주하기시작했다…
+		PRINTFORML %조사처리(CALLNAME:ASSI,"는")% 온화하고 부드러운 노래를 연주하기 시작했다…
 		TEQUIP:연주중 = 1
 		TEQUIP:ASSI:연주중 = 10
 		TFLAG:6 = 1
@@ -561,7 +561,7 @@ ENDIF
 ;로맨스송
 IF ARGS == "조교개시" && GETBIT(CFLAG:ASSI:35, 31) && TALENT:ASSI:가창기능 && TEQUIP:연주중 == 0
 	PRINTFORML ＜로맨스송＞
-	PRINTFORML %조사처리(CALLNAME:ASSI,"는")% 아름다운 목소리로 노래하기시작했다. 
+	PRINTFORML %조사처리(CALLNAME:ASSI,"는")% 아름다운 목소리로 노래하기 시작했다. 
 	PRINTFORML 주변에 로맨틱한 분위기가 감돈다…
 	TEQUIP:연주중 = 2
 	TEQUIP:ASSI:연주중 = 10

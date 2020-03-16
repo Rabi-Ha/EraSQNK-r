@@ -7308,7 +7308,7 @@ IF SELECTCOM == 261
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORML %마스터가()% 컵에 넣은 미약을 건네주면%타겟은()% 흠칫흠칫 다 마셔 중단했다.
-			PRINTFORML 그대로%CALLNAME:TARGET%의 상태를 견와 이쪽을 초점이 맞지 않는 눈으로 보고 있다….
+			PRINTFORML 그대로 %CALLNAME:TARGET%의 상태를 견와 이쪽을 초점이 맞지 않는 눈으로 보고 있다….
 			PRINTFORMW 「몸이 화끈해져…멍하니 해 와 버렸다♪」
 			PRINTFORML %타겟은()% 천천히%CALLNAME:MASTER%에 짓이겨 모여 왔다….
 			PRINTFORMW 「에헤♪…각오는 좋은 거야…?」
@@ -7367,7 +7367,7 @@ IF SELECTCOM == 261
 					PRINTFORML 갈라 놓으려고 해도%타겟은()% 평상시에는 볼 수  없는 힘으로
 					PRINTFORML 체를 질질%CALLNAME:MASTER%에 꽉 눌러 온다…
 					PRINTFORMW 「응…%CNAME("二人称", "かな", "응석부리고")%…배고파 버렸다…♪…정자…갖고 싶은 것 …♪」
-					PRINTFORMW 질질 밀리고 그대로%CALLNAME:TARGET%에 밀어 넘어뜨려져 버렸다….
+					PRINTFORMW 질질 밀리고 그대로 %CALLNAME:TARGET%에 밀어 넘어뜨려져 버렸다….
 					TEQUIP:넘어뜨리기 = 1
 				ELSEIF TALENT:호색
 					PRINTFORMW 「히히힛…배고파 버렸다∼♪」
@@ -8101,7 +8101,7 @@ ELSEIF SELECTCOM == 171 && COND("화원")
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「응∼~~~♪ 달다 ♪」
 					PRINTFORML %타겟은()% 철쭉의 꿀을 들이마시고 있다…
-					PRINTFORML 그리고 그대로%CALLNAME:MASTER%의 다리 사이로 눈을 돌려…
+					PRINTFORML 그리고 그대로 %CALLNAME:MASTER%의 다리 사이로 눈을 돌려…
 					PRINTFORMW 「여기의 꿀은 어떨까나∼♪」
 					PRINTFORMW 기쁜듯이 미소지었다···.
 				ELSE

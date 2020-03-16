@@ -574,7 +574,7 @@ IF COND("임신中：分娩") && TALENT:임신 && BASE:육아중 == 0
 			SIF TALENT:FATHER:연모
 				PRINTFORM %CALLNAME:FATHER%
 			SIF TALENT:출산경험
-				LASTWORD = \@ TALENT:FATHER:연모 ? %조사만처리(CALLNAME:FATHER,"와")%  # \@아이
+				LASTWORD = \@ TALENT:FATHER:연모 ? %조사만처리(CALLNAME:FATHER,"와")% 함께  # \@아이
 		ENDSELECT
 		SIF CFLAG:469/100 + CFLAG:469 % 100 >= 2
 			LASTWORD = %LASTWORD%들
@@ -582,7 +582,7 @@ IF COND("임신中：分娩") && TALENT:임신 && BASE:육아중 == 0
 			PRINTFORM %LASTWORD를()% 보살피던 중에
 		PRINT , 
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 산기가 도는 것같습니다. 
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 산기가 도는 것 같습니다. 
 		PRINTFORMW ………
 		PRINTFORMW ……
 		PRINTFORMW …
@@ -600,7 +600,7 @@ IF COND("임신中：分娩") && TALENT:임신 && BASE:육아중 == 0
 	PRINTL 
 	PRINTFORML 태어난 아이는……
 	PRINTFORML [ 0] 여자 아이
-	PRINTFORML [ 1] 오토코노코
+	PRINTFORML [ 1] 남자 아이
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		CLEARBIT BASE:태아, 20
