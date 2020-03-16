@@ -539,10 +539,10 @@ IF CHARANUM >= 3 && COND("一言이벤트中") == 0
 	IF COND("一言이벤트中") == 0 && LINECOUNT == MEMO_LINECOUNT && RAND:3 == 0
 		IF COND("온천여행가능", ACTOR)
 			PRINTL 
-			PRINTFORML （%NAME:ACTOR%로부터 뜨거운 시선을 느낀다….온천이라도 데려갈까？）
+			PRINTFORML （%조사처리(NAME:ACTOR,"로")%부터 뜨거운 시선을 느낀다….온천이라도 데려갈까？）
 		ELSEIF ACTOR != TARGET && COND("욕구불만", ACTOR)
 			PRINTL 
-			PRINTFORML （%NAME:ACTOR%로부터 뜨거운 시선을 느낀다…. 가끔씩은 상관해 주어야 할지도 모른다）
+			PRINTFORML （%조사처리(NAME:ACTOR,"로")%부터 뜨거운 시선을 느낀다…. 가끔씩은 상관해 주어야 할지도 모른다）
 		ENDIF
 	ENDIF
 ENDIF
@@ -752,7 +752,7 @@ ELSEIF CHOICE == 123
  			PRINTW 일은, 이 정도로 해 둡시다
 		ENDIF
 	ELSE
-		PRINTL 정리하는 만큼 서류가 모여 있지 않습니다
+		PRINTL 정리할 만큼 서류가 모여 있지 않습니다
 		PRINTW （이벤트의 발생에는 조교가 진행된 캐릭터가 필요합니다）
 	ENDIF
 ;[124]조수に성욕処理を頼む
@@ -807,9 +807,9 @@ ELSEIF CHOICE == 160
 	IF NUM("運営가능店舗") || NUM("所持店舗")
 		CALL SHOP_EX
 	ELSE
-		PRINTFORML 다방의 웨이트레스로 할 캐릭터가 부족합니다
+		PRINTFORML 다방의 웨이트리스로 할 캐릭터가 부족합니다
 		PRINTFORML （겉모습이 여성이고 [연모]또는 순종이 높은 것이 기본 조건입니다）
-		PRINTFORML 한 점포당 네명이 필요하므로, 앞으로 {4 - CHARA_NUM("バイト가능")}명이 필요합니다
+		PRINTFORML 한 점포당 네 명이 필요하므로, 앞으로 {4 - CHARA_NUM("バイト가능")}명이 필요합니다
 		PRINTFORMW 거기에 더해 초기자금으로 $10,000이 필요합니다
 	ENDIF
 ELSEIF CHOICE == 200
@@ -1052,7 +1052,7 @@ WAIT
 MEMO_LINECOUNT = LINECOUNT
 PRINTL 
 DRAWLINE
-PRINTFORML 음마의물방울를 원료로서, 약이나 아이템등을 조합합니다(소지수：{ITEM:음마의물방울}개)
+PRINTFORML 음마의물방울을 원료로, 약이나 아이템등을 조합합니다(소지수：{ITEM:음마의물방울}개)
 
 VARSET LOCAL
 ;조합아이템の実際に使う상대がいるかなどを判定
@@ -1830,7 +1830,7 @@ DRAWLINE
 ;아이템の効果を表示する. 
 SELECTCASE BOUGHT
 CASE 65
-	PRINTFORML %ITEMNAME:BOUGHT%(%MONEY_C(ITEMPRICE:BOUGHT)%):조합지식을 익히게합니다（필요：현명함＆습득의 구슬{ITEMPRICE:BOUGHT}）
+	PRINTFORML %ITEMNAME:BOUGHT%(%MONEY_C(ITEMPRICE:BOUGHT)%):조합지식을 익히게 합니다（필요：현명함＆습득의 구슬{ITEMPRICE:BOUGHT}）
 CASE 66
 	PRINTFORML %ITEMNAME:BOUGHT%(%MONEY_C(ITEMPRICE:BOUGHT)%):여러가지 조교에 쓰이는 지식을 기억하게합니다
 	PRINTFORML MASTER인 경우에는 한번 변경할때마다 일주일간 \@ FLAG:240 ? (앞으로 {FLAG:240}일) # \@재설정을 할 수 없게되고, 
