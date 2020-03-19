@@ -2465,7 +2465,7 @@ CASE 0, 5, 6
 ;섹스系
 CASE 60 TO 89, 120 TO 129, 160 TO 169
 	RETURN 0
-;コスプレ系
+;코스프레系
 CASE 97, 100, 175
 	RETURN 0
 ;아이템系or특수커맨드系
@@ -2535,7 +2535,7 @@ CASE IS >= 4
 	LOCAL += 10
 ENDSELECT
 
-;まずは全裸化체크(コスプレは脱ぎません)
+;まずは全裸化체크(코스프레は脱ぎません)
 IF CHECK_CLO("自分の옷") == 0
 ELSEIF LOCAL >= 30 && RAND:3 == 0
 	PRINTL 
@@ -2722,7 +2722,7 @@ CASE 1 TO 4, 7 TO 59, 130 TO 138, 140 TO 159
 ;섹스系
 CASE 60 TO 89, 120 TO 129, 160 TO 169
 	RETURN 0
-;コスプレ系
+;코스프레系
 CASE 97, 100, 175
 	RETURN 0
 ;아이템系or특수커맨드系

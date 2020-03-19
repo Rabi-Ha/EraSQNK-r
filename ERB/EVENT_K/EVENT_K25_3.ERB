@@ -15177,17 +15177,17 @@ CASE "다방"
 		ENDIF
 	ENDIF
 	RETURN 1
-CASE "あ～ん"
+CASE "아~앙"
 	IF RAND:2
 		PRINTFORMW 「후훈, 이%CNAME("一人称")%로부터의 특별 서비스다, 맛봐 먹는 것이 좋아！」
 	ELSE
 		PRINTFORMW 「이 고귀한%CNAME("一人称")%하지만 먹여 준다, 고맙게 생각한다？」
 	ENDIF
 	RETURN 1
-CASE "パンチラ"
+CASE "판치라"
 	PRINTFORMW 「후훈, 볼 뿐(만큼)이라면 얼마든지 허락해 주자. 너희가 접하는 것만은 당해 내지 않아가……♪」
 	RETURN 1
-CASE "飲み物溢してつまみ食い"
+CASE "엎질러마시다"
 	IF TALENT:연모
 		PRINTFORM （흠……이 정도인가. 역시%CALLNAME:MASTER%의 자지가 제일이다
 		CALL HEARTMARK_E
@@ -15195,7 +15195,7 @@ CASE "飲み物溢してつまみ食い"
 		PRINTFORMW 
 	ENDIF
 	RETURN 1
-CASE "トイレでつまみ食い"
+CASE "화장실군것질"
 	IF TALENT:연모
 	ELSE
 		PRINTFORMW 

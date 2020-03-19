@@ -8725,14 +8725,14 @@ CASE "다방"
 		ENDIF
 	ENDIF
 	RETURN 1
-CASE "パンチラ"
+CASE "판치라"
 	IF TALENT:연모
 		PRINTFORMW 「언제 %CNAME("二人称")%에 봐주고도 좋은 것 같게 ,  부끄러운 신체는 하고 있지 않으니까」
 	ELSE
 		PRINTFORMW 「신지 않은 것은 아니니까…부끄럽지는 않습니다」
 	ENDIF
 	RETURN 1
-CASE "飲み物溢してつまみ食い"
+CASE "엎질러마시다"
 	IF RAND:2 == 0
 		PRINTFORML 「%CNAME("一人称")%로 했던 것(적)이 큰일인 실수를…죄송합니다 ,  손님」
 		PRINTFORMW 「이것은 ,  적어도의 사과이므로 신경 쓰지 마시고…,  쪽」
@@ -8740,7 +8740,7 @@ CASE "飲み物溢してつまみ食い"
 		PRINTFORMW 「쪽…후우…손님 ,  죄송합니다만…이대로 소리를 내지 않고 부탁 드리겠습니다」
 	ENDIF
 	RETURN 1
-CASE "トイレでつまみ食い"
+CASE "화장실군것질"
 	IF RAND:2 == 0
 		PRINTFORML 「손님 ,  죄송합니다만 화장실은 다른 손님도 사용되기 때문에 별로 더럽혀지는 것은…」
 		PRINTFORMW 「그 대신이라고 말해입니다만 ,  %조사처리(CNAME("一人称"),"를")% 더럽혀 주는 것은 괜찮습니다의로…부디」

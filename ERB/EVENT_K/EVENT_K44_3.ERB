@@ -1055,7 +1055,7 @@ ELSEIF TALENT:연모
 			ENDIF
 	ELSEIF RAND:8 == 0 && CFLAG:2 >= 4500
 		PRINTFORMW 방에 들어가면(자) ,  풍격 바뀐 모습의%타겟이()% 눈에 들어온다
-		;コスプレ系이벤트, 分岐(호감도4500이상)
+		;코스프레系이벤트, 分岐(호감도4500이상)
 		IF RAND:8 == 0 && ITEM:여교사 && GETBIT(CFLAG:331, 1)
 			PRINTFORMW 「거친 어서 와♪」
 			PRINTFORMW 책상의 위로책을 넓힌 채로, %타겟은()%%조사처리(CALLNAME:PLAYER,"를")% 마중나갔다
@@ -1341,7 +1341,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW 방에 들어가면(자), %CALLNAME:TARGET%의 모습이 눈에 띄지 않는다
 		PRINTFORMW 자주(잘) 보면(자) ,  침대의 안에 기어들고 있는 것 같다
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 침대에 가까워져 ,  이불을 권 먹어 보았다
-		;寝たふりコスプレ系이벤트, 分岐
+		;寝たふり코스프레系이벤트, 分岐
 		IF RAND:6 == 0
 			PRINTFORMW 「오세요 ,  %CNAME("二人称")%♪」
 			PRINTFORMW 침대의 안에는 ,  한가닥의 실 휘감지 않는 발가숭이의%타겟이()% 양손을 벌려 기다리고 있었다
@@ -14896,7 +14896,7 @@ CASE "다방"
 		ENDIF
 	ENDIF
 	RETURN 1
-CASE "パンチラ"
+CASE "판치라"
 	;バニーは仕草で誘惑! 
 	IF COND("제복：바니")
 		IF RAND:3 == 0
@@ -14916,7 +14916,7 @@ CASE "パンチラ"
 		ENDIF
 	ENDIF
 	RETURN 1
-CASE "飲み物溢してつまみ食い"
+CASE "엎질러마시다"
 	IF RAND:2 == 0
 		PRINTFORML 「죄송합니다 손님 ,  아직 서투른 것이라서…」
 		PRINTFORMW 「대신에 이쪽의 솜씨는 ,  보증해요…♪」
@@ -14924,7 +14924,7 @@ CASE "飲み物溢してつまみ食い"
 		PRINTFORMW 「죄송합니다 손님. 사과를 ,  시켜 주세요」
 	ENDIF
 	RETURN 1
-CASE "トイレでつまみ食い"
+CASE "화장실군것질"
 	IF RAND:4 == 0
 		PRINTFORML 「어머머 ,  부끄러운 곳 를 봐 버렸네요」
 		PRINTFORMW 「여기는 피차일반 , 라고 하는 것으로 ,  계속을 하지 않겠습니까♪」

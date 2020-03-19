@@ -189,50 +189,50 @@ TARGET = MEMO_TARGET
 
 SELECTCASE ARG
 CASE 1
-	LOCALS = パンチラ
+	LOCALS = 판치라
 CASE 2
-	LOCALS = セクハラ
+	LOCALS = 성희롱
 CASE 3
-	LOCALS = オムライス
+	LOCALS = 오므라이스
 CASE 4
-	LOCALS = 스커트めくり
+	LOCALS = 스커트젖힘
 CASE 5
-	LOCALS = こけてパンもろ
+	LOCALS = 넘어져판모로
 CASE 6
 	LOCALS = 자위중독
 CASE 7
-	LOCALS = 身体が화照る
+	LOCALS = 몸달음
 CASE 8
-	LOCALS = テーブル拭き１
+	LOCALS = 테이블닦기1
 CASE 9
-	LOCALS = クリーム拭き取り
+	LOCALS = 크림닦기
 CASE 10
-	LOCALS = あ～ん
+	LOCALS = 아~앙
 CASE 11
-	LOCALS = 노팬티接손님
+	LOCALS = 노팬티손님맞이
 CASE 12
-	LOCALS = 飲み物溢してつまみ食い
+	LOCALS = 엎질러마시다
 CASE 13
-	LOCALS = トイレでつまみ食い
+	LOCALS = 화장실군것질
 CASE 14
-	LOCALS = テーブル拭き２
+	LOCALS = 테이블닦기2
 CASE 15
-	LOCALS = チップ
+	LOCALS = 팁
 CASE 16
-	LOCALS = 財布忘れた상대をつまみ食い
+	LOCALS = 지갑잃은손님을군것질
 CASE 17
-	LOCALS = 暇なときの시간潰し
+	LOCALS = 한가할때시간때우기
 CASE 18
 	LOCALS = 휴식
 CASE 19
-	LOCALS = 査察
+	LOCALS = 사찰
 
 CASE 100
 	LOCALS = 눈에띄고싶어함
 CASE 101
 	LOCALS = 레즈끼
 CASE 102
-	LOCALS = 不遜な接손님
+	LOCALS = 불손한손님맞이
 CASE 103
 	LOCALS = 모유
 CASE 104
@@ -240,7 +240,7 @@ CASE 104
 CASE 105
 	LOCALS = 폭유
 CASE 106
-	LOCALS = 팬티見せつけ
+	LOCALS = 팬티보여주기
 CASE 107
 	LOCALS = 내성적
 CASE 108
@@ -256,24 +256,24 @@ CASE 112
 CASE 113
 	LOCALS = 머메이드
 CASE 114
-	LOCALS = カオス料理
+	LOCALS = 카오스요리
 CASE 115
-	LOCALS = 盗撮
+	LOCALS = 도촬
 ;CASE 116
 ;	LOCALS = 꼬리
 CASE 117
-	LOCALS = 가슴の谷間
+	LOCALS = 가슴골
 CASE 118
-	LOCALS = 치료の名目でつまみ食い
+	LOCALS = 치료명목으로군것질
 CASE 119
-	LOCALS = ハーブティー
+	LOCALS = 허브티
 CASE 120
-	LOCALS = 주인がトイレで
+	LOCALS = 주인이화장실에서
 CASE 121
-	LOCALS = お茶を淹れる
+	LOCALS = 차끓이기
 
 CASE 200
-	LOCALS = コスプレ
+	LOCALS = 코스프레
 ENDSELECT
 RETURNF LOCALS
 
@@ -297,8 +297,8 @@ VARSET LOCAL
 ;라미아や하피とかはどうしようかな…
 
 CALL CALC, "랜덤선택"
-;パンチラや에로な仕草サービス
-SIF TFLAG:1 == 0 && ABL:노출벽 >= 3 && COND("제복：ロング") == 0 && COND("다방：パンチラ") && COND("身嗜み：노팬티") == 0
+;판치라や에로な仕草サービス
+SIF TFLAG:1 == 0 && ABL:노출벽 >= 3 && COND("제복：ロング") == 0 && COND("다방：판치라") && COND("身嗜み：노팬티") == 0
 	CALL CALC, "랜덤선택", 1
 ;セクハラ
 SIF TFLAG:2 == 0
@@ -306,7 +306,7 @@ SIF TFLAG:2 == 0
 ;オムライスにお絵かき
 SIF TFLAG:3 == 0
 	CALL CALC, "랜덤선택", 3
-;스커트めくり
+;스커트젖힘
 SIF TFLAG:4 == 0 && COND("제복：스커트") && COND("제복：ロング") == 0 && COND("身嗜み：노팬티") == 0
 	CALL CALC, "랜덤선택", 4
 ;미니스커트でこけてパンもろorＭ字開다리披露
@@ -324,7 +324,7 @@ SIF TFLAG:8 == 0 && TALENT:남자 == 0 && TALENT:요정 == 0
 ;頬をクリームで汚したお손님にサービス
 SIF TFLAG:9 == 0 && ABL:봉사정신 >= 3
 	CALL CALC, "랜덤선택", 9
-;伝説の「あ～ん」ktkr! 
+;伝説の「아~앙」ktkr! 
 SIF TFLAG:10 == 0 && ABL:봉사정신 >= 3
 	CALL CALC, "랜덤선택", 10
 ;どきどき노팬티or파스너開けっ放し接손님
@@ -374,7 +374,7 @@ SIF TFLAG:104 == 0 && TALENT:미련함 && TALENT:작은몸집 && TALENT:유치
 SIF TFLAG:105 == 0 && TALENT:거유 >= 2 && TALENT:요정 == 0
 	CALL CALC, "랜덤선택", 105
 ;팬티見せつけ
-SIF TFLAG:106 == 0 && (TALENT:호색 || ABL:노출벽 >= 3) && COND("제복：미니스커트") + COND("제복：바니") && TALENT:요정 == 0 && COND("다방：パンチラ") && TALENT:남자 == 0
+SIF TFLAG:106 == 0 && (TALENT:호색 || ABL:노출벽 >= 3) && COND("제복：미니스커트") + COND("제복：바니") && TALENT:요정 == 0 && COND("다방：판치라") && TALENT:남자 == 0
 	CALL CALC, "랜덤선택", 106
 ;내성적（おどおど웨이트리스は萌える）
 SIF TFLAG:107 == 0 && TALENT:내성적
@@ -397,22 +397,22 @@ SIF TFLAG:112 == 0 && TALENT:라미아
 ;머메이드さん…ちょっと乾いていないか？이벤트
 SIF TFLAG:113 == 0 && TALENT:머메이드
 	CALL CALC, "랜덤선택", 113
-;カオス料理…호기심, 조합지식, 광기, 금단의지식, 마법사
+;카오스요리…호기심, 조합지식, 광기, 금단의지식, 마법사
 SIF TFLAG:114 == 0 && TALENT:호기심 + TALENT:조합지식 + TALENT:광기 + TALENT:금단의지식 + TALENT:마법사
 	CALL CALC, "랜덤선택", 114
-;盗撮（매력or인기）
+;도촬（매력or인기）
 SIF TFLAG:115 == 0 && TALENT:인기 + TALENT:매력 && COND("제복：ロング") == 0 && TALENT:요정 == 0
 	CALL CALC, "랜덤선택", 115
 ;꼬리が可愛い! 
 ;SIF TFLAG:116 == 0 && TALENT:꼬리
 ;	CALL CALC, "랜덤선택", 116
-;가슴の谷間
+;가슴골
 SIF TFLAG:117 == 0 && TALENT:거유 && TALENT:양기 + TALENT:부끄럼없음 && TALENT:부끄럼쟁이 == 0
 	CALL CALC, "랜덤선택", 117
 ;치료の名目で摘み食い(조합지식)
 SIF TFLAG:118 == 0 && TALENT:조합지식 && COND("다방：펠라") && TALENT:남자 == 0
 	CALL CALC, "랜덤선택", 118
-;ハーブティー作ったり
+;허브티作ったり
 SIF TFLAG:119 == 0 && TALENT:조합지식
 	CALL CALC, "랜덤선택", 119
 ;MASTERがトイレを覗くと…
@@ -424,7 +424,7 @@ SIF TFLAG:121 == 0 && TALENT:헌신 + TALENT:조합지식 + TALENT:기품
 
 
 ;200番台は時節이벤트
-;コスプレ기모노
+;코스프레기모노
 ;SIF TFLAG:200 == 0 && FLAG:873 == 0 && DAY%7 == 0
 ;	CALL CALC, "랜덤선택", 200
 
@@ -437,15 +437,15 @@ WAITRESS = 0
 
 EVENT_NAMES = %EVENT_NAMES_CAFE(RESULT)%
 
-;EVENT_NAMES = パンチラ
+;EVENT_NAMES = 판치라
 ;EVENT_NAMES = 飲み物溢してつまみ食い
 ;EVENT_NAMES = トイレでつまみ食い
-;EVENT_NAMES = 치료の名目でつまみ食い
+;EVENT_NAMES = 치료명목으로군것질
 
 ;이하, 이벤트内容の記述
 ;소질の関係ない이벤트群
 SELECTCASE EVENT_NAMES
-CASE "パンチラ"
+CASE "판치라"
 	PRINTFORM %타겟은()%, 손님에게 자연스럽게 
 	IF COND("제복：바니")
 		PRINTFORMW 야한 행동을 대놓고 보여주면서 즐겁게 일하고 있습니다. 
@@ -735,7 +735,7 @@ CASE "성희롱"
 		PRINTFORMW %타겟은()% 무심코, 뺨을 붉히며 색기 넘치는 목소리를 내고 말았습니다…. 
 		PRINTFORMW 예상외의 \@ LOCAL ? 감촉에 고개를 갸웃하면서, 손님은 # 반응에 당황한 손님은, \@바로 장난을 그만두고 사죄했습니다…
 	ENDIF
-CASE "オムライス"
+CASE "오므라이스"
 	PRINTFORMW %타겟은()% 오무라이스에 케찹으로 초상화를 그리는 서비스를 주문받았습니다. 
 	PRINTL 
 	IF TALENT:교만 + TALENT:강기 && RANDIF(2, TALENT:양기, TALENT:호색, TALENT:현명함)
@@ -778,7 +778,7 @@ CASE "オムライス"
 			PRINTFORMW 손님도 감탄하고 있습니다…
 		ENDIF
 	ENDIF
-CASE "스커트めくり"
+CASE "스커트젖힘"
 	IF RAND:2 && CHECK_PANTIES("끈")
 		PRINTFORMW %타겟은()% 장난꾸러기 꼬마에게 끈팬티의 끈 한쪽을 풀려져 버렸습니다! 
 		LOCALS = 紐解き
@@ -856,7 +856,7 @@ CASE "스커트めくり"
 	ELSE
 		PRINTFORMW %타겟은()% 살짝 뺨을 붉히고, 곤란한 얼굴로 아이를 타이르고 있습니다…
 	ENDIF
-CASE "こけてパンもろ"
+CASE "넘어져판모로"
 	PRINTFORM %타겟은()% 
 	IF COND("제복：스커트") && TALENT:부끄럼쟁이 && RAND:2
 		PRINTFORM 스커트 길이에 너무 신경쓴 나머지, 
@@ -1079,7 +1079,7 @@ CASE "자위중독"
 	ELSE
 		PRINTFORMW 손님에게 발견되기 전에 제대로 교육 다시 해야할 것인가도 모릅니다…
 	ENDIF
-CASE "身体が화照る"
+CASE "몸달음"
 	PRINTFORMW 손님의 주문을 받고있는 %타겟은()%, 어딘가 열에 들뜬 듯한 얼굴로 멍-하니 있습니다. 
 	PRINTFORMW 의아해하는 손님이 말을 걸자, %타겟은()% 당황한 모습으로 주문을 받기 시작했습니다. 
 	PRINTFORML …주방에 주문을 전달하고, 도망치듯이 화장실에 틀어박힌 %타겟은()%, 
@@ -1140,7 +1140,7 @@ CASE "身体が화照る"
 	ELSE
 		PRINTFORMW 허벅지에 흘러내려오는 액체를 황홀한 얼굴로 닦았습니다…
 	ENDIF
-CASE "テーブル拭き１"
+CASE "테이블닦기1"
 	PRINTFORM %타겟은()% 
 	IF RAND:2
 		PRINTFORM 디저트를 가져가는 일만 남은 
@@ -1303,7 +1303,7 @@ CASE "テーブル拭き１"
 			PRINTFORMW 고개를  갸웃거렸습니다…
 		ENDIF
 	ENDIF
-CASE "クリーム拭き取り"
+CASE "크림닦기"
 	IF RAND:10
 		LOCALS = 소년
 	ELSEIF RAND:10 == 0
@@ -1364,7 +1364,7 @@ CASE "クリーム拭き取り"
 		PRINTFORMW , %타겟은()% 가게 안쪽으로 돌아갔습니다…
 	ENDIF
 ;あーん（하피さんは, 손がそのままの場合はついばむ？）
-CASE "あ～ん"
+CASE "아~앙"
 	PRINTFORM %타겟은()% 계산 일을 하면서, 계산대 옆에 놓인 
 	IF RAND:3 == 0
 		PRINTFORM 각양각색의 
@@ -1544,7 +1544,7 @@ CASE "あ～ん"
 	;唇を触れ合わせたまま, %타겟은()% 舌を使って, お菓子を소년(略)の입に含ませました. 
 	;얼굴を真っ빨강にしたまま固まっている(柔らかくなったお菓子を呆然と噛んでいる)소년(略)に, %타겟은()% 소년(略)の頭を撫でて(ウィンクして・ニカッと笑って), 店の奥へ戻っていきました. 
 ;どきどき노팬티接손님(노출벽？음란？両方？)
-CASE "노팬티接손님"
+CASE "노팬티손님맞이"
 	PRINTFORM 손님에게 주문을 받고있는 %타겟은()%, 
 	IF RAND:3 == 0 && COND("제복：스커트")
 		PRINTFORMW 끊임없이 스커트 옷자락을 신경쓰고 있습니다.
@@ -1632,7 +1632,7 @@ CASE "노팬티接손님"
 		ENDIF
 	ENDIF
 	PRINTFORMW 가게 안으로 돌아갔습니다…
-CASE "飲み物溢してつまみ食い"
+CASE "엎질러마시다"
 	PRINTFORMW %타겟은()% 구석의 후미진 자리에 앉아 독서를 하고 있는 손님의 바지에,  찬물을 쏟아버렸습니다. 
 	PRINTFORMW 당황해 발치에 몸을 굽혀 젖은 부분을 닦기 시작했습니다만, 아무래도 청년의 가랑이에 텐트가 쳐져있는 것을 눈치채버린 것같습니다…
 	PRINTFORM 그것을 
@@ -1773,7 +1773,7 @@ CASE "飲み物溢してつまみ食い"
 	;つまみ食い人数+1
 	CFLAG:36 += 1
 
-CASE "トイレでつまみ食い"
+CASE "화장실군것질"
 	;LOCALS==お손님, LOCALS:1==휴식or청소, LOCALS:2==ＶorＡ
 
 	;여자손님を犯す
@@ -2152,7 +2152,7 @@ CASE "トイレでつまみ食い"
 	;つまみ食い人数+1
 	CFLAG:36 += 1
 
-CASE "テーブル拭き２"
+CASE "테이블닦기2"
 	PRINTFORM 점내의 혼잡이 일단락되어서, %타겟은()% 
 	IF RAND:2
 		PRINTFORMW 식기가 정돈된 테이블을 청소하며 돌기 시작했습니다. 
@@ -2232,7 +2232,7 @@ CASE "テーブル拭き２"
 			PRINTFORMW 그것을 눈치채지 못한 %타겟은()%, 어딘가 행복한 표정을 짓는 손님에게 이상하다는 듯한 표정을 지으며 다음 테이블로 향했습니다…
 		ENDIF
 	ENDIF
-CASE "チップ"
+CASE "팁"
 	IF ABL:봉사정신 >= 5 && RANDIF(2, TALENT:매력, TALENT:청초, TALENT:호색 + TALENT:음란)
 		PRINTFORM 세세한 곳까지 세심한 서비스가 
 	ELSEIF TALENT:호색 + TALENT:음란 && RANDIF(2, TALENT:매력, TALENT:청초)
@@ -2312,7 +2312,7 @@ CASE "チップ"
 		ENDIF
 		PRINTFORMW 그 광경이 방아쇠가 되었는지, 그날 가게의 서비스는 최상이었던 것같습니다… 
 	ENDIF
-CASE "財布忘れた상대をつまみ食い"
+CASE "지갑잃은손님을군것질"
 	PRINTFORM %타겟이()% 일단락 된 점내
 	IF RAND:2
 		PRINTFORM 에서 접시를 치우는 일을 
@@ -2495,7 +2495,7 @@ CASE "財布忘れた상대をつまみ食い"
 	;つまみ食い人数+1
 	CFLAG:36 += 1
 
-CASE "暇なときの시간潰し"
+CASE "한가할때시간때우기"
 	PRINTFORMW 오늘은 날씨가 조금 안좋은 탓인지, 점내는 손님의 모습이 드문드문합니다
 	PRINTFORM 짬을 주체 못한 %타겟은()%
 	IF ABL:정액중독 >= 3 && (TALENT:호색 || ABL:새드끼 >= 3) && FIND_COND("출연가능な점원", "!여자") && RANDIF(2, ABL:봉사정신 >= 3, ABL:자위중독 + TALENT:음란 >= 4)
@@ -2758,7 +2758,7 @@ CASE "휴식"
 		PRINTFORMW 바쁜 점내을 뒷전으로, %타겟을()% 잠시 날개를쉬고 재충전했습니다.
 	ENDIF
 
-CASE "査察"
+CASE "사찰"
 	PRINTFORMW 몽마들이 잘 일하고 있는지 궁금해진 %마스터는()% , 변장하고 사찰 해보기로 했습니다
 	PRINTFORMW ……………
 	PRINTFORMW ………
@@ -2852,7 +2852,7 @@ CASE "레즈끼"
 			PRINTFORMW 한가해서 %타겟은()%, 미인 손님을 꼬시고 있습니다…
 		ENDIF
 	ENDSELECT
-CASE "不遜な接손님"
+CASE "불손한손님맞이"
 	PRINTFORM %타겟은()% 손님에게 
 	IF TALENT:교만 || RAND:2
 		PRINTFORM 교만한 
@@ -2921,7 +2921,7 @@ CASE "폭유"
 		PRINTFORMW %타겟은()%, 수줍은 모습으로 자리를 얼버무리고, 재빨리 가게 안으로 들어갔습니다…
 	ENDIF
 ;食器の落ちた音に反応すると, そこには…! 
-CASE "팬티見せつけ"
+CASE "팬티보여주기"
 	IF RAND:10
 		LOCALS = 소년
 	ELSE
@@ -3225,8 +3225,8 @@ CASE "머메이드"
 			PRINTFORMW 손님은, 놀라서 멍하니 앉아있습니다… 
 		ENDIF
 	ENDIF
-;カオス料理
-CASE "カオス料理"
+;카오스요리
+CASE "카오스요리"
 	;一部の組み合わせ…「何かのようなもの」, 「七色の악마風」などは料理の形をなしていないので, どっちかを선택지から除外したりして, 
 	;不自然な組み合わせが作られるのは避けた方がいいかもしれません. 
 	;もっと食材などを발せばマトモな料理も増えるかもしれません. ガンガン발して下さい. 
@@ -3282,8 +3282,8 @@ CASE "カオス料理"
 		PRINTFORMW %타겟은()%, 언젠가 %CALLNAME:PLAYER%에게 이 요리를 만들어주자고 다짐했다………
 	ENDIF
 	;※一度作ったらDAILY LIFEの方で実際마스터に食べさせてもいいかも. 
-;인기者が盗撮される
-CASE "盗撮"
+;인기者が도촬される
+CASE "도촬"
 	IF COND("제복：바니")
 		PRINTFORMW %타겟은()% 가슴과 다리사이, 엉덩이 등 성적인 부분을 도촬당한 것 같습니다! 
 	ELSE
@@ -3350,8 +3350,8 @@ CASE "盗撮"
 ;꼬리
 CASE "꼬리"
 
-;가슴の谷間
-CASE "가슴の谷間"
+;가슴골
+CASE "가슴골"
 	IF TALENT:양기 && RAND:2
 		WAITRESS = FIND_COND("출연가능な점원", "!거유")
 		SETBIT CFLAG:WAITRESS:95, 1
@@ -3440,7 +3440,7 @@ CASE "가슴の谷間"
 			PRINTFORMW 에, 자리에서 일어날 수 없어진 남성 고객들은 추가 주문을 할 수 밖에 없게되고 말았습니다……
 		ENDIF
 	ENDIF
-CASE "치료の名目でつまみ食い"
+CASE "치료명목으로군것질"
 	CALL SETFLAG, "일반인상대の성행위初期설정"
 	;상대は基本的に男
 	SIF RAND:2 && (ABL:레즈끼 > RAND:10 || (TALENT:남자 && ABL:ＢＬ끼 < 3) )
@@ -3531,7 +3531,7 @@ CASE "치료の名目でつまみ食い"
 	;つまみ食い人数+1
 	CFLAG:36 += 1
 
-CASE "ハーブティー"
+CASE "허브티"
 	PRINTFORMW %타겟이()% 일하기 시작한 뒤부터, 허브티 등의 약효가 있는 음료가 배 이상 팔리게 되었습니다. 
 	WAITRESS = FIND_COND("출연가능な점원", "약독내성")
 	IF WAITRESS && RAND:4 == 0
@@ -3544,7 +3544,7 @@ CASE "ハーブティー"
 	ELSE
 		PRINTFORMW 만들고 있는 장면을 본 동료들은 마실 생각이 거의 없어졌습니다만, 효과의 수준은 과연 전문가, 의심의 여지는 없습니다…
 	ENDIF
-CASE "주인がトイレで"
+CASE "주인이화장실에서"
 	PRINTFORMW %CALLNAME:MASTER%이 다방 준비를 하러가자, 아무래도 %타겟이()% 화장실에서 돌아오지 않은 것 같다. 
 	PRINTFORMW 어쩔수 없어서 보러가보니, 명백하게 요염함이 섞여있는 목소리가 화장실의 개인실 안에서 들려온다…
 	PRINTFORMW 설마, 하고 생각하고 문을 황급히 열어보자, 도대체 무슨 일인건지 %타겟이()% 여성손님의 다리사이에 얼굴을 묻고있었다! 
@@ -3571,7 +3571,7 @@ CASE "주인がトイレで"
 
 	;MASTERに出演플래그
 	SETBIT CFLAG:MASTER:95, 1
-CASE "お茶を淹れる"
+CASE "차끓이기"
 	PRINTFORM %타겟은()% 손수 끓인 홍차를 
 	IF TALENT:기품
 		IF RAND:2
@@ -3600,7 +3600,7 @@ CASE "お茶を淹れる"
 		PRINTFORMW 찻잎의 종류와 끓이는 요령 등을 즐겁게 이야기하고 있습니다…
 	ENDIF
 
-CASE "コスプレ"
+CASE "코스프레"
 	PRINTFORMW 오늘은 코스프레 데이입니다 
 	PRINTFORMW 봄에 맞춰서 점원 모두가 기모노를 입고, 점내도 벚꽃에 어울리는 화려한 색조로 장식되어있습니다 
 	IF TALENT:빈유
@@ -3613,7 +3613,7 @@ CASE "コスプレ"
 
 ;一定확률이벤트
 CASEELSE
-	;経営, 계절이벤트, コスプレデーなど
+	;経営, 계절이벤트, 코스프레デーなど
 
 	;PRINTFORMW 꽃놀이같이, 계절감이 있는 것을 넣습니다
 

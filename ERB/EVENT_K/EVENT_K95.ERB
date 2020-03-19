@@ -12472,14 +12472,14 @@ CASE "다방"
 		ENDIF
 	ENDIF
 	RETURN 1
-CASE "あ～ん"
+CASE "아~앙"
 	IF RAND:2 == 0
 		PRINTFORMW 「%CNAME("一人称")%의 특별 서비스야♪」
 	ELSE
 		PRINTFORMW 「이봐요, 입을 열엇」
 	ENDIF
 	RETURN 1
-CASE "パンチラ"
+CASE "판치라"
 	IF COND("제복：바니")
 		IF RAND:2 == 0
 			PRINTFORMW （우와아…엉덩이 굉장히 보여지고 있다…）
@@ -12494,7 +12494,7 @@ CASE "パンチラ"
 		ENDIF
 	ENDIF
 	RETURN 1
-CASE "飲み物溢してつまみ食い"
+CASE "엎질러마시다"
 	IF TALENT:연모 || MARK:굴복각인 > 1
 		IF RAND:2 == 0
 			PRINTFORM 「이것은 %CNAME("一人称")%의 진심 사과니까…
@@ -12505,7 +12505,7 @@ CASE "飲み物溢してつまみ食い"
 		ENDIF
 	ENDIF
 	RETURN 1
-CASE "トイレでつまみ食い"
+CASE "화장실군것질"
 	IF TALENT:연모 || MARK:굴복각인 > 1
 		IF RAND:4 == 0 && TALENT:새드
 			PRINTFORMW 「흐음…♪ %조사처리(CNAME("一人称"),"가")% 남자라고 알아 차리고 있었던가…？」
