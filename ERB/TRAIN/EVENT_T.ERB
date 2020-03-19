@@ -2483,7 +2483,7 @@ CASE "おっぱい", "おっぱい：描写"
 		ENDIF
 	ELSEIF TALENT:ARG:빈유
 		IF RAND:4 == 0
-			LOCALS = 귀여운
+			LOCALS = 귀여운 
 		ELSEIF RAND:3 == 0
 			LOCALS = 살짝 부풀어오른 
 		ELSEIF RAND:2
@@ -2556,13 +2556,13 @@ CASE "유두：描写"
 		ENDIF
 	CASEELSE
 		IF RAND:3 == 0 && COND("진성함몰유두", ARG)
-			LOCALS = 매몰된
+			LOCALS = 매몰된 
 		ELSEIF RAND:3 == 0
-			LOCALS = 파묻힌
+			LOCALS = 파묻힌 
 		ELSEIF RAND:2
-			LOCALS = 함몰된
+			LOCALS = 함몰된 
 		ELSE
-			LOCALS = 함몰상태의
+			LOCALS = 함몰상태의 
 		ENDIF
 	ENDSELECT
 
@@ -2602,27 +2602,27 @@ CASE "키스継続", "키스継続助詞付き"
 		ENDIF
 	CASE 5
 		IF ARGS == "키스継続助詞付き"
-			LOCALS = 농후한 혀놀림을 주고받으면서
+			LOCALS = 농후한 혀놀림을 주고받으면서 
 		ELSE
-			LOCALS = 서로의 입 주변을 끈적끈적하게 하면서
+			LOCALS = 서로의 입 주변을 끈적끈적하게 하면서 
 		ENDIF
 	CASE 4
 		IF ARGS == "키스継続助詞付き"
-			LOCALS = 하고 혀를 섞고 타액을 서로 교환하며
+			LOCALS = 하고 혀를 섞고 타액을 서로 교환하며 
 		ELSE
-			LOCALS = 혀를 섞고 타액을 서로 교환하면서
+			LOCALS = 혀를 섞고 타액을 서로 교환하면서 
 		ENDIF
 	CASE 3
 		IF ARGS == "키스継続助詞付き"
-			LOCALS = 하고 혀를 맞대고
+			LOCALS = 하고 혀를 맞대고 
 		ELSE
-			LOCALS = 혀를 맞대고
+			LOCALS = 혀를 맞대고 
 		ENDIF
 	CASE 2
 		IF ARGS == "키스継続助詞付き"
-			LOCALS = 의 입술을 빼앗으면서
+			LOCALS = 의 입술을 빼앗으면서 
 		ELSE
-			LOCALS = 입술을 빼앗으면서
+			LOCALS = 입술을 빼앗으면서 
 		ENDIF
 	CASEELSE
 		IF ARGS == "키스継続助詞付き"
@@ -2733,11 +2733,11 @@ CASE "합체中"
 	ELSEIF INSERT("요도인서트")
 		LOCALS:1 = 
 		IF PENIS(TARGET)
-			LOCALS:2 = 
+			LOCALS:2 = 요도
 			LOCALS:3 = 페니스
 		ELSE
-			LOCALS:2 = 膀胱
-			LOCALS:3 = オシッコの穴
+			LOCALS:2 = 방광
+			LOCALS:3 = 오줌구멍
 		ENDIF
 		LOCAL:1 = ABL:요도확장
 		LOCAL:2 = PREVEX("요도内사정")
@@ -2751,7 +2751,7 @@ CASE "합체中"
 		ELSEIF INSERT("Ｖ인서트") && PREVCOM == 66 && RAND:2
 			LOCALS = 민감한 부분에 페니스를 문지르고, 
 		ELSEIF LOCAL:2 && RAND:3 == 0
-			LOCALS = %LOCALS:1%에 질내사정된 여운\@ RAND:2 ? 에 황홀해하 # 을 즐기 \@면서, 
+			LOCALS = %LOCALS:1%에 질내사정된 여운\@ RAND:2 ? 에 황홀해 하 # 을 즐기 \@면서, 
 		ELSEIF RAND:3 == 0
 			IF RAND:3 == 0 || COND("다리 사용") == 0 || INSERT("Ｖ인서트")
 				LOCALS = %조사처리(LOCALS:1,"를")% 조여 소중한 장소를 침입당하는 감각을 만끽하면서, 
@@ -2798,18 +2798,18 @@ CASE "합체中"
 				CASE "정상위", "후배위", "굴곡위"
 					LOCALS = 강하게 허리를 쑥 내밀고 %LOCALS:2%안에 페니스를 밀어넣으면서, 
 				CASEELSE
-					LOCALS = 힘껏 허리를 찔러올려 %LOCALS:2% 안에 페니스를 밀어넣으면서, 
+					LOCALS = 힘껏 허리를 찔러올려 %LOCALS:2%안에 페니스를 밀어넣으면서, 
 				ENDSELECT
 			ELSE
-				LOCALS = %LOCALS:1%의 안쪽까지 육봉을 삽입한채, 
+				LOCALS = %LOCALS:1%의 안쪽까지 육봉을 삽입한 채, 
 			ENDIF
 		ELSEIF RAND:3 == 0 && PENIS(PLAYER)
 			IF RAND:2
 				LOCALS = 페니스로 %LOCALS:2% 안을 
 			ELSEIF LOCAL:1 == 0 && SIZE("페니스", PLAYER)
-				LOCALS = \@ AGE(TARGET) >= 3 ? 상상 이상의 좁은 # 좁은 \@%조사처리(LOCALS:1,"를")%
+				LOCALS = \@ AGE(TARGET) >= 3 ? 상상 이상의 좁은 # 좁은 \@%조사처리(LOCALS:1,"를")% 
 			ELSEIF LOCAL:1 > MAX(SIZE("페니스", PLAYER), 2) && LOCAL:3 < 20
-				LOCALS = \@ AGE(TARGET) <= 2 ? 개발을 많이 해서 느슨한 # 느슨한 \@%조사처리(LOCALS:1,"를")%
+				LOCALS = \@ AGE(TARGET) <= 2 ? 개발을 많이 해서 느슨한 # 느슨한 \@%조사처리(LOCALS:1,"를")% 
 			ELSEIF RAND:2
 				LOCALS = 절묘한 조임으로 감겨들어오는 고기구멍을 
 			ELSE
@@ -2851,7 +2851,7 @@ CASE "６９"
 						LOCALS = %CLO("가랑이")%의 부끄러운 얼룩을 보는 일
 					ENDIF
 				ELSEIF CHECK_CLO("Ｖ노출") == 0
-					LOCALS = 흥분으로 뜨거워진 다리사이를 보는 것
+					LOCALS = 흥분으로 뜨거워진 가랑이를 보는 것
 				ELSE
 					LOCALS = 보지가 애액을 흘리는 모습을 보는 것
 				ENDIF
@@ -3008,58 +3008,58 @@ CASE "Ｗ넘어뜨리기 중"
 		ENDIF
 		LOCALS = %CALLNAME:(TARGET:1)%의 발로 %조사처리(LOCALS:1,"을")% 
 		IF RAND:3 == 0
-			LOCALS = %LOCALS%괴롭혀지고
+			LOCALS = %LOCALS%괴롭혀지고 
 		ELSEIF RAND:2
-			LOCALS = %LOCALS%희롱당하고
+			LOCALS = %LOCALS%희롱당하고 
 		ELSE
-			LOCALS = %LOCALS%빙글빙글 돌려지고
+			LOCALS = %LOCALS%빙글빙글 돌려지고 
 		ENDIF
 	CASE 96
-		LOCALS = %CALLNAME:(TARGET:1)%에게 애널을 햝아져
+		LOCALS = %CALLNAME:(TARGET:1)%에게 애널을 햝아져 
 	CASE 98
-		LOCALS = %CALLNAME:(TARGET:1)%에게 그곳을 햝아져
+		LOCALS = %CALLNAME:(TARGET:1)%에게 그곳을 햝아져 
 	CASE 104
-		LOCALS = %CALLNAME:(TARGET:1)%에게 가슴으로 얼굴을 짓눌려
+		LOCALS = %CALLNAME:(TARGET:1)%에게 가슴으로 얼굴을 짓눌려 
 	CASE 120 TO 124
 		IF RAND:2
-			LOCALS = %CALLNAME:(TARGET:1)%에게 격렬하게 당해
+			LOCALS = %CALLNAME:(TARGET:1)%에게 격렬하게 당해 
 		ELSE
-			LOCALS = %CALLNAME:(TARGET:1)%에게 빠져
+			LOCALS = %CALLNAME:(TARGET:1)%에게 빠져 
 		ENDIF
 	CASE 125 TO 129
-		LOCALS = %CALLNAME:(TARGET:1)%에게 애널을 범해져
+		LOCALS = %CALLNAME:(TARGET:1)%에게 애널을 범해져 
 	CASE 0
-		LOCALS = %CALLNAME:(TARGET:1)%에게 안겨서
+		LOCALS = %CALLNAME:(TARGET:1)%에게 안겨서 
 	ENDSELECT
 
 	SELECTCASE SELECTCOM
 	CASE 95
 		IF PENIS(PLAYER)
-			LOCALS = %LOCALS% 젖어있는 
+			LOCALS = %LOCALS%젖어있는 
 		ELSEIF RAND:3 == 0
-			LOCALS = %LOCALS% 단단해진 
+			LOCALS = %LOCALS%단단해진 
 		ELSEIF RAND:2
-			LOCALS = %LOCALS% 발기해있는 
+			LOCALS = %LOCALS%발기해있는 
 		ELSE
-			LOCALS = %LOCALS% 커져있는 
+			LOCALS = %LOCALS%커져있는 
 		ENDIF
 	CASE 96, 98, 120 TO 129
 		LOCALS = %LOCALS%있는 
 	CASE 65, 75, 90 TO 97
 		IF RAND:3 == 0
-			LOCALS = %LOCALS% 단단해진 
+			LOCALS = %LOCALS%단단해진 
 		ELSEIF RAND:2
-			LOCALS = %LOCALS% 발기해있는 
+			LOCALS = %LOCALS%발기해있는 
 		ELSE
-			LOCALS = %LOCALS% 커져있는 
+			LOCALS = %LOCALS%커져있는 
 		ENDIF
 	CASEELSE
 		IF RAND:3 == 0
-			LOCALS = %LOCALS% 흥분해있는 
+			LOCALS = %LOCALS%흥분해있는 
 		ELSEIF RAND:2
 			LOCALS = %LOCALS%있는 
 		ELSE
-			LOCALS = %LOCALS% 거칠게 숨을 쉬고 있는 
+			LOCALS = %LOCALS%거칠게 숨을 쉬고 있는 
 		ENDIF
 	ENDSELECT
 CASE "사정箇所の표시"
@@ -3247,9 +3247,9 @@ CASE "아이템解説"
 	CASE 42
 		LOCALS = 무드업（大）
 	CASE 43
-		LOCALS = 무드업（中）＆체력회복（中）
+		LOCALS = 무드업（中）＆ 체력회복（中）
 	CASE 44
-		LOCALS = 무드업（中）＆정력회복（中）
+		LOCALS = 무드업（中）＆ 정력회복（中）
 	CASE 49
 		LOCALS = 모든 일에 있어서 최고의 효능을 가지는 향.
 	ENDSELECT
@@ -3279,7 +3279,7 @@ CASE "아르카나解説"
 	CASE 240
 		LOCALS = %LOCALS%조교자의 몸의 자유를 빼앗는다
 	CASE 241
-		LOCALS = %LOCALS%조교자에게 군 계의 아르카나를 전부 건다
+		LOCALS = %LOCALS%조교자에게 군 계열의 아르카나를 전부 건다
 	CASE 242
 		LOCALS = %LOCALS%조교자의 페니스를 크게 만든다
 	CASE 243
@@ -3412,58 +3412,58 @@ CASE "바이브"
 	SELECTCASE SIZE(ARGS, ARG)
 	CASE IS >= 4
 		IF RAND:3 == 0
-			LOCALS = 극도로 흉악한
+			LOCALS = 극도로 흉악한 
 		ELSEIF RAND:2
-			LOCALS = 무서운 크기의
+			LOCALS = 무서운 크기의 
 		ELSE
-			LOCALS = 말도 안되는 두께의
+			LOCALS = 말도 안되는 두께의 
 		ENDIF
 	CASE 3
 		IF RAND:3 == 0
-			LOCALS = 흉악한
+			LOCALS = 흉악한 
 		ELSEIF RAND:2
-			LOCALS = 두툼한
+			LOCALS = 두툼한 
 		ELSE
-			LOCALS = 극태
+			LOCALS = 극태 
 		ENDIF
 	CASE 2
 		IF RAND:2
-			LOCALS = 큰
+			LOCALS = 큰 
 		ELSE
-			LOCALS = 커다란
+			LOCALS = 커다란 
 		ENDIF
 	CASEELSE
 		LOCALS = 
 	ENDSELECT
-	LOCALS = %LOCALS% 바이브
+	LOCALS = %LOCALS%바이브
 CASE "Ａ바이브"
 	SELECTCASE SIZE(ARGS, ARG)
 	CASE IS >= 4
 		IF RAND:3 == 0
-			LOCALS = 극도로 흉악한
+			LOCALS = 극도로 흉악한 
 		ELSEIF RAND:2
-			LOCALS = 무서운 크기의
+			LOCALS = 무서운 크기의 
 		ELSE
-			LOCALS = 말도 안되는 두께의
+			LOCALS = 말도 안되는 두께의 
 		ENDIF
 	CASE 3
 		IF RAND:3 == 0
-			LOCALS = 흉악한
+			LOCALS = 흉악한 
 		ELSEIF RAND:2
-			LOCALS = 두툼한
+			LOCALS = 두툼한 
 		ELSE
-			LOCALS = 극태
+			LOCALS = 극태 
 		ENDIF
 	CASE 2
 		IF RAND:2
-			LOCALS = 큰
+			LOCALS = 큰 
 		ELSE
-			LOCALS = 커다란
+			LOCALS = 커다란 
 		ENDIF
 	CASE 0
 		LOCALS = 애널
 	ENDSELECT
-	LOCALS = %LOCALS% 바이브
+	LOCALS = %LOCALS%바이브
 CASE "動物の種類"
 	SELECTCASE ARG
 	CASE 1
@@ -3983,7 +3983,7 @@ CASE "드래곤"
 	IF CONFIG("ユニコード")
 		LOCALS = 🐲
 	ELSE
-		LOCALS = 竜
+		LOCALS = 용
 	ENDIF
 ENDSELECT
 

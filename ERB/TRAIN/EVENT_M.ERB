@@ -61,7 +61,7 @@ IF CONFIG("脱처녀필터")
 			IF PENIS(TARGET)
 				PRINTFORML %CALLNAME:TARGET%의 페니스의 처녀를 %조사처리(CALLNAME:PLAYER,"가")% 빼앗아도 좋습니까？
 			ELSE
-				PRINTFORML %CALLNAME:TARGET%의 처녀를 빼앗아도 정말로 좋습니까？
+				PRINTFORML %CALLNAME:TARGET%의 요도처녀를 빼앗아도 정말로 좋습니까？
 			ENDIF
 		ENDIF
 	ENDSELECT
@@ -455,40 +455,40 @@ IF NOWEX:절정수합계
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	;浴尿
 	IF COND("飲尿플래그")
-		PRINTFORM %CALLNAME:PLAYER%의 %TEXTR("오줌을 맛보는", "소변기의 역할을")%
+		PRINTFORM %CALLNAME:PLAYER%의 %TEXTR("오줌을 맛보는", "소변기의 역할을")% 하
 	ELSEIF COND("자궁内욕뇨플래그")
-		PRINTFORM %TEXTR("자궁", "소중한 부분")%%TEXTR("이 화장실 대신 사용되고", "으로 소변을 뒤집어 받고")%
+		PRINTFORM %TEXTR("자궁", "소중한 부분")%%TEXTR("이 화장실 대신 사용되", "으로 소변을 뒤집어 쓰")%
 	ELSEIF COND("질내욕뇨플래그")
 		IF RAND:3 == 0
-			PRINTFORM 자궁구를 소변으로 자극 받아 
+			PRINTFORM 자궁구를 소변으로 자극 받으
 		ELSEIF RAND:2
-			PRINTFORM 질에서 소변으로 자극 받아 
+			PRINTFORM 질에서 소변으로 자극 받으
 		ELSE
-			PRINTFORM %TEXTR("질", "소중한 부분")%이 화장실로 되어 
+			PRINTFORM %TEXTR("질", "소중한 부분")%이 화장실로 되
 		ENDIF
 	ELSEIF COND("온천관장플래그")
 		IF RAND:3 == 0
-			PRINTFORM 대장에서 소변이 흐르는 
+			PRINTFORM 대장에서 소변이 흐르
 		ELSEIF RAND:2
-			PRINTFORM 배설하는 장소에서 반대로 배설 당하고 
+			PRINTFORM 배설하는 장소에서 반대로 배설 당하
 		ELSE
-			PRINTFORM 장 내부가 화장실이 되고 
+			PRINTFORM 장 내부가 화장실이 되
 		ENDIF
 	ELSEIF COND("유内욕뇨플래그")
 		IF RAND:3 == 0
-			PRINTFORM 유방의 내부가 소변으로 자극되고 
+			PRINTFORM 유방의 내부가 소변으로 자극되
 		ELSEIF RAND:2
-			PRINTFORM 가슴에서 소변 냄새가 나고 
+			PRINTFORM 가슴에서 소변 냄새가 나
 		ELSE
-			PRINTFORM 가슴이 화장실이 되고 
+			PRINTFORM 가슴이 화장실이 되
 		ENDIF
 	ELSEIF COND("방광内욕뇨플래그")
 		IF RAND:3 == 0
-			PRINTFORM 로부터 반대로 소변을 흘려 넣어지고 
+			PRINTFORM 요도로부터 반대로 소변을 흘려 넣어지
 		ELSEIF RAND:2
-			PRINTFORM 배설하는 장소에서 반대로 배설 당하고 
+			PRINTFORM 배설하는 장소에서 반대로 배설 당하
 		ELSE
-			PRINTFORM 방광이 화장실로 되고 
+			PRINTFORM 방광이 화장실로 되
 		ENDIF
 	ELSEIF NOWEX:요도절정 && (NOWEX:요도절정 == EX:요도절정 || RAND:5 == 0)
 		SELECTCASE SELECTCOM
@@ -496,37 +496,37 @@ IF NOWEX:절정수합계
 			;インサート中
 			IF INSERT("요도인서트", TARGET, PLAYER)
 				IF RAND:3 == 0
-					PRINTFORM 성 처리의 도구와 같이 다루어지고 
+					PRINTFORM 성 처리의 도구와 같이 다루어지
 				ELSEIF RAND:2
-					PRINTFORM 페니스를 %CALLNAME:PLAYER%의 오나홀로 되고 
+					PRINTFORM 페니스를 %CALLNAME:PLAYER%의 오나홀로 되
 				ELSE
-					PRINTFORM 페니스를 내외로부터 기분 좋게 되어지고 
+					PRINTFORM 페니스를 내외로부터 기분 좋게 되어지
 				ENDIF
 			ELSE
-				PRINTFORM 페니스를 잡아당겨지고 
+				PRINTFORM 페니스를 잡아당겨지
 			ENDIF
 		CASE 15
-			PRINTFORM 를 손가락으로 책망할 수 있고 
+			PRINTFORM 요도를 손가락으로 괴롭혀지
 		CASE 83
 			IF TEQUIP:넘어뜨리기
 				IF TALENT:요도광
 					PRINTFORM 로부터 솟구치는 쾌락으로 %TEXTR("머리를 새하얗게 되며", "군침을 흘리며", "열중해서 허리를 흔들며")%
 				ELSEIF PENIS(TARGET)
-					PRINTFORM 페니스의 내부에서 %조사처리(CALLNAME:PLAYER,"를")% 범해
+					PRINTFORM 페니스의 내부에서 %조사처리(CALLNAME:PLAYER,"를")% 범하
 				ELSE
-					PRINTFORM 요도를 사용해 섹스해 %조사처리(CALLNAME:PLAYER,"를")% 범해
+					PRINTFORM 요도를 사용해 섹스해 %조사처리(CALLNAME:PLAYER,"를")% 범하
 				ENDIF
 			ELSE
 				IF PENIS(TARGET)
-					PRINTFORM 페니스를 격렬한 허리놀림으로 범해지고
+					PRINTFORM 페니스를 격렬한 허리놀림으로 범해지
 				ELSE
-					PRINTFORM 요도를 격렬한 허리놀림으로 범해지고
+					PRINTFORM 요도를 격렬한 허리놀림으로 범해지
 				ENDIF
 			ENDIF
 		CASE 151
-			PRINTFORM 민감한 점막을 브지로 책망할 수 있고
+			PRINTFORM 민감한 점막을 브지로 괴롭혀지
 		CASEELSE
-			PRINTFORM 요도를 책망할 수 있고
+			PRINTFORM 요도를 손가락으로 괴롭혀지
 		ENDSELECT
 		;삽입ボーナス
 		SIF INSERT("요도인서트") && PENIS(PLAYER)
@@ -587,7 +587,7 @@ IF NOWEX:절정수합계
 			ELSEIF PENIS(TARGET)
 				PRINTFORM 보지로부터
 			ELSE
-				PRINTFORM %TEXTR("보지", "요도구", "オシッコの穴")%로부터
+				PRINTFORM %TEXTR("보지", "요도구", "오줌구멍으")%로부터
 			ENDIF
 			PRINTFORM %TEXTR("투명한 액체", "투명한 조수", "뜨거운 물보라")%를 
 			;요의게이지を減らす

@@ -240,7 +240,7 @@ IF PREVCOM != SELECTCOM
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	IF INSERT("인서트")
 		IF INSERT("Ｖ인서트")
-			LOCALS = 膣
+			LOCALS = 질
 		ELSEIF INSERT("Ａ인서트")
 			LOCALS = 애널
 		ELSEIF INSERT("요도인서트")
@@ -307,12 +307,12 @@ IF PREVCOM != SELECTCOM
 			PRINTFORM 물고있는 두개의 바이브를 스스로 꽂아서 넣고빼
 		ENDIF
 		IF NOWEX:절정수합계 && RAND:2
-			PRINTFORM 해 굉장한 %조사처리(TEXTS("匂い"),"를")% 감돌게 하면서
+			PRINTFORM 해 굉장한 %조사처리(TEXTS("匂い"),"를")% 감돌게 하면서 
 		ELSE
-			PRINTFORM 면서
+			PRINTFORM 면서 
 		ENDIF
 	ELSEIF GETBIT(CHECK_ONANIE(SELECTCOM), 11)
-		PRINTFORM 보지에넣은 %조사처리(NAMES("바이브", TARGET),"를")% 스스로 넣고빼면서 
+		PRINTFORM 보지에 넣은 %조사처리(NAMES("바이브", TARGET),"를")% 스스로 넣고빼면서 
 	ELSEIF GETBIT(CHECK_ONANIE(SELECTCOM), 12)
 		IF COND("애널비즈")
 			PRINTFORM 애널에서 늘어져나온 비즈를 스스로 넣고빼면서 
@@ -324,7 +324,7 @@ IF PREVCOM != SELECTCOM
 			IF PENIS(TARGET)
 				SIF PALAM:욕정 >= 3000
 					PRINTFORM %TEXTS("페니스：視覚", TARGET)%
-				PRINTFORM 페니스를 훑으면서
+				PRINTFORM 페니스를 훑으면서 
 			ELSE
 				PRINTFORM 클리토리스를 자신의 %조사처리(NAMES("손가락"),"로")% 
 				IF RAND:3 == 0
@@ -377,13 +377,13 @@ IF PREVCOM != SELECTCOM
 			ENDIF
 		ENDIF
 	ENDIF
-	PRINTW 쾌감을 맛보고있다…
+	PRINTW 쾌감을 맛보고 있다…
 ELSE
 	IF TEQUIP:바이브 && TEQUIP:애널바이브 && ABL:Ｖ감각 >= 5 && ABL:Ａ감각 >= 5 && ABL:Ｃ감각 >= 5 && ABL:Ｂ감각 >= 5 && PALAM:욕정 >= PALAMLV:4
 		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 입에서 흐르는 군침을 닦으며, 부들부들 신체를 경련시키면서 비명을 지르고 있다
 		PRINTFORMW 아무래도 절정에서 내려올 수 없는 듯, 계속 가버린 상태인 것 같다…
 	ELSEIF TEQUIP:바이브 && ABL:Ｖ감각 >= 5 && ABL:Ｃ감각 >= 5 && ABL:Ｂ감각 >= 5 && PALAM:욕정 >= PALAMLV:4
-		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 애액이 흩날리는 것도 상관하지않고, 바이브를 격렬하게 넣고빼고있다
+		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 애액이 흩날리는 것도 상관하지않고, 바이브를 격렬하게 넣고빼고 있다
 		PRINTFORMW 아무래도 더이상 다른 일을 신경쓸 여유도 없는 것 같다…
 	ELSEIF TEQUIP:애널바이브 && COND("애널비즈") == 0 && ABL:Ａ감각 >= 5 && ABL:Ｃ감각 >= 5 && ABL:Ｂ감각 >= 5 && PALAM:욕정 >= PALAMLV:4
 		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 부들부들 몸을 떨면서, 애널에 바이브를 쑤셔넣고 있다
@@ -528,9 +528,9 @@ SELECTCASE CALCF("好みの자위", SELECTCOM)
 CASE 1
 	IF PENIS(TARGET)
 		IF CHECK_COM("오나홀자위")
-			PRINTFORMW 가랑이에%LOCALS%, %TEXTR("찔꺽찔꺽 격렬하게 오나홀을 위아래로 하고있다", "오나홀로 마음껏 페니스를 다루고 있다")%…
+			PRINTFORMW 가랑이에 %LOCALS%, %TEXTR("찔꺽찔꺽 격렬하게 오나홀을 위아래로 하고 있다", "오나홀로 마음껏 페니스를 다루고 있다")%…
 		ELSE
-			PRINTFORMW 페니스에%LOCALS%, %TEXTR("민감한 귀두를 쓰다듬고 있다", "찔꺽찔꺽 격렬하게 다루고 있다")%…
+			PRINTFORMW 페니스에 %LOCALS%, %TEXTR("민감한 귀두를 쓰다듬고 있다", "찔꺽찔꺽 격렬하게 다루고 있다")%…
 		ENDIF
 		CALL EQ_STAIN, TARGET, TARGET, 1, 2
 	ELSE
@@ -547,7 +547,7 @@ CASE 1
 			IF TALENT:클리피어스 && RAND:2 == 0
 				PRINTW 꿰뚫은 피어스를 만지작거리고 있다…
 			ELSE
-				PRINTW 주무르면서 돌리고있다…
+				PRINTW 주무르면서 돌리고 있다…
 			ENDIF
 		ELSE
 			IF TALENT:클리피어스 && RAND:2 == 0
@@ -576,7 +576,7 @@ CASE 2
 			PRINTFORM 거대한 
 		SIF SIZE("바이브", TARGET) >= 3
 			PRINTFORM 두터운 
-		PRINTW 바이브를 넣고빼면서 즐기고있다…
+		PRINTW 바이브를 넣고빼면서 즐기고 있다…
 	ELSEIF INSERT("정상위") + INSERT("굴곡위") && ABL:노출벽 >= 3 && RAND:2
 		PRINTFORMW 때때로 비부를 벌리거나 하면서 자위를 즐기고 있다…
 	ELSE
@@ -609,7 +609,7 @@ CASEELSE
 	IF RAND:2 == 0 && TALENT:거유
 		SIF ABL:Ｂ감각 >= 4 && TALENT:하피 == 0 && RAND:2
 			PRINTFORM 손가락을 잠기게 하면서 
-		PRINTW 유방을 비비어 뭉개고있다…
+		PRINTW 유방을 비비어 뭉개고 있다…
 	ELSE
 		LOCAL = 0
 		IF TALENT:니플피어스 && RAND:2 == 0
@@ -629,9 +629,9 @@ CASEELSE
 			PRINTW 를 꿰뚫은 피어스를 만지작거리고 있다…
 		ELSE
 			IF RAND:2
-				PRINTW 를 훑어내고있다…
+				PRINTW 를 훑어내고 있다…
 			ELSE
-				PRINTW 를 주무르면서 돌리고있다…
+				PRINTW 를 주무르면서 돌리고 있다…
 			ENDIF
 		ENDIF
 	ENDIF
