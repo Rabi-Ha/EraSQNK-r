@@ -111,7 +111,7 @@ RESTART
 MEMO_TARGET = TARGET
 TARGET = 0
 
-;同じ이벤트は起こさない
+;이벤트 중복 방지로 사용
 VARSET TFLAG
 ;勤労플래그初期化(一일二回あるので)
 FOR LCOUNT, 1, CHARANUM
@@ -423,12 +423,12 @@ SIF TFLAG:121 == 0 && TALENT:헌신 + TALENT:조합지식 + TALENT:기품
 	CALL CALC, "랜덤선택", 121
 
 
-;200番台は時節이벤트
+;200번대는 계절이벤트
 ;코스프레기모노
-;SIF TFLAG:200 == 0 && FLAG:873 == 0 && DAY%7 == 0
-;	CALL CALC, "랜덤선택", 200
+SIF TFLAG:200 == 0 && FLAG:873 == 0
+	CALL CALC, "랜덤선택", 200
 
-;既読이벤트の記録
+;실행된 이벤트의 기록
 TFLAG:RESULT = 1
 
 VARSET LOCALS
