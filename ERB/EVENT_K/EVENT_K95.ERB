@@ -1141,13 +1141,13 @@ IF SELECTCOM == 6
 			PRINTFORMW 「응, 응츄우…읏……푸하아♪」
 			IF TALENT:오토코노코
 				IF TALENT:PLAYER:남자
-					IF BASE:PLAYER:몇번째 > BASE:몇번째
+					IF BASE:PLAYER:몇번째 < BASE:몇번째
 						PRINTFORMW 「읏…츗♪후후…오빠와의 첫 츄우, 매우 멋져♪」
 					ELSE
 						PRINTFORMW 「읏…츗♪후후…남동생과의 첫 츄우, 매우 멋져♪」
 					ENDIF
 				ELSE
-					IF BASE:PLAYER:몇번째 > BASE:몇번째
+					IF BASE:PLAYER:몇번째 < BASE:몇번째
 							PRINTFORMW 「읏…츗♪후후…언니와의 첫 츄우, 매우 멋져♪」
 						ELSE
 							PRINTFORMW 「읏…츗♪후후…여동생과의 첫 츄우, 매우 멋져♪」
@@ -1155,13 +1155,13 @@ IF SELECTCOM == 6
 				ENDIF
 			ELSE
 				IF TALENT:PLAYER:남자
-					IF BASE:PLAYER:몇번째 > BASE:몇번째
+					IF BASE:PLAYER:몇번째 < BASE:몇번째
 						PRINTFORMW 「우에…형이랑 츄우 해 버렸어…」
 					ELSE
 						PRINTFORMW 「우에…동생이랑 츄우 해 버렸어…」
 					ENDIF
 				ELSE
-					IF BASE:PLAYER:몇번째 > BASE:몇번째
+					IF BASE:PLAYER:몇번째 < BASE:몇번째
 							PRINTFORMW 「읏…츗♪누나와 첫 키스, 달다♪」
 						ELSE
 							PRINTFORMW 「읏…츗♪후후…여동생과의 첫 츄우, 너도 처음이려나♪」
