@@ -128,7 +128,7 @@ IF CHECK_COM("Ｗ봉사")
 		ELSE
 			PRINTFORM \@ PREVPLAY("Ｖ인서트", MASTER) ? 질척질척하게 풀어진 # \@ 보지
 		ENDIF
-		PRINTFORMW 를 발로 이리저리 돌리며 갖고 놀고있다…
+		PRINTFORMW 를 발로 이리저리 돌리며 갖고 놀고 있다…
 	ELSE
 		PRINTFORM %타겟과()%%조사처리(CALLNAME:(TARGET:1),"는")% 
 		IF TALENT:(TARGET:1):음란 + TALENT:(TARGET:1):연모 && TALENT:음란 + TALENT:연모
@@ -170,9 +170,9 @@ ELSEIF TEQUIP:Ｗ넘어뜨리기
 	ENDIF
 	IF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 		IF PENIS(PLAYER)
-			PRINTW 계속 훑고있다…
+			PRINTW 계속 훑고 있다…
 		ELSE
-			PRINTW 계속 주무르고있다…
+			PRINTW 계속 주무르고 있다…
 		ENDIF
 	ELSE
 		IF PENIS(PLAYER)
@@ -258,7 +258,7 @@ ELSE
 				LASTWORD = %LASTWORD%플러그
 			;음란
 			IF TALENT:음란
-				LASTWORD = %조사처리(LASTWORD,"를")% 물고있는 
+				LASTWORD = %조사처리(LASTWORD,"를")% 물고 있는 
 			ELSE
 				LASTWORD = %LASTWORD%가 박힌 
 			ENDIF

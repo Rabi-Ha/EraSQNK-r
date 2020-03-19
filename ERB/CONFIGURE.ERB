@@ -704,7 +704,7 @@ CASE "システム＆이벤트全般"
 	PRINTFORM \@ CONFIG("상사상애：인수제한없음") ? 몇명이라도 # 한명만 \@
 	PRINTFORML ＆\@ CONFIG("상사상애：요바이제한") ? 밤덮치기 제한있음 # 밤덮치기 제한없음 \@
 	RESETCOLOR
-	PRINTFORML  [ 3] \@ CONFIG("경험표시詰め") ? ○ # －\@ 능력표시에서, 갖고있지 않은 경험을 표시하지 않는다
+	PRINTFORML  [ 3] \@ CONFIG("경험표시詰め") ? ○ # －\@ 능력표시에서, 갖고 있지 않은 경험을 표시하지 않는다
 	PRINTFORM  [ 4] \@ CONFIG("성기상세표시") ? ○ # －\@ V와 A등 성기의 능력의 상세 표시：
 	SETCOLOR DEF_COLOR("暗황색")
 	IF CONFIG("성기상세표시")

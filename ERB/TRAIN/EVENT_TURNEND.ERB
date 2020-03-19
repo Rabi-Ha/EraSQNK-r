@@ -130,7 +130,7 @@ IF EJECT_FLAG >= 100 || (RAND:3 == 0 && EJECT_FLAG > 0)
 			ELSEIF INSERT("굴곡위") && COND("손가락 사용") && RAND:2
 				PRINTFORM 흥분한 나머지 자신의 팔로 다리를 껴안아 가랑이를 완전히 오픈하고 있는 
 			ELSEIF INSERT("정상위") || INSERT("굴곡위")
-				PRINTFORM 쾌감에 몸을 맡기고 느슨하게 \@ RAND:2 ? 가랑이 # 다리 \@를 열고있던 
+				PRINTFORM 쾌감에 몸을 맡기고 느슨하게 \@ RAND:2 ? 가랑이 # 다리 \@를 열고 있던 
 			ENDIF
 		ENDIF
 		PRINTFORM %CALLNAME:TARGET%의 
@@ -269,7 +269,7 @@ IF EJECT_FLAG >= 100 || (RAND:3 == 0 && EJECT_FLAG > 0)
 				IF RAND:2
 					PRINTFORMW 다리를 벌리고 눅진눅진한 부끄러운 부분을 보여주었다…
 				ELSE
-					PRINTFORMW 긴장과 이완을 반복하며 정액을 흘리고있는 %조사처리(LOCALS:1,"를")% 보여주었다…
+					PRINTFORMW 긴장과 이완을 반복하며 정액을 흘리고 있는 %조사처리(LOCALS:1,"를")% 보여주었다…
 				ENDIF
 				LOCALS:9 = 질내사정후벌리기
 			ELSE
@@ -407,7 +407,7 @@ IF EJECT_FLAG >= 100 || (RAND:3 == 0 && EJECT_FLAG > 0)
 					ELSEIF RAND:2
 						PRINTFORM 범해져서 충혈된 음순이 열린채인 보지를
 					ELSE
-						PRINTFORM 물고있던 물건이 없어져 입이 닫히지 않는 질구를
+						PRINTFORM 물고 있던 물건이 없어져 입이 닫히지 않는 질구를
 					ENDIF
 				ENDIF
 				PRINTW  과시해왔다…
@@ -1128,7 +1128,7 @@ IF (SELECTCOM == 60 || SELECTCOM == 62) && INSERT("Ｖ인서트") && COND("절�
 		IF CUP:쾌Ｖ < CUP:고통 && MARK:반발각인 == 3
 			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 괴롭게 몸부림치고 있다. 
 		ELSE
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 작게 몸을 떨고있지만, 아직 쾌락을 느끼는 정도에는 이르지 못한 것같다. 
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 작게 몸을 떨고 있지만, 아직 쾌락을 느끼는 정도에는 이르지 못한 것같다. 
 		ENDIF
 	CASE IS < 3000
 		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 격렬한 %CALLNAME:PLAYER%의 허리 움직임에, 사랑스러운 신음을 흘리고 있다. 
@@ -1411,7 +1411,7 @@ IF SELECTCOM == 75 && INSERT("Ｖ인서트") && COND("절정", PLAYER) == 0
 				PRINTFORM 허리를 흔들면서 
 			ENDIF
 			IF TALENT:억압 || TALENT:쾌감을부정
-				PRINTFORML 필사적으로 쾌감을 부정하고있지만, 그 얼굴에는 명백하게 쾌락의 표정으로 뒤죽박죽되어있다. 
+				PRINTFORML 필사적으로 쾌감을 부정하고 있지만, 그 얼굴에는 명백하게 쾌락의 표정으로 뒤죽박죽되어있다. 
 			ELSE
 				PRINTFORML 완전히 풀려버린, 정숙치 못한 얼굴로 쾌락을 탐하고 있다. 
 			ENDIF
@@ -1426,13 +1426,13 @@ IF SELECTCOM == 130 || SELECTCOM == 131 || SELECTCOM == 132
 	CASE IS < 100
 	CASE IS < 300
 		IF ABL:마조끼 >= 3
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 쾌락을 느끼기 시작했는지 뜨문뜨문 감미로운 소리를 내고있따. 
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 쾌락을 느끼기 시작했는지 뜨문뜨문 감미로운 소리를 내고 있다. 
 		ELSE
 			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 비명을 참아가면서 아픔을 견뎌냈다. 
 		ENDIF
 	CASE IS < 2000
 		IF ABL:마조끼 >= 3
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 아픔 속에서 쾌락을 느끼는지 때때로 물기를 띈 눈으로 이쪽을 바라보고있따. 
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 아픔 속에서 쾌락을 느끼는지 때때로 물기를 띈 눈으로 이쪽을 바라보고 있다. 
 		ELSE
 			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 격렬한 고통에 악다문 이빨 틈으로 괴로워하는 신음을 흘렸다. 
 		ENDIF
@@ -1601,7 +1601,7 @@ IF SELECTCOM == 304 || SELECTCOM == 305
 			;확장경험が少しはある
 			IF LOCAL >= 3
 				IF COND("손가락 사용") && RAND:3 == 0
-					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 뻥하니 입을 열고있는 항문을 말없이 만지고 있다…
+					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 뻥하니 입을 열고 있는 항문을 말없이 만지고 있다…
 				ELSEIF RAND:2 == 0
 					PRINTFORML 벌어진채로 좀처럼 되돌아 오지 않는 항문에, %CALLNAME:TARGET%의 얼굴이 일그러졌다
 				ELSE
@@ -1630,7 +1630,7 @@ IF SELECTCOM == 304 || SELECTCOM == 305
 			ENDIF
 		ELSE
 			IF COND("손가락 사용") && RAND:2 == 0
-				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 뻥하니 입을 열고있는 항문을 사랑스러운 듯이 만지고 있다…
+				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 뻥하니 입을 열고 있는 항문을 사랑스러운 듯이 만지고 있다…
 			ELSE
 				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 탈진해서 여운에 잠겨있다…
 			ENDIF
@@ -1640,7 +1640,7 @@ IF SELECTCOM == 304 || SELECTCOM == 305
 			;확장경험が少しはある
 			IF LOCAL >= 3
 				IF COND("손가락 사용") && RAND:3 == 0
-					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 뻥하니 입을 열고있는 질을 말없이 어루만졌다…
+					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 뻥하니 입을 열고 있는 질을 말없이 어루만졌다…
 				ELSEIF RAND:2 == 0
 					PRINTFORML 벌어진채로 좀처럼 되돌아 오지 않는 질에, %CALLNAME:TARGET%의 얼굴이 일그러졌다…
 				ELSE

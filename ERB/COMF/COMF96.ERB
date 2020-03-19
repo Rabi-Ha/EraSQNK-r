@@ -117,7 +117,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 	SIF SELECTCOM:1 == PREVCOM:1 && SELECTCOM:1 >= 0
 		PRINTFORM %TEXTS("Ｗ넘어뜨리기 중")%
 	IF SELECTCOM == PREVCOM
-		PRINTFORMW %CALLNAME:MASTER%의 애널에, 혀를 기게해 계속 핥아 돌리고있다…
+		PRINTFORMW %CALLNAME:MASTER%의 애널에, 혀를 기게해 계속 핥아 돌리고 있다…
 	ELSE
 		IF ABL:봉사정신 >= 3 && ABL:새드끼 >= 3 && RAND:2 == 0
 			PRINTFORMW %CALLNAME:MASTER%의 엉덩이 구멍을, 뾰족하게 세운 혀로 안까지 핥았다…
@@ -134,7 +134,7 @@ ELSE
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	;前回역애널
 	IF PREVPLAY("Ａ인서트", PLAYER)
-		PRINTFORM , 물고있던 것이 없어져도 입을 여전히 슬쩍 연 상태인 %CALLNAME:PLAYER%의 애널
+		PRINTFORM , 물고 있던 것이 없어져도 입을 여전히 슬쩍 연 상태인 %CALLNAME:PLAYER%의 애널
 		IF ABL:봉사정신 >= 3 && RAND:2 == 0
 			PRINTW 을 혀로 봉사했다…
 		ELSE

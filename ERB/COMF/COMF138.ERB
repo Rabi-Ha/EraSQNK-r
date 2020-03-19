@@ -182,14 +182,14 @@ IF CHECK_COM("입内방뇨")
 			IF ABL:봉사정신 >= 3 && TEQUIP:재갈 == 0 && RANDIF(2, ABL:정액중독 >= 3)
 				PRINTFORM 사정 직후의 귀두%TEXTR("를 물고 혀로 자극하던", "에 쪼아먹듯이 키스를 하던")% 
 			ELSEIF ABL:정액중독 >= 3 && RAND:2
-				PRINTFORM %TEXTR("황홀하게", "정신없이 ", "맛나는 듯이")% 페니스를 핥고있던 
+				PRINTFORM %TEXTR("황홀하게", "정신없이 ", "맛나는 듯이")% 페니스를 핥고 있던 
 			ELSE
 				PRINTFORM 방금전까지 정액을 %TEXTR("즐기던", "마시던", "맛보던")% 
 			ENDIF
 			PRINTFORMW %CALLNAME:TARGET%의 입 안에 오줌을 누었다
 		ENDIF
 	ELSE
-		PRINTFORM 보지에 봉사를 하고있는 %CALLNAME:TARGET%
+		PRINTFORM 보지에 봉사를 하고 있는 %CALLNAME:TARGET%
 		IF COND("손가락 사용", PLAYER)
 			PRINTFORMW 의 머리를 억누르고 성수를 대접해주었다
 		ELSE
@@ -211,15 +211,15 @@ ELSEIF CHECK_COM("자궁内방뇨")
 			PRINTFORMW 안에 오줌을 누었다
 		ENDIF
 	ENDIF
-	PRINTFORMW 힘차게 방출되는 소변은 자궁안을 %TEXTR("유린하고", "마킹하고", "한가득 채우고")%, 그 후 %CALLNAME:TARGET%의 질구에서 줄줄 쏟아져나오고있다…
+	PRINTFORMW 힘차게 방출되는 소변은 자궁안을 %TEXTR("유린하고", "마킹하고", "한가득 채우고")%, 그 후 %CALLNAME:TARGET%의 질구에서 줄줄 쏟아져나오고 있다…
 ELSEIF CHECK_COM("질内방뇨")
 	;前回절정
 	IF PREVEX("Ｖ절정") && RAND:3
 		PRINTFORM 절정의 여운
 		IF PREVEX("절정수합계") >= 3 || PREVEX("Ｖ절정") >= 2
-			PRINTFORM %TEXTR("에 완전히 풀어진", "에 정숙치못한 얼굴을 하고있는", "에 황홀해하고있는")% 
+			PRINTFORM %TEXTR("에 완전히 풀어진", "에 정숙치못한 얼굴을 하고 있는", "에 황홀해하고 있는")% 
 		ELSE
-			PRINTFORM %TEXTR("에 온몸의 힘이 빠져있는", "에 달콤한 한숨을 내쉬고있는", "에 몸을 떨고있는")% 
+			PRINTFORM %TEXTR("에 온몸의 힘이 빠져있는", "에 달콤한 한숨을 내쉬고 있는", "에 몸을 떨고 있는")% 
 		ENDIF
 		PRINTFORM %CALLNAME:TARGET%의 
 	ELSEIF COND("손가락 사용", PLAYER) && RAND:2
@@ -241,15 +241,15 @@ ELSEIF CHECK_COM("질内방뇨")
 	ELSE
 		PRINTFORMW 질내에 페니스를 파묻은채로 오줌을 누었다
 	ENDIF
-	PRINTFORMW 힘차게 방출된 오줌은 질내에 당연하게도 받아들여지지 못하고, 내부에 냄새를 묻힌 후에 %CALLNAME:TARGET%의 질구에서 줄줄 쏟아져나오고있다…
+	PRINTFORMW 힘차게 방출된 오줌은 질내에 당연하게도 받아들여지지 못하고, 내부에 냄새를 묻힌 후에 %CALLNAME:TARGET%의 질구에서 줄줄 쏟아져나오고 있다…
 ELSEIF CHECK_COM("온천관장")
 	;前回절정
 	IF PREVEX("Ａ절정") && RAND:3
 		PRINTFORM 절정의 여운
 		IF PREVEX("절정수합계") >= 3 || PREVEX("Ａ절정") >= 2
-			PRINTFORM %TEXTR("에 완전히 풀어진", "에 정숙치못한 얼굴을 하고있는", "에 황홀해하고있는")% 
+			PRINTFORM %TEXTR("에 완전히 풀어진", "에 정숙치못한 얼굴을 하고 있는", "에 황홀해하고 있는")% 
 		ELSE
-			PRINTFORM %TEXTR("에 온몸의 힘이 빠져있는", "에 달콤한 한숨을 내쉬고있는", "에 몸을 떨고있는")% 
+			PRINTFORM %TEXTR("에 온몸의 힘이 빠져있는", "에 달콤한 한숨을 내쉬고 있는", "에 몸을 떨고 있는")% 
 		ENDIF
 		PRINTFORM %CALLNAME:TARGET%의 
 	ELSEIF COND("손가락 사용", PLAYER) && RAND:2
@@ -269,9 +269,9 @@ ELSEIF CHECK_COM("유内방뇨")
 	IF PREVEX("Ｂ절정") && RAND:3
 		PRINTFORM 절정의 여운
 		IF PREVEX("절정수합계") >= 3 || PREVEX("Ｂ절정") >= 2
-			PRINTFORM %TEXTR("에 완전히 풀어진", "에 정숙치못한 얼굴을 하고있는", "에 황홀해하고있는")% 
+			PRINTFORM %TEXTR("에 완전히 풀어진", "에 정숙치못한 얼굴을 하고 있는", "에 황홀해하고 있는")% 
 		ELSE
-			PRINTFORM %TEXTR("에 온몸의 힘이 빠져있는", "에 달콤한 한숨을 내쉬고있는", "에 몸을 떨고있는")% 
+			PRINTFORM %TEXTR("에 온몸의 힘이 빠져있는", "에 달콤한 한숨을 내쉬고 있는", "에 몸을 떨고 있는")% 
 		ENDIF
 	ELSE
 		PRINTFORM %TEXTR("방금전까지 정액으로 더럽혀졌던", "씨를 뿌린 직후인", "정액을 받아들인지 얼마안된")% 
@@ -289,15 +289,15 @@ ELSEIF CHECK_COM("유内방뇨")
 	ELSE
 		PRINTFORMW 의 가슴안에 페니스를 묻은채 오줌을 누었다
 	ENDIF
-	PRINTFORMW 달라붙는 듯한 느낌인 내부는 당연하게도 오줌을 다 받아들이지 못하고, %CALLNAME:TARGET%의 유두 틈새에서 노란색 액체가 줄줄 흘러나오고있다…
+	PRINTFORMW 달라붙는 듯한 느낌인 내부는 당연하게도 오줌을 다 받아들이지 못하고, %CALLNAME:TARGET%의 유두 틈새에서 노란색 액체가 줄줄 흘러나오고 있다…
 ELSEIF CHECK_COM("방광内방뇨")
 	;前回절정
 	IF PREVEX("요도절정") && RAND:3
 		PRINTFORM 절정의 여운
 		IF PREVEX("절정수합계") >= 3 || PREVEX("요도절정") >= 2
-			PRINTFORM %TEXTR("에 완전히 풀어진", "에 정숙치못한 얼굴을 하고있는", "에 황홀해하고있는")% 
+			PRINTFORM %TEXTR("에 완전히 풀어진", "에 정숙치못한 얼굴을 하고 있는", "에 황홀해하고 있는")% 
 		ELSE
-			PRINTFORM %TEXTR("에 온몸의 힘이 빠져있는", "에 달콤한 한숨을 내쉬고있는", "에 몸을 떨고있는")% 
+			PRINTFORM %TEXTR("에 온몸의 힘이 빠져있는", "에 달콤한 한숨을 내쉬고 있는", "에 몸을 떨고 있는")% 
 		ENDIF
 		PRINTFORM %CALLNAME:TARGET%의 
 	ELSEIF COND("손가락 사용", PLAYER) && RAND:2

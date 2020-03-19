@@ -12499,7 +12499,7 @@ CASE "Ｖ인서트"
 		ENDIF
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %조사만처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 격렬한 피스톤 운동에 농락당하고있다……
+		PRINTFORMW %조사만처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 격렬한 피스톤 운동에 농락당하고 있다……
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「%KOJO_RAND_5("쾌락 인내", 3)%」
@@ -13532,7 +13532,7 @@ CASE "Ｖ바이브추가구상"
 				ELSEIF TALENT:처녀 == 1
 					PRINTFORMW 「r그만, 그만하라고!」
 				ELSE
-					PRINTFORMW 「응…들어오고있어……」
+					PRINTFORMW 「응…들어오고 있어……」
 				ENDIF
 				SETBIT CFLAG:377, 1
 			ELSEIF CHECK("바이브")
@@ -13542,7 +13542,7 @@ CASE "Ｖ바이브추가구상"
 				ELSEIF ABL:Ｖ감각 >= 3
 					PRINTFORMW 「싫어엇 %KOJO_K5_HT()% 질 안이 엉망으로 변해 버려어 %KOJO_K5_HT()%」
 				ELSE
-					PRINTFORMW 「응…들어오고있어……」
+					PRINTFORMW 「응…들어오고 있어……」
 				ENDIF
 			ELSE
 				;반발각인Lv3

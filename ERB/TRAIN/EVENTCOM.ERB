@@ -215,20 +215,20 @@ CALL SETFLAG, "봉사嗜虐判定", SELECTCOM
 IF TEQUIP:달콤한말 >= 9
 	TEQUIP:달콤한말 = 0
 	PRINTL 
-	PRINTL 높아진 무드가 원래대로 돌아가고있다…
+	PRINTL 높아진 무드가 원래대로 돌아가고 있다…
 ENDIF
 IF TEQUIP:플라트
 	TEQUIP:플라트 += 1
 	IF TEQUIP:플라트 >= 3
 		TEQUIP:플라트 = 0
 		PRINTL 
-		PRINTL 민감해진 피부가 원래대로 돌아가고있다…
+		PRINTL 민감해진 피부가 원래대로 돌아가고 있다…
 	ENDIF
 ENDIF
 IF TEQUIP:칭찬하기 == 1
 	TEQUIP:칭찬하기 = 0
 	PRINTL 
-	PRINTL 칭찬받아 좋아진 기분이 원래대로 돌아가고있다…
+	PRINTL 칭찬받아 좋아진 기분이 원래대로 돌아가고 있다…
 ENDIF
 SIF TEQUIP:연주중
 	CALL EQUIP_COM302_END

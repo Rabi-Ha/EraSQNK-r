@@ -130,7 +130,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 			PRINTFORM , %TEXTS("Ｗ넘어뜨리기 중")%
 
 		IF SELECTCOM == PREVCOM
-			PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 마음대로 범하고있다…
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 마음대로 범하고 있다…
 		ELSE
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 범하기 시작했다…
 		ENDIF
@@ -148,7 +148,7 @@ ELSEIF TEQUIP:넘어뜨리기
 		ELSE
 			PRINTFORM 의 질을 마음껏 
 		ENDIF
-		PRINTFORMW 계속 범하고있다…
+		PRINTFORMW 계속 범하고 있다…
 	ELSE
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 		SIF TALENT:새드
@@ -219,7 +219,7 @@ ELSEIF INSERT("Ｖ정상위", PLAYER) && COND("前Ｔ조교자") == PLAYER
 	ELSE
 		PRINTFORM 두들기듯이 격렬하게 
 	ENDIF
-	PRINTFORMW 허리를 움직여서, %조사처리(CALLNAME:PLAYER,"를")% 기분좋게 하고있다…
+	PRINTFORMW 허리를 움직여서, %조사처리(CALLNAME:PLAYER,"를")% 기분좋게 하고 있다…
 ;同様に前回の조교が후배위か기승위の場合
 ELSEIF INSERT("Ｖ인서트", PLAYER) && COND("前Ｔ조교자") == PLAYER
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 질내에서 뽑지 않고 %조사처리(CALLNAME:PLAYER,"를")% 위로 향하게 해, 다시 허리를 움직이기 시작했다…

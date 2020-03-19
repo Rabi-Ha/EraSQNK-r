@@ -329,7 +329,7 @@ CASE "추가地の文：Ｖ삽입後"
 			PRINTFORM 마구 휘저어
 		ENDIF
 		IF CUP:고통 >= 300 && (TALENT:몽마 + TALENT:상위몽마 == 0 || (TALENT:처녀 == 1 && TALENT:음란 + TALENT:연모 == 0) || ABL:Ｖ확장 < SIZE("페니스", PLAYER) )
-			PRINTW 져서 비명을 지르고있다…
+			PRINTW 져서 비명을 지르고 있다…
 		ELSE
 			PRINTFORM 지면서도, 
 			IF RAND:3 == 0
@@ -719,7 +719,7 @@ CASE "추가地の文：Ａ삽입後"
 		ENDIF
 
 		IF CUP:고통 >= 300 && (TALENT:몽마 + TALENT:상위몽마 == 0 || (TALENT:Ａ처녀 && TALENT:음란 + TALENT:연모 == 0) || ABL:Ａ확장 < SIZE("페니스", PLAYER) )
-			PRINTW 져서 비명을 지르고있다…
+			PRINTW 져서 비명을 지르고 있다…
 		ELSE
 			PRINTFORM 지면서도, 
 			IF RAND:3 == 0
@@ -800,15 +800,15 @@ CASE "추가地の文：Ａ삽입後"
 				ENDIF
 			ELSEIF PALAM:욕정 >= 10000
 				IF RAND:2
-					PRINTFORM 작게 입을 열고 애타게 기다리고있는 
+					PRINTFORM 작게 입을 열고 애타게 기다리고 있는 
 				ELSE
-					PRINTFORM 기대로 꿈틀대고있는 
+					PRINTFORM 기대로 꿈틀대고 있는 
 				ENDIF
 			ELSEIF PALAM:욕정 >= 3000
 				IF RAND:2
 					PRINTFORM 흥분으로 꿈틀꿈틀거리는 
 				ELSE
-					PRINTFORM 발정해서 희미하게 탐을 흘리고있는 
+					PRINTFORM 발정해서 희미하게 탐을 흘리고 있는 
 				ENDIF
 			ENDIF
 		ELSEIF EX:Ａ절정
@@ -1310,7 +1310,7 @@ CASE "추가地の文：기승위"
 	ENDIF
 	SIF ABL:욕망 >= 3 || TALENT:호색 + TALENT:음란
 		PRINTFORM 적극적으로 
-	PRINTFORMW 쾌감을 탐하고있다…
+	PRINTFORMW 쾌감을 탐하고 있다…
 CASE "와일드스윙"
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	IF COND("손가락 사용") && RAND:3 == 0
@@ -2382,7 +2382,7 @@ CASE "애널"
 			SELECTCASE PREVCOM
 			CASE 33
 				SIF TEQUIP:ARG:애널바이브 == 0
-					LOCALS = 물고있던 이물질을 갓 뽑아낸 
+					LOCALS = 물고 있던 이물질을 갓 뽑아낸 
 			CASE 136
 				SIF TEQUIP:ARG:관장 == 0
 					LOCALS = 내용물을 갓 쏟아낸 

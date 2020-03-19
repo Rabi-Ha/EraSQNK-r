@@ -135,7 +135,7 @@ CASE "겨울"
 	PRINTFORM 계절도 겨울이기도하고, \@ ASSI > 0 ? %CALLNAME:TARGET%들은 #  %조사처리(CALLNAME:TARGET,"은")% \@ 
 	SIF ASSI
 		PRINTFORM 
-	PRINTFORMW 방한복을 여행 가방에 챙겨넣고있다.
+	PRINTFORMW 방한복을 여행 가방에 챙겨넣고 있다.
 	PRINTFORMW 폭신폭신한 털이 달린 겉보기에도 따뜻할 것같은 코트와, 멋진 트렌치코트, 귀여운 더플코트에 다운의…
 	PRINTFORM 온갖 코트로 가득 채워진가방은 흘러넘치기 일보직전이라, \@ ASSI > 0 ? %CALLNAME:TARGET%들은 #  %조사처리(CALLNAME:TARGET,"은")% \@ 
 	SIF ASSI
@@ -158,7 +158,7 @@ CASE "겨울"
 			PRINTFORM %조사처리(CALLNAME:TARGET,"이")% 
 		ENDIF
 		PRINTFORMW 억지로 밀어넣은 것을 차례차례로 꺼내서, 한층 작은 가방에 담아버렸습니다…!
-		PRINTFORM 마음에 드는 옷을 필요없다고 말해서 처음에는 뾰로통한 표정을 짓고있었지만 %CALLNAME:TARGET%도, %CALLNAME:MASTER%의 솜씨에 
+		PRINTFORM 마음에 드는 옷을 필요없다고 말해서 처음에는 뾰로통한 표정을 짓고 있었지만 %CALLNAME:TARGET%도, %CALLNAME:MASTER%의 솜씨에 
 		IF TALENT:연모
 			PRINTFORMW 다시 반한 것 같습니다.
 		ELSE
@@ -174,12 +174,12 @@ CASEELSE
 		ELSE
 			PRINTFORM 두
 		ENDIF
-		PRINTFORMW 사람이 준비한 여행가방 이외에, %조사처리(CALLNAME:TARGET,"는")% 작은 자기 가방에 따로 흘러넘치도록 과자를 담고있습니다! 
+		PRINTFORMW 사람이 준비한 여행가방 이외에, %조사처리(CALLNAME:TARGET,"는")% 작은 자기 가방에 따로 흘러넘치도록 과자를 담고 있습니다! 
 		PRINTFORM 그 지나친 양을 보고 혼을 낸 %조사처리(CALLNAME:MASTER,"가")% 「간식은 $300까지」라고 못을 박자, %조사처리(CALLNAME:TARGET,"는")% 
 		IF RAND:2 == 0
 			PRINTFORMW 이 세상의 마지막이라도 본듯한 얼굴을 하고,  담은 과자를 가방에서 꺼내기시작했습니다…
 			PRINTFORMW 그 모습이 너무나 불쌍했기때문에, %조사처리(CALLNAME:MASTER,"는")% 「간식은 $500까지」라고 올려주기로 했습니다…
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 울면서 기뻐하고있습니다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 울면서 기뻐하고 있습니다…
 		ELSE
 			PRINTFORMW 「바나나는 간식에 들어가지않지요!？」라며 물고늘어졌습니다! 
 			PRINTFORMW 「바나나는 간식입니다」
@@ -189,7 +189,7 @@ CASEELSE
 		PRINTFORM \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %조사처리(CALLNAME:ASSI,"은")% #  %조사처리(CALLNAME:TARGET,"은")% \@
 		SIF ASSI
 			PRINTFORM 
-		PRINTFORMW , 재빠르게 도서관에서 빌려 온 키아즈마의 여행기를 보며 어디로 관광을 갈지 살펴보고있는 것같습니다…
+		PRINTFORMW , 재빠르게 도서관에서 빌려 온 키아즈마의 여행기를 보며 어디로 관광을 갈지 살펴보고 있는 것같습니다…
 		PRINTFORM 가을의 키아즈마는 대단히 풍경이 매우 아름답다고 하는 소문도 있어, \@ ASSI > 0 ? %CALLNAME:TARGET%들은 #  %조사처리(CALLNAME:TARGET,"은")% \@ 
 		SIF ASSI
 			PRINTFORM 
@@ -326,7 +326,7 @@ CALL TRAVEL_TIME("아침", "키아즈마에 가는 길", "마차 안")
 PRINTFORMW 준비해온 가방을 마차에 싣고, 드디어 저택을 뒤로 했다…
 ;（更新）구상の呼び出し
 CALL SELF_KOJO, "여행出発"
-PRINTFORM 그런데, 키아즈마에 도착할 때까지 어떻게 짬을 보낼까하고 궁리하고있자, %CALLNAME:TARGET%
+PRINTFORM 그런데, 키아즈마에 도착할 때까지 어떻게 짬을 보낼까하고 궁리하고 있자, %CALLNAME:TARGET%
 IF RAND:3 == 0
 	PRINTFORMW %조사만처리(CALLNAME:TARGET,"가")% 트럼프게임을 제안했습니다…!
 	PRINTFORMW 아무래도 키아즈마에서 놀기위한 군자금을 %CALLNAME:MASTER%에게서 털어먹을 생각인것 같습니다…! 
@@ -335,7 +335,7 @@ IF RAND:3 == 0
 	IF RAND:4 == 0
 		PRINTFORMW %CALLNAME:MASTER%의 압승이었습니다!
 		PRINTFORMW 털어먹기는 커녕 거꾸로 %CALLNAME:MASTER%에게 털려버린 %조사처리(CALLNAME:TARGET,"는")%, 완전히 등을 돌려버려 한동안 입을 열지않을 것같습니다…
-		PRINTFORMW 마차안에 거북한 공기가 감돌고있습니다…
+		PRINTFORMW 마차안에 거북한 공기가 감돌고 있습니다…
 	ELSEIF RAND:3 == 0
 		PRINTFORMW %CALLNAME:MASTER%의 아슬아슬한 승리였습니다! 
 		PRINTFORMW 아슬아슬하게 졌던 것이 분했는지, %조사처리(CALLNAME:TARGET,"는")% 「다시 한번!」이라고 말하며 %CALLNAME:MASTER%에 간절히 부탁했습니다.
@@ -417,7 +417,7 @@ CASE "작은민박"
 			ELSE
 				PRINTFORM %조사처리(CALLNAME:TARGET,"가")% 
 			ENDIF
-			PRINTFORMW 작게 재채기를 하고있습니다……민박에 서둘러 가는것이 좋을 것같습니다
+			PRINTFORMW 작게 재채기를 하고 있습니다……민박에 서둘러 가는것이 좋을 것같습니다
 		ELSE
 			PRINTFORMW 계절은 완전히 봄이 되어, 따끈따끈한 양기가 쏟아지고 있습니다.
 			PRINTFORMW %CALLNAME:MASTER%들은 부드러운 봄바람을 느끼면서, 이번 숙박할 민박을 방문했습니다…
@@ -431,16 +431,16 @@ CASE "작은민박"
 			PRINTFORMW 찌링 찌링하는 투명한 음색이, %CALLNAME:MASTER%들에게 평온을 가져다주었습니다…
 		ENDIF
 	CASE "가을"
-		PRINTFORMW 민박의 뜰에는 낙엽의 산이 완성되어있고 거기에서 하얀 연기가 피어오르고있습니다.
+		PRINTFORMW 민박의 뜰에는 낙엽의 산이 완성되어있고 거기에서 하얀 연기가 피어오르고 있습니다.
 		PRINTFORMW 민박 주인이 손에 든 막대기로 그 안을 휘젓자……안에서 고구마가 나왔습니다!
 		PRINTFORMW %CALLNAME:MASTER%들은 달콤한 가을의 맛을 즐겼습니다…
 	CASE "겨울"
-		PRINTFORMW 민박의 뜰에는 인간과 몽마의 아이들이 모여, 두 팀으로 나뉘어져 눈싸움을 하고있습니다.
+		PRINTFORMW 민박의 뜰에는 인간과 몽마의 아이들이 모여, 두 팀으로 나뉘어져 눈싸움을 하고 있습니다.
 		IF ASSI
-			PRINTFORMW 겨울의 풍물이라고도 할 수 있는 그 광경을 보고있자, 이윽고 %CALLNAME:TARGET%들은 몸이 근질근질거리기 시작했습니다.
+			PRINTFORMW 겨울의 풍물이라고도 할 수 있는 그 광경을 보고 있자, 이윽고 %CALLNAME:TARGET%들은 몸이 근질근질거리기 시작했습니다.
 			PRINTFORMW ……돌아가면 모두 같이 해볼까?
 		ELSE
-			PRINTFORMW 겨울의 풍물이라고도 할 수 있는 그 광경을, %조사처리(CALLNAME:TARGET,"는")% 흥미진진 모습으로 쳐다보고있습니다.
+			PRINTFORMW 겨울의 풍물이라고도 할 수 있는 그 광경을, %조사처리(CALLNAME:TARGET,"는")% 흥미진진 모습으로 쳐다보고 있습니다.
 			PRINTFORMW ……돌아가면 해볼까?
 		ENDIF
 	ENDSELECT
@@ -481,11 +481,11 @@ CASE "온천마을의여관"
 				PRINTFORMW 걸어가는 %CALLNAME:MASTER%의 모습이, 주위의 사람들을  숨막힐듯이 덥게만들고 있습니다…
 			ELSE
 				PRINTFORMW 정오를 지나자 온천마을에는 햇볕이 조금씩 쏟아져, 주변이 나른한 공기로 감싸이기시작합니다.
-				PRINTFORMW 산책하고 있던 %CALLNAME:MASTER%들은, 팔고있던 %조사처리(TEXTR("아이스크림", "소프트 아이스크림", "젤라토", "물양갱", "빙수"),"를")% 먹으며 더위를 식혔습니다…
+				PRINTFORMW 산책하고 있던 %CALLNAME:MASTER%들은, 팔고 있던 %조사처리(TEXTR("아이스크림", "소프트 아이스크림", "젤라토", "물양갱", "빙수"),"를")% 먹으며 더위를 식혔습니다…
 			ENDIF
 		CASE "가을"
 			IF RAND:2 == 0
-				PRINTFORMW 온천마을에는 찬바람이 휘몰아쳐, 길을 가는 사람들은 추운듯이 걷고있습니다.
+				PRINTFORMW 온천마을에는 찬바람이 휘몰아쳐, 길을 가는 사람들은 추운듯이 걷고 있습니다.
 				PRINTFORM \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% #  %CALLNAME:TARGET% \@
 				SIF ASSI
 					PRINTFORM 
@@ -521,7 +521,7 @@ CASE "온천마을의여관"
 		IF RAND:7 == 0
 			;MASTERが여성
 			IF TALENT:MASTER:여자 && RAND:2 == 0
-				PRINTFORMW 여관을 가기위해 온천마을을 걷고있자, 남자 한명이 %CALLNAME:MASTER%에게 말을 걸어왔습니다. 아무래도 헌팅같습니다…
+				PRINTFORMW 여관을 가기위해 온천마을을 걷고 있자, 남자 한명이 %CALLNAME:MASTER%에게 말을 걸어왔습니다. 아무래도 헌팅같습니다…
 				;TARGETが연모
 				IF TALENT:연모 && RAND:2 == 0
 					PRINTFORM %조사처리(CALLNAME:MASTER,"가")% 남자를 되돌려 보내려 한 순간, \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %조사처리(CALLNAME:ASSI,"는")% #  %조사처리(CALLNAME:TARGET,"는")% \@ 
@@ -539,7 +539,7 @@ CASE "온천마을의여관"
 					ENDIF
 				ENDIF
 			ELSE
-				PRINTFORMW 여관을 가기위해 온천마을을 걷고있자, 남자 한명이 %CALLNAME:TARGET%에게 말을 걸어왔습니다. 아무래도 헌팅과 같습니다…
+				PRINTFORMW 여관을 가기위해 온천마을을 걷고 있자, 남자 한명이 %CALLNAME:TARGET%에게 말을 걸어왔습니다. 아무래도 헌팅과 같습니다…
 				;TARGETが내성적＆ASSIが강기
 				IF ASSI && TALENT:내성적 && TALENT:ASSI:강기 && RAND:4 == 0
 					PRINTFORMW 남자는 자랑스럽게 자신을 어필했지만, %조사처리(CALLNAME:TARGET,"는")% 상대의 감정이 상하지않도록 주의하면서 부드럽게 거절했습니다…
@@ -559,12 +559,12 @@ CASE "온천마을의여관"
 				ENDIF
 			ENDIF
 		ELSEIF RAND:6 == 0
-			PRINTFORMW 온천마을대로는 많은 커플이 흘러넘쳐 왕도도 이럴까싶을 정도로 활기가 돌고있습니다.
+			PRINTFORMW 온천마을대로는 많은 커플이 흘러넘쳐 왕도도 이럴까싶을 정도로 활기가 돌고 있습니다.
 			IF RAND:2 == 0
 				PRINTFORM 그런 가운데, \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %조사처리(CALLNAME:ASSI,"는")% #  %조사처리(CALLNAME:TARGET,"는")% \@ 
 				SIF ASSI
 					PRINTFORM 
-				PRINTFORMW 눈앞의 커플이 %TEXTR("팔짱을 끼며", "손을 잡고", "손가락을 얽듯이 손을 잡고", "손을 맞잡고", "바짝 달라붙어", "어깨를 붙이고")% 걷고있는 것을 발견했습니다! 
+				PRINTFORMW 눈앞의 커플이 %TEXTR("팔짱을 끼며", "손을 잡고", "손가락을 얽듯이 손을 잡고", "손을 맞잡고", "바짝 달라붙어", "어깨를 붙이고")% 걷고 있는 것을 발견했습니다! 
 				PRINTFORM %TEXTR("대항심에 불타는", "그것을 보고 무언가 떠오른", "그것을 부럽다고 생각한")% 
 				IF ASSI
 					PRINTFORM 두 사람은
@@ -597,9 +597,9 @@ CASE "온천마을의여관"
 				PRINTFORM 자신들의 커다란 가슴을 %CALLNAME:MASTER%의 
 				SIF ASSI && TALENT:ASSI:거유
 					PRINTFORM 양
-				PRINTFORMW 팔에 꾸욱 밀착시키고 걷고있습니다…
+				PRINTFORMW 팔에 꾸욱 밀착시키고 걷고 있습니다…
 				PRINTFORMW 말랑말랑하고 꽉 압박당하는 그 감촉에, %조사처리(CALLNAME:MASTER,"는")% 왠지 행복한 기분에 휩싸였습니다……
-				PRINTFORMW 주위의 남성들이 저주하는 듯한 시선을 보내고있습니다만--- 전혀 신경이 쓰이지 않았습니다.
+				PRINTFORMW 주위의 남성들이 저주하는 듯한 시선을 보내고 있습니다만--- 전혀 신경이 쓰이지 않았습니다.
 			ELSE
 				PRINTFORM 여관으로 가는 김에 온천 마을을 산책하고 있는 동안, %조사처리(CALLNAME:MASTER,"는")% \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% #  %CALLNAME:TARGET% \@ 
 				SIF ASSI
@@ -637,8 +637,8 @@ CASE "온천마을의여관"
 				PRINTFORMW …저택에서 사용하면 청소하기가 힘들것입니다.
 			ELSEIF RAND:2 == 0
 				PRINTFORM 온천물을 섞은 칼피스」를 가리켰습니다!
-				PRINTFORMW 마시고 싶냐고 %CALLNAME:TARGET%에게 묻자, 더 마시고싶은 게 있다며 달라붙어, 손으로 슬며시 다리 사이를 매만지고있습니다!
-				PRINTFORMW 달라붙어있으면 주위에 들키지 않을거라고 생각하고있는 건지는 모르겠습니다만, %조사처리(CALLNAME:MASTER,"는")% 주위에 들킬까봐 정신이 없습니다…
+				PRINTFORMW 마시고 싶냐고 %CALLNAME:TARGET%에게 묻자, 더 마시고싶은 게 있다며 달라붙어, 손으로 슬며시 다리 사이를 매만지고 있습니다!
+				PRINTFORMW 달라붙어있으면 주위에 들키지 않을거라고 생각하고 있는 건지는 모르겠습니다만, %조사처리(CALLNAME:MASTER,"는")% 주위에 들킬까봐 정신이 없습니다…
 			ELSE
 				PRINTFORMW 에스트 표 \@ TALENT:MASTER:남자 ?  벌떡벌떡 # 민감 \@드링크」를 가리켰습니다!
 				PRINTFORMW …다음에 마시라고말하겠지. 그녀가 쿡쿡 웃는 것은 아마 그런 이유에서일 것입니다.
@@ -649,7 +649,7 @@ CASE "온천마을의여관"
 			PRINTFORMW …주위에서 시선이 아플정도로 쏠립니다.
 			PRINTFORMW 적어도 가방에 넣어주는게 좋지않을까……
 		ELSE
-			PRINTFORMW 각지에서 사람들이 온천마을에 몰려든 모양으로, 여러가지 모습을 한 사람과 몽마들이 오가고있었습니다.
+			PRINTFORMW 각지에서 사람들이 온천마을에 몰려든 모양으로, 여러가지 모습을 한 사람과 몽마들이 오가고 있었습니다.
 			PRINTFORM 길을 가던 %TEXTR("여성", "몽마")%에게 %조사처리(CALLNAME:MASTER,"가")% 눈을 돌리려하자, \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %조사처리(CALLNAME:ASSI,"가")% #  %조사처리(CALLNAME:TARGET,"가")% \@ 
 			SIF ASSI
 				PRINTFORM 
@@ -695,7 +695,7 @@ CASE "비탕의온천여관"
 			PRINTFORMW 한차례 비가 내리겠구만… 하고 %조사처리(CALLNAME:MASTER,"가")% 그렇게 생각한 순간, 커다란 천둥소리가 사방에서 울렸습니다! 
 			IF TALENT:강기
 				IF RAND:3 == 0
-					PRINTFORMW 그러나 %조사처리(CALLNAME:TARGET,"는")% 놀라기는 커녕, 비가내려서 자기 옷이 젖지않을까 걱정하고있습니다…
+					PRINTFORMW 그러나 %조사처리(CALLNAME:TARGET,"는")% 놀라기는 커녕, 비가내려서 자기 옷이 젖지않을까 걱정하고 있습니다…
 				ELSE
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 갑작스런 천둥소리에 놀랐는지, 그 입에서 평소에는 듣지 못했던 귀여운 비명소리가 울려퍼집니다. 
 					IF RAND:3 == 0
@@ -732,7 +732,7 @@ CASE "비탕의온천여관"
 			PRINTFORMW ―가을. 산은 완전히 단풍의 계절이 되어, 빨간 색이나 노란색으로 아름답게 물들었습니다.
 			PRINTFORMW %CALLNAME:TARGET%들은 여관에 도착할 때까지, 산의 풍경을 즐기면서 걸었습니다.
 		ELSE
-			PRINTFORMW 산의 나무들은 잎을 떨어뜨리기시작했고, 산길에는 낙엽이 쌓여가고있습니다. 
+			PRINTFORMW 산의 나무들은 잎을 떨어뜨리기시작했고, 산길에는 낙엽이 쌓여가고 있습니다. 
 			PRINTFORMW %CALLNAME:TARGET%들이 걸을 때마다, 사박사박하는 발소리가 귀에 남습니다……
 		ENDIF
 	CASE "겨울"
@@ -744,7 +744,7 @@ CASE "비탕의온천여관"
 			ELSE
 				PRINTFORM 두사람이 
 			ENDIF
-			PRINTFORMW 눈을 밟는 소리만이 주변에 울려퍼지고있습니다……
+			PRINTFORMW 눈을 밟는 소리만이 주변에 울려퍼지고 있습니다……
 		ELSE
 			PRINTFORMW 그것을 넘어서 고생 끝에 가까스로 도착한 여관의 입구에는, 몇 개의 눈사람이 늘어서있었습니다. 아마 누군가가 만들어놓은 것이겠지요.
 			PRINTFORMW 저택에 돌아가면 만들어보는 것도 괜찮을 것같다…
@@ -781,7 +781,7 @@ PRINTFORMW %OKAMI%들은 여행의 피로를 위로해주는 말을 들으면서
 
 PRINTL 
 
-PRINTFORM 여관의 접수처에서 숙박 수속을 하고있자,
+PRINTFORM 여관의 접수처에서 숙박 수속을 하고 있자,
 ;TARGETが아이っぽい몽마や딸
 SELECTCASE NO:TARGET
 CASE 2, 4, 20, 31, 33, 40, 55, 97
@@ -851,7 +851,7 @@ CASEELSE
 		PRINTFORMW 아무래도 빨리 온천에 들어가고 싶어서 어쩔 수 없는 것같습니다…
 		PRINTFORMW 마치 아이처럼 뾰롱퉁한 얼굴을 하한 %CALLNAME:TARGET%에게 재촉당해 %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%의 머리를 쓰다듬어주면서, 간략하게 숙박 수속을 했습니다…
 	ELSE
-		PRINTFORMW %TEXTR("여관", "손님의")% 아이같은 여자아이가 %조사처리(CALLNAME:TARGET,"를")% 가만히 쳐다보고있습니다. 
+		PRINTFORMW %TEXTR("여관", "손님의")% 아이같은 여자아이가 %조사처리(CALLNAME:TARGET,"를")% 가만히 쳐다보고 있습니다. 
 		PRINTFORMW 그것을 깨닫은 %조사처리(CALLNAME:TARGET,"가")% 인사하자, 여자아이도 인사로 대답했습니다.
 		PRINTFORMW 그리고 여자아이는 일단 심호흡을 하고, %CALLNAME:TARGET%에게 「%TEXTR("언니같이 되려면 어떻게 해야돼", "어떻게 하면 남자를 농락할 수 있어", "언니랑 이 사람은 러브러브한 관계야")%?」라는 질문을 해왔습니다!
 		PRINTFORMW 드문 질문에 %CALLNAME:TARGET%도 나쁜 생각이 없는 것 같고, 룰루랄라로 대답하고 있습니다…불필요한 것을 말하지 않으면 괜찮습니다만…
@@ -900,7 +900,7 @@ CASE "여름"
 	;とっておきの浴衣
 	IF RAND:2
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 짐을 두고, 준비된 유카타로 곧바로 갈아입었습니다. 
-		PRINTFORMW 그런데…%조사처리(CALLNAME:TARGET,"는")% 부시럭부시럭 자신의 가방을 찾아다니고있습니다. 
+		PRINTFORMW 그런데…%조사처리(CALLNAME:TARGET,"는")% 부시럭부시럭 자신의 가방을 찾아다니고 있습니다. 
 		PRINTFORMW 기어이 이런 기회를 위해서 이전에 자신의 유카타를 준비했다고합니다. 
 		PRINTFORM 간신히 갈아입은 %조사처리(CALLNAME:TARGET,"는")%, 소중한 
 		PRINTFORM %TEXTR("나팔꽃", "해바라기", "도라지꽃", "자양화", "치자꽃", "꽈리꽃")%
@@ -1063,7 +1063,7 @@ CASEELSE
 		PRINTFORM 숙박하는 방에 들어가자, \@ ASSI > 0 ? %CALLNAME:TARGET%들은 # %조사처리(CALLNAME:TARGET,"는")% \@ 
 		SIF ASSI
 			PRINTFORM 
-		PRINTFORMW 저택에는 없는 「벽장」을 흥미롭게 보고있습니다…
+		PRINTFORMW 저택에는 없는 「벽장」을 흥미롭게 보고 있습니다…
 		IF ASSI
 			PRINTFORM 두 사람은 
 		ELSE
@@ -1524,12 +1524,12 @@ PRINTL
 			ELSE
 				PRINTFORM %조사처리(CALLNAME:MASTER,"과")% %CALLNAME:TARGET%
 			ENDIF
-			PRINTFORMW 의 얼굴을 보며,  %TEXTR("히죽히죽", "능글능글", "헤헤", "뺨을 붉히며")% 웃고있습니다…
+			PRINTFORMW 의 얼굴을 보며,  %TEXTR("히죽히죽", "능글능글", "헤헤", "뺨을 붉히며")% 웃고 있습니다…
 			PRINTFORMW 아무래도 민박 측의 쓸데없는 서비스인 것같습니다…
 			PRINTFORM \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %조사처리(CALLNAME:ASSI,"는")% # %조사처리(CALLNAME:TARGET,"는")% \@ 
 			SIF ASSI
 				PRINTFORM 
-			PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 억누르고, 무리하게 입안에 음식을 밀으려하고있습니다!
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 억누르고, 무리하게 입안에 음식을 밀으려하고 있습니다!
 		ENDIF
 	CASE "온천마을의여관"
 		IF ASSI
@@ -1538,11 +1538,11 @@ PRINTL
 			PRINTFORM %조사처리(CALLNAME:MASTER,"과")% %조사처리(CALLNAME:TARGET,"는")% 
 		ENDIF
 		PRINTFORMW 종업원인 %OKAMI%의 안내를 받아 연회장에 왔습니다.
-		PRINTFORMW 넓은 연회장에는 이미 밥상이 줄지어 나란히 있고, 먼저 저녁식사를 하고있는 손님도 있는 것같습니다…
+		PRINTFORMW 넓은 연회장에는 이미 밥상이 줄지어 나란히 있고, 먼저 저녁식사를 하고 있는 손님도 있는 것같습니다…
 		PRINTFORM \@ ASSI > 0 ? %CALLNAME:TARGET%들이 #  %조사처리(CALLNAME:TARGET,"가")% \@ 
 		SIF ASSI
 			PRINTFORM 
-		PRINTFORMW 자리에 앉아, 왁자지껄 즐겁게 요리를 먹고있는데, 연회장이 갑자기 소란스러워졌습니다…
+		PRINTFORMW 자리에 앉아, 왁자지껄 즐겁게 요리를 먹고 있는데, 연회장이 갑자기 소란스러워졌습니다…
 		PRINTFORM 아무래도 
 		;여름限定
 		IF FLAG:873 == 1 && RAND:3 == 0
@@ -1618,7 +1618,7 @@ PRINTL
 							PRINTFORM \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %조사처리(CALLNAME:ASSI,"는")% #  %조사처리(CALLNAME:TARGET,"는")% \@ 
 							SIF ASSI
 								PRINTFORM 
-							PRINTFORMW 아무런 말도 하지 않았지만, 질투했는지 별로 재미없어하는 표정을 짓고있습니다…
+							PRINTFORMW 아무런 말도 하지 않았지만, 질투했는지 별로 재미없어하는 표정을 짓고 있습니다…
 						ENDIF
 					ENDIF
 				ELSE
@@ -1639,19 +1639,19 @@ PRINTL
 		IF RAND:2 == 0
 			PRINTFORM 공연을 마친 %조사처리(CALLNAME:MASTER,"가")% 제자리로 돌아가자…
 			IF RAND:2 == 0
-				PRINTFORMW 옆자리의 %CALLNAME:TARGET%에게 %TEXTR("거나하게 취한 청년이", "완숙한 중년이","왠지 싫은 느낌의 젊은 남자가")% 구애를 하고있었습니다! 
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 상대해주지 않고있습니다만, 남자는 착각한 채 「오늘밤 자기방에 와달라」고까지 말하고있습니다…
+				PRINTFORMW 옆자리의 %CALLNAME:TARGET%에게 %TEXTR("거나하게 취한 청년이", "완숙한 중년이","왠지 싫은 느낌의 젊은 남자가")% 구애를 하고 있었습니다! 
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 상대해주지 않고 있습니다만, 남자는 착각한 채 「오늘밤 자기방에 와달라」고까지 말하고 있습니다…
 				PRINTFORMW 그러나, %조사처리(CALLNAME:TARGET,"가")% 「%TEXTR("2리터 뽑아낼때까지 놔주지않아", "3일간 계속 해줄거야？", "부실하면 뽑아버릴건데？")%」라고 단호하게 말하자, 남자는 새파랗게 질린 얼굴로 자리를 떴습니다! 
 				PRINTFORML 귀찮은 일로 발전하지 않고 마무리되어서, %조사처리(CALLNAME:MASTER,"가")% 이런이거참 하면서 자리에 앉자……
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 소악마같은 미소를 지으며, %CALLNAME:MASTER%의 가랑이를 슥슥 쓰다듬었습니다…
 			ELSE
 				IF RAND:2 == 0
-					PRINTFORMW 옆자리의 %CALLNAME:TARGET% 무릎 위에, 본적업는 여자아이가 잠을 자고있었습니다! 
+					PRINTFORMW 옆자리의 %CALLNAME:TARGET% 무릎 위에, 본적업는 여자아이가 잠을 자고 있었습니다! 
 					PRINTFORMW 아무래도 연회장에 있는 어느 가족의 아이같습니다만, 실수로 %CALLNAME:TARGET%의 자리에 와버린 모양입니다…
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 여자아이를 돌보는 동안에, %조사처리(CALLNAME:MASTER,"는")% 부모를 찾아서 데려왔습니다…
 				ELSE
-					PRINTFORMW 옆자리의 %조사처리(CALLNAME:TARGET,"과")%, 긴 흑발의 여성이 어울려서 같이 마시고있었습니다. 
-					PRINTFORMW 흑발의 여성은 실연여행을 온 듯, %CALLNAME:TARGET%에게 투정을 부리고있습니다…
+					PRINTFORMW 옆자리의 %조사처리(CALLNAME:TARGET,"과")%, 긴 흑발의 여성이 어울려서 같이 마시고 있었습니다. 
+					PRINTFORMW 흑발의 여성은 실연여행을 온 듯, %CALLNAME:TARGET%에게 투정을 부리고 있습니다…
 					IF ABL:레즈끼 >= 3
 						PRINTFORMW 이윽고 여성이 만취해서 인사불성이되자… %조사처리(CALLNAME:TARGET,"는")% 여성의 %TEXTR("가슴을", "허벅지를", "엉덩이를", "목덜미를")% 살짝 쓰다듬기 시작했습니다! 
 						IF RAND:2 == 0
@@ -1705,18 +1705,18 @@ PRINTL
 			PRINTFORMW 둘러앉아, 매달린 냄비를 젓가락으로 쿡쿡 찔렀습니다…
 			;鶏鍋
 			IF RAND:3 == 0
-				PRINTFORMW 잔뜩 들어간 야채와 신선한 닭고기가 냄비 안에서 보글보글 끓고있어 그 향기만 가지고도 충분히 밥을 먹을 수 있을 것같습니다…
+				PRINTFORMW 잔뜩 들어간 야채와 신선한 닭고기가 냄비 안에서 보글보글 끓고 있어 그 향기만 가지고도 충분히 밥을 먹을 수 있을 것같습니다…
 				PRINTFORM %CALLNAME:TARGET%
 				SIF ASSI
 					PRINTFORM 들
-				PRINTFORMW 도 웃음지으면서, 뜨거운 전골을 하후하후 입안에서 식히고있습니다.
+				PRINTFORMW 도 웃음지으면서, 뜨거운 전골을 하후하후 입안에서 식히고 있습니다.
 			;豆乳鍋
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 콩국물의 순한 맛 속에서 된장의 맛이 확실하게 퍼져나와, 한입 맛보는 것만으로 몸속부터 따뜻해져가는 것같습니다… 
 				PRINTFORM %CALLNAME:TARGET%
 				SIF ASSI
 					PRINTFORM 들
-				PRINTFORMW 도 웃음지으면서, 뜨거운 전골을 하후하후 입안에서 식히고있습니다.
+				PRINTFORMW 도 웃음지으면서, 뜨거운 전골을 하후하후 입안에서 식히고 있습니다.
 			;カニすき
 			ELSE
 				PRINTFORMW 냄비 안에서는 배추나 대파 등 많은 야채가, 거기에 더해서 큰 게가 새빨갛게 삶아져있습니다. 
@@ -1795,7 +1795,7 @@ PRINTL
 				PRINTFORMW 따끈따끈하게 데운 단팥죽입니다.
 				PRINTFORMW 달콤함에 비해서 산뜻해서, 얼마나든지 먹을 수 있을 것같은 고급스러운 맛이 납니다…
 			ELSE
-				PRINTFORMW 쪄셔서 김이 나오고있는 만쥬였습니다.
+				PRINTFORMW 쪄셔서 김이 나오고 있는 만쥬였습니다.
 				PRINTFORMW 아무런 특색도 없는 만쥬라고 생각하고 한입 먹어보니, 아무래도 팥소에 밤이 들어가있는 듯, 깊이가 있는 달콤함이 혀 위에 퍼져 옵니다…
 			ENDIF
 		ENDSELECT
@@ -1805,14 +1805,14 @@ PRINTL
 		IF RAND:2 == 0
 			PRINTFORM , 맛있는 디저트에 
 			IF (TALENT:유치 || TALENT:양기 || COND("성장끝") == 0) && RAND:2 == 0
-				PRINTFORMW 들어간 꿀때문에 입이 떨어지지 않는다고 소란을 떨고있습니다…
+				PRINTFORMW 들어간 꿀때문에 입이 떨어지지 않는다고 소란을 떨고 있습니다…
 			ELSE
-				PRINTFORMW 꿀맛이라며 기뻐하고있습니다…
+				PRINTFORMW 꿀맛이라며 기뻐하고 있습니다…
 			ENDIF
 		ELSE
 			PRINTFORM , 배가 가득 차도록 요리를 먹고도, 어느 새인가 디저트를 낼름 해치
 			IF RAND:2 == 0
-				PRINTFORMW 우고있습니다!
+				PRINTFORMW 우고 있습니다!
 				PRINTFORMW 우고 종업원에게 한 그릇 더 달라고 졸라대, %조사처리(CALLNAME:MASTER,"는")% 기가 막혀 버렸습니다…
 			ELSE
 				PRINTFORMW , %CALLNAME:MASTER%의 디저트까지도 호시탐탐 노리고 있습니다!
@@ -1848,7 +1848,7 @@ CASE "작은민박"
 	PRINTFORM 아무래도 혼욕인 듯, 탈의실의 입구는 하나 밖에 없습니다……
 	IF TALENT:음란
 		PRINTFORMW 
-		PRINTFORM 무슨 일인가싶어서 탈의실의 앞에서 주저하고있자, %조사처리(CALLNAME:MASTER,"는")% \@ ASSI > 0 && TALENT:ASSI:음란 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% #  %CALLNAME:TARGET% \@
+		PRINTFORM 무슨 일인가싶어서 탈의실의 앞에서 주저하고 있자, %조사처리(CALLNAME:MASTER,"는")% \@ ASSI > 0 && TALENT:ASSI:음란 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% #  %CALLNAME:TARGET% \@
 		SIF ASSI && TALENT:ASSI:음란
 			PRINTFORM 
 		PRINTFORMW 에게 등을 떠밀려 탈의실에 팽개쳐져버렸습니다! 
@@ -1923,18 +1923,18 @@ CASE "작은민박"
 						PRINTFORMW 바로 좀전까지는 주변에 아무도 없었습니다만…… 어이쿠, %조사처리(CALLNAME:MASTER,"는")% 어느샌가 몽마 무리에 둘러싸여있었습니다! 
 						PRINTFORMW %TEXTR("「얼른 다음을♪」이라며 재촉하는", "쿡쿡웃는", "흥미깊은 시선을 보내는")% 몽마들 앞에서, %조사처리(CALLNAME:MASTER,"는")% 공개섹스를 하게되어버렸습니다…
 					ELSE
-						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 완전히 황홀해하고있는 것을 확인하고, 주위 사람들에게 들키지 않도록, %조사처리(CALLNAME:MASTER,"를")% 데리고가 2차전을 하기위해 욕탕 안으로 향했습니다…
+						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 완전히 황홀해하고 있는 것을 확인하고, 주위 사람들에게 들키지 않도록, %조사처리(CALLNAME:MASTER,"를")% 데리고가 2차전을 하기위해 욕탕 안으로 향했습니다…
 					ENDIF
 					CALL EXP_CALC_TRAVEL, "대면좌위：내사정", TARGET, ABL:욕망 + 3 + RAND:3
 				;손훑기
 				ELSE
-					PRINTFORMW 온천을 기분좋게 민깍하고있던 %CALLNAME:MASTER%의 가랑이에 손을 뻗어왔습니다! 
+					PRINTFORMW 온천을 기분좋게 민깍하고 있던 %CALLNAME:MASTER%의 가랑이에 손을 뻗어왔습니다! 
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 파문이 일지 않도록 조용히 손목만 움직여, %CALLNAME:MASTER%의 귀두 밑을 정확히 자극했습니다…
 					IF ABL:새드끼 >=  3
 						PRINTFORMW 만져져서 절정해버릴 것만 같아진 %조사처리(CALLNAME:MASTER,"가")% 얼른 수음을 멈추라고 하자, %조사처리(CALLNAME:TARGET,"는")% 깔끔하게 손을 떼었습니다. 
 						PRINTFORMW 말귀를 잘 알아듣는 %CALLNAME:TARGET%에 안심한 %조사처리(CALLNAME:MASTER,"였")%지만, 완전히 발기한 페니스는 이미 %CALLNAME:TARGET%의 손가락 감촉을 기억해버려, 서서히 아쉬운마음이 생겨났습니다…
-						PRINTFORMW 그걸 아는지 모르는지, %조사처리(CALLNAME:TARGET,"는")% 참고있는 %CALLNAME:MASTER%에게, 수음하는 모습을 보여주고있습니다…
-						PRINTFORMW …%조사처리(CALLNAME:MASTER,"는")% 한동안 허전함을 견디고있었지만, 곧 참을 수 없어져, %CALLNAME:TARGET%에게 “방금 전의 다음편”을 부탁했습니다. 
+						PRINTFORMW 그걸 아는지 모르는지, %조사처리(CALLNAME:TARGET,"는")% 참고 있는 %CALLNAME:MASTER%에게, 수음하는 모습을 보여주고 있습니다…
+						PRINTFORMW …%조사처리(CALLNAME:MASTER,"는")% 한동안 허전함을 견디고 있었지만, 곧 참을 수 없어져, %CALLNAME:TARGET%에게 “방금 전의 다음편”을 부탁했습니다. 
 						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 그것을 듣고 빙긋 미소를 짓고… 철퍽철퍽 소리를 내며 소리를 내며 난폭하게 손을 움직이기 시작했습니다! 
 						PRINTFORMW 애태울만큼 애태워진 %CALLNAME:MASTER%의 페니스는 탕 속에 평소보다 잔뜩 사정해, 주변에 하얗고 탁한 것을 쏟아내고말았습니다…
 					ELSE
@@ -1948,7 +1948,7 @@ CASE "작은민박"
 						PRINTFORMW 바로 좀전까지는 주변에 아무도 없었습니다만…… 어이쿠, %조사처리(CALLNAME:MASTER,"는")% 어느샌가 몽마 무리에 둘러싸여있었습니다! 
 						PRINTFORMW %TEXTR("「얼른 다음을♪」이라며 재촉하는", "쿡쿡웃는", "흥미깊은 시선을 보내는")% 몽마들 앞에서, %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%에게 몇번이고 욕탕에 사정당하고, 쥐어짜이는 한심한 가는 얼굴을 보여주고말았습니다…
 					ELSE
-						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 사정감에 황홀해하고있는 것을 확인하고, 주위 사람들에게 들키지 않도록, %조사처리(CALLNAME:MASTER,"를")% 데리고가 2차전을 하기위해 욕탕 안으로 향했습니다…
+						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 사정감에 황홀해하고 있는 것을 확인하고, 주위 사람들에게 들키지 않도록, %조사처리(CALLNAME:MASTER,"를")% 데리고가 2차전을 하기위해 욕탕 안으로 향했습니다…
 					ENDIF
 					CALL EXP_CALC_TRAVEL, "수음", TARGET, ABL:욕망 + 3 + RAND:3
 					CALL EXP_CALC_TRAVEL, "절정", MASTER, ABL:욕망 + 3 + RAND:3
@@ -1967,15 +1967,15 @@ CASE "작은민박"
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 다시 %조사처리(CALLNAME:MASTER,"를")% 귀여워해주려고 했지만, 구름 사이에서 달이 얼굴을 내밀어, 주변을 달빛으로 비추기시작했습니다…
 					PRINTFORMW 바로 좀전까지는 주변에 아무도 없었습니다만…… 어이쿠, %조사처리(CALLNAME:MASTER,"는")% 어느샌가 몽마 무리에 둘러싸여있었습니다! 
 					PRINTFORMW 그러나 %조사처리(CALLNAME:TARGET,"는")% 동요하지않고 오히려 %조사처리(CALLNAME:MASTER,"를")% 깔아눕히고, %TEXTR("「얼른 다음을♪」이라며 재촉하는", "쿡쿡웃는", "흥미깊은 시선을 보내는")% 몽마들 앞에서 %TEXTR("공개조교", "공개섹스", "노출조교")%를 시작하고 말았습니다…! 
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 방금 전에 질내사정한 정액이 역류될 정도로 격렬하게 찔러, %CALLNAME:MASTER%의 태내에 넘쳐날 정도로 잔뜩 씨를 뿌려, 누구의 소유물인지 들에게 분명히 과시하고있습니다…
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 방금 전에 질내사정한 정액이 역류될 정도로 격렬하게 찔러, %CALLNAME:MASTER%의 태내에 넘쳐날 정도로 잔뜩 씨를 뿌려, 누구의 소유물인지 들에게 분명히 과시하고 있습니다…
 				ELSE
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 완전히 황홀해하고있는 것을 확인하고, 주위 사람들에게 들키지 않도록, %조사처리(CALLNAME:MASTER,"를")% 데리고가 2차전을 하기위해 욕탕 안으로 향했습니다…
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 완전히 황홀해하고 있는 것을 확인하고, 주위 사람들에게 들키지 않도록, %조사처리(CALLNAME:MASTER,"를")% 데리고가 2차전을 하기위해 욕탕 안으로 향했습니다…
 				ENDIF
 				CALL EXP_CALC_TRAVEL, "역레이프：내사정", TARGET, ABL:욕망 + 3 + RAND:3
 				CALL EXP_CALC_TRAVEL, "절정", MASTER, ABL:욕망 + 3 + RAND:3
 			;몽마についてない
 			ELSE
-				PRINTFORMW 완전히 릴렉스하고있던 %CALLNAME:MASTER%의 보지에 손가락을 넣었습니다! 
+				PRINTFORMW 완전히 릴렉스하고 있던 %CALLNAME:MASTER%의 보지에 손가락을 넣었습니다! 
 				PRINTFORMW 갑작스러운 사태에 비명을 지르는 %조사처리(CALLNAME:MASTER,"를")% , %조사처리(CALLNAME:TARGET,"는")% 손가락으로 질벽을 빙글빙글 농락해, 조용하게 만들어버렸습니다. 
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 주변에 들키지 않도록 필사적으로 이를 악물었지만, 하나 또 하나 늘어가는 %CALLNAME:TARGET%의 손가락에 허리가 안에서부터 녹아버리는 것만같습니다…
 				PRINTFORMW 그리고 %조사처리(CALLNAME:TARGET,"는")% 「물을 뿌려도 들키지않아」라고 귓가에 속삭이고, %CALLNAME:MASTER%의 Ｇ스팟을 집중적으로 문질러올려왔습니다! 
@@ -1986,9 +1986,9 @@ CASE "작은민박"
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 다시 %조사처리(CALLNAME:MASTER,"를")% 귀여워해주려고 했지만, 구름 사이에서 달이 얼굴을 내밀어, 주변을 달빛으로 비추기시작했습니다…
 					PRINTFORMW 바로 좀전까지는 주변에 아무도 없었습니다만…… 어이쿠, %조사처리(CALLNAME:MASTER,"는")% 어느샌가 몽마 무리에 둘러싸여있었습니다! 
 					PRINTFORMW 그러나 %조사처리(CALLNAME:TARGET,"는")% 동요하지않고 오히려 %조사처리(CALLNAME:MASTER,"를")% 깔아눕히고, %TEXTR("「얼른 다음을♪」이라며 재촉하는", "쿡쿡웃는", "흥미깊은 시선을 보내는")% 몽마들 앞에서 %TEXTR("공개조교", "노출조교")%를 시작해버리고말았습니다…! 
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 방금전에 막 가버려서 민감해져있는 %CALLNAME:MASTER%의 몸을 교묘하게 주물러, 주변을 둘러싼 몽마들에게 그 치태를 과시하고있습니다…
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 방금전에 막 가버려서 민감해져있는 %CALLNAME:MASTER%의 몸을 교묘하게 주물러, 주변을 둘러싼 몽마들에게 그 치태를 과시하고 있습니다…
 				ELSE
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 완전히 황홀해하고있는 것을 확인하고, 주위 사람들에게 들키지 않도록, %조사처리(CALLNAME:MASTER,"를")% 데리고가 2차전을 하기위해 욕탕 안으로 향했습니다…
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 완전히 황홀해하고 있는 것을 확인하고, 주위 사람들에게 들키지 않도록, %조사처리(CALLNAME:MASTER,"를")% 데리고가 2차전을 하기위해 욕탕 안으로 향했습니다…
 				ENDIF
 				CALL EXP_CALC_TRAVEL, "절정", MASTER, ABL:욕망 + 3 + RAND:3
 			ENDIF
@@ -1997,8 +1997,8 @@ CASE "작은민박"
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 마침 잘되었다며, %CALLNAME:TARGET%에게 몰래 다가갔습니다……
 			IF PENIS(MASTER)
 				;마스터についてるとこっちもあり
-				PRINTFORMW 완전히 릴렉스하고있던 %조사처리(CALLNAME:TARGET,"를")% 뒤에서 안아올려, 배면좌위 자세로 단번에 삽입해버렸습니다! 
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 갑작스레 꿰뚫리는 충격에, 그저 입만 뻐끔뻐끔 거리며 아무말도 못하고있습니다…
+				PRINTFORMW 완전히 릴렉스하고 있던 %조사처리(CALLNAME:TARGET,"를")% 뒤에서 안아올려, 배면좌위 자세로 단번에 삽입해버렸습니다! 
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 갑작스레 꿰뚫리는 충격에, 그저 입만 뻐끔뻐끔 거리며 아무말도 못하고 있습니다…
 				PRINTFORMW 그런 그녀의 모습을 보면서, %조사처리(CALLNAME:MASTER,"는")% 온천보다도 뜨겁게 녹아있는 %CALLNAME:TARGET%의 질내를, 빙글빙글 유린했습니다
 				PRINTFORMW …여기는 어디까지나 노천목욕탕. 밤의 장막이 시야를 가려도, 소리만은 주변에 울린다. %조사처리(CALLNAME:TARGET,"는")% 신음소리만큼은 흘리지 않으려고 필사적으로 이를 악물었지만―
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 「욕탕에 흘리지않도록」이라고 %CALLNAME:TARGET%의 귓가에 속삭이고, 그녀의 안에 사정했습니다! 
@@ -2036,14 +2036,14 @@ CASE "작은민박"
 		IF ABL:노출벽 >= 5
 			PRINTFORMW 하나둘씩 남자 손님의 모습도 보입니다만, 노천탕에는 시야를 가려주는 바위도 많이 있을 뿐만 아니라 김도 자욱해, 그닥 잘보인다고 할만한 상황은 아닙니다. 
 			PRINTFORMW 「이렇다면 혼욕이라도 괜찮을 것이다」하고 %조사처리(CALLNAME:MASTER,"가")% 가슴을 쓸어내리고 있는 바로 앞에… 
-			PRINTFORM 놀랍게도, 완전히 무방비하게 알몸을 드러내고있는 \@ ASSI > 0 && ABL:ASSI:노출벽 >= 5 ? %조사처리(CALLNAME:TARGET,"과")% %조사처리(CALLNAME:ASSI,"가")% # %조사처리(CALLNAME:TARGET,"가")% \@ 
+			PRINTFORM 놀랍게도, 완전히 무방비하게 알몸을 드러내고 있는 \@ ASSI > 0 && ABL:ASSI:노출벽 >= 5 ? %조사처리(CALLNAME:TARGET,"과")% %조사처리(CALLNAME:ASSI,"가")% # %조사처리(CALLNAME:TARGET,"가")% \@ 
 			SIF ASSI && ABL:ASSI:노출벽 >= 5
 				PRINTFORM 
 			PRINTFORMW 나타났습니다! 
 			PRINTFORM 무엇하나 숨기려고하지 않는 그녀
 			SIF ASSI && ABL:ASSI:노출벽 >= 5
 				PRINTFORM 들
-			PRINTFORMW 의 모습에, 한 남자손님은 어안이 벙벙한 표정을 짓고있고, 어느 남자 손님은 코를 누르고있고, 어느 남성손님은 몸 앞을 가리고있습니다…
+			PRINTFORMW 의 모습에, 한 남자손님은 어안이 벙벙한 표정을 짓고 있고, 어느 남자 손님은 코를 누르고 있고, 어느 남성손님은 몸 앞을 가리고 있습니다…
 			PRINTFORM 완전히 관심의 중심이 되었습니다
 			IF ASSI && ABL:ASSI:노출벽 >= 5
 				PRINTFORM 두 사람을
@@ -2065,7 +2065,7 @@ CASE "작은민박"
 				PRINTFORMW 잠시 후에 뜨거운 온천떄문에 머리에 현기증이 나는 느낌이 들어서, %조사처리(CALLNAME:TARGET,"는")% 목욕통의 가장자리에 앉아서 열을 식히기 시작했습니다. 
 				PRINTFORMW 열이 올랐냐고 농담을 하며 %조사처리(CALLNAME:TARGET,"는")% 불끈한 표정으로 %CALLNAME:MASTER% 쪽을 향해 가랑이를 벌리고, 거기를 음란한 손놀림으로 만지작거리며 그 모습을 과시해왔습니다! 
 				PRINTFORMW 달아오른 몸으로 야한 모습을 보이는 %CALLNAME:TARGET%의 모습에 %TEXTR("잠깐", "두근두근 해져서")% 쳐다본게 운이 없었는지, %조사처리(CALLNAME:MASTER,"는")% 반대로 열이 올라서 쓰러져버렸습니다! 
-				PRINTFORM 정신알 차렸을 때 눈에 들어온 것은 탈의실의 천장과 걱정스러운 얼굴로 쳐다보고있는 \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% # %CALLNAME:TARGET% \@ 
+				PRINTFORM 정신알 차렸을 때 눈에 들어온 것은 탈의실의 천장과 걱정스러운 얼굴로 쳐다보고 있는 \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% # %CALLNAME:TARGET% \@ 
 				SIF ASSI
 					PRINTFORM 
 				PRINTFORMW 의 얼굴이었습니다…
@@ -2091,11 +2091,11 @@ CASE "작은민박"
 			PRINTFORM 
 		PRINTFORMW 에게 이끌려서 사우나로 누가 더 오래있는지로 승부를 하게 되었습니다! 
 		PRINTFORMW 사우나에 들어가자 뜨거운 열기가 온몸에 감겨들어, 곧바로 땀이 흐르기시작했습니다. 
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 그렇게나 뜨거운 사우나 속에서 태연한 얼굴로 미소를 지으며 %조사처리(CALLNAME:MASTER,"를")% 도발적인 눈으로 쳐다보고있습니다. 
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 그렇게나 뜨거운 사우나 속에서 태연한 얼굴로 미소를 지으며 %조사처리(CALLNAME:MASTER,"를")% 도발적인 눈으로 쳐다보고 있습니다. 
 		;당신の勝ち
 		IF RAND:2 == 0
 			PRINTFORMW ……그렇지만, 먼저 항복선언을 한 쪽은 %CALLNAME:TARGET% 쪽이었습니다! 
-			PRINTFORMW 휘청거리는 걸음으로 사우나를 나와서, 냉탕에 들어가 편안한 얼굴을 하고있습니다…
+			PRINTFORMW 휘청거리는 걸음으로 사우나를 나와서, 냉탕에 들어가 편안한 얼굴을 하고 있습니다…
 		;TARGETの勝ち
 		ELSE
 			PRINTFORMW ……%조사처리(CALLNAME:TARGET,"가")% 상당히 잘 참아서, %조사처리(CALLNAME:MASTER,"가")% 먼저 백기를 올리고 냉탕으로 향했습니다…
@@ -2115,9 +2115,9 @@ CASE "작은민박"
 		;거유
 		ELSEIF TALENT:거유 && RAND:3 == 0
 			PRINTFORMW 맛사지 체어가 %CALLNAME:TARGET%의 신체를 문질러 풀자, 풍만한 가슴이 출렁출렁 부드럽게 흔들립니다…! 
-			PRINTFORMW 주위의 남성손님은 그 모습에 침을 꿀꺽 삼키고, %CALLNAME:TARGET%의 흔들리는 가슴에 시선을 고정시키고있습니다…
+			PRINTFORMW 주위의 남성손님은 그 모습에 침을 꿀꺽 삼키고, %CALLNAME:TARGET%의 흔들리는 가슴에 시선을 고정시키고 있습니다…
 		ELSEIF RAND:2 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 기분이 좋아져 흐늘흐늘한 얼굴로, 더 없이 행복한 시간을 보내고있습니다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 기분이 좋아져 흐늘흐늘한 얼굴로, 더 없이 행복한 시간을 보내고 있습니다…
 			PRINTFORMW ……한개 사서 저택에 놓을까? 
 		ELSE
 			PRINTFORMW 처음에는 독특한 감촉에 위화감을 느끼던 %조사처리(CALLNAME:TARGET,"였")%지만, 곧 서서히 몸에 힘을 빼고 긴장을 풀기시작했습니다…
@@ -2195,7 +2195,7 @@ CASE "작은민박"
 		PRINTFORM 온천에 온 이상에는 이것을 하지않으면 안된다며 %조사처리(CALLNAME:TARGET,"는")% %TEXTR("팔을 걷고", "라켓대신 슬리퍼를 들고", "탁구공을 튀기며")% \@ ASSI > 0 ? %조사처리(CALLNAME:MASTER,"과")% %CALLNAME:ASSI% # %CALLNAME:MASTER% \@
 		SIF ASSI
 			PRINTFORM 
-		PRINTFORMW 에게 조르고있습니다… 
+		PRINTFORMW 에게 조르고 있습니다… 
 		PRINTFORM 생각보다 치열한 승부에, 땀을 흘린 
 		IF ASSI
 			PRINTFORM 셋
@@ -2309,11 +2309,11 @@ CASE "온천마을의여관"
 			PRINTFORMW %CALLNAME:MASTER%의 적수가 아니었습니다…!
 			IF PENIS(MASTER)
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 목욕통의 가장자리에 %조사처리(ESA,"를")% 뒤에서 깔아눕히고, 목욕탕에 살과 살이 맞부딪치는 마른 파열음을 울렸습니다…
-				PRINTFORMW %조사처리(ESA,"는")% %조사처리(CALLNAME:MASTER,"가")% 허리를 밀어넣을 때마다, 관능에 마음을 태우며 암컷의 울음소리를 내고있습니다… 
+				PRINTFORMW %조사처리(ESA,"는")% %조사처리(CALLNAME:MASTER,"가")% 허리를 밀어넣을 때마다, 관능에 마음을 태우며 암컷의 울음소리를 내고 있습니다… 
 				CALL EXP_CALC_TRAVEL, "후배위", MOB, 1
 			ELSE
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 목욕탕에서 %조사처리(ESA,"를")% 꼭 껴안고 키스를 하면서 온몸에  손가락을 매끄럽게 움직였습니다… 
-				PRINTFORMW %조사처리(ESA,"는")% %CALLNAME:MASTER%의 손가락이 민감한 부분에 닿을 때마다 신체를 퉁기면서 암컷의 울음 소리를 내고있습니다… 
+				PRINTFORMW %조사처리(ESA,"는")% %CALLNAME:MASTER%의 손가락이 민감한 부분에 닿을 때마다 신체를 퉁기면서 암컷의 울음 소리를 내고 있습니다… 
 				CALL EXP_CALC_TRAVEL, "대면좌위", MOB, 1
 			ENDIF
 			PRINTFORM 그 근처에서는 이미 %CALLNAME:MASTER%에 의해 절정을 맞이하고 축 늘어져 버린 \@ ASSI > 0 ? %조사처리(ESB,"과")% %조사처리(ESC,"가")% # %조사처리(ESB,"가")% \@
@@ -2322,7 +2322,7 @@ CASE "온천마을의여관"
 			PRINTFORM , \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% # %CALLNAME:TARGET% \@
 			SIF ASSI
 				PRINTFORM 
-			PRINTFORMW 에게 희롱당하고있습니다…
+			PRINTFORMW 에게 희롱당하고 있습니다…
 			PRINTFORM 「%TEXTR("용서해줘", "이젠 안돼")%」라며 신음하는 %ESA%들에게, \@ ASSI > 0 ? %CALLNAME:MASTER%들 세명은 # %조사처리(CALLNAME:MASTER,"과")% %조사처리(CALLNAME:TARGET,"는")% \@ 
 			IF ASSI
 				PRINTFORM 
@@ -2403,10 +2403,10 @@ CASE "온천마을의여관"
 			ELSE
 				PRINTFORM 모양좋은 가슴을 주무르고 휘젓듯이 애무당해, 
 			ENDIF
-			PRINTFORMW  달콤한 비명을 지르고있습니다…
+			PRINTFORMW  달콤한 비명을 지르고 있습니다…
 			PRINTFORMW 허리를 튕기며 몸부림치는 %CALLNAME:MASTER%에게, 몽마들은 쉴새없이 %TEXTR("소중한 곳", "그곳", "비소")%에까지 손가락을 뻗어옵니다! 
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 귓가에 속삭여지는 자신의 치태에 대해서 들으면서 무수한 손가락과 혀로 애무당해 순식간에 절정하고말았습니다…
-			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 절정에 황홀하고있는 사이에 몽마들에게 알몸이 되어, 그대로 목욕탕으로 끌려가버렸습니다…
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 절정에 황홀하고 있는 사이에 몽마들에게 알몸이 되어, 그대로 목욕탕으로 끌려가버렸습니다…
 			CALL EXP_CALC_TRAVEL, "절정", MASTER, 1
 		ENDIF
 		;IF TALENT:MASTER:후타나리
@@ -2416,7 +2416,7 @@ CASE "온천마을의여관"
 			PRINTFORMW 몽마들은 목욕탕으로 끌려온 %CALLNAME:MASTER%에게, 흥분을 한층 더 높이려는 듯이, 자신들의 신체를 들이댑니다…
 			PRINTFORMW 요염하게 미소지으면서 자신의 %TEXTR("풍만한 가슴을", "발군의 신체비율을", "매혹적인 보디 라인을", "남자를 굴복시키는 신체를")% %CALLNAME:MASTER%에 들이대는 %ESA%…
 			PRINTFORMW %TEXTR("발달이 덜된", "미성숙한", "부풀다 만", "어딘가 앳된 느낌이 있는")% 신체를 무기로 %CALLNAME:MASTER%의 욕정을 자극해오는 %ESB%…
-			PRINTFORM 그리고 가학적인 미소를 짓고있는 %조사처리(ESC,"는")% 아무래도 양성인 듯, 그 다리 사이에 우뚝 솟은,  %CALLNAME:MASTER%
+			PRINTFORM 그리고 가학적인 미소를 짓고 있는 %조사처리(ESC,"는")% 아무래도 양성인 듯, 그 다리 사이에 우뚝 솟은,  %CALLNAME:MASTER%
 			;왜소は専用分岐
 			IF SIZE("페니스", MASTER) == 0
 				PRINTFORM %조사만처리(CALLNAME:MASTER,"과")%는 비교가 안될 정도로 훌륭한, 
@@ -2451,7 +2451,7 @@ CASE "온천마을의여관"
 						ENDIF
 						PRINTL 
 						PRINTFORMW (와)과%CALLNAME:MASTER%에 속삭이면, 그대로 뒤의 구멍에페니스를 밀어넣어 왔습니다…！
-						PRINTFORMW 이물을 받아들인 적이 없는 장소를 달궈진 철처럼 뜨거운 덩어리에 무리하게 침입당하고, %조사처리(CALLNAME:MASTER,"는")% 악문 이빨의 틈새로 고통스러운 신음을 흘리고있습니다…
+						PRINTFORMW 이물을 받아들인 적이 없는 장소를 달궈진 철처럼 뜨거운 덩어리에 무리하게 침입당하고, %조사처리(CALLNAME:MASTER,"는")% 악문 이빨의 틈새로 고통스러운 신음을 흘리고 있습니다…
 						PRINTFORMW 그럼에도 불구하고, 피학심에 불이 붙은 %CALLNAME:MASTER%의 작은 페니스는, 배에 닿을 정도로 발기되었습니다……
 						PRINTFORMW 그 뿐만 아니라, %ESC%의 거대한 페니스가 뿌리까지 박힌 순간, 직립한 귀여운 페니스의 끝부분에서 정액을 내뿜어버렸습니다! 
 						PRINTL 
@@ -2473,9 +2473,9 @@ CASE "온천마을의여관"
 						PRINTFORMW %조사처리(ESC,"는")% 그런 %CALLNAME:MASTER%의 뺨을 어루만지며 그대로 다시 허리를 움직이며, 귓불을 씹으며 또다시 속삭였습니다… 
 						PRINTL 
 						IF ESC == "루시펠"
-							PRINTFORMW 「자아, 잘봐… 너의 %CALLNAME:TARGET%,  너가 범해지는 모습을 이렇게 즐겁게  보고있어…♪」
+							PRINTFORMW 「자아, 잘봐… 너의 %CALLNAME:TARGET%,  너가 범해지는 모습을 이렇게 즐겁게  보고 있어…♪」
 						ELSE
-							PRINTFORMW 「자아아, 봐봐… %CALLNAME:TARGET%쨩도 당신을, 보고있었어…♪」
+							PRINTFORMW 「자아아, 봐봐… %CALLNAME:TARGET%쨩도 당신을, 보고 있었어…♪」
 						ENDIF
 						PRINTL 
 						PRINTFORMW %CALLNAME:TARGET%의 시선을 의식한 순간, %조사처리(CALLNAME:MASTER,"는")% 수치심으로부터 가볍게 절정해버려, 주루룩 힘없이 정액을 흘려버렸다… 
@@ -2490,7 +2490,7 @@ CASE "온천마을의여관"
 							PRINTFORMW 「내가 엉덩이를 팍팍 꿰뚫어서 죄다 짜줄게…♪」
 						ENDIF
 						PRINTL 
-						PRINTFORMW 대목욕탕에는 %조사처리(ESC,"가")% %CALLNAME:MASTER%에게 힘차게 허리를 부딪히는 마른 소리와 %CALLNAME:TARGET%들에게 보여지면서 엉덩이를 꿰뚫려 사정을 반복하는 %CALLNAME:MASTER%의, 소녀와 같은 교성이 울려퍼지고있습니다… 
+						PRINTFORMW 대목욕탕에는 %조사처리(ESC,"가")% %CALLNAME:MASTER%에게 힘차게 허리를 부딪히는 마른 소리와 %CALLNAME:TARGET%들에게 보여지면서 엉덩이를 꿰뚫려 사정을 반복하는 %CALLNAME:MASTER%의, 소녀와 같은 교성이 울려퍼지고 있습니다… 
 					ELSE
 						IF ESC == "루시펠"
 							IF RAND:2 == 0
@@ -2511,7 +2511,7 @@ CASE "온천마을의여관"
 						;당신のA성교경험25이상
 						IF EXP:MASTER:Ａ성교경험 >= 25
 							IF ESC == "루시펠"
-								PRINTFORMW 「후후, 굉장히 귀여움 받은 것같네… 너의 엉덩이 구멍, 나의 창에 달라붙고있어♪」
+								PRINTFORMW 「후후, 굉장히 귀여움 받은 것같네… 너의 엉덩이 구멍, 나의 창에 달라붙고 있어♪」
 								PRINTFORM 「이렇게 만든 건 %CALLNAME:TARGET%일까?
 								SIF ASSI
 									PRINTFORM  그렇지 않으면 %CALLNAME:ASSI%? 
@@ -2531,7 +2531,7 @@ CASE "온천마을의여관"
 							ENDIF
 							PRINTL 
 							PRINTFORMW 항문을 괴혀져 몸부림 치는 모습을 본 %조사처리(ESC,"는")%, 입맛을 다시면서 %CALLNAME:MASTER%의 허리를 단단히 잡고 리드미컬하게 허리를 사용하기시작했습니다…!
-							PRINTFORMW %ESC%의 흉악한 페니스로 애널을 범해져 사정을 반복하면서, %조사처리(CALLNAME:MASTER,"는")% 대목욕탕에 부끄러운 소리를 울려퍼지게하고있습니다… 
+							PRINTFORMW %ESC%의 흉악한 페니스로 애널을 범해져 사정을 반복하면서, %조사처리(CALLNAME:MASTER,"는")% 대목욕탕에 부끄러운 소리를 울려퍼지게하고 있습니다… 
 						ELSE
 							IF ESC == "루시펠"
 								PRINTFORMW 「자, 힘을 빼…어차피 울고 소리쳐도 도망칠 수 없으니까 ♪ 후후, 그리고…」
@@ -2545,11 +2545,11 @@ CASE "온천마을의여관"
 							IF ESC == "루시펠"
 								PRINTFORMW 「어때, 괴롭지만… 허리가 부서져버릴 정도 기분이 좋지…? 후후, 엉덩이의 맛… 푹 빠져버릴 때까지 알려줄게♪」
 							ELSE
-								PRINTFORMW 「어때? 당신의 엉덩이 구멍, 나의 자지 모양이 되어 버린 거, 알고있어…? 그럼 이번에는… 후후, 엉덩이가 아니면 갈 수 없는 몸으로 만들어줄게…♪」
+								PRINTFORMW 「어때? 당신의 엉덩이 구멍, 나의 자지 모양이 되어 버린 거, 알고 있어…? 그럼 이번에는… 후후, 엉덩이가 아니면 갈 수 없는 몸으로 만들어줄게…♪」
 							ENDIF
 							PRINTL 
 							PRINTFORMW 가학적인 미소를 지은 %조사처리(ESC,"는")%, %CALLNAME:MASTER%의 허리를 억누르면 애널을 격렬하게 범하기시작했습니다…!
-							PRINTFORMW %ESC% 마음대로 엉덩이를 범해지고있는 %CALLNAME:MASTER%의 입에서는, 서서히 신음해 소리가 아닌, 달콤한 비명이 새어나오기 시작하고있습니다…
+							PRINTFORMW %ESC% 마음대로 엉덩이를 범해지고 있는 %CALLNAME:MASTER%의 입에서는, 서서히 신음해 소리가 아닌, 달콤한 비명이 새어나오기 시작하고 있습니다…
 						ENDIF
 					ENDIF
 					PRINTFORML 
@@ -2578,8 +2578,8 @@ CASE "온천마을의여관"
 						PRINTFORMW 두사람의 혀는 옆구리와 배꼽, 목덜미와 쇄골, 온몸을 훑고, 마지막에는 %CALLNAME:MASTER%의 유두에 쪼옥 달라붙었습니다! 
 					;+키스責め(ESB担当）
 					ELSE
-						PRINTFORMW 소악마처럼 웃는 %조사처리(ESB,"가")%, 신음을 흘리고있는 입을 키스로 막았습니다…! 
-						PRINTFORMW 공기를 찾아 도망치는 %CALLNAME:MASTER%의 입을 %조사처리(ESB,"는")% 집요하게 뒤쫓아 육지 위에서 %조사처리(CALLNAME:MASTER,"를")% 익사시키려하고있습니다…! 
+						PRINTFORMW 소악마처럼 웃는 %조사처리(ESB,"가")%, 신음을 흘리고 있는 입을 키스로 막았습니다…! 
+						PRINTFORMW 공기를 찾아 도망치는 %CALLNAME:MASTER%의 입을 %조사처리(ESB,"는")% 집요하게 뒤쫓아 육지 위에서 %조사처리(CALLNAME:MASTER,"를")% 익사시키려하고 있습니다…! 
 					ENDIF
 					PRINTFORMW 다섯 명의 몽마들에게 일제히 괴롭힘을 당한 %조사처리(CALLNAME:MASTER,"는")% 싱겁게 절정해버려, 정액을 분수처럼 뿜고말았습니다… 
 					CALL EXP_CALC_TRAVEL, "절정", MASTER, 1
@@ -2612,11 +2612,11 @@ CASE "온천마을의여관"
 						PRINTL 
 						PRINTFORML 「밟혀서 가버리다니…쿡쿡, 변태 씨 ♪」
 						PRINTFORML 「이런 게 좋다니, 최악이네♪」
-						PRINTFORML 「후훗, 심한 얼굴하고있네… 그렇게 좋았어?」
+						PRINTFORML 「후훗, 심한 얼굴하고 있네… 그렇게 좋았어?」
 						PRINTFORML 「이봐, 좀더 밟았으면 좋겠지? 초 마조 변태 씨♪」
 						PRINTL 
-						PRINTFORMW 라며 각각 %조사처리(CALLNAME:MASTER,"를")% 매도하고있습니다…
-						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 수치와 굴욕, 그리고 마조히스틱한 쾌감에 몸을 진동시키며 방금 가버렸음에도 불구하고 그 말만으로도 반응해 세번째로 페니스를 다시 세우고있습니다… 
+						PRINTFORMW 라며 각각 %조사처리(CALLNAME:MASTER,"를")% 매도하고 있습니다…
+						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 수치와 굴욕, 그리고 마조히스틱한 쾌감에 몸을 진동시키며 방금 가버렸음에도 불구하고 그 말만으로도 반응해 세번째로 페니스를 다시 세우고 있습니다… 
 						PRINTFORMW 몽마들은 그런 %CALLNAME:MASTER%의 모습을 조롱하고 비웃으면서, 포상이라는 듯이 %CALLNAME:MASTER%의 페니스를, 역시 발로 학대했습니다… 
 						PRINTFORMW 몽마들의 가혹한 발고문은, %조사처리(CALLNAME:MASTER,"가")% 피학쾌락에 물들어, 스스로 굴복과 애원의 말을 할때까지 계속되었습니다… 
 						CALL EXP_CALC_TRAVEL, "절정", MASTER, 5 + RAND:5
@@ -2756,7 +2756,7 @@ CASE "온천마을의여관"
 					CALL EXP_CALC_TRAVEL, "ＮＴＲ섹스", TARGET, 3 + RAND:5
 				;濃厚NTR섹스
 				ELSE
-					PRINTFORMW %조사처리(ESC,"가")% 무슨 생각을 하고있는지 깨달은 %CALLNAME:MASTER%의 눈앞에서, %조사처리(CALLNAME:TARGET,"는")% %ESC%에게 밀려쓰러지고말았습니다! 
+					PRINTFORMW %조사처리(ESC,"가")% 무슨 생각을 하고 있는지 깨달은 %CALLNAME:MASTER%의 눈앞에서, %조사처리(CALLNAME:TARGET,"는")% %ESC%에게 밀려쓰러지고말았습니다! 
 					PRINTL 
 					IF ESC == "루시펠"
 						PRINTFORMW 「후후, 소중한 사람 앞에서 범해줄게…♪」
@@ -2794,7 +2794,7 @@ CASE "온천마을의여관"
 					ENDIF
 					PRINTL 
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 한순간 %CALLNAME:MASTER%에 대해서 생각하고 주저했지만, %조사처리(ESA,"과")% %ESB%에게 깔려서 범해지고 있는 %CALLNAME:MASTER%의 모습을 보자, 간신히 남아있던 이성의 끈이 완전히 끊어져버렸습니다… 
-					PRINTFORMW 그리고 신체를 꿰뚫는 강렬한 쾌락에 흥분된 그대로, %조사처리(CALLNAME:TARGET,"는")% %ESC%의 페니스에 굴복하는 말을 입에 올려버렸습니다… 그 뿐만 아니라, 스스로 질내사정을 애원하고있습니다! 
+					PRINTFORMW 그리고 신체를 꿰뚫는 강렬한 쾌락에 흥분된 그대로, %조사처리(CALLNAME:TARGET,"는")% %ESC%의 페니스에 굴복하는 말을 입에 올려버렸습니다… 그 뿐만 아니라, 스스로 질내사정을 애원하고 있습니다! 
 					PRINTL 
 					;嫁が빌리져
 					IF COND("Ｃ빌리져")
@@ -2820,7 +2820,7 @@ CASE "온천마을의여관"
 					ENDIF
 					PRINTL 
 					PRINTFORMW 허리를 밀어넣고 자궁구에 끝부분을 갖다대고 내뿜는 듯한 기세로 정액을 흘려넣었습니다! 
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 보고있는 앞에서 절규하며, 질내 사정의 쾌락으로 얼굴을 일그러뜨립니다… 
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 보고 있는 앞에서 절규하며, 질내 사정의 쾌락으로 얼굴을 일그러뜨립니다… 
 					PRINTFORMW 그 모습에 %조사처리(CALLNAME:MASTER,"는")% 견딜 수 없어서 눈을 돌려버렸지만, %CALLNAME:TARGET% 쪽은, 그런 %조사처리(CALLNAME:MASTER,"를")% 보고 한층 정욕에 불이 붙어버렸는지, 입을 모아 %조사처리(CALLNAME:MASTER,"를")% 매도하면서, %조사처리(ESC,"과")%의 불륜에 빠져버렸습니다…!
 					PRINTFORMW %조사처리(CALLNAME:MASTER,"로")%서는 %ESC%들이 만족할 때까지, 이를 악물고 견딜 수 밖에 없었습니다…
 					CALL EXP_CALC_TRAVEL, "ＮＴＲ섹스", TARGET, 3 + RAND:5
@@ -2829,11 +2829,11 @@ CASE "온천마을의여관"
 		;♀당신
 		ELSE
 			;후타나리몽마に玩具にされる
-			PRINTFORMW 몽마들은 %조사처리(CALLNAME:MASTER,"를")% 목욕탕으로 데리고 가서, 흥분을 한층 더 높이려는 듯이, 자신들의 몸을 들이대고있습니다… 
-			PRINTFORMW 그 다리 사이에는 본래 여성에는 있을 수 없는 것이 존재하고있습니다… 아무래도 그녀들은 양성 몽마들인 것같습니다! 
+			PRINTFORMW 몽마들은 %조사처리(CALLNAME:MASTER,"를")% 목욕탕으로 데리고 가서, 흥분을 한층 더 높이려는 듯이, 자신들의 몸을 들이대고 있습니다… 
+			PRINTFORMW 그 다리 사이에는 본래 여성에는 있을 수 없는 것이 존재하고 있습니다… 아무래도 그녀들은 양성 몽마들인 것같습니다! 
 			PRINTFORMW 요염하게 미소지으면서 그 %조사처리(TEXTR("풍만한 가슴", "발군의 몸매", "매혹적인 보디 라인"),"과")% 수없이 많은 여성을 울렸을 검붉은 페니스를 과시해오는 %ESA%…
 			PRINTFORMW %TEXTR("발달이 덜된", "미성숙한", "가슴이 덜 자란", "어딘가 앳된 느낌이 있는")% 몸과 거기에 어울리지않는 거근을 겸비한 %ESB%
-			PRINTFORMW 그리고 %조사처리(ESC,"는")% 그 가학적인 미소처럼 여성을 울리는 것을 즐기는지, 몇개의 진주가 박힌, 그로테스크한 페니스를 가지고있습니다… 
+			PRINTFORMW 그리고 %조사처리(ESC,"는")% 그 가학적인 미소처럼 여성을 울리는 것을 즐기는지, 몇개의 진주가 박힌, 그로테스크한 페니스를 가지고 있습니다… 
 			PRINTFORMW 세명은 %조사처리(CALLNAME:MASTER,"를")% 둘러싸, 몸을 가린 수건을 빼앗고, 꼼짝도 못하도록 양손을 붙잡았습니다! 
 			PRINTFORM 정조의 위기에 %조사처리(CALLNAME:MASTER,"는")% \@ ASSI > 0 ?  %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI%에게 # %CALLNAME:TARGET%에게 \@ 
 			SIF ASSI
@@ -2844,7 +2844,7 @@ CASE "온천마을의여관"
 			ELSE
 				PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 			ENDIF
-			PRINTFORMW 몽마들의 행패를 묵인한건지, 모르는 척을 하고있습니다…! 
+			PRINTFORMW 몽마들의 행패를 묵인한건지, 모르는 척을 하고 있습니다…! 
 			PRINTFORMW 그러나 %CALLNAME:MASTER%도 발기한 남근이 코끝에 들이밀어지자, 이제부터 그것에 범히지고 말것이라는 예감에, 무심코 침을 삼키고맙니다…
 			PRINTFORMW 꼭 싫지만은 않은 것같은  %CALLNAME:MASTER%의 모습에 몽마들은 입맛을 다시고 %CALLNAME:MASTER%의 몸에 덮쳐들었습니다…! 
 			PRINTFORM 우선 제일 처음 %CALLNAME:MASTER%의 그곳에 침입해들어온 것은, 
@@ -2852,7 +2852,7 @@ CASE "온천마을의여관"
 			IF RAND:3 == 0
 				PRINTFORMW 검게 빛나는 %ESA%의 페니스였습니다! 
 				PRINTFORMW %조사처리(ESA,"는")% 삽입한 것만으로 %CALLNAME:MASTER%의 약한 곳을 깨달았는지, 빙긋 웃고는 대담하고 섬세하게 허리를 놀렸습니다! 
-				PRINTFORMW 강간임에 분명한 행위에 %조사처리(CALLNAME:MASTER,"는")% 느끼지 않으려 했지만, 처음에는 억누르고있던 소리도 %조사처리(ESA,"가")% 허리를 찔러넣기만해도 아주 간단하게 새어나와버려, 순식간에 %조사처리(CALLNAME:MASTER,"는")% 스스로 %ESA%에게 매달리는 꼴이 되어버렸습니다… 
+				PRINTFORMW 강간임에 분명한 행위에 %조사처리(CALLNAME:MASTER,"는")% 느끼지 않으려 했지만, 처음에는 억누르고 있던 소리도 %조사처리(ESA,"가")% 허리를 찔러넣기만해도 아주 간단하게 새어나와버려, 순식간에 %조사처리(CALLNAME:MASTER,"는")% 스스로 %ESA%에게 매달리는 꼴이 되어버렸습니다… 
 				PRINTFORMW 육욕의 포로가 된 그 모습을 본 %조사처리(ESB,"과")% %조사처리(ESC,"는")%, %CALLNAME:MASTER%의 뺨에 페니스의 끝부분을 문지르면서 눌러붙였지만, %조사처리(CALLNAME:MASTER,"는")% 그것을 싫어하기는 커녕, 반대로 양손으로 잡고 혀로 번갈아가며 봉사를 시작해버렸습니다… 
 				PRINTFORMW 열심히 두개의 페니스를 빠는 %CALLNAME:MASTER%의 모습에 %ESA%도 한층 더 흥분하며 아래에서 힘차게 쳐 올려서, 몇번이고 몇번이고, %조사처리(CALLNAME:MASTER,"가")% 굴복과 애원의 소리를 지르게 만들었습니다…
 				PRINTFORMW 허리가 빠질 때까지 %ESA%에 농락당한 %조사처리(CALLNAME:MASTER,"는")% 온몸이 정액투성이가 되고 질내에도 %ESA%의 정액을 한가득 받아들이고말았습니다…
@@ -2862,8 +2862,8 @@ CASE "온천마을의여관"
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 흉악한 길이를 자랑하는 %ESB%의 페니스였습니다! 
 				PRINTFORMW %ESB%의 조잡하고 거친 허리 사용에 처음은 고통 밖에 느끼지 못했던 %CALLNAME:MASTER%도, 장대한 페니스로 집요하게 핀포인트로 자궁구를 자극당하자 오래 견디지 못하고, 점차 소리에 달콤한 한숨이 섞이기시작했습니다… 
-				PRINTFORMW 열심히 견디고있는 %조사처리(CALLNAME:MASTER,"를")% 재미있다고 생각했는지, %조사처리(ESA,"과")% %조사처리(ESC,"는")% 얼굴을 마주하고 %ESB%에게 가세해서, %CALLNAME:MASTER%의 입에, 목에, 쇄골에, 겨드랑이에, 배에, 클리토리스에, 다리에 애무와 키스 세례를 퍼부었습니다…! 
-				PRINTFORMW 자궁을 예리하게 꿰뚫어오는 열락과 전신을 부드럽게 감싸는 쾌락에 %CALLNAME:MASTER%의 이성은 눅진눅진하게 녹아버려, %ESB%에게 희롱당하고있습니다… 
+				PRINTFORMW 열심히 견디고 있는 %조사처리(CALLNAME:MASTER,"를")% 재미있다고 생각했는지, %조사처리(ESA,"과")% %조사처리(ESC,"는")% 얼굴을 마주하고 %ESB%에게 가세해서, %CALLNAME:MASTER%의 입에, 목에, 쇄골에, 겨드랑이에, 배에, 클리토리스에, 다리에 애무와 키스 세례를 퍼부었습니다…! 
+				PRINTFORMW 자궁을 예리하게 꿰뚫어오는 열락과 전신을 부드럽게 감싸는 쾌락에 %CALLNAME:MASTER%의 이성은 눅진눅진하게 녹아버려, %ESB%에게 희롱당하고 있습니다… 
 				PRINTFORMW 기회라고 생각했는지, %조사처리(ESB,"는")% 완전히 쾌락에 솔직해진 %CALLNAME:MASTER%의 자궁구를 그 흉악한 페니스의 끝부분으로 문질러 비집어열면서, 「무엇을 갖고 싶은지 말해봐」라고 속삭입니다… 
 				PRINTFORM %조사처리(CALLNAME:MASTER,"는")%
 				IF TALENT:상사상애
@@ -2880,7 +2880,7 @@ CASE "온천마을의여관"
 			ELSE
 				PRINTFORMW 울퉁불퉁한 %ESC%의 페니스였습니다! 
 				PRINTFORMW 오로지 여자를 울리기위해서 개조된 추악한 흉기는 %CALLNAME:MASTER%에게도 가차없이 이빨을 드러내, %조사처리(CALLNAME:MASTER,"는")% %조사처리(ESC,"가")% 페니스를 움직일 때마다 짐승같이 소리를 지르고 말았습니다… 
-				PRINTFORMW 페니스에서 튀어나온 돌기는 질벽을 세게 긁으면서 유린해, 그중에서 특히 %TEXTR("뿌리에 박힌 진주는 클리토리스의 뒷편", "귀두에 박신 진주는 G스폿")%을 갈아으깨듯이 도려내고있습니다…! 
+				PRINTFORMW 페니스에서 튀어나온 돌기는 질벽을 세게 긁으면서 유린해, 그중에서 특히 %TEXTR("뿌리에 박힌 진주는 클리토리스의 뒷편", "귀두에 박신 진주는 G스폿")%을 갈아으깨듯이 도려내고 있습니다…! 
 				PRINTFORMW 반쯤 광란에 빠진 %조사처리(CALLNAME:MASTER,"는")% 참지 못하고 용서를 빌지만, %조사처리(ESC,"는")% 이제 시작이라는 듯이 가학적으로 웃고, %조사처리(ESA,"과")% %ESB%에게 눈으로 신호를 보냅니다… 
 				PRINTFORMW %조사처리(ESC,"가")% 허리에 힘이 빠진  %CALLNAME:MASTER%의 엉덩이살을 꾹 잡아열자, 거기에 %조사처리(ESA,"가")% 올라타, 애널에 페니스를 밀어넣었습니다…! 
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 등을 뒤로 젖히고 비명을 질렀지만, 그 열린 입에, 이번에는 %조사처리(ESB,"가")% 페니스를 찔러넣었습니다! 
@@ -2929,7 +2929,7 @@ CASE "온천마을의여관"
 					PRINTFORMW %CALLNAME:TARGET%에 의해 완구를 여성기에 비틀어넣어진 결과, 발길질 당하고 있음에도 불구하고, %조사처리(CALLNAME:MASTER,"는")% 이 굴욕적인 상황에 심한 흥분을 느껴버렸습니다… 
 					PRINTFORMW %CALLNAME:MASTER%의 눈동자에 정욕의 불길이 타는 것을 본 %조사처리(CALLNAME:TARGET,"는")%, %CALLNAME:MASTER%에게 졸라보라고 강요했습니다… 
 					PRINTFORMW 몽마들에게 윤간당할때는 느끼지 못했던 도착적인 열정에 애를 태우면서, %조사처리(CALLNAME:MASTER,"는")% 「밟아 주세요」라며 졸랐습니다만, %조사처리(CALLNAME:TARGET,"는")% 바이브에 가볍게 발을 얹을 뿐, 결코 움직이려하지 않았습니다… 
-					PRINTFORMW 초조해진 %조사처리(CALLNAME:MASTER,"가")% 한번 더 애원을 하려고 말을 걸자, %조사처리(CALLNAME:TARGET,"는")% 「뭘 착각 하고있는거야? 「주인님의 발을 사용하게해주세요」겠지?」라며 비웃듯이 정정할 것을 강요했습니다… 
+					PRINTFORMW 초조해진 %조사처리(CALLNAME:MASTER,"가")% 한번 더 애원을 하려고 말을 걸자, %조사처리(CALLNAME:TARGET,"는")% 「뭘 착각 하고 있는거야? 「주인님의 발을 사용하게해주세요」겠지?」라며 비웃듯이 정정할 것을 강요했습니다… 
 					PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 그 경멸하는 시선에 말로 표현할 수 없을 만큼의 흥분을 느끼고 들은 말을 되풀이하듯이 애원하며, 스스로 꿈틀꿈틀 허리를 밀어올려 %CALLNAME:TARGET%의 발로 바이브를 밟아달라고 조르듯이 움직이기시작했습니다…
 					PRINTFORMW 거기에 %CALLNAME:TARGET%의 비웃음에도 불구하고, %CALLNAME:MASTER%의 허리의 움직임은 자꾸자꾸 격렬해져, 결국, 울면서 조수를 뿜으며 절정하고말았습니다…  
 					PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 절정한 것을 보고면, %조사처리(CALLNAME:TARGET,"는")% 「 포상을 줄게」라며 가학적인 미소를 짓고, 방금전까지 누르고만 있던 바이브를, 단번에 체중을 싣고 짓밟았습니다! 
@@ -2937,7 +2937,7 @@ CASE "온천마을의여관"
 					CALL EXP_CALC_TRAVEL, "역바이브", TARGET, 3 + RAND:5
 					CALL EXP_CALC_TRAVEL, "절정", MASTER, 3 + RAND:5
 				ENDIF
-				PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 덮친 몽마들은, 자신들의 능욕조차 %CALLNAME:MASTER%에게 예절을 가르치기 위한 도구로 만든 %CALLNAME:TARGET%의 술책에 %TEXTR("완전히 감탄한", "확실히 살짝 끌리고있는")% 것같습니다… 
+				PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 덮친 몽마들은, 자신들의 능욕조차 %CALLNAME:MASTER%에게 예절을 가르치기 위한 도구로 만든 %CALLNAME:TARGET%의 술책에 %TEXTR("완전히 감탄한", "확실히 살짝 끌리고 있는")% 것같습니다… 
 			ENDIF
 		ENDIF
 	;보통に난교
@@ -2952,7 +2952,7 @@ CASE "온천마을의여관"
 		IF RAND:3 == 0
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 이미 될대로 되라며 돌변해, 적어도 이 상황을 즐기려고 몽마들과 함께 대목욕탕으로 향했습니다…… 
 		ELSEIF RAND:2 == 0
-			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 몽마들이시 범해 잡 해 세우는 가운데, 마치 스트립에서도 당하고있는 것 같은 기분을 맛 보면서 유카타를 벗고 뒤로 밀리 게하고 대 목욕탕으로 들어갔습니다…
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 몽마들이시 범해 잡 해 세우는 가운데, 마치 스트립에서도 당하고 있는 것 같은 기분을 맛 보면서 유카타를 벗고 뒤로 밀리 게하고 대 목욕탕으로 들어갔습니다…
 		ELSE
 			PRINTFORMW 이제 와서 도망치는 일도 할 수 없으면%조사처리(CALLNAME:MASTER,"는")% 단념해, 유카타를 벗고 몽마들과 함께 목욕탕으로 들어갔습니다…
 		ENDIF
@@ -3046,7 +3046,7 @@ CASE "비탕의온천여관"
 	SELECTCASE TEXTS("계절")
 	;桜
 	CASE "봄"
-		PRINTFORMW 만개의 벚꽃이 손이 닿을 거리에 있어서, 뭐라 말로 표현하기 힘든 분위기를 자아내고있습니다… 
+		PRINTFORMW 만개의 벚꽃이 손이 닿을 거리에 있어서, 뭐라 말로 표현하기 힘든 분위기를 자아내고 있습니다… 
 	;월見
 	CASE "여름"
 		PRINTFORMW 탕의 수면에는 멋진 보름달이 떠있어, 운치가 살아있는 노천탕이었습니다… 
@@ -3062,22 +3062,22 @@ CASE "비탕의온천여관"
 	SELECTCASE TEXTS("계절")
 	;桜
 	CASE "봄"
-		PRINTFORMW 욕조 가장자리에 앉아 흩날리는 벚꽃잎을 손으로 희롱하면서, %CALLNAME:MASTER%에게 빨리 이쪽으로 오라고 손짓을 하고있습니다 …
+		PRINTFORMW 욕조 가장자리에 앉아 흩날리는 벚꽃잎을 손으로 희롱하면서, %CALLNAME:MASTER%에게 빨리 이쪽으로 오라고 손짓을 하고 있습니다 …
 		PRINTFORMW 손짓에 응해 %조사처리(CALLNAME:MASTER,"가")% 욕조에 들어가자, %조사처리(CALLNAME:TARGET,"가")% 살그머니 어깨를 기대어옵니다 
 		PRINTFORMW 몸을 기대고 욕조에 잠겨서 밤에 보는 벚꽃은 각별합니다… 
 	;월見
 	CASE "여름"
-		PRINTFORMW 손수건을 머리의 위에 얹고 재빨리 경치좋은 노천탕을 즐기고있는 것같습니다… 
+		PRINTFORMW 손수건을 머리의 위에 얹고 재빨리 경치좋은 노천탕을 즐기고 있는 것같습니다… 
 		PRINTFORMW 느긋한 모습의  %CALLNAME:TARGET%에게 쓴웃음을 지으면서, %조사처리(CALLNAME:MASTER,"는")% 옆에 들어가, 똑같이 손수건을 머리에 얹고 어깨를 마주기댑니다… 
 		PRINTFORMW 탕의 온도도 딱 좋고, 만월을 바라보면서 따뜻한 물에 잠겨 있으니, 마치 극락에 온 것같은 편안함이 몸을 감싸, 평소의 피로가 거짓말처럼 사라집니다… 
 	;紅葉
 	CASE "가을"
-		PRINTFORMW 나른하게 단풍을 바라보고있었지만,  %조사처리(CALLNAME:MASTER,"를")% 깨닫자 표정을 바꾸고 빨리 욕조에 들어오라고 손짓을 합니다… 
+		PRINTFORMW 나른하게 단풍을 바라보고 있었지만,  %조사처리(CALLNAME:MASTER,"를")% 깨닫자 표정을 바꾸고 빨리 욕조에 들어오라고 손짓을 합니다… 
 		PRINTFORMW 손짓에 응해 %조사처리(CALLNAME:MASTER,"가")% 욕조에 들어가자, %조사처리(CALLNAME:TARGET,"가")% 살그머니 어깨를 기대어왔습니다 
 		PRINTFORMW 서로 기대고 목욕통에 잠겨서 바라보는 단풍은 각별합니다… 
 	;雪
 	CASE "겨울"
-		PRINTFORMW , 어디에서 가져왔는지 욕조 속에서 라이스 와인을 즐기고있습니다…! 
+		PRINTFORMW , 어디에서 가져왔는지 욕조 속에서 라이스 와인을 즐기고 있습니다…! 
 		PRINTFORMW 기가 막힌 %CALLNAME:MASTER%였지만, 추위를 피하기위해 욕조에 들어가자 「우선은 한 잔」하고 %조사처리(CALLNAME:TARGET,"가")% 술잔을 권해옵니다…
 		PRINTFORMW 욕조 안에서 마시는 라이스 와인은 또 각별한 맛으로, 몸 안팎이 따뜻해지는 좋은 기분에, 무심코 술을 거듭해서 마시게됩니다 
 	ENDSELECT
@@ -3180,12 +3180,12 @@ CASE "비탕의온천여관"
 			IF PENIS(MASTER)
 				PRINTFORMW 페니스에 뻗어왔습니다…! 
 				PRINTFORMW %마스터는()% 페니스를 미끄러지는 손가락을 눌러 말릴려고 합니다만, %CALLNAME:TARGET% 전혀 개의치 않습니다…
-				PRINTFORMW 그 뿐만 아니라 %CALLNAME:TARGET%의 손가락의 움직임은 점점 거세져, 손의 자극에 더욱더 튀어오르는 페니스의 반응을 %CALLNAME:MASTER%의 귓가에 속삭이고있습니다 
+				PRINTFORMW 그 뿐만 아니라 %CALLNAME:TARGET%의 손가락의 움직임은 점점 거세져, 손의 자극에 더욱더 튀어오르는 페니스의 반응을 %CALLNAME:MASTER%의 귓가에 속삭이고 있습니다 
 				PRINTFORMW 그리고%CALLNAME:TARGET%에게 귓불을 물린 순간, %조사처리(CALLNAME:MASTER,"는")% 견디지 못하고, %CALLNAME:TARGET%의 손안에 정액을 토해내고말았습니다… 
 			ELSE
 				PRINTFORMW 그곳으로 뻗어왔습니다…! 
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 거기를 어루만지면서 쓰다듬는 손가락을 멈추려고했지만, %조사처리(CALLNAME:TARGET,"는")% 전혀 개의치않았습니다… 
-				PRINTFORMW 그 뿐만 아니라 %CALLNAME:TARGET%의 손가락의 움직임은 점점 거세져, 손가락을 맞아들이는 %CALLNAME:MASTER%의 질내의 상태를 귓가에 속삭이고있습니다 
+				PRINTFORMW 그 뿐만 아니라 %CALLNAME:TARGET%의 손가락의 움직임은 점점 거세져, 손가락을 맞아들이는 %CALLNAME:MASTER%의 질내의 상태를 귓가에 속삭이고 있습니다 
 				PRINTFORMW 그리고 %CALLNAME:TARGET%에게 귓불을 물린 순간, %조사처리(CALLNAME:MASTER,"는")% 견디지 못하고, %CALLNAME:TARGET%의 손가락에 가버리고말았습니다… 
 			ENDIF
 			CALL EXP_CALC_TRAVEL, "수음", TARGET, 1
@@ -3232,14 +3232,14 @@ CASE "비탕의온천여관"
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 암컷의 중심을 관통당하는 쾌락에 빠져 %CALLNAME:MASTER%에게 페니스를 박힐 때마다 정숙하지 못한 소리를 내고 있습니다… 
 		ENDIF
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 정액을 탐하는 %CALLNAME:TARGET%의 그곳에 쥐어짜지면서, 자궁구에 끝부분이 깊이 박힐 정도로 깊고 강하게 페니스를 박아넣고, 굉장한 양의 정액을 흘려넣었습니다…! 
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 격렬한 절정에 실룩실룩 신체를 진동시키면서, 태내를 뜨겁게 채우는 %CALLNAME:MASTER%의 사랑에 눈을 감고 황홀해하고있습니다… 
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 격렬한 절정에 실룩실룩 신체를 진동시키면서, 태내를 뜨겁게 채우는 %CALLNAME:MASTER%의 사랑에 눈을 감고 황홀해하고 있습니다… 
 		CALL EXP_CALC_TRAVEL, "정상위：내사정", TARGET, ABL:욕망 + 1 + RAND:5
 		CALL EXP_CALC_TRAVEL, "삽입자궁구자극", TARGET, 1
 	ELSE
 		IF PENIS(TARGET)
 			PRINTFORMW 흥분에 불이 붙은 %조사처리(CALLNAME:MASTER,"는")% %조사처리(CALLNAME:TARGET,"를")% 그 자리에 밀어 넘어뜨리고, 기립해있는 페니스를 향해 천천히 허리를 떨어뜨렸습니다… 
 			PRINTFORMW %CALLNAME:TARGET%의 페니스를 삼켜감에 따라, %CALLNAME:MASTER%의 비소에서는 페니스에 밀려나온 꿀이, 군침처럼 넘쳐나왔습니다… 
-			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 자신의 페니스를 맛나게 단단히 물고있는 %조사처리(CALLNAME:MASTER,"를")% 사랑스럽다고 느껴, %CALLNAME:MASTER%의 허리를 붙잡고, 
+			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 자신의 페니스를 맛나게 단단히 물고 있는 %조사처리(CALLNAME:MASTER,"를")% 사랑스럽다고 느껴, %CALLNAME:MASTER%의 허리를 붙잡고, 
 			IF RAND:3 == 0
 				PRINTFORMW 허리를 끌어당기듯이 격렬하게 처박아주었습니다…! 
 			ELSEIF RAND:2 == 0
@@ -3249,7 +3249,7 @@ CASE "비탕의온천여관"
 			ENDIF
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%에게 페니스를 박힐 때마다 정숙치 못한 소리를 지르며, %조사처리(CALLNAME:MASTER,"가")% 시키는 대로, 질내사정을 졸랐습니다…! 
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 흐트러진 %CALLNAME:MASTER%의 허리를 끌어당기고, 정액을 탐하는 그곳에 쥐어짜지면서, 자궁구에 끝부분이 깊이 박힐 정도로 깊고 강하게 페니스를 박아넣고, 굉장한 양의 정액을 흘려넣었습니다…! 
-			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 격렬한 절정에 실룩실룩 신체를 진동시키면서, 태내를 뜨겁게 채우는 %CALLNAME:TARGET%의 사랑에 눈을 감고 황홀해하고있습니다… 
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 격렬한 절정에 실룩실룩 신체를 진동시키면서, 태내를 뜨겁게 채우는 %CALLNAME:TARGET%의 사랑에 눈을 감고 황홀해하고 있습니다… 
 			CALL EXP_CALC_TRAVEL, "기승위로범한다：내사정", TARGET, ABL:욕망 + 1 + RAND:5
 		ELSE
 			PRINTFORMW 흥분에  불이 붙은 %조사처리(CALLNAME:MASTER,"는")% %조사처리(CALLNAME:TARGET,"를")% 그 자리에 밀어넘어뜨리고 가랑이의 사이에 다리를 밀어넣고 입술을 겹치면서 허리를 억눌렀습니다. 
@@ -3309,7 +3309,7 @@ IF PENIS(MASTER)
 	PRINTFORMW 방금전 이상으로 녹아버린 미육은 페니스에서 정액을 탐욕스레 쥐어짜내려 조여오지만, %조사처리(CALLNAME:MASTER,"는")% 솟구치는 사정감을 이를 악물고 견디며  힘껏 %조사처리(CALLNAME:TARGET,"를")% 찔러, 탈의실에서 조금씩, 방 쪽으로 이동했습니다…
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 페니스에 밀리듯이 비틀비틀 네발로 기어 가, 흔들리는 몸에서 떨어진 물방울과 땀, 한일자로 다문 입에서 흘러넘치는 침, 그곳에서 늘어져떨어지는 애액과 역류된 정액이 가는 길 위에 점점이 자취를 그려갔습니다…
 	PRINTFORMW 간신히 어떻게든 이불에 도착했을 무렵에는 두 사람 모두 한계에 달해, %조사처리(CALLNAME:MASTER,"는")% %조사처리(CALLNAME:TARGET,"를")% 이불 위에 찍어누르듯이 허리를 밀어내고, 제일 깊은 곳에 정액을 발사했습니다…! 
-	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 말을 잊고 절정에 빠져 %CALLNAME:MASTER%에게 사랑받는 즐거움을 곱씹고있습니다… 
+	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 말을 잊고 절정에 빠져 %CALLNAME:MASTER%에게 사랑받는 즐거움을 곱씹고 있습니다… 
 	CALL EXP_CALC_TRAVEL, "후배위：내사정", TARGET, 1
 ELSE
 	IF PENIS(TARGET)
@@ -3348,17 +3348,17 @@ IF PENIS(MASTER)
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 페니스를 닦아내듯이 문지르면서, 마치 페니스를 질식시키는 것같이 가슴으로 훑어옵니다… 	
 		PRINTFORMW 그 기분좋은 느낌에 %조사처리(CALLNAME:MASTER,"가")% 무심코 흥분한 소리를 흘리는 것을 본 %조사처리(CALLNAME:TARGET,"는")% 기분이 좋아져, 봉사에 한층 열의를 담았습니다. 
 		PRINTFORMW %CALLNAME:TARGET%의 부드러운, 그러나 몰아세우듯이 정성스럽고 집요한 봉사에, %조사처리(CALLNAME:MASTER,"는")% 절정한지 얼마 안된 페니스에서, %CALLNAME:TARGET%의 가슴을 향해 정액을 뽑아내고말았습니다…! 
-		PRINTFORMW 허리를 떨며 사정의 쾌락에 빠진 %CALLNAME:MASTER%의 얼굴을 응시하면서, %조사처리(CALLNAME:TARGET,"는")% 가슴을 희게 물들이는 정액을 사랑스러운듯이 받아들이고있습니다… 
+		PRINTFORMW 허리를 떨며 사정의 쾌락에 빠진 %CALLNAME:MASTER%의 얼굴을 응시하면서, %조사처리(CALLNAME:TARGET,"는")% 가슴을 희게 물들이는 정액을 사랑스러운듯이 받아들이고 있습니다… 
 		CALL EXP_CALC_TRAVEL, "파이즈리", TARGET, 1
 	;스마타
 	ELSEIF RAND:3 == 0
 		PRINTFORMW 질척질척하게 더러워진 허벅지로 감싸왔습니다…! 
 		;（更新）구상の呼び出し
 		CALL SELF_KOJO, "秘湯フェーズ２개시：스마타"
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 페니스를 적시고있는 점액을 이용해, 강하게 압박하듯이 훑어옵니다… 
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 페니스를 적시고 있는 점액을 이용해, 강하게 압박하듯이 훑어옵니다… 
 		PRINTFORMW 그 기분좋은 느낌에 %조사처리(CALLNAME:MASTER,"가")% 무심코 흥분한 소리를 흘리는 것을 본 %조사처리(CALLNAME:TARGET,"는")% 기분이 좋아져, 봉사에 한층 열의를 담았습니다. 
 		PRINTFORMW %CALLNAME:TARGET%의 부드러운, 그러나 몰아세우듯이 정성스럽고 집요한 봉사에, %조사처리(CALLNAME:MASTER,"는")% 절정한지 얼마안된 페니스에서, %CALLNAME:TARGET%의 가랑이 사이를 향해 정액을 뽑아내고말았습니다…! 
-		PRINTFORMW 허리를 떨면서 사정의 쾌락에 빠진 %CALLNAME:MASTER%의 얼굴을 응시하면서, %조사처리(CALLNAME:TARGET,"는")% 피부를 적시는 정액을 사랑스러운듯이 받아들이고있습니다… 
+		PRINTFORMW 허리를 떨면서 사정의 쾌락에 빠진 %CALLNAME:MASTER%의 얼굴을 응시하면서, %조사처리(CALLNAME:TARGET,"는")% 피부를 적시는 정액을 사랑스러운듯이 받아들이고 있습니다… 
 		CALL EXP_CALC_TRAVEL, "스마타", TARGET, 1
 	;키스＋손훑기
 	ELSEIF RAND:2 == 0
@@ -3379,7 +3379,7 @@ IF PENIS(MASTER)
 		CALL SELF_KOJO, "秘湯フェーズ２개시：お청소される"
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 질척질척해진 페니스를 입으로 핡고, 깊숙히 물면서 츄릅츄릅 구석구석까지 닦아내기시작했습니다…… 
 		PRINTFORMW 귀두를 할짝할짝 핥고 요도 밑을 혀끝으로 문지르면서, 안에 아직 남아있는 정액을 부드럽게 빨아들였습니다 … 
-		PRINTFORMW %CALLNAME:TARGET%의 부드럽고 정성스러운 봉사에 분명히 완전히 죽어버렸을 터인 페니스가 팽팽하게 긴장되어, %조사처리(CALLNAME:MASTER,"는")% 그대로, 크게 벌리고 기다리고있는 %CALLNAME:TARGET%의 입안에 정액을 쏟아내었습니다…! 
+		PRINTFORMW %CALLNAME:TARGET%의 부드럽고 정성스러운 봉사에 분명히 완전히 죽어버렸을 터인 페니스가 팽팽하게 긴장되어, %조사처리(CALLNAME:MASTER,"는")% 그대로, 크게 벌리고 기다리고 있는 %CALLNAME:TARGET%의 입안에 정액을 쏟아내었습니다…! 
 		PRINTFORMW 허리를 떨면서 쏟아져나오는 정액을, %조사처리(CALLNAME:TARGET,"는")% 사랑스러운 듯이  입으로 받아들였습니다… 
 		CALL EXP_CALC_TRAVEL, "펠라치오", TARGET, 1
 	ENDIF
@@ -3419,17 +3419,17 @@ IF PENIS(MASTER)
 		PRINTFORMW %CALLNAME:TARGET%의 손으로 사정한 %조사처리(CALLNAME:MASTER,"였")%지만, 흥분은 식기는 커녕 점점 높아져, %조사처리(CALLNAME:MASTER,"는")% 욕망이 가는대로  %조사처리(CALLNAME:TARGET,"를")% 밀어넘어뜨려버렸습니다…!
 		;（更新）구상の呼び出し
 		CALL SELF_KOJO, "秘湯フェーズ３개시：정상위"
-		PRINTFORMW 넘어뜨려진 %CALLNAME:TARGET%도 흥분 완전히 식지않은 것인지, 여전히 딱딱하게 발기한 상태인 %CALLNAME:MASTER%의 페니스에 풀어진 그곳을 문질러, 그것이 갖고싶다며 재촉을 하고있습니다… 
+		PRINTFORMW 넘어뜨려진 %CALLNAME:TARGET%도 흥분 완전히 식지않은 것인지, 여전히 딱딱하게 발기한 상태인 %CALLNAME:MASTER%의 페니스에 풀어진 그곳을 문질러, 그것이 갖고싶다며 재촉을 하고 있습니다… 
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%의 허리로 손을 뻗어, 입으로 사랑을 속삭이면서, 정욕에 충실히 허리를 밀어넣었습니다… 
 		PRINTFORMW 점막을 헤쳐나가는 감촉을 끝부분으로 느끼면서, %CALLNAME:MASTER%의 페니스는 %CALLNAME:TARGET%의 태내로 삼켜져서… 꾹, 하고 막다른 곳에 부딪칩니다…
 		PRINTFORMW 부드럽게, 그러면서도 탐욕스럽게 달라붙어오는 %CALLNAME:TARGET%의 질육은 형용할 수 없는 쾌락을 가져와, %조사처리(CALLNAME:MASTER,"는")% 어이없이 가버릴 것만 같은 것을 이를 악물고 견뎠습니다. 
-		PRINTFORMW 한편 %CALLNAME:TARGET%도 암컷의 중심을 꿰뚫는 쾌락에 등을 뒤로 젖히고 괴로워하며, 시트에 손가락을 감고 몸부림치고있습니다. 
+		PRINTFORMW 한편 %CALLNAME:TARGET%도 암컷의 중심을 꿰뚫는 쾌락에 등을 뒤로 젖히고 괴로워하며, 시트에 손가락을 감고 몸부림치고 있습니다. 
 		PRINTFORMW 간신히 신경을 진정시킨 %조사처리(CALLNAME:MASTER,"는")%, 구불구불 움직이는 %CALLNAME:TARGET%의 허리를 끌어당겨 안쪽을 노리고, %조사처리(CALLNAME:TARGET,"를")% 육봉으로 딱딱 찔러서 꿰뚫어주었습니다. 
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 교성섞인 비명을 지르고 %CALLNAME:MASTER%의 등뒤에 손을 돌려서…… 손뿐만이 아니라, 허리에도 다리를 감아왔습니다…! 
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 허리를 떼면 %조사처리(CALLNAME:TARGET,"가")% %조사처리(CALLNAME:MASTER,"를")% 손과 다리를 이용해서 끌어당기고, 반대로 %조사처리(CALLNAME:MASTER,"가")% 허리를 밀어넣으면, 도망치는 %CALLNAME:TARGET%의 허리를 %조사처리(CALLNAME:MASTER,"가")% 끌어당겼습니다… 
 		PRINTFORMW 깊은 곳에서 서로 연결된 채로, 두사람은 함께, 절정으로 뛰어올라…… 마지막에는 입술을 겹치면서 절정에 도달했습니다…! 
 		PRINTFORMW %CALLNAME:TARGET%의 질육은 절정에 경련하면서 정액을 짜내기위해 수축하고, %조사처리(CALLNAME:MASTER,"는")% 거기에 응해, 페니스의 끝부분에서 욕망을 토해냈습니다… 
-		PRINTFORMW 한번,  두번, 세번…… 페니스가 맥동 할 때마다 %조사처리(CALLNAME:TARGET,"는")% 키스로 막힌 입의 틈새에서 한숨을 흘려, 사랑하는 상대의 정액으로 태내를 채우는 즐거움을 곱씹고있습니다… 
+		PRINTFORMW 한번,  두번, 세번…… 페니스가 맥동 할 때마다 %조사처리(CALLNAME:TARGET,"는")% 키스로 막힌 입의 틈새에서 한숨을 흘려, 사랑하는 상대의 정액으로 태내를 채우는 즐거움을 곱씹고 있습니다… 
 		PRINTFORMW 믿을 수 없을 정도 길게 지속된 사정이 간신히 끝나고, 둘은 입술을 떼고, 서로 바라봅니다만… 
 		PRINTFORMW %CALLNAME:TARGET%의 질내에 둘러싸여있는 %CALLNAME:MASTER%의 페니스는 쇠약해질 낌새도 없이 더욱더 용맹하게 날뛰었고, 
 		PRINTFORMW %CALLNAME:MASTER%의 페니스를 삼킨 %CALLNAME:TARGET%의 자궁은 더욱더 심한 갈증을 느껴 욱신거림이 멈추지 않았습니다… 
@@ -3474,7 +3474,7 @@ ELSE
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 흐트러지는 것을 깨달은 %조사처리(CALLNAME:TARGET,"는")% 허리를 끌어안고,  강하게 허리를 앞뒤로 움직여, 방 안에 살과 살이 맞딪치는 소리를 울리게했습니다. 
 		PRINTFORMW 태내에 따라진 정액과 정욕에 젖은 %CALLNAME:MASTER%의 꿀이, %조사처리(CALLNAME:TARGET,"가")% 페니스를 찔러넣을 때마다 흘러넘쳐서, 시트 위에 얼룩을 만들었습니다… 
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"를")% 안으면서, 상기된 목소리로 어디를 원하는지 물었습니다…
-		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 페니스에 짓눌리고있는 신체의 안쪽… 자궁의 욕구에 따라, 안에 내달라고 교성인 목소리로 간절히 애원했습니다… 
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 페니스에 짓눌리고 있는 신체의 안쪽… 자궁의 욕구에 따라, 안에 내달라고 교성인 목소리로 간절히 애원했습니다… 
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 대답을 하는 대신에, 떨듯이 허리를 박고, 자궁구에 밀착시킨 페니스의 끝부분에서 뜨겁고 끈적한 덩어리를 뽑아내었습니다…! 
 		PRINTFORMW 두근두근 페니스가 맥박칠 때마다  토해내지는 타는 듯한 열기가 자궁에 쌓여가는 감각에, %조사처리(CALLNAME:MASTER,"는")% 달콤한 소리를 내면서, 절정에 빠져들었습니다… 
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 작게 신음하면서 %CALLNAME:MASTER%의 자궁에 마지막 한 방울까지 쏟아내고, 주루룩 페니스를 꺼내자, 
@@ -3541,10 +3541,10 @@ CASE "온천마을의여관"
 			PRINTFORM 포기한 \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %조사처리(CALLNAME:ASSI,"는")% #  %조사처리(CALLNAME:TARGET,"는")% \@ 
 			SIF ASSI
 				PRINTFORM 
-			PRINTFORMW %CALLNAME:MASTER%의 이불속으로 들어가, 자고있는 %조사처리(CALLNAME:MASTER,"를")% 장난감으로 삼기로한 모양입니다…! 
+			PRINTFORMW %CALLNAME:MASTER%의 이불속으로 들어가, 자고 있는 %조사처리(CALLNAME:MASTER,"를")% 장난감으로 삼기로한 모양입니다…! 
 			CALL EXP_CALC_TRAVEL, "난교：仲間", TARGET, ABL:욕망 + RAND:3
 		ENDIF
-		PRINTFORM 다음날 아침이 되어 눈을 뜬 %조사처리(CALLNAME:MASTER,"가")% 본 것은, 묘하게 윤기가 흐르는 얼굴로 드르렁 코를 골고있는 \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% #  %CALLNAME:TARGET% \@
+		PRINTFORM 다음날 아침이 되어 눈을 뜬 %조사처리(CALLNAME:MASTER,"가")% 본 것은, 묘하게 윤기가 흐르는 얼굴로 드르렁 코를 골고 있는 \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% #  %CALLNAME:TARGET% \@
 		SIF ASSI
 			PRINTFORM 
 		PRINTFORMW 의 자는 얼굴이었습니다…
@@ -3566,7 +3566,7 @@ CASE "온천마을의여관"
 		ELSE
 			PRINTFORM 
 		ENDIF
-		PRINTFORMW 변변한 저항도 못하고, %CALLNAME:MASTER%의 애무에 그저 몸을 맡기고있습니다…
+		PRINTFORMW 변변한 저항도 못하고, %CALLNAME:MASTER%의 애무에 그저 몸을 맡기고 있습니다…
 		PRINTFORM 방안에서는 밤늦게까지, \@ ASSI > 0 ? %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:ASSI% #  %CALLNAME:TARGET% \@
 		SIF ASSI
 			PRINTFORM 

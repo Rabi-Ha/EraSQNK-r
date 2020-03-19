@@ -139,7 +139,7 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	PRINTFORMW 옆에 앉아, 왜 벽을 보고 있었냐고 물어 보았다. 
 	PRINTFORMW 「네…그…렇죠. 창문…없지요, 이방」
 	PRINTFORMW 조교에 사용할 방은 도망 방지를 위해 기본적으로 출입문 하나 뿐이다. 
-	PRINTFORMW 「아니오, 알고있습니다, 도망치고 싶은건 아니…아닙니다. 그저…」
+	PRINTFORMW 「아니오, 알고 있습니다, 도망치고 싶은건 아니…아닙니다. 그저…」
 	PRINTFORMW 「그. 밖이…그립습니다. 초원이나, 숲이나…%조사처리(CNAME("一人称"),"가")% 살고 있던 곳이…」
 	PRINTFORMW 숲이라, 생각해보니, 전에 친구가 가져온, 숲과 오두막의 그림이, 창고 안쪽에 있었던 것이 기억났다…
 	PRINTFORMW 이번에 가지고 와 준다, 말했더니, %조사처리(CALLNAME:TARGET,"는")% 얼굴을 빛낸다. 
@@ -6310,7 +6310,7 @@ CASE "Ｖ인서트"
 		PRINTFORMW 「%CNAME("二人称")%도, 기분 좋아져 주십시오…!」
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 격렬한 피스톤 운동에 희롱당하고있다……
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 격렬한 피스톤 운동에 희롱당하고 있다……
 		PRINTFORMW 「응아아앗…도, 이제(벌써), 안돼엣…」
 	ENDSELECT
 CASE "Ａ인서트"
@@ -6333,7 +6333,7 @@ CASE "Ａ인서트"
 		PRINTFORMW 「%CNAME("二人称")%도, 기분 좋아져 주십시오…!」
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 자극에 희롱당하고있다……
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 자극에 희롱당하고 있다……
 		PRINTFORMW 「응아아앗…도, 이제(벌써), 안돼엣…」
 	ENDSELECT
 CASE "애무"
@@ -6356,7 +6356,7 @@ CASE "애무"
 		PRINTFORMW 「후후…이런 것은, 어떻습니까？」
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 자극에 희롱당하고있다……
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 자극에 희롱당하고 있다……
 		PRINTFORMW 「응응응읏……하앗……」
 	ENDSELECT
 CASE "봉사"
@@ -6370,15 +6370,15 @@ CASE "봉사"
 			PRINTFORMW 「인내 같은거 하지 말아 주세요？아니오…참고 싶다, …생각하게 해 주지 않기 때문에♪」
 		;反撃・強
 		CASE "強"
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 쉴틈을 주지않고 %CALLNAME:PLAYER%의 페니스를 계속 훑고있다……
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 쉴틈을 주지않고 %CALLNAME:PLAYER%의 페니스를 계속 훑고 있다……
 			PRINTFORMW 「자, %CNAME("二人称")%…내고 싶을 것입니다？이봐요…사양 하시지 않고…저기？」
 		;反撃・中
 		CASE "中"
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 쉴틈을 주지않고 %CALLNAME:PLAYER%의 페니스를 계속 훑고있다……
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 쉴틈을 주지않고 %CALLNAME:PLAYER%의 페니스를 계속 훑고 있다……
 			PRINTFORMW 「여기를 이렇게 해…후후？좋아하겠지요, 이것…」
 		;反撃・弱
 		CASE "弱"
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 쉴틈을 주지않고 %CALLNAME:PLAYER%의 페니스를 계속 훑고있다……
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 쉴틈을 주지않고 %CALLNAME:PLAYER%의 페니스를 계속 훑고 있다……
 			PRINTFORMW 「아직도, 이것으로부터예요…손, 쉬면 싫겠지요？」
 		;反撃・失敗
 		CASEELSE
@@ -6400,7 +6400,7 @@ CASE "ＳＭ"
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 틈을 봐서 반격해왔다……
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 자극에 희롱당하고있다……
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 자극에 희롱당하고 있다……
 	ENDSELECT
 CASE "황홀"
 	IF RAND:3 == 0

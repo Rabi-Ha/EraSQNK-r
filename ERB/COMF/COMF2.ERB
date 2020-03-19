@@ -164,10 +164,10 @@ ELSE
 			PRINTFORM %TEXTS("６９")%
 		;플레이を受け入れ가능かつ호색
 		ELSEIF CHECK("Ａ손가락넣기") && TALENT:호색 && RAND:2 == 0
-			PRINT 요염하게 미소짓고있는 
+			PRINT 요염하게 미소짓고 있는 
 		;縄
 		ELSEIF TEQUIP:구속
-			PRINT 꼼짝도 못하고있는 
+			PRINT 꼼짝도 못하고 있는 
 		ELSEIF CHECK("Ａ손가락넣기") && COND("다리 사용")
 			;부끄럼쟁이で쾌Ａ or욕정が低いなら追加したり
 			SIF TALENT:부끄럼쟁이 && (PALAM:쾌Ａ <= PALAMLV:3 || PALAM:욕정 <= PALAMLV:4)
@@ -232,7 +232,7 @@ ELSE
 		ELSEIF RAND:2 == 0
 			PRINT 에서 튀어나온 
 		ELSE
-			PRINT 로 꽉 물고있는 
+			PRINT 로 꽉 물고 있는 
 		ENDIF
 		;Ａ윤3이상で追加
 		SIF PALAM:Ａ윤 >= PALAMLV:3 && (TEQUIP:애널바이브 || TEQUIP:확장벌룬 == 2)

@@ -56,7 +56,7 @@ IF TEQUIP:바이브
 	IF RAND:2 == 0
 		PRINTFORM 질에 묻혀있는 
 	ELSE
-		PRINTFORM 질을 진동시키고있는 
+		PRINTFORM 질을 진동시키고 있는 
 	ENDIF
 
 	SELECTCASE SIZE("바이브")
@@ -143,11 +143,11 @@ ELSEIF CHECK_COM("Ｇ스팟자극")
 			PRINTFORM 상당히 기분이 좋은지, 
 		ENDIF
 		IF ABL:Ｖ명기도 >= 30 && RANDIF(2, CUP:Ｖ윤 >= 1000)
-			PRINTFORMW %CALLNAME:TARGET%의 질은 손가락 움직임에 맞춰 경련하는 듯한 움직임을 보여주거나 갑자기 강한 힘으로 입구를 조이거나 하고있다…
+			PRINTFORMW %CALLNAME:TARGET%의 질은 손가락 움직임에 맞춰 경련하는 듯한 움직임을 보여주거나 갑자기 강한 힘으로 입구를 조이거나 하고 있다…
 		ELSEIF CUP:Ｖ윤 >= 1000 && RAND:2
-			PRINTFORMW %CALLNAME:TARGET%의 질은 굉장한 양의 애액을 흘리며 %CALLNAME:PLAYER%의 손을 더럽히고있다…
+			PRINTFORMW %CALLNAME:TARGET%의 질은 굉장한 양의 애액을 흘리며 %CALLNAME:PLAYER%의 손을 더럽히고 있다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% \@ TALENT:호색 && RAND:2 ? 적극적 # 무의식적 \@으로 %CALLNAME:PLAYER%의 움직임에 맞춰서 허리를 움직이고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% \@ TALENT:호색 && RAND:2 ? 적극적 # 무의식적 \@으로 %CALLNAME:PLAYER%의 움직임에 맞춰서 허리를 움직이고 있다…
 		ENDIF
 	ELSE
 		PRINTFORMW …

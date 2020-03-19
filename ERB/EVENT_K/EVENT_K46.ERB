@@ -5969,7 +5969,7 @@ CASE "애무"
 		ENDIF
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 자극에 희롱당하고있다……
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 자극에 희롱당하고 있다……
 	ENDSELECT
 CASE "봉사"
 	SELECTCASE CONDS("카운터：強度")
@@ -6113,7 +6113,7 @@ CASE "Ｖ바이브추가구상"
 			PRINTFORMW 「…사용한다는 말씀이십니까？ 하아…… 부디 관대한 처사를 부탁드리게습니다」
 			CFLAG:377 = 1
 		ELSEIF ABL:Ｖ감각 >= 3 && ABL:Ｖ확장 >= 2
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 커다란 바이브를 힐끔 힐끔 보고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 커다란 바이브를 힐끔 힐끔 보고 있다…
 		ELSE
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 바이브 셋트를 준비했다. 
 		ENDIF

@@ -516,11 +516,11 @@ ELSE
 	ELSEIF MARK:반발각인 == 3 || TALENT:반항적
 		;출산경험あり
 		IF TALENT:출산경험
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뭔가를 포기한 미소를 지으면서, 부푼 배를 쓰다듬고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뭔가를 포기한 미소를 지으면서, 부푼 배를 쓰다듬고 있다…
 		;출산경험なし
 		;반항적orプライド高いor강기
 		ELSEIF TALENT:반항적 || TALENT:교만 || TALENT:강기
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부푼 배를 쓰다듬고있지만, %조사처리(CALLNAME:MASTER,"가")% 가까이 다가가자 마구 노려보았다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부푼 배를 쓰다듬고 있지만, %조사처리(CALLNAME:MASTER,"가")% 가까이 다가가자 마구 노려보았다…
 		;겁쟁이or大人しいor悲観的
 		ELSEIF TALENT:겁쟁이 || TALENT:내성적 || TALENT:음기
 			PRINTFORML 그렇게 전해 들은 %조사처리(CALLNAME:TARGET,"는")% 새파래져서, 입을 억눌렀지만 곧바로 구토를 시작해, 
@@ -620,19 +620,19 @@ IF COND("임신中：分娩") && TALENT:임신 && BASE:육아중 == 0
 
 	;연모
 	IF TALENT:연모
-		PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, %CALLNAME:MASTER%에게 자신의 아이를 안아달라고 졸랐습니다. 
+		PRINTFORMW 갓난아이를 안고 있는 %조사처리(CALLNAME:TARGET,"는")%, %CALLNAME:MASTER%에게 자신의 아이를 안아달라고 졸랐습니다. 
 	;반발각인Lv2
 	ELSEIF MARK:반발각인 == 2
-		PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이를 향해서 미소짓고 있습니다. 
+		PRINTFORMW 갓난아이를 안고 있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이를 향해서 미소짓고 있습니다. 
 	;반발각인Lv3
 	ELSEIF MARK:반발각인 == 3
 		IF TALENT:반항적 || TALENT:교만 || TALENT:강기
-			PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, %조사처리(CALLNAME:MASTER,"를")% 위협하듯이 매섭게 쏘아보았습니다. 
+			PRINTFORMW 갓난아이를 안고 있는 %조사처리(CALLNAME:TARGET,"는")%, %조사처리(CALLNAME:MASTER,"를")% 위협하듯이 매섭게 쏘아보았습니다. 
 		ELSE
-			PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이를 %CALLNAME:MASTER%에게서 보호하듯이 꼭 껴안았습니다.
+			PRINTFORMW 갓난아이를 안고 있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이를 %CALLNAME:MASTER%에게서 보호하듯이 꼭 껴안았습니다.
 		ENDIF
 	ELSEIF TARGET != MASTER
-		PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이와 %조사처리(CALLNAME:MASTER,"를")% 향해서 미소짓고 있습니다.
+		PRINTFORMW 갓난아이를 안고 있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이와 %조사처리(CALLNAME:MASTER,"를")% 향해서 미소짓고 있습니다.
 	ENDIF
 
 	CALL SELF_KOJO, "출산"
@@ -687,7 +687,7 @@ ELSEIF BASE:육아중 && RAND:4 && COND("손一杯", MASTER) + COND("同衾이�
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 즐거운 듯이 아이와 놀고 있습니다. 
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 그대로 자기 방으로 돌아갔습니다…
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 환성을 지르며 아이와 놀고있었습니다만, 
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 환성을 지르며 아이와 놀고 있었습니다만, 
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 방안에 들어오자 그만두어 버렸습니다…
 			ENDIF
 		ELSEIF RAND:6 == 0
@@ -704,7 +704,7 @@ ELSEIF BASE:육아중 && RAND:4 && COND("손一杯", MASTER) + COND("同衾이�
 			CFLAG:MASTER:96 = TARGET
 			CFLAG:96 = MASTER
 		ELSEIF RAND:3 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아이와 찰싹찰싹 만지기놀이를 하고있는 %조사처리(CALLNAME:MASTER,"를")%, 행복하게 바라보고있습니다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아이와 찰싹찰싹 만지기놀이를 하고 있는 %조사처리(CALLNAME:MASTER,"를")%, 행복하게 바라보고 있습니다…
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 아이가 멍해보여서 셋이서 함께 간단한 놀이를 하면서 분주하게 보냈습니다…
 		ELSE
@@ -741,12 +741,12 @@ ELSEIF TALENT:임신 && COND("손一杯", MASTER) + COND("同衾이벤트", MAST
 			IF RAND:4 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 공허한 눈으로 부푼 배를 쳐다보고 있었습니다…
 			ELSEIF RAND:3 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 배에 귀를 대거나하는 %조사처리(CALLNAME:MASTER,"를")%, 무감정하게 내려다보고있습니다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 배에 귀를 대거나하는 %조사처리(CALLNAME:MASTER,"를")%, 무감정하게 내려다보고 있습니다…
 			ELSEIF RAND:2 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 공허하게 웃으면서 뱃속이 아이에게 말을 걸고있습니다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 공허하게 웃으면서 뱃속이 아이에게 말을 걸고 있습니다…
 			ELSE
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 즐겁게 뱃속의 아이에게 말을 걸고 있었습니다만, 
-				PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 보고있자 갑자기 눈물을 흘리기 시작했습니다…
+				PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 보고 있자 갑자기 눈물을 흘리기 시작했습니다…
 			ENDIF
 		ELSEIF FATHER == MASTER && RAND:4
 			IF RAND:4 == 0
@@ -755,7 +755,7 @@ ELSEIF TALENT:임신 && COND("손一杯", MASTER) + COND("同衾이벤트", MAST
 				CFLAG:MASTER:96 = TARGET
 				CFLAG:96 = MASTER
 			ELSEIF RAND:3 == 0
-				PRINTFORMW …만, %조사처리(CALLNAME:TARGET,"가")% 이미 자고있는 듯해서, 키스만 해주고 돌아갔습니다…
+				PRINTFORMW …만, %조사처리(CALLNAME:TARGET,"가")% 이미 자고 있는 듯해서, 키스만 해주고 돌아갔습니다…
 			ELSEIF RAND:2
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 배에 귀를 대고 %조사처리(CALLNAME:MASTER,"를")%, 눈을 가늘게 뜨고 기쁜듯이 바라보고 있습니다…
 			ELSE

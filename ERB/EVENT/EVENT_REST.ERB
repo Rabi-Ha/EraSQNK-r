@@ -146,9 +146,9 @@ CASE "휴식：목욕"
 				PRINTFORM 몸을 불붙은 듯이 물들이면서 
 			ENDIF
 			IF ABL:허리놀림 >= 5 && RAND:2
-				PRINTFORMW 음란한 허리놀림을 보여주고있다…
+				PRINTFORMW 음란한 허리놀림을 보여주고 있다…
 			ELSEIF ABL:Ｖ감각 >= MAX(3, ABL:MASTER:기교) && RAND:2
-				PRINTFORMW 귀엽게 신음하고있다…
+				PRINTFORMW 귀엽게 신음하고 있다…
 			ELSEIF RAND:2
 				PRINTFORMW 격렬하게 공격해오고 있습니다…
 			ELSE
@@ -205,12 +205,12 @@ CASE "휴식：귀파기"
 	CASE 0
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 무릎베개\@ TALENT:라미아 + TALENT:머메이드 ? ？ # \@자세로 누워 귀청소를 받으며, 꾸벅꾸벅 졸면서 잠깐의 휴식을 즐겼습니다
 		IF ABL:기교 >= 5
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 전혀 아프지 않게 훌륭한 솜씨로 양쪽 귀를 파준 후, 졸고있는 %CALLNAME:MASTER%의 머리카락을 부드럽게 손으로 빗어주었습니다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 전혀 아프지 않게 훌륭한 솜씨로 양쪽 귀를 파준 후, 졸고 있는 %CALLNAME:MASTER%의 머리카락을 부드럽게 손으로 빗어주었습니다…
 		ELSE
 			IF RAND:10 > ABL:기교
 				PRINTFORMW 가끔 좀 아파서 흠칫 눈을 뜨기도 했지만, 조만간 능숙해지겠지요…
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %TEXTR("커다란 귀지를 파내고 조잘조잘 떠들고있습니다…", "귀지가 별로 나오지않아서, 조금 속상해하고있습니다…", "진지한 표정으로 귀청소에 빠져서 즐기고있습니다…")%
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %TEXTR("커다란 귀지를 파내고 조잘조잘 떠들고 있습니다…", "귀지가 별로 나오지않아서, 조금 속상해하고 있습니다…", "진지한 표정으로 귀청소에 빠져서 즐기고 있습니다…")%
 			ENDIF
 		ENDIF
 	CASE 1

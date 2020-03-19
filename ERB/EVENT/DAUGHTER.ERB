@@ -382,7 +382,7 @@ PRINTL [0] 예
 PRINTL [1] 다시 한번 생각한다
 CALL INPUT_SELECT, 2
 IF RESULT == 0
-	PRINTFORMW 아이의 이름은 %조사처리(NAME:TARGET,"로")%  정해졌습니다
+	PRINTFORMW 아이의 이름은 %조사처리(NAME:TARGET,"로")% 정해졌습니다
 	RETURN 0
 ELSEIF RESULT == 1
 	PREVIDEA = IDEA
@@ -459,7 +459,7 @@ IF ARG >= 1
 	CASE 24
 		PRINTFORMW 「응……. %ARGS%, 같은 건, 어때…? 」
 	CASE 27
-		PRINTFORM 「예언하겠어요. 이 아이의 이름은…, %ARGS%
+		PRINTFORM 「예언하겠어요. 이 아이의 이름은… %ARGS%
 		IF RAND:4 == 0
 			PRINTFORMW . 분명 3턴 후에는 가버릴 것 같이 되겠지요…」
 		ELSEIF RAND:3 == 0
@@ -479,7 +479,7 @@ IF ARG >= 1
 		PRINTFORMW 상의한 결과, 아이의 이름은 %조사처리(ARGS,"가")% 된 것 같습니다. 
 	ENDSELECT
 ELSE
-	PRINTFORMW 그렇군…%ARGS%, 같은 건 어떨까? 
+	PRINTFORMW 흐음…%ARGS%, 같은 건 어떨까? 
 ENDIF
 
 ;ARG, ARG:1は両親. ARGの소질を優先的に得る
@@ -764,7 +764,7 @@ IF RESULT == 0
 	ELSE
 		PRINT 아름답게 
 	ENDIF
-	PRINTFORML 성장\@(RESULTS:0 != "" || RESULTS:1 != "") ? 하여,  # 한것으로 보입니다…?\@
+	PRINTFORML 성장\@(RESULTS:0 != "" || RESULTS:1 != "") ? 하여,  # 한 것으로 보입니다…?\@
 	SIF RESULTS:1 != ""
 		PRINTFORML %조사처리(RESULTS:1,"를")% 잃\@(RESULTS:0 != "") ? 고,  # 었다! \@
 	SIF RESULTS:0 != ""

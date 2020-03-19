@@ -152,7 +152,7 @@ ELSEIF TEQUIP:넘어뜨리기 && (TEQUIP:안면기승 == SELECTCOM || PREVCOM ==
 	ELSEIF ABL:욕망 + ABL:Ａ감각 >= 6
 		PRINTFORM %조사처리(NAMES("손가락"),"로")% 넓힌 
 	ENDIF
-	PRINTFORMW 애널을 %CALLNAME:PLAYER%에게 계속 봉사시키고있다…
+	PRINTFORMW 애널을 %CALLNAME:PLAYER%에게 계속 봉사시키고 있다…
 	;애널が노출していないで, 팬티をずらしていないなら自動的にずらす
 	SIF !CHECK_CLO("Ａ노출")
 		CALL SETFLAG, "바텀을노출：텍스트없음", TARGET
@@ -264,19 +264,19 @@ ELSE
 			PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 		;前回Ａくぱぁ
 		IF PREVCOM == 14
-			PRINT 애널을 과시하고있는 
+			PRINT 애널을 과시하고 있는 
 		;縄着用時かつ라미아でないかつ머메이드でない
 		ELSEIF TEQUIP:구속 && COND("다리が無い") == 0
 			PRINT 다리가 크게 벌려진 
 		;부끄럼쟁이で쾌Ａor욕정が高い
 		ELSEIF TALENT:부끄럼쟁이 && (PALAM:쾌Ａ >= PALAMLV:3 || PALAM:욕정 >= PALAMLV:4)
-			PRINT 양손으로 얼굴을 숨기고 부끄러워하면서도, 자진해서 다리를 열고있는 
+			PRINT 양손으로 얼굴을 숨기고 부끄러워하면서도, 자진해서 다리를 열고 있는 
 		;부끄럼쟁이で쾌Ａor욕정が低い
 		ELSEIF TALENT:부끄럼쟁이 && (PALAM:쾌Ａ <= PALAMLV:3 || PALAM:욕정 <= PALAMLV:4)
-			PRINT 단단히 다리를 닫고있는 
+			PRINT 단단히 다리를 닫고 있는 
 		;음란or욕정4LV이상
 		ELSEIF (TALENT:음란 || PALAM:욕정 >= PALAMLV:4) && ABL:Ａ감각 >= 3
-			PRINT 다리를 크게 벌리고있는 
+			PRINT 다리를 크게 벌리고 있는 
 		ENDIF
 		PRINTFORM %CALLNAME:TARGET%의 
 		;애널が노출していないで, 팬티をずらしていないなら自動的にずらす

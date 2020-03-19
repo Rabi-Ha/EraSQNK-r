@@ -176,7 +176,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 			PRINTFORMW %타겟은()% 기쁜 듯 미소 지으며, 높은곳에서 내려와 조교 침대에 살짝 내려 섯다
 			PALAM:순종 += 10000
 		ELSE
-			PRINTFORM 「예예, 알고있다니까～
+			PRINTFORM 「예예, 알고 있다니까～
 			CALL HEARTMARK_E
 			PRINTFORMW %타겟은()% 히죽거리며, 높은곳에서 내려와 조교 침대에 살짝 내려 섯다
 		ENDIF
@@ -364,7 +364,7 @@ ELSEIF COND("ご無沙汰")
 		CALL HEARTMARK_E
 	ELSE
 		PRINTFORMW 「정말～, 늦어～! 왜 이렇게 오질 않은거야, 기분 좋은거 하고 싶어서 참을 수 없었단 말이야! 」
-		PRINTFORMW %타겟은()% 당장이라도 울 것 같이 눈을 글썽 이며, 뺨을 불게 물 들인채 %CALLNAME:PLAYER%을 보고있다
+		PRINTFORMW %타겟은()% 당장이라도 울 것 같이 눈을 글썽 이며, 뺨을 불게 물 들인채 %CALLNAME:PLAYER%을 보고 있다
 		;당신が요정好き
 		IF COND("성벽：요정", PLAYER)
 			PRINTFORMW 「더 이상 참을 수 없어! 오늘은 %조사처리(CNAME("一人称"),"가")% %조사처리(CNAME("二人称"),"을")% 조교할 차례야! 」

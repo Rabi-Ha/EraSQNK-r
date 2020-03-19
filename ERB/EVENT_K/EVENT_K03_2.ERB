@@ -52,7 +52,7 @@ DRAWLINE
 ;-------------------------------------------------
 IF GETBIT(CFLAG:201, 0) == 0
 		PRINTFORMW 「어머나 …？ 여기는？」
-		PRINTFORMW 소환 된 %타겟은()%, 두리번 거리며 주위를 둘러보고있다
+		PRINTFORMW 소환 된 %타겟은()%, 두리번 거리며 주위를 둘러보고 있다
 		PRINTFORMW 「당신이 저를 소환 했습니까？」
 		PRINTFORMW 「에, 조교？ 팔아 넘기기？」
 		PRINTFORMW %CALLNAME:PLAYER%의 설명을 듣고도, %타겟은()% 모르는 듯한 반응을 보였다
@@ -132,7 +132,7 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	PRINTFORMW 「꽤나 잘하시네요…」
 	PRINTFORMW 「과연 몽마를 저속 시킨다는말 만큼 이군요」
 	PRINTFORMW %타겟은()% %CALLNAME:PLAYER%에게 기대어, 눈을 가늘게 뜨고 웃었다
-	PRINTFORMW 「하지만 저도, 인간을 저속 시키고있는 종족이기 때문에…」
+	PRINTFORMW 「하지만 저도, 인간을 저속 시키고 있는 종족이기 때문에…」
 	PRINTFORMW 「어느 쪽이 먼저 저속할지, 흥미롭네요」
 	SETBIT CFLAG:201, 1
 ;굴복각인Lv2

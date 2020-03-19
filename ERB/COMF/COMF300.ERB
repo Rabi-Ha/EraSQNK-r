@@ -379,7 +379,7 @@ IF (TEQUIP:달콤한말 || CFLAG:269 >= RAND:100)
 ELSE
 	IF CFLAG:269 <= 50
 		PRINTL 
-		PRINTFORMW 그러나 %조사처리(CALLNAME:TARGET,"는")% 싸늘한 눈으로 이쪽을 바라보고있다! 
+		PRINTFORMW 그러나 %조사처리(CALLNAME:TARGET,"는")% 싸늘한 눈으로 이쪽을 바라보고 있다! 
 		TFLAG:30 -= 10
 		TFLAG:33 -= 5
 		TEQUIP:달콤한말 = 0
@@ -503,7 +503,7 @@ ELSE
 	CASE 8, 9, 32
 		PRINTFORMW 「놀린거네……」
 	CASE 16
-		PRINTFORMW 「%MONEY_C(LOCAL)%도 갖고있지 않으면서 이 몸을 꼬신건가. 분수를 알아라!」
+		PRINTFORMW 「%MONEY_C(LOCAL)%도 갖고 있지 않으면서 이 몸을 꼬신건가. 분수를 알아라!」
 	CASE 22
 		PRINTFORMW 「결국 그 정도인가……」
 	CASE 28
@@ -772,7 +772,7 @@ IF RESULT == 0 && (TEQUIP:달콤한말 || CFLAG:269 >= RAND:100 || NO:TARGET == 
 	ENDSELECT
 ELSEIF RESULT == 0
 	IF NO:TARGET == 28
-		PRINTFORMW 「…너, 아부떨고있는거지.  바보같아…」
+		PRINTFORMW 「…너, 아부떨고 있는거지.  바보같아…」
 		TFLAG:30 -= 5
 		TFLAG:33 -= 5
 		TEQUIP:달콤한말 = 0

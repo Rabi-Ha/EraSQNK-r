@@ -161,7 +161,7 @@ IF PREVCOM == 92 && COND("前Ｔと同ペア")
 	ELSEIF RAND:2 == 0 && ABL:기교 < 2
 		PRINT 어색한 손놀림으로 
 	ENDIF
-	PRINTFORM 봉사하고있는 %CALLNAME:TARGET%의 
+	PRINTFORM 봉사하고 있는 %CALLNAME:TARGET%의 
 ;ベッドに구속しているなら상대に跨る
 ELSE
 	IF BIND("ベッド", TEQUIP:구속)

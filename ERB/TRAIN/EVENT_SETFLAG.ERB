@@ -949,7 +949,7 @@ CASE "배설"
 		CASE 0
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 고통과 치욕이 섞인 표정을 짓고 있다…
 		CASE 1
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% \@ PLAYER == MASTER && TALENT:연모 ? 사랑하는 사람 # 사람 \@ 앞에서하는 배설행위에 치욕을 느끼면서도, 작은 달성감을 느끼고있는 것같다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% \@ PLAYER == MASTER && TALENT:연모 ? 사랑하는 사람 # 사람 \@ 앞에서하는 배설행위에 치욕을 느끼면서도, 작은 달성감을 느끼고 있는 것같다…
 		CASE 2
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부끄러워하면서도, 해방감에 안도한 표정을 짓고 있다…
 		CASE 3
@@ -2760,7 +2760,7 @@ CASE "조교지식선택" ,"조교지식の선택"
 	PRINTL 
 	PRINTFORM 현재 %조사처리(NAME:ARG,"는")% 
 	IF TALENT:ARG:조교지식
-		PRINTFORML [%TALENT_NAME(185, TALENT:ARG:조교지식, ARG)%]%조사만처리(TALENT_NAME(185, TALENT:ARG:조교지식, ARG),"를")% 몸에 익히고있습니다
+		PRINTFORML [%TALENT_NAME(185, TALENT:ARG:조교지식, ARG)%]%조사만처리(TALENT_NAME(185, TALENT:ARG:조교지식, ARG),"를")% 몸에 익히고 있습니다
 	ELSE
 		PRINTFORML 딱히 지식을 몸에 익히고 있지 않습니다.
 	ENDIF
@@ -2771,7 +2771,7 @@ CASE "조교지식선택" ,"조교지식の선택"
 	PRINTBUTTON @"%"[ 1] 지도능숙", 24, LEFT%" , 1
     PRINTL 상대의 기술 향상을 도와줍니다
 	PRINTBUTTON @"%"[ 2] ＳＭ플레이지식", 24, LEFT%" , 2
-    PRINTL ＳＭ플레이 전반을 꿰고있음
+    PRINTL ＳＭ플레이 전반을 꿰고 있음
 	PRINTBUTTON @"%"[ 3] 애널플레이지식", 24, LEFT%" , 3
     PRINTL 애널을 사용한 행위 전반에 강함
 	PRINTBUTTON @"%"[ 4] 성기확장지식", 24, LEFT%" , 4
@@ -2792,7 +2792,7 @@ CASE "조교지식선택" ,"조교지식の선택"
 		PRINTFORML 지식을 가지고 있는 측이 상대에게 봉사나 애무를 해서 주는 쾌감을 5할 증가시켜주고, 공포나 반감 등의 마이너스 패러미터 발생을 반감시켜줍니다.
 		PRINTFORML 
 		PRINTFORML ～지도능숙～
-		PRINTFORML 지식을 갖고있는 측이 봉사받을 때 상대보다 기교 또는 해당하는 ～놀림 LV(컨닐링구스라면 혀놀림)이 높다면, 봉사하는 측이 획득하는 경험치를 １증가시켜 줍니다.
+		PRINTFORML 지식을 갖고 있는 측이 봉사받을 때 상대보다 기교 또는 해당하는 ～놀림 LV(컨닐링구스라면 혀놀림)이 높다면, 봉사하는 측이 획득하는 경험치를 １증가시켜 줍니다.
 		PRINTFORML (상대가 펠라치오 실행시 플레이어가 지도능숙을 가지고 있고 기교나 혀놀림이 상대보다 높다면, 상대가 획득할 펠라경험이 １ 많아진다）
 		PRINTFORML 또한, 상대가 획득할 봉사쾌락경험이 1.5배가 됩니다.
 		PRINTFORML 

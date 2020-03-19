@@ -130,7 +130,7 @@ IF PREVCOM == 92 && COND("前Ｔと同ペア")
 	ELSEIF RAND:2 == 0 && ABL:기교 < 2
 		PRINT 어색함이 남아있는 손놀림으로 
 	ENDIF
-	PRINTFORM 봉사하고있는 %CALLNAME:TARGET%의 %조사처리(LOCALS,"를")% \@ RAND:2 ? 좌우에서 # 양손으로 \@ \@ RAND:2 ? 붙잡고 # 누르고 \@, 
+	PRINTFORM 봉사하고 있는 %CALLNAME:TARGET%의 %조사처리(LOCALS,"를")% \@ RAND:2 ? 좌우에서 # 양손으로 \@ \@ RAND:2 ? 붙잡고 # 누르고 \@, 
 ;ベッドに구속しているなら상대に跨る
 ELSE
 	IF BIND("ベッド", TEQUIP:구속)

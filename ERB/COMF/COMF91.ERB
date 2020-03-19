@@ -222,7 +222,7 @@ ELSEIF TEQUIP:Ｗ넘어뜨리기
 		PRINTFORM %CALLNAME:(TARGET:1)%의 장액으로 심하게 더러워진
 	ENDIF
 	IF SELECTCOM == PREVCOM
-		PRINTFORMW %CALLNAME:MASTER%의 페니스에 혀를 기게 해 핥으며 돌리고있다…
+		PRINTFORMW %CALLNAME:MASTER%의 페니스에 혀를 기게 해 핥으며 돌리고 있다…
 	ELSEIF CHECK_COM("청소펠라")
 		IF PREVCOM:1 >= 60 && PREVCOM <= 79
 			PRINTFORMW %CALLNAME:MASTER%의 페니스를 열심히 입으로 깨끗이 했다…
@@ -366,7 +366,7 @@ ELSEIF (PREVCOM == SELECTCOM || TEQUIP:딥스로트) && COND("前Ｔ조교자") 
 ELSE
 	;아이마스크で追加
 	SIF TEQUIP:아이마스크 && TEQUIP:넘어뜨리기 + TEQUIP:식스나인 == 0
-		PRINT 눈가리개를 하고있는 
+		PRINT 눈가리개를 하고 있는 
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 	;냄새민감分岐
 	IF PLAYER == MASTER && TALENT:냄새민감 && TALENT:연모 && (CHOSECOM(SELECTCOM) == 0 || RAND:3 == 0)
@@ -584,7 +584,7 @@ ELSE
 				PRINTFORMW 들이마시듯이 빨기 시작했다…
 			ENDIF
 		ELSE
-			PRINTFORMW 핥아 돌리고있다…
+			PRINTFORMW 핥아 돌리고 있다…
 		ENDIF
 	ENDIF
 ENDIF

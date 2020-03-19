@@ -763,14 +763,14 @@ ELSE
 		ENDIF
 	;프레데리카
 	CASE 37
-		PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 찾고있을 시인 청년에게 보내주기로 했다. 
+		PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 찾고 있을 시인 청년에게 보내주기로 했다. 
 	;린
 	CASE 44
 		PRINTFORMW %조사만처리(VIDEONAME,"를")% 미란다의 여관에 %CALLNAME:TARGET%의 성장의 증거로 보내주기로 했다. 
 	;루빗사（랄스がいない）
 	CASE 52
 		IF GETCHARA(94) < 0
-			PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 찾고있을 용자에게 보내주기로 했다. 
+			PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 찾고 있을 용자에게 보내주기로 했다. 
 		ELSE
 			PRINTFORMW %조사만처리(VIDEONAME,"를")% 감상용으로 남겨두기로 했습니다. 
 			LOCALS = 비디오保存
@@ -821,7 +821,7 @@ CSTR:80 = %LOCALS:0%\/%LOCALS:1%\/%LOCALS:2%\/%LOCALS:3%\/%LOCALS:4%\/%LOCALS:5%
 ;인기を得る
 IF GETBIT(TALENT:인기, 1) == 0 && COND("인기：ＡＶ")
 	PRINTL 
-	PRINTFORML %CALLNAME:TARGET% 주연의 작품은 꽤 호평을 받고있는 모양이다…
+	PRINTFORML %CALLNAME:TARGET% 주연의 작품은 꽤 호평을 받고 있는 모양이다…
 	SETCOLOR DEF_COLOR("황색")
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 인기 ＡＶ아이돌이 되었습니다
 	SETBIT TALENT:인기, 1
